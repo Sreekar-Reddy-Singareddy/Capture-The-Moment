@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Prefer not to say</item>
+    </string-array>
+
+    <string-array name="mobile_country_codes">
+        <item>IN +91</item>
+        <item>PK +23</item>
+        <item>US +1</item>
+    </string-array>
+</resources>

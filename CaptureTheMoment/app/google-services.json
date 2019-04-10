@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "159408575043",
+    "firebase_url": "https://capture-the-moment-2019.firebaseio.com",
+    "project_id": "capture-the-moment-2019",
+    "storage_bucket": "capture-the-moment-2019.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159408575043:android:2d860d2bdb605b7c",
+        "android_client_info": {
+          "package_name": "singareddy.productionapps.capturethemoment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159408575043-rsikclstqbf36ecm36hrkuv2o78uctb4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "singareddy.productionapps.capturethemoment",
+            "certificate_hash": "a33e052ad6b82c2914181428fe9a8180a1202bbb"
+          }
+        },
+        {
+          "client_id": "159408575043-4ur9v6ljmm3i74a4e16hmpkfvfmdrpj6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY6DwHjIcmjzq3Jaj2PC0_zR-fu6j-cGc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159408575043-4ur9v6ljmm3i74a4e16hmpkfvfmdrpj6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
