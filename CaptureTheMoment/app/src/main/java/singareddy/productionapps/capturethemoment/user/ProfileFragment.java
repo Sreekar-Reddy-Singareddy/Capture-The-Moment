@@ -1,6 +1,7 @@
 package singareddy.productionapps.capturethemoment.user;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,17 +10,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.models.User;
 
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment implements View.OnClickListener {
     static String TAG = "ProfileFragment";
 
     TextView name, mobile, age, email, gender;
     ImageView profilePic;
+    Button editProfile;
 
     // Viewmodel layer members
     AuthenticationViewModel authenticationViewModel;
@@ -38,6 +41,8 @@ public class ProfileFragment extends Fragment {
         age = view.findViewById(R.id.profile_fragment_age_data);
         email = view.findViewById(R.id.profile_fragment_email_data);
         gender = view.findViewById(R.id.profile_fragment_gender_data);
+        editProfile = view.findViewById(R.id.profile_bt_edit);
+        editProfile.setOnClickListener(this);
         authenticationViewModel = ViewModelProviders.of(this).get(AuthenticationViewModel.class);
         loadProfileData();
         return view;
@@ -53,5 +58,13 @@ public class ProfileFragment extends Fragment {
         age.setText(user.getAge().toString());
         gender.setText(user.getGender());
         email.setText(user.getEmailId());
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == editProfile) {
+            Intent editProfileIntent = new Intent(getContext(), ProfileUpdateActivity.class);
+            startActivity(editProfileIntent);
+        }
     }
 }

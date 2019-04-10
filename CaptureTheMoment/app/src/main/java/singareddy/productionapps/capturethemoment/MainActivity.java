@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 
-import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.user.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 import singareddy.productionapps.capturethemoment.user.LoginActivity;
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements AuthenticationLis
 
         authenticationViewModel = ViewModelProviders.of(this).get(AuthenticationViewModel.class);
         authenticationViewModel.setLogoutListener(this);
-        authenticationViewModel.setProfileListener(this);
+        authenticationViewModel.setInitialProfileListener(this);
         if (!AppUtilities.UPDATE_PROFILE_DIALOG_SHOWN) {
             authenticationViewModel.checkIfUserLoggedInFirstTime();
         }
@@ -83,9 +82,7 @@ public class MainActivity extends AppCompatActivity implements AuthenticationLis
     @Override
     public void onUserProfilePending() {
         Log.i(TAG, "onUserProfilePending: *");
-        // TODO: Prompt the user to update the profile
-        User user = new User();
-        authenticationViewModel.updateUserProfile(user);
+        // TODO: Prompt the user to update the profileUser
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setIcon(R.drawable.ic_launcher_foreground)
                 .setTitle("Update Profile")

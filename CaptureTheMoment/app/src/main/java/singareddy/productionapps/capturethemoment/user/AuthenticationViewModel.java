@@ -16,7 +16,6 @@ import com.google.android.gms.tasks.TaskExecutors;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DataSnapshot;
@@ -36,7 +35,8 @@ public class AuthenticationViewModel extends AndroidViewModel {
     private AuthenticationListener.EmailSignup emailSignupListener;
     private AuthenticationListener.Mobile mobileLoginListener;
     private AuthenticationListener.Logout logoutListener;
-    private ProfileListener.InitialProfile profileListener;
+    private ProfileListener.InitialProfile initialProfileListener;
+    private ProfileListener profileListener;
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
@@ -90,9 +90,9 @@ public class AuthenticationViewModel extends AndroidViewModel {
             public void onSuccess(AuthResult authResult) {
                 Log.i(TAG, "onSuccess: *");
                 emailSignupListener.onEmailUserRegisterSuccess(user.getEmailId());
-                // On successful registration, add the user to the database
-                // using the generated UID.
-                updateUserProfile(user);
+                // TODO: Get the user data
+                getCurrentUserProfile();
+//                updateUserProfile(user);
             }
         };
 
@@ -127,6 +127,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
             public void onSuccess(AuthResult authResult) {
                 Log.i(TAG, "onSuccess: *");
                 emailLoginListener.onEmailUserLoginSuccess();
+                // TODO: After the login is successful, save the user data into cache
                 getCurrentUserProfile();
             }
         };
@@ -234,7 +235,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
                 Log.i(TAG, "onDataChange: Name Exists  : "+dataSnapshot.hasChild("name"));
                 Log.i(TAG, "onDataChange: Mobile Exists: "+dataSnapshot.hasChild("mobile"));
                 if (dataSnapshot.hasChild("name") == false || dataSnapshot.getValue(User.class).getName().equals("NA")) {
-                    profileListener.onUserProfilePending();
+                    initialProfileListener.onUserProfilePending();
                 }
                 else {
                     // Since the user is not logged in first time, save the user to the cache
@@ -254,23 +255,20 @@ public class AuthenticationViewModel extends AndroidViewModel {
 
     /**
      * This method is used when a complete profile needs to be
-     * put in the database for the current user.
-     * @param user
+     * put in the database for the current currentUser.
+     * @param currentUser
      */
-    public void updateUserProfile (User user) {
-        Log.i(TAG, "updateUserProfile: Name: "+user.getName());
-        FirebaseUser firebaseCurrentUser = firebaseAuth.getCurrentUser();
-        if (user.getMobile() == 0l) {
-            user.setMobile(Long.parseLong(convertE164toNormalMobile(firebaseCurrentUser.getPhoneNumber())));
-        }
-        if (user.getEmailId().equals("NA")) {
-            user.setEmailId(firebaseCurrentUser.getEmail());
-        }
-        this.user = user;
-        // First save the user in the cache for local offline use
-        saveUserInCache(user);
-        // Then attempt to save the user to the Firebase servers
-        updateUserProfile(user, firebaseCurrentUser.getUid());
+    public void updateUserProfile (User currentUser) {
+        Log.i(TAG, "updateUserProfile: Name: "+currentUser.getName());
+        // This has to be validated and put in cache as it is
+        String name = currentUser.getName();
+        String email = currentUser.getEmailId();
+        Integer age = currentUser.getAge();
+        Long mobile = currentUser.getMobile();
+        // TODO: Validations must be done here!
+        saveUserInCache(currentUser);
+        // Once the cache is updated, also update this in Firebase
+        updateUserProfile(currentUser, firebaseAuth.getUid());
     }
 
     /**
@@ -286,6 +284,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
             @Override
             public void onSuccess(Object o) {
                 Log.i(TAG, "onSuccess: User added in the database");
+                profileListener.onProfileUpdated();
             }
         };
         final OnFailureListener failureListener = new OnFailureListener() {
@@ -319,10 +318,27 @@ public class AuthenticationViewModel extends AndroidViewModel {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Log.i(TAG, "onDataChange: getting user profile...");
-                if (dataSnapshot.getValue(User.class) != null) {
-                    user = dataSnapshot.getValue(User.class);
+                User currentUser = new User();
+                Log.i(TAG, "onDataChange: Provider: "+firebaseAuth.getCurrentUser().getProviders());
+                if (dataSnapshot.getValue() != null && !dataSnapshot.getValue(User.class).getName().equals("NA")) {
+                    currentUser = dataSnapshot.getValue(User.class);
+                    Log.i(TAG, "onDataChange: Email: "+currentUser.getEmailId());
+
                 }
-                saveUserInCache(user);
+                else {
+                    // TODO: Since the data is null, based on the provider, put either email or mobile in the user
+                    String provider = firebaseAuth.getCurrentUser().getProviders().get(0);
+                    if (provider.equals("password")) {
+                        currentUser.setEmailId(firebaseAuth.getCurrentUser().getEmail());
+                    }
+                    else if (provider.equals("phone")){
+                        Log.i(TAG, "onDataChange: Mobile: "+firebaseAuth.getCurrentUser().getPhoneNumber());
+                        Long mobile = Long.parseLong(convertE164toNormalMobile(firebaseAuth.getCurrentUser().getPhoneNumber()));
+                        currentUser.setMobile(mobile);
+                        Log.i(TAG, "onDataChange: Mobile: "+mobile);
+                    }
+                }
+                saveUserInCache(currentUser);
             }
 
             @Override
@@ -341,7 +357,6 @@ public class AuthenticationViewModel extends AndroidViewModel {
      */
     private void saveUserInCache(User currentUser) {
         Log.i(TAG, "saveUserInCache: *");
-        user = currentUser;
         SharedPreferences userProfile = getApplication().getSharedPreferences("USER_PROFILE", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = userProfile.edit();
         editor.putString("name", currentUser.getName());
@@ -349,6 +364,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
         editor.putInt("age",currentUser.getAge());
         editor.putString("gender",currentUser.getGender());
         editor.putString("emailId", currentUser.getEmailId());
+        editor.putString("location", currentUser.getLocation());
         editor.apply();
     }
 
@@ -386,6 +402,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
         user.setAge(sharedPreferences.getInt("age", 0));
         user.setGender(sharedPreferences.getString("gender", "NA"));
         user.setEmailId(sharedPreferences.getString("emailId", "NA"));
+        user.setLocation(sharedPreferences.getString("location", "NA"));
         return user;
     }
 
@@ -413,12 +430,16 @@ public class AuthenticationViewModel extends AndroidViewModel {
         addAuthStateListener();
     }
 
-    public void setProfileListener(ProfileListener.InitialProfile profileListener) {
+    public void setInitialProfileListener(ProfileListener.InitialProfile initialProfileListener) {
+        this.initialProfileListener = initialProfileListener;
+    }
+
+    public void setProfileListener(ProfileListener profileListener) {
         this.profileListener = profileListener;
     }
 
     private String convertE164toNormalMobile (String mobile) {
-        if (mobile == null || !mobile.equals("")) {
+        if (mobile == null || mobile.equals("")) {
             return "0";
         }
         mobile = mobile.substring(3);
