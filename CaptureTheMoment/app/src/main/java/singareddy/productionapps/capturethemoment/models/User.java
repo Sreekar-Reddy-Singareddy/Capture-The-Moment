@@ -11,7 +11,7 @@ public class User {
     private String profilePic = "NA";
     private String location = "NA";
     private List<String> ownedBooks;
-    private List<SharedBookAccessInfo> sharedBooks;
+    private List<ShareInfo> sharedBooks;
 
     public User() {
 
@@ -110,11 +110,11 @@ public class User {
         this.ownedBooks = ownedBooks;
     }
 
-    public List<SharedBookAccessInfo> getSharedBooks() {
+    public List<ShareInfo> getSharedBooks() {
         return sharedBooks;
     }
 
-    public void setSharedBooks(List<SharedBookAccessInfo> sharedBooks) {
+    public void setSharedBooks(List<ShareInfo> sharedBooks) {
         this.sharedBooks = sharedBooks;
     }
 }

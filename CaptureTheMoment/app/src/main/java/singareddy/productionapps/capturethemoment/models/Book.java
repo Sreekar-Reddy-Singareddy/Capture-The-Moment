@@ -1,14 +1,23 @@
 package singareddy.productionapps.capturethemoment.models;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 import java.util.List;
 
+@Entity
 public class Book {
+    @NonNull @PrimaryKey(autoGenerate = false)
+    private String bookId;
     private String name;
     private String owner;
-    private List<String> secOwners;
-    private List<Card> cards;
     private Long createdTime;
     private Long lastOpenedTime;
+
+    @Ignore private List<ShareInfo> secOwners;
+    @Ignore private List<Card> cards;
 
     public Book() {
     }
@@ -19,7 +28,7 @@ public class Book {
         this.createdTime = createdTime;
     }
 
-    public Book(String name, String owner, List<String> secOwners, Long createdTime) {
+    public Book(String name, String owner, List<ShareInfo> secOwners, Long createdTime) {
         this.name = name;
         this.owner = owner;
         this.secOwners = secOwners;
@@ -42,11 +51,11 @@ public class Book {
         this.owner = owner;
     }
 
-    public List<String> getSecOwners() {
+    public List<ShareInfo> getSecOwners() {
         return secOwners;
     }
 
-    public void setSecOwners(List<String> secOwners) {
+    public void setSecOwners(List<ShareInfo> secOwners) {
         this.secOwners = secOwners;
     }
 
@@ -72,5 +81,20 @@ public class Book {
 
     public void setLastOpenedTime(Long lastOpenedTime) {
         this.lastOpenedTime = lastOpenedTime;
+    }
+
+    @NonNull
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(@NonNull String bookId) {
+        this.bookId = bookId;
+    }
+
+    @Override
+    public String toString() {
+        String s = "ID: "+bookId+" || Name: "+name+" || Owner: "+ owner+" || Sec owners: "+secOwners;
+        return s;
     }
 }

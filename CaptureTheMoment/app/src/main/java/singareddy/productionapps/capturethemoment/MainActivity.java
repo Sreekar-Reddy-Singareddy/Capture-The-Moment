@@ -3,6 +3,7 @@ package singareddy.productionapps.capturethemoment;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
@@ -12,7 +13,12 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import singareddy.productionapps.capturethemoment.book.AddBookActivity;
+import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.user.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 import singareddy.productionapps.capturethemoment.user.LoginActivity;
@@ -20,14 +26,17 @@ import singareddy.productionapps.capturethemoment.user.ProfileFragment;
 import singareddy.productionapps.capturethemoment.user.ProfileListener;
 import singareddy.productionapps.capturethemoment.user.ProfileUpdateActivity;
 
-public class MainActivity extends AppCompatActivity implements AuthenticationListener.Logout, ProfileListener.InitialProfile {
+public class MainActivity extends AppCompatActivity implements AuthenticationListener.Logout, ProfileListener.InitialProfile, View.OnClickListener {
     private static String TAG = "MainActivity";
 
     NavigationView navigationView;
+    TextView userName;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
+    FloatingActionButton addBookFab;
 
     AuthenticationViewModel authenticationViewModel;
+    User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +51,30 @@ public class MainActivity extends AppCompatActivity implements AuthenticationLis
         if (!AppUtilities.UPDATE_PROFILE_DIALOG_SHOWN) {
             authenticationViewModel.checkIfUserLoggedInFirstTime();
         }
+
         drawerLayout = findViewById(R.id.activity_main_drawer_layout);
         navigationView = findViewById(R.id.acctivity_main_navigation_view);
-//        toolbar = findViewById(R.id.activity_main_appbar);
-//        setSupportActionBar(toolbar);
+        View headerView = navigationView.getHeaderView(0);
+        userName = headerView.findViewById(R.id.nav_header_tv_name);
+        addBookFab = findViewById(R.id.activity_main_add_book_button);
+        addBookFab.setOnClickListener(this);
+
+        Log.i(TAG, "onCreate: Nav: "+navigationView);
+        userName.setText("Welcome!");
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_home_black_24dp);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        loadViews();
+    }
+
+    /**
+     * Loads initial views with data
+     */
+    private void loadViews() {
+        currentUser = authenticationViewModel.loadUserProfile();
+        String name = currentUser.getName();
+        if (name != null && !name.equals("NA")) {
+            userName.setText(name);
+        }
     }
 
     @Override
@@ -112,5 +139,14 @@ public class MainActivity extends AppCompatActivity implements AuthenticationLis
         Log.i(TAG, "onSaveInstanceState: ***");
         super.onSaveInstanceState(outState);
         outState.putBoolean("PROFILE_DIALOG", true);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == addBookFab) {
+            // Navigate to the next activity - AddBookActivity
+            Intent addBookIntent = new Intent(this, AddBookActivity.class);
+            startActivity(addBookIntent);
+        }
     }
 }

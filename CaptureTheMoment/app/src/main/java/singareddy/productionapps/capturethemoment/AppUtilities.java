@@ -1,5 +1,7 @@
 package singareddy.productionapps.capturethemoment;
 
+import com.google.firebase.auth.FirebaseUser;
+
 public class AppUtilities {
 
     public static boolean UPDATE_PROFILE_DIALOG_SHOWN = false;
@@ -15,5 +17,27 @@ public class AppUtilities {
         public static final String PROFILE_EMAIL_INVALID = "PROFILE_EMAIL_INVALID";
         public static final String PROFILE_MOBILE_INVALID = "PROFILE_MOBILE_INVALID";
         public static final String EMAIL_EXISTS = "The email address is already in use by another account.";
+    }
+
+    public static class Firebase {
+        public static final String ALL_USERS_NODE = "users";
+        public static final String ALL_BOOKS_NODE = "books";
+        public static final String ALL_REGISTERED_USERS_NODE = "regUsers";
+        public static final String ALL_SHARE_REQUESTS_NODE = "";
+        public static final String EMAIL_PROVIDER = "password";
+        public static final String PHONE_PROVIDER = "phone";
+    }
+
+    public static class Book {
+        public static final String BOOK_NAME_EMPTY = "BOOK_NAME_EMPTY";
+        public static final String BOOK_NAME_INVALID = "BOOK_NAME_INVALID";
+        public static final String BOOK_NAME_VALID = "BOOK_NAME_VALID";
+    }
+
+    public static class User {
+        public static String LOGIN_PROVIDER;
+        public static FirebaseUser CURRENT_USER;
+        public static String CURRENT_USER_MOBILE;
+        public static String CURRENT_USER_EMAIL;
     }
 }

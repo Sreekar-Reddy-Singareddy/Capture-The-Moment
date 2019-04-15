@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import singareddy.productionapps.capturethemoment.book.AddBookViewModel;
 import singareddy.productionapps.capturethemoment.user.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 import singareddy.productionapps.capturethemoment.models.User;
@@ -24,6 +25,7 @@ public class ExperimentActivity extends AppCompatActivity implements Authenticat
     Button performAction;
     EditText input;
     AuthenticationViewModel authenticationViewModel;
+    AddBookViewModel addBookViewModel;
 
     // Firebase objects
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -65,12 +67,15 @@ public class ExperimentActivity extends AppCompatActivity implements Authenticat
         }
         else if (code == 2) {
             // Login user via email and password
-            authenticationViewModel.loginUserWithEmailCredentials("gopikrishna@vicat.com", "Gopi@123");
+            authenticationViewModel.loginUserWithEmailCredentials("sreekarreddy430@gmail.com", "Sree@123");
         }
         // Mobile authentication
         else if (code == 3) {
             // Authenticate user by the mobile number
             authenticationViewModel.authorizePhoneCredentials("9629781945");
+        }
+        else if (code == 4) {
+            authenticationViewModel.logout();
         }
     }
 
@@ -97,6 +102,9 @@ public class ExperimentActivity extends AppCompatActivity implements Authenticat
     public void onEmailUserLoginSuccess() {
         Log.i(TAG, "onEmailUserLoginSuccess: *");
         Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
+        // User logged in
+        // Meaning, the book data has to be loaded
+        addBookViewModel = ViewModelProviders.of(this).get(AddBookViewModel.class);
     }
 
     @Override

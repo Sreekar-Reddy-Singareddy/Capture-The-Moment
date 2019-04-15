@@ -20,7 +20,7 @@ import singareddy.productionapps.capturethemoment.models.User;
 public class ProfileFragment extends Fragment implements View.OnClickListener {
     static String TAG = "ProfileFragment";
 
-    TextView name, mobile, age, email, gender;
+    TextView name;
     ImageView profilePic;
     Button editProfile;
 
@@ -37,15 +37,18 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         Log.i(TAG, "onCreateView: *");
         View view = inflater.inflate(R.layout.profile_fragment, container, false);
         name = view.findViewById(R.id.profile_fragment_name_data);
-        mobile = view.findViewById(R.id.profile_fragment_mobile_data);
-        age = view.findViewById(R.id.profile_fragment_age_data);
-        email = view.findViewById(R.id.profile_fragment_email_data);
-        gender = view.findViewById(R.id.profile_fragment_gender_data);
         editProfile = view.findViewById(R.id.profile_bt_edit);
         editProfile.setOnClickListener(this);
         authenticationViewModel = ViewModelProviders.of(this).get(AuthenticationViewModel.class);
         loadProfileData();
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume: *");
+        loadProfileData();
     }
 
     /**
@@ -54,10 +57,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     private void loadProfileData() {
         User user = authenticationViewModel.loadUserProfile();
         name.setText(user.getName());
-        mobile.setText(user.getMobile().toString());
-        age.setText(user.getAge().toString());
-        gender.setText(user.getGender());
-        email.setText(user.getEmailId());
     }
 
     @Override

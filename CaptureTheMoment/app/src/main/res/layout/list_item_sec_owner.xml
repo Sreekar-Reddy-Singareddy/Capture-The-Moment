@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/sec_owner_et_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="2dp"
+        android:ems="10"
+        android:focusable="true"
+        android:hint="Email or Phone"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sec_owner_cb_edit"
+        app:layout_constraintStart_toEndOf="@+id/sec_owner_ib_cancel"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/sec_owner_cb_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Can Edit"
+        app:layout_constraintBottom_toBottomOf="@+id/sec_owner_et_username"
+        app:layout_constraintTop_toTopOf="@+id/sec_owner_et_username"
+        app:layout_constraintEnd_toStartOf="@id/sec_owner_iv_status"
+        android:layout_marginEnd="8dp"
+        tools:layout_editor_absoluteX="323dp" />
+
+    <ImageButton
+        android:id="@+id/sec_owner_ib_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/sec_owner_et_username"
+        app:layout_constraintEnd_toStartOf="@+id/sec_owner_et_username"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sec_owner_et_username"
+        app:srcCompat="@drawable/ic_cancel_white_24dp" />
+
+    <ImageView
+        android:id="@+id/sec_owner_iv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/sec_owner_et_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sec_owner_et_username"
+        app:srcCompat="@drawable/ic_close_red_24dp" />
+
+</android.support.constraint.ConstraintLayout>

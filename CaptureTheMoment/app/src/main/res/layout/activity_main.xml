@@ -60,6 +60,7 @@
         android:layout_gravity="left"
         android:background="@android:color/holo_orange_light"
         android:fitsSystemWindows="true"
+        app:headerLayout="@layout/navigation_header"
         app:menu="@menu/main_navigation_menu">
 
     </android.support.design.widget.NavigationView>

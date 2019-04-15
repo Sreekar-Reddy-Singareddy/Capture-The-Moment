@@ -24,10 +24,22 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static singareddy.productionapps.capturethemoment.AppUtilities.*;
+import static singareddy.productionapps.capturethemoment.AppUtilities.FailureCodes.*;
+import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
+
 import singareddy.productionapps.capturethemoment.AppUtilities;
+import singareddy.productionapps.capturethemoment.book.BookDataWebService;
 import singareddy.productionapps.capturethemoment.models.User;
+
+import static singareddy.productionapps.capturethemoment.AppUtilities.*;
+import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
+import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
+
 
 public class AuthenticationViewModel extends AndroidViewModel {
     static String TAG = "AuthenticationViewModel";
@@ -37,16 +49,18 @@ public class AuthenticationViewModel extends AndroidViewModel {
     private AuthenticationListener.Logout logoutListener;
     private ProfileListener.InitialProfile initialProfileListener;
     private ProfileListener profileListener;
+    private FirebaseAuth.AuthStateListener authStateListener;
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
+    private BookDataWebService mBookDataWebService;
     private User user;
-    private FirebaseAuth.AuthStateListener authStateListener;
 
     public AuthenticationViewModel(Application application) {
         super(application);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
+        mBookDataWebService = new BookDataWebService(application);
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -56,6 +70,20 @@ public class AuthenticationViewModel extends AndroidViewModel {
                     // So, clean up all the user related data and take them to the login activity
                     AuthenticationViewModel.this.eraseUserDataFromCache();
                     logoutListener.onUserLoggedOut();
+                }
+                else {
+                    // Initialise important global variables
+                    CURRENT_USER = firebaseAuth.getCurrentUser();
+                    LOGIN_PROVIDER = CURRENT_USER.getProviders().get(0);
+                    if (LOGIN_PROVIDER.equals(EMAIL_PROVIDER)) {
+                        CURRENT_USER_EMAIL = firebaseAuth.getCurrentUser().getEmail();
+                    }
+                    else if (LOGIN_PROVIDER.equals(PHONE_PROVIDER)) {
+                        CURRENT_USER_MOBILE = convertE164toNormalMobile(CURRENT_USER.getPhoneNumber());
+                    }
+
+                    // Load initial data
+                    mBookDataWebService.loadCurrentUserBookData();
                 }
             }
         };
@@ -278,22 +306,23 @@ public class AuthenticationViewModel extends AndroidViewModel {
      * @param uid - UID provided by the Firebase Auth
      */
     private void updateUserProfile(final User user, @NonNull String uid) {
-        final DatabaseReference newUserNode = firebaseDatabase.getReference().child("users").child(uid).child("profile");
+        DatabaseReference newUserNode = firebaseDatabase.getReference().child(ALL_USERS_NODE).child(uid).child("profile");
+        final DatabaseReference registeredUsersNode = firebaseDatabase.getReference().child(ALL_REGISTERED_USERS_NODE);
 
-        final OnSuccessListener successListener = new OnSuccessListener() {
+        OnSuccessListener successListener = new OnSuccessListener() {
             @Override
             public void onSuccess(Object o) {
                 Log.i(TAG, "onSuccess: User added in the database");
                 profileListener.onProfileUpdated();
             }
         };
-        final OnFailureListener failureListener = new OnFailureListener() {
+        OnFailureListener failureListener = new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.i(TAG, "onFailure: User could not be added in DB::: "+e.getLocalizedMessage());
             }
         };
-        final OnCompleteListener<Task> completeListener = new OnCompleteListener<Task>() {
+        OnCompleteListener<Task> completeListener = new OnCompleteListener<Task>() {
             @Override
             public void onComplete(@NonNull Task<Task> task) {
                 Log.i(TAG, "onComplete: "+task.isSuccessful());
@@ -304,6 +333,48 @@ public class AuthenticationViewModel extends AndroidViewModel {
                 .addOnSuccessListener(successListener)
                 .addOnFailureListener(failureListener)
                 .addOnCompleteListener(completeListener);
+        
+        final OnCompleteListener<Void> completeListener1 = new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Log.i(TAG, "onComplete: User added in registered users list.");
+                }
+                else {
+                    Log.i(TAG, "onComplete: User was not added in the registered users list.");
+                }
+            }
+        };
+
+        ValueEventListener valueEventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                List regUsers = (ArrayList) dataSnapshot.getValue();
+                if (regUsers == null) { regUsers = new ArrayList(); }
+                // Check if the user is phone or email authenticated
+                if (firebaseAuth.getCurrentUser().getProviders().get(0).equals(EMAIL_PROVIDER)) {
+                    // Email provider
+                    if (!regUsers.contains(user.getEmailId().toLowerCase())) {
+                        regUsers.add(user.getEmailId().toLowerCase());
+                    }
+                }
+                else if (firebaseAuth.getCurrentUser().getProviders().get(0).equals(PHONE_PROVIDER)) {
+                    // Phone provider
+                    if (!regUsers.contains(user.getMobile().toString())) {
+                        regUsers.add(user.getMobile().toString());
+                    }
+                }
+                registeredUsersNode.setValue(regUsers)
+                        .addOnCompleteListener(completeListener1);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+
+        registeredUsersNode.addListenerForSingleValueEvent(valueEventListener);
     }
 
     /**
@@ -328,10 +399,10 @@ public class AuthenticationViewModel extends AndroidViewModel {
                 else {
                     // TODO: Since the data is null, based on the provider, put either email or mobile in the user
                     String provider = firebaseAuth.getCurrentUser().getProviders().get(0);
-                    if (provider.equals("password")) {
+                    if (provider.equals(EMAIL_PROVIDER)) {
                         currentUser.setEmailId(firebaseAuth.getCurrentUser().getEmail());
                     }
-                    else if (provider.equals("phone")){
+                    else if (provider.equals(PHONE_PROVIDER)){
                         Log.i(TAG, "onDataChange: Mobile: "+firebaseAuth.getCurrentUser().getPhoneNumber());
                         Long mobile = Long.parseLong(convertE164toNormalMobile(firebaseAuth.getCurrentUser().getPhoneNumber()));
                         currentUser.setMobile(mobile);
@@ -374,7 +445,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
     public void logout() {
         Log.i(TAG, "logout: *");
         firebaseAuth.signOut();
-        AppUtilities.UPDATE_PROFILE_DIALOG_SHOWN = false;
+        UPDATE_PROFILE_DIALOG_SHOWN = false;
     }
 
     /**
