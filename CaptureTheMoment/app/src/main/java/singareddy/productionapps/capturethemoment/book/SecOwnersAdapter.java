@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
@@ -45,14 +46,18 @@ public class SecOwnersAdapter extends RecyclerView.Adapter<SecOwnersAdapter.SecO
             username.setOnFocusChangeListener(this);
             removeOwner.setOnClickListener(this);
             editAccess.setOnCheckedChangeListener(this);
+            view.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            Log.i(TAG, "onClick: Adapter Position: "+getAdapterPosition());
-            Log.i(TAG, "onClick: Layout Position : "+getLayoutPosition());
-            data.remove(getAdapterPosition());
-            notifyDataSetChanged();
+            if (v == removeOwner) {
+                data.remove(getAdapterPosition());
+                notifyDataSetChanged();
+            }
+            else {
+                Log.i(TAG, "onClick: Adapter Position: "+getAdapterPosition());
+            }
         }
 
         @Override
@@ -73,6 +78,7 @@ public class SecOwnersAdapter extends RecyclerView.Adapter<SecOwnersAdapter.SecO
         @Override
         public void afterTextChanged(Editable s) {
             data.get(getAdapterPosition()).setUsername((username.getText().toString()));
+
         }
 
         @Override

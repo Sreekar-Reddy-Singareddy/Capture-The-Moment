@@ -24,6 +24,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     private static String TAG = "AddBookActivity";
 
     AddBookViewModel addBookViewModel;
+    Integer mNewBookCreationFlag = 0;
 
     EditText bookName;
     Button createButton;
@@ -40,9 +41,9 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
         secOwnersData = new ArrayList<>();
         secOwnersData.add(new SecondaryOwner("ushasree@gmail.com", false));
         secOwnersData.add(new SecondaryOwner("gopi@gmail.com", true));
-        secOwnersData.add(new SecondaryOwner("sree@gmail.com", false));
+        secOwnersData.add(new SecondaryOwner("sreekesh@gmail.com", false));
 
-        bookName = findViewById(R.id.add_book_et_name);
+        bookName = findViewById(R.id.add_book_et_name); bookName.setText("Vellore");
         addNewSecOwner = findViewById(R.id.add_book_ib_add_sec_owner);
         secOwnersList = findViewById(R.id.add_book_rv_sec_owners);
         createButton = findViewById(R.id.add_book_bt_create);
@@ -89,6 +90,12 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
             case BOOK_NAME_INVALID:
                 toastMessage = "Book name contains invalid characters";
                 break;
+            case BOOK_EXISTS:
+                toastMessage = "Book already exists with this name!";
+                break;
+            case BOOK_DB_ERROR:
+                toastMessage = "Some database has occured. Try again.";
+                break;
         }
         Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show();
     }
@@ -104,5 +111,23 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
         Log.i(TAG, "onAllSecOwnersValidated: All owners are validated. Some might be invalid as well.");
         adapter.notifyDataSetChanged();
         createButton.setEnabled(true);
+    }
+
+    @Override
+    public void onNewBookCreated() {
+        mNewBookCreationFlag++;
+        if (mNewBookCreationFlag == 2) {
+            // Book has been created
+            Toast.makeText(this, "Book created successfully!", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i(TAG, "onStop: Activity stopping...");
+        // When the activity is stopping, clean up all the variables everywhere
+        addBookViewModel.cleanUpVariables();
     }
 }

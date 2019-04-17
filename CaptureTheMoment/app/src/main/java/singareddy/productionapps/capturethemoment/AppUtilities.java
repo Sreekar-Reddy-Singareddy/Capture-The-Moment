@@ -32,6 +32,8 @@ public class AppUtilities {
         public static final String BOOK_NAME_EMPTY = "BOOK_NAME_EMPTY";
         public static final String BOOK_NAME_INVALID = "BOOK_NAME_INVALID";
         public static final String BOOK_NAME_VALID = "BOOK_NAME_VALID";
+        public static final String BOOK_EXISTS = "BOOK_EXISTS";
+        public static final String BOOK_DB_ERROR = "BOOK_DB_ERROR";
     }
 
     public static class User {

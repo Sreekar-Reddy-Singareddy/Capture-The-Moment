@@ -25,7 +25,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.*;
@@ -307,7 +309,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
      */
     private void updateUserProfile(final User user, @NonNull String uid) {
         DatabaseReference newUserNode = firebaseDatabase.getReference().child(ALL_USERS_NODE).child(uid).child("profile");
-        final DatabaseReference registeredUsersNode = firebaseDatabase.getReference().child(ALL_REGISTERED_USERS_NODE);
+        final DatabaseReference registeredUsersNode = firebaseDatabase.getReference().child(ALL_REGISTERED_USERS_NODE).child(CURRENT_USER.getUid());
 
         OnSuccessListener successListener = new OnSuccessListener() {
             @Override
@@ -349,23 +351,15 @@ public class AuthenticationViewModel extends AndroidViewModel {
         ValueEventListener valueEventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                List regUsers = (ArrayList) dataSnapshot.getValue();
-                if (regUsers == null) { regUsers = new ArrayList(); }
                 // Check if the user is phone or email authenticated
                 if (firebaseAuth.getCurrentUser().getProviders().get(0).equals(EMAIL_PROVIDER)) {
-                    // Email provider
-                    if (!regUsers.contains(user.getEmailId().toLowerCase())) {
-                        regUsers.add(user.getEmailId().toLowerCase());
-                    }
+                    // Email provider - Add email for this UID
+                    registeredUsersNode.setValue(user.getEmailId().toLowerCase()).addOnCompleteListener(completeListener1);
                 }
                 else if (firebaseAuth.getCurrentUser().getProviders().get(0).equals(PHONE_PROVIDER)) {
-                    // Phone provider
-                    if (!regUsers.contains(user.getMobile().toString())) {
-                        regUsers.add(user.getMobile().toString());
-                    }
+                    // Phone provider - Add phone for this UID
+                    registeredUsersNode.setValue(user.getMobile().toString()).addOnCompleteListener(completeListener1);
                 }
-                registeredUsersNode.setValue(regUsers)
-                        .addOnCompleteListener(completeListener1);
             }
 
             @Override

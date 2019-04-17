@@ -43,8 +43,11 @@ public class BookDataWebService {
      * There are two types of books - Owned & Shared.
      */
     public void loadCurrentUserBookData () {
+        mDataRepo.eraseRoom();
         loadAllOwnedBooks();
         loadAllSharedBooks();
+        mDataRepo.getAllOwnedBooksOfCurrentUser();
+        mDataRepo.getAllSharedInfos();
     }
 
     /**
@@ -80,6 +83,11 @@ public class BookDataWebService {
         currentUserNode.addListenerForSingleValueEvent(ownedBooksValueListener);
     }
 
+    /**
+     * Converts the data snapshot into an array of book ids.
+     * In case of owned books, only array of bookIds is needed.
+     * @param data
+     */
     private void loadDetailsOfOwnedBook (final Object data) {
         List<String> ownedBooks = null;
         if (data != null) {
@@ -128,29 +136,39 @@ public class BookDataWebService {
 
     }
 
+    /**
+     * Converts the data snapshot into a list of books and bookIds.
+     * In case of shared books, two types of data is needed.
+     * 1. List of ShareInfo objects to know the access information.
+     * 2. List of bookId strings to fetch the books from firebase.
+     * @param data
+     */
     private void loadDetailsOfSharedBook(Object data) {
-        List<Map> jsonStrings = null;
+        List<Map> jsonMaps = null;
         List<ShareInfo> sharedBooks = new ArrayList<>();
         List<String> sharedBookIds = new ArrayList<>();
         if (data != null) {
             // There is some data.
             // The data is in Map form.
             // Convert it into an array of ShareInfo objects.
-            jsonStrings = (ArrayList<Map>) data;
-            for (Map map: jsonStrings) {
+            jsonMaps = (ArrayList<Map>) data;
+            for (Map map: jsonMaps) {
                 ShareInfo shareInfo = mMapper.convertValue(map, ShareInfo.class);
                 sharedBooks.add(shareInfo);
                 sharedBookIds.add(shareInfo.getBookId());
             }
         }
 
-        // Check if array is null and proceed
-        if (jsonStrings == null || jsonStrings.size() == 0) {
+        // Check if arrays are null and proceed
+        if (sharedBooks == null || sharedBooks.size() == 0 || sharedBookIds == null || sharedBookIds.size() == 0) {
             return;
         }
 
-        // Proceed and load the books
+        // 1. Proceed and load the books
         fetchBooksWithIds(sharedBookIds);
+
+        // 2. Proceed and save these shared infos in Room
+        mDataRepo.insertSharedInfo(sharedBooks);
     }
 
     /**

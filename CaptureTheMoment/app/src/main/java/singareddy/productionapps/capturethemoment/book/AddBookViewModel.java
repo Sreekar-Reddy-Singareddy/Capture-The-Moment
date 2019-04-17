@@ -24,7 +24,7 @@ public class AddBookViewModel extends AndroidViewModel implements AddBookListene
 
     public AddBookViewModel (Application application) {
         super(application);
-        mDataRepo = DataRepository.getInstance(null);
+        mDataRepo = DataRepository.getInstance(application);
         mFirebaseAuth = FirebaseAuth.getInstance();
         handleAuthState();
     }
@@ -79,6 +79,14 @@ public class AddBookViewModel extends AndroidViewModel implements AddBookListene
 
     }
 
+    /**
+     * Cleans up all the unused variables created for
+     * adding a new book.
+     */
+    public void cleanUpVariables() {
+        mDataRepo.cleanUpVariables();
+    }
+
     /** STATUS - WORKING
      * This method only validates if the book name is valid.
      * It does NOT validate for duplicate book names. That is
@@ -90,7 +98,7 @@ public class AddBookViewModel extends AndroidViewModel implements AddBookListene
         if (bookName == null || bookName.equals("")) {
             return BOOK_NAME_EMPTY;
         }
-        else if (!bookName.matches("[a-zA-Z0-9_]+")) {
+        else if (!bookName.matches("[a-zA-Z0-9_ ]+")) {
             return BOOK_NAME_INVALID;
         }
         else {
@@ -117,5 +125,10 @@ public class AddBookViewModel extends AndroidViewModel implements AddBookListene
     public void onThisSecOwnerValidated() {
         Log.i(TAG, "onThisSecOwnerValidated: *");
         mAddBookListener.onThisSecOwnerValidated();
+    }
+
+    @Override
+    public void onNewBookCreated() {
+        mAddBookListener.onNewBookCreated();
     }
 }

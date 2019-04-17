@@ -4,4 +4,7 @@ public interface AddBookListener {
     public void onBookNameInvalid (String code);
     public void onAllSecOwnersValidated ();
     public void onThisSecOwnerValidated ();
+    default public void onNewBookCreated () {
+
+    }
 }
