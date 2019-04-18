@@ -1,0 +1,31 @@
+{
+  "rules": {
+    "users": {
+      "$user_id": {
+        ".read": "$user_id === auth.uid",
+        "profile": {
+          ".write": "$user_id === auth.uid"
+        },
+        "shared_books": {
+          ".write": true
+        }
+      }
+    },
+      
+    "books": {
+      "$book_id": {
+        ".read": "data.child('owner').val() === auth.uid || data.child('sec_owners/'+auth.uid).exists()",
+        ".write": "data.child('owner').val() === auth.uid || data.child('sec_owners/'+auth.uid).val() === true"
+      }
+    },
+    
+    "share_requests": {
+      "$user_id": {
+        ".read": "$user_id === auth.uid",
+        "$request_id": {
+          ".write": "newData.child('reciever').exists() && newData.child('reciever').val() === $user_id"
+        }
+      }
+    }
+  }
+}

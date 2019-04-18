@@ -34,6 +34,7 @@ public class AppUtilities {
         public static final String BOOK_NAME_VALID = "BOOK_NAME_VALID";
         public static final String BOOK_EXISTS = "BOOK_EXISTS";
         public static final String BOOK_DB_ERROR = "BOOK_DB_ERROR";
+        public static final String BOOK_NAME_SAME_AS_OLD_NAME = "BOOK_NAME_SAME_AS_OLD_NAME";
     }
 
     public static class User {

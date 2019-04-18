@@ -1,12 +1,8 @@
 package singareddy.productionapps.capturethemoment;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MediatorLiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Observer;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -15,7 +11,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
-import singareddy.productionapps.capturethemoment.book.AddBookListener;
+import singareddy.productionapps.capturethemoment.book.BookListener;
 import singareddy.productionapps.capturethemoment.book.AddBookWebService;
 import singareddy.productionapps.capturethemoment.book.BookDataListener;
 import singareddy.productionapps.capturethemoment.models.Book;
@@ -32,7 +28,7 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
  * Its job is only to deal with the data communication.
  * The logical processing of data is not done here.
  */
-public class DataRepository implements AddBookListener {
+public class DataRepository implements BookListener {
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
 
@@ -40,7 +36,7 @@ public class DataRepository implements AddBookListener {
     private FirebaseDatabase mFirebaseDB;
     private FirebaseUser mCurrentUser;
     private AddBookWebService mAddBookWebService;
-    private AddBookListener mAddBookListener;
+    private BookListener mBookListener;
     private BookDataListener mBookDataListener;
     private LocalDB mLocalDB;
     private Context mContext;
@@ -97,13 +93,13 @@ public class DataRepository implements AddBookListener {
             }
 
             @Override
-            protected void onPostExecute(String s) {
-                super.onPostExecute(s);
-                if (s.equals(BOOK_EXISTS)) {
+            protected void onPostExecute(String validationCode) {
+                super.onPostExecute(validationCode);
+                if (validationCode.equals(BOOK_EXISTS)) {
                     // Tell the UI that book with this name already exists
-                    mAddBookListener.onBookNameInvalid(s);
+                    mBookListener.onBookNameInvalid(validationCode);
                 }
-                else if (s.equals(BOOK_NAME_VALID)) {
+                else if (validationCode.equals(BOOK_NAME_VALID)) {
                     // Proceed further and validate secondary owners
                     if (mAddBookWebService == null) { mAddBookWebService = new AddBookWebService(mContext); }
                     mAddBookWebService.setAddBookListener(DataRepository.this);
@@ -227,8 +223,8 @@ public class DataRepository implements AddBookListener {
     }
 
     // MARK: Setter methods and other listener methods
-    public void setAddBookListener(AddBookListener mAddBookListener) {
-        this.mAddBookListener = mAddBookListener;
+    public void setAddBookListener(BookListener mBookListener) {
+        this.mBookListener = mBookListener;
     }
 
     public void setmBookDataListener(BookDataListener mBookDataListener) {
@@ -237,19 +233,19 @@ public class DataRepository implements AddBookListener {
 
     @Override
     public void onBookNameInvalid(String code) {
-        mAddBookListener.onBookNameInvalid(code);
+        mBookListener.onBookNameInvalid(code);
     }
 
     @Override
     public void onAllSecOwnersValidated() {
         Log.i(TAG, "onAllSecOwnersValidated: *");
-        mAddBookListener.onAllSecOwnersValidated();
+        mBookListener.onAllSecOwnersValidated();
     }
 
     @Override
     public void onThisSecOwnerValidated() {
         Log.i(TAG, "onThisSecOwnerValidated: *");
-        mAddBookListener.onThisSecOwnerValidated();
+        mBookListener.onThisSecOwnerValidated();
     }
 
     // MARK: Async Tasks
@@ -266,7 +262,7 @@ public class DataRepository implements AddBookListener {
             // If the code is valid, then clean up variables
             if (dbCode > 0 && mAddBookWebService != null) {
                 mAddBookWebService.cleanUpVariables();
-                mAddBookListener.onNewBookCreated();
+                mBookListener.onNewBookCreated();
             }
         }
     }
@@ -288,11 +284,11 @@ public class DataRepository implements AddBookListener {
         @Override
         protected void onPostExecute(Integer integer) {
             super.onPostExecute(integer);
-            if (integer == 1 && mAddBookListener != null) {
-                mAddBookListener.onNewBookCreated();
+            if (integer == 1 && mBookListener != null) {
+                mBookListener.onNewBookCreated();
             }
-            else if (integer == -1 && mAddBookListener != null) {
-                mAddBookListener.onBookNameInvalid(BOOK_DB_ERROR);
+            else if (integer == -1 && mBookListener != null) {
+                mBookListener.onBookNameInvalid(BOOK_DB_ERROR);
             }
         }
     }

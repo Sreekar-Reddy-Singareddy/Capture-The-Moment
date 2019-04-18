@@ -9,6 +9,8 @@ import android.support.annotation.NonNull;
 
 import java.util.List;
 
+import singareddy.productionapps.capturethemoment.AppUtilities;
+
 @Entity
 public class Book {
     @NonNull @PrimaryKey(autoGenerate = false)
@@ -98,5 +100,9 @@ public class Book {
     public String toString() {
         String s = "ID: "+bookId+" || Name: "+name+" || Owner: "+ owner+" || Sec owners: "+secOwners;
         return s;
+    }
+
+    public boolean doIOwnTheBook() {
+        return bookId.equals(AppUtilities.User.CURRENT_USER.getUid()+"__"+this.name.toLowerCase().trim());
     }
 }

@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-import singareddy.productionapps.capturethemoment.book.AddBookViewModel;
+import singareddy.productionapps.capturethemoment.book.BookCRUDViewModel;
 import singareddy.productionapps.capturethemoment.user.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 import singareddy.productionapps.capturethemoment.models.User;
@@ -25,7 +25,7 @@ public class ExperimentActivity extends AppCompatActivity implements Authenticat
     Button performAction;
     EditText input;
     AuthenticationViewModel authenticationViewModel;
-    AddBookViewModel addBookViewModel;
+    BookCRUDViewModel bookCRUDViewModel;
 
     // Firebase objects
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -104,7 +104,7 @@ public class ExperimentActivity extends AppCompatActivity implements Authenticat
         Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
         // User logged in
         // Meaning, the book data has to be loaded
-        addBookViewModel = ViewModelProviders.of(this).get(AddBookViewModel.class);
+        bookCRUDViewModel = ViewModelProviders.of(this).get(BookCRUDViewModel.class);
     }
 
     @Override

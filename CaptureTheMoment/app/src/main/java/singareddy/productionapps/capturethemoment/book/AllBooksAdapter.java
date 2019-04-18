@@ -1,6 +1,7 @@
 package singareddy.productionapps.capturethemoment.book;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -23,7 +24,7 @@ import singareddy.productionapps.capturethemoment.models.Book;
 public class AllBooksAdapter extends RecyclerView.Adapter<AllBooksAdapter.AllBooksViewHolder> {
     private static String TAG = "AllBooksAdapter";
 
-    public class AllBooksViewHolder extends RecyclerView.ViewHolder {
+    public class AllBooksViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView lastOpened;
         private TextView bookName;
         private ImageView shareIcon;
@@ -33,6 +34,18 @@ public class AllBooksAdapter extends RecyclerView.Adapter<AllBooksAdapter.AllBoo
             lastOpened = view.findViewById(R.id.book_item_tv_date);
             bookName = view.findViewById(R.id.book_item_tv_bookname);
             shareIcon = view.findViewById(R.id.book_item_iv_share);
+            view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Log.i(TAG, "onClick: Book Selected: "+getAdapterPosition());
+            // When a book is selected, take the user to next activity
+            // that shows more information about the book.
+            Intent insideBookIntent = new Intent(context, InsideBookActivity.class);
+            insideBookIntent.putExtra("OwnBook", bookData.get(getAdapterPosition()).doIOwnTheBook());
+            insideBookIntent.putExtra("bookId", bookData.get(getAdapterPosition()).getBookId());
+            context.startActivity(insideBookIntent);
         }
     }
 

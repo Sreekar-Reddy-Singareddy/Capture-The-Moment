@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.google.android.gms.dynamic.IFragmentWrapper;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,7 +31,7 @@ public class AddBookWebService {
     private FirebaseDatabase mfirebaseDB;
     private List<ShareInfo> validSecOwnersArray = new ArrayList<>();
     private Integer mOwnersValidated;
-    private AddBookListener mAddBookListener;
+    private BookListener mBookListener;
     private Boolean mIsBookNameValid = false;
     private Boolean mAreSecOwnersValid = false;
     private DataRepository mDataRepo;
@@ -50,6 +51,10 @@ public class AddBookWebService {
         // Get reference of the users node
         DatabaseReference targetDataNode = mfirebaseDB.getReference().child(AppUtilities.Firebase.ALL_REGISTERED_USERS_NODE);
         mOwnersValidated = 0;
+
+        if (secOwners.size() == 0) {
+            saveNewBook(bookName, validSecOwnersArray);
+        }
 
         // Run a loop
         for (final SecondaryOwner secOwner : secOwners) {
@@ -88,13 +93,13 @@ public class AddBookWebService {
                         // User is not valid
                         secOwner.setValidated(-1);
                     }
-                    mAddBookListener.onThisSecOwnerValidated();
+                    mBookListener.onThisSecOwnerValidated();
 
                     // UI must be told once all items have been checked.
                     // This is done ONLY once for every click on the UI button.
                     // That button is enabled again ONLY after this notification is sent to UI.
                     if (mOwnersValidated == secOwners.size()) {
-                        mAddBookListener.onAllSecOwnersValidated();
+                        mBookListener.onAllSecOwnersValidated();
                         mOwnersValidated = 0;
                     }
                     
@@ -102,7 +107,6 @@ public class AddBookWebService {
                     Log.i(TAG, "onDataChange: Original Array : "+secOwners.size());
                     Log.i(TAG, "onDataChange: Valid Owner Arr: "+validSecOwnersArray.size());
                     if (secOwners.size() == validSecOwnersArray.size()) {
-                        // TODO: All owners are valid. So proceed and create new book
                         Log.i(TAG, "onDataChange: ALL OWNERS VALID");
                         saveNewBook(bookName, validSecOwnersArray);
                     }
@@ -115,7 +119,7 @@ public class AddBookWebService {
                     // So, update the count
                     mOwnersValidated++;
                     secOwner.setValidated(-1);
-                    mAddBookListener.onThisSecOwnerValidated();
+                    mBookListener.onThisSecOwnerValidated();
                 }
             });
         }
@@ -140,7 +144,7 @@ public class AddBookWebService {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.getValue() != null) {
                     // Book already exists
-                    mAddBookListener.onBookNameInvalid(AppUtilities.Book.BOOK_EXISTS);
+                    mBookListener.onBookNameInvalid(AppUtilities.Book.BOOK_EXISTS);
                     mIsBookNameValid = false;
                 }
                 else {
@@ -178,7 +182,7 @@ public class AddBookWebService {
      */
     public void saveNewBook(String bookName, List<ShareInfo> sharedInfos) {
         // This works only if both book name and sec owners are valid
-        String bookId = AppUtilities.User.CURRENT_USER.getUid() + "__" + bookName.toLowerCase().trim();
+        String bookId = getBookIdFor(bookName);
         Book newBook = new Book();
         newBook.setBookId(bookId);
         newBook.setName(bookName.trim());
@@ -199,12 +203,12 @@ public class AddBookWebService {
         validSecOwnersArray = null;
         mOwnersValidated = 0;
         mDataRepo = null;
-        mAddBookListener = null;
+        mBookListener = null;
     }
 
     // MARK: Setters and listeners
-    public void setAddBookListener(AddBookListener mAddBookListener) {
-        this.mAddBookListener = mAddBookListener;
+    public void setAddBookListener(BookListener mBookListener) {
+        this.mBookListener = mBookListener;
     }
 
     public void setmIsBookNameValid(Boolean mIsBookNameValid) {

@@ -20,10 +20,10 @@ import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.Book.*;
 
-public class AddBookActivity extends AppCompatActivity implements AddBookListener{
+public class AddBookActivity extends AppCompatActivity implements BookListener {
     private static String TAG = "AddBookActivity";
 
-    AddBookViewModel addBookViewModel;
+    BookCRUDViewModel bookCRUDViewModel;
     Integer mNewBookCreationFlag = 0;
 
     EditText bookName;
@@ -37,17 +37,26 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_book);
+        // Determine who called this activity
+        // 1. Add book button
+        // 2. Edit book button
+        String myPurpose = whatIsMyPurpose();
+        Log.i(TAG, "onCreate: My purpose is to: "+myPurpose);
+
         initialiseViewModel();
         secOwnersData = new ArrayList<>();
         secOwnersData.add(new SecondaryOwner("ushasree@gmail.com", false));
         secOwnersData.add(new SecondaryOwner("gopi@gmail.com", true));
         secOwnersData.add(new SecondaryOwner("sreekesh@gmail.com", false));
 
+        initialiseUI();
+    }
+
+    private void initialiseUI() {
         bookName = findViewById(R.id.add_book_et_name); bookName.setText("Vellore");
         addNewSecOwner = findViewById(R.id.add_book_ib_add_sec_owner);
         secOwnersList = findViewById(R.id.add_book_rv_sec_owners);
         createButton = findViewById(R.id.add_book_bt_create);
-
         adapter = new SecOwnersAdapter(this, secOwnersData);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         secOwnersList.setAdapter(adapter);
@@ -55,8 +64,26 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     }
 
     private void initialiseViewModel() {
-        addBookViewModel = ViewModelProviders.of(this).get(AddBookViewModel.class);
-        addBookViewModel.setAddBookListener(this);
+        bookCRUDViewModel = ViewModelProviders.of(this).get(BookCRUDViewModel.class);
+        bookCRUDViewModel.setAddBookListener(this);
+    }
+
+    /**
+     * Determines the parent of this activity.
+     * @return
+     */
+    private String whatIsMyPurpose() {
+        Bundle extras = getIntent().getExtras();
+        if (extras == null) {
+            // My caller is add book
+            return "ADD_BOOK";
+        }
+        else {
+            // My caller is edit book with bookId
+            String bookId = extras.getString("bookId", "NA");
+            if (!bookId.equals("NA")) return "EDIT_BOOK";
+            else return null;
+        }
     }
 
     public void addNewSecOwner (View view) {
@@ -72,7 +99,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
             Log.i(TAG, "createBook: Book name :"+bookName.getText());
             Log.i(TAG, "createBook: Sec owners: "+secOwnersData.size());
             createButton.setEnabled(false);
-            addBookViewModel.createThisBook(bookName.getText().toString(), secOwnersData);
+            bookCRUDViewModel.createThisBook(bookName.getText().toString(), secOwnersData);
             Log.i(TAG, "createBook: Enabled: "+createButton.isEnabled());
         }
     }
@@ -128,6 +155,6 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
         super.onStop();
         Log.i(TAG, "onStop: Activity stopping...");
         // When the activity is stopping, clean up all the variables everywhere
-        addBookViewModel.cleanUpVariables();
+        bookCRUDViewModel.cleanUpVariables();
     }
 }
