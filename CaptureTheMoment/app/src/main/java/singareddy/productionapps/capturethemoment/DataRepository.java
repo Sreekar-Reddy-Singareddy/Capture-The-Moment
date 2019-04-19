@@ -28,7 +28,7 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
  * Its job is only to deal with the data communication.
  * The logical processing of data is not done here.
  */
-public class DataRepository implements BookListener {
+public class DataRepository implements BookListener, BookListener.Retrieve {
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
 
@@ -37,6 +37,7 @@ public class DataRepository implements BookListener {
     private FirebaseUser mCurrentUser;
     private AddBookWebService mAddBookWebService;
     private BookListener mBookListener;
+    private BookListener.Retrieve mBookRetrieveListener;
     private BookDataListener mBookDataListener;
     private LocalDB mLocalDB;
     private Context mContext;
@@ -80,6 +81,14 @@ public class DataRepository implements BookListener {
         }
         mAddBookWebService.createThisBook(bookName, secOwners);
         mAddBookWebService.setAddBookListener(this);
+    }
+
+    public void retrieveAllBooks (){
+        if (mAddBookWebService == null) {
+            mAddBookWebService = new AddBookWebService(mContext);
+        }
+        mAddBookWebService.setmBookRetrieveListener(this);
+        mAddBookWebService.retrievedAllBooksFromFirebase();
     }
 
     /**
@@ -203,6 +212,10 @@ public class DataRepository implements BookListener {
         this.mBookDataListener = mBookDataListener;
     }
 
+    public void setmBookRetrieveListener(Retrieve mBookRetrieveListener) {
+        this.mBookRetrieveListener = mBookRetrieveListener;
+    }
+
     @Override
     public void onBookNameInvalid(String code) {
         mBookListener.onBookNameInvalid(code);
@@ -223,6 +236,11 @@ public class DataRepository implements BookListener {
     @Override
     public void onNewBookCreated() {
         mBookListener.onNewBookCreated();
+    }
+
+    @Override
+    public void onBookDownloaded(Book downloadedBook) {
+        mBookRetrieveListener.onBookDownloaded(downloadedBook);
     }
 
     // MARK: Async Tasks

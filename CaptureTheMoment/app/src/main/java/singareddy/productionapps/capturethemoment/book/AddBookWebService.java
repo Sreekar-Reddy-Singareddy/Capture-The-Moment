@@ -7,6 +7,7 @@ import android.util.Log;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +39,10 @@ public class AddBookWebService {
     private DataRepository mDataRepo;
     private String mNewBookName;
     private List<SecondaryOwner> mSecOwnersList;
+
+    // Members used in book retrieval
+    private List<Book> mAllBooks;
+    private BookListener.Retrieve mBookRetrieveListener;
 
     public AddBookWebService(Context context) {
         mfirebaseDB = FirebaseDatabase.getInstance();
@@ -189,7 +194,7 @@ public class AddBookWebService {
      * and adds them as follows.
      * Save the data in Room DB.
      */
-    public void saveNewBookInFirebase() {
+    private void saveNewBookInFirebase() {
         // This works only if both book name and sec owners are valid
         if (!mIsBookNameValid || !mAreSecOwnersValid) {
             return;
@@ -296,6 +301,103 @@ public class AddBookWebService {
     }
 
     /**
+     * This method retrieved all the book from firebase and
+     * displays them in UI
+     */
+    public void retrievedAllBooksFromFirebase () {
+        Log.i(TAG, "retrievedAllBooksFromFirebase: *");
+        retrieveOwnedBooks();
+        retrievesharedBooks();
+    }
+
+    /**
+     * Retrieved ONLY owned books of the current user
+     * from Firebase
+     */
+    private void retrieveOwnedBooks() {
+        mfirebaseDB.getReference()
+                .child(AppUtilities.Firebase.ALL_USERS_NODE) // users
+                .child(FirebaseAuth.getInstance().getUid()) // owned UID
+                .child("profile") // profile
+                .child("ownedBooks") // ownedBooks
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.getValue() != null) {
+                            // Owned books available
+                            List<String> ownedBookIds = (ArrayList<String>) dataSnapshot.getValue();
+                            ownedBookIds.forEach((bookId) -> {
+                                downloadBookWithId(bookId);
+                            });
+                        }
+                        else {
+                            // Owned books not available
+                            // TODO: Tell UI about no data
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+    }
+
+    private void retrievesharedBooks() {
+        mfirebaseDB.getReference()
+                .child(AppUtilities.Firebase.ALL_USERS_NODE) // users
+                .child(FirebaseAuth.getInstance().getUid()) // owned UID
+                .child("sharedBooks") // sharedBooks
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.getValue() != null) {
+                            // Shared books available
+                            HashMap<String, Boolean> sharedBooksMap =
+                                    (HashMap<String, Boolean>) dataSnapshot.getValue();
+                            sharedBooksMap.forEach((bookId, access) -> {
+                                downloadBookWithId(bookId);
+                            });
+                        }
+                        else {
+                            // Shared books not available
+                            // TODO: Tell UI about no data
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+    }
+
+    /**
+     * Fetches a book from firebase given its book id
+     * @param bookId
+     */
+    private void downloadBookWithId(String bookId) {
+        // Fetch the book and add it to shared books list
+        mfirebaseDB.getReference()
+                .child(AppUtilities.Firebase.ALL_BOOKS_NODE) // books
+                .child(bookId) // bookId
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.getValue() != null) {
+                            Book fetchedBook = dataSnapshot.getValue(Book.class);
+                            mBookRetrieveListener.onBookDownloaded(fetchedBook);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.i(TAG, "onCancelled: "+databaseError.getMessage());
+                    }
+                });
+    }
+
+    /**
      * Clean up all the member variables and reset
      * their default values.
      */
@@ -315,5 +417,9 @@ public class AddBookWebService {
 
     public void setmIsBookNameValid(Boolean mIsBookNameValid) {
         this.mIsBookNameValid = mIsBookNameValid;
+    }
+
+    public void setmBookRetrieveListener(BookListener.Retrieve mBookRetrieveListener) {
+        this.mBookRetrieveListener = mBookRetrieveListener;
     }
 }

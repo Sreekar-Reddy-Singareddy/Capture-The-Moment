@@ -52,8 +52,13 @@ public class AllBooksAdapter extends RecyclerView.Adapter<AllBooksAdapter.AllBoo
     private LayoutInflater inflater;
 
     public AllBooksAdapter (Context context) {
-        this.context = context;
         this.inflater = LayoutInflater.from(context);
+        this.context = context;
+    }
+
+    public AllBooksAdapter (Context context, List<Book> books) {
+        this(context);
+        bookData = books;
     }
 
     @Override
@@ -86,7 +91,7 @@ public class AllBooksAdapter extends RecyclerView.Adapter<AllBooksAdapter.AllBoo
             holder.lastOpened.setText("NA");
         }
         holder.bookName.setText(book.getName());
-        if (AppUtilities.User.CURRENT_USER.getUid().equals(book.getOwner())) {
+        if (book.doIOwnTheBook()) {
             // This is an owned book
             holder.shareIcon.setVisibility(View.INVISIBLE);
         }

@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dabca18c-fae9-4e4c-9ee5-fdf01046dba7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../App Documentation.numbers" beforeDir="false" afterPath="$PROJECT_DIR$/../App Documentation.numbers" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Capture The Moment.pages" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
@@ -21,63 +20,87 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AddBookActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AddBookActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AddBookWebService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AddBookWebService$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AddBookWebService$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AddBookWebService$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AddBookWebService.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AddBookWebService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_dep/debug/package_dependencies/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_dep/debug/package_dependencies/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_0/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_0/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AllBooksFragment$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AllBooksFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/AllBooksFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookListener$UpdateBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookListener$UpdateBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_1/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_1/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_3/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_3/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_4/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_4/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_5/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_5/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_6/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_6/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_7/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_7/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_9/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_9/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/file-input-save-data.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageInstantRunResourcesDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageInstantRunResourcesDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageInstantRunResourcesDebug/tmp/debug/zip-cache/+_5iy_WR6ZtsTYpLGd2y8_SOAl4=" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageInstantRunResourcesDebug/tmp/debug/zip-cache/+_5iy_WR6ZtsTYpLGd2y8_SOAl4=" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/processInstantRunDebugResourcesApk/package_resources-debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/processInstantRunDebugResourcesApk/package_resources-debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AddBookActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AddBookActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AddBookWebService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AddBookWebService$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AddBookWebService$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AddBookWebService$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AddBookWebService.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AddBookWebService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/resources/instant-run/debug/resources-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/resources/instant-run/debug/resources-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AllBooksFragment$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AllBooksFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/AllBooksFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookListener$UpdateBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookListener$UpdateBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_1.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_1.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_3.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_3.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_5.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_5.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AddBookActivity.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AddBookActivity.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AddBookWebService$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AddBookWebService$1.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AddBookWebService$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AddBookWebService$2.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AddBookWebService.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AddBookWebService.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AllBooksFragment$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AllBooksFragment.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/AllBooksFragment.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/BookListener$UpdateBook.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/BookListener$UpdateBook.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/BookListener.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/51/singareddy/productionapps/capturethemoment/book/BookListener.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$1.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$1.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$2.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$2.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$3.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$3.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$4.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$4.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/53/singareddy/productionapps/capturethemoment/DataRepository.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/1/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/1/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AddBookActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AddBookActivity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AddBookWebService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AddBookWebService$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AddBookWebService$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AddBookWebService$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AddBookWebService.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AddBookWebService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AllBooksFragment$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AllBooksFragment.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/AllBooksFragment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookListener$UpdateBook.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookListener$UpdateBook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookWebService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookWebService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +132,7 @@
         <counts>
           <entry key="class" value="2" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="169" />
+          <entry key="java" value="183" />
           <entry key="xml" value="32" />
         </counts>
       </usages-collector>
@@ -117,7 +140,7 @@
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="169" />
+          <entry key="JAVA" value="183" />
           <entry key="XML" value="32" />
         </counts>
       </usages-collector>
@@ -125,7 +148,7 @@
         <counts>
           <entry key="dummy" value="37" />
           <entry key="gradle" value="30" />
-          <entry key="java" value="37352" />
+          <entry key="java" value="39752" />
           <entry key="txt" value="805" />
           <entry key="xml" value="487" />
         </counts>
@@ -133,7 +156,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="30" />
-          <entry key="JAVA" value="37352" />
+          <entry key="JAVA" value="39752" />
           <entry key="PLAIN_TEXT" value="842" />
           <entry key="XML" value="487" />
         </counts>
@@ -143,23 +166,108 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="143" column="35" selection-start-line="143" selection-start-column="35" selection-end-line="143" selection-end-column="35" />
+            <state relative-caret-position="341">
+              <caret line="93" column="25" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
               <folding>
-                <element signature="method#onCreate#0;class#AddBookActivity#0" />
-                <element signature="e#1291#1328#0" />
-                <element signature="method#initialiseUI#0;class#AddBookActivity#0" />
-                <element signature="method#initialiseViewModel#0;class#AddBookActivity#0" />
-                <element signature="docComment;method#whatIsMyPurpose#0;class#AddBookActivity#0" />
-                <element signature="method#whatIsMyPurpose#0;class#AddBookActivity#0" />
-                <element signature="method#addNewSecOwner#0;class#AddBookActivity#0" />
-                <element signature="method#createBook#0;class#AddBookActivity#0" />
-                <element signature="method#onBookNameInvalid#0;class#AddBookActivity#0" />
-                <element signature="method#onThisSecOwnerValidated#0;class#AddBookActivity#0" />
-                <element signature="method#onAllSecOwnersValidated#0;class#AddBookActivity#0" />
-                <element signature="method#onStop#0;class#AddBookActivity#0" />
+                <element signature="class#AllBooksViewHolder#0;class#AllBooksAdapter#0" />
+                <element signature="method#AllBooksViewHolder#0;class#AllBooksViewHolder#0;class#AllBooksAdapter#0" />
+                <element signature="method#onClick#0;class#AllBooksViewHolder#0;class#AllBooksAdapter#0" />
+                <element signature="e#1492#1550#0" />
+                <element signature="method#AllBooksAdapter#0;class#AllBooksAdapter#0" />
+                <element signature="method#AllBooksAdapter#1;class#AllBooksAdapter#0" />
+                <element signature="method#getItemCount#0;class#AllBooksAdapter#0" />
+                <element signature="e#2418#2426#0" />
+                <element signature="method#onCreateViewHolder#0;class#AllBooksAdapter#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="534">
+              <caret line="104" column="74" selection-start-line="104" selection-start-column="74" selection-end-line="104" selection-end-column="74" />
+              <folding>
+                <element signature="method#Book#0;class#Book#0" />
+                <element signature="method#Book#1;class#Book#0" />
+                <element signature="method#Book#2;class#Book#0" />
+                <element signature="method#toString#0;class#Book#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+              <folding>
+                <element signature="method#AllBooksFragment#0;class#AllBooksFragment#0" />
+                <element signature="e#1153#1162#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/AuthenticationViewModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="67" column="79" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
+              <folding>
+                <element signature="e#3222#3253#0" />
+                <element signature="docComment;method#registerUserWithEmailCredentials#0;class#AuthenticationViewModel#0" />
+                <element signature="method#registerUserWithEmailCredentials#0;class#AuthenticationViewModel#0" />
+                <element signature="docComment;method#loginUserWithEmailCredentials#0;class#AuthenticationViewModel#0" />
+                <element signature="method#loginUserWithEmailCredentials#0;class#AuthenticationViewModel#0" />
+                <element signature="docComment;method#authorizePhoneCredentials#0;class#AuthenticationViewModel#0" />
+                <element signature="method#authorizePhoneCredentials#0;class#AuthenticationViewModel#0" />
+                <element signature="class#8501:9523" />
+                <element signature="method#onVerificationCompleted#0;class#8501:9523" />
+                <element signature="method#onCodeAutoRetrievalTimeOut#0;class#8501:9523" />
+                <element signature="method#onCodeSent#0;class#8501:9523" />
+                <element signature="method#onVerificationFailed#0;class#8501:9523" />
+                <element signature="docComment;method#authorizePhoneCredentials#1;class#AuthenticationViewModel#0" />
+                <element signature="method#authorizePhoneCredentials#1;class#AuthenticationViewModel#0" />
+                <element signature="docComment;method#checkIfUserLoggedInFirstTime#0;class#AuthenticationViewModel#0" />
+                <element signature="method#checkIfUserLoggedInFirstTime#0;class#AuthenticationViewModel#0" />
+                <element signature="class#11696:12934" />
+                <element signature="method#onDataChange#0;class#11696:12934" />
+                <element signature="e#11832#11882#0" />
+                <element signature="method#onCancelled#0;class#11696:12934" />
+                <element signature="docComment;method#updateUserProfile#0;class#AuthenticationViewModel#0" />
+                <element signature="method#updateUserProfile#0;class#AuthenticationViewModel#0" />
+                <element signature="docComment;method#updateUserProfile#1;class#AuthenticationViewModel#0" />
+                <element signature="method#updateUserProfile#1;class#AuthenticationViewModel#0" />
+                <element signature="class#15905:16838" />
+                <element signature="method#onDataChange#0;class#15905:16838" />
+                <element signature="method#onCancelled#0;class#15905:16838" />
+                <element signature="docComment;method#getCurrentUserProfile#0;class#AuthenticationViewModel#0" />
+                <element signature="method#getCurrentUserProfile#0;class#AuthenticationViewModel#0" />
+                <element signature="class#17447:19189" />
+                <element signature="method#onDataChange#0;class#17447:19189" />
+                <element signature="method#onCancelled#0;class#17447:19189" />
+                <element signature="docComment;method#saveUserInCache#0;class#AuthenticationViewModel#0" />
+                <element signature="method#saveUserInCache#0;class#AuthenticationViewModel#0" />
+                <element signature="docComment;method#logout#0;class#AuthenticationViewModel#0" />
+                <element signature="method#logout#0;class#AuthenticationViewModel#0" />
+                <element signature="docComment;method#eraseUserDataFromCache#0;class#AuthenticationViewModel#0" />
+                <element signature="method#eraseUserDataFromCache#0;class#AuthenticationViewModel#0" />
+                <element signature="docComment;method#loadUserProfile#0;class#AuthenticationViewModel#0" />
+                <element signature="method#loadUserProfile#0;class#AuthenticationViewModel#0" />
+                <element signature="docComment;method#addAuthStateListener#0;class#AuthenticationViewModel#0" />
+                <element signature="method#addAuthStateListener#0;class#AuthenticationViewModel#0" />
+                <element signature="method#setEmailLoginListener#0;class#AuthenticationViewModel#0" />
+                <element signature="method#setEmailSignupListener#0;class#AuthenticationViewModel#0" />
+                <element signature="method#setMobileLoginListener#0;class#AuthenticationViewModel#0" />
+                <element signature="method#setLogoutListener#0;class#AuthenticationViewModel#0" />
+                <element signature="method#setInitialProfileListener#0;class#AuthenticationViewModel#0" />
+                <element signature="method#setProfileListener#0;class#AuthenticationViewModel#0" />
+                <element signature="method#convertE164toNormalMobile#0;class#AuthenticationViewModel#0" />
               </folding>
             </state>
           </provider>
@@ -168,8 +276,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-20">
-              <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+            <state relative-caret-position="227">
+              <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
               <folding>
                 <element signature="method#BookCRUDViewModel#0;class#BookCRUDViewModel#0" />
                 <element signature="docComment;method#handleAuthState#0;class#BookCRUDViewModel#0" />
@@ -179,6 +287,7 @@
                 <element signature="e#1930#1951#0" />
                 <element signature="e#2156#2173#0" />
                 <element signature="docComment;method#createThisBook#0;class#BookCRUDViewModel#0" />
+                <element signature="method#createThisBook#0;class#BookCRUDViewModel#0" />
                 <element signature="e#2915#2966#0" />
                 <element signature="docComment;method#updateThisBook#0;class#BookCRUDViewModel#0" />
                 <element signature="method#updateThisBook#0;class#BookCRUDViewModel#0" />
@@ -186,10 +295,12 @@
                 <element signature="docComment;method#isBookNameValid#0;class#BookCRUDViewModel#0" />
                 <element signature="method#isBookNameValid#0;class#BookCRUDViewModel#0" />
                 <element signature="method#setAddBookListener#0;class#BookCRUDViewModel#0" />
+                <element signature="method#setmBookRetrieveListener#0;class#BookCRUDViewModel#0" />
                 <element signature="method#onAllSecOwnersValidated#0;class#BookCRUDViewModel#0" />
                 <element signature="method#onThisSecOwnerValidated#0;class#BookCRUDViewModel#0" />
                 <element signature="method#onBookUpdatedWithNewId#0;class#BookCRUDViewModel#0" />
                 <element signature="e#5831#5898#0" />
+                <element signature="method#onBookDownloaded#0;class#BookCRUDViewModel#0" />
               </folding>
             </state>
           </provider>
@@ -198,8 +309,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="224" column="41" selection-start-line="224" selection-start-column="41" selection-end-line="224" selection-end-column="41" />
+            <state relative-caret-position="529">
+              <caret line="85" column="35" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
               <folding>
                 <element signature="docComment;class#DataRepository#0" />
                 <element signature="method#DataRepository#0;class#DataRepository#0" />
@@ -207,34 +318,37 @@
                 <element signature="method#getInstance#0;class#DataRepository#0" />
                 <element signature="docComment;method#createThisBook#0;class#DataRepository#0" />
                 <element signature="method#createThisBook#0;class#DataRepository#0" />
+                <element signature="method#retrieveAllBooks#0;class#DataRepository#0" />
                 <element signature="docComment;method#cleanUpVariables#0;class#DataRepository#0" />
                 <element signature="method#cleanUpVariables#0;class#DataRepository#0" />
                 <element signature="docComment;method#insertBookInRoom#0;class#DataRepository#0" />
                 <element signature="method#insertBookInRoom#0;class#DataRepository#0" />
                 <element signature="docComment;method#insertAllSharedInfosOfOwnedBook#0;class#DataRepository#0" />
                 <element signature="method#insertAllSharedInfosOfOwnedBook#0;class#DataRepository#0" />
-                <element signature="e#3879#3928#0" />
+                <element signature="e#4064#4113#0" />
                 <element signature="docComment;method#insertSharedInfo#0;class#DataRepository#0" />
                 <element signature="method#insertSharedInfo#0;class#DataRepository#0" />
                 <element signature="docComment;method#getAllOwnedBooksOfCurrentUser#0;class#DataRepository#0" />
                 <element signature="method#getAllOwnedBooksOfCurrentUser#0;class#DataRepository#0" />
-                <element signature="class#4574:5085" />
-                <element signature="method#run#0;class#4574:5085" />
+                <element signature="class#4759:5270" />
+                <element signature="method#run#0;class#4759:5270" />
                 <element signature="docComment;method#getAllSharedInfos#0;class#DataRepository#0" />
                 <element signature="method#getAllSharedInfos#0;class#DataRepository#0" />
-                <element signature="class#5273:5677" />
-                <element signature="method#run#0;class#5273:5677" />
+                <element signature="class#5458:5862" />
+                <element signature="method#run#0;class#5458:5862" />
                 <element signature="docComment;method#eraseRoom#0;class#DataRepository#0" />
                 <element signature="method#eraseRoom#0;class#DataRepository#0" />
-                <element signature="class#5919:6371" />
-                <element signature="method#run#0;class#5919:6371" />
+                <element signature="class#6104:6556" />
+                <element signature="method#run#0;class#6104:6556" />
                 <element signature="method#getAllBooks#0;class#DataRepository#0" />
-                <element signature="class#6537:6788" />
-                <element signature="method#run#0;class#6537:6788" />
+                <element signature="class#6722:6973" />
+                <element signature="method#run#0;class#6722:6973" />
                 <element signature="method#setAddBookListener#0;class#DataRepository#0" />
                 <element signature="method#setmBookDataListener#0;class#DataRepository#0" />
+                <element signature="method#setmBookRetrieveListener#0;class#DataRepository#0" />
                 <element signature="method#onAllSecOwnersValidated#0;class#DataRepository#0" />
                 <element signature="method#onThisSecOwnerValidated#0;class#DataRepository#0" />
+                <element signature="method#onBookDownloaded#0;class#DataRepository#0" />
                 <element signature="class#InsertBookTask#0;class#DataRepository#0" />
                 <element signature="method#doInBackground#0;class#InsertBookTask#0;class#DataRepository#0" />
                 <element signature="method#onPostExecute#0;class#InsertBookTask#0;class#DataRepository#0" />
@@ -246,53 +360,73 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookWebService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="213" column="48" selection-start-line="213" selection-start-column="48" selection-end-line="213" selection-end-column="48" />
+            <state relative-caret-position="241">
+              <caret line="345" column="40" lean-forward="true" selection-start-line="345" selection-start-column="40" selection-end-line="345" selection-end-column="40" />
               <folding>
                 <element signature="method#AddBookWebService#0;class#AddBookWebService#0" />
                 <element signature="docComment;method#createThisBook#0;class#AddBookWebService#0" />
+                <element signature="method#createThisBook#0;class#AddBookWebService#0" />
                 <element signature="docComment;method#validateSecOwnersInFirebase#0;class#AddBookWebService#0" />
-                <element signature="e#4462#4514#0" />
-                <element signature="method#onCancelled#0;class#3615:5908" />
-                <element signature="e#5621#5684#0" />
+                <element signature="method#validateSecOwnersInFirebase#0;class#AddBookWebService#0" />
+                <element signature="e#3115#3200#0" />
+                <element signature="class#3624:5798" />
+                <element signature="method#onDataChange#0;class#3624:5798" />
+                <element signature="e#4548#4600#0" />
+                <element signature="method#onCancelled#0;class#3624:5798" />
+                <element signature="e#5511#5574#0" />
                 <element signature="docComment;method#validateBookNameInFirebase#0;class#AddBookWebService#0" />
-                <element signature="e#6269#6306#0" />
-                <element signature="method#onCancelled#0;class#5843:7067" />
-                <element signature="docComment;method#saveNewBook#0;class#AddBookWebService#0" />
+                <element signature="method#validateBookNameInFirebase#0;class#AddBookWebService#0" />
+                <element signature="class#6222:8009" />
+                <element signature="method#onDataChange#0;class#6222:8009" />
+                <element signature="e#6449#6491#0" />
+                <element signature="method#onCancelled#0;class#6222:8009" />
+                <element signature="docComment;method#saveNewBookInFirebase#0;class#AddBookWebService#0" />
+                <element signature="method#saveNewBookInFirebase#0;class#AddBookWebService#0" />
+                <element signature="class#9098:9706" />
+                <element signature="method#onComplete#0;class#9098:9706" />
                 <element signature="docComment;method#updateOwnerInFirebase#0;class#AddBookWebService#0" />
                 <element signature="method#updateOwnerInFirebase#0;class#AddBookWebService#0" />
-                <element signature="class#9659:10973" />
-                <element signature="method#onDataChange#0;class#9659:10973" />
-                <element signature="e#9905#9935#0" />
-                <element signature="class#10295:10793" />
-                <element signature="method#onComplete#0;class#10295:10793" />
-                <element signature="method#onCancelled#0;class#9659:10973" />
+                <element signature="class#10282:11699" />
+                <element signature="method#onDataChange#0;class#10282:11699" />
+                <element signature="e#10418#10448#0" />
+                <element signature="class#10949:11519" />
+                <element signature="method#onComplete#0;class#10949:11519" />
+                <element signature="method#onCancelled#0;class#10282:11699" />
                 <element signature="docComment;method#updateSecOwnersInFirebase#0;class#AddBookWebService#0" />
                 <element signature="method#updateSecOwnersInFirebase#0;class#AddBookWebService#0" />
-                <element signature="class#11844:12083" />
-                <element signature="method#onComplete#0;class#11844:12083" />
+                <element signature="class#12506:12918" />
+                <element signature="method#onComplete#0;class#12506:12918" />
                 <element signature="docComment;method#generateRandomBookId#0;class#AddBookWebService#0" />
                 <element signature="method#generateRandomBookId#0;class#AddBookWebService#0" />
+                <element signature="docComment;method#retrievedAllBooksFromFirebase#0;class#AddBookWebService#0" />
+                <element signature="method#retrievedAllBooksFromFirebase#0;class#AddBookWebService#0" />
+                <element signature="docComment;method#retrieveOwnedBooks#0;class#AddBookWebService#0" />
+                <element signature="class#13903:14334" />
+                <element signature="method#onDataChange#0;class#13903:14334" />
+                <element signature="e#14748#14924#0" />
+                <element signature="e#14425#14453#0" />
+                <element signature="method#onCancelled#0;class#13903:14334" />
+                <element signature="class#15045:15383" />
+                <element signature="method#onDataChange#0;class#15045:15400" />
+                <element signature="e#17253#17341#0" />
+                <element signature="e#15635#15664#0" />
+                <element signature="method#onCancelled#0;class#15045:15383" />
+                <element signature="docComment;method#downloadBookWithId#0;class#AddBookWebService#0" />
+                <element signature="method#downloadBookWithId#0;class#AddBookWebService#0" />
+                <element signature="class#18108:18780" />
+                <element signature="method#onDataChange#0;class#18108:18780" />
+                <element signature="method#onCancelled#0;class#18108:18780" />
                 <element signature="docComment;method#cleanUpVariables#0;class#AddBookWebService#0" />
                 <element signature="method#cleanUpVariables#0;class#AddBookWebService#0" />
                 <element signature="method#setAddBookListener#0;class#AddBookWebService#0" />
                 <element signature="method#setmIsBookNameValid#0;class#AddBookWebService#0" />
+                <element signature="method#setmBookRetrieveListener#0;class#AddBookWebService#0" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
     </leaf>
@@ -348,24 +482,24 @@
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookDataListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BooksViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/book_context_menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/InsideBookActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/EditBookActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/AppUtilities.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/ExperimentActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/LocalDB.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookDataWebService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookWebService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookWebService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java" />
       </list>
     </option>
   </component>
@@ -415,7 +549,7 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="capturethemoment" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -536,13 +670,13 @@
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Structure" order="0" sideWeight="0.5006821" side_tool="true" weight="0.22174536" />
+      <window_info id="Structure" order="0" sideWeight="0.5020464" side_tool="true" weight="0.22174536" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Build Variants" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49931788" weight="0.22174536" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49795362" weight="0.22174536" />
       <window_info id="Captures" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.3287858" />
       <window_info anchor="bottom" id="Debug" order="1" />
@@ -562,13 +696,13 @@
       <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info id="Structure" order="0" sideWeight="0.5006821" side_tool="true" weight="0.22174536" />
+      <window_info id="Structure" order="0" sideWeight="0.5020464" side_tool="true" weight="0.22174536" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Build Variants" order="5" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49931788" weight="0.22174536" />
+      <window_info content_ui="combo" id="Project" order="6" sideWeight="0.49795362" visible="true" weight="0.22174536" />
       <window_info id="Captures" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.3287858" />
       <window_info anchor="bottom" id="Debug" order="1" />
@@ -714,13 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/AuthenticationViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="309" column="73" selection-start-line="309" selection-start-column="73" selection-end-line="309" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/SecondaryOwner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -784,29 +911,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BooksViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="method#BooksViewModel#0;class#BooksViewModel#0" />
-            <element signature="method#setmBookDataListener#0;class#BooksViewModel#0" />
-            <element signature="method#onBookLiveDataRecieved#0;class#BooksViewModel#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
           <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -817,19 +928,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_inside_book.xml">
       <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="46" column="96" selection-start-line="46" selection-start-column="96" selection-end-line="46" selection-end-column="96" />
-          <folding>
-            <element signature="method#AllBooksAdapter#0;class#AllBooksAdapter#0" />
-            <element signature="method#getItemCount#0;class#AllBooksAdapter#0" />
-            <element signature="method#onCreateViewHolder#0;class#AllBooksAdapter#0" />
-            <element signature="method#onBindViewHolder#0;class#AllBooksAdapter#0" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_book.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -880,27 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/AppUtilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="60" column="53" selection-start-line="60" selection-start-column="53" selection-end-line="60" selection-end-column="53" />
-          <folding>
-            <element signature="method#Book#0;class#Book#0" />
-            <element signature="method#Book#1;class#Book#0" />
-            <element signature="method#Book#2;class#Book#0" />
-            <element signature="method#toString#0;class#Book#0" />
-            <element signature="method#doIOwnTheBook#0;class#Book#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -976,17 +1053,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookListener.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BooksViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        <state relative-caret-position="228">
+          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding>
+            <element signature="method#BooksViewModel#0;class#BooksViewModel#0" />
+            <element signature="e#853#854#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
+            <element signature="method#setmBookDataListener#0;class#BooksViewModel#0" />
+            <element signature="method#onBookLiveDataRecieved#0;class#BooksViewModel#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="143" column="35" selection-start-line="143" selection-start-column="35" selection-end-line="143" selection-end-column="35" />
+        <state relative-caret-position="855">
+          <caret line="150" column="28" selection-start-line="150" selection-start-column="28" selection-end-line="150" selection-end-column="28" />
           <folding>
             <element signature="method#onCreate#0;class#AddBookActivity#0" />
             <element signature="e#1291#1328#0" />
@@ -999,15 +1083,23 @@
             <element signature="method#onBookNameInvalid#0;class#AddBookActivity#0" />
             <element signature="method#onThisSecOwnerValidated#0;class#AddBookActivity#0" />
             <element signature="method#onAllSecOwnersValidated#0;class#AddBookActivity#0" />
+            <element signature="method#onNewBookCreated#0;class#AddBookActivity#0" />
             <element signature="method#onStop#0;class#AddBookActivity#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="64" selection-start-line="17" selection-start-column="64" selection-end-line="17" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="224" column="41" selection-start-line="224" selection-start-column="41" selection-end-line="224" selection-end-column="41" />
+        <state relative-caret-position="529">
+          <caret line="85" column="35" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
           <folding>
             <element signature="docComment;class#DataRepository#0" />
             <element signature="method#DataRepository#0;class#DataRepository#0" />
@@ -1015,34 +1107,37 @@
             <element signature="method#getInstance#0;class#DataRepository#0" />
             <element signature="docComment;method#createThisBook#0;class#DataRepository#0" />
             <element signature="method#createThisBook#0;class#DataRepository#0" />
+            <element signature="method#retrieveAllBooks#0;class#DataRepository#0" />
             <element signature="docComment;method#cleanUpVariables#0;class#DataRepository#0" />
             <element signature="method#cleanUpVariables#0;class#DataRepository#0" />
             <element signature="docComment;method#insertBookInRoom#0;class#DataRepository#0" />
             <element signature="method#insertBookInRoom#0;class#DataRepository#0" />
             <element signature="docComment;method#insertAllSharedInfosOfOwnedBook#0;class#DataRepository#0" />
             <element signature="method#insertAllSharedInfosOfOwnedBook#0;class#DataRepository#0" />
-            <element signature="e#3879#3928#0" />
+            <element signature="e#4064#4113#0" />
             <element signature="docComment;method#insertSharedInfo#0;class#DataRepository#0" />
             <element signature="method#insertSharedInfo#0;class#DataRepository#0" />
             <element signature="docComment;method#getAllOwnedBooksOfCurrentUser#0;class#DataRepository#0" />
             <element signature="method#getAllOwnedBooksOfCurrentUser#0;class#DataRepository#0" />
-            <element signature="class#4574:5085" />
-            <element signature="method#run#0;class#4574:5085" />
+            <element signature="class#4759:5270" />
+            <element signature="method#run#0;class#4759:5270" />
             <element signature="docComment;method#getAllSharedInfos#0;class#DataRepository#0" />
             <element signature="method#getAllSharedInfos#0;class#DataRepository#0" />
-            <element signature="class#5273:5677" />
-            <element signature="method#run#0;class#5273:5677" />
+            <element signature="class#5458:5862" />
+            <element signature="method#run#0;class#5458:5862" />
             <element signature="docComment;method#eraseRoom#0;class#DataRepository#0" />
             <element signature="method#eraseRoom#0;class#DataRepository#0" />
-            <element signature="class#5919:6371" />
-            <element signature="method#run#0;class#5919:6371" />
+            <element signature="class#6104:6556" />
+            <element signature="method#run#0;class#6104:6556" />
             <element signature="method#getAllBooks#0;class#DataRepository#0" />
-            <element signature="class#6537:6788" />
-            <element signature="method#run#0;class#6537:6788" />
+            <element signature="class#6722:6973" />
+            <element signature="method#run#0;class#6722:6973" />
             <element signature="method#setAddBookListener#0;class#DataRepository#0" />
             <element signature="method#setmBookDataListener#0;class#DataRepository#0" />
+            <element signature="method#setmBookRetrieveListener#0;class#DataRepository#0" />
             <element signature="method#onAllSecOwnersValidated#0;class#DataRepository#0" />
             <element signature="method#onThisSecOwnerValidated#0;class#DataRepository#0" />
+            <element signature="method#onBookDownloaded#0;class#DataRepository#0" />
             <element signature="class#InsertBookTask#0;class#DataRepository#0" />
             <element signature="method#doInBackground#0;class#InsertBookTask#0;class#DataRepository#0" />
             <element signature="method#onPostExecute#0;class#InsertBookTask#0;class#DataRepository#0" />
@@ -1055,8 +1150,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20">
-          <caret line="79" column="28" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="28" />
+        <state relative-caret-position="227">
+          <caret line="86" column="24" selection-start-line="86" selection-start-column="24" selection-end-line="86" selection-end-column="24" />
           <folding>
             <element signature="method#BookCRUDViewModel#0;class#BookCRUDViewModel#0" />
             <element signature="docComment;method#handleAuthState#0;class#BookCRUDViewModel#0" />
@@ -1066,6 +1161,7 @@
             <element signature="e#1930#1951#0" />
             <element signature="e#2156#2173#0" />
             <element signature="docComment;method#createThisBook#0;class#BookCRUDViewModel#0" />
+            <element signature="method#createThisBook#0;class#BookCRUDViewModel#0" />
             <element signature="e#2915#2966#0" />
             <element signature="docComment;method#updateThisBook#0;class#BookCRUDViewModel#0" />
             <element signature="method#updateThisBook#0;class#BookCRUDViewModel#0" />
@@ -1073,47 +1169,186 @@
             <element signature="docComment;method#isBookNameValid#0;class#BookCRUDViewModel#0" />
             <element signature="method#isBookNameValid#0;class#BookCRUDViewModel#0" />
             <element signature="method#setAddBookListener#0;class#BookCRUDViewModel#0" />
+            <element signature="method#setmBookRetrieveListener#0;class#BookCRUDViewModel#0" />
             <element signature="method#onAllSecOwnersValidated#0;class#BookCRUDViewModel#0" />
             <element signature="method#onThisSecOwnerValidated#0;class#BookCRUDViewModel#0" />
             <element signature="method#onBookUpdatedWithNewId#0;class#BookCRUDViewModel#0" />
             <element signature="e#5831#5898#0" />
+            <element signature="method#onBookDownloaded#0;class#BookCRUDViewModel#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/AppUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="43" column="35" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/AuthenticationViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="67" column="79" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
+          <folding>
+            <element signature="e#3222#3253#0" />
+            <element signature="docComment;method#registerUserWithEmailCredentials#0;class#AuthenticationViewModel#0" />
+            <element signature="method#registerUserWithEmailCredentials#0;class#AuthenticationViewModel#0" />
+            <element signature="docComment;method#loginUserWithEmailCredentials#0;class#AuthenticationViewModel#0" />
+            <element signature="method#loginUserWithEmailCredentials#0;class#AuthenticationViewModel#0" />
+            <element signature="docComment;method#authorizePhoneCredentials#0;class#AuthenticationViewModel#0" />
+            <element signature="method#authorizePhoneCredentials#0;class#AuthenticationViewModel#0" />
+            <element signature="class#8501:9523" />
+            <element signature="method#onVerificationCompleted#0;class#8501:9523" />
+            <element signature="method#onCodeAutoRetrievalTimeOut#0;class#8501:9523" />
+            <element signature="method#onCodeSent#0;class#8501:9523" />
+            <element signature="method#onVerificationFailed#0;class#8501:9523" />
+            <element signature="docComment;method#authorizePhoneCredentials#1;class#AuthenticationViewModel#0" />
+            <element signature="method#authorizePhoneCredentials#1;class#AuthenticationViewModel#0" />
+            <element signature="docComment;method#checkIfUserLoggedInFirstTime#0;class#AuthenticationViewModel#0" />
+            <element signature="method#checkIfUserLoggedInFirstTime#0;class#AuthenticationViewModel#0" />
+            <element signature="class#11696:12934" />
+            <element signature="method#onDataChange#0;class#11696:12934" />
+            <element signature="e#11832#11882#0" />
+            <element signature="method#onCancelled#0;class#11696:12934" />
+            <element signature="docComment;method#updateUserProfile#0;class#AuthenticationViewModel#0" />
+            <element signature="method#updateUserProfile#0;class#AuthenticationViewModel#0" />
+            <element signature="docComment;method#updateUserProfile#1;class#AuthenticationViewModel#0" />
+            <element signature="method#updateUserProfile#1;class#AuthenticationViewModel#0" />
+            <element signature="class#15905:16838" />
+            <element signature="method#onDataChange#0;class#15905:16838" />
+            <element signature="method#onCancelled#0;class#15905:16838" />
+            <element signature="docComment;method#getCurrentUserProfile#0;class#AuthenticationViewModel#0" />
+            <element signature="method#getCurrentUserProfile#0;class#AuthenticationViewModel#0" />
+            <element signature="class#17447:19189" />
+            <element signature="method#onDataChange#0;class#17447:19189" />
+            <element signature="method#onCancelled#0;class#17447:19189" />
+            <element signature="docComment;method#saveUserInCache#0;class#AuthenticationViewModel#0" />
+            <element signature="method#saveUserInCache#0;class#AuthenticationViewModel#0" />
+            <element signature="docComment;method#logout#0;class#AuthenticationViewModel#0" />
+            <element signature="method#logout#0;class#AuthenticationViewModel#0" />
+            <element signature="docComment;method#eraseUserDataFromCache#0;class#AuthenticationViewModel#0" />
+            <element signature="method#eraseUserDataFromCache#0;class#AuthenticationViewModel#0" />
+            <element signature="docComment;method#loadUserProfile#0;class#AuthenticationViewModel#0" />
+            <element signature="method#loadUserProfile#0;class#AuthenticationViewModel#0" />
+            <element signature="docComment;method#addAuthStateListener#0;class#AuthenticationViewModel#0" />
+            <element signature="method#addAuthStateListener#0;class#AuthenticationViewModel#0" />
+            <element signature="method#setEmailLoginListener#0;class#AuthenticationViewModel#0" />
+            <element signature="method#setEmailSignupListener#0;class#AuthenticationViewModel#0" />
+            <element signature="method#setMobileLoginListener#0;class#AuthenticationViewModel#0" />
+            <element signature="method#setLogoutListener#0;class#AuthenticationViewModel#0" />
+            <element signature="method#setInitialProfileListener#0;class#AuthenticationViewModel#0" />
+            <element signature="method#setProfileListener#0;class#AuthenticationViewModel#0" />
+            <element signature="method#convertE164toNormalMobile#0;class#AuthenticationViewModel#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="53" column="20" selection-start-line="53" selection-start-column="20" selection-end-line="53" selection-end-column="20" />
+          <folding>
+            <element signature="method#AllBooksFragment#0;class#AllBooksFragment#0" />
+            <element signature="e#1153#1162#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookWebService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="213" column="48" selection-start-line="213" selection-start-column="48" selection-end-line="213" selection-end-column="48" />
+        <state relative-caret-position="241">
+          <caret line="345" column="40" lean-forward="true" selection-start-line="345" selection-start-column="40" selection-end-line="345" selection-end-column="40" />
           <folding>
             <element signature="method#AddBookWebService#0;class#AddBookWebService#0" />
             <element signature="docComment;method#createThisBook#0;class#AddBookWebService#0" />
+            <element signature="method#createThisBook#0;class#AddBookWebService#0" />
             <element signature="docComment;method#validateSecOwnersInFirebase#0;class#AddBookWebService#0" />
-            <element signature="e#4462#4514#0" />
-            <element signature="method#onCancelled#0;class#3615:5908" />
-            <element signature="e#5621#5684#0" />
+            <element signature="method#validateSecOwnersInFirebase#0;class#AddBookWebService#0" />
+            <element signature="e#3115#3200#0" />
+            <element signature="class#3624:5798" />
+            <element signature="method#onDataChange#0;class#3624:5798" />
+            <element signature="e#4548#4600#0" />
+            <element signature="method#onCancelled#0;class#3624:5798" />
+            <element signature="e#5511#5574#0" />
             <element signature="docComment;method#validateBookNameInFirebase#0;class#AddBookWebService#0" />
-            <element signature="e#6269#6306#0" />
-            <element signature="method#onCancelled#0;class#5843:7067" />
-            <element signature="docComment;method#saveNewBook#0;class#AddBookWebService#0" />
+            <element signature="method#validateBookNameInFirebase#0;class#AddBookWebService#0" />
+            <element signature="class#6222:8009" />
+            <element signature="method#onDataChange#0;class#6222:8009" />
+            <element signature="e#6449#6491#0" />
+            <element signature="method#onCancelled#0;class#6222:8009" />
+            <element signature="docComment;method#saveNewBookInFirebase#0;class#AddBookWebService#0" />
+            <element signature="method#saveNewBookInFirebase#0;class#AddBookWebService#0" />
+            <element signature="class#9098:9706" />
+            <element signature="method#onComplete#0;class#9098:9706" />
             <element signature="docComment;method#updateOwnerInFirebase#0;class#AddBookWebService#0" />
             <element signature="method#updateOwnerInFirebase#0;class#AddBookWebService#0" />
-            <element signature="class#9659:10973" />
-            <element signature="method#onDataChange#0;class#9659:10973" />
-            <element signature="e#9905#9935#0" />
-            <element signature="class#10295:10793" />
-            <element signature="method#onComplete#0;class#10295:10793" />
-            <element signature="method#onCancelled#0;class#9659:10973" />
+            <element signature="class#10282:11699" />
+            <element signature="method#onDataChange#0;class#10282:11699" />
+            <element signature="e#10418#10448#0" />
+            <element signature="class#10949:11519" />
+            <element signature="method#onComplete#0;class#10949:11519" />
+            <element signature="method#onCancelled#0;class#10282:11699" />
             <element signature="docComment;method#updateSecOwnersInFirebase#0;class#AddBookWebService#0" />
             <element signature="method#updateSecOwnersInFirebase#0;class#AddBookWebService#0" />
-            <element signature="class#11844:12083" />
-            <element signature="method#onComplete#0;class#11844:12083" />
+            <element signature="class#12506:12918" />
+            <element signature="method#onComplete#0;class#12506:12918" />
             <element signature="docComment;method#generateRandomBookId#0;class#AddBookWebService#0" />
             <element signature="method#generateRandomBookId#0;class#AddBookWebService#0" />
+            <element signature="docComment;method#retrievedAllBooksFromFirebase#0;class#AddBookWebService#0" />
+            <element signature="method#retrievedAllBooksFromFirebase#0;class#AddBookWebService#0" />
+            <element signature="docComment;method#retrieveOwnedBooks#0;class#AddBookWebService#0" />
+            <element signature="class#13903:14334" />
+            <element signature="method#onDataChange#0;class#13903:14334" />
+            <element signature="e#14748#14924#0" />
+            <element signature="e#14425#14453#0" />
+            <element signature="method#onCancelled#0;class#13903:14334" />
+            <element signature="class#15045:15383" />
+            <element signature="method#onDataChange#0;class#15045:15400" />
+            <element signature="e#17253#17341#0" />
+            <element signature="e#15635#15664#0" />
+            <element signature="method#onCancelled#0;class#15045:15383" />
+            <element signature="docComment;method#downloadBookWithId#0;class#AddBookWebService#0" />
+            <element signature="method#downloadBookWithId#0;class#AddBookWebService#0" />
+            <element signature="class#18108:18780" />
+            <element signature="method#onDataChange#0;class#18108:18780" />
+            <element signature="method#onCancelled#0;class#18108:18780" />
             <element signature="docComment;method#cleanUpVariables#0;class#AddBookWebService#0" />
             <element signature="method#cleanUpVariables#0;class#AddBookWebService#0" />
             <element signature="method#setAddBookListener#0;class#AddBookWebService#0" />
             <element signature="method#setmIsBookNameValid#0;class#AddBookWebService#0" />
+            <element signature="method#setmBookRetrieveListener#0;class#AddBookWebService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="93" column="25" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="25" />
+          <folding>
+            <element signature="class#AllBooksViewHolder#0;class#AllBooksAdapter#0" />
+            <element signature="method#AllBooksViewHolder#0;class#AllBooksViewHolder#0;class#AllBooksAdapter#0" />
+            <element signature="method#onClick#0;class#AllBooksViewHolder#0;class#AllBooksAdapter#0" />
+            <element signature="e#1492#1550#0" />
+            <element signature="method#AllBooksAdapter#0;class#AllBooksAdapter#0" />
+            <element signature="method#AllBooksAdapter#1;class#AllBooksAdapter#0" />
+            <element signature="method#getItemCount#0;class#AllBooksAdapter#0" />
+            <element signature="e#2418#2426#0" />
+            <element signature="method#onCreateViewHolder#0;class#AllBooksAdapter#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="104" column="74" selection-start-line="104" selection-start-column="74" selection-end-line="104" selection-end-column="74" />
+          <folding>
+            <element signature="method#Book#0;class#Book#0" />
+            <element signature="method#Book#1;class#Book#0" />
+            <element signature="method#Book#2;class#Book#0" />
+            <element signature="method#toString#0;class#Book#0" />
           </folding>
         </state>
       </provider>

@@ -1,7 +1,6 @@
 package singareddy.productionapps.capturethemoment.book;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MediatorLiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
@@ -16,18 +15,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.AppUtilities;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.models.Book;
+import singareddy.productionapps.capturethemoment.models.User;
 
-public class AllBooksFragment extends Fragment implements BookDataListener{
+public class AllBooksFragment extends Fragment implements BookListener.Retrieve {
     private static String TAG = "AllBooksFragment";
 
     private RecyclerView booksList;
     private AllBooksAdapter mAdapter;
-    private BooksViewModel booksViewModel;
+    private BookCRUDViewModel bookCRUDViewModel;
+    private List<Book> allBooksData = new ArrayList<>();
 
     public AllBooksFragment () {
 
@@ -36,29 +40,24 @@ public class AllBooksFragment extends Fragment implements BookDataListener{
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        booksViewModel = ViewModelProviders.of(this).get(BooksViewModel.class);
-        booksViewModel.setmBookDataListener(this);
+        bookCRUDViewModel = ViewModelProviders.of(this).get(BookCRUDViewModel.class);
+        bookCRUDViewModel.setmBookRetrieveListener(this);
 
         View view = inflater.inflate(R.layout.fragment_all_books, container, false);
         booksList = view.findViewById(R.id.all_books_rv_books);
-        mAdapter = new AllBooksAdapter(getContext());
+        mAdapter = new AllBooksAdapter(getContext(), allBooksData);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         booksList.setAdapter(mAdapter);
         booksList.setLayoutManager(manager);
 
-        booksViewModel.getAllBooks();
+        bookCRUDViewModel.retrieveAllBooks();
         return view;
     }
 
+
     @Override
-    public void onBookLiveDataRecieved(LiveData<List<Book>> bookLiveData) {
-        bookLiveData.observe(this, new Observer<List<Book>>() {
-            @Override
-            public void onChanged(@Nullable List<Book> books) {
-                Log.i(TAG, "onChanged: Books: "+books);
-                mAdapter.setBookData(books);
-                mAdapter.notifyDataSetChanged();
-            }
-        });
+    public void onBookDownloaded(Book downloadedBook) {
+        allBooksData.add(downloadedBook);
+        mAdapter.notifyDataSetChanged();
     }
 }

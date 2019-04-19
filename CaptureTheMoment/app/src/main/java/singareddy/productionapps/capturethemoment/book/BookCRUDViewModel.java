@@ -13,14 +13,16 @@ import java.util.List;
 
 import singareddy.productionapps.capturethemoment.AppUtilities;
 import singareddy.productionapps.capturethemoment.DataRepository;
+import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 
-public class BookCRUDViewModel extends AndroidViewModel implements BookListener, BookListener.UpdateBook {
+public class BookCRUDViewModel extends AndroidViewModel implements BookListener, BookListener.UpdateBook, BookListener.Retrieve {
     private static String TAG = "BookCRUDViewModel";
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mCurrentUser;
     private BookListener mBookListener;
+    private BookListener.Retrieve mBookRetrieveListener;
     private DataRepository mDataRepo;
     private String mOldBookId;
     private String mNewBookId;
@@ -82,6 +84,12 @@ public class BookCRUDViewModel extends AndroidViewModel implements BookListener,
 
     }
 
+    public void retrieveAllBooks() {
+        Log.i(TAG, "retrieveAllBooks: *");
+        mDataRepo.setmBookRetrieveListener(this);
+        mDataRepo.retrieveAllBooks();
+    }
+
     /**
      * This book validates the updated book details
      * and redirects the control to other classes.
@@ -127,8 +135,13 @@ public class BookCRUDViewModel extends AndroidViewModel implements BookListener,
         }
     }
 
+    // MARK: Setters and listener methods
     public void setAddBookListener(BookListener mBookListener) {
         this.mBookListener = mBookListener;
+    }
+
+    public void setmBookRetrieveListener(Retrieve mBookRetrieveListener) {
+        this.mBookRetrieveListener = mBookRetrieveListener;
     }
 
     @Override
@@ -160,5 +173,10 @@ public class BookCRUDViewModel extends AndroidViewModel implements BookListener,
         // Once the new book has been saved, the old book has to be removed
         // TODO: Ask the data repository to delete the old book from Book DB
         // TODO: Ask the data repo to insert the old book id in TrashBooks DB
+    }
+
+    @Override
+    public void onBookDownloaded(Book downloadedBook) {
+        mBookRetrieveListener.onBookDownloaded(downloadedBook);
     }
 }

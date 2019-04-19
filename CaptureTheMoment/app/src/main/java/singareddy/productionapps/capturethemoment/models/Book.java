@@ -102,6 +102,6 @@ public class Book {
     }
 
     public boolean doIOwnTheBook() {
-        return bookId.equals(AppUtilities.User.CURRENT_USER.getUid()+"__"+this.name.toLowerCase().trim());
+        return this.owner.equals(AppUtilities.User.CURRENT_USER.getUid());
     }
 }

@@ -1,5 +1,7 @@
 package singareddy.productionapps.capturethemoment.book;
 
+import singareddy.productionapps.capturethemoment.models.Book;
+
 public interface BookListener {
     public void onBookNameInvalid (String code);
     public void onAllSecOwnersValidated ();
@@ -8,7 +10,13 @@ public interface BookListener {
 
     }
 
-    public interface UpdateBook {
+    interface UpdateBook {
         default public void onBookUpdatedWithNewId(String newBookId) {}
+    }
+
+    interface Retrieve {
+        default public void onBookDownloaded(Book downloadedBook) {
+
+        }
     }
 }
