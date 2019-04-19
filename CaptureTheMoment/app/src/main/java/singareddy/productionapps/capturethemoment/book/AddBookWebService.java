@@ -30,7 +30,7 @@ public class AddBookWebService {
 
     private static AddBookWebService SERVICE;
     private FirebaseDatabase mfirebaseDB;
-    private HashMap<String, Boolean> validSecOwnersMap = new HashMap<>();
+    private HashMap<String, Boolean> validSecOwnersMap;
     private Integer mOwnersValidated;
     private BookListener mBookListener;
     private Boolean mIsBookNameValid = false;
@@ -54,6 +54,8 @@ public class AddBookWebService {
         // Update the member variables to newly given name and owners
         mNewBookName = bookName;
         mSecOwnersList = secOwners;
+        mAreSecOwnersValid = false;
+        mIsBookNameValid = false;
 
         // Verify the book name if it already exists
         validateBookNameInFirebase();
@@ -68,8 +70,10 @@ public class AddBookWebService {
     private void validateSecOwnersInFirebase() {
         DatabaseReference targetDataNode = mfirebaseDB.getReference().child(AppUtilities.Firebase.ALL_REGISTERED_USERS_NODE);
         mOwnersValidated = 0;
+        validSecOwnersMap = new HashMap<>();
 
         if (mSecOwnersList.size() == 0) {
+            mAreSecOwnersValid = true;
             saveNewBookInFirebase();
         }
 
@@ -78,12 +82,12 @@ public class AddBookWebService {
             // Check if this owner has registered in the app or not
             Log.i(TAG, "createThisBook: Username: "+secOwner.getUsername());
 
-            // If the owner is already validated, then skip that owner and continue
-            if (secOwner.getValidated() == 1) {
-                mOwnersValidated++;
-                mBookListener.onThisSecOwnerValidated();
-                continue;
-            }
+//            // If the owner is already validated, then skip that owner and continue
+//            if (secOwner.getValidated() == 1) {
+//                mOwnersValidated++;
+//                mBookListener.onThisSecOwnerValidated();
+//                continue;
+//            }
 
             // If not validated, only then the control reaches here
             Query query = targetDataNode.orderByValue().equalTo(secOwner.getUsername().toLowerCase().trim());
@@ -118,6 +122,7 @@ public class AddBookWebService {
                     if (mSecOwnersList.size() == validSecOwnersMap.size()) {
                         mAreSecOwnersValid = true;
                         saveNewBookInFirebase();
+                        return;
                     }
                 }
 

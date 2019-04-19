@@ -220,6 +220,11 @@ public class DataRepository implements BookListener {
         mBookListener.onThisSecOwnerValidated();
     }
 
+    @Override
+    public void onNewBookCreated() {
+        mBookListener.onNewBookCreated();
+    }
+
     // MARK: Async Tasks
     public class InsertBookTask extends AsyncTask<Book, Void, Long> {
         @Override

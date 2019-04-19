@@ -142,12 +142,9 @@ public class AddBookActivity extends AppCompatActivity implements BookListener {
 
     @Override
     public void onNewBookCreated() {
-        mNewBookCreationFlag++;
-        if (mNewBookCreationFlag == 2) {
-            // Book has been created
-            Toast.makeText(this, "Book created successfully!", Toast.LENGTH_SHORT).show();
-            finish();
-        }
+        createButton.setEnabled(true);
+        Toast.makeText(this, "Book created successfully!", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     @Override
