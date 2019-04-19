@@ -31,13 +31,13 @@ public class LocalDB_Impl extends LocalDB {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `Book` (`bookId` TEXT NOT NULL, `name` TEXT, `owner` TEXT, `createdTime` INTEGER, `lastOpenedTime` INTEGER, PRIMARY KEY(`bookId`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Book` (`bookId` TEXT NOT NULL, `name` TEXT, `owner` TEXT, `createdDate` INTEGER, `lastUpdatedDate` INTEGER, PRIMARY KEY(`bookId`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `ShareInfo` (`bookId` TEXT NOT NULL, `uid` TEXT NOT NULL, `canEdit` INTEGER NOT NULL, PRIMARY KEY(`bookId`, `uid`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"417f942d4bc814da1b9151a2cbe984db\")");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"af206ed0f10f64ce715565882af91b9b\")");
       }
 
       @Override
@@ -72,8 +72,8 @@ public class LocalDB_Impl extends LocalDB {
         _columnsBook.put("bookId", new TableInfo.Column("bookId", "TEXT", true, 1));
         _columnsBook.put("name", new TableInfo.Column("name", "TEXT", false, 0));
         _columnsBook.put("owner", new TableInfo.Column("owner", "TEXT", false, 0));
-        _columnsBook.put("createdTime", new TableInfo.Column("createdTime", "INTEGER", false, 0));
-        _columnsBook.put("lastOpenedTime", new TableInfo.Column("lastOpenedTime", "INTEGER", false, 0));
+        _columnsBook.put("createdDate", new TableInfo.Column("createdDate", "INTEGER", false, 0));
+        _columnsBook.put("lastUpdatedDate", new TableInfo.Column("lastUpdatedDate", "INTEGER", false, 0));
         final HashSet<TableInfo.ForeignKey> _foreignKeysBook = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesBook = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoBook = new TableInfo("Book", _columnsBook, _foreignKeysBook, _indicesBook);
@@ -97,7 +97,7 @@ public class LocalDB_Impl extends LocalDB {
                   + " Found:\n" + _existingShareInfo);
         }
       }
-    }, "417f942d4bc814da1b9151a2cbe984db", "92d4187be47d947ab90243ef63ea6c1b");
+    }, "af206ed0f10f64ce715565882af91b9b", "454e60a476b9fda144c91da7696132e6");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

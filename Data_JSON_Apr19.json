@@ -1,0 +1,226 @@
+{
+  "books" : {
+    "-Lb3dmXxs6HCDeg-2lQs__Friends" : {
+      "createdTime" : 1553782483124,
+      "name" : "Friends",
+      "owner" : "noQ1zMkuwvMU3MwCiDl8TKHdhkd2"
+    },
+    "-Lb3e17EipLzzjqVPbyH__VIT Memories" : {
+      "createdTime" : 1553782546944,
+      "name" : "VIT Memories",
+      "owner" : "noQ1zMkuwvMU3MwCiDl8TKHdhkd2"
+    },
+    "-Lb3khjz1OHnsLOhhF22__Mysore Memories" : {
+      "createdTime" : 1553784294816,
+      "name" : "Mysore Memories",
+      "owner" : "noQ1zMkuwvMU3MwCiDl8TKHdhkd2"
+    },
+    "-Lbgv3WHPyWklDtOL5Co__Infosys Memories" : {
+      "createdTime" : 1554458092132,
+      "name" : "Infosys Memories",
+      "owner" : "noQ1zMkuwvMU3MwCiDl8TKHdhkd2"
+    },
+    "-Lbh0zpRvAwFwnihcPcU__Hyderabad Days" : {
+      "createdTime" : 1554459912203,
+      "name" : "Hyderabad Days",
+      "owner" : "noQ1zMkuwvMU3MwCiDl8TKHdhkd2"
+    },
+    "-Lbh1obCzpn-FG0BgM-6__Hyderabad 2019" : {
+      "createdTime" : 1554460132865,
+      "name" : "Hyderabad 2019",
+      "owner" : "noQ1zMkuwvMU3MwCiDl8TKHdhkd2"
+    },
+    "-LbhEu9evrtGYmrZK3n-__Hyderabad 2019" : {
+      "createdTime" : 1554463560443,
+      "name" : "Hyderabad 2019",
+      "owner" : "oCIGfjCqwMeNuYi7bXWqLNy7ji73"
+    },
+    "-LbhEv0M_-pO7jEO2MC5__Hyderabad 2019" : {
+      "createdTime" : 1554463566977,
+      "name" : "Hyderabad 2019",
+      "owner" : "oCIGfjCqwMeNuYi7bXWqLNy7ji73"
+    },
+    "-LbhEwVGvdoA1_8UtML___Hyderabad 2019" : {
+      "createdTime" : 1554463572929,
+      "name" : "Hyderabad 2019",
+      "owner" : "oCIGfjCqwMeNuYi7bXWqLNy7ji73"
+    },
+    "B1" : {
+      "name" : "Book One",
+      "owner" : "A"
+    },
+    "B2" : {
+      "name" : "Book Two",
+      "owner" : "A"
+    },
+    "B3" : {
+      "name" : "Book Three",
+      "owner" : "A",
+      "secOwners" : {
+        "B" : true
+      }
+    },
+    "B4" : {
+      "name" : "Book Four",
+      "owner" : "B"
+    },
+    "B5" : {
+      "name" : "Book Five",
+      "owner" : "B",
+      "secOnwers" : [ {
+        "bookId" : "B5",
+        "canEdit" : false,
+        "uid" : "GXzI5BQyUtWfYrf0Xj14MRBwV3B3"
+      } ]
+    },
+    "B6" : {
+      "name" : "Book Six",
+      "owner" : "B",
+      "secOwners" : [ {
+        "bookId" : "B6",
+        "canEdit" : false,
+        "uid" : "EfMZDjPNDmOGIPR1J5WLwYcKOBt1"
+      }, {
+        "bookId" : "B6",
+        "canEdit" : true,
+        "uid" : "0vgmElAHLfb0wcJ9e1Nw8MD9fwt1"
+      } ]
+    },
+    "EfMZDjPNDmOGIPR1J5WLwYcKOBt1__hyderabad" : {
+      "name" : "Hyderabad",
+      "owner" : "EfMZDjPNDmOGIPR1J5WLwYcKOBt1",
+      "secOwners" : {
+        "EfMZDjPNDmOGIPR1J5WLwYcKOBt" : true,
+        "EfMZDjPNDmOGIPR1J5WLwYcKOBt1__hyderabad" : false
+      }
+    },
+    "EfMZDjPNDmOGIPR1J5WLwYcKOBt1__mysore" : {
+      "name" : "Mysore",
+      "owner" : "EfMZDjPNDmOGIPR1J5WLwYcKOBt1"
+    },
+    "EfMZDjPNDmOGIPR1J5WLwYcKOBt1__vellore" : {
+      "name" : "Vellore",
+      "owner" : "EfMZDjPNDmOGIPR1J5WLwYcKOBt1",
+      "secOnwers" : [ {
+        "bookId" : "EfMZDjPNDmOGIPR1J5WLwYcKOBt1__vellore",
+        "canEdit" : true,
+        "uid" : "GXzI5BQyUtWfYrf0Xj14MRBwV3B3"
+      } ]
+    },
+    "GXzI5BQyUtWfYrf0Xj14MRBwV3B3__b4" : {
+      "name" : "Book Four",
+      "owner" : "GXzI5BQyUtWfYrf0Xj14MRBwV3B3"
+    }
+  },
+  "regUsers" : {
+    "0vgmElAHLfb0wcJ9e1Nw8MD9fwt1" : "ushasree@gmail.com",
+    "45Lof4NgDFfkXjQZlykpqoKp59w1" : "gopi@gmail.com",
+    "EfMZDjPNDmOGIPR1J5WLwYcKOBt1" : "sreekarreddy430@gmail.com",
+    "GXzI5BQyUtWfYrf0Xj14MRBwV3B3" : "sreekesh@gmail.com",
+    "bbQFcpjI0AOZ5pLNftkZ0cG2NYm2" : "vikas.meda@gmail.com"
+  },
+  "users" : {
+    "0vgmElAHLfb0wcJ9e1Nw8MD9fwt1" : {
+      "profile" : {
+        "age" : 47,
+        "emailId" : "ushasree@gmail.com",
+        "gender" : "NA",
+        "location" : "Kondapuram",
+        "mobile" : 9494077105,
+        "name" : "Usha Sree",
+        "profilePic" : "NA"
+      }
+    },
+    "3O0bgNefI3Q0NxUp7UN2TJtWUWg2" : {
+      "profile" : {
+        "age" : 22,
+        "emailId" : "sreekar.singareddy@gmail.com",
+        "gender" : "NA",
+        "location" : "BCCL",
+        "mobile" : 9346235588,
+        "name" : "Sreekar Reddy",
+        "profilePic" : "NA"
+      }
+    },
+    "45Lof4NgDFfkXjQZlykpqoKp59w1" : {
+      "profile" : {
+        "age" : 51,
+        "emailId" : "gopi@gmail.com",
+        "gender" : "NA",
+        "location" : "Vempalli",
+        "mobile" : 9441079575,
+        "name" : "Gopi Krishna",
+        "profilePic" : "NA"
+      }
+    },
+    "EfMZDjPNDmOGIPR1J5WLwYcKOBt1" : {
+      "profile" : {
+        "age" : 23,
+        "emailId" : "sreekarreddy430@gmail.com",
+        "gender" : "NA",
+        "location" : "YSR District",
+        "mobile" : 9876754345,
+        "name" : "Sreekar Reddy",
+        "profilePic" : "NA"
+      },
+      "sharedBooks" : [ {
+        "bookId" : "B6",
+        "canEdit" : false,
+        "uid" : "EfMZDjPNDmOGIPR1J5WLwYcKOBt1"
+      } ]
+    },
+    "GXzI5BQyUtWfYrf0Xj14MRBwV3B3" : {
+      "profile" : {
+        "age" : 19,
+        "emailId" : "sreekesh@gmail.com",
+        "gender" : "NA",
+        "location" : "Hyd",
+        "mobile" : 8768768769,
+        "name" : "Sreekesh",
+        "profilePic" : "NA"
+      },
+      "sharedBooks" : [ {
+        "bookId" : "B5",
+        "canEdit" : false,
+        "uid" : "GXzI5BQyUtWfYrf0Xj14MRBwV3B3"
+      }, {
+        "bookId" : "EfMZDjPNDmOGIPR1J5WLwYcKOBt1__vellore",
+        "canEdit" : false,
+        "uid" : "GXzI5BQyUtWfYrf0Xj14MRBwV3B3"
+      } ]
+    },
+    "RFSG5xwMyzVqchyIktLGH3d20t63" : {
+      "profile" : {
+        "age" : 22,
+        "emailId" : "sreekarreddy430@gmail.com",
+        "gender" : "NA",
+        "location" : "Kadapa",
+        "mobile" : 9629781945,
+        "name" : "SingareddyBros",
+        "profilePic" : "NA"
+      }
+    },
+    "bbQFcpjI0AOZ5pLNftkZ0cG2NYm2" : {
+      "profile" : {
+        "age" : 22,
+        "emailId" : "vikas.meda@gmail.com",
+        "gender" : "NA",
+        "location" : "Nellore",
+        "mobile" : 9629781050,
+        "name" : "Sai Vikas Meda",
+        "profilePic" : "NA"
+      }
+    },
+    "faW6uXOx7qXLlar8UNPcoIHbjWo2" : {
+      "profile" : {
+        "age" : 22,
+        "emailId" : "medavikas@gmail.com",
+        "gender" : "NA",
+        "location" : "Nellore",
+        "mobile" : 9629781050,
+        "name" : "Vikas Meda",
+        "profilePic" : "NA"
+      }
+    }
+  }
+}

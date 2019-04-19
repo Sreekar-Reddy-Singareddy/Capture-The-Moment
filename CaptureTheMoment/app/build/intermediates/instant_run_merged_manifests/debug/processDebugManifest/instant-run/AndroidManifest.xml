@@ -45,7 +45,8 @@
             </intent-filter>
         </activity>
         <activity android:name="singareddy.productionapps.capturethemoment.MainActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.ExperimentActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.ExperimentActivity" >
+        </activity>
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

@@ -75,38 +75,11 @@ public class DataRepository implements BookListener {
      * @param secOwners
      */
     public void createThisBook (final String bookName, List<SecondaryOwner> secOwners) {
-        new AsyncTask<String, Void, String>() {
-            @Override
-            protected String doInBackground(String... name) {
-                // Create book id with the given name
-                String bookId = CURRENT_USER.getUid() + "__" + name[0].toLowerCase().trim();
-                Book duplicateBook = mLocalDB.getBookDao().getBookWithId(bookId);
-                Log.i(TAG, "doInBackground: "+duplicateBook);
-                if (duplicateBook == null) {
-                    // No duplicate book exists
-                    return BOOK_NAME_VALID;
-                }
-                else {
-                    // Duplicate book exists
-                    return BOOK_EXISTS;
-                }
-            }
-
-            @Override
-            protected void onPostExecute(String validationCode) {
-                super.onPostExecute(validationCode);
-                if (validationCode.equals(BOOK_EXISTS)) {
-                    // Tell the UI that book with this name already exists
-                    mBookListener.onBookNameInvalid(validationCode);
-                }
-                else if (validationCode.equals(BOOK_NAME_VALID)) {
-                    // Proceed further and validate secondary owners
-                    if (mAddBookWebService == null) { mAddBookWebService = new AddBookWebService(mContext); }
-                    mAddBookWebService.setAddBookListener(DataRepository.this);
-                    mAddBookWebService.createThisBook(bookName, secOwners);
-                }
-            }
-        }.execute(bookName);
+        if (mAddBookWebService == null) {
+            mAddBookWebService = new AddBookWebService(mContext);
+        }
+        mAddBookWebService.createThisBook(bookName, secOwners);
+        mAddBookWebService.setAddBookListener(this);
     }
 
     /**
@@ -115,7 +88,6 @@ public class DataRepository implements BookListener {
      */
     public void cleanUpVariables() {
         mContext = null;
-//        mAddBookWebService.cleanUpVariables();
         mAddBookWebService = null;
     }
 
@@ -141,7 +113,7 @@ public class DataRepository implements BookListener {
      */
     private void insertAllSharedInfosOfOwnedBook (Book book) {
         // Owned book may have more than one shared infos
-        insertSharedInfo(book.getSecOwners());
+//        insertSharedInfo(book.getSecOwners());
     }
 
     /** STATUS - NOT WORKING

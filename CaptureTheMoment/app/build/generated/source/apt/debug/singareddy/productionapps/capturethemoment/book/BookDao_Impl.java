@@ -35,7 +35,7 @@ public class BookDao_Impl implements BookDao {
     this.__insertionAdapterOfBook = new EntityInsertionAdapter<Book>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `Book`(`bookId`,`name`,`owner`,`createdTime`,`lastOpenedTime`) VALUES (?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `Book`(`bookId`,`name`,`owner`,`createdDate`,`lastUpdatedDate`) VALUES (?,?,?,?,?)";
       }
 
       @Override
@@ -55,22 +55,22 @@ public class BookDao_Impl implements BookDao {
         } else {
           stmt.bindString(3, value.getOwner());
         }
-        if (value.getCreatedTime() == null) {
+        if (value.getCreatedDate() == null) {
           stmt.bindNull(4);
         } else {
-          stmt.bindLong(4, value.getCreatedTime());
+          stmt.bindLong(4, value.getCreatedDate());
         }
-        if (value.getLastOpenedTime() == null) {
+        if (value.getLastUpdatedDate() == null) {
           stmt.bindNull(5);
         } else {
-          stmt.bindLong(5, value.getLastOpenedTime());
+          stmt.bindLong(5, value.getLastUpdatedDate());
         }
       }
     };
     this.__updateAdapterOfBook = new EntityDeletionOrUpdateAdapter<Book>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `Book` SET `bookId` = ?,`name` = ?,`owner` = ?,`createdTime` = ?,`lastOpenedTime` = ? WHERE `bookId` = ?";
+        return "UPDATE OR ABORT `Book` SET `bookId` = ?,`name` = ?,`owner` = ?,`createdDate` = ?,`lastUpdatedDate` = ? WHERE `bookId` = ?";
       }
 
       @Override
@@ -90,15 +90,15 @@ public class BookDao_Impl implements BookDao {
         } else {
           stmt.bindString(3, value.getOwner());
         }
-        if (value.getCreatedTime() == null) {
+        if (value.getCreatedDate() == null) {
           stmt.bindNull(4);
         } else {
-          stmt.bindLong(4, value.getCreatedTime());
+          stmt.bindLong(4, value.getCreatedDate());
         }
-        if (value.getLastOpenedTime() == null) {
+        if (value.getLastUpdatedDate() == null) {
           stmt.bindNull(5);
         } else {
-          stmt.bindLong(5, value.getLastOpenedTime());
+          stmt.bindLong(5, value.getLastUpdatedDate());
         }
         if (value.getBookId() == null) {
           stmt.bindNull(6);
@@ -168,8 +168,8 @@ public class BookDao_Impl implements BookDao {
       final int _cursorIndexOfBookId = _cursor.getColumnIndexOrThrow("bookId");
       final int _cursorIndexOfName = _cursor.getColumnIndexOrThrow("name");
       final int _cursorIndexOfOwner = _cursor.getColumnIndexOrThrow("owner");
-      final int _cursorIndexOfCreatedTime = _cursor.getColumnIndexOrThrow("createdTime");
-      final int _cursorIndexOfLastOpenedTime = _cursor.getColumnIndexOrThrow("lastOpenedTime");
+      final int _cursorIndexOfCreatedDate = _cursor.getColumnIndexOrThrow("createdDate");
+      final int _cursorIndexOfLastUpdatedDate = _cursor.getColumnIndexOrThrow("lastUpdatedDate");
       final Book _result;
       if(_cursor.moveToFirst()) {
         _result = new Book();
@@ -182,20 +182,20 @@ public class BookDao_Impl implements BookDao {
         final String _tmpOwner;
         _tmpOwner = _cursor.getString(_cursorIndexOfOwner);
         _result.setOwner(_tmpOwner);
-        final Long _tmpCreatedTime;
-        if (_cursor.isNull(_cursorIndexOfCreatedTime)) {
-          _tmpCreatedTime = null;
+        final Long _tmpCreatedDate;
+        if (_cursor.isNull(_cursorIndexOfCreatedDate)) {
+          _tmpCreatedDate = null;
         } else {
-          _tmpCreatedTime = _cursor.getLong(_cursorIndexOfCreatedTime);
+          _tmpCreatedDate = _cursor.getLong(_cursorIndexOfCreatedDate);
         }
-        _result.setCreatedTime(_tmpCreatedTime);
-        final Long _tmpLastOpenedTime;
-        if (_cursor.isNull(_cursorIndexOfLastOpenedTime)) {
-          _tmpLastOpenedTime = null;
+        _result.setCreatedDate(_tmpCreatedDate);
+        final Long _tmpLastUpdatedDate;
+        if (_cursor.isNull(_cursorIndexOfLastUpdatedDate)) {
+          _tmpLastUpdatedDate = null;
         } else {
-          _tmpLastOpenedTime = _cursor.getLong(_cursorIndexOfLastOpenedTime);
+          _tmpLastUpdatedDate = _cursor.getLong(_cursorIndexOfLastUpdatedDate);
         }
-        _result.setLastOpenedTime(_tmpLastOpenedTime);
+        _result.setLastUpdatedDate(_tmpLastUpdatedDate);
       } else {
         _result = null;
       }
@@ -221,8 +221,8 @@ public class BookDao_Impl implements BookDao {
       final int _cursorIndexOfBookId = _cursor.getColumnIndexOrThrow("bookId");
       final int _cursorIndexOfName = _cursor.getColumnIndexOrThrow("name");
       final int _cursorIndexOfOwner = _cursor.getColumnIndexOrThrow("owner");
-      final int _cursorIndexOfCreatedTime = _cursor.getColumnIndexOrThrow("createdTime");
-      final int _cursorIndexOfLastOpenedTime = _cursor.getColumnIndexOrThrow("lastOpenedTime");
+      final int _cursorIndexOfCreatedDate = _cursor.getColumnIndexOrThrow("createdDate");
+      final int _cursorIndexOfLastUpdatedDate = _cursor.getColumnIndexOrThrow("lastUpdatedDate");
       final List<Book> _result = new ArrayList<Book>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final Book _item;
@@ -236,20 +236,20 @@ public class BookDao_Impl implements BookDao {
         final String _tmpOwner;
         _tmpOwner = _cursor.getString(_cursorIndexOfOwner);
         _item.setOwner(_tmpOwner);
-        final Long _tmpCreatedTime;
-        if (_cursor.isNull(_cursorIndexOfCreatedTime)) {
-          _tmpCreatedTime = null;
+        final Long _tmpCreatedDate;
+        if (_cursor.isNull(_cursorIndexOfCreatedDate)) {
+          _tmpCreatedDate = null;
         } else {
-          _tmpCreatedTime = _cursor.getLong(_cursorIndexOfCreatedTime);
+          _tmpCreatedDate = _cursor.getLong(_cursorIndexOfCreatedDate);
         }
-        _item.setCreatedTime(_tmpCreatedTime);
-        final Long _tmpLastOpenedTime;
-        if (_cursor.isNull(_cursorIndexOfLastOpenedTime)) {
-          _tmpLastOpenedTime = null;
+        _item.setCreatedDate(_tmpCreatedDate);
+        final Long _tmpLastUpdatedDate;
+        if (_cursor.isNull(_cursorIndexOfLastUpdatedDate)) {
+          _tmpLastUpdatedDate = null;
         } else {
-          _tmpLastOpenedTime = _cursor.getLong(_cursorIndexOfLastOpenedTime);
+          _tmpLastUpdatedDate = _cursor.getLong(_cursorIndexOfLastUpdatedDate);
         }
-        _item.setLastOpenedTime(_tmpLastOpenedTime);
+        _item.setLastUpdatedDate(_tmpLastUpdatedDate);
         _result.add(_item);
       }
       return _result;
@@ -282,8 +282,8 @@ public class BookDao_Impl implements BookDao {
           final int _cursorIndexOfBookId = _cursor.getColumnIndexOrThrow("bookId");
           final int _cursorIndexOfName = _cursor.getColumnIndexOrThrow("name");
           final int _cursorIndexOfOwner = _cursor.getColumnIndexOrThrow("owner");
-          final int _cursorIndexOfCreatedTime = _cursor.getColumnIndexOrThrow("createdTime");
-          final int _cursorIndexOfLastOpenedTime = _cursor.getColumnIndexOrThrow("lastOpenedTime");
+          final int _cursorIndexOfCreatedDate = _cursor.getColumnIndexOrThrow("createdDate");
+          final int _cursorIndexOfLastUpdatedDate = _cursor.getColumnIndexOrThrow("lastUpdatedDate");
           final List<Book> _result = new ArrayList<Book>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final Book _item;
@@ -297,20 +297,20 @@ public class BookDao_Impl implements BookDao {
             final String _tmpOwner;
             _tmpOwner = _cursor.getString(_cursorIndexOfOwner);
             _item.setOwner(_tmpOwner);
-            final Long _tmpCreatedTime;
-            if (_cursor.isNull(_cursorIndexOfCreatedTime)) {
-              _tmpCreatedTime = null;
+            final Long _tmpCreatedDate;
+            if (_cursor.isNull(_cursorIndexOfCreatedDate)) {
+              _tmpCreatedDate = null;
             } else {
-              _tmpCreatedTime = _cursor.getLong(_cursorIndexOfCreatedTime);
+              _tmpCreatedDate = _cursor.getLong(_cursorIndexOfCreatedDate);
             }
-            _item.setCreatedTime(_tmpCreatedTime);
-            final Long _tmpLastOpenedTime;
-            if (_cursor.isNull(_cursorIndexOfLastOpenedTime)) {
-              _tmpLastOpenedTime = null;
+            _item.setCreatedDate(_tmpCreatedDate);
+            final Long _tmpLastUpdatedDate;
+            if (_cursor.isNull(_cursorIndexOfLastUpdatedDate)) {
+              _tmpLastUpdatedDate = null;
             } else {
-              _tmpLastOpenedTime = _cursor.getLong(_cursorIndexOfLastOpenedTime);
+              _tmpLastUpdatedDate = _cursor.getLong(_cursorIndexOfLastUpdatedDate);
             }
-            _item.setLastOpenedTime(_tmpLastOpenedTime);
+            _item.setLastUpdatedDate(_tmpLastUpdatedDate);
             _result.add(_item);
           }
           return _result;

@@ -11,8 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -77,8 +75,8 @@ public class AllBooksAdapter extends RecyclerView.Adapter<AllBooksAdapter.AllBoo
     @Override
     public void onBindViewHolder(@NonNull AllBooksViewHolder holder, int i) {
         Book book = bookData.get(i);
-        if (book.getLastOpenedTime() != null && book.getLastOpenedTime() != 0) {
-            Date date = new Date(book.getLastOpenedTime());
+        if (book.getLastUpdatedDate() != null && book.getLastUpdatedDate() != 0) {
+            Date date = new Date(book.getLastUpdatedDate());
             SimpleDateFormat format = new SimpleDateFormat();
             format.applyPattern("dd MMM YYYY");
             String formattedTime = format.format(date);

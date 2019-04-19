@@ -43,11 +43,11 @@ public class BookDataWebService {
      * There are two types of books - Owned & Shared.
      */
     public void loadCurrentUserBookData () {
-        mDataRepo.eraseRoom();
-        loadAllOwnedBooks();
-        loadAllSharedBooks();
-        mDataRepo.getAllOwnedBooksOfCurrentUser();
-        mDataRepo.getAllSharedInfos();
+//        mDataRepo.eraseRoom();
+//        loadAllOwnedBooks();
+//        loadAllSharedBooks();
+//        mDataRepo.getAllOwnedBooksOfCurrentUser();
+//        mDataRepo.getAllSharedInfos();
     }
 
     /**

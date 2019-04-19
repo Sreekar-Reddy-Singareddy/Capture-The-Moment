@@ -2,11 +2,10 @@ package singareddy.productionapps.capturethemoment.models;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
-import android.arch.persistence.room.Insert;
-import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+import java.util.HashMap;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.AppUtilities;
@@ -17,26 +16,26 @@ public class Book {
     private String bookId;
     private String name;
     private String owner;
-    private Long createdTime;
-    private Long lastOpenedTime;
+    private Long createdDate;
+    private Long lastUpdatedDate;
 
-    @Ignore private List<ShareInfo> secOwners;
+    @Ignore private HashMap<String, Boolean> secOwners;
     @Ignore private List<Card> cards;
 
     public Book() {
     }
 
-    public Book(String name, String owner, Long createdTime) {
+    public Book(String name, String owner, Long createdDate) {
         this.name = name;
         this.owner = owner;
-        this.createdTime = createdTime;
+        this.createdDate = createdDate;
     }
 
-    public Book(String name, String owner, List<ShareInfo> secOwners, Long createdTime) {
+    public Book(String name, String owner, HashMap<String, Boolean> secOwners, Long createdDate) {
         this.name = name;
         this.owner = owner;
         this.secOwners = secOwners;
-        this.createdTime = createdTime;
+        this.createdDate = createdDate;
     }
 
     public String getName() {
@@ -55,11 +54,11 @@ public class Book {
         this.owner = owner;
     }
 
-    public List<ShareInfo> getSecOwners() {
+    public HashMap<String, Boolean> getSecOwners() {
         return secOwners;
     }
 
-    public void setSecOwners(List<ShareInfo> secOwners) {
+    public void setSecOwners(HashMap<String, Boolean> secOwners) {
         this.secOwners = secOwners;
     }
 
@@ -71,20 +70,20 @@ public class Book {
         this.cards = cards;
     }
 
-    public Long getCreatedTime() {
-        return createdTime;
+    public Long getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreatedTime(Long createdTime) {
-        this.createdTime = createdTime;
+    public void setCreatedDate(Long createdDate) {
+        this.createdDate = createdDate;
     }
 
-    public Long getLastOpenedTime() {
-        return lastOpenedTime;
+    public Long getLastUpdatedDate() {
+        return lastUpdatedDate;
     }
 
-    public void setLastOpenedTime(Long lastOpenedTime) {
-        this.lastOpenedTime = lastOpenedTime;
+    public void setLastUpdatedDate(Long lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
     }
 
     @NonNull

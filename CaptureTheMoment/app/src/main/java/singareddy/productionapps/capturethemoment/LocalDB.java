@@ -13,7 +13,7 @@ import singareddy.productionapps.capturethemoment.book.ShareInfoDao;
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.ShareInfo;
 
-@Database (entities = {Book.class, ShareInfo.class}, exportSchema = false, version = 1)
+@Database (entities = {Book.class, ShareInfo.class}, exportSchema = false, version = 2)
 public abstract class LocalDB extends RoomDatabase {
     private static String TAG = "LocalDB";
 

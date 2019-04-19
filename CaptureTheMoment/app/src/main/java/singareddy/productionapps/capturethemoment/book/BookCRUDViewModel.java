@@ -59,7 +59,7 @@ public class BookCRUDViewModel extends AndroidViewModel implements BookListener,
         mFirebaseAuth.addAuthStateListener(authStateListener);
     }
 
-    /** STATUS - NOT WORKING
+    /**
      * This method takes book details from the UI and
      * validates them with the existing data in the Room DB for duplicate book.
      * Also validates all the secondary owner details with the Firebase data.

@@ -3,6 +3,7 @@ package singareddy.productionapps.capturethemoment;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,10 +12,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import singareddy.productionapps.capturethemoment.book.BookCRUDViewModel;
+import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.user.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 import singareddy.productionapps.capturethemoment.models.User;
@@ -44,7 +56,7 @@ public class ExperimentActivity extends AppCompatActivity implements Authenticat
         authenticationViewModel.setEmailSignupListener(this);
 
         performAction = findViewById(R.id.action);
-        input = findViewById(R.id.input);
+        input = findViewById(R.id.input); input.setText("5");
 
         SharedPreferences userProfile = getApplication().getSharedPreferences("USER_PROFILE", Context.MODE_PRIVATE);
         Log.i(TAG, "onCreate: Name: "+userProfile.getString("emailId","N/A"));
@@ -77,6 +89,36 @@ public class ExperimentActivity extends AppCompatActivity implements Authenticat
         else if (code == 4) {
             authenticationViewModel.logout();
         }
+        else if (code == 5) {
+            bookExperiment();
+        }
+    }
+
+    private void bookExperiment() {
+        firebaseDatabase.getReference().child("books")
+                .orderByChild("owner").equalTo("owner_one")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        Log.i(TAG, "onDataChange: "+dataSnapshot.getValue().toString());
+                        HashMap<String, Object> map = (HashMap<String, Object>) dataSnapshot.getValue();
+
+                        for (Map.Entry<String, Object> entry : map.entrySet()) {
+                            ObjectMapper mapper = new ObjectMapper();
+                            Book b = mapper.convertValue(entry.getValue(), Book.class);
+                            if (b.getName().toLowerCase().trim().equals("first book")) {
+                                Toast.makeText(ExperimentActivity.this, "Book exists!", Toast.LENGTH_SHORT).show();
+                                break;
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.i(TAG, "onCancelled: Message: "+databaseError.getMessage());
+                        Log.i(TAG, "onCancelled: Details: "+databaseError.getDetails());
+                    }
+                });
     }
 
     // Authentication Listener Interface Methods
