@@ -2,6 +2,8 @@ package singareddy.productionapps.capturethemoment;
 
 import com.google.firebase.auth.FirebaseUser;
 
+
+// HELLO
 public class AppUtilities {
 
     public static boolean UPDATE_PROFILE_DIALOG_SHOWN = false;

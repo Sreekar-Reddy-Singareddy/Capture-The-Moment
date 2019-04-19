@@ -13,17 +13,8 @@
     <list default="true" id="dabca18c-fae9-4e4c-9ee5-fdf01046dba7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Capture The Moment.pages" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/AppUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/AppUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/ExperimentActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/ExperimentActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookCRUDViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookWebService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookWebService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,19 +33,20 @@
     <session id="-1340649334">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.2" value="2" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="149" />
+          <entry key="java" value="150" />
           <entry key="xml" value="30" />
         </counts>
       </usages-collector>
@@ -62,7 +54,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="149" />
+          <entry key="JAVA" value="150" />
           <entry key="XML" value="30" />
         </counts>
       </usages-collector>
@@ -70,7 +62,7 @@
         <counts>
           <entry key="dummy" value="37" />
           <entry key="gradle" value="30" />
-          <entry key="java" value="33595" />
+          <entry key="java" value="33605" />
           <entry key="txt" value="805" />
           <entry key="xml" value="479" />
         </counts>
@@ -78,7 +70,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="30" />
-          <entry key="JAVA" value="33595" />
+          <entry key="JAVA" value="33605" />
           <entry key="PLAIN_TEXT" value="842" />
           <entry key="XML" value="479" />
         </counts>
@@ -86,7 +78,17 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/AppUtilities.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -143,7 +145,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BooksViewModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AllBooksFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookDataWebService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/AppUtilities.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookListener.java" />
@@ -157,10 +158,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/InsideBookActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/EditBookActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/AddBookWebService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/AppUtilities.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="825" />
@@ -175,6 +177,7 @@
     <panes>
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -193,18 +196,10 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="capturethemoment" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CaptureTheMoment" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="capturethemoment" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -317,7 +312,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="825" extended-state="1" />
+    <frame x="0" y="23" width="1440" height="825" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" sideWeight="0.5006821" side_tool="true" weight="0.22174536" />
       <window_info id="Image Layers" order="1" />
@@ -335,7 +331,7 @@
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3287858" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5007153" side_tool="true" weight="0.3287858" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49928468" weight="0.3287858" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="9" weight="0.4106412" />
       <window_info anchor="right" id="Preview" order="0" weight="0.3297568" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -546,10 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
           <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
-          <folding>
-            <element signature="method#ShareInfo#0;class#ShareInfo#0" />
-            <element signature="method#ShareInfo#1;class#ShareInfo#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -592,9 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -602,14 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding>
-            <element signature="method#AllBooksFragment#0;class#AllBooksFragment#0" />
-            <element signature="e#994#1003#0" />
-            <element signature="method#onCreateView#0;class#AllBooksFragment#0" />
-            <element signature="method#onBookLiveDataRecieved#0;class#AllBooksFragment#0" />
-            <element signature="class#2434:2585" />
-            <element signature="method#onChanged#0;class#2434:2662" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -617,11 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="27" column="5" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="method#BooksViewModel#0;class#BooksViewModel#0" />
-            <element signature="method#setmBookDataListener#0;class#BooksViewModel#0" />
-            <element signature="method#onBookLiveDataRecieved#0;class#BooksViewModel#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -649,9 +625,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
           <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,22 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1273">
           <caret line="319" column="7" selection-start-line="319" selection-start-column="7" selection-end-line="319" selection-end-column="7" />
-          <folding>
-            <element signature="e#890#920#0" expanded="true" />
-            <element signature="e#7625#7631#0" expanded="true" />
-            <element signature="e#9311#9312#0" expanded="true" />
-            <element signature="e#9353#9354#0" expanded="true" />
-            <element signature="e#10005#10011#0" expanded="true" />
-            <element signature="e#11359#11360#0" expanded="true" />
-            <element signature="e#11397#11398#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/AppUtilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="36" column="91" selection-start-line="36" selection-start-column="91" selection-end-line="36" selection-end-column="91" />
         </state>
       </provider>
     </entry>
@@ -697,13 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="104" column="35" selection-start-line="104" selection-start-column="35" selection-end-line="104" selection-end-column="35" />
-          <folding>
-            <element signature="method#Book#0;class#Book#0" />
-            <element signature="method#Book#1;class#Book#0" />
-            <element signature="method#Book#2;class#Book#0" />
-            <element signature="method#toString#0;class#Book#0" />
-            <element signature="method#doIOwnTheBook#0;class#Book#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -737,12 +687,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="46" column="96" selection-start-line="46" selection-start-column="96" selection-end-line="46" selection-end-column="96" />
-          <folding>
-            <element signature="method#AllBooksAdapter#0;class#AllBooksAdapter#0" />
-            <element signature="method#getItemCount#0;class#AllBooksAdapter#0" />
-            <element signature="method#onCreateViewHolder#0;class#AllBooksAdapter#0" />
-            <element signature="method#onBindViewHolder#0;class#AllBooksAdapter#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -808,16 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="59" column="42" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
-          <folding>
-            <element signature="method#onCreate#0;class#EditBookActivity#0" />
-            <element signature="method#initialiseUI#0;class#EditBookActivity#0" />
-            <element signature="method#addNewSecOwner#0;class#EditBookActivity#0" />
-            <element signature="method#initViewModel#0;class#EditBookActivity#0" />
-            <element signature="method#onOptionsItemSelected#0;class#EditBookActivity#0" />
-            <element signature="method#onBookNameInvalid#0;class#EditBookActivity#0" />
-            <element signature="method#onThisSecOwnerValidated#0;class#EditBookActivity#0" />
-            <element signature="method#onAllSecOwnersValidated#0;class#EditBookActivity#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -825,12 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding>
-            <element signature="method#onCreate#0;class#InsideBookActivity#0" />
-            <element signature="method#onCreateOptionsMenu#0;class#InsideBookActivity#0" />
-            <element signature="method#onOptionsItemSelected#0;class#InsideBookActivity#0" />
-            <element signature="method#navigateToEditActivity#0;class#InsideBookActivity#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,6 +840,13 @@
             <element signature="method#setAddBookListener#0;class#AddBookWebService#0" />
             <element signature="method#setmIsBookNameValid#0;class#AddBookWebService#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/AppUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
         </state>
       </provider>
     </entry>
