@@ -1,5 +1,7 @@
 package singareddy.productionapps.capturethemoment.models;
 
+import android.util.Log;
+
 public class SecondaryOwner {
 
     private String username = "";
@@ -7,6 +9,10 @@ public class SecondaryOwner {
     private Integer validated = 0;
 
     public SecondaryOwner() {
+    }
+
+    public SecondaryOwner(String username) {
+        this.username = username;
     }
 
     public SecondaryOwner(String username, Boolean canEdit) {
@@ -36,5 +42,17 @@ public class SecondaryOwner {
 
     public void setValidated(Integer validated) {
         this.validated = validated;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        try {
+            SecondaryOwner owner = (SecondaryOwner) obj;
+            return owner.getUsername().toLowerCase().trim().equals(this.username.toLowerCase().trim());
+        }
+        catch (ClassCastException e) {
+            System.out.println("Exception: "+e.getLocalizedMessage());
+            return false;
+        }
     }
 }

@@ -5,6 +5,8 @@ import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -13,14 +15,14 @@ import singareddy.productionapps.capturethemoment.AppUtilities;
 @Entity
 public class Book {
     @NonNull @PrimaryKey(autoGenerate = false)
-    private String bookId;
-    private String name;
-    private String owner;
-    private Long createdDate;
-    private Long lastUpdatedDate;
+    private String bookId = "";
+    private String name = "";
+    private String owner = "";
+    private Long createdDate = new Date().getTime();
+    private Long lastUpdatedDate = new Date().getTime();
 
-    @Ignore private HashMap<String, Boolean> secOwners;
-    @Ignore private List<Card> cards;
+    @Ignore private HashMap<String, Boolean> secOwners = new HashMap<>();
+    @Ignore private List<Card> cards = new ArrayList<>();
 
     public Book() {
     }
@@ -103,5 +105,27 @@ public class Book {
 
     public boolean doIOwnTheBook() {
         return this.owner.equals(AppUtilities.User.CURRENT_USER.getUid());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean same = false;
+        try {
+            Book book = (Book) obj;
+            same =
+            book.getBookId().equals(bookId) &&
+            book.getName().toLowerCase().trim().equals(name.toLowerCase().trim()) &&
+            book.getOwner().toLowerCase().trim().equals(owner.toLowerCase().trim()) &&
+            book.getCreatedDate().equals(createdDate) &&
+            book.getLastUpdatedDate().equals(lastUpdatedDate) &&
+            book.getSecOwners().equals(secOwners) &&
+            book.getCards().equals(cards);
+        }
+        catch (ClassCastException e) {
+            System.out.println("Exception: "+e.getLocalizedMessage());
+        }
+        finally {
+            return same;
+        }
     }
 }

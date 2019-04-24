@@ -25,11 +25,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat"
         android:windowSoftInputMode="adjustResize" >
-        <activity android:name="singareddy.productionapps.capturethemoment.book.EditBookActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.book.InsideBookActivity" />
-        <activity
-            android:name="singareddy.productionapps.capturethemoment.book.AddBookActivity"
-            android:parentActivityName="singareddy.productionapps.capturethemoment.MainActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.book.details.EditBookActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.book.details.BookDetailsActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity" />
         <activity
             android:name="singareddy.productionapps.capturethemoment.user.ProfileUpdateActivity"
             android:parentActivityName="singareddy.productionapps.capturethemoment.MainActivity" />

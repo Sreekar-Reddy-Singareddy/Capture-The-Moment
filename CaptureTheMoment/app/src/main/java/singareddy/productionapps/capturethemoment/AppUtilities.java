@@ -45,4 +45,8 @@ public class AppUtilities {
         public static String CURRENT_USER_MOBILE;
         public static String CURRENT_USER_EMAIL;
     }
+
+    public static class FileNames {
+        public static final String UIDS_CACHE = "UIDS_CACHE";
+    }
 }

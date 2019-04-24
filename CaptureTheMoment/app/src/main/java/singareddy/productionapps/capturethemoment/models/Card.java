@@ -86,4 +86,6 @@ public class Card {
     public void setModifiedTime(Long modifiedTime) {
         this.modifiedTime = modifiedTime;
     }
+
+    // TODO: Override equals method for Card
 }

@@ -1056,6 +1056,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_smartphone_black_24dp
+drawable ic_warning_orange_24dp
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1400,9 +1401,9 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_book
+layout activity_book_details
 layout activity_dummy
 layout activity_experiment
-layout activity_inside_book
 layout activity_login
 layout activity_main
 layout activity_mobile_login

@@ -11,11 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat"
         android:windowSoftInputMode="adjustResize">
-        <activity android:name=".book.EditBookActivity"></activity>
-        <activity android:name=".book.InsideBookActivity"></activity>
+        <activity android:name=".book.details.EditBookActivity"></activity>
+        <activity android:name=".book.details.BookDetailsActivity"></activity>
         <activity
-            android:name=".book.AddBookActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".book.addbook.AddBookActivity" />
         <activity
             android:name=".user.ProfileUpdateActivity"
             android:parentActivityName=".MainActivity" />

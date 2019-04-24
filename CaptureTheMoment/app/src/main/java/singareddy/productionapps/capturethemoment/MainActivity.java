@@ -16,8 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import singareddy.productionapps.capturethemoment.book.AddBookActivity;
-import singareddy.productionapps.capturethemoment.book.AllBooksFragment;
+import singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity;
+import singareddy.productionapps.capturethemoment.book.getbooks.GetBooksFragment;
 import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.user.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements AuthenticationLis
         setContentView(R.layout.activity_main);
 
         // Initially, show all the books
-        AllBooksFragment allBooksFragment = new AllBooksFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, allBooksFragment).commit();
+        GetBooksFragment getBooksFragment = new GetBooksFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, getBooksFragment).commit();
 
         authenticationViewModel = ViewModelProviders.of(this).get(AuthenticationViewModel.class);
         authenticationViewModel.setLogoutListener(this);
@@ -89,8 +89,8 @@ public class MainActivity extends AppCompatActivity implements AuthenticationLis
             return true;
         }
         if (menuItem.getItemId() == R.id.main_nav_menu_home_item) {
-            AllBooksFragment allBooksFragment = new AllBooksFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, allBooksFragment).commit();
+            GetBooksFragment getBooksFragment = new GetBooksFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, getBooksFragment).commit();
         }
         else if (menuItem.getItemId() == R.id.main_nav_menu_profile_item) {
             ProfileFragment profileFragment = new ProfileFragment();

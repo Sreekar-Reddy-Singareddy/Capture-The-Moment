@@ -24,23 +24,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.*;
-import static singareddy.productionapps.capturethemoment.AppUtilities.FailureCodes.*;
 import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
 
 import singareddy.productionapps.capturethemoment.AppUtilities;
-import singareddy.productionapps.capturethemoment.book.BookDataWebService;
 import singareddy.productionapps.capturethemoment.models.User;
 
-import static singareddy.productionapps.capturethemoment.AppUtilities.*;
 import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
-import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
 
 
 public class AuthenticationViewModel extends AndroidViewModel {
@@ -55,14 +47,12 @@ public class AuthenticationViewModel extends AndroidViewModel {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseDatabase firebaseDatabase;
-    private BookDataWebService mBookDataWebService;
     private User user;
 
     public AuthenticationViewModel(Application application) {
         super(application);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        mBookDataWebService = new BookDataWebService(application);
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -83,9 +73,6 @@ public class AuthenticationViewModel extends AndroidViewModel {
                     else if (LOGIN_PROVIDER.equals(PHONE_PROVIDER)) {
                         CURRENT_USER_MOBILE = convertE164toNormalMobile(CURRENT_USER.getPhoneNumber());
                     }
-
-                    // Load initial data
-                    mBookDataWebService.loadCurrentUserBookData();
                 }
             }
         };
@@ -120,7 +107,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
             public void onSuccess(AuthResult authResult) {
                 Log.i(TAG, "onSuccess: *");
                 emailSignupListener.onEmailUserRegisterSuccess(user.getEmailId());
-                // TODO: Get the user data
+                // TODO: GetBookListener the user data
                 getCurrentUserProfile();
 //                updateUserProfile(user);
             }
@@ -258,7 +245,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
         final ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // Get the data at this node and see if it is null
+                // GetBookListener the data at this node and see if it is null
                 // If the user was already created, the snapshot will have non-null
                 // Else, it will have null value
                 Log.i(TAG, "onDataChange: NAME: "+dataSnapshot.getValue());
