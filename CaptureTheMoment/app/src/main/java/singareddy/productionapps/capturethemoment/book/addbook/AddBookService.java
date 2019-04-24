@@ -200,8 +200,6 @@ public class AddBookService {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            // Book saved in firebase
-                            mAddBookListener.onNewBookCreated();
                             updateOwnerInFirebase(newBook);
                         }
                         else {
@@ -273,6 +271,7 @@ public class AddBookService {
                             if (task.isSuccessful()) {
                                 Log.i(TAG, "onComplete: Sec Owners Data updated");
                                 mAddBookListener.hasToSaveBookInCache(newBook);
+                                mAddBookListener.onNewBookCreated();
                             }
                             else Log.i(TAG, "onComplete: Sec owners data not updated: "+task.getException().getMessage());
                         }

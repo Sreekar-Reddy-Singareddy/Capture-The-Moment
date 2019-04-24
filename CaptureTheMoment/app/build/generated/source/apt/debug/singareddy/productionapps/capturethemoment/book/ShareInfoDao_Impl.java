@@ -26,6 +26,8 @@ public class ShareInfoDao_Impl implements ShareInfoDao {
 
   private final SharedSQLiteStatement __preparedStmtOfDeleteAllData;
 
+  private final SharedSQLiteStatement __preparedStmtOfDeleteInfosForBook;
+
   public ShareInfoDao_Impl(RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfShareInfo = new EntityInsertionAdapter<ShareInfo>(__db) {
@@ -99,6 +101,13 @@ public class ShareInfoDao_Impl implements ShareInfoDao {
         return _query;
       }
     };
+    this.__preparedStmtOfDeleteInfosForBook = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE FROM SHAREINFO WHERE bookId = ?";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -135,6 +144,25 @@ public class ShareInfoDao_Impl implements ShareInfoDao {
     } finally {
       __db.endTransaction();
       __preparedStmtOfDeleteAllData.release(_stmt);
+    }
+  }
+
+  @Override
+  public void deleteInfosForBook(String bookId) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteInfosForBook.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (bookId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindString(_argIndex, bookId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfDeleteInfosForBook.release(_stmt);
     }
   }
 

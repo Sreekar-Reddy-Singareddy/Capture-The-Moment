@@ -11,13 +11,13 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import singareddy.productionapps.capturethemoment.book.BookListener;
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookListener;
 import singareddy.productionapps.capturethemoment.book.details.UpdateBookListener;
 import singareddy.productionapps.capturethemoment.book.details.UpdateBookService;
@@ -38,7 +38,7 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
  * Its job is only to deal with the data communication.
  * The logical processing of data is not done here.
  */
-public class DataRepository implements AddBookListener, GetBookListener {
+public class DataRepository implements AddBookListener, GetBookListener, UpdateBookListener {
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
 
@@ -48,9 +48,8 @@ public class DataRepository implements AddBookListener, GetBookListener {
     private AddBookService mAddBookService;
     private GetBooksService mGetBooksService;
     private UpdateBookService mUpdateBookService;
-    private AddBookListener mAddBookListener;
+    private BookListener mBookListener;
     private GetBookListener mBookGetBookListenerListener;
-    private UpdateBookListener updateBookListener;
     private LocalDB mLocalDB;
     private Context mContext;
     private LiveData<List<Book>> mAllBooksLive;
@@ -136,6 +135,14 @@ public class DataRepository implements AddBookListener, GetBookListener {
             e.printStackTrace();
         }
         return new ArrayList<>();
+    }
+
+    public void updateBook(String bookId, String newName, List<SecondaryOwner> secOwners) {
+        if (mUpdateBookService == null) {
+            mUpdateBookService = new UpdateBookService();
+            mUpdateBookService.setUpdateBookListener(this);
+        }
+        mUpdateBookService.updateThisBook(bookId, newName, secOwners);
     }
 
     /**
@@ -240,7 +247,7 @@ public class DataRepository implements AddBookListener, GetBookListener {
 
     // MARK: Setter methods and other listener methods
     public void setAddBookListener(AddBookListener mAddBookListener) {
-        this.mAddBookListener = mAddBookListener;
+        this.mBookListener = mAddBookListener;
     }
 
     public void setBookGetListener(GetBookListener getBookListener) {
@@ -248,29 +255,32 @@ public class DataRepository implements AddBookListener, GetBookListener {
     }
 
     public void setUpdateBookListener(UpdateBookListener updateBookListener) {
-        this.updateBookListener = updateBookListener;
+        this.mBookListener = updateBookListener;
     }
 
     @Override
     public void onBookNameInvalid(String code) {
-        mAddBookListener.onBookNameInvalid(code);
+        Log.i(TAG, "onBookNameInvalid: *");
+        mBookListener.onBookNameInvalid(code);
     }
 
     @Override
     public void onAllSecOwnersValidated() {
         Log.i(TAG, "onAllSecOwnersValidated: *");
-        mAddBookListener.onAllSecOwnersValidated();
+        mBookListener.onAllSecOwnersValidated();
     }
 
     @Override
     public void onThisSecOwnerValidated() {
         Log.i(TAG, "onThisSecOwnerValidated: *");
-        mAddBookListener.onThisSecOwnerValidated();
+        mBookListener.onThisSecOwnerValidated();
     }
 
     @Override
     public void onNewBookCreated() {
-        mAddBookListener.onNewBookCreated();
+        Log.i(TAG, "onNewBookCreated: *");
+        ((AddBookListener) mBookListener).onNewBookCreated();
+        // After new book is created there is no need for the service
     }
 
     @Override
@@ -303,12 +313,23 @@ public class DataRepository implements AddBookListener, GetBookListener {
         });
     }
 
+    @Override
+    public void onBookUpdated() {
+        ((UpdateBookListener) mBookListener).onBookUpdated();
+    }
+
     // MARK: Async Tasks
     public class InsertBookTask extends AsyncTask<Book, Void, Void> {
         @Override
         protected Void doInBackground(Book... books) {
+            // Insert this book in Room DB
             Book book = books[0];
             mLocalDB.getBookDao().insert(book);
+
+            // If its update, then delete all existing shared infos
+            if (mBookListener instanceof UpdateBookListener)
+            mLocalDB.getSharedInfoDao().deleteInfosForBook(book.getBookId());
+
             book.getSecOwners().forEach((uid, editAccess) -> {
                 ShareInfo info = new ShareInfo();
                 info.setBookId(book.getBookId());
@@ -337,11 +358,11 @@ public class DataRepository implements AddBookListener, GetBookListener {
         @Override
         protected void onPostExecute(Integer integer) {
             super.onPostExecute(integer);
-            if (integer == 1 && mAddBookListener != null) {
-                mAddBookListener.onNewBookCreated();
+            if (integer == 1 && mBookListener != null) {
+//                mBookListener.onNewBookCreated();
             }
-            else if (integer == -1 && mAddBookListener != null) {
-                mAddBookListener.onBookNameInvalid(BOOK_DB_ERROR);
+            else if (integer == -1 && mBookListener != null) {
+                mBookListener.onBookNameInvalid(BOOK_DB_ERROR);
             }
         }
     }

@@ -28,4 +28,7 @@ public interface ShareInfoDao {
 
     @Query("DELETE FROM ShareInfo")
     public int deleteAllData();
+
+    @Query("DELETE FROM SHAREINFO WHERE bookId = :bookId")
+    public void deleteInfosForBook (String bookId);
 }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -56,6 +57,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     }
 
     private void initialiseUI() {
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         bookName = findViewById(R.id.add_book_et_name); bookName.setText("Vellore");
         addNewSecOwner = findViewById(R.id.add_book_ib_add_sec_owner);
         secOwnersList = findViewById(R.id.add_book_rv_sec_owners);
@@ -82,6 +84,14 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
             addBookViewModel.createThisBook(bookName.getText().toString(), secOwnersData);
             Log.i(TAG, "createBook: Enabled: "+createButton.isEnabled());
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     // *************** Interface methods ***************

@@ -30,6 +30,7 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_
 import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_EXISTS;
 import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_NAME_EMPTY;
 import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_NAME_INVALID;
+import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_NAME_SAME_AS_OLD_NAME;
 
 public class EditBookActivity extends AppCompatActivity implements AddBookListener, UpdateBookListener {
     private static String TAG = "EditBookActivity";
@@ -37,7 +38,6 @@ public class EditBookActivity extends AppCompatActivity implements AddBookListen
     public static String BOOKID = "BOOKID";
     Integer mNewBookCreationFlag = 0;
     UpdateBookViewModel updateBookViewModel;
-    AddBookViewModel addBookViewModel;
     String bookId;
     EditText bookName;
     RecyclerView secOwnersList;
@@ -60,9 +60,6 @@ public class EditBookActivity extends AppCompatActivity implements AddBookListen
     public void initViewModel () {
         UpdateBookModelFactory factory = UpdateBookModelFactory.createFactory(this);
         updateBookViewModel = ViewModelProviders.of(this, factory).get(UpdateBookViewModel.class);
-        AddBookModelFactory addBookModelFactory = AddBookModelFactory.createFactory(this);
-        addBookViewModel = ViewModelProviders.of(this, addBookModelFactory)
-                .get(AddBookViewModel.class);
     }
 
     private void initialiseUI() {
@@ -90,7 +87,8 @@ public class EditBookActivity extends AppCompatActivity implements AddBookListen
 
     public void createBook (View view) {
         createBookButton.setEnabled(false);
-        Toast.makeText(this, "Same as old name!", Toast.LENGTH_SHORT).show();
+        updateBookViewModel.setUpdateBookListener(this);
+        updateBookViewModel.updateBook(bookId ,bookName.getText().toString(), mBook.getName(), secOwnersData);
     }
 
     // *************** Overriddent methods ***************
@@ -140,16 +138,13 @@ public class EditBookActivity extends AppCompatActivity implements AddBookListen
 
     @Override
     public void onDuplicatesExist() {
+        createBookButton.setEnabled(true);
         adapter.notifyDataSetChanged();
     }
 
     @Override
-    public void onNewBookCreated() {
-        Toast.makeText(this, "Book updated successfully!", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
     public void onSelfUsernameGiven(String selfUsername) {
+        createBookButton.setEnabled(true);
         AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle("Own username")
                 .setMessage("You cannot give your own username as secondary owner since you are the primary owner. This will be removed.")
@@ -163,7 +158,7 @@ public class EditBookActivity extends AppCompatActivity implements AddBookListen
                 SecondaryOwner s = new SecondaryOwner(selfUsername);
                 secOwnersData.removeIf((owner) -> (owner.equals(s)));
                 // Call viewmodel again
-                addBookViewModel.createThisBook(bookName.getText().toString(), secOwnersData);
+                updateBookViewModel.updateBook(bookId, bookName.getText().toString(), mBook.getName(), secOwnersData);
                 adapter.notifyDataSetChanged();
             }
         });
@@ -175,5 +170,11 @@ public class EditBookActivity extends AppCompatActivity implements AddBookListen
         Log.i(TAG, "onExistingUsernamesRecieved: OWNERS: "+secOwners.size());
         secOwnersData.addAll(secOwners);
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onBookUpdated() {
+        Toast.makeText(this, "Book Updated!", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

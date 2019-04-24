@@ -150,6 +150,7 @@ public class AddBookViewModel extends ViewModel implements AddBookListener {
 
     @Override
     public void onNewBookCreated() {
+        Log.i(TAG, "onNewBookCreated: *");
         mAddBookListener.onNewBookCreated();
     }
 }
