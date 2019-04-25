@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import singareddy.productionapps.capturethemoment.MainActivity;
 import singareddy.productionapps.capturethemoment.R;
 
@@ -22,6 +24,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            Intent homeIntent = new Intent(this, MainActivity.class);
+            startActivity(homeIntent);
+            finish();
+        }
         setContentView(R.layout.activity_login);
         authenticationViewModel = ViewModelProviders.of(this).get(AuthenticationViewModel.class);
         authenticationViewModel.setEmailLoginListener(this);

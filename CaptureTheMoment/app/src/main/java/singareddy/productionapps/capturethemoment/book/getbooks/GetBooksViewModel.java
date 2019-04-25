@@ -1,5 +1,6 @@
 package singareddy.productionapps.capturethemoment.book.getbooks;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 import android.util.Log;
 
@@ -18,10 +19,9 @@ public class GetBooksViewModel extends ViewModel implements GetBookListener {
         mDataRepo = repository;
     }
 
-    public void getAllBooks() {
+    public LiveData<List<Book>> getAllBooks() {
         Log.i(TAG, "getAllBooks: *");
-        mDataRepo.setBookGetListener(this);
-        mDataRepo.getAllBooks();
+        return mDataRepo.getAllBooksOfThisUser();
     }
 
     // MARK: Setters and listener methods

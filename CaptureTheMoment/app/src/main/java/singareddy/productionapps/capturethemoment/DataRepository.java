@@ -1,6 +1,7 @@
 package singareddy.productionapps.capturethemoment;
 
 import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -80,6 +81,10 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
         return DATA_REPOSITORY;
     }
 
+    public SharedPreferences getUsernamesCache(){
+        return mContext.getSharedPreferences(AppUtilities.FileNames.UIDS_CACHE, Context.MODE_PRIVATE);
+    }
+
     // MARK: Methods that communicate with GetBooksService.java
     /**
      * This method validates using 2 sources of data.
@@ -102,6 +107,20 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
             mGetBooksService.setGetBookListener(this);
         }
         mGetBooksService.getAllBooksFromFirebase();
+    }
+
+    /**
+     * Get all the books of this owner as live data
+     * and use it to update the UI.
+     * @return
+     */
+    public LiveData<List<Book>> getAllBooksOfThisUser(){
+        try {
+            return mExecutor.submit(()-> mLocalDB.getBookDao().getAllBooks(FirebaseAuth.getInstance().getCurrentUser().getUid())).get();
+        } catch (ExecutionException | InterruptedException e) {
+            Log.i(TAG, "getAllBooksOfThisUser: Error: "+e.getLocalizedMessage());
+            return new MutableLiveData<>();
+        }
     }
 
     public Book getBookDetailsFor(String bookId) {
@@ -325,6 +344,7 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
             // Insert this book in Room DB
             Book book = books[0];
             mLocalDB.getBookDao().insert(book);
+            Log.i(TAG, "doInBackground: BOOK INSERTED: "+book.getName());
 
             // If its update, then delete all existing shared infos
             if (mBookListener instanceof UpdateBookListener)

@@ -1,6 +1,10 @@
 package singareddy.productionapps.capturethemoment.book.addbook;
 
+import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.Observer;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,6 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 import singareddy.productionapps.capturethemoment.AppUtilities;
+import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 
@@ -34,6 +39,8 @@ public class AddBookService {
     private Boolean mAreSecOwnersValid = false;
     private String mNewBookName;
     private List<SecondaryOwner> mSecOwnersList;
+    private MutableLiveData<Integer> ownerValidated;
+    private Observer<Integer> ownersObserver;
 
     public AddBookService () {
         mfirebaseDB = FirebaseDatabase.getInstance();
@@ -51,6 +58,31 @@ public class AddBookService {
         mSecOwnersList = secOwners;
         mAreSecOwnersValid = false;
         mIsBookNameValid = false;
+        ownerValidated =  new MutableLiveData<>();
+        ownersObserver = new Observer<Integer>() {
+            @Override
+            public void onChanged(@Nullable Integer integer) {
+                Log.i(TAG, "onChanged: OWNERS: "+integer);
+                Log.i(TAG, "onChanged: VALID OWNERS: "+validSecOwnersMap);
+                Log.i(TAG, "onChanged: ORIGINAL ARRAY: "+mSecOwnersList);
+                // UI must be told once all items have been checked.
+                // This is done ONLY once for every click on the UI button.
+                // That button is enabled again ONLY after this notification is sent to UI.
+                if (integer == mSecOwnersList.size()) {
+                    mAddBookListener.onAllSecOwnersValidated();
+                    mOwnersValidated = 0;
+                }
+
+                // Once done, check if all the sec owners are valid
+                if (mSecOwnersList.size() == validSecOwnersMap.size()) {
+                    Log.i(TAG, "onChanged: Book can be saved");
+                    mAreSecOwnersValid = true;
+                    saveNewBookInFirebase();
+                    return;
+                }
+            }
+        };
+        ownerValidated.observeForever(ownersObserver);
 
         // Verify the book name if it already exists
         validateBookNameInFirebase();
@@ -63,6 +95,11 @@ public class AddBookService {
      * Validated secondary owners from the firebase database
      */
     private void validateSecOwnersInFirebase() {
+        // Get the usernames cache from repository
+        SharedPreferences usernamesCache = mAddBookListener instanceof DataRepository ?
+                ((DataRepository) mAddBookListener).getUsernamesCache() : null;
+
+        // Get reference to the registeredUsers node
         DatabaseReference targetDataNode = mfirebaseDB.getReference().child(AppUtilities.Firebase.ALL_REGISTERED_USERS_NODE);
         mOwnersValidated = 0;
         validSecOwnersMap = new HashMap<>();
@@ -77,43 +114,40 @@ public class AddBookService {
             // Check if this owner has registered in the app or not
             Log.i(TAG, "createThisBook: Username: "+secOwner.getUsername());
 
-            // If not validated, only then the control reaches here
+            // Check this owner in cache, if available
+            String uid = usernameExistsInCache(secOwner, usernamesCache);
+            if (uid != null) {
+                Log.i(TAG, "validateSecOwnersInFirebase: Found in cache.");
+                secOwner.setValidated(1);
+                validSecOwnersMap.put(uid, secOwner.getCanEdit());
+                mAddBookListener.onThisSecOwnerValidated();
+                mOwnersValidated++; ownerValidated.setValue(mOwnersValidated);
+                continue;
+            }
+
+            // Is username is not there in cache, then maybe it exists in Firebase
+            // Check in firebase for this username.
             Query query = targetDataNode.orderByValue().equalTo(secOwner.getUsername().toLowerCase().trim());
             query.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    mOwnersValidated++;
-
-                    // This snapshot MUST be non null.
+                    // Exists or not, this user has been checked for.
+                    // So increase the count.
+                    mOwnersValidated++; ownerValidated.setValue(mOwnersValidated);
+                    // Snapshot NOT NULL means username exists
                     if (dataSnapshot.getValue() != null) {
-                        // User is valid
-                        secOwner.setValidated(1);
                         Map<String, String> userMap = (HashMap<String, String>) dataSnapshot.getValue();
-                        // Save the valid user in cache
-                        mAddBookListener.hasToSaveUidInCache(userMap);
+                        secOwner.setValidated(1);
                         // Add a key value pair (UID: Access) for this secondary user
                         validSecOwnersMap.put((String) userMap.keySet().toArray()[0], secOwner.getCanEdit());
+                        // Save the uid: username pair in cache
+                        mAddBookListener.hasToSaveUidInCache(userMap);
                     }
                     else {
                         // User is not valid
                         secOwner.setValidated(-1);
                     }
                     mAddBookListener.onThisSecOwnerValidated();
-
-                    // UI must be told once all items have been checked.
-                    // This is done ONLY once for every click on the UI button.
-                    // That button is enabled again ONLY after this notification is sent to UI.
-                    if (mOwnersValidated == mSecOwnersList.size()) {
-                        mAddBookListener.onAllSecOwnersValidated();
-                        mOwnersValidated = 0;
-                    }
-
-                    // Once done, check if all the sec owners are valid
-                    if (mSecOwnersList.size() == validSecOwnersMap.size()) {
-                        mAreSecOwnersValid = true;
-                        saveNewBookInFirebase();
-                        return;
-                    }
                 }
 
                 @Override
@@ -127,6 +161,19 @@ public class AddBookService {
                 }
             });
         }
+    }
+
+    private String usernameExistsInCache(SecondaryOwner secondaryOwner, SharedPreferences cache) {
+        // If the user is not in cache then return null
+        String username = secondaryOwner.getUsername().toLowerCase().trim();
+        if (!cache.getAll().values().contains(username)) return null;
+        // Find the UID of this user
+        for (Map.Entry<String, ?> user : cache.getAll().entrySet()) {
+            if (user.getValue().equals(username)) {
+                return user.getKey();
+            }
+        }
+        return null;
     }
 
     /**
@@ -181,9 +228,10 @@ public class AddBookService {
      */
     private void saveNewBookInFirebase() {
         // This works only if both book name and sec owners are valid
-        if (!mIsBookNameValid || !mAreSecOwnersValid) {
-            return;
-        }
+        if (!mIsBookNameValid || !mAreSecOwnersValid) return;
+        // Since we are done using observer, it has to be removed
+        ownerValidated.removeObserver(ownersObserver);
+        // Create new book with the given details
         String newBookId = generateRandomBookId(); Log.i(TAG, "saveNewBookInFirebase: Generated Book ID: "+newBookId);
         Book newBook = new Book();
         newBook.setBookId(newBookId);
@@ -192,7 +240,7 @@ public class AddBookService {
         newBook.setCreatedDate(timeNow);
         newBook.setLastUpdatedDate(timeNow);
         newBook.setSecOwners(validSecOwnersMap);
-        // TODO: Upload the created book in Firebase
+        // Save this book in the Firebase
         mfirebaseDB.getReference().child(AppUtilities.Firebase.ALL_BOOKS_NODE) // books
                 .child(newBookId)  // new bookId
                 .setValue(newBook)
@@ -270,8 +318,10 @@ public class AddBookService {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Log.i(TAG, "onComplete: Sec Owners Data updated");
-                                mAddBookListener.hasToSaveBookInCache(newBook);
+                                // Now, the book has been totally saved in Firebase
                                 mAddBookListener.onNewBookCreated();
+                                // Save this same book in the cache (Room DB) as well
+                                mAddBookListener.hasToSaveBookInCache(newBook);
                             }
                             else Log.i(TAG, "onComplete: Sec owners data not updated: "+task.getException().getMessage());
                         }

@@ -260,9 +260,15 @@ public class BookDao_Impl implements BookDao {
   }
 
   @Override
-  public LiveData<List<Book>> getAllBooks() {
-    final String _sql = "SELECT * FROM Book";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public LiveData<List<Book>> getAllBooks(String owner) {
+    final String _sql = "SELECT * FROM Book WHERE owner = ? ORDER BY lastUpdatedDate DESC";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (owner == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, owner);
+    }
     return new ComputableLiveData<List<Book>>() {
       private Observer _observer;
 

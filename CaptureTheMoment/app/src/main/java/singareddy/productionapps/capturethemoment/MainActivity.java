@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity;
 import singareddy.productionapps.capturethemoment.book.getbooks.GetBooksFragment;
 import singareddy.productionapps.capturethemoment.models.User;
@@ -41,8 +43,6 @@ public class MainActivity extends AppCompatActivity implements AuthenticationLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(TAG, "onCreate: * "+this);
-        Log.i(TAG, "onCreate: Bundle: "+savedInstanceState);
         setContentView(R.layout.activity_main);
 
         // Initially, show all the books

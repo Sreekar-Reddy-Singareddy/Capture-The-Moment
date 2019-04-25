@@ -84,8 +84,13 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
             Date date = new Date(book.getLastUpdatedDate());
             SimpleDateFormat format = new SimpleDateFormat();
             format.applyPattern("dd MMM YYYY");
-            String formattedTime = format.format(date);
-            holder.lastOpened.setText(formattedTime);
+            long diff = new Date().getTime() - book.getLastUpdatedDate().longValue();
+            if (diff < 60*1000) {
+                holder.lastOpened.setText("now");
+            }
+            else {
+                holder.lastOpened.setText(String.valueOf(diff/(1000*60)) + " minutes ago");
+            }
         }
         else {
             holder.lastOpened.setText("NA");

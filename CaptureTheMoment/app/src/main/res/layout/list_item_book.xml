@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Last Opened On:"
+                android:text="Last updated:"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/book_item_iv_share"
                 app:layout_constraintStart_toStartOf="parent" />
