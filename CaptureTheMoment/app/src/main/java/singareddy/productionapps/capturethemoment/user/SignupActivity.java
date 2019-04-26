@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.auth.LoginActivity;
 
 public class SignupActivity extends AppCompatActivity implements TabLayout.BaseOnTabSelectedListener, View.OnClickListener {
     private static String TAG = "SignupActivity";

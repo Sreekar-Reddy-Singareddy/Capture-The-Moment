@@ -30,6 +30,7 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.*;
 import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
 
 import singareddy.productionapps.capturethemoment.AppUtilities;
+import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.models.User;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
@@ -198,7 +199,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
         mobile = PhoneNumberUtils.formatNumberToE164(mobile, "IN");
         // Check if the mobile number is valid and not empty
         if (mobile == null || mobile.equals("")) {
-            mobileLoginListener.onMobileAuthenticationFailure(mobile, "EMPTY_FIELDS");
+            mobileLoginListener.onMobileAuthenticationFailure("EMPTY_FIELDS");
             return;
         }
         PhoneAuthProvider.getInstance().verifyPhoneNumber(mobile, 10, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD, callbacks);
@@ -219,7 +220,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
                 user = new User();
                 user.setMobile(Long.parseLong(m));
                 getCurrentUserProfile();
-                mobileLoginListener.onMobileAuthenticationSuccess(m);
+                mobileLoginListener.onMobileAuthenticationSuccess();
             }
         };
 
@@ -227,7 +228,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.i(TAG, "onFailure: "+e.getMessage());
-                mobileLoginListener.onMobileAuthenticationFailure("", ""); // TODO: Mobile number cannot be passed??
+                mobileLoginListener.onMobileAuthenticationFailure(""); // TODO: Mobile number cannot be passed??
             }
         };
         firebaseAuth.signInWithCredential(phoneAuthCredential)

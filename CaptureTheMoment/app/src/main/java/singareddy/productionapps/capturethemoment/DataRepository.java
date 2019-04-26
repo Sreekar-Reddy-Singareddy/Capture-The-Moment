@@ -18,6 +18,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import singareddy.productionapps.capturethemoment.auth.AuthService;
 import singareddy.productionapps.capturethemoment.book.BookListener;
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookListener;
 import singareddy.productionapps.capturethemoment.book.details.UpdateBookListener;
@@ -29,9 +30,9 @@ import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 import singareddy.productionapps.capturethemoment.models.ShareInfo;
 import singareddy.productionapps.capturethemoment.models.User;
+import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.Book.*;
-import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
 
 /**
  * This class is the single reliable source of
@@ -39,18 +40,24 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
  * Its job is only to deal with the data communication.
  * The logical processing of data is not done here.
  */
-public class DataRepository implements AddBookListener, GetBookListener, UpdateBookListener {
+public class DataRepository implements AddBookListener, GetBookListener, UpdateBookListener, AuthenticationListener.EmailLogin, AuthenticationListener.Mobile {
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseDatabase mFirebaseDB;
     private FirebaseUser mCurrentUser;
+
     private AddBookService mAddBookService;
     private GetBooksService mGetBooksService;
     private UpdateBookService mUpdateBookService;
+    private AuthService mAuthService;
+
     private BookListener mBookListener;
     private GetBookListener mBookGetBookListenerListener;
+    private AuthenticationListener.EmailLogin emailLoginListener;
+    private AuthenticationListener.Mobile mobileAuthListener;
+
     private LocalDB mLocalDB;
     private Context mContext;
     private LiveData<List<Book>> mAllBooksLive;
@@ -85,7 +92,8 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
         return mContext.getSharedPreferences(AppUtilities.FileNames.UIDS_CACHE, Context.MODE_PRIVATE);
     }
 
-    // MARK: Methods that communicate with GetBooksService.java
+    // =================================================================== Book Module
+
     /**
      * This method validates using 2 sources of data.
      * Book name is validated from Room DB.
@@ -99,14 +107,6 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
             mAddBookService.setBookListener(this);
         }
         mAddBookService.createThisBook(bookName, secOwners);
-    }
-
-    public void getAllBooks(){
-        if (mGetBooksService == null) {
-            mGetBooksService = new GetBooksService(mContext);
-            mGetBooksService.setGetBookListener(this);
-        }
-        mGetBooksService.getAllBooksFromFirebase();
     }
 
     /**
@@ -164,107 +164,29 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
         mUpdateBookService.updateThisBook(bookId, newName, secOwners);
     }
 
-    /**
-     * Cleans up all the unused variables created for
-     * adding a new book.
-     */
-    public void cleanUpVariables() {
-        mContext = null;
-        mAddBookService = null;
-    }
+    // =================================================================== Authentication Module
 
-    // MARK: Methods that communicate with BookDataWebService.java
-    /** STATUS - WORKING
-     * This method inserts book into Room DB.
-     * @param book: Book to be inserted
-     */
-    public void insertBookInRoom(final Book book) {
-        Log.i(TAG, "insertBookInRoom: *");
-        // Redirect control to insert shared info if it an owned book.
-        if (CURRENT_USER.getUid().equals(book.getOwner())) {
-            // This is an owned book.
-            insertAllSharedInfosOfOwnedBook(book);
+    public void loginUserWithEmail(String email, String password) {
+        if (mAuthService == null) {
+            mAuthService = new AuthService();
+            mAuthService.setEmailLoginListener(this);
         }
-        // Insert book in Room.
-        new InsertBookTask().execute(book);
+        mAuthService.loginUserWithEmail(email, password);
     }
 
-    /** STATUS - NOT WORKING
-     * This method inserts shared info of an owned book into Room.
-     * @param book
-     */
-    private void insertAllSharedInfosOfOwnedBook (Book book) {
-        // Owned book may have more than one shared infos
-//        insertSharedInfo(book.getSecOwners());
-    }
-
-    /** STATUS - NOT WORKING
-     * Takes a list of shared info objects and inserts them in the Room DB
-     * @param shareInfos
-     */
-    public void insertSharedInfo(final List<ShareInfo> shareInfos) {
-        if (shareInfos == null) {
-            return;
+    public void authorizePhoneCredentials(String mobile, String otpCode) {
+        if (mAuthService == null) {
+            mAuthService = new AuthService();
+            mAuthService.setMobileAuthListener(this);
         }
-        // Insert shared info into Room.
-        new InsertSharedInfosTask().execute(shareInfos);
+        mAuthService.authorizePhoneCredentials(mobile, otpCode);
     }
 
-    /**
-     * Gets all the owned books of the current user.
-     */
-    public void getAllOwnedBooksOfCurrentUser () {
-        Log.i(TAG, "getAllOwnedBooksOfCurrentUser: *");
-        Runnable selectRunnable = new Runnable() {
-            @Override
-            public void run() {
-                Log.i(TAG, "run: Selecting books on: "+Thread.currentThread().getName());
-                List<Book> allBooks = mLocalDB.getBookDao().getAllOwnedBooks(CURRENT_USER.getUid());
-                for (Book b : allBooks) {
-                    Log.i(TAG, "run: Book ID: "+b.getBookId()+" Owner: "+b.getOwner());
-                }
-                Log.i(TAG, "run: Books available in local db: "+allBooks.size());
-            }
-        };
-        new Thread(selectRunnable).start();
-    }
 
-    /**
-     * Gets all the sharedinfos in the local DB.
-     */
-    public void getAllSharedInfos() {
-        Runnable getInfos = new Runnable() {
-            @Override
-            public void run() {
-                Log.i(TAG, "run: Getting all infos on: "+Thread.currentThread().getName());
-                List<ShareInfo> shareInfos = mLocalDB.getSharedInfoDao().getAllShareInfos();
-                for(ShareInfo info:shareInfos){
-                    Log.i(TAG, "run: Info: "+info.toString());
-                }
-            }
-        };
-        new Thread(getInfos).start();
-    }
 
-    /**
-     * This method simply erases entire data from Room DB.
-     * This happens everytime user logs in or logs out.
-     */
-    public void eraseRoom() {
-        Runnable deleteTask = new Runnable() {
-            @Override
-            public void run() {
-                Log.i(TAG, "run: Deleting all data from local DB on: "+Thread.currentThread().getName());
-                long code = mLocalDB.getBookDao().deleteAllData();
-                long code1 = mLocalDB.getSharedInfoDao().deleteAllData();
-                Log.i(TAG, "run: Deleted Books: "+code);
-                Log.i(TAG, "run: Deleted Infos: "+code1);
-            }
-        };
-        new Thread(deleteTask).start();
-    }
 
     // MARK: Setter methods and other listener methods
+
     public void setAddBookListener(AddBookListener mAddBookListener) {
         this.mBookListener = mAddBookListener;
     }
@@ -276,6 +198,16 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
     public void setUpdateBookListener(UpdateBookListener updateBookListener) {
         this.mBookListener = updateBookListener;
     }
+
+    public void setEmailLoginListener(AuthenticationListener.EmailLogin emailLoginListener) {
+        this.emailLoginListener = emailLoginListener;
+    }
+
+    public void setMobileAuthListener(AuthenticationListener.Mobile mobileAuthListener) {
+        this.mobileAuthListener = mobileAuthListener;
+    }
+
+    // ===================
 
     @Override
     public void onBookNameInvalid(String code) {
@@ -293,13 +225,6 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
     public void onThisSecOwnerValidated() {
         Log.i(TAG, "onThisSecOwnerValidated: *");
         mBookListener.onThisSecOwnerValidated();
-    }
-
-    @Override
-    public void onNewBookCreated() {
-        Log.i(TAG, "onNewBookCreated: *");
-        ((AddBookListener) mBookListener).onNewBookCreated();
-        // After new book is created there is no need for the service
     }
 
     @Override
@@ -332,9 +257,54 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
         });
     }
 
+    // ===================
+
+    @Override
+    public void onNewBookCreated() {
+        Log.i(TAG, "onNewBookCreated: *");
+        ((AddBookListener) mBookListener).onNewBookCreated();
+        // After new book is created there is no need for the service
+    }
+
+    // ===================
+
     @Override
     public void onBookUpdated() {
         ((UpdateBookListener) mBookListener).onBookUpdated();
+    }
+
+    // =================== Email Login Listener
+
+    @Override
+    public void onEmailUserLoginSuccess() {
+        emailLoginListener.onEmailUserLoginSuccess();
+    }
+
+    @Override
+    public void onEmailUserLoginFailure(String failureCode) {
+        emailLoginListener.onEmailUserLoginFailure(failureCode);
+    }
+
+    // =================== Mobile Login Listener
+
+    @Override
+    public void onMobileAuthenticationSuccess() {
+        mobileAuthListener.onMobileAuthenticationSuccess();
+    }
+
+    @Override
+    public void onMobileAuthenticationFailure(String failureCode) {
+        mobileAuthListener.onMobileAuthenticationFailure(failureCode);
+    }
+
+    @Override
+    public void onOtpSent() {
+        mobileAuthListener.onOtpSent();
+    }
+
+    @Override
+    public void onOtpRetrievalFailed() {
+        mobileAuthListener.onOtpRetrievalFailed();
     }
 
     // MARK: Async Tasks

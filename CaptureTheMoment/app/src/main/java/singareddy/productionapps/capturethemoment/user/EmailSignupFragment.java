@@ -16,6 +16,7 @@ import android.widget.Toast;
 import singareddy.productionapps.capturethemoment.AppUtilities;
 import singareddy.productionapps.capturethemoment.MainActivity;
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.models.User;
 
 public class EmailSignupFragment extends Fragment implements View.OnClickListener, AuthenticationListener.EmailSignup {

@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".user.MobileLoginActivity">
+    tools:context=".auth.MobileLoginActivity">
 
     <EditText
         android:id="@+id/activity_mobile_login_mobile"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="Mobile number"
         android:inputType="phone"
@@ -24,13 +24,13 @@
         android:id="@+id/email_signup_bt_continue"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:background="@android:color/holo_blue_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/activity_mobile_login_mobile">
+        app:layout_constraintTop_toBottomOf="@+id/activity_mobile_login_otp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,5 +40,19 @@
             android:textStyle="bold" />
 
     </FrameLayout>
+
+    <EditText
+        android:id="@+id/activity_mobile_login_otp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="OTP"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_mobile_login_mobile" />
 
 </android.support.constraint.ConstraintLayout>

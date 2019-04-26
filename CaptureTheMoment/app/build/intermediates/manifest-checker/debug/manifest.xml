@@ -34,8 +34,8 @@
         <activity android:name="singareddy.productionapps.capturethemoment.user.SignupActivity" />
         <activity
             android:name="singareddy.productionapps.capturethemoment.user.MobileLoginActivity"
-            android:parentActivityName="singareddy.productionapps.capturethemoment.user.LoginActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.user.LoginActivity" >
+            android:parentActivityName="singareddy.productionapps.capturethemoment.auth.LoginActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.auth.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

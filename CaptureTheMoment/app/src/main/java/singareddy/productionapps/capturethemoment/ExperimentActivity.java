@@ -24,7 +24,7 @@ import java.util.Map;
 
 import singareddy.productionapps.capturethemoment.book.getbooks.GetBooksViewModel;
 import singareddy.productionapps.capturethemoment.models.Book;
-import singareddy.productionapps.capturethemoment.user.AuthenticationListener;
+import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 import singareddy.productionapps.capturethemoment.models.User;
 
@@ -147,22 +147,14 @@ public class ExperimentActivity extends AppCompatActivity implements Authenticat
     }
 
     @Override
-    public void onMobileAuthenticationSuccess(String mobile) {
+    public void onMobileAuthenticationSuccess() {
         Log.i(TAG, "onMobileAuthenticationSuccess: *");
         Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onMobileAuthenticationFailure(String mobile, String failureCode) {
+    public void onMobileAuthenticationFailure(String failureCode) {
         Log.i(TAG, "onMobileAuthenticationFailure: *");
         Toast.makeText(this, "Login Failure", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onMobileFirstTimeLogin(String mobile) {
-        Log.i(TAG, "onMobileFirstTimeLogin: *");
-        Toast.makeText(this, "Welcome! More details needed...", Toast.LENGTH_SHORT).show();
-        User user = new User("Sreekar", Long.parseLong(mobile), 22, "Male","sreekar@gmail.com");
-        authenticationViewModel.updateUserProfile(user);
     }
 }

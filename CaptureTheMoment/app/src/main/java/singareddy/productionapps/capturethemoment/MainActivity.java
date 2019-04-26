@@ -16,14 +16,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity;
 import singareddy.productionapps.capturethemoment.book.getbooks.GetBooksFragment;
 import singareddy.productionapps.capturethemoment.models.User;
-import singareddy.productionapps.capturethemoment.user.AuthenticationListener;
+import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
-import singareddy.productionapps.capturethemoment.user.LoginActivity;
+import singareddy.productionapps.capturethemoment.auth.LoginActivity;
 import singareddy.productionapps.capturethemoment.user.ProfileFragment;
 import singareddy.productionapps.capturethemoment.user.ProfileListener;
 import singareddy.productionapps.capturethemoment.user.ProfileUpdateActivity;

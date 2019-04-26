@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import singareddy.productionapps.capturethemoment.MainActivity;
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
 
 public class MobileSignupFragment extends Fragment implements AuthenticationListener.Mobile, View.OnClickListener {
     private static String TAG = "MobileSignupFragment";
@@ -62,7 +63,7 @@ public class MobileSignupFragment extends Fragment implements AuthenticationList
     }
 
     @Override
-    public void onMobileAuthenticationSuccess(String mobile) {
+    public void onMobileAuthenticationSuccess() {
         Log.i(TAG, "onMobileAuthenticationSuccess: *");
         Toast.makeText(getContext(), "Login Success", Toast.LENGTH_SHORT).show();
         Intent homeIntent = new Intent(getContext(), MainActivity.class);
@@ -70,7 +71,7 @@ public class MobileSignupFragment extends Fragment implements AuthenticationList
     }
 
     @Override
-    public void onMobileAuthenticationFailure(String mobile, String failureCode) {
+    public void onMobileAuthenticationFailure(String failureCode) {
         Log.i(TAG, "onMobileAuthenticationFailure: *");
         loginButton.setEnabled(true);
         if (failureCode.equals("EMPTY_FIELDS")) {
@@ -78,14 +79,6 @@ public class MobileSignupFragment extends Fragment implements AuthenticationList
             return;
         }
         Toast.makeText(getContext(), "Login Failure", Toast.LENGTH_SHORT).show();
-        resetAllViews();
-    }
-
-    @Override
-    public void onMobileFirstTimeLogin(String mobile) {
-        Log.i(TAG, "onMobileFirstTimeLogin: *");
-        loginButton.setEnabled(true);
-        Toast.makeText(getContext(), "First time user!", Toast.LENGTH_SHORT).show();
         resetAllViews();
     }
 
