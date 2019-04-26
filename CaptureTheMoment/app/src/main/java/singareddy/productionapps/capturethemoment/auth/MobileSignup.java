@@ -1,4 +1,4 @@
-package singareddy.productionapps.capturethemoment.user;
+package singareddy.productionapps.capturethemoment.auth;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -15,17 +15,18 @@ import android.widget.Toast;
 
 import singareddy.productionapps.capturethemoment.MainActivity;
 import singareddy.productionapps.capturethemoment.R;
-import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
+import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 
-public class MobileSignupFragment extends Fragment implements AuthenticationListener.Mobile, View.OnClickListener {
-    private static String TAG = "MobileSignupFragment";
+public class MobileSignup extends Fragment implements AuthListener.Mobile, View.OnClickListener {
+    private static String TAG = "MobileSignup";
 
     View loginButton;
-    EditText mobileOrOtp;
+    EditText mobileNumber, otpCode;
 
     AuthenticationViewModel authenticationViewModel;
+    private AuthViewModel authViewModel;
 
-    public MobileSignupFragment () {
+    public MobileSignup() {
 
     }
 
@@ -35,30 +36,29 @@ public class MobileSignupFragment extends Fragment implements AuthenticationList
         Log.i(TAG, "onCreateView: *");
         Log.i(TAG, "onCreateView: Activity: "+getActivity());
         View view = inflater.inflate(R.layout.activity_mobile_login, container, false);
-        authenticationViewModel = ViewModelProviders.of(this).get(AuthenticationViewModel.class);
-        authenticationViewModel.setMobileLoginListener(this);
-        mobileOrOtp = view.findViewById(R.id.activity_mobile_login_mobile);
+        initialiseViewModel();
+        mobileNumber = view.findViewById(R.id.activity_mobile_login_mobile);
+        otpCode = view.findViewById(R.id.activity_mobile_login_otp);
+        otpCode.setVisibility(View.GONE);
         loginButton = view.findViewById(R.id.email_signup_bt_continue);
         loginButton.setOnClickListener(this);
         return view;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        Log.i(TAG, "onCreate: *");
-        super.onCreate(savedInstanceState);
+    private void initialiseViewModel() {
+        AuthModelFactory factory = AuthModelFactory.createFactory(getActivity());
+        authViewModel = ViewModelProviders.of(this, factory).get(AuthViewModel.class);
+        authViewModel.setMobileAuthListener(this);
     }
 
     @Override
     public void onClick(View v) {
         Log.i(TAG, "onClick: *");
         if (v == loginButton) {
-            // TODO: Start the mobile login or signup here
-            // TODO: If auto-OTP fails handle UI for manual-OTP
             loginButton.setEnabled(false);
-            authenticationViewModel.authorizePhoneCredentials(mobileOrOtp.getText().toString());
-            resetAllViews();
-            mobileOrOtp.setHint("OTP");
+            authViewModel.authorizePhoneCredentials(
+                    mobileNumber.getText().toString().trim(),
+                    otpCode.getText().toString().trim());
         }
     }
 
@@ -82,7 +82,19 @@ public class MobileSignupFragment extends Fragment implements AuthenticationList
         resetAllViews();
     }
 
+    @Override
+    public void onOtpSent() {
+        // TODO: Need to implement timer here
+    }
+
+    @Override
+    public void onOtpRetrievalFailed() {
+        // Ask for manual OTP here
+        otpCode.setVisibility(View.VISIBLE);
+        loginButton.setEnabled(true);
+    }
+
     private void resetAllViews () {
-        mobileOrOtp.setText("");
+        mobileNumber.setText("");
     }
 }

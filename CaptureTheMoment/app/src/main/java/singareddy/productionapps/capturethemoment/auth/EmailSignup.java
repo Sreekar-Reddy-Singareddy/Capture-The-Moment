@@ -1,4 +1,4 @@
-package singareddy.productionapps.capturethemoment.user;
+package singareddy.productionapps.capturethemoment.auth;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
@@ -16,17 +16,17 @@ import android.widget.Toast;
 import singareddy.productionapps.capturethemoment.AppUtilities;
 import singareddy.productionapps.capturethemoment.MainActivity;
 import singareddy.productionapps.capturethemoment.R;
-import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
-import singareddy.productionapps.capturethemoment.models.User;
+import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 
-public class EmailSignupFragment extends Fragment implements View.OnClickListener, AuthenticationListener.EmailSignup {
-    private static String TAG = "EmailSignupFragment";
+public class EmailSignup extends Fragment implements View.OnClickListener, AuthListener.EmailSignup {
+    private static String TAG = "EmailSignup";
 
     EditText email, password, confirmPassword;
     View signupButton;
     AuthenticationViewModel authenticationViewModel;
+    AuthViewModel authViewModel;
 
-    public EmailSignupFragment () {
+    public EmailSignup() {
 
     }
 
@@ -34,8 +34,7 @@ public class EmailSignupFragment extends Fragment implements View.OnClickListene
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.email_signup, container, false);
-        authenticationViewModel = ViewModelProviders.of(this).get(AuthenticationViewModel.class);
-        authenticationViewModel.setEmailSignupListener(this);
+        initialiseViewModel();
         email = view.findViewById(R.id.email_signup_et_email);
         password = view.findViewById(R.id.email_signup_et_password);
         confirmPassword = view.findViewById(R.id.email_signup_et_conf_password);
@@ -44,17 +43,21 @@ public class EmailSignupFragment extends Fragment implements View.OnClickListene
         return view;
     }
 
+    private void initialiseViewModel() {
+        AuthModelFactory factory = AuthModelFactory.createFactory(getActivity());
+        authViewModel = ViewModelProviders.of(this, factory).get(AuthViewModel.class);
+        authViewModel.setEmailSignupListener(this);
+    }
+
     @Override
     public void onClick(View v) {
         if (v == signupButton) {
             signupButton.setEnabled(false);
-            // TODO: Logic here to take and register the credentials
             String email = this.email.getText().toString().toLowerCase();
             String password = this.password.getText().toString();
             String confPassword = this.confirmPassword.getText().toString();
-            User user = new User();
-            user.setEmailId(email);
-            authenticationViewModel.registerUserWithEmailCredentials(user, password, confPassword);
+
+            authViewModel.registerEmailUser (email, password, confPassword);
         }
     }
 

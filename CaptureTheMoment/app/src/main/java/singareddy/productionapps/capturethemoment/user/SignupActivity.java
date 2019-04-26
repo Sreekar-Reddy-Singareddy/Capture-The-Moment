@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.auth.EmailSignup;
 import singareddy.productionapps.capturethemoment.auth.LoginActivity;
+import singareddy.productionapps.capturethemoment.auth.MobileSignup;
 
 public class SignupActivity extends AppCompatActivity implements TabLayout.BaseOnTabSelectedListener, View.OnClickListener {
     private static String TAG = "SignupActivity";
@@ -42,12 +44,12 @@ public class SignupActivity extends AppCompatActivity implements TabLayout.BaseO
 
     public void setMobileSignupView () {
         Log.i(TAG, "setMobileSignupView: Activity: "+this);
-        MobileSignupFragment fragment = new MobileSignupFragment();
+        MobileSignup fragment = new MobileSignup();
         getSupportFragmentManager().beginTransaction().replace(R.id.signup_fl_container, fragment).commit();
     }
 
     public void setEmailSignupView () {
-        EmailSignupFragment fragment = new EmailSignupFragment();
+        EmailSignup fragment = new EmailSignup();
         getSupportFragmentManager().beginTransaction().replace(R.id.signup_fl_container, fragment).commit();
     }
 

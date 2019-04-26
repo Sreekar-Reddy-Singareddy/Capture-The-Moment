@@ -20,7 +20,7 @@
             android:parentActivityName=".MainActivity" />
         <activity android:name=".user.SignupActivity" />
         <activity
-            android:name=".auth.MobileLoginActivity"
+            android:name=".auth.MobileLogin"
             android:parentActivityName=".auth.LoginActivity" />
         <activity android:name=".auth.LoginActivity">
             <intent-filter>

@@ -22,11 +22,33 @@ public class AuthService {
     private FirebaseAuth mFirebaseAuth;
     private String verificationId;
 
-    private AuthenticationListener.EmailLogin emailLoginListener;
-    private AuthenticationListener.Mobile mobileAuthListener;
+    private AuthListener.EmailLogin emailLoginListener;
+    private AuthListener.Mobile mobileAuthListener;
+    private AuthListener.EmailSignup emailSignupListener;
 
     public AuthService () {
         mFirebaseAuth = FirebaseAuth.getInstance();
+    }
+
+    public void registerEmailUser(String email, String password) {
+        OnSuccessListener<AuthResult> registerSuccessListener = new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                Log.i(TAG, "onSuccess: *");
+                emailSignupListener.onEmailUserRegisterSuccess(email);
+            }
+        };
+
+        OnFailureListener registerFailureListener = new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.i(TAG, "onFailure: "+e.getMessage());
+                emailSignupListener.onEmailUserRegisterFailure(email, e.getMessage());
+            }
+        };
+        mFirebaseAuth.createUserWithEmailAndPassword(email, password)
+                .addOnSuccessListener(registerSuccessListener)
+                .addOnFailureListener(registerFailureListener);
     }
 
     public void loginUserWithEmail(String email, String password) {
@@ -107,11 +129,15 @@ public class AuthService {
                 });
     }
 
-    public void setEmailLoginListener(AuthenticationListener.EmailLogin emailLoginListener) {
+    public void setEmailSignupListener(AuthListener.EmailSignup emailSignupListener) {
+        this.emailSignupListener = emailSignupListener;
+    }
+
+    public void setEmailLoginListener(AuthListener.EmailLogin emailLoginListener) {
         this.emailLoginListener = emailLoginListener;
     }
 
-    public void setMobileAuthListener(AuthenticationListener.Mobile mobileAuthListener) {
+    public void setMobileAuthListener(AuthListener.Mobile mobileAuthListener) {
         this.mobileAuthListener = mobileAuthListener;
     }
 }

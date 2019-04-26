@@ -30,7 +30,7 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.*;
 import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
 
 import singareddy.productionapps.capturethemoment.AppUtilities;
-import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
+import singareddy.productionapps.capturethemoment.auth.AuthListener;
 import singareddy.productionapps.capturethemoment.models.User;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
@@ -38,10 +38,10 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
 
 public class AuthenticationViewModel extends AndroidViewModel {
     static String TAG = "AuthenticationViewModel";
-    private AuthenticationListener.EmailLogin emailLoginListener;
-    private AuthenticationListener.EmailSignup emailSignupListener;
-    private AuthenticationListener.Mobile mobileLoginListener;
-    private AuthenticationListener.Logout logoutListener;
+    private AuthListener.EmailLogin emailLoginListener;
+    private AuthListener.EmailSignup emailSignupListener;
+    private AuthListener.Mobile mobileLoginListener;
+    private AuthListener.Logout logoutListener;
     private ProfileListener.InitialProfile initialProfileListener;
     private ProfileListener profileListener;
     private FirebaseAuth.AuthStateListener authStateListener;
@@ -466,19 +466,19 @@ public class AuthenticationViewModel extends AndroidViewModel {
         firebaseAuth.addAuthStateListener(this.authStateListener);
     }
 
-    public void setEmailLoginListener(AuthenticationListener.EmailLogin emailLoginListener) {
+    public void setEmailLoginListener(AuthListener.EmailLogin emailLoginListener) {
         this.emailLoginListener = emailLoginListener;
     }
 
-    public void setEmailSignupListener(AuthenticationListener.EmailSignup emailSignupListener) {
+    public void setEmailSignupListener(AuthListener.EmailSignup emailSignupListener) {
         this.emailSignupListener = emailSignupListener;
     }
 
-    public void setMobileLoginListener(AuthenticationListener.Mobile mobileLoginListener) {
+    public void setMobileLoginListener(AuthListener.Mobile mobileLoginListener) {
         this.mobileLoginListener = mobileLoginListener;
     }
 
-    public void setLogoutListener(AuthenticationListener.Logout logoutListener) {
+    public void setLogoutListener(AuthListener.Logout logoutListener) {
         this.logoutListener = logoutListener;
         addAuthStateListener();
     }

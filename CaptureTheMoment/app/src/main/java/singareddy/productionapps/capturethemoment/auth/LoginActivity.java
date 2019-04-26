@@ -16,7 +16,7 @@ import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 import singareddy.productionapps.capturethemoment.user.SignupActivity;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener, AuthenticationListener.EmailLogin {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener, AuthListener.EmailLogin {
     private static String TAG = "LoginActivity";
 
     EditText email, password;
@@ -51,6 +51,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void initialiseViewModel() {
         AuthModelFactory factory = AuthModelFactory.createFactory(this);
         authViewModel = ViewModelProviders.of(this, factory).get(AuthViewModel.class);
+        authViewModel.setEmailLoginListener(this);
     }
 
     @Override
@@ -61,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             finish();
         }
         else if (v == loginUsingMobile) {
-            Intent mobileLoginIntent = new Intent(this, MobileLoginActivity.class);
+            Intent mobileLoginIntent = new Intent(this, MobileLogin.class);
             startActivity(mobileLoginIntent);
         }
         else if (v == login) {
@@ -69,7 +70,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             String email = this.email.getText().toString().toLowerCase();
             String password = this.password.getText().toString();
             authViewModel.loginUserWithEmail(email, password);
-            authViewModel.setEmailLoginListener(this);
 //            authenticationViewModel.loginUserWithEmailCredentials(email, password);
         }
         else if (v == passwordHelp) {

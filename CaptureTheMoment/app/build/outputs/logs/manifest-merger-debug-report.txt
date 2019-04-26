@@ -137,12 +137,12 @@ activity#singareddy.productionapps.capturethemoment.user.SignupActivity
 ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:9-57
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:19-54
-activity#singareddy.productionapps.capturethemoment.user.MobileLoginActivity
+activity#singareddy.productionapps.capturethemoment.auth.MobileLogin
 ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:22:9-24:64
 	android:parentActivityName
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:24:13-61
 	android:name
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:23:13-53
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:23:13-45
 activity#singareddy.productionapps.capturethemoment.auth.LoginActivity
 ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:25:9-31:20
 	android:name

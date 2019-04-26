@@ -19,14 +19,14 @@ import android.widget.TextView;
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity;
 import singareddy.productionapps.capturethemoment.book.getbooks.GetBooksFragment;
 import singareddy.productionapps.capturethemoment.models.User;
-import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
+import singareddy.productionapps.capturethemoment.auth.AuthListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 import singareddy.productionapps.capturethemoment.auth.LoginActivity;
 import singareddy.productionapps.capturethemoment.user.ProfileFragment;
 import singareddy.productionapps.capturethemoment.user.ProfileListener;
 import singareddy.productionapps.capturethemoment.user.ProfileUpdateActivity;
 
-public class MainActivity extends AppCompatActivity implements AuthenticationListener.Logout, ProfileListener.InitialProfile, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements AuthListener.Logout, ProfileListener.InitialProfile, View.OnClickListener {
     private static String TAG = "MainActivity";
 
     NavigationView navigationView;

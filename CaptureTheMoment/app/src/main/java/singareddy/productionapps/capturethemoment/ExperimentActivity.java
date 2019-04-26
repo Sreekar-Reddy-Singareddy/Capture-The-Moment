@@ -24,11 +24,11 @@ import java.util.Map;
 
 import singareddy.productionapps.capturethemoment.book.getbooks.GetBooksViewModel;
 import singareddy.productionapps.capturethemoment.models.Book;
-import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
+import singareddy.productionapps.capturethemoment.auth.AuthListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 import singareddy.productionapps.capturethemoment.models.User;
 
-public class ExperimentActivity extends AppCompatActivity implements AuthenticationListener.Mobile, AuthenticationListener.EmailSignup, AuthenticationListener.EmailLogin {
+public class ExperimentActivity extends AppCompatActivity implements AuthListener.Mobile, AuthListener.EmailSignup, AuthListener.EmailLogin {
     private static String TAG = "ExperimentActivity";
 
     Button performAction;

@@ -11,13 +11,10 @@ import android.widget.Toast;
 
 import singareddy.productionapps.capturethemoment.MainActivity;
 import singareddy.productionapps.capturethemoment.R;
-import singareddy.productionapps.capturethemoment.auth.AuthModelFactory;
-import singareddy.productionapps.capturethemoment.auth.AuthViewModel;
-import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 
-public class MobileLoginActivity extends AppCompatActivity implements View.OnClickListener, AuthenticationListener.Mobile {
-    private static String TAG = "MobileLoginActivity";
+public class MobileLogin extends AppCompatActivity implements View.OnClickListener, AuthListener.Mobile {
+    private static String TAG = "MobileLogin";
 
     View loginButton;
     EditText mobileNumber, otpCode;

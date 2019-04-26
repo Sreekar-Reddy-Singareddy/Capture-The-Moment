@@ -30,7 +30,7 @@ import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 import singareddy.productionapps.capturethemoment.models.ShareInfo;
 import singareddy.productionapps.capturethemoment.models.User;
-import singareddy.productionapps.capturethemoment.auth.AuthenticationListener;
+import singareddy.productionapps.capturethemoment.auth.AuthListener;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.Book.*;
 
@@ -40,7 +40,7 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.Book.*;
  * Its job is only to deal with the data communication.
  * The logical processing of data is not done here.
  */
-public class DataRepository implements AddBookListener, GetBookListener, UpdateBookListener, AuthenticationListener.EmailLogin, AuthenticationListener.Mobile {
+public class DataRepository implements AddBookListener, GetBookListener, UpdateBookListener, AuthListener.EmailLogin, AuthListener.Mobile, AuthListener.EmailSignup {
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
 
@@ -55,8 +55,9 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
 
     private BookListener mBookListener;
     private GetBookListener mBookGetBookListenerListener;
-    private AuthenticationListener.EmailLogin emailLoginListener;
-    private AuthenticationListener.Mobile mobileAuthListener;
+    private AuthListener.EmailLogin emailLoginListener;
+    private AuthListener.Mobile mobileAuthListener;
+    private AuthListener.EmailSignup emailSignupListener;
 
     private LocalDB mLocalDB;
     private Context mContext;
@@ -164,7 +165,16 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
         mUpdateBookService.updateThisBook(bookId, newName, secOwners);
     }
 
+
     // =================================================================== Authentication Module
+
+    public void registerEmailUser(String email, String password) {
+        if (mAuthService == null) {
+            mAuthService = new AuthService();
+            mAuthService.setEmailSignupListener(this);
+        }
+        mAuthService.registerEmailUser(email, password);
+    }
 
     public void loginUserWithEmail(String email, String password) {
         if (mAuthService == null) {
@@ -199,11 +209,15 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
         this.mBookListener = updateBookListener;
     }
 
-    public void setEmailLoginListener(AuthenticationListener.EmailLogin emailLoginListener) {
+    public void setEmailSignupListener(AuthListener.EmailSignup emailSignupListener) {
+        this.emailSignupListener = emailSignupListener;
+    }
+
+    public void setEmailLoginListener(AuthListener.EmailLogin emailLoginListener) {
         this.emailLoginListener = emailLoginListener;
     }
 
-    public void setMobileAuthListener(AuthenticationListener.Mobile mobileAuthListener) {
+    public void setMobileAuthListener(AuthListener.Mobile mobileAuthListener) {
         this.mobileAuthListener = mobileAuthListener;
     }
 
@@ -271,6 +285,18 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
     @Override
     public void onBookUpdated() {
         ((UpdateBookListener) mBookListener).onBookUpdated();
+    }
+
+    // =================== Email Signup Listener
+
+    @Override
+    public void onEmailUserRegisterSuccess(String email) {
+        emailSignupListener.onEmailUserRegisterSuccess(email);
+    }
+
+    @Override
+    public void onEmailUserRegisterFailure(String email, String failureCode) {
+        emailSignupListener.onEmailUserRegisterFailure(email, failureCode);
     }
 
     // =================== Email Login Listener

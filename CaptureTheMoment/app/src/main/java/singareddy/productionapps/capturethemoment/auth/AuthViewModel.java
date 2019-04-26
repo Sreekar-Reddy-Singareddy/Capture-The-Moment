@@ -7,17 +7,39 @@ import singareddy.productionapps.capturethemoment.DataRepository;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.FailureCodes.*;
 
-public class AuthViewModel extends ViewModel implements AuthenticationListener.EmailLogin, AuthenticationListener.Mobile {
+public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin, AuthListener.Mobile, AuthListener.EmailSignup {
     private static String TAG = "AuthViewModel";
 
     private DataRepository mRepository;
-    private AuthenticationListener.EmailLogin emailLoginListener;
-    private AuthenticationListener.Mobile mobileAuthListener;
+    private AuthListener.EmailLogin emailLoginListener;
+    private AuthListener.Mobile mobileAuthListener;
+    private AuthListener.EmailSignup emailSignupListener;
 
     private static Boolean OTP_NEEDED = false;
 
     public AuthViewModel (DataRepository repository) {
         mRepository = repository;
+    }
+
+    public void registerEmailUser(String email, String password, String confPassword) {
+        if (!isEmailValid(email)) {
+            emailSignupListener.onEmailUserRegisterFailure(email, EMPTY_EMAIL);
+            return;
+        }
+
+        if (!isPasswordValid(password) || !isPasswordValid(confPassword)) {
+            emailSignupListener.onEmailUserRegisterFailure(email, EMPTY_PASSWORD);
+            return;
+        }
+
+        if (!password.equals(confPassword)) {
+            emailSignupListener.onEmailUserRegisterFailure(email, PASSWORD_MISMATCH);
+            return;
+        }
+
+        // If all are valid, then proceed further
+        mRepository.setEmailSignupListener(this);
+        mRepository.registerEmailUser(email, password);
     }
 
     public void loginUserWithEmail(String email, String password) {
@@ -64,12 +86,26 @@ public class AuthViewModel extends ViewModel implements AuthenticationListener.E
         mRepository.authorizePhoneCredentials(mobile, otpCode);
     }
 
-    public void setEmailLoginListener(AuthenticationListener.EmailLogin emailLoginListener) {
+    public void setEmailSignupListener(AuthListener.EmailSignup emailSignupListener) {
+        this.emailSignupListener = emailSignupListener;
+    }
+
+    public void setEmailLoginListener(AuthListener.EmailLogin emailLoginListener) {
         this.emailLoginListener = emailLoginListener;
     }
 
-    public void setMobileAuthListener(AuthenticationListener.Mobile mobileAuthListener) {
+    public void setMobileAuthListener(AuthListener.Mobile mobileAuthListener) {
         this.mobileAuthListener = mobileAuthListener;
+    }
+
+    @Override
+    public void onEmailUserRegisterSuccess(String email) {
+        emailSignupListener.onEmailUserRegisterSuccess(email);
+    }
+
+    @Override
+    public void onEmailUserRegisterFailure(String email, String failureCode) {
+        emailSignupListener.onEmailUserRegisterFailure(email, failureCode);
     }
 
     @Override

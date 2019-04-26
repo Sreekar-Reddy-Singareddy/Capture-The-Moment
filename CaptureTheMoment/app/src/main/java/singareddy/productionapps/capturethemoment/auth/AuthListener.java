@@ -1,6 +1,6 @@
 package singareddy.productionapps.capturethemoment.auth;
 
-public interface AuthenticationListener {
+public interface AuthListener {
 
     public interface EmailLogin {
         // Email Login
