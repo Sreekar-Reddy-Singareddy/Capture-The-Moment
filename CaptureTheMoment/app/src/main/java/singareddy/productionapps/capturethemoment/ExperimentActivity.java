@@ -72,16 +72,16 @@ public class ExperimentActivity extends AppCompatActivity implements AuthListene
         else if (code == 1) {
             // Register user via email and password
             User user = new User("Gopi Krishna", 9441079575l, 51, "Male", "gopikrishna@vicat.com");
-            authenticationViewModel.registerUserWithEmailCredentials(user, "Gopi@123", "");
+//            authenticationViewModel.registerUserWithEmailCredentials(user, "Gopi@123", "");
         }
         else if (code == 2) {
             // Login user via email and password
-            authenticationViewModel.loginUserWithEmailCredentials("sreekarreddy430@gmail.com", "Sree@123");
+//            authenticationViewModel.loginUserWithEmailCredentials("sreekarreddy430@gmail.com", "Sree@123");
         }
         // Mobile authentication
         else if (code == 3) {
             // Authenticate user by the mobile number
-            authenticationViewModel.authorizePhoneCredentials("9629781945");
+//            authenticationViewModel.authorizePhoneCredentials("9629781945");
         }
         else if (code == 4) {
             authenticationViewModel.logout();

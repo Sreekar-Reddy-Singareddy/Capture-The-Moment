@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import singareddy.productionapps.capturethemoment.MainActivity;
+import singareddy.productionapps.capturethemoment.HomeActivity;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 
@@ -55,8 +55,12 @@ public class MobileLogin extends AppCompatActivity implements View.OnClickListen
     public void onMobileAuthenticationSuccess() {
         Log.i(TAG, "onMobileAuthenticationSuccess: *");
         Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
-        Intent homeIntent = new Intent(this, MainActivity.class);
+        // On successful login, erase all the data.
+        authViewModel.eraseLocalData();
+        Intent homeIntent = new Intent(this, HomeActivity.class);
         startActivity(homeIntent);
+        // Once data is erased, download this user's data
+        authViewModel.setupInitialData();
         finish();
     }
 

@@ -1,7 +1,11 @@
 package singareddy.productionapps.capturethemoment.auth;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
+import android.content.SharedPreferences;
 import android.telephony.PhoneNumberUtils;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import singareddy.productionapps.capturethemoment.DataRepository;
 
@@ -84,6 +88,22 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
         // Since both mobile and otp are valid enough, continue
         mRepository.setMobileAuthListener(this);
         mRepository.authorizePhoneCredentials(mobile, otpCode);
+    }
+
+    public void eraseLocalData() {
+        mRepository.eraseLocalData();
+    }
+
+    public void setupInitialData() {
+        mRepository.setupInitialData();
+    }
+
+    public SharedPreferences getUserProfileData() {
+        return mRepository.getUserProfileData();
+    }
+
+    public void logout() {
+        FirebaseAuth.getInstance().signOut();
     }
 
     public void setEmailSignupListener(AuthListener.EmailSignup emailSignupListener) {

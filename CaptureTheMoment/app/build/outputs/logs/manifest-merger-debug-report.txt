@@ -133,7 +133,7 @@ ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/ma
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:20:13-55
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:19:13-55
-activity#singareddy.productionapps.capturethemoment.user.SignupActivity
+activity#singareddy.productionapps.capturethemoment.auth.SignupActivity
 ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:9-57
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:19-54
@@ -157,7 +157,7 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:29:17-77
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:29:27-74
-activity#singareddy.productionapps.capturethemoment.MainActivity
+activity#singareddy.productionapps.capturethemoment.HomeActivity
 ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:32:9-50
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:32:19-47

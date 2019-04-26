@@ -11,7 +11,7 @@ public class MainApp extends Application {
     public void onCreate() {
         super.onCreate();
         Log.i(TAG, "onCreate: *");
-//        Intent intent = new Intent(this, MainActivity.class);
+//        Intent intent = new Intent(this, HomeActivity.class);
 //        startActivity(intent);
     }
 }

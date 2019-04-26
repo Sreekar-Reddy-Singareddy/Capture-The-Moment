@@ -30,8 +30,8 @@
         <activity android:name="singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity" />
         <activity
             android:name="singareddy.productionapps.capturethemoment.user.ProfileUpdateActivity"
-            android:parentActivityName="singareddy.productionapps.capturethemoment.MainActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.user.SignupActivity" />
+            android:parentActivityName="singareddy.productionapps.capturethemoment.HomeActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.auth.SignupActivity" />
         <activity
             android:name="singareddy.productionapps.capturethemoment.auth.MobileLogin"
             android:parentActivityName="singareddy.productionapps.capturethemoment.auth.LoginActivity" />
@@ -42,7 +42,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="singareddy.productionapps.capturethemoment.MainActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.HomeActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.ExperimentActivity" >
         </activity>
 

@@ -42,11 +42,13 @@ public class AppUtilities {
     public static class User {
         public static String LOGIN_PROVIDER;
         public static FirebaseUser CURRENT_USER;
+        public static String CURRENT_USER_ID;
         public static String CURRENT_USER_MOBILE;
         public static String CURRENT_USER_EMAIL;
     }
 
     public static class FileNames {
         public static final String UIDS_CACHE = "UIDS_CACHE";
+        public static final String USER_PROFILE_CACHE = "USER_PROFILE_CACHE";
     }
 }

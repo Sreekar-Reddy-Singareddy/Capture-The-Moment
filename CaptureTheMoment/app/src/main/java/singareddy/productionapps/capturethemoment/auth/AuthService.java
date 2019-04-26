@@ -13,21 +13,39 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import singareddy.productionapps.capturethemoment.AppUtilities;
+import singareddy.productionapps.capturethemoment.models.Book;
+import singareddy.productionapps.capturethemoment.models.User;
+
+import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
+import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
 
 public class AuthService {
     private static String TAG = "AuthService";
 
     private FirebaseAuth mFirebaseAuth;
+    private FirebaseDatabase mFirebaseDB;
     private String verificationId;
 
     private AuthListener.EmailLogin emailLoginListener;
     private AuthListener.Mobile mobileAuthListener;
     private AuthListener.EmailSignup emailSignupListener;
+    private DataSyncListener dataSyncListener;
 
     public AuthService () {
         mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseDB = FirebaseDatabase.getInstance();
     }
 
     public void registerEmailUser(String email, String password) {
@@ -129,6 +147,128 @@ public class AuthService {
                 });
     }
 
+    public void setupInitialData() {
+        // This is where the whole data of the current user will be downloaded
+        // from Firebase DB.
+        CURRENT_USER = mFirebaseAuth.getCurrentUser();
+        CURRENT_USER_ID = CURRENT_USER.getUid();
+        LOGIN_PROVIDER = CURRENT_USER.getProviders().get(0);
+        Log.i(TAG, "setupInitialData: PROVIDER: "+LOGIN_PROVIDER);
+        // Download user profile, if available
+        setupUserProfile();
+        // Download all books that belong to this user
+        setupBooksOwnedByUser();
+        // Download all books that are shared with this user
+        setupBooksSharedWithUser();
+    }
+
+    private void setupUserProfile() {
+        DatabaseReference currentUserNode = mFirebaseDB.getReference()
+                .child(ALL_USERS_NODE).child(CURRENT_USER_ID).child("profile");
+        currentUserNode.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                User currentUserProfile = null;
+                // If any profile data exists here, snapshot wont be null
+                if (dataSnapshot.getValue() == null) {
+                    currentUserProfile = new User();
+                    // Check the login provider
+                    if (LOGIN_PROVIDER.equals(EMAIL_PROVIDER)) {
+                        currentUserProfile.setEmailId(CURRENT_USER.getEmail());
+                    }
+                    else if (LOGIN_PROVIDER.equals(PHONE_PROVIDER)) {
+                        Long mobile = Long.parseLong(CURRENT_USER.getPhoneNumber().substring(3));
+                        currentUserProfile.setMobile(mobile);
+                    }
+                }
+                else {
+                    currentUserProfile = dataSnapshot.getValue(User.class);
+                }
+                // This user must be saved in cache
+                dataSyncListener.onUserProfileDownloaded(currentUserProfile);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void setupBooksOwnedByUser() {
+        DatabaseReference ownedBooks = mFirebaseDB.getReference()
+                .child(ALL_USERS_NODE).child(CURRENT_USER_ID)
+                .child("profile/ownedBooks");
+        ownedBooks.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // This will be a list of strings
+                List<String> ownedBookIds = (ArrayList<String>) dataSnapshot.getValue();
+                if (ownedBookIds == null || ownedBookIds.size() == 0) {
+                    // Do nothing
+                }
+                else {
+                    ownedBookIds.forEach((bookId) -> downloadBookWithId(bookId, null));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void setupBooksSharedWithUser() {
+        DatabaseReference sharedBooks = mFirebaseDB.getReference()
+                .child(ALL_USERS_NODE).child(CURRENT_USER_ID)
+                .child("sharedBooks");
+        sharedBooks.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // This will be a map of bookId:access pairs
+                HashMap<String, Boolean> sharedBooks = (HashMap<String, Boolean>) dataSnapshot.getValue();
+                if (sharedBooks == null || sharedBooks.size() == 0) {
+                    // Do nothing
+                }
+                else {
+                    sharedBooks.forEach((bookId, access) -> downloadBookWithId(bookId, access));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    /**
+     * Fetches a book from firebase given its book id
+     * @param bookId
+     */
+    private void downloadBookWithId(String bookId, Boolean sharedBookAccess) {
+        // Fetch the book and add it to shared books list
+        mFirebaseDB.getReference()
+                .child(AppUtilities.Firebase.ALL_BOOKS_NODE) // books
+                .child(bookId) // bookId
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot.getValue() != null) {
+                            Book fetchedBook = dataSnapshot.getValue(Book.class);
+                            dataSyncListener.onBookDownloadedFromFirebase(fetchedBook, sharedBookAccess);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        Log.i(TAG, "onCancelled: "+databaseError.getMessage());
+                    }
+                });
+    }
+
     public void setEmailSignupListener(AuthListener.EmailSignup emailSignupListener) {
         this.emailSignupListener = emailSignupListener;
     }
@@ -139,5 +279,9 @@ public class AuthService {
 
     public void setMobileAuthListener(AuthListener.Mobile mobileAuthListener) {
         this.mobileAuthListener = mobileAuthListener;
+    }
+
+    public void setDataSyncListener(DataSyncListener dataSyncListener) {
+        this.dataSyncListener = dataSyncListener;
     }
 }

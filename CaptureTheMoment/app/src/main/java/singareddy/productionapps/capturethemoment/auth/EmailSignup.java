@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import singareddy.productionapps.capturethemoment.AppUtilities;
-import singareddy.productionapps.capturethemoment.MainActivity;
+import singareddy.productionapps.capturethemoment.HomeActivity;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
 
@@ -71,8 +71,12 @@ public class EmailSignup extends Fragment implements View.OnClickListener, AuthL
     public void onEmailUserRegisterSuccess(String email) {
         Log.i(TAG, "onEmailUserRegisterSuccess: *");
         Toast.makeText(getContext(), "Registered "+ email, Toast.LENGTH_SHORT).show();
-        Intent mainIntent = new Intent(getContext(), MainActivity.class);
+        // On successful login, erase all the data.
+        authViewModel.eraseLocalData();
+        Intent mainIntent = new Intent(getContext(), HomeActivity.class);
         startActivity(mainIntent);
+        // Once data is erased, download this user's data
+        authViewModel.setupInitialData();
         resetAllViews();
         getActivity().finish();
     }

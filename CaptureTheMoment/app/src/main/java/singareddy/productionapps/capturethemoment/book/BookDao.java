@@ -25,8 +25,8 @@ public interface BookDao {
     @Query("SELECT * FROM Book WHERE owner = :uid")
     public List<Book> getAllOwnedBooks (String uid);
 
-    @Query("SELECT * FROM Book WHERE owner = :owner ORDER BY lastUpdatedDate DESC")
-    public LiveData<List<Book>> getAllBooks (String owner);
+    @Query("SELECT * FROM Book ORDER BY lastUpdatedDate DESC")
+    public LiveData<List<Book>> getAllBooks ();
 
     @Query("DELETE FROM Book")
     public int deleteAllData();

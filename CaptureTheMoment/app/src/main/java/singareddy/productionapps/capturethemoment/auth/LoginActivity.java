@@ -11,10 +11,9 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import singareddy.productionapps.capturethemoment.MainActivity;
+import singareddy.productionapps.capturethemoment.HomeActivity;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
-import singareddy.productionapps.capturethemoment.user.SignupActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, AuthListener.EmailLogin {
     private static String TAG = "LoginActivity";
@@ -28,7 +27,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            Intent homeIntent = new Intent(this, MainActivity.class);
+            Intent homeIntent = new Intent(this, HomeActivity.class);
             startActivity(homeIntent);
             finish();
         }
@@ -81,8 +80,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onEmailUserLoginSuccess() {
         Log.i(TAG, "onEmailUserLoginSuccess: *");
         Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
-        Intent homeIntent = new Intent(this, MainActivity.class);
+        // On successful login, erase all the data.
+        authViewModel.eraseLocalData();
+        Log.i(TAG, "onEmailUserLoginSuccess: ALL DATA ERASED");
+        Intent homeIntent = new Intent(this, HomeActivity.class);
         startActivity(homeIntent);
+        // Once data is erased, download this user's data
+        authViewModel.setupInitialData();
         finish();
     }
 

@@ -5,6 +5,8 @@ import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -104,7 +106,7 @@ public class Book {
     }
 
     public boolean doIOwnTheBook() {
-        return this.owner.equals(AppUtilities.User.CURRENT_USER.getUid());
+        return this.owner.equals(FirebaseAuth.getInstance().getUid());
     }
 
     @Override

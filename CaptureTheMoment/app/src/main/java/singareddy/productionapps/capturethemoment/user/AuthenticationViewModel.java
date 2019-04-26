@@ -79,162 +79,162 @@ public class AuthenticationViewModel extends AndroidViewModel {
         };
     }
 
-    /**
-     * This method takes user object and registers the user in Firebase Auth
-     * @param user : the details of the newly registering user
-     * @param confirmPassword
-     */
-    public void registerUserWithEmailCredentials(final User user, String password, String confirmPassword) {
-        Log.i(TAG, "registerUserWithEmailCredentials: Email - "+user.getEmailId()+" Password - "+confirmPassword);
-        // Check if the passwords match
-        if (user.getEmailId() == null || user.getEmailId().equals("")) {
-            // Empty email id
-            emailSignupListener.onEmailUserRegisterFailure(user.getEmailId(), AppUtilities.FailureCodes.EMPTY_EMAIL);
-            return;
-        }
-        else if (password == null || password.equals("") || confirmPassword == null || confirmPassword.equals("")) {
-            // Empty passwords
-            emailSignupListener.onEmailUserRegisterFailure(user.getEmailId(), AppUtilities.FailureCodes.EMPTY_PASSWORD);
-            return;
-        }
-        else if (!password.equals(confirmPassword)) {
-            // Passwords do not match
-            emailSignupListener.onEmailUserRegisterFailure(user.getEmailId(), AppUtilities.FailureCodes.PASSWORD_MISMATCH);
-            return;
-        }
-        this.user = user;
-        OnSuccessListener<AuthResult> registerSuccessListener = new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                Log.i(TAG, "onSuccess: *");
-                emailSignupListener.onEmailUserRegisterSuccess(user.getEmailId());
-                // TODO: GetBookListener the user data
-                getCurrentUserProfile();
-//                updateUserProfile(user);
-            }
-        };
-
-        OnFailureListener registerFailureListener = new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.i(TAG, "onFailure: "+e.getMessage());
-                emailSignupListener.onEmailUserRegisterFailure(user.getEmailId(), e.getMessage());
-            }
-        };
-        firebaseAuth.createUserWithEmailAndPassword(user.getEmailId(), password)
-        .addOnSuccessListener(registerSuccessListener)
-        .addOnFailureListener(registerFailureListener);
-    }
-
-    /**
-     * This method takes credentials as string values
-     * and uses them to login the user.
-     * As of now, this method is designed only for Email authentication
-     * @param email
-     * @param password
-     */
-    public void loginUserWithEmailCredentials(String email, String password) {
-        Log.i(TAG, "loginUserWithEmailCredentials: Email - "+email+" Password - "+password);
-        // Check if the credentials are given and are not empty
-        if (email == null || email.equals("") || password == null || password.equals("")) {
-            emailLoginListener.onEmailUserLoginFailure("EMPTY_FIELDS");
-            return;
-        }
-        OnSuccessListener<AuthResult> loginSuccessListener = new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                Log.i(TAG, "onSuccess: *");
-                emailLoginListener.onEmailUserLoginSuccess();
-                // TODO: After the login is successful, save the user data into cache
-                getCurrentUserProfile();
-            }
-        };
-
-        OnFailureListener loginFailureListener = new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.i(TAG, "onFailure: "+e.getMessage());
-                emailLoginListener.onEmailUserLoginFailure("");
-            }
-        };
-        firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnSuccessListener(loginSuccessListener)
-                .addOnFailureListener(loginFailureListener);
-    }
-
-    /**
-     * This method takes a mobile number and
-     * authenticates it with the Firebase.
-     * The logic remains same for both login and signup.
-     * @param mobile
-     */
-    public void authorizePhoneCredentials (String mobile) {
-        Log.i(TAG, "authorizePhoneCredentials: Mobile - "+mobile);
-        PhoneAuthProvider.OnVerificationStateChangedCallbacks callbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-            @Override
-            public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-                Log.i(TAG, "onVerificationCompleted: *");
-                authorizePhoneCredentials(phoneAuthCredential);
-            }
-
-            @Override
-            public void onCodeAutoRetrievalTimeOut(String s) {
-                super.onCodeAutoRetrievalTimeOut(s);
-                Log.i(TAG, "onCodeAutoRetrievalTimeOut: *");
-                // TODO: Take the OTP from the user manually
-            }
-
-            @Override
-            public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                super.onCodeSent(s, forceResendingToken);
-                Log.i(TAG, "onCodeSent: *");
-            }
-
-            @Override
-            public void onVerificationFailed(FirebaseException e) {
-                Log.i(TAG, "onVerificationFailed: " + e.getLocalizedMessage());
-            }
-        };
-
-        mobile = PhoneNumberUtils.formatNumberToE164(mobile, "IN");
-        // Check if the mobile number is valid and not empty
-        if (mobile == null || mobile.equals("")) {
-            mobileLoginListener.onMobileAuthenticationFailure("EMPTY_FIELDS");
-            return;
-        }
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(mobile, 10, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD, callbacks);
-    }
-
-    /**
-     * The method authenticates a user using a mobile number
-     * @param phoneAuthCredential
-     */
-    private void authorizePhoneCredentials (PhoneAuthCredential phoneAuthCredential) {
-        Log.i(TAG, "authorizePhoneCredentials: *");
-        OnSuccessListener<AuthResult> successListener = new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                Log.i(TAG, "onSuccess: *");
-                // Once authenticated, check and add the user to the database
-                String m = authResult.getUser().getPhoneNumber().substring(3);
-                user = new User();
-                user.setMobile(Long.parseLong(m));
-                getCurrentUserProfile();
-                mobileLoginListener.onMobileAuthenticationSuccess();
-            }
-        };
-
-        OnFailureListener failureListener = new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.i(TAG, "onFailure: "+e.getMessage());
-                mobileLoginListener.onMobileAuthenticationFailure(""); // TODO: Mobile number cannot be passed??
-            }
-        };
-        firebaseAuth.signInWithCredential(phoneAuthCredential)
-        .addOnSuccessListener(successListener)
-        .addOnFailureListener(failureListener);
-    }
+//    /**
+//     * This method takes user object and registers the user in Firebase Auth
+//     * @param user : the details of the newly registering user
+//     * @param confirmPassword
+//     */
+//    public void registerUserWithEmailCredentials(final User user, String password, String confirmPassword) {
+//        Log.i(TAG, "registerUserWithEmailCredentials: Email - "+user.getEmailId()+" Password - "+confirmPassword);
+//        // Check if the passwords match
+//        if (user.getEmailId() == null || user.getEmailId().equals("")) {
+//            // Empty email id
+//            emailSignupListener.onEmailUserRegisterFailure(user.getEmailId(), AppUtilities.FailureCodes.EMPTY_EMAIL);
+//            return;
+//        }
+//        else if (password == null || password.equals("") || confirmPassword == null || confirmPassword.equals("")) {
+//            // Empty passwords
+//            emailSignupListener.onEmailUserRegisterFailure(user.getEmailId(), AppUtilities.FailureCodes.EMPTY_PASSWORD);
+//            return;
+//        }
+//        else if (!password.equals(confirmPassword)) {
+//            // Passwords do not match
+//            emailSignupListener.onEmailUserRegisterFailure(user.getEmailId(), AppUtilities.FailureCodes.PASSWORD_MISMATCH);
+//            return;
+//        }
+//        this.user = user;
+//        OnSuccessListener<AuthResult> registerSuccessListener = new OnSuccessListener<AuthResult>() {
+//            @Override
+//            public void onSuccess(AuthResult authResult) {
+//                Log.i(TAG, "onSuccess: *");
+//                emailSignupListener.onEmailUserRegisterSuccess(user.getEmailId());
+//                // TODO: GetBookListener the user data
+//                getCurrentUserProfile();
+////                updateUserProfile(user);
+//            }
+//        };
+//
+//        OnFailureListener registerFailureListener = new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Log.i(TAG, "onFailure: "+e.getMessage());
+//                emailSignupListener.onEmailUserRegisterFailure(user.getEmailId(), e.getMessage());
+//            }
+//        };
+//        firebaseAuth.createUserWithEmailAndPassword(user.getEmailId(), password)
+//        .addOnSuccessListener(registerSuccessListener)
+//        .addOnFailureListener(registerFailureListener);
+//    }
+//
+//    /**
+//     * This method takes credentials as string values
+//     * and uses them to login the user.
+//     * As of now, this method is designed only for Email authentication
+//     * @param email
+//     * @param password
+//     */
+//    public void loginUserWithEmailCredentials(String email, String password) {
+//        Log.i(TAG, "loginUserWithEmailCredentials: Email - "+email+" Password - "+password);
+//        // Check if the credentials are given and are not empty
+//        if (email == null || email.equals("") || password == null || password.equals("")) {
+//            emailLoginListener.onEmailUserLoginFailure("EMPTY_FIELDS");
+//            return;
+//        }
+//        OnSuccessListener<AuthResult> loginSuccessListener = new OnSuccessListener<AuthResult>() {
+//            @Override
+//            public void onSuccess(AuthResult authResult) {
+//                Log.i(TAG, "onSuccess: *");
+//                emailLoginListener.onEmailUserLoginSuccess();
+//                // TODO: After the login is successful, save the user data into cache
+//                getCurrentUserProfile();
+//            }
+//        };
+//
+//        OnFailureListener loginFailureListener = new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Log.i(TAG, "onFailure: "+e.getMessage());
+//                emailLoginListener.onEmailUserLoginFailure("");
+//            }
+//        };
+//        firebaseAuth.signInWithEmailAndPassword(email, password)
+//                .addOnSuccessListener(loginSuccessListener)
+//                .addOnFailureListener(loginFailureListener);
+//    }
+//
+//    /**
+//     * This method takes a mobile number and
+//     * authenticates it with the Firebase.
+//     * The logic remains same for both login and signup.
+//     * @param mobile
+//     */
+//    public void authorizePhoneCredentials (String mobile) {
+//        Log.i(TAG, "authorizePhoneCredentials: Mobile - "+mobile);
+//        PhoneAuthProvider.OnVerificationStateChangedCallbacks callbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+//            @Override
+//            public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
+//                Log.i(TAG, "onVerificationCompleted: *");
+//                authorizePhoneCredentials(phoneAuthCredential);
+//            }
+//
+//            @Override
+//            public void onCodeAutoRetrievalTimeOut(String s) {
+//                super.onCodeAutoRetrievalTimeOut(s);
+//                Log.i(TAG, "onCodeAutoRetrievalTimeOut: *");
+//                // TODO: Take the OTP from the user manually
+//            }
+//
+//            @Override
+//            public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+//                super.onCodeSent(s, forceResendingToken);
+//                Log.i(TAG, "onCodeSent: *");
+//            }
+//
+//            @Override
+//            public void onVerificationFailed(FirebaseException e) {
+//                Log.i(TAG, "onVerificationFailed: " + e.getLocalizedMessage());
+//            }
+//        };
+//
+//        mobile = PhoneNumberUtils.formatNumberToE164(mobile, "IN");
+//        // Check if the mobile number is valid and not empty
+//        if (mobile == null || mobile.equals("")) {
+//            mobileLoginListener.onMobileAuthenticationFailure("EMPTY_FIELDS");
+//            return;
+//        }
+//        PhoneAuthProvider.getInstance().verifyPhoneNumber(mobile, 10, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD, callbacks);
+//    }
+//
+//    /**
+//     * The method authenticates a user using a mobile number
+//     * @param phoneAuthCredential
+//     */
+//    private void authorizePhoneCredentials (PhoneAuthCredential phoneAuthCredential) {
+//        Log.i(TAG, "authorizePhoneCredentials: *");
+//        OnSuccessListener<AuthResult> successListener = new OnSuccessListener<AuthResult>() {
+//            @Override
+//            public void onSuccess(AuthResult authResult) {
+//                Log.i(TAG, "onSuccess: *");
+//                // Once authenticated, check and add the user to the database
+//                String m = authResult.getUser().getPhoneNumber().substring(3);
+//                user = new User();
+//                user.setMobile(Long.parseLong(m));
+//                getCurrentUserProfile();
+//                mobileLoginListener.onMobileAuthenticationSuccess();
+//            }
+//        };
+//
+//        OnFailureListener failureListener = new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Log.i(TAG, "onFailure: "+e.getMessage());
+//                mobileLoginListener.onMobileAuthenticationFailure(""); // TODO: Mobile number cannot be passed??
+//            }
+//        };
+//        firebaseAuth.signInWithCredential(phoneAuthCredential)
+//        .addOnSuccessListener(successListener)
+//        .addOnFailureListener(failureListener);
+//    }
 
     /**
      * This method checks if the user has logged in the

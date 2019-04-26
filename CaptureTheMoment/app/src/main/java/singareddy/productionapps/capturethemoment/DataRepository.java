@@ -31,8 +31,11 @@ import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 import singareddy.productionapps.capturethemoment.models.ShareInfo;
 import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.auth.AuthListener;
+import singareddy.productionapps.capturethemoment.auth.DataSyncListener;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.Book.*;
+import static singareddy.productionapps.capturethemoment.AppUtilities.FileNames.*;
+import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
 
 /**
  * This class is the single reliable source of
@@ -40,7 +43,11 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.Book.*;
  * Its job is only to deal with the data communication.
  * The logical processing of data is not done here.
  */
-public class DataRepository implements AddBookListener, GetBookListener, UpdateBookListener, AuthListener.EmailLogin, AuthListener.Mobile, AuthListener.EmailSignup {
+public class DataRepository implements AddBookListener, GetBookListener,
+        UpdateBookListener, AuthListener.EmailLogin,
+        AuthListener.Mobile, AuthListener.EmailSignup,
+        DataSyncListener {
+
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
 
@@ -117,7 +124,7 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
      */
     public LiveData<List<Book>> getAllBooksOfThisUser(){
         try {
-            return mExecutor.submit(()-> mLocalDB.getBookDao().getAllBooks(FirebaseAuth.getInstance().getCurrentUser().getUid())).get();
+            return mExecutor.submit(()-> mLocalDB.getBookDao().getAllBooks()).get();
         } catch (ExecutionException | InterruptedException e) {
             Log.i(TAG, "getAllBooksOfThisUser: Error: "+e.getLocalizedMessage());
             return new MutableLiveData<>();
@@ -192,10 +199,51 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
         mAuthService.authorizePhoneCredentials(mobile, otpCode);
     }
 
+    public void eraseLocalData() {
+        eraseUserProfile();
+        eraseBooks();
+    }
+
+    private void eraseBooks() {
+        try {
+            Object obj = mExecutor.submit(()->{
+                int booksDeleted = mLocalDB.getBookDao().deleteAllData();
+                int infosDeleted = mLocalDB.getSharedInfoDao().deleteAllData();
+                Log.i(TAG, "eraseBooks: Books deleted: "+booksDeleted);
+                Log.i(TAG, "eraseBooks: Infos deleted: "+infosDeleted);
+            }).get();
+            Log.i(TAG, "eraseBooks: Returned object: "+obj);
+
+        }
+        catch (InterruptedException | ExecutionException e) {
+            Log.i(TAG, "eraseBooks: Error deleting data: "+e.getLocalizedMessage());
+        }
+    }
+
+    private boolean eraseUserProfile() {
+        SharedPreferences userProfileCache =
+                mContext.getSharedPreferences(USER_PROFILE_CACHE, Context.MODE_PRIVATE);
+        boolean committed = userProfileCache.edit().clear().commit();
+        Log.i(TAG, "eraseUserProfile: User profile erased: "+committed);
+        return committed;
+    }
+
+    public void setupInitialData() {
+        if (mAuthService == null) {
+            mAuthService = new AuthService();
+        }
+        mAuthService.setDataSyncListener(this);
+        mAuthService.setupInitialData();
+    }
+
+    public SharedPreferences getUserProfileData() {
+        SharedPreferences userProfileCache =
+                mContext.getSharedPreferences(USER_PROFILE_CACHE,  Context.MODE_PRIVATE);
+        return userProfileCache;
+    }
 
 
-
-    // MARK: Setter methods and other listener methods
+    // MARK: Setter methods and other userProfileCacheListener methods
 
     public void setAddBookListener(AddBookListener mAddBookListener) {
         this.mBookListener = mAddBookListener;
@@ -240,11 +288,11 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
         Log.i(TAG, "onThisSecOwnerValidated: *");
         mBookListener.onThisSecOwnerValidated();
     }
+//    @Override
+//    public void onBookDownloaded(Book downloadedBook) {
+//        mBookGetBookListenerListener.onBookDownloaded(downloadedBook);
 
-    @Override
-    public void onBookDownloaded(Book downloadedBook) {
-        mBookGetBookListenerListener.onBookDownloaded(downloadedBook);
-    }
+//    }
 
     @Override
     public void onBookRemoved(String removedBookId) {
@@ -333,26 +381,62 @@ public class DataRepository implements AddBookListener, GetBookListener, UpdateB
         mobileAuthListener.onOtpRetrievalFailed();
     }
 
+    // =================== Data Sync Listener
+
+    @Override
+    public void onUserProfileDownloaded(User currentUserProfile) {
+        Log.i(TAG, "onUserProfileDownloaded: USER: "+currentUserProfile.getName());
+        SharedPreferences userProfileCache = mContext.getSharedPreferences(USER_PROFILE_CACHE, Context.MODE_PRIVATE);
+        Log.i(TAG, "onUserProfileDownloaded: USER PROFILE: "+userProfileCache);
+        SharedPreferences.Editor editor = userProfileCache.edit();
+        editor.putString("name", currentUserProfile.getName());
+        editor.putString("email",currentUserProfile.getEmailId());
+        editor.putString("gender",currentUserProfile.getGender());
+        editor.putString("location",currentUserProfile.getLocation());
+        editor.putString("profilePic",currentUserProfile.getProfilePic());
+        editor.putLong("mobile",currentUserProfile.getMobile());
+        editor.putInt("age",currentUserProfile.getAge());
+        boolean committed = editor.commit();
+        Log.i(TAG, "onUserProfileDownloaded: COMMITTED: "+committed);
+    }
+
+    @Override
+    public void onBookDownloadedFromFirebase(Book downloadedBook, Boolean sharedBookAccess) {
+        Log.i(TAG, "onBookDownloadedFromFirebase: BOOK NAME: "+downloadedBook.getName());
+        new InsertBookTask().execute(downloadedBook, sharedBookAccess);
+    }
+
     // MARK: Async Tasks
-    public class InsertBookTask extends AsyncTask<Book, Void, Void> {
+    public class InsertBookTask extends AsyncTask<Object, Void, Void> {
         @Override
-        protected Void doInBackground(Book... books) {
+        protected Void doInBackground(Object... objects) {
             // Insert this book in Room DB
-            Book book = books[0];
+            Book book = (Book) objects[0];
             mLocalDB.getBookDao().insert(book);
             Log.i(TAG, "doInBackground: BOOK INSERTED: "+book.getName());
 
-            // If its update, then delete all existing shared infos
-            if (mBookListener instanceof UpdateBookListener)
-            mLocalDB.getSharedInfoDao().deleteInfosForBook(book.getBookId());
-
-            book.getSecOwners().forEach((uid, editAccess) -> {
+            // Decide if its OWNED or SHARED
+            if (book.getOwner().equals(CURRENT_USER_ID)) {
+                Log.i(TAG, "doInBackground: OWNED BOOK");
+                // OWNED
+                book.getSecOwners().forEach((uid, editAccess) -> {
+                    ShareInfo info = new ShareInfo();
+                    info.setBookId(book.getBookId());
+                    info.setUid(uid);
+                    info.setCanEdit(editAccess);
+                    mLocalDB.getSharedInfoDao().insertShareInfo(info);
+                });
+            }
+            else {
+                Log.i(TAG, "doInBackground: SHARED BOOK");
+                // SHARED
+                Boolean sharedBookAccess = (Boolean) objects[1];
                 ShareInfo info = new ShareInfo();
                 info.setBookId(book.getBookId());
-                info.setUid(uid);
-                info.setCanEdit(editAccess);
+                info.setUid(CURRENT_USER_ID);
+                info.setCanEdit(sharedBookAccess);
                 mLocalDB.getSharedInfoDao().insertShareInfo(info);
-            });
+            }
             return null;
         }
     }
