@@ -8,16 +8,20 @@ import android.telephony.PhoneNumberUtils;
 import com.google.firebase.auth.FirebaseAuth;
 
 import singareddy.productionapps.capturethemoment.DataRepository;
+import singareddy.productionapps.capturethemoment.models.User;
+import singareddy.productionapps.capturethemoment.user.ProfileListener;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.FailureCodes.*;
 
-public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin, AuthListener.Mobile, AuthListener.EmailSignup {
+public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin, AuthListener.Mobile,
+        AuthListener.EmailSignup, ProfileListener {
     private static String TAG = "AuthViewModel";
 
     private DataRepository mRepository;
     private AuthListener.EmailLogin emailLoginListener;
     private AuthListener.Mobile mobileAuthListener;
     private AuthListener.EmailSignup emailSignupListener;
+    private ProfileListener profileListener;
 
     private static Boolean OTP_NEEDED = false;
 
@@ -102,6 +106,11 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
         return mRepository.getUserProfileData();
     }
 
+    public void updateUserProfile(User userProfileToUpdate) {
+        mRepository.setProfileListener(this);
+        mRepository.updateUserProfile(userProfileToUpdate);
+    }
+
     public void logout() {
         FirebaseAuth.getInstance().signOut();
     }
@@ -116,6 +125,10 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
 
     public void setMobileAuthListener(AuthListener.Mobile mobileAuthListener) {
         this.mobileAuthListener = mobileAuthListener;
+    }
+
+    public void setProfileListener(ProfileListener profileListener) {
+        this.profileListener = profileListener;
     }
 
     @Override
@@ -156,5 +169,10 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
     @Override
     public void onOtpRetrievalFailed() {
         mobileAuthListener.onOtpRetrievalFailed();
+    }
+
+    @Override
+    public void onProfileUpdated() {
+        profileListener.onProfileUpdated();
     }
 }

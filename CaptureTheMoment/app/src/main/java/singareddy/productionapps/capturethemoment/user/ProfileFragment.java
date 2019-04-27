@@ -2,6 +2,7 @@ package singareddy.productionapps.capturethemoment.user;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.auth.AuthModelFactory;
+import singareddy.productionapps.capturethemoment.auth.AuthViewModel;
 import singareddy.productionapps.capturethemoment.models.User;
 
 public class ProfileFragment extends Fragment implements View.OnClickListener {
@@ -26,6 +29,9 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     // Viewmodel layer members
     AuthenticationViewModel authenticationViewModel;
+    AuthViewModel authViewModel;
+    SharedPreferences userProfileCache;
+    SharedPreferences.OnSharedPreferenceChangeListener userProfileCacheListener;
 
     public ProfileFragment () {
 
@@ -35,28 +41,41 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.i(TAG, "onCreateView: *");
+        initialiseViewModel();
         View view = inflater.inflate(R.layout.profile_fragment, container, false);
         name = view.findViewById(R.id.profile_fragment_name_data);
         editProfile = view.findViewById(R.id.profile_bt_edit);
         editProfile.setOnClickListener(this);
-        authenticationViewModel = ViewModelProviders.of(this).get(AuthenticationViewModel.class);
-        loadProfileData();
         return view;
+    }
+
+    private void initialiseViewModel() {
+        AuthModelFactory factory = AuthModelFactory.createFactory(getActivity());
+        authViewModel = ViewModelProviders.of(this, factory).get(AuthViewModel.class);
+        userProfileCacheListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                ProfileFragment.this.intialiseProfile();
+            }
+        };
+        userProfileCache = authViewModel.getUserProfileData();
+    }
+
+    private void intialiseProfile() {
+        name.setText(userProfileCache.getString("name", ""));
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        Log.i(TAG, "onResume: *");
-        loadProfileData();
+        userProfileCache.registerOnSharedPreferenceChangeListener(userProfileCacheListener);
+        intialiseProfile();
     }
 
-    /**
-     * This method asks the Viewmodel to display the profile details of the user
-     */
-    private void loadProfileData() {
-        User user = authenticationViewModel.loadUserProfile();
-        name.setText(user.getName());
+    @Override
+    public void onPause() {
+        super.onPause();
+        userProfileCache.unregisterOnSharedPreferenceChangeListener(userProfileCacheListener);
     }
 
     @Override

@@ -42,7 +42,6 @@ public class AuthenticationViewModel extends AndroidViewModel {
     private AuthListener.EmailSignup emailSignupListener;
     private AuthListener.Mobile mobileLoginListener;
     private AuthListener.Logout logoutListener;
-    private ProfileListener.InitialProfile initialProfileListener;
     private ProfileListener profileListener;
     private FirebaseAuth.AuthStateListener authStateListener;
 
@@ -253,7 +252,7 @@ public class AuthenticationViewModel extends AndroidViewModel {
                 Log.i(TAG, "onDataChange: Name Exists  : "+dataSnapshot.hasChild("name"));
                 Log.i(TAG, "onDataChange: Mobile Exists: "+dataSnapshot.hasChild("mobile"));
                 if (dataSnapshot.hasChild("name") == false || dataSnapshot.getValue(User.class).getName().equals("NA")) {
-                    initialProfileListener.onUserProfilePending();
+
                 }
                 else {
                     // Since the user is not logged in first time, save the user to the cache
@@ -297,7 +296,6 @@ public class AuthenticationViewModel extends AndroidViewModel {
      */
     private void updateUserProfile(final User user, @NonNull String uid) {
         DatabaseReference newUserNode = firebaseDatabase.getReference().child(ALL_USERS_NODE).child(uid).child("profile");
-        final DatabaseReference registeredUsersNode = firebaseDatabase.getReference().child(ALL_REGISTERED_USERS_NODE).child(CURRENT_USER.getUid());
 
         OnSuccessListener successListener = new OnSuccessListener() {
             @Override
@@ -323,40 +321,6 @@ public class AuthenticationViewModel extends AndroidViewModel {
                 .addOnSuccessListener(successListener)
                 .addOnFailureListener(failureListener)
                 .addOnCompleteListener(completeListener);
-        
-        final OnCompleteListener<Void> completeListener1 = new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()) {
-                    Log.i(TAG, "onComplete: User added in registered users list.");
-                }
-                else {
-                    Log.i(TAG, "onComplete: User was not added in the registered users list.");
-                }
-            }
-        };
-
-        ValueEventListener valueEventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // Check if the user is phone or email authenticated
-                if (firebaseAuth.getCurrentUser().getProviders().get(0).equals(EMAIL_PROVIDER)) {
-                    // Email provider - Add email for this UID
-                    registeredUsersNode.setValue(user.getEmailId().toLowerCase()).addOnCompleteListener(completeListener1);
-                }
-                else if (firebaseAuth.getCurrentUser().getProviders().get(0).equals(PHONE_PROVIDER)) {
-                    // Phone provider - Add phone for this UID
-                    registeredUsersNode.setValue(user.getMobile().toString()).addOnCompleteListener(completeListener1);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        };
-
-        registeredUsersNode.addListenerForSingleValueEvent(valueEventListener);
     }
 
     /**
@@ -481,10 +445,6 @@ public class AuthenticationViewModel extends AndroidViewModel {
     public void setLogoutListener(AuthListener.Logout logoutListener) {
         this.logoutListener = logoutListener;
         addAuthStateListener();
-    }
-
-    public void setInitialProfileListener(ProfileListener.InitialProfile initialProfileListener) {
-        this.initialProfileListener = initialProfileListener;
     }
 
     public void setProfileListener(ProfileListener profileListener) {

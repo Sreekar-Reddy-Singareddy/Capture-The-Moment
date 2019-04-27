@@ -32,6 +32,7 @@ import singareddy.productionapps.capturethemoment.models.ShareInfo;
 import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.auth.AuthListener;
 import singareddy.productionapps.capturethemoment.auth.DataSyncListener;
+import singareddy.productionapps.capturethemoment.user.ProfileListener;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.Book.*;
 import static singareddy.productionapps.capturethemoment.AppUtilities.FileNames.*;
@@ -46,7 +47,7 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
 public class DataRepository implements AddBookListener, GetBookListener,
         UpdateBookListener, AuthListener.EmailLogin,
         AuthListener.Mobile, AuthListener.EmailSignup,
-        DataSyncListener {
+        DataSyncListener, ProfileListener {
 
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
@@ -65,6 +66,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private AuthListener.EmailLogin emailLoginListener;
     private AuthListener.Mobile mobileAuthListener;
     private AuthListener.EmailSignup emailSignupListener;
+    private ProfileListener profileListener;
 
     private LocalDB mLocalDB;
     private Context mContext;
@@ -242,8 +244,16 @@ public class DataRepository implements AddBookListener, GetBookListener,
         return userProfileCache;
     }
 
+    public void updateUserProfile(User userProfileToUpdate) {
+        if (mAuthService == null) {
+            mAuthService = new AuthService();
+        }
+        mAuthService.setProfileListener(this);
+        mAuthService.setDataSyncListener(this);
+        mAuthService.updateUserProfile(userProfileToUpdate);
+    }
 
-    // MARK: Setter methods and other userProfileCacheListener methods
+    // =================== Setters
 
     public void setAddBookListener(AddBookListener mAddBookListener) {
         this.mBookListener = mAddBookListener;
@@ -269,7 +279,11 @@ public class DataRepository implements AddBookListener, GetBookListener,
         this.mobileAuthListener = mobileAuthListener;
     }
 
-    // ===================
+    public void setProfileListener(ProfileListener profileListener) {
+        this.profileListener = profileListener;
+    }
+
+    // =================== Book Listeners
 
     @Override
     public void onBookNameInvalid(String code) {
@@ -319,7 +333,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         });
     }
 
-    // ===================
+    // =================== Add Book Listener
 
     @Override
     public void onNewBookCreated() {
@@ -328,7 +342,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         // After new book is created there is no need for the service
     }
 
-    // ===================
+    // =================== Update Book Listener
 
     @Override
     public void onBookUpdated() {
@@ -379,6 +393,13 @@ public class DataRepository implements AddBookListener, GetBookListener,
     @Override
     public void onOtpRetrievalFailed() {
         mobileAuthListener.onOtpRetrievalFailed();
+    }
+
+    // =================== Profile Listener
+
+    @Override
+    public void onProfileUpdated() {
+        profileListener.onProfileUpdated();
     }
 
     // =================== Data Sync Listener

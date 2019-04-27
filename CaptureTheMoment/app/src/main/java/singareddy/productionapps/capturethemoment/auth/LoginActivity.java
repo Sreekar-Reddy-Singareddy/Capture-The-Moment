@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            Log.i(TAG, "onCreate: CURRENT USER");
             Intent homeIntent = new Intent(this, HomeActivity.class);
             startActivity(homeIntent);
             finish();

@@ -27,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 import singareddy.productionapps.capturethemoment.AppUtilities;
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.User;
+import singareddy.productionapps.capturethemoment.user.ProfileListener;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
 import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
@@ -42,6 +43,7 @@ public class AuthService {
     private AuthListener.Mobile mobileAuthListener;
     private AuthListener.EmailSignup emailSignupListener;
     private DataSyncListener dataSyncListener;
+    private ProfileListener profileListener;
 
     public AuthService () {
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -164,7 +166,7 @@ public class AuthService {
 
     private void setupUserProfile() {
         DatabaseReference currentUserNode = mFirebaseDB.getReference()
-                .child(ALL_USERS_NODE).child(CURRENT_USER_ID).child("profile");
+                .child(ALL_USERS_NODE).child(FirebaseAuth.getInstance().getUid()).child("profile");
         currentUserNode.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -193,6 +195,30 @@ public class AuthService {
 
             }
         });
+
+        DatabaseReference registeredUsersNode = mFirebaseDB.getReference().child(ALL_REGISTERED_USERS_NODE).child(FirebaseAuth.getInstance().getUid());
+        OnCompleteListener<Void> completeListener1 = new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Log.i(TAG, "onComplete: User added in registered users list.");
+                }
+                else {
+                    Log.i(TAG, "onComplete: User was not added in the registered users list.");
+                }
+            }
+        };
+        // Check if the user is phone or email authenticated
+        if (mFirebaseAuth.getCurrentUser().getProviders().get(0).equals(EMAIL_PROVIDER)) {
+            // Email provider - Add email for this UID
+            registeredUsersNode.setValue(FirebaseAuth.getInstance().getCurrentUser().getEmail()).addOnCompleteListener(completeListener1);
+        }
+        else if (mFirebaseAuth.getCurrentUser().getProviders().get(0).equals(PHONE_PROVIDER)) {
+            // Phone provider - Add phone for this UID
+            registeredUsersNode.setValue(Long.parseLong(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(3))).addOnCompleteListener(completeListener1);
+        }
+
+
     }
 
     private void setupBooksOwnedByUser() {
@@ -244,6 +270,28 @@ public class AuthService {
 
     }
 
+    public void updateUserProfile(User user) {
+        DatabaseReference newUserNode = mFirebaseDB.getReference().child(ALL_USERS_NODE).child(FirebaseAuth.getInstance().getUid()).child("profile");
+
+        OnSuccessListener successListener = new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                setupUserProfile();
+                profileListener.onProfileUpdated();
+            }
+        };
+        OnFailureListener failureListener = new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.i(TAG, "onFailure: User could not be added in DB::: "+e.getLocalizedMessage());
+            }
+        };
+
+        newUserNode.setValue(user)
+                .addOnSuccessListener(successListener)
+                .addOnFailureListener(failureListener);
+    }
+
     /**
      * Fetches a book from firebase given its book id
      * @param bookId
@@ -283,5 +331,9 @@ public class AuthService {
 
     public void setDataSyncListener(DataSyncListener dataSyncListener) {
         this.dataSyncListener = dataSyncListener;
+    }
+
+    public void setProfileListener(ProfileListener profileListener) {
+        this.profileListener = profileListener;
     }
 }

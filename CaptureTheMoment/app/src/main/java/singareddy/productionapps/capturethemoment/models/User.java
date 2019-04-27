@@ -3,13 +3,13 @@ package singareddy.productionapps.capturethemoment.models;
 import java.util.List;
 
 public class User {
-    private String name = "NA";
+    private String name = "";
     private Long mobile = 0l;
     private Integer age = 0;
-    private String gender = "NA";
-    private String emailId = "NA";
-    private String profilePic = "NA";
-    private String location = "NA";
+    private String gender = "";
+    private String emailId = "";
+    private String profilePic = "";
+    private String location = "";
     private List<String> ownedBooks;
     private List<ShareInfo> sharedBooks;
 

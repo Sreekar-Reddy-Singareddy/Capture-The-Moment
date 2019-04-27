@@ -17,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import singareddy.productionapps.capturethemoment.auth.AuthModelFactory;
 import singareddy.productionapps.capturethemoment.auth.AuthViewModel;
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity;
@@ -28,6 +30,9 @@ import singareddy.productionapps.capturethemoment.auth.LoginActivity;
 import singareddy.productionapps.capturethemoment.user.ProfileFragment;
 import singareddy.productionapps.capturethemoment.user.ProfileListener;
 import singareddy.productionapps.capturethemoment.user.ProfileUpdateActivity;
+
+import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
+import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private static String TAG = "HomeActivity";
@@ -49,6 +54,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         initialiseViewModel();
         initialiseUI();
         initialiseUserProfile();
+        initialiseStaticConstants();
     }
 
     private void initialiseViewModel() {
@@ -61,7 +67,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 if (key.equals("name")) {
                     String username = sharedPreferences.getString(key, "Welcome!");
                     userName.setText(username);
-                    if (username.equals("Welcome!") || username.equals("NA")) {
+                    if (username.equals("Welcome!") || username.equals("")) {
                         AlertDialog dialog = new AlertDialog.Builder(HomeActivity.this)
                                 .setIcon(R.drawable.ic_launcher_foreground)
                                 .setTitle("Update Profile")
@@ -107,6 +113,17 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void initialiseUserProfile() {
         String username = userProfileCache.getString("name", "Welcome!");
         userName.setText(username);
+    }
+
+    private void initialiseStaticConstants() {
+        Log.i(TAG, "initialiseStaticConstants: ***");
+        CURRENT_USER = FirebaseAuth.getInstance().getCurrentUser();
+        CURRENT_USER_ID = CURRENT_USER.getUid();
+        LOGIN_PROVIDER = CURRENT_USER.getProviders().get(0);
+        CURRENT_USER_EMAIL = LOGIN_PROVIDER.equals(EMAIL_PROVIDER) ?
+                CURRENT_USER.getEmail() : null;
+        CURRENT_USER_MOBILE = LOGIN_PROVIDER.equals(PHONE_PROVIDER) ?
+                CURRENT_USER.getPhoneNumber().substring(3) : null;
     }
 
     @Override
