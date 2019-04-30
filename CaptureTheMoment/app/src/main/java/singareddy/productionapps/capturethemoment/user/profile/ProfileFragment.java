@@ -36,6 +36,7 @@ import com.google.firebase.storage.UploadTask;
 import org.apache.commons.io.IOUtils;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -84,14 +85,31 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         userProfileCacheListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                if (key.equals("profilePicAvailable")) {
+                    setProfilePic();
+                }
                 ProfileFragment.this.intialiseProfile();
             }
         };
         userProfileCache = authViewModel.getUserProfileData();
     }
 
+    private void setProfilePic() {
+        Log.i(TAG, "setProfilePic: PROFILE PIC!!");
+        File profilePic = new File(getContext().getFilesDir(), "profile_pic.jpg");
+        if (profilePic.exists()) {
+            try {
+                byte[] imageData = IOUtils.toByteArray(new FileInputStream(profilePic));
+                this.profilePic.setImageBitmap(BitmapFactory.decodeByteArray(imageData, 0, imageData.length));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     private void intialiseProfile() {
         name.setText(userProfileCache.getString("name", ""));
+        setProfilePic();
     }
 
     @Override

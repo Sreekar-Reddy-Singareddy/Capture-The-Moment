@@ -4,6 +4,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -11,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -102,8 +104,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
         return mContext.getSharedPreferences(AppUtilities.FileNames.UIDS_CACHE, Context.MODE_PRIVATE);
     }
 
-    // =================================================================== Book Module
 
+    // =================================================================== Book Module
     /**
      * This method validates using 2 sources of data.
      * Book name is validated from Room DB.
@@ -175,8 +177,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
     }
 
 
-    // =================================================================== Authentication Module
 
+    // =================================================================== Authentication Module
     public void registerEmailUser(String email, String password) {
         if (mAuthService == null) {
             mAuthService = new AuthService();
@@ -188,8 +190,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
     public void loginUserWithEmail(String email, String password) {
         if (mAuthService == null) {
             mAuthService = new AuthService();
-            mAuthService.setEmailLoginListener(this);
         }
+        mAuthService.setEmailLoginListener(this);
         mAuthService.loginUserWithEmail(email, password);
     }
 
@@ -227,6 +229,9 @@ public class DataRepository implements AddBookListener, GetBookListener,
                 mContext.getSharedPreferences(USER_PROFILE_CACHE, Context.MODE_PRIVATE);
         boolean committed = userProfileCache.edit().clear().commit();
         Log.i(TAG, "eraseUserProfile: User profile erased: "+committed);
+        // Erase user's profile pic files
+        File profilePic = new File(mContext.getFilesDir(), "profile_pic.jpg");
+        if (profilePic.exists()) Log.i(TAG, "eraseUserProfile: Profile Pic Erased: "+profilePic.delete());
         return committed;
     }
 
@@ -235,6 +240,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
             mAuthService = new AuthService();
         }
         mAuthService.setDataSyncListener(this);
+        mAuthService.setProfileListener(this);
         mAuthService.setupInitialData();
     }
 
@@ -251,6 +257,19 @@ public class DataRepository implements AddBookListener, GetBookListener,
         mAuthService.setProfileListener(this);
         mAuthService.setDataSyncListener(this);
         mAuthService.updateUserProfile(userProfileToUpdate);
+    }
+
+    public void saveProfilePic(Uri profilePicUri) {
+        if (mAuthService == null) {
+            mAuthService = new AuthService();
+        }
+        mAuthService.setProfileListener(this);
+        mAuthService.saveProfilePic(profilePicUri);
+    }
+
+    public Uri whereToSaveProfilePic() {
+        File profilePic = new File(mContext.getFilesDir(), "profile_pic.jpg");
+        return Uri.fromFile(profilePic);
     }
 
     // =================== Setters
@@ -296,7 +315,6 @@ public class DataRepository implements AddBookListener, GetBookListener,
         Log.i(TAG, "onAllSecOwnersValidated: *");
         mBookListener.onAllSecOwnersValidated();
     }
-
     @Override
     public void onThisSecOwnerValidated() {
         Log.i(TAG, "onThisSecOwnerValidated: *");
@@ -304,6 +322,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     }
 //    @Override
 //    public void onBookDownloaded(Book downloadedBook) {
+
 //        mBookGetBookListenerListener.onBookDownloaded(downloadedBook);
 
 //    }
@@ -402,6 +421,11 @@ public class DataRepository implements AddBookListener, GetBookListener,
         profileListener.onProfileUpdated();
     }
 
+    @Override
+    public void onProfilePicUpdated() {
+        profileListener.onProfilePicUpdated();
+    }
+
     // =================== Data Sync Listener
 
     @Override
@@ -425,6 +449,15 @@ public class DataRepository implements AddBookListener, GetBookListener,
     public void onBookDownloadedFromFirebase(Book downloadedBook, Boolean sharedBookAccess) {
         Log.i(TAG, "onBookDownloadedFromFirebase: BOOK NAME: "+downloadedBook.getName());
         new InsertBookTask().execute(downloadedBook, sharedBookAccess);
+    }
+
+    @Override
+    public void onProfilePictureDownloaded() {
+        Log.i(TAG, "onProfilePictureDownloaded: **");
+        SharedPreferences userProfileCache = mContext.getSharedPreferences(USER_PROFILE_CACHE, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = userProfileCache.edit();
+        editor.putBoolean("profilePicAvailable", true);
+        editor.commit();
     }
 
     // MARK: Async Tasks

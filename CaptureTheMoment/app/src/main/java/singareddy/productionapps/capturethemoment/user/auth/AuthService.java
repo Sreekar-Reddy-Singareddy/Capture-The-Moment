@@ -1,5 +1,6 @@
 package singareddy.productionapps.capturethemoment.user.auth;
 
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
@@ -18,6 +19,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,6 +31,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import singareddy.productionapps.capturethemoment.AppUtilities;
+import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileListener;
@@ -37,6 +44,7 @@ public class AuthService {
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseDatabase mFirebaseDB;
+    private FirebaseStorage mFirebaseST;
     private String verificationId;
 
     private AuthListener.EmailLogin emailLoginListener;
@@ -48,6 +56,7 @@ public class AuthService {
     public AuthService () {
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseDB = FirebaseDatabase.getInstance();
+        mFirebaseST = FirebaseStorage.getInstance();
     }
 
     public void registerEmailUser(String email, String password) {
@@ -158,6 +167,8 @@ public class AuthService {
         Log.i(TAG, "setupInitialData: PROVIDER: "+LOGIN_PROVIDER);
         // Download user profile, if available
         setupUserProfile();
+        // Download user profile picture and save it in device
+        downloadUserProfilePicture();
         // Download all books that belong to this user
         setupBooksOwnedByUser();
         // Download all books that are shared with this user
@@ -217,8 +228,37 @@ public class AuthService {
             // Phone provider - Add phone for this UID
             registeredUsersNode.setValue(Long.parseLong(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(3))).addOnCompleteListener(completeListener1);
         }
+    }
 
-
+    private void downloadUserProfilePicture() {
+        StorageReference profilePicRef = mFirebaseST.getReference().child(CURRENT_USER_ID).child("profile_pic.jpg");
+        if (!(profileListener instanceof DataRepository)) {
+            // Data repository is not the listener
+            // So simply return to the caller.
+            Log.i(TAG, "downloadUserProfilePicture: Download Failed.");
+            return;
+        }
+        Uri profilePicUri = ((DataRepository) profileListener).whereToSaveProfilePic();
+        profilePicRef.getFile(profilePicUri)
+                .addOnProgressListener(new OnProgressListener<FileDownloadTask.TaskSnapshot>() {
+                    @Override
+                    public void onProgress(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                        Log.i(TAG, "onProgress: Downloading... "+taskSnapshot.getBytesTransferred()+" bytes");
+                    }
+                })
+                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                        Log.i(TAG, "onSuccess: Downloaded!");
+                        dataSyncListener.onProfilePictureDownloaded();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.i(TAG, "onFailure: Download Failed! "+e.getLocalizedMessage());
+                    }
+                });
     }
 
     private void setupBooksOwnedByUser() {
@@ -290,6 +330,31 @@ public class AuthService {
         newUserNode.setValue(user)
                 .addOnSuccessListener(successListener)
                 .addOnFailureListener(failureListener);
+    }
+
+    public void saveProfilePic(Uri profilePicUri) {
+        // Use this Uri and upload the picture to firebase storage
+        StorageReference profilePicReference = mFirebaseST.getReference().child(CURRENT_USER_ID).child("profile_pic.jpg");
+        profilePicReference.putFile(profilePicUri)
+                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                        Log.i(TAG, "onProgress: Uploading..."+taskSnapshot.getBytesTransferred()+" bytes");
+                    }
+                })
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        Log.i(TAG, "onSuccess: Uploaded!");
+                        profileListener.onProfilePicUpdated();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.i(TAG, "onFailure: Upload Failed! "+e.getLocalizedMessage() );
+                    }
+                });
     }
 
     /**

@@ -3,10 +3,13 @@ package singareddy.productionapps.capturethemoment.user.profile;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +21,15 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import org.apache.commons.io.IOUtils;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
@@ -77,6 +89,10 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
         String uemail = userProfileCache.getString("email", "");
         Long umobile = userProfileCache.getLong("mobile", 0l);
         String ulocation = userProfileCache.getString("location", "");
+        Bitmap profilePic = authViewModel.setProfilePic(this);
+        if (profilePic != null) {
+            this.profilePic.setImageBitmap(profilePic);
+        }
 
         name.setText(uname);
         if (uage != null || uage != 0) age.setText(uage.toString());
@@ -166,17 +182,45 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
         if (requestCode == CAMERA_INTENT_REQUEST && resultCode == RESULT_OK) {
             Log.i(TAG, "onActivityResult: IMAGE CAPTURED");
             Log.i(TAG, "onActivityResult: DATA URI: "+data.getExtras().get("data"));
-            profilePic.setImageBitmap(((Bitmap) data.getExtras().get("data")));
+            Bitmap capturedImage = (Bitmap) data.getExtras().get("data");
+            profilePic.setImageBitmap(capturedImage);
+            // Get byte[] from the data
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            capturedImage.compress(Bitmap.CompressFormat.JPEG,100, outputStream);
+            saveProfilePic(outputStream.toByteArray());
         }
         else if (requestCode == GALLERY_INTENT_REQUEST && resultCode == RESULT_OK) {
             Log.i(TAG, "onActivityResult: PICKED");
             Log.i(TAG, "onActivityResult: DATA URI: "+data.getData().getPath());
             profilePic.setImageURI(data.getData());
+            // Get byte[] from the data
+            try {
+                InputStream inputStream = getContentResolver().openInputStream(data.getData());
+                saveProfilePic(IOUtils.toByteArray(inputStream));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 
-    private void uploadProfilePic() {
-        
+    private void saveProfilePic (byte[] imageData) {
+        Log.i(TAG, "saveProfilePic: IMAGE SIZE: "+imageData.length+" bytes");
+        try {
+            FileOutputStream outputStream = openFileOutput("profile_pic.jpg", Context.MODE_PRIVATE);
+            outputStream.write(imageData);
+            outputStream.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            File profilePicFile = new File(getFilesDir(), "profile_pic.jpg");
+            if (profilePicFile.exists()) {
+                Uri profilePicUri = Uri.fromFile(profilePicFile);
+                authViewModel.saveProfilePic(profilePicUri);
+            }
+        }
     }
 
     @Override
@@ -185,5 +229,11 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
         Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
         // Once the profile is updated, finish this activity
         finish();
+    }
+
+    @Override
+    public void onProfilePicUpdated() {
+        Log.i(TAG, "onProfilePicUpdated: Updated.");
+        Toast.makeText(this, "Picture changed!", Toast.LENGTH_SHORT).show();
     }
 }

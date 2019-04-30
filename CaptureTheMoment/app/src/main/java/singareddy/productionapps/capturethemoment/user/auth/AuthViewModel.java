@@ -1,10 +1,21 @@
 package singareddy.productionapps.capturethemoment.user.auth;
 
 import android.arch.lifecycle.ViewModel;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.telephony.PhoneNumberUtils;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import org.apache.commons.io.IOUtils;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.User;
@@ -105,9 +116,30 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
         return mRepository.getUserProfileData();
     }
 
+    public Bitmap setProfilePic(Context context) {
+        File userProfilePictureFile = new File(context.getFilesDir(), "profile_pic.jpg");
+        if (userProfilePictureFile.exists()) {
+            try {
+                FileInputStream fileInputStream = new FileInputStream(userProfilePictureFile);
+                byte[] imageData = IOUtils.toByteArray(fileInputStream);
+                return BitmapFactory.decodeByteArray(imageData, 0, imageData.length);
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+        return null;
+    }
+
     public void updateUserProfile(User userProfileToUpdate) {
         mRepository.setProfileListener(this);
         mRepository.updateUserProfile(userProfileToUpdate);
+    }
+
+    public void saveProfilePic(Uri profilePicUri) {
+        if (profilePicUri == null) return;
+        mRepository.setProfileListener(this);
+        mRepository.saveProfilePic(profilePicUri);
     }
 
     public void logout() {
@@ -173,5 +205,10 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
     @Override
     public void onProfileUpdated() {
         profileListener.onProfileUpdated();
+    }
+
+    @Override
+    public void onProfilePicUpdated() {
+        profileListener.onProfilePicUpdated();
     }
 }
