@@ -259,6 +259,12 @@ attr fontWeight
 attr foregroundInsidePadding
 attr gapBetweenBars
 attr goIcon
+attr gridInnerColor
+attr gridInnerStroke
+attr gridLeftRightMargin
+attr gridOuterColor
+attr gridOuterStroke
+attr gridTopBottomMargin
 attr headerLayout
 attr height
 attr helperText
@@ -395,6 +401,7 @@ attr navigationIcon
 attr navigationMode
 attr navigationViewStyle
 attr numericModifiers
+attr outsideLayerColor
 attr overlapAnchor
 attr paddingBottomNoButtons
 attr paddingEnd
@@ -433,6 +440,8 @@ attr searchViewStyle
 attr seekBarStyle
 attr selectableItemBackground
 attr selectableItemBackgroundBorderless
+attr setInnerGridMode
+attr setOuterGridMode
 attr showAsAction
 attr showDividers
 attr showMotionSpec
@@ -1046,15 +1055,18 @@ drawable ic_cancel_white_24dp
 drawable ic_close_red_24dp
 drawable ic_delete_white_24dp
 drawable ic_done_green_24dp
+drawable ic_edit_black_24dp
 drawable ic_edit_white_24dp
 drawable ic_folder_shared_white_24dp
 drawable ic_home_black_24dp
 drawable ic_info_outline_white_24dp
+drawable ic_insert_photo_white_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_photo_camera_white_24dp
 drawable ic_smartphone_black_24dp
 drawable ic_warning_orange_24dp
 drawable mtrl_snackbar_background
@@ -1160,6 +1172,8 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id dialog_profile_iv_camera
+id dialog_profile_iv_gallery
 id dimensions
 id direct
 id disableHome
@@ -1232,6 +1246,8 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id off
+id on
 id outline
 id packed
 id parallax
@@ -1245,6 +1261,7 @@ id profile_div_bottom
 id profile_div_top
 id profile_fragment_email_data
 id profile_fragment_email_data2
+id profile_fragment_image_edit
 id profile_fragment_name_data
 id profile_fragment_profile_pic
 id profile_tv_owned_books
@@ -1256,6 +1273,7 @@ id profile_update_et_email
 id profile_update_et_location
 id profile_update_et_mobile
 id profile_update_et_name
+id profile_update_iv_profilepic
 id profile_update_sn_country_code
 id profile_update_sn_gender
 id progress_circular
@@ -1325,6 +1343,8 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
 id textView6
 id text_input_password_toggle
 id textinput_counter
@@ -1424,6 +1444,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout dialg_profile_pic
 layout email_signup
 layout fragment_all_books
 layout list_item_book
@@ -2081,6 +2102,7 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
+styleable ImageCropView gridInnerColor gridInnerStroke gridLeftRightMargin gridOuterColor gridOuterStroke gridTopBottomMargin outsideLayerColor setInnerGridMode setOuterGridMode
 styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
@@ -2116,3 +2138,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml provider_paths

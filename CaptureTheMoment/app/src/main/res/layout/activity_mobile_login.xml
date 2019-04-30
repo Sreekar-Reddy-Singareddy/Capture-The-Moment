@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".auth.MobileLogin">
+    tools:context=".user.auth.MobileLogin">
 
     <EditText
         android:id="@+id/activity_mobile_login_mobile"

@@ -24,8 +24,7 @@ import java.util.Map;
 
 import singareddy.productionapps.capturethemoment.book.getbooks.GetBooksViewModel;
 import singareddy.productionapps.capturethemoment.models.Book;
-import singareddy.productionapps.capturethemoment.auth.AuthListener;
-import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
+import singareddy.productionapps.capturethemoment.user.auth.AuthListener;
 import singareddy.productionapps.capturethemoment.models.User;
 
 public class ExperimentActivity extends AppCompatActivity implements AuthListener.Mobile, AuthListener.EmailSignup, AuthListener.EmailLogin {
@@ -33,7 +32,6 @@ public class ExperimentActivity extends AppCompatActivity implements AuthListene
 
     Button performAction;
     EditText input;
-    AuthenticationViewModel authenticationViewModel;
     GetBooksViewModel getBooksViewModel;
 
     // Firebase objects
@@ -47,10 +45,6 @@ public class ExperimentActivity extends AppCompatActivity implements AuthListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_experiment);
-        authenticationViewModel = ViewModelProviders.of(this).get(AuthenticationViewModel.class);
-        authenticationViewModel.setMobileLoginListener(this);
-        authenticationViewModel.setEmailLoginListener(this);
-        authenticationViewModel.setEmailSignupListener(this);
 
         performAction = findViewById(R.id.action);
         input = findViewById(R.id.input); input.setText("5");
@@ -67,7 +61,7 @@ public class ExperimentActivity extends AppCompatActivity implements AuthListene
         // Email authentication - In both register and login, must check if the user exists or not
         if (code == 0) {
             // Logout of the application
-            authenticationViewModel.logout();
+
         }
         else if (code == 1) {
             // Register user via email and password
@@ -84,7 +78,7 @@ public class ExperimentActivity extends AppCompatActivity implements AuthListene
 //            authenticationViewModel.authorizePhoneCredentials("9629781945");
         }
         else if (code == 4) {
-            authenticationViewModel.logout();
+
         }
         else if (code == 5) {
             bookExperiment();

@@ -5,8 +5,12 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="24"
-        android:targetSdkVersion="28" />
+        android:minSdkVersion="23"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
     <!-- <uses-sdk android:minSdkVersion="14"/> -->
@@ -29,13 +33,13 @@
         <activity android:name="singareddy.productionapps.capturethemoment.book.details.BookDetailsActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity" />
         <activity
-            android:name="singareddy.productionapps.capturethemoment.user.ProfileUpdateActivity"
+            android:name="singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity"
             android:parentActivityName="singareddy.productionapps.capturethemoment.HomeActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.auth.SignupActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.user.auth.SignupActivity" />
         <activity
-            android:name="singareddy.productionapps.capturethemoment.auth.MobileLogin"
-            android:parentActivityName="singareddy.productionapps.capturethemoment.auth.LoginActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.auth.LoginActivity" >
+            android:name="singareddy.productionapps.capturethemoment.user.auth.MobileLogin"
+            android:parentActivityName="singareddy.productionapps.capturethemoment.user.auth.LoginActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.user.auth.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,6 +50,16 @@
         <activity android:name="singareddy.productionapps.capturethemoment.ExperimentActivity" >
         </activity>
 
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="singareddy.productionapps.capturethemoment.provider"
+            android:exported="false"
+            android:grantUriPermissions="true" >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:exported="false" >
@@ -54,6 +68,9 @@
                 android:value="com.google.firebase.components.ComponentRegistrar" />
             <meta-data
                 android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
                 android:value="com.google.firebase.components.ComponentRegistrar" />
         </service>
 

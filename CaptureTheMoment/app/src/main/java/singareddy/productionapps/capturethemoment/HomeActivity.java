@@ -19,17 +19,13 @@ import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-import singareddy.productionapps.capturethemoment.auth.AuthModelFactory;
-import singareddy.productionapps.capturethemoment.auth.AuthViewModel;
+import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
+import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity;
 import singareddy.productionapps.capturethemoment.book.getbooks.GetBooksFragment;
-import singareddy.productionapps.capturethemoment.models.User;
-import singareddy.productionapps.capturethemoment.auth.AuthListener;
-import singareddy.productionapps.capturethemoment.user.AuthenticationViewModel;
-import singareddy.productionapps.capturethemoment.auth.LoginActivity;
-import singareddy.productionapps.capturethemoment.user.ProfileFragment;
-import singareddy.productionapps.capturethemoment.user.ProfileListener;
-import singareddy.productionapps.capturethemoment.user.ProfileUpdateActivity;
+import singareddy.productionapps.capturethemoment.user.auth.LoginActivity;
+import singareddy.productionapps.capturethemoment.user.profile.ProfileFragment;
+import singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
 import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;

@@ -18,7 +18,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import singareddy.productionapps.capturethemoment.auth.AuthService;
+import singareddy.productionapps.capturethemoment.user.auth.AuthService;
 import singareddy.productionapps.capturethemoment.book.BookListener;
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookListener;
 import singareddy.productionapps.capturethemoment.book.details.UpdateBookListener;
@@ -30,9 +30,9 @@ import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 import singareddy.productionapps.capturethemoment.models.ShareInfo;
 import singareddy.productionapps.capturethemoment.models.User;
-import singareddy.productionapps.capturethemoment.auth.AuthListener;
-import singareddy.productionapps.capturethemoment.auth.DataSyncListener;
-import singareddy.productionapps.capturethemoment.user.ProfileListener;
+import singareddy.productionapps.capturethemoment.user.auth.AuthListener;
+import singareddy.productionapps.capturethemoment.user.auth.DataSyncListener;
+import singareddy.productionapps.capturethemoment.user.profile.ProfileListener;
 
 import static singareddy.productionapps.capturethemoment.AppUtilities.Book.*;
 import static singareddy.productionapps.capturethemoment.AppUtilities.FileNames.*;

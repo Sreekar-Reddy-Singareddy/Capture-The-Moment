@@ -65,6 +65,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:background="@android:color/holo_blue_light"
+        android:scaleType="centerCrop"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -127,5 +128,15 @@
         android:layout_marginTop="8dp">
 
     </View>
+
+    <ImageView
+        android:id="@+id/profile_fragment_image_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profile_fragment_profile_pic"
+        app:layout_constraintEnd_toEndOf="@+id/profile_fragment_profile_pic"
+        app:srcCompat="@drawable/ic_edit_white_24dp" />
 
 </android.support.constraint.ConstraintLayout>
