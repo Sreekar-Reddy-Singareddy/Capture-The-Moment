@@ -50,7 +50,7 @@ import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
 public class ProfileFragment extends Fragment implements View.OnClickListener {
     static String TAG = "ProfileFragment";
 
-    TextView name;
+    TextView name, ownedBooks, sharedBooks;
     ImageView profilePic;
     ImageView editProfilePic;
     Button editProfile;
@@ -71,11 +71,11 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         initialiseViewModel();
         View view = inflater.inflate(R.layout.profile_fragment, container, false);
         name = view.findViewById(R.id.profile_fragment_name_data);
+        sharedBooks = view.findViewById(R.id.profile_tv_shared_books);
+        ownedBooks = view.findViewById(R.id.profile_tv_owned_books);
         profilePic = view.findViewById(R.id.profile_fragment_profile_pic);
         editProfile = view.findViewById(R.id.profile_bt_edit);
-        editProfilePic = view.findViewById(R.id.profile_fragment_image_edit);
         editProfile.setOnClickListener(this);
-        editProfilePic.setOnClickListener(this);
         return view;
     }
 
@@ -94,6 +94,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         userProfileCache = authViewModel.getUserProfileData();
     }
 
+    private void intialiseProfile() {
+        setProfilePic();
+        name.setText(userProfileCache.getString("name", ""));
+        sharedBooks.setText(authViewModel.getNumberOfSharedBooks().toString());
+        ownedBooks.setText(authViewModel.getNumberOfOwnedBooks().toString());
+    }
+
     private void setProfilePic() {
         Log.i(TAG, "setProfilePic: PROFILE PIC!!");
         File profilePic = new File(getContext().getFilesDir(), "profile_pic.jpg");
@@ -105,11 +112,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                 e.printStackTrace();
             }
         }
-    }
-
-    private void intialiseProfile() {
-        name.setText(userProfileCache.getString("name", ""));
-        setProfilePic();
     }
 
     @Override

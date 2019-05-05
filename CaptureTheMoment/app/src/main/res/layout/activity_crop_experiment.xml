@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@android:color/black">
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Tap on the image below to change your profile picture"
+    android:textColor="@android:color/white"
+    android:textSize="20dp"
+    android:id="@+id/textView" />
+
+
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/quick_start_cropped_image"
+    android:background="@android:color/white"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content"
+            android:text="Name: Manish Kumar"
+            android:textSize="30dp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: manishh776@gmail.com"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:textColor="@android:color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MobileNo:1234567890"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+
+</FrameLayout>
+
+<ImageButton
+    android:id="@+id/quick_start_cropped_image"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:src="@drawable/photo"
+    android:layout_marginTop="39dp"
+    android:layout_below="@+id/textView"
+    android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

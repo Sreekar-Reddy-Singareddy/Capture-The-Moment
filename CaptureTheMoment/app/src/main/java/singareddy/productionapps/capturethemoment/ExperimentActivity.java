@@ -10,15 +10,19 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.makeramen.roundedimageview.RoundedImageView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,128 +31,69 @@ import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.user.auth.AuthListener;
 import singareddy.productionapps.capturethemoment.models.User;
 
-public class ExperimentActivity extends AppCompatActivity implements AuthListener.Mobile, AuthListener.EmailSignup, AuthListener.EmailLogin {
+public class ExperimentActivity extends AppCompatActivity {
     private static String TAG = "ExperimentActivity";
 
-    Button performAction;
-    EditText input;
-    GetBooksViewModel getBooksViewModel;
-
-    // Firebase objects
-    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-    static String USERS_NODE = "users";
-    static String BOOKS_NODE = "books";
-    String mobileCode;
+    private RoundedImageView photos;
+    private int photoNumber = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_experiment);
-
-        performAction = findViewById(R.id.action);
-        input = findViewById(R.id.input); input.setText("5");
-
-        SharedPreferences userProfile = getApplication().getSharedPreferences("USER_PROFILE", Context.MODE_PRIVATE);
-        Log.i(TAG, "onCreate: Name: "+userProfile.getString("emailId","N/A"));
+        setContentView(R.layout.list_item_card);
+        sampleData();
+        photos = findViewById(R.id.card_front_iv_photo);
+        photos.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                if (photoNumber == 6) {
+                    photoNumber = 1;
+                }
+                switch (photoNumber) {
+                    case 1:
+                        photos.setImageResource(R.drawable.photo);
+                        break;
+                    case 2:
+                        photos.setImageResource(R.drawable.photo2);
+                        break;
+                    case 3:
+                        photos.setImageResource(R.drawable.photo3);
+                        break;
+                    case 4:
+                        photos.setImageResource(R.drawable.photo4);
+                        break;
+                    case 5:
+                        photos.setImageResource(R.drawable.photo5);
+                        break;
+                }
+                photoNumber++;
+                return false;
+            }
+        });
     }
 
-    public void performAction(View view) {
-        // Each code value performs a different task
-        Log.i(TAG, "performAction: Code: " + input.getText().toString());
-        int code = Integer.parseInt(input.getText().toString());
+    private void sampleData() {
+        FirebaseDatabase DB = FirebaseDatabase.getInstance();
+        DatabaseReference bookRef  = DB.getReference().child("books/-LdIch0uGaw-3ZW0XWC6/cards");
+//        bookRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                Log.i(TAG, "onDataChange: *");
+//                ArrayList<String> cards = (ArrayList<String>) dataSnapshot.getValue();
+//                Log.i(TAG, "onDataChange: CARDS: "+cards);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
 
-        // Email authentication - In both register and login, must check if the user exists or not
-        if (code == 0) {
-            // Logout of the application
-
-        }
-        else if (code == 1) {
-            // Register user via email and password
-            User user = new User("Gopi Krishna", 9441079575l, 51, "Male", "gopikrishna@vicat.com");
-//            authenticationViewModel.registerUserWithEmailCredentials(user, "Gopi@123", "");
-        }
-        else if (code == 2) {
-            // Login user via email and password
-//            authenticationViewModel.loginUserWithEmailCredentials("sreekarreddy430@gmail.com", "Sree@123");
-        }
-        // Mobile authentication
-        else if (code == 3) {
-            // Authenticate user by the mobile number
-//            authenticationViewModel.authorizePhoneCredentials("9629781945");
-        }
-        else if (code == 4) {
-
-        }
-        else if (code == 5) {
-            bookExperiment();
-        }
-    }
-
-    private void bookExperiment() {
-        firebaseDatabase.getReference().child("books")
-                .orderByChild("owner").equalTo("owner_one")
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        Log.i(TAG, "onDataChange: "+dataSnapshot.getValue().toString());
-                        HashMap<String, Object> map = (HashMap<String, Object>) dataSnapshot.getValue();
-
-                        for (Map.Entry<String, Object> entry : map.entrySet()) {
-                            ObjectMapper mapper = new ObjectMapper();
-                            Book b = mapper.convertValue(entry.getValue(), Book.class);
-                            if (b.getName().toLowerCase().trim().equals("first book")) {
-                                Toast.makeText(ExperimentActivity.this, "Book exists!", Toast.LENGTH_SHORT).show();
-                                break;
-                            }
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.i(TAG, "onCancelled: Message: "+databaseError.getMessage());
-                        Log.i(TAG, "onCancelled: Details: "+databaseError.getDetails());
-                    }
-                });
-    }
-
-    // Authentication Listener Interface Methods
-    @Override
-    public void onEmailUserRegisterSuccess(String email) {
-        Log.i(TAG, "onEmailUserRegisterSuccess: "+email);
-        Toast.makeText(this, "Registration Success", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onEmailUserRegisterFailure(String email, String failureCode) {
-        Log.i(TAG, "onEmailUserRegisterFailure: "+email);
-        Toast.makeText(this, "Registration Failure", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onEmailUserLoginFailure(String failureCode) {
-        Log.i(TAG, "onEmailUserLoginFailure: *");
-        Toast.makeText(this, "Login Failure", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onEmailUserLoginSuccess() {
-        Log.i(TAG, "onEmailUserLoginSuccess: *");
-        Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
-        // User logged in
-        // Meaning, the book data has to be loaded
-        getBooksViewModel = ViewModelProviders.of(this).get(GetBooksViewModel.class);
-    }
-
-    @Override
-    public void onMobileAuthenticationSuccess() {
-        Log.i(TAG, "onMobileAuthenticationSuccess: *");
-        Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onMobileAuthenticationFailure(String failureCode) {
-        Log.i(TAG, "onMobileAuthenticationFailure: *");
-        Toast.makeText(this, "Login Failure", Toast.LENGTH_SHORT).show();
+        ArrayList<String> newCards = new ArrayList<>();
+        newCards.add("c3"); newCards.add("c4");
+        HashMap<String, Object> updateMap = new HashMap<>();
+        updateMap.put("cards", newCards);
+        Log.i(TAG, "sampleData: UPDATE MAP: "+updateMap);
+        bookRef.updateChildren(updateMap);
     }
 }

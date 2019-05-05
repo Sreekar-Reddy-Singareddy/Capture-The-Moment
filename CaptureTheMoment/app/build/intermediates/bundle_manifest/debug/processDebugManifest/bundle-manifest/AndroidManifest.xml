@@ -28,13 +28,12 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat"
-        android:windowSoftInputMode="adjustResize" >
+        android:windowSoftInputMode="adjustPan" >
+        <activity android:name="singareddy.productionapps.capturethemoment.book.details.FullCardActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.book.details.EditBookActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.book.details.BookDetailsActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity" />
-        <activity
-            android:name="singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity"
-            android:parentActivityName="singareddy.productionapps.capturethemoment.HomeActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.user.auth.SignupActivity" />
         <activity
             android:name="singareddy.productionapps.capturethemoment.user.auth.MobileLogin"
@@ -47,8 +46,8 @@
             </intent-filter>
         </activity>
         <activity android:name="singareddy.productionapps.capturethemoment.HomeActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.ExperimentActivity" >
-        </activity>
+        <activity android:name="singareddy.productionapps.capturethemoment.ExperimentActivity" />
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"

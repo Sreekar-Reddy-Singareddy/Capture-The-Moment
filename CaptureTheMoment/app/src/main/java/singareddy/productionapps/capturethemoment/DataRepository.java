@@ -176,7 +176,31 @@ public class DataRepository implements AddBookListener, GetBookListener,
         mUpdateBookService.updateThisBook(bookId, newName, secOwners);
     }
 
+    public Integer getNumberOfSharedBooks() {
+        try {
+            Integer number = mExecutor.submit(()->mLocalDB.getBookDao().getNumberOfSharedBooks(CURRENT_USER_ID)).get();
+            Log.i(TAG, "getNumberOfSharedBooks: "+number);
+            return number;
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 
+    public Integer getNumberOfOwnedBooks() {
+        try {
+            Integer number = mExecutor.submit(()->mLocalDB.getBookDao().getNumberOfOwnedBooks(CURRENT_USER_ID)).get();
+            Log.i(TAG, "getNumberOfOwnedBooks: "+number);
+            return number;
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
 
     // =================================================================== Authentication Module
     public void registerEmailUser(String email, String password) {

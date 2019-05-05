@@ -325,4 +325,54 @@ public class BookDao_Impl implements BookDao {
       }
     }.getLiveData();
   }
+
+  @Override
+  public int getNumberOfSharedBooks(String uid) {
+    final String _sql = "SELECT COUNT(bookId) FROM Book WHERE owner <> ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (uid == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, uid);
+    }
+    final Cursor _cursor = __db.query(_statement);
+    try {
+      final int _result;
+      if(_cursor.moveToFirst()) {
+        _result = _cursor.getInt(0);
+      } else {
+        _result = 0;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  @Override
+  public int getNumberOfOwnedBooks(String uid) {
+    final String _sql = "SELECT COUNT(bookId) FROM Book WHERE owner = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (uid == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, uid);
+    }
+    final Cursor _cursor = __db.query(_statement);
+    try {
+      final int _result;
+      if(_cursor.moveToFirst()) {
+        _result = _cursor.getInt(0);
+      } else {
+        _result = 0;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
 }

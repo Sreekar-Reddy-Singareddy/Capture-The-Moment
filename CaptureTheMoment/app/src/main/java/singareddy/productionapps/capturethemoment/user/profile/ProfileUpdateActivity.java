@@ -12,15 +12,20 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import org.apache.commons.io.IOUtils;
 
@@ -31,6 +36,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import singareddy.productionapps.capturethemoment.BuildConfig;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
 import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
@@ -43,16 +49,18 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
     static final int CAMERA_INTENT_REQUEST = 3;
     static final int GALLERY_INTENT_REQUEST = 4;
 
-    ImageView profilePic, cameraButton, galleryButton;
+    ImageView profilePic, cameraButton, galleryButton, editProfilePic;
     EditText mobile, email, age, location, name;
     Spinner gender;
     Button save;
 
     // Viewmodel members
     AuthViewModel authViewModel;
-
     User currentUser;
     SharedPreferences userProfileCache;
+
+    // Photo URIs
+    private Uri capturedUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +78,7 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
     }
 
     private void initialiseUI() {
+        getSupportActionBar().setTitle("Edit Profile");
         setContentView(R.layout.activity_profile_update);
         name = findViewById(R.id.profile_update_et_name);
         age = findViewById(R.id.profile_update_et_age);
@@ -79,8 +88,11 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
         email = findViewById(R.id.profile_update_et_email);
         save = findViewById(R.id.profile_update_bt_save);
         profilePic = findViewById(R.id.profile_update_iv_profilepic);
+        editProfilePic = findViewById(R.id.profile_update_iv_edit_dp);
         save.setOnClickListener(this);
-        profilePic.setOnClickListener(this);
+        editProfilePic.setOnClickListener(this);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void initialiseUserProfile() {
@@ -102,6 +114,14 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onClick(View v) {
         if (v == save) {
             save.setEnabled(false);
@@ -114,7 +134,7 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
             userProfileToUpdate.setLocation(location);
             authViewModel.updateUserProfile(userProfileToUpdate);
         }
-        else if (v == profilePic) {
+        else if (v == editProfilePic) {
             View dialogView = getLayoutInflater().inflate(R.layout.dialg_profile_pic, null, false);
             cameraButton = dialogView.findViewById(R.id.dialog_profile_iv_camera);
             galleryButton = dialogView.findViewById(R.id.dialog_profile_iv_gallery);
@@ -148,8 +168,11 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
             return;
         }
         // All permissions granted
+        capturedUri = FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID+".provider",new File("storage/emulated/0/newPic.jpg"));
+        Log.i(TAG, "openCameraForPicture: URI: "+capturedUri);
         Intent cameraIntent = new Intent();
         cameraIntent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, capturedUri);
         startActivityForResult(cameraIntent, CAMERA_INTENT_REQUEST);
     }
 
@@ -181,27 +204,58 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_INTENT_REQUEST && resultCode == RESULT_OK) {
             Log.i(TAG, "onActivityResult: IMAGE CAPTURED");
-            Log.i(TAG, "onActivityResult: DATA URI: "+data.getExtras().get("data"));
-            Bitmap capturedImage = (Bitmap) data.getExtras().get("data");
-            profilePic.setImageBitmap(capturedImage);
-            // Get byte[] from the data
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            capturedImage.compress(Bitmap.CompressFormat.JPEG,100, outputStream);
-            saveProfilePic(outputStream.toByteArray());
+            // Crop the image here
+            cropImageAt(capturedUri);
         }
         else if (requestCode == GALLERY_INTENT_REQUEST && resultCode == RESULT_OK) {
-            Log.i(TAG, "onActivityResult: PICKED");
-            Log.i(TAG, "onActivityResult: DATA URI: "+data.getData().getPath());
-            profilePic.setImageURI(data.getData());
-            // Get byte[] from the data
-            try {
-                InputStream inputStream = getContentResolver().openInputStream(data.getData());
-                saveProfilePic(IOUtils.toByteArray(inputStream));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            Log.i(TAG, "onActivityResult: IMAGE PICKED");
+            // Crop the image here
+            cropImageAt(data.getData());
 
         }
+        else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
+            // Either image is captured or picked,
+            // once it is cropped the resulting URI comes here.
+            // The URI is saved in cache.
+            Log.i(TAG, "onActivityResult: IMAGE CROPPED");
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            Uri croppedImageUri = result.getUri();
+            // Use the result to set the image
+            profilePic.setImageURI(croppedImageUri);
+            // Once image is set, save it in Firebase
+            byte[] imageData = convertUriToBytes(croppedImageUri);
+            saveProfilePic(imageData);
+        }
+    }
+
+    /**
+     * Called both when image is captured from camera
+     * or picked from gallery. This is called before
+     * the image is set to the image view.
+     * @param capturedUri
+     */
+    private void cropImageAt(Uri capturedUri) {
+        CropImage.activity(capturedUri)
+                .setAspectRatio(1,1)
+                .setGuidelines(CropImageView.Guidelines.ON)
+                .start(this);
+    }
+
+    /**
+     * Called to convert image at this Uri to byte data.
+     * This is called after the image is cropped (usually).
+     * @param imageUri
+     * @return
+     */
+    private byte[] convertUriToBytes (Uri imageUri) {
+        try {
+            InputStream inputStream = getContentResolver().openInputStream(imageUri);
+            byte[] imageData = IOUtils.toByteArray(inputStream);
+            return imageData;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     private void saveProfilePic (byte[] imageData) {

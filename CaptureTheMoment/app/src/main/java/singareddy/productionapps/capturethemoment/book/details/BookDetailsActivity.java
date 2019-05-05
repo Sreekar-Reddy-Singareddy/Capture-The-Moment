@@ -3,6 +3,8 @@ package singareddy.productionapps.capturethemoment.book.details;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -11,12 +13,21 @@ import singareddy.productionapps.capturethemoment.R;
 public class BookDetailsActivity extends AppCompatActivity {
     private static String TAG = "BookDetailsActivity";
 
+    private String bookName;
+    private RecyclerView cards;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        bookName = getIntent().getExtras().getString("bookName");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(bookName);
         setContentView(R.layout.activity_book_details);
+        cards = findViewById(R.id.book_details_rv_cards);
+        SmallCardsAdapter adapter = new SmallCardsAdapter(this,null);
+        GridLayoutManager manager = new GridLayoutManager(this,3);
+        cards.setAdapter(adapter);
+        cards.setLayoutManager(manager);
     }
 
     @Override

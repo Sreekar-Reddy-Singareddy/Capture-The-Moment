@@ -58,6 +58,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
 
     private void initialiseUI() {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("New Book");
         bookName = findViewById(R.id.add_book_et_name); bookName.setText("Vellore");
         addNewSecOwner = findViewById(R.id.add_book_ib_add_sec_owner);
         secOwnersList = findViewById(R.id.add_book_rv_sec_owners);

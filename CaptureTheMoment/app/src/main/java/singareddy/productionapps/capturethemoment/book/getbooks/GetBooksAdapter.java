@@ -43,6 +43,7 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
             Intent insideBookIntent = new Intent(context, BookDetailsActivity.class);
             insideBookIntent.putExtra("OwnBook", bookData.get(getAdapterPosition()).doIOwnTheBook());
             insideBookIntent.putExtra("bookId", bookData.get(getAdapterPosition()).getBookId());
+            insideBookIntent.putExtra("bookName", bookData.get(getAdapterPosition()).getName());
             context.startActivity(insideBookIntent);
         }
     }
@@ -73,6 +74,7 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
     @NonNull
     @Override
     public AllBooksViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        Log.i(TAG, "onCreateViewHolder: Item: "+i);
         View view = inflater.inflate(R.layout.list_item_book, viewGroup, false);
         return new AllBooksViewHolder(view);
     }

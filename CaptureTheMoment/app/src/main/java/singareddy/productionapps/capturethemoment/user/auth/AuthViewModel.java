@@ -116,6 +116,14 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
         return mRepository.getUserProfileData();
     }
 
+    public Integer getNumberOfSharedBooks() {
+        return mRepository.getNumberOfSharedBooks();
+    }
+
+    public Integer getNumberOfOwnedBooks() {
+        return mRepository.getNumberOfOwnedBooks();
+    }
+
     public Bitmap setProfilePic(Context context) {
         File userProfilePictureFile = new File(context.getFilesDir(), "profile_pic.jpg");
         if (userProfilePictureFile.exists()) {

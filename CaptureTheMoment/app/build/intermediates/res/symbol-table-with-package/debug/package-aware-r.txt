@@ -200,6 +200,35 @@ attr counterEnabled
 attr counterMaxLength
 attr counterOverflowTextAppearance
 attr counterTextAppearance
+attr cropAspectRatioX
+attr cropAspectRatioY
+attr cropAutoZoomEnabled
+attr cropBackgroundColor
+attr cropBorderCornerColor
+attr cropBorderCornerLength
+attr cropBorderCornerOffset
+attr cropBorderCornerThickness
+attr cropBorderLineColor
+attr cropBorderLineThickness
+attr cropFixAspectRatio
+attr cropGuidelines
+attr cropGuidelinesColor
+attr cropGuidelinesThickness
+attr cropInitialCropWindowPaddingRatio
+attr cropMaxCropResultHeightPX
+attr cropMaxCropResultWidthPX
+attr cropMaxZoom
+attr cropMinCropResultHeightPX
+attr cropMinCropResultWidthPX
+attr cropMinCropWindowHeight
+attr cropMinCropWindowWidth
+attr cropMultiTouchEnabled
+attr cropScaleType
+attr cropShape
+attr cropShowCropOverlay
+attr cropShowProgressBar
+attr cropSnapRadius
+attr cropTouchRadius
 attr customNavigationLayout
 attr defaultQueryHint
 attr dialogCornerRadius
@@ -259,12 +288,6 @@ attr fontWeight
 attr foregroundInsidePadding
 attr gapBetweenBars
 attr goIcon
-attr gridInnerColor
-attr gridInnerStroke
-attr gridLeftRightMargin
-attr gridOuterColor
-attr gridOuterStroke
-attr gridTopBottomMargin
 attr headerLayout
 attr height
 attr helperText
@@ -401,7 +424,6 @@ attr navigationIcon
 attr navigationMode
 attr navigationViewStyle
 attr numericModifiers
-attr outsideLayerColor
 attr overlapAnchor
 attr paddingBottomNoButtons
 attr paddingEnd
@@ -430,6 +452,18 @@ attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
 attr reverseLayout
 attr rippleColor
+attr riv_border_color
+attr riv_border_width
+attr riv_corner_radius
+attr riv_corner_radius_bottom_left
+attr riv_corner_radius_bottom_right
+attr riv_corner_radius_top_left
+attr riv_corner_radius_top_right
+attr riv_mutate_background
+attr riv_oval
+attr riv_tile_mode
+attr riv_tile_mode_x
+attr riv_tile_mode_y
 attr scopeUris
 attr scrimAnimationDuration
 attr scrimBackground
@@ -440,8 +474,6 @@ attr searchViewStyle
 attr seekBarStyle
 attr selectableItemBackground
 attr selectableItemBackgroundBorderless
-attr setInnerGridMode
-attr setOuterGridMode
 attr showAsAction
 attr showDividers
 attr showMotionSpec
@@ -1042,6 +1074,9 @@ drawable common_google_signin_btn_text_light
 drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
+drawable crop_image_menu_crop
+drawable crop_image_menu_rotate_left
+drawable crop_image_menu_rotate_right
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1051,8 +1086,11 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_add_black_24dp
+drawable ic_add_circle_black_50dp
+drawable ic_add_circle_white_24dp
 drawable ic_cancel_white_24dp
 drawable ic_close_red_24dp
+drawable ic_date_range_yellow_24dp
 drawable ic_delete_white_24dp
 drawable ic_done_green_24dp
 drawable ic_edit_black_24dp
@@ -1063,6 +1101,7 @@ drawable ic_info_outline_white_24dp
 drawable ic_insert_photo_white_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_location_on_yellow_24dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1084,12 +1123,20 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable photo
+drawable photo2
+drawable photo3
+drawable photo4
+drawable photo5
 drawable sreekar
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
 id CTRL
+id CropOverlayView
+id CropProgressBar
 id FUNCTION
+id ImageView_image
 id META
 id SHIFT
 id SYM
@@ -1138,6 +1185,7 @@ id auto
 id barrier
 id beginning
 id blocking
+id book_details_rv_cards
 id book_item_cv_container
 id book_item_iv_share
 id book_item_tv_bookname
@@ -1149,12 +1197,21 @@ id book_menu_item_update
 id bottom
 id buttonPanel
 id cancel_action
+id card_back_iv_date
+id card_back_iv_location
+id card_back_tv_date
+id card_back_tv_desc
+id card_back_tv_location
+id card_front_iv_photo
 id center
+id centerCrop
+id centerInside
 id center_horizontal
 id center_vertical
 id chains
 id checkbox
 id chronometer
+id clamp
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1162,6 +1219,10 @@ id container
 id content
 id contentPanel
 id coordinator
+id cropImageView
+id crop_image_menu_crop
+id crop_image_menu_rotate_left
+id crop_image_menu_rotate_right
 id custom
 id customPanel
 id dark
@@ -1193,6 +1254,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id fitCenter
 id fixed
 id forever
 id ghost_view
@@ -1221,6 +1283,9 @@ id line1
 id line3
 id listMode
 id list_item
+id list_item_add_card_cv_card
+id list_item_add_card_iv_icon
+id list_item_small_card_iv_image
 id login_et_email
 id login_et_password
 id login_iv_logo
@@ -1234,10 +1299,11 @@ id media_actions
 id message
 id middle
 id mini
+id mirror
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
-id nav_header_iv_image
+id nav_header_iv_pic
 id nav_header_tv_name
 id navigation_header_container
 id never
@@ -1248,7 +1314,9 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
+id onTouch
 id outline
+id oval
 id packed
 id parallax
 id parent
@@ -1261,7 +1329,6 @@ id profile_div_bottom
 id profile_div_top
 id profile_fragment_email_data
 id profile_fragment_email_data2
-id profile_fragment_image_edit
 id profile_fragment_name_data
 id profile_fragment_profile_pic
 id profile_tv_owned_books
@@ -1273,12 +1340,16 @@ id profile_update_et_email
 id profile_update_et_location
 id profile_update_et_mobile
 id profile_update_et_name
+id profile_update_iv_edit_dp
 id profile_update_iv_profilepic
 id profile_update_sn_country_code
 id profile_update_sn_gender
 id progress_circular
 id progress_horizontal
+id quick_start_cropped_image
 id radio
+id rectangle
+id repeat
 id right
 id right_icon
 id right_side
@@ -1423,6 +1494,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_book
 layout activity_book_details
+layout activity_crop_experiment
 layout activity_dummy
 layout activity_experiment
 layout activity_login
@@ -1430,6 +1502,8 @@ layout activity_main
 layout activity_mobile_login
 layout activity_profile_update
 layout activity_signup
+layout crop_image_activity
+layout crop_image_view
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1447,8 +1521,13 @@ layout design_text_input_password_icon
 layout dialg_profile_pic
 layout email_signup
 layout fragment_all_books
+layout list_item_add_card
 layout list_item_book
+layout list_item_card
+layout list_item_card_back
+layout list_item_card_front
 layout list_item_sec_owner
+layout list_item_small_card
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout navigation_header
@@ -1473,6 +1552,7 @@ layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
 menu book_context_menu
+menu crop_image_menu
 menu main_navigation_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -1538,7 +1618,12 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string crop_image_activity_title
+string crop_image_menu_crop
+string crop_image_menu_rotate_left
+string crop_image_menu_rotate_right
 string default_web_client_id
+string define_roundedimageview
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string firebase_database_url
@@ -1548,12 +1633,22 @@ string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
+string library_roundedimageview_author
+string library_roundedimageview_authorWebsite
+string library_roundedimageview_isOpenSource
+string library_roundedimageview_libraryDescription
+string library_roundedimageview_libraryName
+string library_roundedimageview_libraryVersion
+string library_roundedimageview_libraryWebsite
+string library_roundedimageview_licenseId
+string library_roundedimageview_repositoryLink
 string mtrl_chip_close_icon_content_description
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string pick_image_intent_chooser_title
 string project_id
 string search_menu_title
 string status_bar_notification_info_overflow
@@ -2092,6 +2187,7 @@ styleable ConstraintLayout_placeholder content emptyVisibility
 styleable ConstraintSet android_orientation android_id android_visibility android_layout_width android_layout_height android_layout_marginLeft android_layout_marginTop android_layout_marginRight android_layout_marginBottom android_maxWidth android_maxHeight android_minWidth android_minHeight android_alpha android_transformPivotX android_transformPivotY android_translationX android_translationY android_scaleX android_scaleY android_rotation android_rotationX android_rotationY android_layout_marginStart android_layout_marginEnd android_translationZ android_elevation barrierAllowsGoneWidgets barrierDirection chainUseRtl constraint_referenced_ids layout_constrainedHeight layout_constrainedWidth layout_constraintBaseline_creator layout_constraintBaseline_toBaselineOf layout_constraintBottom_creator layout_constraintBottom_toBottomOf layout_constraintBottom_toTopOf layout_constraintCircle layout_constraintCircleAngle layout_constraintCircleRadius layout_constraintDimensionRatio layout_constraintEnd_toEndOf layout_constraintEnd_toStartOf layout_constraintGuide_begin layout_constraintGuide_end layout_constraintGuide_percent layout_constraintHeight_default layout_constraintHeight_max layout_constraintHeight_min layout_constraintHeight_percent layout_constraintHorizontal_bias layout_constraintHorizontal_chainStyle layout_constraintHorizontal_weight layout_constraintLeft_creator layout_constraintLeft_toLeftOf layout_constraintLeft_toRightOf layout_constraintRight_creator layout_constraintRight_toLeftOf layout_constraintRight_toRightOf layout_constraintStart_toEndOf layout_constraintStart_toStartOf layout_constraintTop_creator layout_constraintTop_toBottomOf layout_constraintTop_toTopOf layout_constraintVertical_bias layout_constraintVertical_chainStyle layout_constraintVertical_weight layout_constraintWidth_default layout_constraintWidth_max layout_constraintWidth_min layout_constraintWidth_percent layout_editor_absoluteX layout_editor_absoluteY layout_goneMarginBottom layout_goneMarginEnd layout_goneMarginLeft layout_goneMarginRight layout_goneMarginStart layout_goneMarginTop
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
+styleable CropImageView cropAspectRatioX cropAspectRatioY cropAutoZoomEnabled cropBackgroundColor cropBorderCornerColor cropBorderCornerLength cropBorderCornerOffset cropBorderCornerThickness cropBorderLineColor cropBorderLineThickness cropFixAspectRatio cropGuidelines cropGuidelinesColor cropGuidelinesThickness cropInitialCropWindowPaddingRatio cropMaxCropResultHeightPX cropMaxCropResultWidthPX cropMaxZoom cropMinCropResultHeightPX cropMinCropResultWidthPX cropMinCropWindowHeight cropMinCropWindowWidth cropMultiTouchEnabled cropScaleType cropShape cropShowCropOverlay cropShowProgressBar cropSnapRadius cropTouchRadius
 styleable DesignTheme bottomSheetDialogTheme bottomSheetStyle
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable FloatingActionButton backgroundTint backgroundTintMode borderWidth elevation fabCustomSize fabSize hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor showMotionSpec useCompatPadding
@@ -2102,7 +2198,6 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
-styleable ImageCropView gridInnerColor gridInnerStroke gridLeftRightMargin gridOuterColor gridOuterStroke gridTopBottomMargin outsideLayerColor setInnerGridMode setOuterGridMode
 styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
@@ -2119,6 +2214,7 @@ styleable PopupWindow android_popupBackground android_popupAnimationStyle overla
 styleable PopupWindowBackgroundState state_above_anchor
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable RoundedImageView android_scaleType riv_border_color riv_border_width riv_corner_radius riv_corner_radius_bottom_left riv_corner_radius_bottom_right riv_corner_radius_top_left riv_corner_radius_top_right riv_mutate_background riv_oval riv_tile_mode riv_tile_mode_x riv_tile_mode_y
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon

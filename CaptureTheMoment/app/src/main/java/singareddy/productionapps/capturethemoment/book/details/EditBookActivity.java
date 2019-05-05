@@ -55,6 +55,7 @@ public class EditBookActivity extends AppCompatActivity implements AddBookListen
         updateBookViewModel.setUpdateBookListener(this);
         mBook = updateBookViewModel.getBookDetailsFor(bookId);
         bookName.setText(mBook.getName());
+        getSupportActionBar().setTitle("Edit "+mBook.getName());
     }
 
     public void initViewModel () {

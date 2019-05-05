@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.BitmapFactory;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
@@ -15,9 +16,16 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+
+import org.apache.commons.io.IOUtils;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
 import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
@@ -35,6 +43,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
     NavigationView navigationView;
     TextView userName;
+    ImageView profilePic;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     FloatingActionButton addBookFab;
@@ -84,6 +93,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                         dialog.show();
                     }
                 }
+                else if (key.equals("profilePicAvailable")) {
+                    setProfilePic();
+                }
             }
         };
     }
@@ -92,11 +104,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         // Initially, show all the books
         GetBooksFragment getBooksFragment = new GetBooksFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, getBooksFragment).commit();
+        getSupportActionBar().setTitle("Books");
 
         drawerLayout = findViewById(R.id.activity_main_drawer_layout);
         navigationView = findViewById(R.id.acctivity_main_navigation_view);
         View headerView = navigationView.getHeaderView(0);
         userName = headerView.findViewById(R.id.nav_header_tv_name);
+        profilePic = headerView.findViewById(R.id.nav_header_iv_pic);
         addBookFab = findViewById(R.id.activity_main_add_book_button);
         addBookFab.setOnClickListener(this);
 
@@ -122,6 +136,19 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 CURRENT_USER.getPhoneNumber().substring(3) : null;
     }
 
+    private void setProfilePic() {
+        Log.i(TAG, "setProfilePic: PROFILE PIC!!");
+        File profilePic = new File(this.getFilesDir(), "profile_pic.jpg");
+        if (profilePic.exists()) {
+            try {
+                byte[] imageData = IOUtils.toByteArray(new FileInputStream(profilePic));
+                this.profilePic.setImageBitmap(BitmapFactory.decodeByteArray(imageData, 0, imageData.length));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     @Override
     public void onClick(View v) {
         if (v == addBookFab) {
@@ -139,10 +166,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             return true;
         }
         if (menuItem.getItemId() == R.id.main_nav_menu_home_item) {
+            getSupportActionBar().setTitle("Books");
+            addBookFab.show();
             GetBooksFragment getBooksFragment = new GetBooksFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, getBooksFragment).commit();
         }
         else if (menuItem.getItemId() == R.id.main_nav_menu_profile_item) {
+            getSupportActionBar().setTitle("Profile");
+            addBookFab.hide();
             ProfileFragment profileFragment = new ProfileFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, profileFragment).commit();
         }
@@ -160,6 +191,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         userProfileCache.registerOnSharedPreferenceChangeListener(userProfileCacheListener);
+        setProfilePic();
     }
 
     @Override

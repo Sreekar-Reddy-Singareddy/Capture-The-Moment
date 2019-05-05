@@ -28,6 +28,12 @@ public interface BookDao {
     @Query("SELECT * FROM Book ORDER BY lastUpdatedDate DESC")
     public LiveData<List<Book>> getAllBooks ();
 
+    @Query("SELECT COUNT(bookId) FROM Book WHERE owner <> :uid")
+    public int getNumberOfSharedBooks(String uid);
+
+    @Query("SELECT COUNT(bookId) FROM Book WHERE owner = :uid")
+    public int getNumberOfOwnedBooks(String uid);
+
     @Query("DELETE FROM Book")
     public int deleteAllData();
 
