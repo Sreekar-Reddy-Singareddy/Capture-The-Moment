@@ -1,4 +1,4 @@
-package singareddy.productionapps.capturethemoment;
+package singareddy.productionapps.capturethemoment.Utils;
 
 import com.google.firebase.auth.FirebaseUser;
 
@@ -24,6 +24,7 @@ public class AppUtilities {
     public static class Firebase {
         public static final String ALL_USERS_NODE = "users";
         public static final String ALL_BOOKS_NODE = "books";
+        public static final String ALL_CARDS_NODE = "cards";
         public static final String ALL_REGISTERED_USERS_NODE = "regUsers";
         public static final String ALL_SHARE_REQUESTS_NODE = "";
         public static final String EMAIL_PROVIDER = "password";

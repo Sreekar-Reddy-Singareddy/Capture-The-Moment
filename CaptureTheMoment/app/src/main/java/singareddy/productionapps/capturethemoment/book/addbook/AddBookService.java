@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import singareddy.productionapps.capturethemoment.AppUtilities;
+import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;

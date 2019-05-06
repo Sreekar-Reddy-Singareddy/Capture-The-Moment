@@ -20,17 +20,14 @@ import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookListener;
-import singareddy.productionapps.capturethemoment.book.addbook.AddBookModelFactory;
-import singareddy.productionapps.capturethemoment.book.addbook.AddBookViewModel;
 import singareddy.productionapps.capturethemoment.book.addbook.SecOwnersAdapter;
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 
-import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_DB_ERROR;
-import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_EXISTS;
-import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_NAME_EMPTY;
-import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_NAME_INVALID;
-import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_NAME_SAME_AS_OLD_NAME;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_DB_ERROR;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_EXISTS;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_NAME_EMPTY;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_NAME_INVALID;
 
 public class EditBookActivity extends AppCompatActivity implements AddBookListener, UpdateBookListener {
     private static String TAG = "EditBookActivity";

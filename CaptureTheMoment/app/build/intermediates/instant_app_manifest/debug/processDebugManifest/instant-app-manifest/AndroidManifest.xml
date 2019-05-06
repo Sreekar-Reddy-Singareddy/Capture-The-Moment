@@ -6,7 +6,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="26"
+        android:minSdkVersion="23"
         android:targetSdkVersion="28" />
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -19,7 +19,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="singareddy.productionapps.capturethemoment.MainApp"
         android:allowBackup="true"
         android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
         android:debuggable="true"
@@ -30,7 +29,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat"
         android:windowSoftInputMode="adjustPan" >
-        <activity android:name="singareddy.productionapps.capturethemoment.card.AddCardActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.card.add.AddCardActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.card.FullCardActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.book.details.EditBookActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.card.BookDetailsActivity" />

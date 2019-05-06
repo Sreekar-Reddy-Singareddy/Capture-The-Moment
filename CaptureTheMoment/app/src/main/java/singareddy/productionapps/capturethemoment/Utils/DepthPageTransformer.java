@@ -1,4 +1,4 @@
-package singareddy.productionapps.capturethemoment;
+package singareddy.productionapps.capturethemoment.Utils;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;

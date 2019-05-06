@@ -12,11 +12,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import singareddy.productionapps.capturethemoment.AppUtilities;
+import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.models.Book;
 
 public class GetBooksService {

@@ -20,6 +20,10 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
+import singareddy.productionapps.capturethemoment.card.add.AddCardListener;
+import singareddy.productionapps.capturethemoment.card.add.AddCardService;
+import singareddy.productionapps.capturethemoment.models.Card;
 import singareddy.productionapps.capturethemoment.user.auth.AuthService;
 import singareddy.productionapps.capturethemoment.book.BookListener;
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookListener;
@@ -36,9 +40,9 @@ import singareddy.productionapps.capturethemoment.user.auth.AuthListener;
 import singareddy.productionapps.capturethemoment.user.auth.DataSyncListener;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileListener;
 
-import static singareddy.productionapps.capturethemoment.AppUtilities.Book.*;
-import static singareddy.productionapps.capturethemoment.AppUtilities.FileNames.*;
-import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.*;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.FileNames.*;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.User.*;
 
 /**
  * This class is the single reliable source of
@@ -49,7 +53,8 @@ import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
 public class DataRepository implements AddBookListener, GetBookListener,
         UpdateBookListener, AuthListener.EmailLogin,
         AuthListener.Mobile, AuthListener.EmailSignup,
-        DataSyncListener, ProfileListener {
+        DataSyncListener, ProfileListener,
+        AddCardListener {
 
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
@@ -62,6 +67,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private GetBooksService mGetBooksService;
     private UpdateBookService mUpdateBookService;
     private AuthService mAuthService;
+    private AddCardService mAddCardService;
 
     private BookListener mBookListener;
     private GetBookListener mBookGetBookListenerListener;
@@ -69,6 +75,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private AuthListener.Mobile mobileAuthListener;
     private AuthListener.EmailSignup emailSignupListener;
     private ProfileListener profileListener;
+    private AddCardListener addCardListener;
 
     private LocalDB mLocalDB;
     private Context mContext;
@@ -296,6 +303,15 @@ public class DataRepository implements AddBookListener, GetBookListener,
         return Uri.fromFile(profilePic);
     }
 
+    // =================================================================== Card Module
+    public void createNewCard(String bookId, Card newCard, List<Uri> imageUris) {
+        if (mAddCardService == null) {
+            mAddCardService = new AddCardService();
+        }
+        mAddCardService.setAddCardListener(this);
+        mAddCardService.createNewCard(bookId, newCard, imageUris);
+    }
+
     // =================== Setters
 
     public void setAddBookListener(AddBookListener mAddBookListener) {
@@ -326,6 +342,9 @@ public class DataRepository implements AddBookListener, GetBookListener,
         this.profileListener = profileListener;
     }
 
+    public void setAddCardListener(AddCardListener addCardListener) {
+        this.addCardListener = addCardListener;
+    }
     // =================== Book Listeners
 
     @Override
@@ -333,7 +352,6 @@ public class DataRepository implements AddBookListener, GetBookListener,
         Log.i(TAG, "onBookNameInvalid: *");
         mBookListener.onBookNameInvalid(code);
     }
-
     @Override
     public void onAllSecOwnersValidated() {
         Log.i(TAG, "onAllSecOwnersValidated: *");
@@ -345,6 +363,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         mBookListener.onThisSecOwnerValidated();
     }
 //    @Override
+
 //    public void onBookDownloaded(Book downloadedBook) {
 
 //        mBookGetBookListenerListener.onBookDownloaded(downloadedBook);
@@ -482,6 +501,12 @@ public class DataRepository implements AddBookListener, GetBookListener,
         SharedPreferences.Editor editor = userProfileCache.edit();
         editor.putBoolean("profilePicAvailable", true);
         editor.commit();
+    }
+
+    // =================== Add Card Listener
+    @Override
+    public void onCardCreated() {
+        addCardListener.onCardCreated();
     }
 
     // MARK: Async Tasks

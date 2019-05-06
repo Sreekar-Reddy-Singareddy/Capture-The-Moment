@@ -11,14 +11,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import singareddy.productionapps.capturethemoment.AppUtilities;
+import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 
-import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_NAME_EMPTY;
-import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_NAME_INVALID;
-import static singareddy.productionapps.capturethemoment.AppUtilities.Book.BOOK_NAME_VALID;
-import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_NAME_EMPTY;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_NAME_INVALID;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_NAME_VALID;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.User.*;
 
 public class AddBookViewModel extends ViewModel implements AddBookListener {
     private static String TAG = "AddBookViewModel";

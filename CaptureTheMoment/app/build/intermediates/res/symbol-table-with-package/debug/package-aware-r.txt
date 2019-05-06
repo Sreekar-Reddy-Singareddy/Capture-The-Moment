@@ -1111,6 +1111,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_photo_camera_white_24dp
+drawable ic_save_white_24dp
 drawable ic_smartphone_black_24dp
 drawable ic_warning_orange_24dp
 drawable mtrl_snackbar_background
@@ -1182,6 +1183,7 @@ id add_book_tv_sec_owner_label
 id add_card_et_description
 id add_card_fb_add_photo
 id add_card_iv_location_icon
+id add_card_menu_item_save
 id add_card_pv_photos
 id add_card_rv_indicator
 id add_card_tv_location
@@ -1567,6 +1569,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu add_card_context_menu
 menu book_context_menu
 menu crop_image_menu
 menu main_navigation_menu

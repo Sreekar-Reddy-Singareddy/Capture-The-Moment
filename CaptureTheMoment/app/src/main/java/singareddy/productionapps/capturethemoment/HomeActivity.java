@@ -35,8 +35,8 @@ import singareddy.productionapps.capturethemoment.user.auth.LoginActivity;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileFragment;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity;
 
-import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
-import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.User.*;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Firebase.*;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
     private static String TAG = "HomeActivity";

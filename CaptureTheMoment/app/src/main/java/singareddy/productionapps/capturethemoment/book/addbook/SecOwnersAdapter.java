@@ -14,15 +14,11 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
-
-import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
-import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
 
 public class SecOwnersAdapter extends RecyclerView.Adapter<SecOwnersAdapter.SecOwnersViewHolder> {
     private static String TAG = "SecOwnersAdapter";

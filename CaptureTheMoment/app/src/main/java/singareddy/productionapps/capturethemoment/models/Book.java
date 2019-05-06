@@ -12,8 +12,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
-import singareddy.productionapps.capturethemoment.AppUtilities;
-
 @Entity
 public class Book {
     @NonNull @PrimaryKey(autoGenerate = false)

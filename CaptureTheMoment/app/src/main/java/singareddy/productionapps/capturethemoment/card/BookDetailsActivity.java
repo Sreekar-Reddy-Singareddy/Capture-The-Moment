@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -15,17 +16,20 @@ public class BookDetailsActivity extends AppCompatActivity {
     private static String TAG = "BookDetailsActivity";
 
     private String bookName;
+    private String bookId;
     private RecyclerView cards;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bookName = getIntent().getExtras().getString("bookName");
+        bookId = getIntent().getExtras().getString("bookId");
+        Log.i(TAG, "onCreate: BookID: "+bookId);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(bookName);
         setContentView(R.layout.activity_book_details);
         cards = findViewById(R.id.book_details_rv_cards);
-        SmallCardsAdapter adapter = new SmallCardsAdapter(this,null);
+        SmallCardsAdapter adapter = new SmallCardsAdapter(this,null, bookId);
         GridLayoutManager manager = new GridLayoutManager(this,3);
         cards.setAdapter(adapter);
         cards.setLayoutManager(manager);

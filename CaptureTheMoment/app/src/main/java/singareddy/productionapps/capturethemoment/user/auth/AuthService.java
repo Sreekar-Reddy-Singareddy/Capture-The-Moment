@@ -30,14 +30,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import singareddy.productionapps.capturethemoment.AppUtilities;
+import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileListener;
 
-import static singareddy.productionapps.capturethemoment.AppUtilities.User.*;
-import static singareddy.productionapps.capturethemoment.AppUtilities.Firebase.*;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.User.*;
+import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Firebase.*;
 
 public class AuthService {
     private static String TAG = "AuthService";

@@ -3,7 +3,8 @@ package singareddy.productionapps.capturethemoment.models;
 import java.util.List;
 
 public class Card {
-    private List<String> photoLinks;
+    private String cardId;
+    private List<String> imagePaths;
     private String description;
     private String location;
     private List<String> friends;
@@ -13,38 +14,38 @@ public class Card {
     public Card() {
     }
 
-    public Card(List<String> photoLinks, String description, String location, List<String> friends) {
-        this.photoLinks = photoLinks;
+    public Card(List<String> imagePaths, String description, String location, List<String> friends) {
+        this.imagePaths = imagePaths;
         this.description = description;
         this.location = location;
         this.friends = friends;
     }
 
-    public Card(List<String> photoLinks, String description) {
-        this.photoLinks = photoLinks;
+    public Card(List<String> imagePaths, String description) {
+        this.imagePaths = imagePaths;
         this.description = description;
     }
 
-    public Card(List<String> photoLinks, String description, Long createdTime) {
-        this.photoLinks = photoLinks;
+    public Card(List<String> imagePaths, String description, Long createdTime) {
+        this.imagePaths = imagePaths;
         this.description = description;
         this.createdTime = createdTime;
     }
 
-    public Card(List<String> photoLinks, String description, String location, List<String> friends, Long createdTime) {
-        this.photoLinks = photoLinks;
+    public Card(List<String> imagePaths, String description, String location, List<String> friends, Long createdTime) {
+        this.imagePaths = imagePaths;
         this.description = description;
         this.location = location;
         this.friends = friends;
         this.createdTime = createdTime;
     }
 
-    public List<String> getPhotoLinks() {
-        return photoLinks;
+    public List<String> getImagePaths() {
+        return imagePaths;
     }
 
-    public void setPhotoLinks(List<String> photoLinks) {
-        this.photoLinks = photoLinks;
+    public void setImagePaths(List<String> imagePaths) {
+        this.imagePaths = imagePaths;
     }
 
     public String getDescription() {
@@ -85,6 +86,14 @@ public class Card {
 
     public void setModifiedTime(Long modifiedTime) {
         this.modifiedTime = modifiedTime;
+    }
+
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
     }
 
     // TODO: Override equals method for Card

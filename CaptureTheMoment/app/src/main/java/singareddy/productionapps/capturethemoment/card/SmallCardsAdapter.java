@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.card.add.AddCardActivity;
 
 public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.SmallCardVH> {
 
@@ -27,8 +28,9 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        System.out.println("Add New Card...");
+                        System.out.println("Add New Card Under... "+bookId);
                         Intent intent = new Intent(context, AddCardActivity.class);
+                        intent.putExtra("bookId", bookId);
                         context.startActivity(intent);
                     }
                 });
@@ -50,9 +52,11 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
     private Context context;
     private LayoutInflater inflater;
     private List data;
+    private String bookId;
 
-    public SmallCardsAdapter(Context context, List data) {
+    public SmallCardsAdapter(Context context, List data, String bookId) {
         this.context = context;
+        this.bookId = bookId;
         this.inflater = LayoutInflater.from(context);
         this.data = new ArrayList();
         this.data.add(new Object()); this.data.add(new Object());
