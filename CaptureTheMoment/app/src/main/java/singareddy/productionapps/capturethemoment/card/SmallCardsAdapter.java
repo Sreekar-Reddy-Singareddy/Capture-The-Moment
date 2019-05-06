@@ -1,8 +1,7 @@
-package singareddy.productionapps.capturethemoment.book.details;
+package singareddy.productionapps.capturethemoment.card;
 
 import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -29,6 +28,8 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
                     @Override
                     public void onClick(View v) {
                         System.out.println("Add New Card...");
+                        Intent intent = new Intent(context, AddCardActivity.class);
+                        context.startActivity(intent);
                     }
                 });
             }

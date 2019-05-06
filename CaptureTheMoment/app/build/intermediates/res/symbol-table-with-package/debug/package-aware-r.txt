@@ -961,6 +961,10 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen subtitle_corner_radius
+dimen subtitle_outline_width
+dimen subtitle_shadow_offset
+dimen subtitle_shadow_radius
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1085,6 +1089,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_add_a_photo_white_24dp
 drawable ic_add_black_24dp
 drawable ic_add_circle_black_50dp
 drawable ic_add_circle_white_24dp
@@ -1174,6 +1179,12 @@ id add_book_ib_add_sec_owner
 id add_book_rv_sec_owners
 id add_book_tv_owner_label
 id add_book_tv_sec_owner_label
+id add_card_et_description
+id add_card_fb_add_photo
+id add_card_iv_location_icon
+id add_card_pv_photos
+id add_card_rv_indicator
+id add_card_tv_location
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1270,6 +1281,7 @@ id ifRoom
 id image
 id imageView
 id imageView2
+id indicator_card
 id info
 id input
 id invisible
@@ -1318,6 +1330,7 @@ id onTouch
 id outline
 id oval
 id packed
+id page_item_image_iv_image
 id parallax
 id parent
 id parentPanel
@@ -1493,6 +1506,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_book
+layout activity_add_card
 layout activity_book_details
 layout activity_crop_experiment
 layout activity_dummy
@@ -1526,6 +1540,7 @@ layout list_item_book
 layout list_item_card
 layout list_item_card_back
 layout list_item_card_front
+layout list_item_page_indicator
 layout list_item_sec_owner
 layout list_item_small_card
 layout mtrl_layout_snackbar
@@ -1546,6 +1561,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout page_item_image
 layout profile_fragment
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

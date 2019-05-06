@@ -1,4 +1,4 @@
-package singareddy.productionapps.capturethemoment.book.details;
+package singareddy.productionapps.capturethemoment.card;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

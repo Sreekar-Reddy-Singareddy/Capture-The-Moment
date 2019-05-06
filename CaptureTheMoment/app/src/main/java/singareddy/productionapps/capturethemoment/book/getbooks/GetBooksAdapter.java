@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
-import singareddy.productionapps.capturethemoment.book.details.BookDetailsActivity;
+import singareddy.productionapps.capturethemoment.card.BookDetailsActivity;
 import singareddy.productionapps.capturethemoment.models.Book;
 
 public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBooksViewHolder> {

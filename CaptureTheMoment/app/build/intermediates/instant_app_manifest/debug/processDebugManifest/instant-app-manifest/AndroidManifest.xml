@@ -6,7 +6,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="24"
+        android:minSdkVersion="26"
         android:targetSdkVersion="28" />
 
     <uses-permission android:name="android.permission.CAMERA" />
@@ -30,9 +30,10 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat"
         android:windowSoftInputMode="adjustPan" >
-        <activity android:name="singareddy.productionapps.capturethemoment.book.details.FullCardActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.card.AddCardActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.card.FullCardActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.book.details.EditBookActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.book.details.BookDetailsActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.card.BookDetailsActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.user.auth.SignupActivity" />
@@ -102,9 +103,6 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-        <meta-data
-            android:name="android.support.VERSION"
-            android:value="26.1.0" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"

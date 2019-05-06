@@ -1,4 +1,4 @@
-package singareddy.productionapps.capturethemoment.book.details;
+package singareddy.productionapps.capturethemoment.card;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.book.details.EditBookActivity;
 
 public class BookDetailsActivity extends AppCompatActivity {
     private static String TAG = "BookDetailsActivity";

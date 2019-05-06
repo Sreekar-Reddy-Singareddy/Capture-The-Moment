@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".book.details.BookDetailsActivity">
+    tools:context=".card.BookDetailsActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/book_details_rv_cards"
