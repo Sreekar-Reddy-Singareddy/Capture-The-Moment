@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
-import singareddy.productionapps.capturethemoment.card.BookDetailsActivity;
+import singareddy.productionapps.capturethemoment.card.getcards.SmallCardsActivity;
 import singareddy.productionapps.capturethemoment.models.Book;
 
 public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBooksViewHolder> {
@@ -40,7 +40,7 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
             Log.i(TAG, "onClick: Book Selected: "+getAdapterPosition());
             // When a book is selected, take the user to next activity
             // that shows more information about the book.
-            Intent insideBookIntent = new Intent(context, BookDetailsActivity.class);
+            Intent insideBookIntent = new Intent(context, SmallCardsActivity.class);
             insideBookIntent.putExtra("OwnBook", bookData.get(getAdapterPosition()).doIOwnTheBook());
             insideBookIntent.putExtra("bookId", bookData.get(getAdapterPosition()).getBookId());
             insideBookIntent.putExtra("bookName", bookData.get(getAdapterPosition()).getName());

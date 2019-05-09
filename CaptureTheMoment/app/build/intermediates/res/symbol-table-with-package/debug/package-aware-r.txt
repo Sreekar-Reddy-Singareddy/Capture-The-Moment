@@ -1197,6 +1197,7 @@ id async
 id auto
 id barrier
 id beginning
+id big_card_pv_image_pager
 id blocking
 id book_details_rv_cards
 id book_item_cv_container
@@ -1215,7 +1216,6 @@ id card_back_iv_location
 id card_back_tv_date
 id card_back_tv_desc
 id card_back_tv_location
-id card_front_iv_photo
 id center
 id centerCrop
 id centerInside

@@ -22,7 +22,7 @@ public class Book {
     private Long lastUpdatedDate = new Date().getTime();
 
     @Ignore private HashMap<String, Boolean> secOwners = new HashMap<>();
-    @Ignore private List<Card> cards = new ArrayList<>();
+    @Ignore private List<String> cards = new ArrayList<>();
 
     public Book() {
     }
@@ -64,11 +64,11 @@ public class Book {
         this.secOwners = secOwners;
     }
 
-    public List<Card> getCards() {
+    public List<String> getCards() {
         return cards;
     }
 
-    public void setCards(List<Card> cards) {
+    public void setCards(List<String> cards) {
         this.cards = cards;
     }
 

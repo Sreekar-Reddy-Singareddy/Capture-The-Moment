@@ -92,8 +92,8 @@ public final class R {
         public static final int action_text = 0x7f09001c;
         public static final int actions = 0x7f09001d;
         public static final int async = 0x7f090038;
-        public static final int blocking = 0x7f09003c;
-        public static final int cancel_action = 0x7f090048;
+        public static final int blocking = 0x7f09003d;
+        public static final int cancel_action = 0x7f090049;
         public static final int chronometer = 0x7f090056;
         public static final int end_padder = 0x7f090078;
         public static final int forever = 0x7f090084;

@@ -10,15 +10,21 @@ import android.util.Log;
 
 import singareddy.productionapps.capturethemoment.book.BookDao;
 import singareddy.productionapps.capturethemoment.book.ShareInfoDao;
+import singareddy.productionapps.capturethemoment.card.CardDao;
 import singareddy.productionapps.capturethemoment.models.Book;
+import singareddy.productionapps.capturethemoment.models.Card;
+import singareddy.productionapps.capturethemoment.models.Friend;
+import singareddy.productionapps.capturethemoment.models.ImagePath;
 import singareddy.productionapps.capturethemoment.models.ShareInfo;
 
-@Database (entities = {Book.class, ShareInfo.class}, exportSchema = false, version = 2)
+@Database (entities = {Book.class, ShareInfo.class, Card.class, Friend.class, ImagePath.class},
+        exportSchema = false, version = 7)
 public abstract class LocalDB extends RoomDatabase {
     private static String TAG = "LocalDB";
 
     private static LocalDB mLocalDB;
     public abstract BookDao getBookDao();
+    public abstract CardDao getCardDao();
     public abstract ShareInfoDao getSharedInfoDao();
 
     public static LocalDB getInstance(Context context) {

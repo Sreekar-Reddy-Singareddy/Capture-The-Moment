@@ -24,7 +24,7 @@ public class AddCardViewModel extends ViewModel implements AddCardListener{
         dataRepo = repository;
     }
 
-    public void createNewCard(String bookId, Card newCard, List<Uri> imageUris) {
+    public void createNewCard(Card newCard, List<Uri> imageUris) {
         if (newCard.getDescription() == null || newCard.getDescription().isEmpty()) {
             // TODO: Tell the listener
             return;
@@ -35,7 +35,7 @@ public class AddCardViewModel extends ViewModel implements AddCardListener{
         List<String> imagePaths = generateImagePathsFor(newCard, imageUris);
         newCard.setImagePaths(imagePaths);
         dataRepo.setAddCardListener(this);
-        dataRepo.createNewCard(bookId, newCard, imageUris);
+        dataRepo.createNewCard(newCard, imageUris);
 
     }
 

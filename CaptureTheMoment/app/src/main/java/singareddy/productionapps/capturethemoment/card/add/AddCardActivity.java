@@ -25,8 +25,8 @@ import java.util.List;
 
 import singareddy.productionapps.capturethemoment.Utils.DepthPageTransformer;
 import singareddy.productionapps.capturethemoment.R;
-import singareddy.productionapps.capturethemoment.card.ImagePageAdapter;
-import singareddy.productionapps.capturethemoment.card.IndicatorAdapter;
+import singareddy.productionapps.capturethemoment.card.getcards.ImagePageAdapter;
+import singareddy.productionapps.capturethemoment.card.getcards.IndicatorAdapter;
 import singareddy.productionapps.capturethemoment.models.Card;
 
 public class AddCardActivity extends AppCompatActivity implements AddCardListener{
@@ -151,8 +151,9 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
         newCard.setLocation(dummyLocation);
         newCard.setCreatedTime(dummyDate);
         newCard.setFriends(dummyPeople);
+        newCard.setBookId(bookId);
 
-        addCardViewModel.createNewCard(bookId, newCard, imageUris);
+        addCardViewModel.createNewCard(newCard, imageUris);
         saveItem.setEnabled(false);
     }
 

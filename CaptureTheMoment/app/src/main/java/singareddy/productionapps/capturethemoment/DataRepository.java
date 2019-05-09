@@ -12,7 +12,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +28,8 @@ import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.card.add.AddCardListener;
 import singareddy.productionapps.capturethemoment.card.add.AddCardService;
 import singareddy.productionapps.capturethemoment.models.Card;
+import singareddy.productionapps.capturethemoment.models.Friend;
+import singareddy.productionapps.capturethemoment.models.ImagePath;
 import singareddy.productionapps.capturethemoment.user.auth.AuthService;
 import singareddy.productionapps.capturethemoment.book.BookListener;
 import singareddy.productionapps.capturethemoment.book.addbook.AddBookListener;
@@ -158,14 +164,14 @@ public class DataRepository implements AddBookListener, GetBookListener,
             List<SecondaryOwner> ownerList = new ArrayList<>();
             SharedPreferences sharedPreferences = mContext.getSharedPreferences(AppUtilities.FileNames.UIDS_CACHE, Context.MODE_PRIVATE);
             // Use this file to get the info of usernames
-            infos.forEach((info) -> {
+            for (ShareInfo info: infos) {
                 Log.i(TAG, "getUsernamesFor: GET_SEC_OWNER");
                 SecondaryOwner owner = new SecondaryOwner();
                 owner.setUsername(sharedPreferences.getString(info.getUid(), ""));
                 owner.setValidated(1);
                 owner.setCanEdit(info.getCanEdit());
                 ownerList.add(owner);
-            });
+            }
             return ownerList;
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -304,12 +310,58 @@ public class DataRepository implements AddBookListener, GetBookListener,
     }
 
     // =================================================================== Card Module
-    public void createNewCard(String bookId, Card newCard, List<Uri> imageUris) {
+    public void createNewCard(Card newCard, List<Uri> imageUris) {
         if (mAddCardService == null) {
             mAddCardService = new AddCardService();
         }
         mAddCardService.setAddCardListener(this);
-        mAddCardService.createNewCard(bookId, newCard, imageUris);
+        mAddCardService.setDataSyncListener(this);
+        mAddCardService.createNewCard(newCard, imageUris);
+    }
+
+    public LiveData<List<Card>> getAllCardsFor(String bookId) {
+        try {
+            Log.i(TAG, "getAllCardsFor: *");
+            return mExecutor.submit(() -> mLocalDB.getCardDao().getAllCardsUnderBook(bookId)).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public String getOneImagePathForCard(String cardId) {
+        try {
+            return mExecutor.submit(()->mLocalDB.getCardDao().getOneImagePathForCard(cardId)).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LiveData<Card> getCardWithId(String cardId) {
+        try {
+            return mExecutor.submit(() -> mLocalDB.getCardDao().getCardWithId(cardId)).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public List<String> getImagePathsForCardWithId(String cardId) {
+        try {
+            return mExecutor.submit(() -> mLocalDB.getCardDao().getImagePathsForCard(cardId)).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     // =================== Setters
@@ -388,11 +440,11 @@ public class DataRepository implements AddBookListener, GetBookListener,
         SharedPreferences preferences = mContext.getSharedPreferences(AppUtilities.FileNames.UIDS_CACHE, Context.MODE_PRIVATE);
         Log.i(TAG, "hasToSaveUidInCache: Preferences: "+preferences);
         SharedPreferences.Editor editor = preferences.edit();
-        userMap.forEach((uid, username) -> {
+        for (Map.Entry<String, String> entry: userMap.entrySet()) {
             Log.i(TAG, "hasToSaveUidInCache: **");
-            editor.putString(uid, username);
+            editor.putString(entry.getKey(), entry.getValue());
             editor.commit();
-        });
+        }
     }
 
     // =================== Add Book Listener
@@ -503,11 +555,87 @@ public class DataRepository implements AddBookListener, GetBookListener,
         editor.commit();
     }
 
+    @Override
+    public void onCardDownloadedFromFirebase(Card card, List<Uri> imageUris) {
+        // Save images in the internal storage
+        saveImagesInInternalStorage(card.getImagePaths(), imageUris);
+        // Save card into Card DB
+        saveCardInLocalDB(card);
+        // Save people into Friend DB
+        saveCardPeopleInLocalDB(card);
+        // Save image paths into ImagePath DB
+        saveImagePathsInLocalDB(card);
+    }
+
+    private void saveImagePathsInLocalDB(Card card) {
+        for (String path: card.getImagePaths()) {
+            ImagePath imagePath = new ImagePath(card.getCardId(), path);
+            try {
+                Long code = mExecutor.submit(() -> mLocalDB.getCardDao().insertImagePath(imagePath)).get();
+                Log.i(TAG, "saveImagePathsInLocalDB: IMAGE PATH INSERTED: "+code);
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void saveCardPeopleInLocalDB(Card card) {
+        for (String friendName : card.getFriends()) {
+            Friend friend = new Friend(card.getCardId(), friendName);
+            try {
+                Long code = mExecutor.submit(() -> mLocalDB.getCardDao().insertFriend(friend)).get();
+                Log.i(TAG, "saveCardPeopleInLocalDB: FRIEND INSERTED: "+code);
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void saveCardInLocalDB(Card card) {
+        try {
+            Long code = mExecutor.submit(()->mLocalDB.getCardDao().insertCard(card)).get();
+            Log.i(TAG, "saveCardInLocalDB: CARD INSERTED: "+code);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void saveImagesInInternalStorage(List<String> imagePaths, List<Uri> imageUris) {
+        Log.i(TAG, "saveImagesInInternalStorage: *");
+        // Create a directory for this user if it does not exist already
+        File userDir = new File(mContext.getFilesDir(), "/" + CURRENT_USER_ID);
+        if (!userDir.exists()) userDir.mkdir();
+
+        for (int position=0; position<imagePaths.size(); position++) {
+            String[] paths = imagePaths.get(position).split("/");
+            Uri uri = imageUris.get(position);
+            try {
+                File cardDir = new File(userDir,  "/" + paths[1]);
+                if (!cardDir.exists()) cardDir.mkdirs();
+                File imageFile = new File(cardDir, "/" + paths[2]);
+                if (!imageFile.exists()) imageFile.createNewFile();
+                FileOutputStream outputStream = new FileOutputStream(imageFile);
+                byte [] imageData = IOUtils.toByteArray(mContext.getContentResolver().openInputStream(uri));
+                outputStream.write(imageData);
+                outputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     // =================== Add Card Listener
+
     @Override
     public void onCardCreated() {
         addCardListener.onCardCreated();
     }
+
 
     // MARK: Async Tasks
     public class InsertBookTask extends AsyncTask<Object, Void, Void> {
@@ -522,13 +650,13 @@ public class DataRepository implements AddBookListener, GetBookListener,
             if (book.getOwner().equals(CURRENT_USER_ID)) {
                 Log.i(TAG, "doInBackground: OWNED BOOK");
                 // OWNED
-                book.getSecOwners().forEach((uid, editAccess) -> {
+                for (Map.Entry<String, Boolean> entry : book.getSecOwners().entrySet()) {
                     ShareInfo info = new ShareInfo();
                     info.setBookId(book.getBookId());
-                    info.setUid(uid);
-                    info.setCanEdit(editAccess);
+                    info.setUid(entry.getKey());
+                    info.setCanEdit(entry.getValue());
                     mLocalDB.getSharedInfoDao().insertShareInfo(info);
-                });
+                }
             }
             else {
                 Log.i(TAG, "doInBackground: SHARED BOOK");

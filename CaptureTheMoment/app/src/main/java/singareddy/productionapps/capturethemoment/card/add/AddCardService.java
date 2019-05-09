@@ -20,6 +20,7 @@ import java.util.List;
 
 import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.models.Card;
+import singareddy.productionapps.capturethemoment.user.auth.DataSyncListener;
 
 public class AddCardService {
     private static String TAG = "AddCardService";
@@ -27,20 +28,21 @@ public class AddCardService {
     private FirebaseStorage storage;
     private FirebaseDatabase database;
     private AddCardListener addCardListener;
+    private DataSyncListener dataSyncListener;
 
     public AddCardService() {
         storage = FirebaseStorage.getInstance();
         database = FirebaseDatabase.getInstance();
     }
 
-    public void createNewCard(String bookId, Card newCard, List<Uri> imageUris) {
+    public void createNewCard(Card newCard, List<Uri> imageUris) {
         // Upload the images first
         uploadImages(newCard.getImagePaths(), imageUris);
         // Save the card instance in database
-        saveCardInFirebaseDB(bookId,newCard);
+        saveCardInFirebaseDB(newCard,imageUris);
     }
 
-    private void saveCardInFirebaseDB(String bookId, Card newCard) {
+    private void saveCardInFirebaseDB(Card newCard, List<Uri> imageUris) {
         DatabaseReference newCardRef = database.getReference()
                 .child(AppUtilities.Firebase.ALL_CARDS_NODE)
                 .child(newCard.getCardId());
@@ -49,7 +51,7 @@ public class AddCardService {
                     @Override
                     public void onSuccess(Void aVoid) {
                         Log.i(TAG, "onSuccess: Card saved in Firebase DB");
-                        addNewCardIdInBook(bookId, newCard.getCardId());
+                        addNewCardIdInBook(newCard, imageUris);
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -60,23 +62,25 @@ public class AddCardService {
                 });
     }
 
-    private void addNewCardIdInBook(String bookId, String cardId) {
+    private void addNewCardIdInBook(Card newCard, List<Uri> imageUris) {
         DatabaseReference bookRef = database.getReference()
                 .child(AppUtilities.Firebase.ALL_BOOKS_NODE)
-                .child(bookId)
+                .child(newCard.getBookId())
                 .child("cards");
         bookRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 List<String> existingCards = (ArrayList<String>) dataSnapshot.getValue();
                 if (existingCards == null) existingCards = new ArrayList<>();
-                existingCards.add(cardId);
+                existingCards.add(newCard.getCardId());
                 bookRef.setValue(existingCards)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Log.i(TAG, "onSuccess: Card added in its book");
                                 addCardListener.onCardCreated();
+                                // Add this book in the local storage
+                                dataSyncListener.onCardDownloadedFromFirebase(newCard, imageUris);
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -119,5 +123,9 @@ public class AddCardService {
 
     public void setAddCardListener(AddCardListener addCardListener) {
         this.addCardListener = addCardListener;
+    }
+
+    public void setDataSyncListener(DataSyncListener dataSyncListener) {
+        this.dataSyncListener = dataSyncListener;
     }
 }

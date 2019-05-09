@@ -10,7 +10,7 @@ import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.Book;
 
 public class GetBooksViewModel extends ViewModel implements GetBookListener {
-    private static String TAG = "GetBooksViewModel";
+    private static String TAG = "GetCardsViewModel";
 
     private GetBookListener mBookGetBookListenerListener;
     private DataRepository mDataRepo;

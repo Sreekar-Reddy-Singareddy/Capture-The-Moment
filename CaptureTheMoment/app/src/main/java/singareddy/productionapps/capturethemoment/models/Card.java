@@ -1,14 +1,27 @@
 package singareddy.productionapps.capturethemoment.models;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
+import android.support.annotation.NonNull;
+
 import java.util.List;
 
+@Entity
 public class Card {
+    @PrimaryKey
+    @NonNull
     private String cardId;
-    private List<String> imagePaths;
+    private String bookId;
     private String description;
     private String location;
-    private List<String> friends;
     private Long createdTime;
+
+    @Ignore
+    private List<String> imagePaths;
+    @Ignore
+    private List<String> friends;
+    @Ignore
     private Long modifiedTime;
 
     public Card() {
@@ -94,6 +107,14 @@ public class Card {
 
     public void setCardId(String cardId) {
         this.cardId = cardId;
+    }
+
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
     }
 
     // TODO: Override equals method for Card

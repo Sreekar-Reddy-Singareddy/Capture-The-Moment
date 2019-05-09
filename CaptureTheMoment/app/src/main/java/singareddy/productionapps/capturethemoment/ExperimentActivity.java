@@ -42,34 +42,34 @@ public class ExperimentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_item_card);
         sampleData();
-        photos = findViewById(R.id.card_front_iv_photo);
-        photos.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                if (photoNumber == 6) {
-                    photoNumber = 1;
-                }
-                switch (photoNumber) {
-                    case 1:
-                        photos.setImageResource(R.drawable.photo);
-                        break;
-                    case 2:
-                        photos.setImageResource(R.drawable.photo2);
-                        break;
-                    case 3:
-                        photos.setImageResource(R.drawable.photo3);
-                        break;
-                    case 4:
-                        photos.setImageResource(R.drawable.photo4);
-                        break;
-                    case 5:
-                        photos.setImageResource(R.drawable.photo5);
-                        break;
-                }
-                photoNumber++;
-                return false;
-            }
-        });
+//        photos = findViewById(R.id.card_front_iv_photo);
+//        photos.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                if (photoNumber == 6) {
+//                    photoNumber = 1;
+//                }
+//                switch (photoNumber) {
+//                    case 1:
+//                        photos.setImageResource(R.drawable.photo);
+//                        break;
+//                    case 2:
+//                        photos.setImageResource(R.drawable.photo2);
+//                        break;
+//                    case 3:
+//                        photos.setImageResource(R.drawable.photo3);
+//                        break;
+//                    case 4:
+//                        photos.setImageResource(R.drawable.photo4);
+//                        break;
+//                    case 5:
+//                        photos.setImageResource(R.drawable.photo5);
+//                        break;
+//                }
+//                photoNumber++;
+//                return false;
+//            }
+//        });
     }
 
     private void sampleData() {

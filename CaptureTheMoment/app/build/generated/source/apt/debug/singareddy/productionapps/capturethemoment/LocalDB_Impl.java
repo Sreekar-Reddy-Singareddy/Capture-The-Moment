@@ -22,28 +22,38 @@ import singareddy.productionapps.capturethemoment.book.BookDao;
 import singareddy.productionapps.capturethemoment.book.BookDao_Impl;
 import singareddy.productionapps.capturethemoment.book.ShareInfoDao;
 import singareddy.productionapps.capturethemoment.book.ShareInfoDao_Impl;
+import singareddy.productionapps.capturethemoment.card.CardDao;
+import singareddy.productionapps.capturethemoment.card.CardDao_Impl;
 
 @SuppressWarnings("unchecked")
 public class LocalDB_Impl extends LocalDB {
   private volatile BookDao _bookDao;
 
+  private volatile CardDao _cardDao;
+
   private volatile ShareInfoDao _shareInfoDao;
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(2) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(7) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Book` (`bookId` TEXT NOT NULL, `name` TEXT, `owner` TEXT, `createdDate` INTEGER, `lastUpdatedDate` INTEGER, PRIMARY KEY(`bookId`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `ShareInfo` (`bookId` TEXT NOT NULL, `uid` TEXT NOT NULL, `canEdit` INTEGER NOT NULL, PRIMARY KEY(`bookId`, `uid`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Card` (`cardId` TEXT NOT NULL, `bookId` TEXT, `description` TEXT, `location` TEXT, `createdTime` INTEGER, PRIMARY KEY(`cardId`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Friend` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cardId` TEXT, `name` TEXT)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `ImagePath` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cardId` TEXT, `imagePath` TEXT)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"af206ed0f10f64ce715565882af91b9b\")");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"8629348dde26ac75eb8c0fdd4e1c2b93\")");
       }
 
       @Override
       public void dropAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("DROP TABLE IF EXISTS `Book`");
         _db.execSQL("DROP TABLE IF EXISTS `ShareInfo`");
+        _db.execSQL("DROP TABLE IF EXISTS `Card`");
+        _db.execSQL("DROP TABLE IF EXISTS `Friend`");
+        _db.execSQL("DROP TABLE IF EXISTS `ImagePath`");
       }
 
       @Override
@@ -96,8 +106,49 @@ public class LocalDB_Impl extends LocalDB {
                   + " Expected:\n" + _infoShareInfo + "\n"
                   + " Found:\n" + _existingShareInfo);
         }
+        final HashMap<String, TableInfo.Column> _columnsCard = new HashMap<String, TableInfo.Column>(5);
+        _columnsCard.put("cardId", new TableInfo.Column("cardId", "TEXT", true, 1));
+        _columnsCard.put("bookId", new TableInfo.Column("bookId", "TEXT", false, 0));
+        _columnsCard.put("description", new TableInfo.Column("description", "TEXT", false, 0));
+        _columnsCard.put("location", new TableInfo.Column("location", "TEXT", false, 0));
+        _columnsCard.put("createdTime", new TableInfo.Column("createdTime", "INTEGER", false, 0));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysCard = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesCard = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoCard = new TableInfo("Card", _columnsCard, _foreignKeysCard, _indicesCard);
+        final TableInfo _existingCard = TableInfo.read(_db, "Card");
+        if (! _infoCard.equals(_existingCard)) {
+          throw new IllegalStateException("Migration didn't properly handle Card(singareddy.productionapps.capturethemoment.models.Card).\n"
+                  + " Expected:\n" + _infoCard + "\n"
+                  + " Found:\n" + _existingCard);
+        }
+        final HashMap<String, TableInfo.Column> _columnsFriend = new HashMap<String, TableInfo.Column>(3);
+        _columnsFriend.put("_id", new TableInfo.Column("_id", "INTEGER", true, 1));
+        _columnsFriend.put("cardId", new TableInfo.Column("cardId", "TEXT", false, 0));
+        _columnsFriend.put("name", new TableInfo.Column("name", "TEXT", false, 0));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysFriend = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesFriend = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoFriend = new TableInfo("Friend", _columnsFriend, _foreignKeysFriend, _indicesFriend);
+        final TableInfo _existingFriend = TableInfo.read(_db, "Friend");
+        if (! _infoFriend.equals(_existingFriend)) {
+          throw new IllegalStateException("Migration didn't properly handle Friend(singareddy.productionapps.capturethemoment.models.Friend).\n"
+                  + " Expected:\n" + _infoFriend + "\n"
+                  + " Found:\n" + _existingFriend);
+        }
+        final HashMap<String, TableInfo.Column> _columnsImagePath = new HashMap<String, TableInfo.Column>(3);
+        _columnsImagePath.put("_id", new TableInfo.Column("_id", "INTEGER", true, 1));
+        _columnsImagePath.put("cardId", new TableInfo.Column("cardId", "TEXT", false, 0));
+        _columnsImagePath.put("imagePath", new TableInfo.Column("imagePath", "TEXT", false, 0));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysImagePath = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesImagePath = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoImagePath = new TableInfo("ImagePath", _columnsImagePath, _foreignKeysImagePath, _indicesImagePath);
+        final TableInfo _existingImagePath = TableInfo.read(_db, "ImagePath");
+        if (! _infoImagePath.equals(_existingImagePath)) {
+          throw new IllegalStateException("Migration didn't properly handle ImagePath(singareddy.productionapps.capturethemoment.models.ImagePath).\n"
+                  + " Expected:\n" + _infoImagePath + "\n"
+                  + " Found:\n" + _existingImagePath);
+        }
       }
-    }, "af206ed0f10f64ce715565882af91b9b", "454e60a476b9fda144c91da7696132e6");
+    }, "8629348dde26ac75eb8c0fdd4e1c2b93", "c600a0a1becdbd4cdd9a4ae68fae0dfc");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -108,7 +159,7 @@ public class LocalDB_Impl extends LocalDB {
 
   @Override
   protected InvalidationTracker createInvalidationTracker() {
-    return new InvalidationTracker(this, "Book","ShareInfo");
+    return new InvalidationTracker(this, "Book","ShareInfo","Card","Friend","ImagePath");
   }
 
   @Override
@@ -119,6 +170,9 @@ public class LocalDB_Impl extends LocalDB {
       super.beginTransaction();
       _db.execSQL("DELETE FROM `Book`");
       _db.execSQL("DELETE FROM `ShareInfo`");
+      _db.execSQL("DELETE FROM `Card`");
+      _db.execSQL("DELETE FROM `Friend`");
+      _db.execSQL("DELETE FROM `ImagePath`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -139,6 +193,20 @@ public class LocalDB_Impl extends LocalDB {
           _bookDao = new BookDao_Impl(this);
         }
         return _bookDao;
+      }
+    }
+  }
+
+  @Override
+  public CardDao getCardDao() {
+    if (_cardDao != null) {
+      return _cardDao;
+    } else {
+      synchronized(this) {
+        if(_cardDao == null) {
+          _cardDao = new CardDao_Impl(this);
+        }
+        return _cardDao;
       }
     }
   }

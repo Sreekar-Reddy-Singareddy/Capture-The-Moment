@@ -28,6 +28,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
@@ -274,7 +275,9 @@ public class AuthService {
                     // Do nothing
                 }
                 else {
-                    ownedBookIds.forEach((bookId) -> downloadBookWithId(bookId, null));
+                    for (String bookId : ownedBookIds) {
+                        downloadBookWithId(bookId, null);
+                    }
                 }
             }
 
@@ -298,7 +301,9 @@ public class AuthService {
                     // Do nothing
                 }
                 else {
-                    sharedBooks.forEach((bookId, access) -> downloadBookWithId(bookId, access));
+                    for (Map.Entry<String, Boolean> entry : sharedBooks.entrySet()) {
+                        downloadBookWithId(entry.getKey(), entry.getValue());
+                    }
                 }
             }
 

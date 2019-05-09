@@ -1,4 +1,4 @@
-package singareddy.productionapps.capturethemoment.card;
+package singareddy.productionapps.capturethemoment.card.getcards;
 
 import android.net.Uri;
 import android.os.Bundle;
