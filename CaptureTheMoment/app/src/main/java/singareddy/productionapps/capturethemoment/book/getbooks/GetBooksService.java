@@ -14,7 +14,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
-import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.models.Book;
 
 public class GetBooksService {

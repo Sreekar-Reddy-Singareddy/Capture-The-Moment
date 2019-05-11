@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/page_item_image_cl_layout"
+    android:clickable="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <singareddy.productionapps.capturethemoment.custom_views.FramedImageView
+        android:clickable="false"
+        android:id="@+id/page_item_image_iv_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:borderColor="@android:color/white"
+        app:dotsColor="@android:color/holo_orange_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_launcher_foreground" />
+
+</android.support.constraint.ConstraintLayout>

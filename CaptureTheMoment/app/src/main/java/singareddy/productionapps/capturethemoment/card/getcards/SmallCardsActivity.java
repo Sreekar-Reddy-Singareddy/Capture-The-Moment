@@ -27,6 +27,7 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     private RecyclerView cardsList;
     private GetCardsViewModel getCardsViewModel;
     private SmallCardsAdapter adapter;
+    private ArrayList<CharSequence> allCardIds;
     private List<String> smallCardImagePaths;
     private List<Card> smallCards;
 
@@ -47,7 +48,9 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
                         Log.i(TAG, "onChanged: Cards fetched: "+cards.size());
                         smallCards = cards;
                         smallCardImagePaths = new ArrayList<>();
+                        allCardIds = new ArrayList<>();
                         for (Card card: smallCards) {
+                            allCardIds.add(card.getCardId());
                             String imagePath = getCardsViewModel.getOneImagePathForCard(card.getCardId());
                             smallCardImagePaths.add(imagePath);
                         }
@@ -55,6 +58,7 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
                         adapter.notifyDataSetChanged();
                     }
                 });
+
     }
 
     private void initialiseUI() {
@@ -115,7 +119,8 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
         Log.i(TAG, "onSmallCardClicked: Position: "+positionOfCardClicked);
         Card selectedCard = smallCards.get(positionOfCardClicked);
         Intent bigCardIntent = new Intent(this, BigCardActivity.class);
-        bigCardIntent.putExtra(BigCardActivity.CARD_ID, selectedCard.getCardId());
+        bigCardIntent.putExtra(BigCardActivity.SELECTED_CARD_POSITION, positionOfCardClicked);
+        bigCardIntent.putCharSequenceArrayListExtra(BigCardActivity.ALL_CARD_IDS, allCardIds);
         startActivity(bigCardIntent);
     }
 }

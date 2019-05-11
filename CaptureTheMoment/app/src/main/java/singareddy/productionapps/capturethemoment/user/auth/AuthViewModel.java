@@ -20,7 +20,7 @@ import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileListener;
 
-import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.FailureCodes.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.FailureCodes.*;
 
 public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin, AuthListener.Mobile,
         AuthListener.EmailSignup, ProfileListener {

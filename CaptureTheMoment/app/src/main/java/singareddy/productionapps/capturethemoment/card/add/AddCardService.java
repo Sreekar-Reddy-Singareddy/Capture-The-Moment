@@ -18,7 +18,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.List;
 
-import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.models.Card;
 import singareddy.productionapps.capturethemoment.user.auth.DataSyncListener;
 

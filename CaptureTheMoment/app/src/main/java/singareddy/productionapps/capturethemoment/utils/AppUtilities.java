@@ -1,4 +1,4 @@
-package singareddy.productionapps.capturethemoment.Utils;
+package singareddy.productionapps.capturethemoment.utils;
 
 import com.google.firebase.auth.FirebaseUser;
 

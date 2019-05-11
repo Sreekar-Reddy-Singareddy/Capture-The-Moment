@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.HomeActivity;
 import singareddy.productionapps.capturethemoment.R;
 

@@ -21,7 +21,7 @@ import java.util.List;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 
-import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.*;
 
 public class AddBookActivity extends AppCompatActivity implements AddBookListener {
     private static String TAG = "AddBookActivity";

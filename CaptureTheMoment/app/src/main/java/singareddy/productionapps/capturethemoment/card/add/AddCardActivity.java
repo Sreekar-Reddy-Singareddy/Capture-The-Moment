@@ -4,6 +4,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -19,11 +20,14 @@ import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import singareddy.productionapps.capturethemoment.Utils.DepthPageTransformer;
+import singareddy.productionapps.capturethemoment.utils.DepthPageTransformer;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.card.getcards.ImagePageAdapter;
 import singareddy.productionapps.capturethemoment.card.getcards.IndicatorAdapter;
@@ -37,6 +41,7 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
     private ImageView pickLocation;
     private TextView locationView; // Input for new card
     private FloatingActionButton addPhotoButton;
+    private ConstraintLayout constraintLayout;
     private RecyclerView indicators;
     private List<Uri> imageUris; // Input for new card
     private ImagePageAdapter adapter;
@@ -80,8 +85,16 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
         getSupportActionBar().setTitle("Add Memory");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        int pagerWidth = getWindowManager().getDefaultDisplay().getWidth();
+
+        constraintLayout = findViewById(R.id.add_card_cl_layout);
         imageUris = new ArrayList<>();
         photoPager = findViewById(R.id.add_card_pv_photos);
+        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(pagerWidth,pagerWidth);
+        params.startToStart = R.id.add_card_cl_layout;
+        params.topToTop = R.id.add_card_cl_layout;
+        params.endToEnd = R.id.add_card_cl_layout;
+        photoPager.setLayoutParams(params);
         photoPager.setPageTransformer(true, new DepthPageTransformer());
         photoPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -188,8 +201,18 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
             Log.i(TAG, "onActivityResult: DATA URIs: "+data.getClipData().getItemAt(0).getUri());
             for (int i=0; i<data.getClipData().getItemCount(); i++) {
                 Uri imageUri = data.getClipData().getItemAt(i).getUri();
-                imageUris.add(imageUri);
+                Log.i(TAG, "onActivityResult: UNCROPPED URI: "+imageUri);
+                CropImage.activity(imageUri)
+                        .setAspectRatio(4,4)
+                        .setGuidelines(CropImageView.Guidelines.ON)
+                        .start(AddCardActivity.this);
             }
+        }
+        else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            Uri croppedImageUri = result.getUri();
+            Log.i(TAG, "onActivityResult: CROPPED URI: "+croppedImageUri);
+            imageUris.add(croppedImageUri);
             adapter.setImageUris(imageUris);
             adapter.notifyDataSetChanged();
             indicatorAdapter.setPages(imageUris.size());

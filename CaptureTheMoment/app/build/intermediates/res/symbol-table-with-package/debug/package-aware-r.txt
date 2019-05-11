@@ -90,6 +90,7 @@ attr behavior_hideable
 attr behavior_overlapTop
 attr behavior_peekHeight
 attr behavior_skipCollapsed
+attr borderColor
 attr borderWidth
 attr borderlessButtonStyle
 attr bottomAppBarStyle
@@ -239,6 +240,7 @@ attr divider
 attr dividerHorizontal
 attr dividerPadding
 attr dividerVertical
+attr dotsColor
 attr drawableSize
 attr drawerArrowStyle
 attr dropDownListViewStyle
@@ -1114,6 +1116,7 @@ drawable ic_photo_camera_white_24dp
 drawable ic_save_white_24dp
 drawable ic_smartphone_black_24dp
 drawable ic_warning_orange_24dp
+drawable image_pager_outline
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1167,6 +1170,10 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_text
 id actions
+id activity_big_card_bt_next
+id activity_big_card_bt_previous
+id activity_big_card_cl_layout
+id activity_big_card_cv_container
 id activity_chooser_view_content
 id activity_main_add_book_button
 id activity_main_container
@@ -1180,6 +1187,7 @@ id add_book_ib_add_sec_owner
 id add_book_rv_sec_owners
 id add_book_tv_owner_label
 id add_book_tv_sec_owner_label
+id add_card_cl_layout
 id add_card_et_description
 id add_card_fb_add_photo
 id add_card_iv_location_icon
@@ -1270,6 +1278,14 @@ id filled
 id fitCenter
 id fixed
 id forever
+id fragment_big_card_back_cl_layout
+id fragment_big_card_back_iv_date
+id fragment_big_card_back_iv_location
+id fragment_big_card_back_tv_date
+id fragment_big_card_back_tv_desc
+id fragment_big_card_back_tv_location
+id fragment_big_card_front_ll_layout
+id fragment_big_card_front_pv_images
 id ghost_view
 id gone
 id group_divider
@@ -1332,6 +1348,10 @@ id onTouch
 id outline
 id oval
 id packed
+id page_item_big_card_bt_back
+id page_item_big_card_bt_front
+id page_item_big_card_cv_container
+id page_item_image_cl_layout
 id page_item_image_iv_image
 id parallax
 id parent
@@ -1509,6 +1529,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_add_book
 layout activity_add_card
+layout activity_big_card
 layout activity_book_details
 layout activity_crop_experiment
 layout activity_dummy
@@ -1537,9 +1558,10 @@ layout design_text_input_password_icon
 layout dialg_profile_pic
 layout email_signup
 layout fragment_all_books
+layout fragment_big_card_back
+layout fragment_big_card_front
 layout list_item_add_card
 layout list_item_book
-layout list_item_card
 layout list_item_card_back
 layout list_item_card_front
 layout list_item_page_indicator
@@ -1563,6 +1585,8 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout page_item_big_card
+layout page_item_card_image
 layout page_item_image
 layout profile_fragment
 layout select_dialog_item_material
@@ -2215,6 +2239,7 @@ styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
+styleable FramedImageView borderColor dotsColor
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation

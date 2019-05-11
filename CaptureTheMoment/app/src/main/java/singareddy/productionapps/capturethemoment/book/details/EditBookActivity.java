@@ -24,10 +24,10 @@ import singareddy.productionapps.capturethemoment.book.addbook.SecOwnersAdapter;
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 
-import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_DB_ERROR;
-import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_EXISTS;
-import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_NAME_EMPTY;
-import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.BOOK_NAME_INVALID;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.BOOK_DB_ERROR;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.BOOK_EXISTS;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.BOOK_NAME_EMPTY;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.BOOK_NAME_INVALID;
 
 public class EditBookActivity extends AppCompatActivity implements AddBookListener, UpdateBookListener {
     private static String TAG = "EditBookActivity";

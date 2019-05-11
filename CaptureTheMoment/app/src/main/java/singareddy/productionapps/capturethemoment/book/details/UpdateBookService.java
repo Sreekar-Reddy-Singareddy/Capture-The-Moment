@@ -17,8 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
-import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Firebase.*;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Firebase.*;
 
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;

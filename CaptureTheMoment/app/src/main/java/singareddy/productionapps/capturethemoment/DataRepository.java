@@ -24,7 +24,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import singareddy.productionapps.capturethemoment.Utils.AppUtilities;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.card.add.AddCardListener;
 import singareddy.productionapps.capturethemoment.card.add.AddCardService;
 import singareddy.productionapps.capturethemoment.models.Card;
@@ -46,9 +46,9 @@ import singareddy.productionapps.capturethemoment.user.auth.AuthListener;
 import singareddy.productionapps.capturethemoment.user.auth.DataSyncListener;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileListener;
 
-import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.Book.*;
-import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.FileNames.*;
-import static singareddy.productionapps.capturethemoment.Utils.AppUtilities.User.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.FileNames.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.User.*;
 
 /**
  * This class is the single reliable source of
