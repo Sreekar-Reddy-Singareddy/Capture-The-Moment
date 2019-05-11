@@ -12,6 +12,7 @@ import java.util.List;
 
 import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.Card;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class GetCardsViewModel extends ViewModel {
     private static String TAG = "GetCardsViewModel";
@@ -48,5 +49,9 @@ public class GetCardsViewModel extends ViewModel {
             imageUris.add(imageUri);
         }
         return imageUris;
+    }
+
+    public Boolean getCurrentUserEditAccessForThisBook(String bookId) {
+        return dataRepo.getCurrentUserEditAccessForThisBook(bookId, AppUtilities.User.CURRENT_USER_ID);
     }
 }

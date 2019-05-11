@@ -34,7 +34,9 @@ public interface BookDao {
     @Query("SELECT COUNT(bookId) FROM Book WHERE owner = :uid")
     public int getNumberOfOwnedBooks(String uid);
 
+    @Query("SELECT owner FROM Book WHERE bookId = :bookId")
+    public String getOwnerOf(String bookId);
+
     @Query("DELETE FROM Book")
     public int deleteAllData();
-
 }

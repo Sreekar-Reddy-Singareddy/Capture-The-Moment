@@ -52,20 +52,18 @@ public class FramedImageView extends android.support.v7.widget.AppCompatImageVie
         canvas.drawRect(0,0,width,height,paint);
         canvas.save();
 
-        // Draw the dotted layer
+        // Draw the inner border layer
         paint.setColor(attrArray.getColor(dottedColor, DEF_DOTS_COLOR));
-        paint.setStrokeWidth(borderHeight*0.09f);
-        paint.setPathEffect(new DashPathEffect(new float[] {borderHeight*0.2f, borderHeight*0.2f}, 0));
-        canvas.drawRect(borderHeight/4, borderHeight/4, width-borderHeight/4, height-borderHeight/4, paint);
+        paint.setStrokeWidth(borderHeight/6);
+        canvas.drawRect(borderHeight/2+borderHeight/12, borderHeight/2+borderHeight/12, width-borderHeight/2-borderHeight/12, height-borderHeight/2-borderHeight/12, paint);
         canvas.save();
 
-        // Draw shadow
-        GradientDrawable gd = new GradientDrawable();
-        gd.setColor(DEF_BORDER_COLOR);
-        gd.setGradientType(GradientDrawable.LINEAR_GRADIENT);
-        gd.setShape(GradientDrawable.LINE);
-        gd.setSize(20, 20);
-        gd.draw(canvas);
+//        // Draw the dotted layer
+//        paint.setColor(attrArray.getColor(dottedColor, DEF_DOTS_COLOR));
+//        paint.setStrokeWidth(borderHeight*0.09f);
+//        paint.setPathEffect(new DashPathEffect(new float[] {borderHeight*0.2f, borderHeight*0.2f}, 0));
+//        canvas.drawRect(borderHeight/4, borderHeight/4, width-borderHeight/4, height-borderHeight/4, paint);
+//        canvas.save();
     }
 
     private int computeBorderWidth(int width) {

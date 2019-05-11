@@ -23,6 +23,9 @@ public interface ShareInfoDao {
     @Query("SELECT * FROM ShareInfo WHERE bookId = :id")
     public List<ShareInfo> getShareInfoForBookWithId (String id);
 
+    @Query("SELECT canEdit FROM ShareInfo WHERE bookId = :bookId AND uid = :currentUserId")
+    public Boolean getShareInfoForBookWithId(String bookId, String currentUserId);
+
     @Query("SELECT * FROM ShareInfo")
     public List<ShareInfo> getAllShareInfos();
 

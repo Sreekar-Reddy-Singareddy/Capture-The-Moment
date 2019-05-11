@@ -1059,6 +1059,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add_card_outline
 drawable avd_hide_password
 drawable avd_show_password
 drawable common_full_open_on_phone
@@ -1313,7 +1314,6 @@ id line1
 id line3
 id listMode
 id list_item
-id list_item_add_card_cv_card
 id list_item_add_card_iv_icon
 id list_item_small_card_iv_image
 id login_et_email

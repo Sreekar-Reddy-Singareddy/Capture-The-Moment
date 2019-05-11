@@ -211,7 +211,6 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
             Log.i(TAG, "onActivityResult: IMAGE PICKED");
             // Crop the image here
             cropImageAt(data.getData());
-
         }
         else if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
             // Either image is captured or picked,

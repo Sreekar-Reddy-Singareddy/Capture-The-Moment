@@ -7,15 +7,15 @@
     android:layout_height="match_parent">
 
     <singareddy.productionapps.capturethemoment.custom_views.FramedImageView
-        android:clickable="false"
         android:id="@+id/page_item_image_iv_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clickable="false"
+        android:src="@drawable/ic_launcher_foreground"
+        app:dotsColor="@android:color/white"
         app:borderColor="@android:color/white"
-        app:dotsColor="@android:color/holo_orange_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_launcher_foreground" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

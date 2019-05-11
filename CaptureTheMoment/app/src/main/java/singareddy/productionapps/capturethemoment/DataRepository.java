@@ -364,6 +364,19 @@ public class DataRepository implements AddBookListener, GetBookListener,
         return null;
     }
 
+    public Boolean getCurrentUserEditAccessForThisBook(String bookId, String currentUserId) {
+        try {
+            String owner = mExecutor.submit(() -> mLocalDB.getBookDao().getOwnerOf(bookId)).get();
+            if (owner.equals(currentUserId)) return true;
+            mExecutor.submit(() -> mLocalDB.getSharedInfoDao().getShareInfoForBookWithId(bookId, currentUserId)).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     // =================== Setters
 
     public void setAddBookListener(AddBookListener mAddBookListener) {
@@ -635,7 +648,6 @@ public class DataRepository implements AddBookListener, GetBookListener,
     public void onCardCreated() {
         addCardListener.onCardCreated();
     }
-
 
     // MARK: Async Tasks
     public class InsertBookTask extends AsyncTask<Object, Void, Void> {

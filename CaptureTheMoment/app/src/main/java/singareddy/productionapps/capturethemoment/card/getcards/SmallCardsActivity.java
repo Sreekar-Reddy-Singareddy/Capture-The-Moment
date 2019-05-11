@@ -22,14 +22,18 @@ import singareddy.productionapps.capturethemoment.models.Card;
 public class SmallCardsActivity extends AppCompatActivity implements SmallCardClickListener{
     private static String TAG = "SmallCardsActivity";
 
+    // Utility members
     private String bookName;
     private String bookId;
-    private RecyclerView cardsList;
     private GetCardsViewModel getCardsViewModel;
     private SmallCardsAdapter adapter;
     private ArrayList<CharSequence> allCardIds;
     private List<String> smallCardImagePaths;
     private List<Card> smallCards;
+    private Boolean ownerCanEdit;
+
+    // UI members
+    private RecyclerView cardsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,18 +62,20 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
                         adapter.notifyDataSetChanged();
                     }
                 });
-
+        ownerCanEdit = getCardsViewModel.getCurrentUserEditAccessForThisBook(bookId);
+        Log.i(TAG, "initialiseViewModel: MY BOOK? "+ownerCanEdit);
+        adapter.setOwnerCanEdit(ownerCanEdit);
     }
 
     private void initialiseUI() {
         bookName = getIntent().getExtras().getString("bookName");
         bookId = getIntent().getExtras().getString("bookId");
-        Log.i(TAG, "onCreate: BookID: "+bookId);
+        adapter = new SmallCardsAdapter(this, smallCardImagePaths, bookId, this);
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(bookName);
         setContentView(R.layout.activity_book_details);
         cardsList = findViewById(R.id.book_details_rv_cards);
-        adapter = new SmallCardsAdapter(this, smallCardImagePaths, bookId, this);
         GridLayoutManager manager = new GridLayoutManager(this,3);
         cardsList.setAdapter(adapter);
         cardsList.setLayoutManager(manager);

@@ -29,11 +29,15 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     private Integer positionOfCardToBeDisplayed;
     private GetCardsViewModel getCardsViewModel;
     private ArrayList<CharSequence> allCardIds;
-    protected Card cardToBeDisplayed;
-    protected List<Uri> imageUris;
     private Fragment frontFragment, backFragment;
     private CardView uiCard;
     private String faceShown = BACK_FACE;
+
+    /**
+     * The components of Card
+     */
+    protected Card cardToBeDisplayed;
+    protected List<Uri> imageUris;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

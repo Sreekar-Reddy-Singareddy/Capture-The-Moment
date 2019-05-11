@@ -210,6 +210,43 @@ public class ShareInfoDao_Impl implements ShareInfoDao {
   }
 
   @Override
+  public Boolean getShareInfoForBookWithId(String bookId, String currentUserId) {
+    final String _sql = "SELECT canEdit FROM ShareInfo WHERE bookId = ? AND uid = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
+    int _argIndex = 1;
+    if (bookId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, bookId);
+    }
+    _argIndex = 2;
+    if (currentUserId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, currentUserId);
+    }
+    final Cursor _cursor = __db.query(_statement);
+    try {
+      final Boolean _result;
+      if(_cursor.moveToFirst()) {
+        final Integer _tmp;
+        if (_cursor.isNull(0)) {
+          _tmp = null;
+        } else {
+          _tmp = _cursor.getInt(0);
+        }
+        _result = _tmp == null ? null : _tmp != 0;
+      } else {
+        _result = null;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  @Override
   public List<ShareInfo> getAllShareInfos() {
     final String _sql = "SELECT * FROM ShareInfo";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);

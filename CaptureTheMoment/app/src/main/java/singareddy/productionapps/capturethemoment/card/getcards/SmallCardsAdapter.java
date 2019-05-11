@@ -46,7 +46,8 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
                     public void onClick(View v) {
                         // Small card has been clicked.
                         // Tell the listener which card has been clicked.
-                        cardClickListener.onSmallCardClicked(getAdapterPosition()-1);
+                        int cardPosition = ownerCanEdit ? getAdapterPosition()-1 : getAdapterPosition();
+                        cardClickListener.onSmallCardClicked(cardPosition);
                     }
                 });
             }
@@ -58,6 +59,7 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
     private List<String> data;
     private String bookId;
     private SmallCardClickListener cardClickListener;
+    private Boolean ownerCanEdit  = true;
 
     public SmallCardsAdapter(Context context, List<String> data, String bookId, SmallCardClickListener listener) {
         this.context = context;
@@ -71,16 +73,25 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
         this.data = data;
     }
 
+    public void setOwnerCanEdit(Boolean ownerCanEdit) {
+        this.ownerCanEdit = ownerCanEdit;
+    }
+
     @Override
     public int getItemCount() {
-        if (data == null) return 1;
-        System.out.println("Cards Size: "+data.size());
-        return data.size()+1;
+        if (data == null) {
+            if (ownerCanEdit) return 1;
+            else return 0;
+        }
+        else {
+            if (ownerCanEdit) return data.size() + 1;
+            else return data.size();
+        }
     }
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0) {return 1;}
+        if (position == 0 && ownerCanEdit) return 1;
         return super.getItemViewType(position);
     }
 
@@ -100,12 +111,10 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
 
     @Override
     public void onBindViewHolder(@NonNull SmallCardVH holder, int i) {
-        if (i == 0) {
-            return;
-        }
-        Uri parsedUri = Uri.fromFile(new File(context.getFilesDir(), data.get(i-1)));
-        Log.i(TAG, "onBindViewHolder: Position: "+i);
-        Log.i(TAG, "onBindViewHolder: Path: "+data.get(i-1));
+        if (i == 0 && ownerCanEdit) return;
+        else i = ownerCanEdit ? i-1 : i;
+        Uri parsedUri = Uri.fromFile(new File(context.getFilesDir(), data.get(i)));
+        Log.i(TAG, "onBindViewHolder: Path: "+data.get(i));
         Log.i(TAG, "onBindViewHolder: URI: "+parsedUri);
         holder.image.setImageURI(parsedUri);
     }

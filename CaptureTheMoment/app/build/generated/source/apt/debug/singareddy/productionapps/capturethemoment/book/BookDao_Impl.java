@@ -375,4 +375,29 @@ public class BookDao_Impl implements BookDao {
       _statement.release();
     }
   }
+
+  @Override
+  public String getOwnerOf(String bookId) {
+    final String _sql = "SELECT owner FROM Book WHERE bookId = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (bookId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, bookId);
+    }
+    final Cursor _cursor = __db.query(_statement);
+    try {
+      final String _result;
+      if(_cursor.moveToFirst()) {
+        _result = _cursor.getString(0);
+      } else {
+        _result = null;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
 }
