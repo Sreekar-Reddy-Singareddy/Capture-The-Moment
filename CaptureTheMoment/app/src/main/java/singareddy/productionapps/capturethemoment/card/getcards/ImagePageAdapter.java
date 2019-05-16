@@ -7,14 +7,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
 
-public class ImagePageAdapter extends FragmentPagerAdapter {
+import singareddy.productionapps.capturethemoment.card.add.AddImageFragment;
+
+public class ImagePageAdapter extends FragmentStatePagerAdapter {
     private static String TAG = "ImagePageAdapter";
 
     private BigCardClickListener bigCardListener;
@@ -56,12 +56,17 @@ public class ImagePageAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        Log.i(TAG, "getCount: URIs: "+imageUris.size());
         if (imageUris == null) {return 0;}
         return imageUris.size();
+    }
+
+    @Override
+    public int getItemPosition(@NonNull Object object) {
+        return POSITION_NONE;
     }
 
     public void setFramedImage(int framedImage) {
         this.framedImage = framedImage;
     }
+
 }

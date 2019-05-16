@@ -2,6 +2,7 @@ package singareddy.productionapps.capturethemoment.card.getcards;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -17,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity;
 import singareddy.productionapps.capturethemoment.models.Card;
 
 public class BigCardActivity extends AppCompatActivity implements BigCardClickListener {
@@ -120,6 +123,18 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
         getSupportFragmentManager().beginTransaction().replace(R.id.activity_big_card_cv_container, backFragment).commit();
     }
 
+    private void deleteCard() {
+        // TODO: Logic to delete the card
+    }
+
+    private void editCard() {
+        // In this method, we call an activity that lets the user
+        // edit the card data and save it. The UI will be same as Add Card UI
+        Intent updateIntent = new Intent(this, UpdateCardActivity.class);
+        updateIntent.putExtra(UpdateCardActivity.CARD_ID_TO_EDIT, cardToBeDisplayed.getCardId());
+        startActivity(updateIntent);
+    }
+
     @Override
     public void bigCardClicked() {
         Log.i(TAG, "bigCardClicked: *");
@@ -136,10 +151,18 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add_card_context_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
         }
+        else if (item.getItemId() == R.id.add_card_menu_item_edit) editCard();
+        else if (item.getItemId() == R.id.add_card_menu_item_delete) deleteCard();
         return super.onOptionsItemSelected(item);
     }
 }

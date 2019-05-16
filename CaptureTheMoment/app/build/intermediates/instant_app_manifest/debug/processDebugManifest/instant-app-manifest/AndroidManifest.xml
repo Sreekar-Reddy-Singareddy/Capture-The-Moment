@@ -31,6 +31,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat"
         android:windowSoftInputMode="adjustPan" >
+        <activity android:name="singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.card.add.AddCardActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.card.getcards.BigCardActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.book.details.EditBookActivity" />

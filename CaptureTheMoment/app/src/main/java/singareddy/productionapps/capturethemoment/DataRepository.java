@@ -24,6 +24,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import singareddy.productionapps.capturethemoment.card.edit.UpdateCardService;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.card.add.AddCardListener;
 import singareddy.productionapps.capturethemoment.card.add.AddCardService;
@@ -74,6 +75,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private UpdateBookService mUpdateBookService;
     private AuthService mAuthService;
     private AddCardService mAddCardService;
+    private UpdateCardService mUpdateCardService;
 
     private BookListener mBookListener;
     private GetBookListener mBookGetBookListenerListener;
@@ -377,6 +379,12 @@ public class DataRepository implements AddBookListener, GetBookListener,
         return false;
     }
 
+    public void saveTheChangesOfCard(Card cardToEdit, List<Uri> activePhotoUris, List<String> removedPhotoPaths) {
+        if (mUpdateCardService == null) mUpdateCardService = new UpdateCardService();
+        mUpdateCardService.setDataSyncListener(this);
+        mUpdateCardService.saveTheChangesOfCard(cardToEdit, activePhotoUris, removedPhotoPaths);
+    }
+
     // =================== Setters
 
     public void setAddBookListener(AddBookListener mAddBookListener) {
@@ -569,6 +577,15 @@ public class DataRepository implements AddBookListener, GetBookListener,
     }
 
     @Override
+    public void hasToCleanUpUnwantedCardData(Card card, List<String> removedImagePaths) {
+        // Delete the files from device
+        for (String path: removedImagePaths) {
+            File file = new File(mContext.getFilesDir(), "/"+path);
+            Log.i(TAG, "hasToCleanUpUnwantedCardData: File Deleted: "+file.delete());
+        }
+    }
+
+    @Override
     public void onCardDownloadedFromFirebase(Card card, List<Uri> imageUris) {
         // Save images in the internal storage
         saveImagesInInternalStorage(card.getImagePaths(), imageUris);
@@ -581,30 +598,37 @@ public class DataRepository implements AddBookListener, GetBookListener,
     }
 
     private void saveImagePathsInLocalDB(Card card) {
-        for (String path: card.getImagePaths()) {
-            ImagePath imagePath = new ImagePath(card.getCardId(), path);
-            try {
+        try {
+            int deletedPaths = mExecutor.submit(()->mLocalDB.getCardDao().deleteAllPathsOfCard(card.getCardId())).get();
+            Log.i(TAG, "saveImagePathsInLocalDB: DELETED PATHS = "+deletedPaths);
+            for (String path: card.getImagePaths()) {
+                ImagePath imagePath = new ImagePath(card.getCardId(), path);
                 Long code = mExecutor.submit(() -> mLocalDB.getCardDao().insertImagePath(imagePath)).get();
                 Log.i(TAG, "saveImagePathsInLocalDB: IMAGE PATH INSERTED: "+code);
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
+        }catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
     private void saveCardPeopleInLocalDB(Card card) {
-        for (String friendName : card.getFriends()) {
-            Friend friend = new Friend(card.getCardId(), friendName);
-            try {
+        try {
+            List<String> friends = card.getFriends();
+            if (friends == null) return;
+            long deletedFriends = mExecutor.submit(()->mLocalDB.getCardDao().deleteAllFriendsOfCard(card.getCardId())).get();
+            Log.i(TAG, "saveCardPeopleInLocalDB: DELETED FRIEDS = "+deletedFriends);
+            for (String friendName : card.getFriends()) {
+                Friend friend = new Friend(card.getCardId(), friendName);
                 Long code = mExecutor.submit(() -> mLocalDB.getCardDao().insertFriend(friend)).get();
                 Log.i(TAG, "saveCardPeopleInLocalDB: FRIEND INSERTED: "+code);
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
+        }
+        catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
@@ -628,6 +652,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
         for (int position=0; position<imagePaths.size(); position++) {
             String[] paths = imagePaths.get(position).split("/");
             Uri uri = imageUris.get(position);
+            if (uri.getPath().contains(CURRENT_USER_ID)) continue;
+            Log.i(TAG, "saveImagesInInternalStorage: This URI has to be stored in internal storage");
             try {
                 File cardDir = new File(userDir,  "/" + paths[1]);
                 if (!cardDir.exists()) cardDir.mkdirs();

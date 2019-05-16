@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/frag_add_card_details_et_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/frag_add_card_details_iv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag_add_card_details_et_desc"
+        app:srcCompat="@drawable/ic_location_on_yellow_24dp" />
+
+    <ImageView
+        android:id="@+id/frag_add_card_details_iv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag_add_card_details_iv_location"
+        app:srcCompat="@drawable/ic_date_range_yellow_24dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag_add_card_details_iv_date"
+        app:srcCompat="@drawable/ic_date_range_yellow_24dp" />
+
+    <TextView
+        android:id="@+id/frag_add_card_details_tv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Mysore, Karnataka"
+        app:layout_constraintBottom_toBottomOf="@+id/frag_add_card_details_iv_location"
+        app:layout_constraintStart_toEndOf="@+id/frag_add_card_details_iv_location"
+        app:layout_constraintTop_toTopOf="@+id/frag_add_card_details_iv_location"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/frag_add_card_details_tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="12th May 2019"
+        app:layout_constraintBottom_toBottomOf="@+id/frag_add_card_details_iv_date"
+        app:layout_constraintStart_toEndOf="@+id/frag_add_card_details_iv_date"
+        app:layout_constraintTop_toTopOf="@+id/frag_add_card_details_iv_date" />
+
+    <Button
+        android:id="@+id/frag_add_card_details_bt_create"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_outline"
+        android:onClick="enterMoreDetails"
+        android:text="create"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/frag_add_card_details_bt_back"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_outline"
+        android:onClick="enterMoreDetails"
+        android:text="back"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

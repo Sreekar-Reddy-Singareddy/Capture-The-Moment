@@ -3,6 +3,7 @@ package singareddy.productionapps.capturethemoment.card;
 import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
+import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import singareddy.productionapps.capturethemoment.models.ImagePath;
 
 @Dao
 public interface CardDao {
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     public long insertCard(Card card);
 
     @Insert
@@ -33,4 +34,10 @@ public interface CardDao {
 
     @Query("SELECT imagePath FROM ImagePath WHERE cardId = :cardId" )
     public List<String> getImagePathsForCard(String cardId);
+
+    @Query("DELETE FROM Friend WHERE cardId = :cardId")
+    public int deleteAllFriendsOfCard (String cardId);
+
+    @Query("DELETE FROM ImagePath WHERE cardId = :cardId")
+    public int deleteAllPathsOfCard (String cardId);
 }

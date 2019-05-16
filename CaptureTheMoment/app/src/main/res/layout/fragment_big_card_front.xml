@@ -6,7 +6,7 @@
     android:id="@+id/fragment_big_card_front_ll_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/image_pager_outline">
+    android:background="@drawable/image_pager_background">
 
     <android.support.v4.view.ViewPager
         android:clickable="false"

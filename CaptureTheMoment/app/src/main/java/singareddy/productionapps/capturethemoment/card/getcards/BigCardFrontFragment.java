@@ -41,7 +41,6 @@ public class BigCardFrontFragment extends Fragment implements BigCardClickListen
         imagesAdapter = new ImagePageAdapter(getContext(), getChildFragmentManager(), imageUris, this);
         imagesAdapter.setFramedImage(1);
         imagesViewPager = fragmentView.findViewById(R.id.fragment_big_card_front_pv_images);
-        imagesViewPager.setPageTransformer(true, new DepthPageTransformer());
         imagesViewPager.setAdapter(imagesAdapter);
         imagesAdapter.notifyDataSetChanged();
         Log.i(TAG, "onCreateView: ADAPTER: "+imagesAdapter);
