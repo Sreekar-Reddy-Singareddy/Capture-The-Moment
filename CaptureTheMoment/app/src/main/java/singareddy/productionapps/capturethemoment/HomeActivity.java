@@ -29,8 +29,8 @@ import java.io.IOException;
 
 import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
 import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
-import singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity;
-import singareddy.productionapps.capturethemoment.book.getbooks.GetBooksFragment;
+import singareddy.productionapps.capturethemoment.book.add.AddBookActivity;
+import singareddy.productionapps.capturethemoment.book.get.GetBooksFragment;
 import singareddy.productionapps.capturethemoment.user.auth.LoginActivity;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileFragment;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity;

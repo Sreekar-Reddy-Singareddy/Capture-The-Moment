@@ -149,22 +149,22 @@ activity#singareddy.productionapps.capturethemoment.card.add.AddCardActivity
 ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:20:9-62
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:20:19-59
-activity#singareddy.productionapps.capturethemoment.card.getcards.BigCardActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:9-67
+activity#singareddy.productionapps.capturethemoment.card.get.BigCardActivity
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:9-62
 	android:name
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:19-64
-activity#singareddy.productionapps.capturethemoment.book.details.EditBookActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:22:9-67
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:19-59
+activity#singareddy.productionapps.capturethemoment.book.edit.EditBookActivity
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:22:9-64
 	android:name
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:22:19-64
-activity#singareddy.productionapps.capturethemoment.card.getcards.SmallCardsActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:23:9-70
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:22:19-61
+activity#singareddy.productionapps.capturethemoment.card.get.SmallCardsActivity
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:23:9-65
 	android:name
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:23:19-67
-activity#singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:24:9-66
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:23:19-62
+activity#singareddy.productionapps.capturethemoment.book.add.AddBookActivity
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:24:9-62
 	android:name
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:24:19-63
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:24:19-59
 activity#singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity
 ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:25:9-72
 	android:name

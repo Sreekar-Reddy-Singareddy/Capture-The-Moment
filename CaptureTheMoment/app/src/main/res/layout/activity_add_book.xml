@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".book.addbook.AddBookActivity">
+    tools:context=".book.add.AddBookActivity">
 
     <EditText
         android:id="@+id/add_book_et_name"

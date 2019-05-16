@@ -1,5 +1,6 @@
 package singareddy.productionapps.capturethemoment.book;
 
+import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
@@ -21,7 +22,7 @@ public interface ShareInfoDao {
     public void updateShareInfo (ShareInfo info);
 
     @Query("SELECT * FROM ShareInfo WHERE bookId = :id")
-    public List<ShareInfo> getShareInfoForBookWithId (String id);
+    public LiveData<List<ShareInfo>> getShareInfoForBookWithId (String id);
 
     @Query("SELECT canEdit FROM ShareInfo WHERE bookId = :bookId AND uid = :currentUserId")
     public Boolean getShareInfoForBookWithId(String bookId, String currentUserId);
@@ -34,4 +35,7 @@ public interface ShareInfoDao {
 
     @Query("DELETE FROM SHAREINFO WHERE bookId = :bookId")
     public void deleteInfosForBook (String bookId);
+
+    @Query("DELETE FROM ShareInfo WHERE bookId=:bookId AND uid=:uid")
+    public void deleteInfoFor(String bookId, String uid);
 }

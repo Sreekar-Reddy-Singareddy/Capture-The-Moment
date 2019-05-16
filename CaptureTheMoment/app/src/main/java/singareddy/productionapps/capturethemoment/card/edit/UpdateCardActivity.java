@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
-import singareddy.productionapps.capturethemoment.card.getcards.GetCardsModelFactory;
-import singareddy.productionapps.capturethemoment.card.getcards.GetCardsViewModel;
+import singareddy.productionapps.capturethemoment.card.get.GetCardsModelFactory;
+import singareddy.productionapps.capturethemoment.card.get.GetCardsViewModel;
 import singareddy.productionapps.capturethemoment.models.Card;
 
 public class UpdateCardActivity extends AppCompatActivity implements UpdateCardListener {

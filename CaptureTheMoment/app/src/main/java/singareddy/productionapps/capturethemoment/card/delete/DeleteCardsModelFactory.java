@@ -6,7 +6,6 @@ import android.arch.lifecycle.ViewModelProvider;
 import android.support.annotation.NonNull;
 
 import singareddy.productionapps.capturethemoment.DataRepository;
-import singareddy.productionapps.capturethemoment.card.getcards.GetCardsViewModel;
 
 public class DeleteCardsModelFactory implements ViewModelProvider.Factory {
 

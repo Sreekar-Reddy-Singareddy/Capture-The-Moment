@@ -18,10 +18,10 @@
         android:windowSoftInputMode="adjustPan">
         <activity android:name=".card.edit.UpdateCardActivity"></activity>
         <activity android:name=".card.add.AddCardActivity" />
-        <activity android:name=".card.getcards.BigCardActivity" />
-        <activity android:name=".book.details.EditBookActivity" />
-        <activity android:name=".card.getcards.SmallCardsActivity" />
-        <activity android:name=".book.addbook.AddBookActivity" />
+        <activity android:name=".card.get.BigCardActivity" />
+        <activity android:name=".book.edit.EditBookActivity" />
+        <activity android:name=".card.get.SmallCardsActivity" />
+        <activity android:name=".book.add.AddBookActivity" />
         <activity android:name=".user.profile.ProfileUpdateActivity" />
         <activity android:name=".user.auth.SignupActivity" />
         <activity

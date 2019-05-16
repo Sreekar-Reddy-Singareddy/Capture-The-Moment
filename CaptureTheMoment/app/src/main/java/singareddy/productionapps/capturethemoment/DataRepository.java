@@ -36,18 +36,17 @@ import singareddy.productionapps.capturethemoment.models.Friend;
 import singareddy.productionapps.capturethemoment.models.ImagePath;
 import singareddy.productionapps.capturethemoment.user.auth.AuthService;
 import singareddy.productionapps.capturethemoment.book.BookListener;
-import singareddy.productionapps.capturethemoment.book.addbook.AddBookListener;
-import singareddy.productionapps.capturethemoment.book.details.UpdateBookListener;
-import singareddy.productionapps.capturethemoment.book.details.UpdateBookService;
-import singareddy.productionapps.capturethemoment.book.getbooks.GetBookListener;
-import singareddy.productionapps.capturethemoment.book.getbooks.GetBooksService;
-import singareddy.productionapps.capturethemoment.book.addbook.AddBookService;
+import singareddy.productionapps.capturethemoment.book.add.AddBookListener;
+import singareddy.productionapps.capturethemoment.book.edit.UpdateBookListener;
+import singareddy.productionapps.capturethemoment.book.edit.UpdateBookService;
+import singareddy.productionapps.capturethemoment.book.get.GetBookListener;
+import singareddy.productionapps.capturethemoment.book.get.GetBooksService;
+import singareddy.productionapps.capturethemoment.book.add.AddBookService;
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 import singareddy.productionapps.capturethemoment.models.ShareInfo;
 import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.user.auth.AuthListener;
-import singareddy.productionapps.capturethemoment.user.auth.DataSyncListener;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileListener;
 
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.*;
@@ -118,6 +117,14 @@ public class DataRepository implements AddBookListener, GetBookListener,
             Log.i(TAG, "getInstance: Creating Instance...");
             DATA_REPOSITORY = new DataRepository(context, Executors.newSingleThreadExecutor());
         }
+        CURRENT_USER = FirebaseAuth.getInstance().getCurrentUser();
+        if (CURRENT_USER != null) {
+            CURRENT_USER_ID = CURRENT_USER.getUid();
+            LOGIN_PROVIDER = CURRENT_USER.getProviders().get(0);
+            if (LOGIN_PROVIDER.equals(AppUtilities.Firebase.EMAIL_PROVIDER))
+                CURRENT_USER_EMAIL = CURRENT_USER.getEmail();
+            else CURRENT_USER_MOBILE = CURRENT_USER.getPhoneNumber().substring(3);
+        }
         return DATA_REPOSITORY;
     }
 
@@ -156,6 +163,16 @@ public class DataRepository implements AddBookListener, GetBookListener,
         }
     }
 
+    public LiveData<List<ShareInfo>> getSecondaryOwners(String bookId) {
+        try{
+            return mExecutor.submit(()->mLocalDB.getSharedInfoDao().getShareInfoForBookWithId(bookId)).get();
+        }
+        catch (Exception e) {
+            Log.i(TAG, "getSecondaryOwners: "+e.getLocalizedMessage());
+            return null;
+        }
+    }
+
     public Book getBookDetailsFor(String bookId) {
         Log.i(TAG, "getBookDetailsFor: BOOK_DETAILS_FOR: "+bookId);
         try {
@@ -166,35 +183,13 @@ public class DataRepository implements AddBookListener, GetBookListener,
         return null;
     }
 
-    public List<SecondaryOwner> getUsernamesFor(String bookId) {
-        try {
-            List<ShareInfo> infos = mExecutor.submit(()->mLocalDB.getSharedInfoDao().getShareInfoForBookWithId(bookId)).get();
-            List<SecondaryOwner> ownerList = new ArrayList<>();
-            SharedPreferences sharedPreferences = mContext.getSharedPreferences(AppUtilities.FileNames.UIDS_CACHE, Context.MODE_PRIVATE);
-            // Use this file to get the info of usernames
-            for (ShareInfo info: infos) {
-                Log.i(TAG, "getUsernamesFor: GET_SEC_OWNER");
-                SecondaryOwner owner = new SecondaryOwner();
-                owner.setUsername(sharedPreferences.getString(info.getUid(), ""));
-                owner.setValidated(1);
-                owner.setCanEdit(info.getCanEdit());
-                ownerList.add(owner);
-            }
-            return ownerList;
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return new ArrayList<>();
-    }
-
-    public void updateBook(String bookId, String newName, List<SecondaryOwner> secOwners) {
+    public void updateBook(String bookId, Boolean sameBookName, String newName, List<SecondaryOwner> activeOwners, List<SecondaryOwner> removedOwners) {
         if (mUpdateBookService == null) {
             mUpdateBookService = new UpdateBookService();
-            mUpdateBookService.setUpdateBookListener(this);
         }
-        mUpdateBookService.updateThisBook(bookId, newName, secOwners);
+        mUpdateBookService.setUpdateBookListener(this);
+        mUpdateBookService.setDataSyncListener(this);
+        mUpdateBookService.updateThisBook(bookId, sameBookName, newName, activeOwners, removedOwners);
     }
 
     public Integer getNumberOfSharedBooks() {
@@ -471,12 +466,6 @@ public class DataRepository implements AddBookListener, GetBookListener,
     }
 
     @Override
-    public void hasToSaveBookInCache(Book book) {
-        // This book has to be saved in Room DB
-        new InsertBookTask().execute(book);
-    }
-
-    @Override
     public void hasToSaveUidInCache(Map<String, String> userMap) {
         Log.i(TAG, "hasToSaveUidInCache: *");
         // Save UIDs in shared preferences
@@ -490,8 +479,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
         }
     }
 
-    // =================== Add Book Listener
 
+    // =================== Add Book Listener
     @Override
     public void onNewBookCreated() {
         Log.i(TAG, "onNewBookCreated: *");
@@ -499,11 +488,17 @@ public class DataRepository implements AddBookListener, GetBookListener,
         // After new book is created there is no need for the service
     }
 
-    // =================== Update Book Listener
 
+    // =================== Update Book Listener
     @Override
     public void onBookUpdated() {
         ((UpdateBookListener) mBookListener).onBookUpdated();
+    }
+
+    @Override
+    public void hasToSaveBookInCache(Book book) {
+        // This book has to be saved in Room DB
+        new InsertBookTask().execute(book);
     }
 
     // =================== Email Signup Listener
@@ -584,18 +579,28 @@ public class DataRepository implements AddBookListener, GetBookListener,
     }
 
     @Override
-    public void onBookDownloadedFromFirebase(Book downloadedBook, Boolean sharedBookAccess) {
-        Log.i(TAG, "onBookDownloadedFromFirebase: BOOK NAME: "+downloadedBook.getName());
-        new InsertBookTask().execute(downloadedBook, sharedBookAccess);
-    }
-
-    @Override
     public void onProfilePictureDownloaded() {
         Log.i(TAG, "onProfilePictureDownloaded: **");
         SharedPreferences userProfileCache = mContext.getSharedPreferences(USER_PROFILE_CACHE, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = userProfileCache.edit();
         editor.putBoolean("profilePicAvailable", true);
         editor.commit();
+    }
+
+    @Override
+    public void onBookDownloadedFromFirebase(Book downloadedBook, Boolean sharedBookAccess) {
+        Log.i(TAG, "onBookDownloadedFromFirebase: BOOK NAME: "+downloadedBook.getName());
+        new InsertBookTask().execute(downloadedBook, sharedBookAccess);
+    }
+
+    @Override
+    public void hasToRemoveSecOwnerFromRoomDB(String bookId, String uid) {
+        try {
+            mExecutor.submit(()->mLocalDB.getSharedInfoDao().deleteInfoFor(bookId, uid));
+        }
+        catch (Exception e) {
+            Log.i(TAG, "hasToRemoveSecOwnerFromRoomDB: "+e.getLocalizedMessage());
+        }
     }
 
     @Override

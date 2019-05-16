@@ -13,10 +13,9 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 import singareddy.productionapps.capturethemoment.models.Card;
-import singareddy.productionapps.capturethemoment.user.auth.DataSyncListener;
+import singareddy.productionapps.capturethemoment.DataSyncListener;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class UpdateCardService {

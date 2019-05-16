@@ -20,7 +20,7 @@ import java.util.List;
 
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.models.Card;
-import singareddy.productionapps.capturethemoment.user.auth.DataSyncListener;
+import singareddy.productionapps.capturethemoment.DataSyncListener;
 
 public class AddCardService {
     private static String TAG = "AddCardService";

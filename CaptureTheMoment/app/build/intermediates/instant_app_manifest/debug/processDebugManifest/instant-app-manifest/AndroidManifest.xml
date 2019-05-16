@@ -33,10 +33,10 @@
         android:windowSoftInputMode="adjustPan" >
         <activity android:name="singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.card.add.AddCardActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.card.getcards.BigCardActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.book.details.EditBookActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.card.getcards.SmallCardsActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.book.addbook.AddBookActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.card.get.BigCardActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.book.edit.EditBookActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.card.get.SmallCardsActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.book.add.AddBookActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.user.auth.SignupActivity" />
         <activity

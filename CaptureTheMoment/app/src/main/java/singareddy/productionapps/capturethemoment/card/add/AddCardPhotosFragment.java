@@ -30,9 +30,8 @@ import java.io.File;
 
 import singareddy.productionapps.capturethemoment.BuildConfig;
 import singareddy.productionapps.capturethemoment.R;
-import singareddy.productionapps.capturethemoment.card.getcards.ImagePageAdapter;
-import singareddy.productionapps.capturethemoment.card.getcards.IndicatorAdapter;
-import singareddy.productionapps.capturethemoment.utils.DepthPageTransformer;
+import singareddy.productionapps.capturethemoment.card.get.ImagePageAdapter;
+import singareddy.productionapps.capturethemoment.card.get.IndicatorAdapter;
 
 import static android.app.Activity.RESULT_OK;
 
