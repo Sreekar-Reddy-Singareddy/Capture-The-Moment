@@ -24,6 +24,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import singareddy.productionapps.capturethemoment.card.delete.DeleteCardService;
+import singareddy.productionapps.capturethemoment.card.edit.UpdateCardListener;
 import singareddy.productionapps.capturethemoment.card.edit.UpdateCardService;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.card.add.AddCardListener;
@@ -61,7 +63,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         UpdateBookListener, AuthListener.EmailLogin,
         AuthListener.Mobile, AuthListener.EmailSignup,
         DataSyncListener, ProfileListener,
-        AddCardListener {
+        AddCardListener, UpdateCardListener {
 
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
@@ -76,6 +78,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private AuthService mAuthService;
     private AddCardService mAddCardService;
     private UpdateCardService mUpdateCardService;
+    private DeleteCardService deleteCardService;
 
     private BookListener mBookListener;
     private GetBookListener mBookGetBookListenerListener;
@@ -84,6 +87,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private AuthListener.EmailSignup emailSignupListener;
     private ProfileListener profileListener;
     private AddCardListener addCardListener;
+    private UpdateCardListener updateCardListener;
 
     private LocalDB mLocalDB;
     private Context mContext;
@@ -382,7 +386,13 @@ public class DataRepository implements AddBookListener, GetBookListener,
     public void saveTheChangesOfCard(Card cardToEdit, List<Uri> activePhotoUris, List<String> removedPhotoPaths) {
         if (mUpdateCardService == null) mUpdateCardService = new UpdateCardService();
         mUpdateCardService.setDataSyncListener(this);
+        mUpdateCardService.setUpdateCardListener(this);
         mUpdateCardService.saveTheChangesOfCard(cardToEdit, activePhotoUris, removedPhotoPaths);
+    }
+
+    public void deleteCardWithId(String cardId) {
+        if (deleteCardService == null) deleteCardService = new DeleteCardService();
+        deleteCardService.deleteCardWithId(cardId);
     }
 
     // =================== Setters
@@ -418,8 +428,12 @@ public class DataRepository implements AddBookListener, GetBookListener,
     public void setAddCardListener(AddCardListener addCardListener) {
         this.addCardListener = addCardListener;
     }
-    // =================== Book Listeners
 
+    public void setUpdateCardListener(UpdateCardListener updateCardListener) {
+        this.updateCardListener = updateCardListener;
+    }
+
+    // =================== Book Listeners
     @Override
     public void onBookNameInvalid(String code) {
         Log.i(TAG, "onBookNameInvalid: *");
@@ -435,6 +449,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         Log.i(TAG, "onThisSecOwnerValidated: *");
         mBookListener.onThisSecOwnerValidated();
     }
+
 //    @Override
 
 //    public void onBookDownloaded(Book downloadedBook) {
@@ -668,11 +683,19 @@ public class DataRepository implements AddBookListener, GetBookListener,
             }
         }
     }
+
     // =================== Add Card Listener
 
     @Override
     public void onCardCreated() {
         addCardListener.onCardCreated();
+    }
+
+    // =================== Update Card Listener
+
+    @Override
+    public void onCardUpdated() {
+        updateCardListener.onCardUpdated();
     }
 
     // MARK: Async Tasks

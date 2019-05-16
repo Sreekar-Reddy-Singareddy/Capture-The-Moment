@@ -12,10 +12,11 @@ import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.Card;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
-public class UpdateCardViewModel extends ViewModel {
+public class UpdateCardViewModel extends ViewModel implements UpdateCardListener{
     private static String TAG = "UpdateCardViewModel";
 
     private final DataRepository dataRepo;
+    private UpdateCardListener updateCardListener;
 
     public UpdateCardViewModel (DataRepository repository) {
         dataRepo = repository;
@@ -25,6 +26,7 @@ public class UpdateCardViewModel extends ViewModel {
         List<String> activePhotoPaths = generatePathsForNewActiveImages(cardToEdit.getCardId(), activePhotoUris);
         List<String> removedPhotoPaths = generatePathsForRemovedImages(cardToEdit.getCardId(), removedPhotoUris);
         cardToEdit.setImagePaths(activePhotoPaths);
+        dataRepo.setUpdateCardListener(this);
         dataRepo.saveTheChangesOfCard(cardToEdit, activePhotoUris, removedPhotoPaths);
     }
 
@@ -63,5 +65,14 @@ public class UpdateCardViewModel extends ViewModel {
         Random randomGenerator = new Random();
         Integer randomInt = randomGenerator.nextInt(1000000000);
         return "image_"+randomInt.toString()+".jpg";
+    }
+
+    @Override
+    public void onCardUpdated() {
+        updateCardListener.onCardUpdated();
+    }
+
+    public void setUpdateCardListener(UpdateCardListener updateCardListener) {
+        this.updateCardListener = updateCardListener;
     }
 }

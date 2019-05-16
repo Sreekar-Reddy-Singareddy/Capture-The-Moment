@@ -1,9 +1,11 @@
 package singareddy.productionapps.capturethemoment.card.edit;
 
+import android.arch.lifecycle.Observer;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,7 @@ import android.widget.EditText;
 import singareddy.productionapps.capturethemoment.R;
 
 public class UpdateCardMoreDetailsFragment extends Fragment {
+    private static String TAG = "UpdateCardMoreDetails";
 
     private UpdateCardActivity parent;
     private View fragView;
@@ -24,6 +27,12 @@ public class UpdateCardMoreDetailsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         parent = (UpdateCardActivity) getActivity();
+        parent.cardUpdateSuccessFlag.observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(@Nullable Boolean aBoolean) {
+                Log.i(TAG, "onChanged: CARD UPDATE SUCCESSFUL = "+aBoolean);
+            }
+        });
         fragView = inflater.inflate(R.layout.fragment_add_card_more_details, container, false);
         initialiseUI();
         return fragView;

@@ -1,5 +1,6 @@
 package singareddy.productionapps.capturethemoment.card.edit;
 
+import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +21,7 @@ import singareddy.productionapps.capturethemoment.card.getcards.GetCardsModelFac
 import singareddy.productionapps.capturethemoment.card.getcards.GetCardsViewModel;
 import singareddy.productionapps.capturethemoment.models.Card;
 
-public class UpdateCardActivity extends AppCompatActivity {
+public class UpdateCardActivity extends AppCompatActivity implements UpdateCardListener {
     public static final String CARD_ID_TO_EDIT = "cardId";
     private static final String TAG = "UpdateCardActivity";
 
@@ -29,6 +31,7 @@ public class UpdateCardActivity extends AppCompatActivity {
     private ConstraintLayout fragmentContainer;
     private UpdateCardPhotosFragment photosFragment;
     private UpdateCardMoreDetailsFragment moreDetailsFragment;
+    protected MutableLiveData<Boolean> cardUpdateSuccessFlag;
 
     // Card data
     protected Card cardToEdit;
@@ -40,6 +43,7 @@ public class UpdateCardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         removedPhotoUris = new ArrayList<>();
+        cardUpdateSuccessFlag = new MutableLiveData<>(); cardUpdateSuccessFlag.setValue(false);
 
         initialiseUI();
         initialiseViewModel();
@@ -87,6 +91,7 @@ public class UpdateCardActivity extends AppCompatActivity {
         for(Uri u: activePhotoUris) Log.i("UpdateCardPhotos", "ACTIVE URI : "+u);
         for(Uri u: removedPhotoUris) Log.i("UpdateCardPhotos", "REMOVED URI: "+u);
 
+        updateCardViewModel.setUpdateCardListener(this);
         updateCardViewModel.saveTheChangesOfCard (cardToEdit, activePhotoUris, removedPhotoUris);
     }
 
@@ -98,6 +103,13 @@ public class UpdateCardActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        finish();
+    }
+
+    @Override
+    public void onCardUpdated() {
+        Toast.makeText(this, "Card Updated!", Toast.LENGTH_SHORT).show();
+        cardUpdateSuccessFlag.postValue(true);
         finish();
     }
 }

@@ -1,12 +1,15 @@
 package singareddy.productionapps.capturethemoment.card.getcards;
 
 import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -19,6 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.card.delete.DeleteCardsModelFactory;
+import singareddy.productionapps.capturethemoment.card.delete.DeleteCardsViewModel;
 import singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity;
 import singareddy.productionapps.capturethemoment.models.Card;
 
@@ -31,6 +36,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
 
     private Integer positionOfCardToBeDisplayed;
     private GetCardsViewModel getCardsViewModel;
+    private DeleteCardsViewModel deleteCardsViewModel;
     private ArrayList<CharSequence> allCardIds;
     private Fragment frontFragment, backFragment;
     private CardView uiCard;
@@ -52,6 +58,9 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     private void initialiseViewModel() {
         GetCardsModelFactory factory = GetCardsModelFactory.createFactory(this);
         getCardsViewModel = ViewModelProviders.of(this, factory).get(GetCardsViewModel.class);
+
+        DeleteCardsModelFactory deleteFactory = DeleteCardsModelFactory.createFactory(BigCardActivity.this);
+        deleteCardsViewModel = ViewModelProviders.of(BigCardActivity.this, factory).get(DeleteCardsViewModel.class);
     }
 
     private void initialiseUI() {
@@ -125,6 +134,21 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
 
     private void deleteCard() {
         // TODO: Logic to delete the card
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this)
+                .setTitle("Do you want to delete the card?")
+                .setMessage("Once deleted, the card will be removed permanently. You cannot undo the action.")
+                .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        deleteCardsViewModel.deleteCardWithId(cardToBeDisplayed.getCardId());
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
     }
 
     private void editCard() {

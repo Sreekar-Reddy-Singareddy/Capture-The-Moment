@@ -25,6 +25,7 @@ public class UpdateCardService {
     private FirebaseDatabase firebaseDB;
     private FirebaseStorage firebaseStorage;
     private DataSyncListener dataSyncListener;
+    private UpdateCardListener updateCardListener;
 
     public UpdateCardService() {
         firebaseDB = FirebaseDatabase.getInstance();
@@ -90,6 +91,7 @@ public class UpdateCardService {
                         deleteTheOldImages(cardToEdit, removedPhotoPaths);
                         dataSyncListener.onCardDownloadedFromFirebase(cardToEdit, activePhotoUris);
                         dataSyncListener.hasToCleanUpUnwantedCardData(cardToEdit, removedPhotoPaths);
+                        updateCardListener.onCardUpdated();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -102,5 +104,9 @@ public class UpdateCardService {
 
     public void setDataSyncListener(DataSyncListener dataSyncListener) {
         this.dataSyncListener = dataSyncListener;
+    }
+
+    public void setUpdateCardListener(UpdateCardListener updateCardListener) {
+        this.updateCardListener = updateCardListener;
     }
 }
