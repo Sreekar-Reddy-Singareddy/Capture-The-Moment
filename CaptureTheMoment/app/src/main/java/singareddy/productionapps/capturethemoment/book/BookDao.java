@@ -39,4 +39,7 @@ public interface BookDao {
 
     @Query("DELETE FROM Book")
     public int deleteAllData();
+
+    @Query("DELETE FROM Book WHERE bookId = :bookId")
+    public int deleteBook (String bookId);
 }

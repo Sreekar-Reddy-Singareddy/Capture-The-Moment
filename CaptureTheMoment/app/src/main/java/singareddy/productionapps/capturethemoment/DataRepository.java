@@ -24,6 +24,8 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import singareddy.productionapps.capturethemoment.book.delete.DeleteBookListener;
+import singareddy.productionapps.capturethemoment.book.delete.DeleteBookService;
 import singareddy.productionapps.capturethemoment.card.delete.DeleteCardListener;
 import singareddy.productionapps.capturethemoment.card.delete.DeleteCardService;
 import singareddy.productionapps.capturethemoment.card.edit.UpdateCardListener;
@@ -63,7 +65,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         UpdateBookListener, AuthListener.EmailLogin,
         AuthListener.Mobile, AuthListener.EmailSignup,
         DataSyncListener, ProfileListener,
-        AddCardListener, UpdateCardListener, DeleteCardListener {
+        AddCardListener, UpdateCardListener, DeleteCardListener, DeleteBookListener {
 
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
@@ -79,6 +81,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private AddCardService mAddCardService;
     private UpdateCardService mUpdateCardService;
     private DeleteCardService deleteCardService;
+    private DeleteBookService deleteBookService;
 
     private BookListener mBookListener;
     private GetBookListener mBookGetBookListenerListener;
@@ -89,6 +92,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private AddCardListener addCardListener;
     private UpdateCardListener updateCardListener;
     private DeleteCardListener deleteCardListener;
+    private DeleteBookListener deleteBookListener;
 
     private LocalDB mLocalDB;
     private Context mContext;
@@ -216,6 +220,63 @@ public class DataRepository implements AddBookListener, GetBookListener,
             e.printStackTrace();
         }
         return 0;
+    }
+
+    public void deleteBook(String bookId) {
+        if (deleteBookService == null) deleteBookService = new DeleteBookService();
+        List<String> secOwnerUids = getSecondaryOwnersOfThisBook(bookId);
+        List<String> allCardIds = getAllCardIdsOfThisBook(bookId);
+        deleteBookService.setDeleteBookListener(this);
+        deleteBookService.deleteBookFromServer(bookId, secOwnerUids, allCardIds);
+
+        // Another process to delete from local db
+        deleteBookFromLocalDB(bookId);
+    }
+
+    private List<String> getAllCardIdsOfThisBook(String bookId) {
+        try {
+            return mExecutor.submit(() -> mLocalDB.getCardDao().getAllCardIdsUnderBook(bookId)).get();
+        }
+        catch (Exception e) {
+            Log.i(TAG, "getSecondaryOwnersOfThisBook: "+e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    private List<String> getSecondaryOwnersOfThisBook(String bookId) {
+        try {
+            return mExecutor.submit(() -> mLocalDB.getSharedInfoDao().getSecOwnerUidsOf(bookId)).get();
+        }
+        catch (Exception e) {
+            Log.i(TAG, "getSecondaryOwnersOfThisBook: "+e.getLocalizedMessage());
+            return null;
+        }
+    }
+
+    private void deleteBookFromLocalDB(String bookId) {
+        try {
+            mExecutor.submit(() -> {
+               // Delete all images under each card under this book
+               List<String> allCardIds = mLocalDB.getCardDao().getAllCardIdsUnderBook(bookId);
+               for (String cardId : allCardIds) {
+                   File cardFolder = new File(mContext.getFilesDir(), "/"+CURRENT_USER_ID+"/"+cardId);
+                   Boolean deleted = cardFolder.delete();
+                   Log.i(TAG, "Images of "+cardId+" deleted = "+deleted);
+               }
+
+               // Delete all cards under this book
+                long deletedCards = mLocalDB.getCardDao().deleteAllCardsUnderBook(bookId);
+                Log.i(TAG, "Cards Deleted = "+deletedCards);
+
+                // Delete the book itself
+                int booksDeleted = mLocalDB.getBookDao().deleteBook(bookId);
+                Log.i(TAG, "Books Deleted = "+booksDeleted);
+
+            });
+        }
+        catch (Exception e) {
+            Log.i(TAG, "deleteBookFromLocalDB: Some Error Deleting Book: "+e.getLocalizedMessage());
+        }
     }
 
     // =================================================================== Authentication Module
@@ -433,6 +494,10 @@ public class DataRepository implements AddBookListener, GetBookListener,
 
     public void setDeleteCardListener(DeleteCardListener deleteCardListener) {
         this.deleteCardListener = deleteCardListener;
+    }
+
+    public void setDeleteBookListener(DeleteBookListener deleteBookListener) {
+        this.deleteBookListener = deleteBookListener;
     }
 
     // =================== Book Listeners
@@ -726,6 +791,14 @@ public class DataRepository implements AddBookListener, GetBookListener,
         }
         deleteCardListener.onCardDeleted(cardId);
     }
+
+    // =================== Delete Book Listener
+
+    @Override
+    public void onBookDeleted() {
+        deleteBookListener.onBookDeleted();
+    }
+
 
     // MARK: Async Tasks
     public class InsertBookTask extends AsyncTask<Object, Void, Void> {

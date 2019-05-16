@@ -43,4 +43,10 @@ public interface CardDao {
 
     @Query("DELETE FROM Card WHERE cardId = :cardId")
     public int deleteCard(String cardId);
+
+    @Query("SELECT cardId FROM Card WHERE bookId = :bookId")
+    public List<String> getAllCardIdsUnderBook (String bookId);
+
+    @Query("DELETE FROM Card WHERE bookId = :bookId")
+    public int deleteAllCardsUnderBook (String bookId);
 }

@@ -30,6 +30,8 @@ public class BookDao_Impl implements BookDao {
 
   private final SharedSQLiteStatement __preparedStmtOfDeleteAllData;
 
+  private final SharedSQLiteStatement __preparedStmtOfDeleteBook;
+
   public BookDao_Impl(RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfBook = new EntityInsertionAdapter<Book>(__db) {
@@ -114,6 +116,13 @@ public class BookDao_Impl implements BookDao {
         return _query;
       }
     };
+    this.__preparedStmtOfDeleteBook = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE FROM Book WHERE bookId = ?";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -150,6 +159,26 @@ public class BookDao_Impl implements BookDao {
     } finally {
       __db.endTransaction();
       __preparedStmtOfDeleteAllData.release(_stmt);
+    }
+  }
+
+  @Override
+  public int deleteBook(String bookId) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteBook.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      if (bookId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindString(_argIndex, bookId);
+      }
+      final int _result = _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+      return _result;
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfDeleteBook.release(_stmt);
     }
   }
 

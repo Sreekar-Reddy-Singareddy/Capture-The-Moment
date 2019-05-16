@@ -11,15 +11,19 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.book.delete.DeleteBookListener;
+import singareddy.productionapps.capturethemoment.book.delete.DeleteBookModelFactory;
+import singareddy.productionapps.capturethemoment.book.delete.DeleteBookViewModel;
 import singareddy.productionapps.capturethemoment.book.edit.EditBookActivity;
 import singareddy.productionapps.capturethemoment.models.Card;
 
-public class SmallCardsActivity extends AppCompatActivity implements SmallCardClickListener{
+public class SmallCardsActivity extends AppCompatActivity implements SmallCardClickListener, DeleteBookListener {
     private static String TAG = "SmallCardsActivity";
 
     // Utility members
@@ -31,6 +35,7 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     private List<String> smallCardImagePaths;
     private List<Card> smallCards;
     private Boolean ownerCanEdit;
+    private DeleteBookViewModel deleteBookViewModel;
 
     // UI members
     private RecyclerView cardsList;
@@ -43,12 +48,13 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     }
 
     private void initialiseViewModel() {
-        GetCardsModelFactory factory = GetCardsModelFactory.createFactory(this);
-        getCardsViewModel = ViewModelProviders.of(this, factory).get(GetCardsViewModel.class);
+        GetCardsModelFactory getCardsModelFactory = GetCardsModelFactory.createFactory(this);
+        getCardsViewModel = ViewModelProviders.of(this, getCardsModelFactory).get(GetCardsViewModel.class);
         getCardsViewModel.getAllCardsFor(bookId).observe(this,
                 new Observer<List<Card>>() {
                     @Override
                     public void onChanged(@Nullable List<Card> cards) {
+                        if (cards == null) return;
                         Log.i(TAG, "onChanged: Cards fetched: "+cards.size());
                         smallCards = cards;
                         smallCardImagePaths = new ArrayList<>();
@@ -65,6 +71,9 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
         ownerCanEdit = getCardsViewModel.getCurrentUserEditAccessForThisBook(bookId);
         Log.i(TAG, "initialiseViewModel: MY BOOK? "+ownerCanEdit);
         adapter.setOwnerCanEdit(ownerCanEdit);
+
+        DeleteBookModelFactory deleteBookModelFactory = DeleteBookModelFactory.createFactory(this);
+        deleteBookViewModel = ViewModelProviders.of(this, deleteBookModelFactory).get(DeleteBookViewModel.class);
     }
 
     private void initialiseUI() {
@@ -100,7 +109,8 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
             navigateToEditBookActivity();
         }
         else if (item.getItemId() == R.id.book_menu_item_trash) {
-
+            deleteBookViewModel.setDeleteBookListener(this);
+            deleteBookViewModel.deleteBook(bookId);
         }
         else if (item.getItemId() == R.id.book_menu_item_info) {
 
@@ -128,5 +138,11 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
         bigCardIntent.putExtra(BigCardActivity.SELECTED_CARD_POSITION, positionOfCardClicked);
         bigCardIntent.putCharSequenceArrayListExtra(BigCardActivity.ALL_CARD_IDS, allCardIds);
         startActivity(bigCardIntent);
+    }
+
+    @Override
+    public void onBookDeleted() {
+        Toast.makeText(this, "Book Deleted!", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

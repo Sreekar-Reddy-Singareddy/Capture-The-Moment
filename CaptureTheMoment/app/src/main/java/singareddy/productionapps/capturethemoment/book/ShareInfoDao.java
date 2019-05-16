@@ -38,4 +38,7 @@ public interface ShareInfoDao {
 
     @Query("DELETE FROM ShareInfo WHERE bookId=:bookId AND uid=:uid")
     public void deleteInfoFor(String bookId, String uid);
+
+    @Query("SELECT uid FROM ShareInfo WHERE bookId = :bookId")
+    public List<String> getSecOwnerUidsOf(String bookId);
 }

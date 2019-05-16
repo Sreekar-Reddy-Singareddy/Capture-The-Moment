@@ -341,4 +341,29 @@ public class ShareInfoDao_Impl implements ShareInfoDao {
       _statement.release();
     }
   }
+
+  @Override
+  public List<String> getSecOwnerUidsOf(String bookId) {
+    final String _sql = "SELECT uid FROM ShareInfo WHERE bookId = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    if (bookId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, bookId);
+    }
+    final Cursor _cursor = __db.query(_statement);
+    try {
+      final List<String> _result = new ArrayList<String>(_cursor.getCount());
+      while(_cursor.moveToNext()) {
+        final String _item;
+        _item = _cursor.getString(0);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
 }
