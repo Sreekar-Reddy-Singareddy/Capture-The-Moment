@@ -40,4 +40,7 @@ public interface CardDao {
 
     @Query("DELETE FROM ImagePath WHERE cardId = :cardId")
     public int deleteAllPathsOfCard (String cardId);
+
+    @Query("DELETE FROM Card WHERE cardId = :cardId")
+    public int deleteCard(String cardId);
 }

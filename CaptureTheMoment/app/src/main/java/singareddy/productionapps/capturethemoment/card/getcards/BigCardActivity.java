@@ -1,7 +1,6 @@
 package singareddy.productionapps.capturethemoment.card.getcards;
 
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,17 +16,19 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.card.delete.DeleteCardListener;
 import singareddy.productionapps.capturethemoment.card.delete.DeleteCardsModelFactory;
 import singareddy.productionapps.capturethemoment.card.delete.DeleteCardsViewModel;
 import singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity;
 import singareddy.productionapps.capturethemoment.models.Card;
 
-public class BigCardActivity extends AppCompatActivity implements BigCardClickListener {
+public class BigCardActivity extends AppCompatActivity implements BigCardClickListener, DeleteCardListener {
     private static final String FRONT_FACE = "FRONT";
     private static final String BACK_FACE = "BACK";
     private static String TAG = "BigCardActivity";
@@ -60,7 +61,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
         getCardsViewModel = ViewModelProviders.of(this, factory).get(GetCardsViewModel.class);
 
         DeleteCardsModelFactory deleteFactory = DeleteCardsModelFactory.createFactory(BigCardActivity.this);
-        deleteCardsViewModel = ViewModelProviders.of(BigCardActivity.this, factory).get(DeleteCardsViewModel.class);
+        deleteCardsViewModel = ViewModelProviders.of(BigCardActivity.this, deleteFactory).get(DeleteCardsViewModel.class);
     }
 
     private void initialiseUI() {
@@ -92,6 +93,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
                 new Observer<Card>() {
                     @Override
                     public void onChanged(@Nullable Card card) {
+                        if (card == null) return;
                         Log.i(TAG, "onChanged: CardID: "+card.getCardId());
                         cardToBeDisplayed = card;
                         getPathsForCard(card);
@@ -140,7 +142,8 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
                 .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        deleteCardsViewModel.deleteCardWithId(cardToBeDisplayed.getCardId());
+                        deleteCardsViewModel.setDeleteCardListener(BigCardActivity.this);
+                        deleteCardsViewModel.deleteCardWithId(cardToBeDisplayed);
                     }
                 })
                 .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -149,6 +152,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
                         dialog.dismiss();
                     }
                 });
+        dialogBuilder.create().show();
     }
 
     private void editCard() {
@@ -188,5 +192,12 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
         else if (item.getItemId() == R.id.add_card_menu_item_edit) editCard();
         else if (item.getItemId() == R.id.add_card_menu_item_delete) deleteCard();
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onCardDeleted(String cardId) {
+        Toast.makeText(this, "Card Deleted!", Toast.LENGTH_SHORT).show();
+        allCardIds.remove(cardId);
+        finish();
     }
 }

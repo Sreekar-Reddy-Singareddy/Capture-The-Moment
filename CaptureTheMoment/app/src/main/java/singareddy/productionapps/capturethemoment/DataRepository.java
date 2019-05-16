@@ -24,6 +24,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import singareddy.productionapps.capturethemoment.card.delete.DeleteCardListener;
 import singareddy.productionapps.capturethemoment.card.delete.DeleteCardService;
 import singareddy.productionapps.capturethemoment.card.edit.UpdateCardListener;
 import singareddy.productionapps.capturethemoment.card.edit.UpdateCardService;
@@ -63,7 +64,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         UpdateBookListener, AuthListener.EmailLogin,
         AuthListener.Mobile, AuthListener.EmailSignup,
         DataSyncListener, ProfileListener,
-        AddCardListener, UpdateCardListener {
+        AddCardListener, UpdateCardListener, DeleteCardListener {
 
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
@@ -88,6 +89,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private ProfileListener profileListener;
     private AddCardListener addCardListener;
     private UpdateCardListener updateCardListener;
+    private DeleteCardListener deleteCardListener;
 
     private LocalDB mLocalDB;
     private Context mContext;
@@ -390,9 +392,10 @@ public class DataRepository implements AddBookListener, GetBookListener,
         mUpdateCardService.saveTheChangesOfCard(cardToEdit, activePhotoUris, removedPhotoPaths);
     }
 
-    public void deleteCardWithId(String cardId) {
+    public void deleteCardWithId(Card card) {
         if (deleteCardService == null) deleteCardService = new DeleteCardService();
-        deleteCardService.deleteCardWithId(cardId);
+        deleteCardService.setDeleteCardListener(this);
+        deleteCardService.deleteCardWithId(card);
     }
 
     // =================== Setters
@@ -431,6 +434,10 @@ public class DataRepository implements AddBookListener, GetBookListener,
 
     public void setUpdateCardListener(UpdateCardListener updateCardListener) {
         this.updateCardListener = updateCardListener;
+    }
+
+    public void setDeleteCardListener(DeleteCardListener deleteCardListener) {
+        this.deleteCardListener = deleteCardListener;
     }
 
     // =================== Book Listeners
@@ -696,6 +703,23 @@ public class DataRepository implements AddBookListener, GetBookListener,
     @Override
     public void onCardUpdated() {
         updateCardListener.onCardUpdated();
+    }
+
+    // =================== Delete Card Listener
+
+    @Override
+    public void onCardDeleted(String cardId) {
+        try{
+            mExecutor.submit(()->{
+                mLocalDB.getCardDao().deleteAllFriendsOfCard(cardId);
+                mLocalDB.getCardDao().deleteAllPathsOfCard(cardId);
+                mLocalDB.getCardDao().deleteCard(cardId);
+            });
+        }
+        catch (Exception e) {
+            Log.i(TAG, "onCardDeleted: Error: "+e.getLocalizedMessage());
+        }
+        deleteCardListener.onCardDeleted(cardId);
     }
 
     // MARK: Async Tasks

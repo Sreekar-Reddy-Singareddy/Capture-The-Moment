@@ -23,26 +23,26 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_3/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_3/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_4/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_4/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_7/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_7/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_3.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_3.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_7.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_7.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/2/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/2/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/4/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/4/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/7/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/7/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/mergeJavaRes/debug/__content__.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardMoreDetailsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardMoreDetailsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardsViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/BigCardActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/BigCardActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,35 +70,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/BigCardActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="142" column="50" lean-forward="true" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
+            <state relative-caret-position="348">
+              <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
               <folding>
                 <element signature="docComment;field#cardToBeDisplayed#0;class#BigCardActivity#0" />
                 <element signature="method#onCreate#0;class#BigCardActivity#0" />
                 <element signature="method#initialiseViewModel#0;class#BigCardActivity#0" />
                 <element signature="method#initialiseUI#0;class#BigCardActivity#0" />
-                <element signature="class#2818:2983" />
-                <element signature="method#getCardWithId#0;class#BigCardActivity#0" />
-                <element signature="class#3448:3815" />
-                <element signature="method#onChanged#0;class#3448:3815" />
+                <element signature="class#3485:3650" />
                 <element signature="method#getPathsForCard#0;class#BigCardActivity#0" />
                 <element signature="method#previousCard#0;class#BigCardActivity#0" />
-                <element signature="e#4270#4407#1" />
+                <element signature="e#4937#5074#1" />
                 <element signature="method#nextCard#0;class#BigCardActivity#0" />
-                <element signature="e#4549#4686#1" />
+                <element signature="e#5216#5353#1" />
                 <element signature="method#showFrontFrag#0;class#BigCardActivity#0" />
                 <element signature="method#showBackFrag#0;class#BigCardActivity#0" />
-                <element signature="class#5839:6046" />
+                <element signature="method#deleteCard#0;class#BigCardActivity#0" />
+                <element signature="class#6165:6531" />
+                <element signature="method#onClick#0;class#6165:6531" />
+                <element signature="class#6582:6806" />
                 <element signature="method#editCard#0;class#BigCardActivity#0" />
-                <element signature="e#5248#5305#0" />
+                <element signature="e#6854#6911#0" />
                 <element signature="method#bigCardClicked#0;class#BigCardActivity#0" />
-                <element signature="e#5717#5975#0" />
+                <element signature="e#7323#7581#0" />
                 <element signature="method#onCreateOptionsMenu#0;class#BigCardActivity#0" />
                 <element signature="method#onOptionsItemSelected#0;class#BigCardActivity#0" />
-                <element signature="e#6298#6331#1" />
+                <element signature="e#7904#7937#1" />
               </folding>
             </state>
           </provider>
@@ -108,11 +108,11 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardsViewModel.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
-              <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#416#417#0" expanded="true" />
-                <element signature="e#458#459#0" expanded="true" />
+                <element signature="method#setDeleteCardListener#0;class#DeleteCardsViewModel#0" />
+                <element signature="e#794#795#0" expanded="true" />
+                <element signature="e#850#851#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,8 +121,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="394" column="32" selection-start-line="394" selection-start-column="32" selection-end-line="394" selection-end-column="32" />
+            <state relative-caret-position="275">
+              <caret line="397" column="34" selection-start-line="397" selection-start-column="34" selection-end-line="397" selection-end-column="34" />
               <folding>
                 <element signature="docComment;class#DataRepository#0" />
                 <element signature="e#4331#4686#0" />
@@ -207,6 +207,7 @@
                 <element signature="e#16328#16447#0" />
                 <element signature="e#16453#16572#0" />
                 <element signature="e#16578#16712#0" />
+                <element signature="e#17174#17308#0" />
                 <element signature="e#16761#16916#0" />
                 <element signature="e#16921#17079#0" />
                 <element signature="e#17084#17242#0" />
@@ -245,6 +246,7 @@
                 <element signature="e#25290#26225#1" />
                 <element signature="e#25590#26140#0" />
                 <element signature="e#26163#26215#0" />
+                <element signature="e#27355#27409#0" />
                 <element signature="e#26584#28042#0" />
                 <element signature="e#26685#28036#0" />
                 <element signature="e#27065#27554#1" />
@@ -262,15 +264,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+            <state relative-caret-position="189">
+              <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#472#473#0" expanded="true" />
-                <element signature="e#502#503#0" expanded="true" />
+                <element signature="method#DeleteCardService#0;class#DeleteCardService#0" />
+                <element signature="method#deleteCardFromFirebaseDB#0;class#DeleteCardService#0" />
+                <element signature="method#deleteCardIDFromItsBook#0;class#DeleteCardService#0" />
+                <element signature="class#1810:2084" />
+                <element signature="method#onDataChange#0;class#1862:2170" />
+                <element signature="method#onCancelled#0;class#1810:2084" />
+                <element signature="method#cardImagesDeleteFailure#0;class#DeleteCardService#0" />
+                <element signature="method#cardImagesDeleteSuccess#0;class#DeleteCardService#0" />
+                <element signature="method#cardDeleteFailure#0;class#DeleteCardService#0" />
+                <element signature="method#cardDeleteSuccess#0;class#DeleteCardService#0" />
+                <element signature="method#cardIdDeleteFailure#0;class#DeleteCardService#0" />
+                <element signature="method#cardIdDeleteSuccess#0;class#DeleteCardService#0" />
+                <element signature="method#setDeleteCardListener#0;class#DeleteCardService#0" />
               </folding>
             </state>
           </provider>
@@ -283,8 +295,8 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -334,7 +346,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/page_item_big_card.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_card_back.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/custom_views/CustomViewOne.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_date_range_yellow_24dp.xml" />
@@ -374,17 +385,18 @@
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardPhotosFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardModelFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/DataSyncListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardViewModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardMoreDetailsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardsModelFactory.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/BigCardActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardListener.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardsViewModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/BigCardActivity.java" />
       </list>
     </option>
   </component>
@@ -582,7 +594,7 @@
       <window_info anchor="right" id="Device File Explorer" order="6" side_tool="true" weight="0.35479257" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48840383" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48840383" weight="0.2532189" />
       <window_info id="Resources Explorer" order="1" show_stripe_button="false" sideWeight="0.49931788" weight="0.3297568" />
       <window_info id="Structure" order="2" sideWeight="0.5006821" side_tool="true" weight="0.3297568" />
       <window_info id="Image Layers" order="3" />
@@ -600,7 +612,7 @@
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5007153" side_tool="true" weight="0.3287858" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49928468" weight="0.5457026" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info anchor="bottom" id="Logcat" order="9" weight="0.5306958" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="9" visible="true" weight="0.5306958" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.3297568" />
       <window_info anchor="right" id="Preview" order="1" weight="0.3297568" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -623,13 +635,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/custom_views/FramedImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="55" column="42" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/page_item_card_image.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1073,13 +1078,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="31" column="55" lean-forward="true" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="531">
@@ -1164,54 +1162,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/BigCardActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="142" column="50" lean-forward="true" selection-start-line="142" selection-start-column="50" selection-end-line="142" selection-end-column="50" />
-          <folding>
-            <element signature="docComment;field#cardToBeDisplayed#0;class#BigCardActivity#0" />
-            <element signature="method#onCreate#0;class#BigCardActivity#0" />
-            <element signature="method#initialiseViewModel#0;class#BigCardActivity#0" />
-            <element signature="method#initialiseUI#0;class#BigCardActivity#0" />
-            <element signature="class#2818:2983" />
-            <element signature="method#getCardWithId#0;class#BigCardActivity#0" />
-            <element signature="class#3448:3815" />
-            <element signature="method#onChanged#0;class#3448:3815" />
-            <element signature="method#getPathsForCard#0;class#BigCardActivity#0" />
-            <element signature="method#previousCard#0;class#BigCardActivity#0" />
-            <element signature="e#4270#4407#1" />
-            <element signature="method#nextCard#0;class#BigCardActivity#0" />
-            <element signature="e#4549#4686#1" />
-            <element signature="method#showFrontFrag#0;class#BigCardActivity#0" />
-            <element signature="method#showBackFrag#0;class#BigCardActivity#0" />
-            <element signature="class#5839:6046" />
-            <element signature="method#editCard#0;class#BigCardActivity#0" />
-            <element signature="e#5248#5305#0" />
-            <element signature="method#bigCardClicked#0;class#BigCardActivity#0" />
-            <element signature="e#5717#5975#0" />
-            <element signature="method#onCreateOptionsMenu#0;class#BigCardActivity#0" />
-            <element signature="method#onOptionsItemSelected#0;class#BigCardActivity#0" />
-            <element signature="e#6298#6331#1" />
-          </folding>
+        <state relative-caret-position="57">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="43" column="52" selection-start-line="43" selection-start-column="52" selection-end-line="43" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardsViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
-          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#458#459#0" expanded="true" />
+            <element signature="method#setDeleteCardListener#0;class#DeleteCardsViewModel#0" />
+            <element signature="e#794#795#0" expanded="true" />
+            <element signature="e#850#851#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="394" column="32" selection-start-line="394" selection-start-column="32" selection-end-line="394" selection-end-column="32" />
+        <state relative-caret-position="275">
+          <caret line="397" column="34" selection-start-line="397" selection-start-column="34" selection-end-line="397" selection-end-column="34" />
           <folding>
             <element signature="docComment;class#DataRepository#0" />
             <element signature="e#4331#4686#0" />
@@ -1296,6 +1276,7 @@
             <element signature="e#16328#16447#0" />
             <element signature="e#16453#16572#0" />
             <element signature="e#16578#16712#0" />
+            <element signature="e#17174#17308#0" />
             <element signature="e#16761#16916#0" />
             <element signature="e#16921#17079#0" />
             <element signature="e#17084#17242#0" />
@@ -1334,6 +1315,7 @@
             <element signature="e#25290#26225#1" />
             <element signature="e#25590#26140#0" />
             <element signature="e#26163#26215#0" />
+            <element signature="e#27355#27409#0" />
             <element signature="e#26584#28042#0" />
             <element signature="e#26685#28036#0" />
             <element signature="e#27065#27554#1" />
@@ -1352,12 +1334,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+        <state relative-caret-position="189">
+          <caret line="45" column="5" lean-forward="true" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
+            <element signature="method#DeleteCardService#0;class#DeleteCardService#0" />
+            <element signature="method#deleteCardFromFirebaseDB#0;class#DeleteCardService#0" />
+            <element signature="method#deleteCardIDFromItsBook#0;class#DeleteCardService#0" />
+            <element signature="class#1810:2084" />
+            <element signature="method#onDataChange#0;class#1862:2170" />
+            <element signature="method#onCancelled#0;class#1810:2084" />
+            <element signature="method#cardImagesDeleteFailure#0;class#DeleteCardService#0" />
+            <element signature="method#cardImagesDeleteSuccess#0;class#DeleteCardService#0" />
+            <element signature="method#cardDeleteFailure#0;class#DeleteCardService#0" />
+            <element signature="method#cardDeleteSuccess#0;class#DeleteCardService#0" />
+            <element signature="method#cardIdDeleteFailure#0;class#DeleteCardService#0" />
+            <element signature="method#cardIdDeleteSuccess#0;class#DeleteCardService#0" />
+            <element signature="method#setDeleteCardListener#0;class#DeleteCardService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/BigCardActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="95" column="49" selection-start-line="95" selection-start-column="49" selection-end-line="95" selection-end-column="49" />
+          <folding>
+            <element signature="docComment;field#cardToBeDisplayed#0;class#BigCardActivity#0" />
+            <element signature="method#onCreate#0;class#BigCardActivity#0" />
+            <element signature="method#initialiseViewModel#0;class#BigCardActivity#0" />
+            <element signature="method#initialiseUI#0;class#BigCardActivity#0" />
+            <element signature="class#3485:3650" />
+            <element signature="method#getPathsForCard#0;class#BigCardActivity#0" />
+            <element signature="method#previousCard#0;class#BigCardActivity#0" />
+            <element signature="e#4937#5074#1" />
+            <element signature="method#nextCard#0;class#BigCardActivity#0" />
+            <element signature="e#5216#5353#1" />
+            <element signature="method#showFrontFrag#0;class#BigCardActivity#0" />
+            <element signature="method#showBackFrag#0;class#BigCardActivity#0" />
+            <element signature="method#deleteCard#0;class#BigCardActivity#0" />
+            <element signature="class#6165:6531" />
+            <element signature="method#onClick#0;class#6165:6531" />
+            <element signature="class#6582:6806" />
+            <element signature="method#editCard#0;class#BigCardActivity#0" />
+            <element signature="e#6854#6911#0" />
+            <element signature="method#bigCardClicked#0;class#BigCardActivity#0" />
+            <element signature="e#7323#7581#0" />
+            <element signature="method#onCreateOptionsMenu#0;class#BigCardActivity#0" />
+            <element signature="method#onOptionsItemSelected#0;class#BigCardActivity#0" />
+            <element signature="e#7904#7937#1" />
           </folding>
         </state>
       </provider>
