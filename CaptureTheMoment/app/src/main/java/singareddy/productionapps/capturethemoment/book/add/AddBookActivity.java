@@ -33,7 +33,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     Button createButton;
     ImageButton addNewSecOwner;
     RecyclerView secOwnersList;
-    List<SecondaryOwner> secOwnersData;
+    List<SecondaryOwner> activeSecOwners;
     SecOwnersAdapter adapter;
 
     @Override
@@ -42,10 +42,10 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
         setContentView(R.layout.activity_add_book);
 
         initialiseViewModel();
-        secOwnersData = new ArrayList<>();
-        secOwnersData.add(new SecondaryOwner("ushasree@gmail.com", false));
-        secOwnersData.add(new SecondaryOwner("gopi@gmail.com", true));
-        secOwnersData.add(new SecondaryOwner("sreekesh@gmail.com", false));
+        activeSecOwners = new ArrayList<>();
+        activeSecOwners.add(new SecondaryOwner("ushasree@gmail.com", false));
+        activeSecOwners.add(new SecondaryOwner("gopi@gmail.com", true));
+        activeSecOwners.add(new SecondaryOwner("sreekesh@gmail.com", false));
         initialiseUI();
     }
 
@@ -63,7 +63,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
         addNewSecOwner = findViewById(R.id.add_book_ib_add_sec_owner);
         secOwnersList = findViewById(R.id.add_book_rv_sec_owners);
         createButton = findViewById(R.id.add_book_bt_create);
-        adapter = new SecOwnersAdapter(this, secOwnersData);
+        adapter = new SecOwnersAdapter(this, activeSecOwners);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         secOwnersList.setAdapter(adapter);
         secOwnersList.setLayoutManager(layoutManager);
@@ -72,7 +72,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     public void addNewSecOwner (View view) {
         if (view == addNewSecOwner) {
             SecondaryOwner secondaryOwnerObj = new SecondaryOwner();
-            secOwnersData.add(0, secondaryOwnerObj);
+            activeSecOwners.add(0, secondaryOwnerObj);
             adapter.notifyDataSetChanged();
         }
     }
@@ -80,9 +80,9 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     public void createBook (View view) {
         if (view == createButton) {
             Log.i(TAG, "createBook: Book name :"+bookName.getText());
-            Log.i(TAG, "createBook: Sec owners: "+secOwnersData.size());
+            Log.i(TAG, "createBook: Sec owners: "+ activeSecOwners.size());
             createButton.setEnabled(false);
-            addBookViewModel.createThisBook(bookName.getText().toString(), secOwnersData);
+            addBookViewModel.createThisBook(bookName.getText().toString(), activeSecOwners);
             Log.i(TAG, "createBook: Enabled: "+createButton.isEnabled());
         }
     }
@@ -151,9 +151,14 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
                 Log.i(TAG, "onDismiss: SELF_OWNER: "+selfUsername);
                 // Remove this secondary owner
                 SecondaryOwner s = new SecondaryOwner(selfUsername);
-                secOwnersData.removeIf((owner) -> (owner.equals(s)));
+                List<SecondaryOwner> tempActiveOwners = new ArrayList<>();
+                for (SecondaryOwner owner: activeSecOwners) {
+                    if (!owner.equals(s)) tempActiveOwners.add(owner);
+                }
+                activeSecOwners.clear();
+                activeSecOwners.addAll(tempActiveOwners);
                 // Call viewmodel again
-                addBookViewModel.createThisBook(bookName.getText().toString(), secOwnersData);
+                addBookViewModel.createThisBook(bookName.getText().toString(), activeSecOwners);
                 adapter.notifyDataSetChanged();
             }
         });

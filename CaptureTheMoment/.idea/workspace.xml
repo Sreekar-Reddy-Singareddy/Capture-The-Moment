@@ -12,12 +12,65 @@
   <component name="ChangeListManager">
     <list default="true" id="dabca18c-fae9-4e4c-9ee5-fdf01046dba7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../App Documentation.numbers" beforeDir="false" afterPath="$PROJECT_DIR$/../App Documentation.numbers" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Capture The Moment.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_dep/debug/package_dependencies/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_dep/debug/package_dependencies/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_0/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_0/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_1/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_1/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_3/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_3/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_4/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_4/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_5/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_5/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_6/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_6/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_7/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_7/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_9/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_9/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/processInstantRunDebugResourcesApk/package_resources-debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/processInstantRunDebugResourcesApk/package_resources-debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_all_books.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_fragment_all_books.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_list_item_book.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_list_item_book.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_1.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_1.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_3.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_3.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_5.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_5.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_6.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_6.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_7.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_7.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/4/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/4/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/5/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/5/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/ShareInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/ShareInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/SecOwnersAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/SecOwnersAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all_books.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all_books.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,279 +98,271 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="106" column="56" lean-forward="true" selection-start-line="106" selection-start-column="56" selection-end-line="106" selection-end-column="56" />
+            <state relative-caret-position="304">
+              <caret line="424" column="73" selection-start-line="424" selection-start-column="73" selection-end-line="424" selection-end-column="73" />
               <folding>
-                <element signature="method#onCreate#0;class#SmallCardsActivity#0" />
-                <element signature="method#initialiseViewModel#0;class#SmallCardsActivity#0" />
-                <element signature="class#1741:2582" />
-                <element signature="method#onChanged#0;class#1741:2582" />
-                <element signature="e#2164#2424#1" />
-                <element signature="method#initialiseUI#0;class#SmallCardsActivity#0" />
-                <element signature="method#onCreateOptionsMenu#0;class#SmallCardsActivity#0" />
-                <element signature="e#3803#3871#1" />
-                <element signature="e#4059#4112#1" />
-                <element signature="e#4640#4686#1" />
-                <element signature="e#4322#4355#1" />
-                <element signature="method#navigateToEditBookActivity#0;class#SmallCardsActivity#0" />
-                <element signature="method#onSmallCardClicked#0;class#SmallCardsActivity#0" />
-                <element signature="method#onBookDeleted#0;class#SmallCardsActivity#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/delete/DeleteBookViewModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#324#325#0" expanded="true" />
-                <element signature="e#360#361#0" expanded="true" />
-                <element signature="e#765#766#0" expanded="true" />
-                <element signature="e#799#800#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="798" column="43" selection-start-line="798" selection-start-column="43" selection-end-line="798" selection-end-column="43" />
-              <folding>
-                <element signature="docComment;class#DataRepository#0" />
-                <element signature="e#4512#4867#0" />
-                <element signature="e#4873#4971#0" />
-                <element signature="e#4873#5732#0" />
-                <element signature="e#5072#5240#1" />
-                <element signature="e#5343#5694#1" />
-                <element signature="e#5738#5892#0" />
-                <element signature="e#5986#6201#0" />
-                <element signature="e#5986#6509#0" />
-                <element signature="e#6328#6442#1" />
-                <element signature="e#6515#6629#0" />
-                <element signature="e#6515#6991#0" />
-                <element signature="e#6699#6795#0" />
-                <element signature="e#6848#6985#0" />
-                <element signature="e#6997#7341#0" />
-                <element signature="e#7077#7198#0" />
-                <element signature="e#7227#7335#0" />
-                <element signature="e#7347#7703#0" />
-                <element signature="e#7474#7579#0" />
-                <element signature="e#7632#7676#0" />
-                <element signature="e#7709#8186#0" />
-                <element signature="e#7898#7967#1" />
-                <element signature="e#8192#8637#0" />
-                <element signature="e#8246#8463#0" />
-                <element signature="e#8493#8537#0" />
-                <element signature="e#8569#8613#0" />
-                <element signature="e#8643#9085#0" />
-                <element signature="e#8696#8911#0" />
-                <element signature="e#8941#8985#0" />
-                <element signature="e#9017#9061#0" />
-                <element signature="e#9658#10000#0" />
-                <element signature="e#9732#9847#0" />
-                <element signature="e#9876#9994#0" />
-                <element signature="e#9577#9686#0" />
-                <element signature="e#9656#9698#0" />
-                <element signature="e#9709#9758#0" />
-                <element signature="e#9503#9650#0" />
-                <element signature="e#9567#9609#0" />
-                <element signature="e#9598#9644#0" />
-                <element signature="e#9749#9792#1" />
-                <element signature="e#9620#9650#0" />
-                <element signature="e#9091#9460#0" />
-                <element signature="e#9285#9397#1" />
-                <element signature="e#9466#9735#0" />
-                <element signature="e#9564#9621#1" />
-                <element signature="e#9741#10028#0" />
-                <element signature="e#9846#9957#1" />
-                <element signature="e#10034#10120#0" />
-                <element signature="e#10126#10770#0" />
-                <element signature="e#10166#10607#0" />
-                <element signature="e#10210#10527#0" />
-                <element signature="e#10668#10764#0" />
-                <element signature="e#10776#11349#0" />
-                <element signature="e#11355#11621#0" />
-                <element signature="e#11422#11479#1" />
-                <element signature="e#11627#11848#0" />
-                <element signature="e#11854#12165#0" />
-                <element signature="e#11946#12003#1" />
-                <element signature="e#12171#12415#0" />
-                <element signature="e#12253#12310#1" />
-                <element signature="e#12421#12583#0" />
-                <element signature="e#12589#13005#0" />
-                <element signature="e#12776#12839#1" />
-                <element signature="e#13011#13417#0" />
-                <element signature="e#13083#13240#0" />
-                <element signature="e#13270#13314#0" />
-                <element signature="e#13346#13390#0" />
-                <element signature="e#13423#13778#0" />
-                <element signature="e#13489#13601#0" />
-                <element signature="e#13631#13675#0" />
-                <element signature="e#13707#13751#0" />
-                <element signature="e#13784#14131#0" />
-                <element signature="e#13849#13954#0" />
-                <element signature="e#13984#14028#0" />
-                <element signature="e#14060#14104#0" />
-                <element signature="e#14137#14502#0" />
-                <element signature="e#14213#14325#0" />
-                <element signature="e#14355#14399#0" />
-                <element signature="e#14431#14475#0" />
-                <element signature="e#14508#15076#0" />
-                <element signature="e#14610#14898#0" />
-                <element signature="e#14928#14972#0" />
-                <element signature="e#15004#15048#0" />
-                <element signature="e#15082#15491#0" />
-                <element signature="e#15497#15733#0" />
-                <element signature="e#15775#15894#0" />
-                <element signature="e#15900#16032#0" />
-                <element signature="e#16038#16167#0" />
-                <element signature="e#16173#16317#0" />
-                <element signature="e#16323#16462#0" />
-                <element signature="e#16468#16603#0" />
-                <element signature="e#16609#16728#0" />
-                <element signature="e#16734#16853#0" />
-                <element signature="e#16859#16993#0" />
-                <element signature="e#16999#17133#0" />
-                <element signature="e#19683#19817#0" />
-                <element signature="e#17139#17336#0" />
-                <element signature="e#17341#17499#0" />
-                <element signature="e#17504#17662#0" />
-                <element signature="e#17664#17679#0" />
-                <element signature="e#17827#17963#0" />
-                <element signature="e#17969#18622#0" />
-                <element signature="e#18461#18616#1" />
-                <element signature="e#18629#18901#0" />
-                <element signature="e#19540#19609#1" />
-                <element signature="e#19073#19230#0" />
-                <element signature="e#19286#19423#0" />
-                <element signature="e#19429#19599#0" />
-                <element signature="e#20248#20309#1" />
-                <element signature="e#19773#19915#0" />
-                <element signature="e#19971#20096#0" />
-                <element signature="e#20102#20256#0" />
-                <element signature="e#20842#20889#1" />
-                <element signature="e#20944#21002#1" />
-                <element signature="e#21098#21149#1" />
-                <element signature="e#21203#21257#1" />
-                <element signature="e#20768#21781#0" />
-                <element signature="e#21787#22169#0" />
-                <element signature="e#22175#22446#0" />
-                <element signature="e#22452#22779#0" />
-                <element signature="e#22549#22650#0" />
-                <element signature="e#22679#22773#0" />
-                <element signature="e#22785#23141#0" />
-                <element signature="e#22970#23135#1" />
-                <element signature="e#23147#23587#0" />
-                <element signature="e#23593#24360#0" />
-                <element signature="e#23655#24205#0" />
-                <element signature="e#23912#24195#1" />
-                <element signature="e#24234#24278#0" />
-                <element signature="e#24310#24354#0" />
-                <element signature="e#24366#25236#0" />
-                <element signature="e#24428#25072#0" />
-                <element signature="e#24792#25062#1" />
-                <element signature="e#25110#25154#0" />
-                <element signature="e#25186#25230#0" />
-                <element signature="e#25242#25624#0" />
-                <element signature="e#25298#25468#0" />
-                <element signature="e#25498#25542#0" />
-                <element signature="e#25574#25618#0" />
-                <element signature="e#25630#26985#0" />
-                <element signature="e#26044#26979#1" />
-                <element signature="e#26344#26894#0" />
-                <element signature="e#26917#26969#0" />
-                <element signature="e#27621#27669#1" />
-                <element signature="e#27766#27817#1" />
-                <element signature="e#27330#27826#0" />
-                <element signature="e#27398#27656#0" />
-                <element signature="e#27429#27644#0" />
-                <element signature="e#27685#27770#0" />
-                <element signature="e#30686#30687#0" expanded="true" />
-                <element signature="e#30719#30720#0" expanded="true" />
-                <element signature="e#27883#29341#0" />
-                <element signature="e#27984#29335#0" />
-                <element signature="e#28364#28853#1" />
-                <element signature="e#28537#28839#1" />
-                <element signature="e#28871#29300#1" />
-                <element signature="e#29347#30199#0" />
-                <element signature="e#29442#29802#0" />
-                <element signature="e#29537#29717#0" />
-                <element signature="e#29587#29677#1" />
-                <element signature="e#29750#29792#0" />
-                <element signature="e#29812#30193#0" />
-                <element signature="e#30104#30183#1" />
+                <element signature="method#AuthService#0;class#AuthService#0" />
+                <element signature="method#registerEmailUser#0;class#AuthService#0" />
+                <element signature="class#2726:2979" />
+                <element signature="method#onSuccess#0;class#2726:2979" />
+                <element signature="class#3038:3308" />
+                <element signature="method#onFailure#0;class#3038:3308" />
+                <element signature="method#loginUserWithEmail#0;class#AuthService#0" />
+                <element signature="class#3647:3891" />
+                <element signature="method#onSuccess#0;class#3647:3891" />
+                <element signature="class#3947:4194" />
+                <element signature="method#onFailure#0;class#3947:4194" />
+                <element signature="method#authorizePhoneCredentials#0;class#AuthService#0" />
+                <element signature="e#4566#4842#1" />
+                <element signature="class#4981:6158" />
+                <element signature="method#onVerificationCompleted#0;class#4981:6158" />
+                <element signature="method#onCodeAutoRetrievalTimeOut#0;class#4981:6158" />
+                <element signature="method#onCodeSent#0;class#4981:6158" />
+                <element signature="method#onVerificationFailed#0;class#4981:6158" />
+                <element signature="method#verifyCredential#0;class#AuthService#0" />
+                <element signature="class#6460:7018" />
+                <element signature="method#onComplete#0;class#6460:7018" />
+                <element signature="e#6650#6829#1" />
+                <element signature="e#6859#6978#1" />
+                <element signature="method#setupInitialData#0;class#AuthService#0" />
+                <element signature="e#7073#7143#0" />
+                <element signature="method#setupUserProfile#0;class#AuthService#0" />
+                <element signature="class#8041:9260" />
+                <element signature="method#onDataChange#0;class#8041:9260" />
+                <element signature="e#8336#8875#1" />
+                <element signature="e#8502#8605#1" />
+                <element signature="e#8674#8857#1" />
+                <element signature="e#8897#8992#1" />
+                <element signature="method#onCancelled#0;class#8041:9260" />
+                <element signature="class#9473:9892" />
+                <element signature="method#onComplete#0;class#9473:9892" />
+                <element signature="e#9628#9731#1" />
+                <element signature="e#9753#9868#1" />
+                <element signature="e#10044#10249#1" />
+                <element signature="e#10344#10584#1" />
+                <element signature="method#downloadUserProfilePicture#0;class#AuthService#0" />
+                <element signature="e#10815#11016#1" />
+                <element signature="e#10829#10867#0" />
+                <element signature="class#11193:11516" />
+                <element signature="method#onProgress#0;class#11193:11516" />
+                <element signature="class#11560:11903" />
+                <element signature="method#onSuccess#0;class#11560:11903" />
+                <element signature="class#11947:12196" />
+                <element signature="method#onFailure#0;class#11947:12196" />
+                <element signature="method#setupBooksOwnedByUser#0;class#AuthService#0" />
+                <element signature="class#12477:13105" />
+                <element signature="method#onDataChange#0;class#12477:13105" />
+                <element signature="e#12892#12973#1" />
+                <element signature="method#onCancelled#0;class#12477:13175" />
+                <element signature="method#setupBooksSharedWithUser#0;class#AuthService#0" />
+                <element signature="class#13454:14228" />
+                <element signature="method#onDataChange#0;class#13454:14228" />
+                <element signature="e#13885#14090#1" />
+                <element signature="e#13971#14072#1" />
+                <element signature="method#onCancelled#0;class#13454:14228" />
+                <element signature="method#updateUserProfile#0;class#AuthService#0" />
+                <element signature="class#14485:14686" />
+                <element signature="method#onSuccess#0;class#14485:14686" />
+                <element signature="class#14736:14961" />
+                <element signature="method#onFailure#0;class#14736:14961" />
+                <element signature="method#saveProfilePic#0;class#AuthService#0" />
+                <element signature="class#15453:15761" />
+                <element signature="method#onProgress#0;class#15453:15761" />
+                <element signature="class#15805:16126" />
+                <element signature="method#onSuccess#0;class#15805:16126" />
+                <element signature="class#16170:16418" />
+                <element signature="method#onFailure#0;class#16170:16418" />
+                <element signature="docComment;method#downloadBookWithId#0;class#AuthService#0" />
+                <element signature="method#downloadBookWithId#0;class#AuthService#0" />
+                <element signature="class#16854:17523" />
+                <element signature="method#onDataChange#0;class#16854:17523" />
+                <element signature="e#17051#17266#1" />
+                <element signature="method#onCancelled#0;class#16854:17523" />
+                <element signature="method#downloadCardsOfBook#0;class#AuthService#0" />
+                <element signature="class#17782:18056" />
+                <element signature="method#onDataChange#0;class#17782:18084" />
+                <element signature="e#18162#18224#1" />
+                <element signature="method#onCancelled#0;class#17782:18056" />
+                <element signature="e#18865#18908#1" />
+                <element signature="e#19196#19282#0" />
+                <element signature="e#19305#19373#0" />
+                <element signature="method#onCancelled#0;class#18629:19043" />
+                <element signature="class#19668:19903" />
+                <element signature="method#onSuccess#0;class#19668:19934" />
+                <element signature="method#setEmailSignupListener#0;class#AuthService#0" />
+                <element signature="method#setEmailLoginListener#0;class#AuthService#0" />
+                <element signature="method#setMobileAuthListener#0;class#AuthService#0" />
+                <element signature="method#setDataSyncListener#0;class#AuthService#0" />
+                <element signature="method#setProfileListener#0;class#AuthService#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/delete/DeleteBookService.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="139" column="59" selection-start-line="139" selection-start-column="59" selection-end-line="139" selection-end-column="59" />
+            <state relative-caret-position="256">
+              <caret line="688" column="31" selection-start-line="688" selection-start-column="31" selection-end-line="688" selection-end-column="31" />
               <folding>
-                <element signature="method#DeleteBookService#0;class#DeleteBookService#0" />
-                <element signature="method#deleteFromOwner#0;class#DeleteBookService#0" />
-                <element signature="class#1202:1476" />
-                <element signature="method#onDataChange#0;class#1202:1501" />
-                <element signature="class#1722:1940" />
-                <element signature="method#onSuccess#0;class#1802:2057" />
-                <element signature="class#2047:2269" />
-                <element signature="method#onFailure#0;class#2121:2392" />
-                <element signature="method#onCancelled#0;class#1202:1476" />
-                <element signature="method#deleteFromSecOwners#0;class#DeleteBookService#0" />
-                <element signature="e#2651#2693#1" />
-                <element signature="class#2960:3158" />
-                <element signature="method#onSuccess#0;class#2960:3198" />
-                <element signature="class#3259:3461" />
-                <element signature="method#onFailure#0;class#3259:3491" />
-                <element signature="method#deleteCards#0;class#DeleteBookService#0" />
-                <element signature="e#3717#3762#1" />
-                <element signature="class#3902:4100" />
-                <element signature="method#onSuccess#0;class#3902:4144" />
-                <element signature="class#4148:4350" />
-                <element signature="method#onFailure#0;class#4205:4459" />
-                <element signature="method#deleteCardImages#0;class#DeleteBookService#0" />
-                <element signature="e#4673#4713#1" />
-                <element signature="class#5769:5951" />
-                <element signature="method#onFailure#0;class#5769:5991" />
+                <element signature="docComment;class#DataRepository#0" />
+                <element signature="e#4837#5192#0" />
+                <element signature="e#5198#5296#0" />
+                <element signature="e#5198#6111#0" />
+                <element signature="e#5397#5619#1" />
+                <element signature="e#5722#6073#1" />
+                <element signature="e#6165#6166#0" expanded="true" />
+                <element signature="e#6204#6205#0" expanded="true" />
+                <element signature="e#6211#6365#0" />
+                <element signature="e#6459#6674#0" />
+                <element signature="e#6459#6982#0" />
+                <element signature="e#6801#6915#1" />
+                <element signature="e#6988#7102#0" />
+                <element signature="e#6988#7464#0" />
+                <element signature="e#7172#7268#0" />
+                <element signature="e#7321#7458#0" />
+                <element signature="e#7470#7814#0" />
+                <element signature="e#7550#7671#0" />
+                <element signature="e#7700#7808#0" />
+                <element signature="e#7820#8176#0" />
+                <element signature="e#7947#8052#0" />
+                <element signature="e#8105#8149#0" />
+                <element signature="e#8182#8659#0" />
+                <element signature="e#8371#8440#1" />
+                <element signature="e#8665#9110#0" />
+                <element signature="e#8719#8936#0" />
+                <element signature="e#8966#9010#0" />
+                <element signature="e#9042#9086#0" />
+                <element signature="e#9116#9558#0" />
+                <element signature="e#9169#9384#0" />
+                <element signature="e#9414#9458#0" />
+                <element signature="e#9490#9534#0" />
+                <element signature="e#9564#10062#0" />
+                <element signature="e#10068#10409#0" />
+                <element signature="e#10142#10256#0" />
+                <element signature="e#10285#10403#0" />
+                <element signature="e#10415#10762#0" />
+                <element signature="e#10494#10609#0" />
+                <element signature="e#10638#10756#0" />
+                <element signature="e#10768#11894#0" />
+                <element signature="e#10832#11747#0" />
+                <element signature="e#10863#11735#0" />
+                <element signature="e#11082#11335#1" />
+                <element signature="e#11776#11888#0" />
+                <element signature="e#11900#12269#0" />
+                <element signature="e#12094#12206#1" />
+                <element signature="e#12275#12544#0" />
+                <element signature="e#12373#12430#1" />
+                <element signature="e#12550#12837#0" />
+                <element signature="e#12655#12766#1" />
+                <element signature="e#12843#12929#0" />
+                <element signature="e#12935#13579#0" />
+                <element signature="e#12975#13416#0" />
+                <element signature="e#13019#13336#0" />
+                <element signature="e#13477#13573#0" />
+                <element signature="e#13585#14158#0" />
+                <element signature="e#14164#14430#0" />
+                <element signature="e#14231#14288#1" />
+                <element signature="e#14436#14657#0" />
+                <element signature="e#14663#14974#0" />
+                <element signature="e#14755#14812#1" />
+                <element signature="e#14980#15224#0" />
+                <element signature="e#15062#15119#1" />
+                <element signature="e#15230#15392#0" />
+                <element signature="e#15398#15814#0" />
+                <element signature="e#15585#15648#1" />
+                <element signature="e#15820#16226#0" />
+                <element signature="e#15892#16049#0" />
+                <element signature="e#16079#16123#0" />
+                <element signature="e#16155#16199#0" />
+                <element signature="e#16232#16587#0" />
+                <element signature="e#16298#16410#0" />
+                <element signature="e#16440#16484#0" />
+                <element signature="e#16516#16560#0" />
+                <element signature="e#16593#16940#0" />
+                <element signature="e#16658#16763#0" />
+                <element signature="e#16793#16837#0" />
+                <element signature="e#16869#16913#0" />
+                <element signature="e#16946#17311#0" />
+                <element signature="e#17022#17134#0" />
+                <element signature="e#17164#17208#0" />
+                <element signature="e#17240#17284#0" />
+                <element signature="e#17317#17885#0" />
+                <element signature="e#17419#17707#0" />
+                <element signature="e#17737#17781#0" />
+                <element signature="e#17813#17857#0" />
+                <element signature="e#17891#18300#0" />
+                <element signature="e#18306#18542#0" />
+                <element signature="e#18584#18703#0" />
+                <element signature="e#18709#18841#0" />
+                <element signature="e#18847#18976#0" />
+                <element signature="e#18982#19126#0" />
+                <element signature="e#19132#19271#0" />
+                <element signature="e#19277#19412#0" />
+                <element signature="e#19418#19537#0" />
+                <element signature="e#19543#19662#0" />
+                <element signature="e#19668#19802#0" />
+                <element signature="e#19808#19942#0" />
+                <element signature="e#19948#20082#0" />
+                <element signature="e#20088#20285#0" />
+                <element signature="e#20290#20448#0" />
+                <element signature="e#20453#20611#0" />
+                <element signature="e#20613#20628#0" />
+                <element signature="e#20776#20912#0" />
+                <element signature="e#20918#21571#0" />
+                <element signature="e#21410#21565#1" />
+                <element signature="e#21578#21850#0" />
+                <element signature="e#22022#22179#0" />
+                <element signature="e#22235#22372#0" />
+                <element signature="e#22378#22548#0" />
+                <element signature="e#22722#22864#0" />
+                <element signature="e#22920#23045#0" />
+                <element signature="e#23051#23205#0" />
+                <element signature="e#23717#24730#0" />
+                <element signature="e#24736#25118#0" />
+                <element signature="e#25124#25395#0" />
+                <element signature="e#25401#25728#0" />
+                <element signature="e#25498#25599#0" />
+                <element signature="e#25628#25722#0" />
+                <element signature="e#25734#26090#0" />
+                <element signature="e#25919#26084#1" />
+                <element signature="e#26542#27309#0" />
+                <element signature="e#26604#27154#0" />
+                <element signature="e#26861#27144#1" />
+                <element signature="e#27183#27227#0" />
+                <element signature="e#27259#27303#0" />
+                <element signature="e#27315#28185#0" />
+                <element signature="e#27377#28021#0" />
+                <element signature="e#27741#28011#1" />
+                <element signature="e#28059#28103#0" />
+                <element signature="e#28135#28179#0" />
+                <element signature="e#28191#28573#0" />
+                <element signature="e#28247#28417#0" />
+                <element signature="e#28447#28491#0" />
+                <element signature="e#28523#28567#0" />
+                <element signature="e#28579#29934#0" />
+                <element signature="e#28993#29928#1" />
+                <element signature="e#29293#29843#0" />
+                <element signature="e#29866#29918#0" />
+                <element signature="e#30279#30775#0" />
+                <element signature="e#30347#30605#0" />
+                <element signature="e#30378#30593#0" />
+                <element signature="e#30634#30719#0" />
+                <element signature="e#30930#32388#0" />
+                <element signature="e#31031#32382#0" />
+                <element signature="e#31411#31900#1" />
+                <element signature="e#31584#31886#1" />
+                <element signature="e#31918#32347#1" />
+                <element signature="e#32394#33246#0" />
+                <element signature="e#32489#32849#0" />
+                <element signature="e#32584#32764#0" />
+                <element signature="e#32634#32724#1" />
+                <element signature="e#32797#32839#0" />
+                <element signature="e#32859#33240#0" />
+                <element signature="e#33151#33230#1" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/ShareInfoDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -336,7 +381,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>SecondaryOwnerFB</find>
       <find>MARK:</find>
       <find>mBookListener</find>
       <find>mAddBookListener</find>
@@ -366,6 +410,7 @@
       <find>Data sync</find>
       <find>CURRENT_USER_ID</find>
       <find>Book Mo</find>
+      <find>imageUris</find>
     </findStrings>
     <replaceStrings>
       <replace>ShareInfo</replace>
@@ -384,12 +429,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_add_card.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/add_card_outline.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/getbooks/GetBooksAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/SmallCardsAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/SmallCardsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/GetCardsViewModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileUpdateActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/image_pager_outline.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_card_more_details.xml" />
@@ -420,7 +459,6 @@
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/BigCardActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/edit/OwnerRemoveClickListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/SecOwnersAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataSyncListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/edit/UpdateBookListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/edit/UpdateBookViewModel.java" />
@@ -433,8 +471,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/delete/DeleteBookListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/delete/DeleteBookViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/delete/DeleteBookService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_all_books.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/SecOwnersAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" />
       </list>
     </option>
   </component>
@@ -452,6 +497,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -470,27 +517,10 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="capturethemoment" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CaptureTheMoment" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="capturethemoment" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CaptureTheMoment" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="capturethemoment" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="book" type="462c0819:PsiDirectoryNode" />
-              <item name="delete" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -502,7 +532,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.recentlyUsedThemes" value="Platform.MaterialComponents.Light&#10;Platform.MaterialComponents.Light.Dialog" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="device.picker.selection" value="Moto_M_API_28" />
+    <property name="device.picker.selection" value="Pixel_XL_API_28" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
@@ -642,9 +672,9 @@
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48840383" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.1377899" visible="true" weight="0.20529328" />
       <window_info id="Resources Explorer" order="1" show_stripe_button="false" sideWeight="0.49931788" weight="0.3297568" />
-      <window_info id="Structure" order="2" sideWeight="0.5006821" side_tool="true" weight="0.3297568" />
+      <window_info id="Structure" order="2" sideWeight="0.8622101" side_tool="true" weight="0.20529328" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
@@ -660,7 +690,7 @@
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5007153" side_tool="true" weight="0.3287858" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49928468" weight="0.5457026" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info anchor="bottom" id="Logcat" order="9" weight="0.5306958" />
+      <window_info anchor="bottom" id="Logcat" order="9" weight="0.46793997" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.3297568" />
       <window_info anchor="right" id="Preview" order="1" weight="0.3297568" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -670,9 +700,9 @@
       <window_info anchor="right" id="Device File Explorer" order="6" side_tool="true" weight="0.35479257" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48840383" visible="true" weight="0.2532189" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.1377899" weight="0.20529328" />
       <window_info id="Resources Explorer" order="1" show_stripe_button="false" sideWeight="0.49931788" weight="0.3297568" />
-      <window_info id="Structure" order="2" sideWeight="0.5006821" side_tool="true" weight="0.3297568" />
+      <window_info id="Structure" order="2" sideWeight="0.8622101" side_tool="true" weight="0.20529328" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
@@ -688,7 +718,7 @@
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5007153" side_tool="true" weight="0.3287858" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49928468" weight="0.5457026" />
       <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info anchor="bottom" id="Logcat" order="9" weight="0.5306958" />
+      <window_info active="true" anchor="bottom" id="Logcat" order="9" visible="true" weight="0.46793997" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.3297568" />
       <window_info anchor="right" id="Preview" order="1" weight="0.3297568" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -699,69 +729,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_add_card.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_big_card_front.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/add/AddImageFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#962#963#0" expanded="true" />
-            <element signature="e#1002#1003#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/BigCardFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_close_whie_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="51" selection-start-column="51" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_close_red_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/button_outline.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_add_card_photos.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="60" column="56" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/add_card_context_menu.xml">
       <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor">
@@ -770,10 +737,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_update_card.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_update_card.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/GetCardsViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
@@ -878,24 +842,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/add/AddCardService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="93" column="21" selection-start-line="93" selection-start-column="21" selection-end-line="93" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/LocalDB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1089,26 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/SecOwnersAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="91" column="45" selection-start-line="91" selection-start-column="45" selection-end-line="91" selection-end-column="45" />
-          <folding>
-            <element signature="method#SecOwnersViewHolder#0;class#SecOwnersViewHolder#0;class#SecOwnersAdapter#0" />
-            <element signature="e#1943#2038#1" />
-            <element signature="method#onCheckedChanged#0;class#SecOwnersViewHolder#0;class#SecOwnersAdapter#0" />
-            <element signature="method#getItemCount#0;class#SecOwnersAdapter#0" />
-            <element signature="e#3052#3060#0" />
-            <element signature="method#onCreateViewHolder#0;class#SecOwnersAdapter#0" />
-            <element signature="method#onBindViewHolder#0;class#SecOwnersAdapter#0" />
-            <element signature="e#3511#3744#1" />
-            <element signature="e#3801#4036#1" />
-            <element signature="e#4093#4331#1" />
-            <element signature="e#4345#4484#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -1232,36 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/edit/EditBookActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="117" column="56" selection-start-line="117" selection-start-column="56" selection-end-line="117" selection-end-column="56" />
-          <folding>
-            <element signature="method#onCreate#0;class#EditBookActivity#0" />
-            <element signature="method#initViewModel#0;class#EditBookActivity#0" />
-            <element signature="class#2727:2893" />
-            <element signature="method#onChanged#0;class#2727:2918" />
-            <element signature="method#initialiseUI#0;class#EditBookActivity#0" />
-            <element signature="method#addNewSecOwner#0;class#EditBookActivity#0" />
-            <element signature="e#3338#3515#1" />
-            <element signature="method#createBook#0;class#EditBookActivity#0" />
-            <element signature="method#onOwnerRemoved#0;class#EditBookActivity#0" />
-            <element signature="method#onOptionsItemSelected#0;class#EditBookActivity#0" />
-            <element signature="e#3965#3998#1" />
-            <element signature="method#onBookNameInvalid#0;class#EditBookActivity#0" />
-            <element signature="e#4329#4838#0" />
-            <element signature="method#onThisSecOwnerValidated#0;class#EditBookActivity#0" />
-            <element signature="method#onAllSecOwnersValidated#0;class#EditBookActivity#0" />
-            <element signature="method#onDuplicatesExist#0;class#EditBookActivity#0" />
-            <element signature="method#onSelfUsernameGiven#0;class#EditBookActivity#0" />
-            <element signature="class#6093:6697" />
-            <element signature="method#onDismiss#0;class#6093:6697" />
-            <element signature="e#6697#6740#1" />
-            <element signature="method#onBookUpdated#0;class#EditBookActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -1278,21 +1178,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/ShareInfoDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
+        <state relative-caret-position="589">
           <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
+        <state relative-caret-position="609">
           <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
+        <state relative-caret-position="628">
           <caret line="50" column="55" selection-start-line="50" selection-start-column="55" selection-end-line="50" selection-end-column="55" />
         </state>
       </provider>
@@ -1325,219 +1225,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="106" column="56" lean-forward="true" selection-start-line="106" selection-start-column="56" selection-end-line="106" selection-end-column="56" />
-          <folding>
-            <element signature="method#onCreate#0;class#SmallCardsActivity#0" />
-            <element signature="method#initialiseViewModel#0;class#SmallCardsActivity#0" />
-            <element signature="class#1741:2582" />
-            <element signature="method#onChanged#0;class#1741:2582" />
-            <element signature="e#2164#2424#1" />
-            <element signature="method#initialiseUI#0;class#SmallCardsActivity#0" />
-            <element signature="method#onCreateOptionsMenu#0;class#SmallCardsActivity#0" />
-            <element signature="e#3803#3871#1" />
-            <element signature="e#4059#4112#1" />
-            <element signature="e#4640#4686#1" />
-            <element signature="e#4322#4355#1" />
-            <element signature="method#navigateToEditBookActivity#0;class#SmallCardsActivity#0" />
-            <element signature="method#onSmallCardClicked#0;class#SmallCardsActivity#0" />
-            <element signature="method#onBookDeleted#0;class#SmallCardsActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/delete/DeleteBookViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="23" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#324#325#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="798" column="43" selection-start-line="798" selection-start-column="43" selection-end-line="798" selection-end-column="43" />
-          <folding>
-            <element signature="docComment;class#DataRepository#0" />
-            <element signature="e#4512#4867#0" />
-            <element signature="e#4873#4971#0" />
-            <element signature="e#4873#5732#0" />
-            <element signature="e#5072#5240#1" />
-            <element signature="e#5343#5694#1" />
-            <element signature="e#5738#5892#0" />
-            <element signature="e#5986#6201#0" />
-            <element signature="e#5986#6509#0" />
-            <element signature="e#6328#6442#1" />
-            <element signature="e#6515#6629#0" />
-            <element signature="e#6515#6991#0" />
-            <element signature="e#6699#6795#0" />
-            <element signature="e#6848#6985#0" />
-            <element signature="e#6997#7341#0" />
-            <element signature="e#7077#7198#0" />
-            <element signature="e#7227#7335#0" />
-            <element signature="e#7347#7703#0" />
-            <element signature="e#7474#7579#0" />
-            <element signature="e#7632#7676#0" />
-            <element signature="e#7709#8186#0" />
-            <element signature="e#7898#7967#1" />
-            <element signature="e#8192#8637#0" />
-            <element signature="e#8246#8463#0" />
-            <element signature="e#8493#8537#0" />
-            <element signature="e#8569#8613#0" />
-            <element signature="e#8643#9085#0" />
-            <element signature="e#8696#8911#0" />
-            <element signature="e#8941#8985#0" />
-            <element signature="e#9017#9061#0" />
-            <element signature="e#9658#10000#0" />
-            <element signature="e#9732#9847#0" />
-            <element signature="e#9876#9994#0" />
-            <element signature="e#9577#9686#0" />
-            <element signature="e#9656#9698#0" />
-            <element signature="e#9709#9758#0" />
-            <element signature="e#9503#9650#0" />
-            <element signature="e#9567#9609#0" />
-            <element signature="e#9598#9644#0" />
-            <element signature="e#9749#9792#1" />
-            <element signature="e#9620#9650#0" />
-            <element signature="e#9091#9460#0" />
-            <element signature="e#9285#9397#1" />
-            <element signature="e#9466#9735#0" />
-            <element signature="e#9564#9621#1" />
-            <element signature="e#9741#10028#0" />
-            <element signature="e#9846#9957#1" />
-            <element signature="e#10034#10120#0" />
-            <element signature="e#10126#10770#0" />
-            <element signature="e#10166#10607#0" />
-            <element signature="e#10210#10527#0" />
-            <element signature="e#10668#10764#0" />
-            <element signature="e#10776#11349#0" />
-            <element signature="e#11355#11621#0" />
-            <element signature="e#11422#11479#1" />
-            <element signature="e#11627#11848#0" />
-            <element signature="e#11854#12165#0" />
-            <element signature="e#11946#12003#1" />
-            <element signature="e#12171#12415#0" />
-            <element signature="e#12253#12310#1" />
-            <element signature="e#12421#12583#0" />
-            <element signature="e#12589#13005#0" />
-            <element signature="e#12776#12839#1" />
-            <element signature="e#13011#13417#0" />
-            <element signature="e#13083#13240#0" />
-            <element signature="e#13270#13314#0" />
-            <element signature="e#13346#13390#0" />
-            <element signature="e#13423#13778#0" />
-            <element signature="e#13489#13601#0" />
-            <element signature="e#13631#13675#0" />
-            <element signature="e#13707#13751#0" />
-            <element signature="e#13784#14131#0" />
-            <element signature="e#13849#13954#0" />
-            <element signature="e#13984#14028#0" />
-            <element signature="e#14060#14104#0" />
-            <element signature="e#14137#14502#0" />
-            <element signature="e#14213#14325#0" />
-            <element signature="e#14355#14399#0" />
-            <element signature="e#14431#14475#0" />
-            <element signature="e#14508#15076#0" />
-            <element signature="e#14610#14898#0" />
-            <element signature="e#14928#14972#0" />
-            <element signature="e#15004#15048#0" />
-            <element signature="e#15082#15491#0" />
-            <element signature="e#15497#15733#0" />
-            <element signature="e#15775#15894#0" />
-            <element signature="e#15900#16032#0" />
-            <element signature="e#16038#16167#0" />
-            <element signature="e#16173#16317#0" />
-            <element signature="e#16323#16462#0" />
-            <element signature="e#16468#16603#0" />
-            <element signature="e#16609#16728#0" />
-            <element signature="e#16734#16853#0" />
-            <element signature="e#16859#16993#0" />
-            <element signature="e#16999#17133#0" />
-            <element signature="e#19683#19817#0" />
-            <element signature="e#17139#17336#0" />
-            <element signature="e#17341#17499#0" />
-            <element signature="e#17504#17662#0" />
-            <element signature="e#17664#17679#0" />
-            <element signature="e#17827#17963#0" />
-            <element signature="e#17969#18622#0" />
-            <element signature="e#18461#18616#1" />
-            <element signature="e#18629#18901#0" />
-            <element signature="e#19540#19609#1" />
-            <element signature="e#19073#19230#0" />
-            <element signature="e#19286#19423#0" />
-            <element signature="e#19429#19599#0" />
-            <element signature="e#20248#20309#1" />
-            <element signature="e#19773#19915#0" />
-            <element signature="e#19971#20096#0" />
-            <element signature="e#20102#20256#0" />
-            <element signature="e#20842#20889#1" />
-            <element signature="e#20944#21002#1" />
-            <element signature="e#21098#21149#1" />
-            <element signature="e#21203#21257#1" />
-            <element signature="e#20768#21781#0" />
-            <element signature="e#21787#22169#0" />
-            <element signature="e#22175#22446#0" />
-            <element signature="e#22452#22779#0" />
-            <element signature="e#22549#22650#0" />
-            <element signature="e#22679#22773#0" />
-            <element signature="e#22785#23141#0" />
-            <element signature="e#22970#23135#1" />
-            <element signature="e#23147#23587#0" />
-            <element signature="e#23593#24360#0" />
-            <element signature="e#23655#24205#0" />
-            <element signature="e#23912#24195#1" />
-            <element signature="e#24234#24278#0" />
-            <element signature="e#24310#24354#0" />
-            <element signature="e#24366#25236#0" />
-            <element signature="e#24428#25072#0" />
-            <element signature="e#24792#25062#1" />
-            <element signature="e#25110#25154#0" />
-            <element signature="e#25186#25230#0" />
-            <element signature="e#25242#25624#0" />
-            <element signature="e#25298#25468#0" />
-            <element signature="e#25498#25542#0" />
-            <element signature="e#25574#25618#0" />
-            <element signature="e#25630#26985#0" />
-            <element signature="e#26044#26979#1" />
-            <element signature="e#26344#26894#0" />
-            <element signature="e#26917#26969#0" />
-            <element signature="e#27621#27669#1" />
-            <element signature="e#27766#27817#1" />
-            <element signature="e#27330#27826#0" />
-            <element signature="e#27398#27656#0" />
-            <element signature="e#27429#27644#0" />
-            <element signature="e#27685#27770#0" />
-            <element signature="e#30686#30687#0" expanded="true" />
-            <element signature="e#30719#30720#0" expanded="true" />
-            <element signature="e#27883#29341#0" />
-            <element signature="e#27984#29335#0" />
-            <element signature="e#28364#28853#1" />
-            <element signature="e#28537#28839#1" />
-            <element signature="e#28871#29300#1" />
-            <element signature="e#29347#30199#0" />
-            <element signature="e#29442#29802#0" />
-            <element signature="e#29537#29717#0" />
-            <element signature="e#29587#29677#1" />
-            <element signature="e#29750#29792#0" />
-            <element signature="e#29812#30193#0" />
-            <element signature="e#30104#30183#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/delete/DeleteBookService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="139" column="59" selection-start-line="139" selection-start-column="59" selection-end-line="139" selection-end-column="59" />
+        <state relative-caret-position="399">
+          <caret line="117" column="105" selection-start-line="117" selection-start-column="105" selection-end-line="117" selection-end-column="105" />
           <folding>
             <element signature="method#DeleteBookService#0;class#DeleteBookService#0" />
             <element signature="method#deleteFromOwner#0;class#DeleteBookService#0" />
@@ -1562,8 +1253,399 @@
             <element signature="method#onFailure#0;class#4205:4459" />
             <element signature="method#deleteCardImages#0;class#DeleteBookService#0" />
             <element signature="e#4673#4713#1" />
+            <element signature="method#deleteBookFromServer#0;class#DeleteBookService#0" />
+            <element signature="class#5547:5725" />
+            <element signature="method#onSuccess#0;class#5547:5770" />
             <element signature="class#5769:5951" />
             <element signature="method#onFailure#0;class#5769:5991" />
+            <element signature="method#setDeleteBookListener#0;class#DeleteBookService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/delete/DeleteBookViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="15" column="42" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding>
+            <element signature="method#deleteBook#0;class#DeleteBookViewModel#0" />
+            <element signature="method#setDeleteBookListener#0;class#DeleteBookViewModel#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="121" column="5" selection-start-line="121" selection-start-column="5" selection-end-line="121" selection-end-column="5" />
+          <folding>
+            <element signature="method#onCreate#0;class#SmallCardsActivity#0" />
+            <element signature="method#initialiseViewModel#0;class#SmallCardsActivity#0" />
+            <element signature="class#1741:2582" />
+            <element signature="method#onChanged#0;class#1741:2582" />
+            <element signature="e#2164#2424#1" />
+            <element signature="method#initialiseUI#0;class#SmallCardsActivity#0" />
+            <element signature="method#onCreateOptionsMenu#0;class#SmallCardsActivity#0" />
+            <element signature="e#3803#3871#1" />
+            <element signature="method#onOptionsItemSelected#0;class#SmallCardsActivity#0" />
+            <element signature="e#4059#4112#1" />
+            <element signature="e#4640#4686#1" />
+            <element signature="e#4322#4355#1" />
+            <element signature="method#navigateToEditBookActivity#0;class#SmallCardsActivity#0" />
+            <element signature="method#onSmallCardClicked#0;class#SmallCardsActivity#0" />
+            <element signature="method#onBookDeleted#0;class#SmallCardsActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_card_back.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_all_books.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/SecOwnersAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="51" column="32" selection-start-line="51" selection-start-column="32" selection-end-line="51" selection-end-column="32" />
+          <folding>
+            <element signature="method#SecOwnersViewHolder#0;class#SecOwnersViewHolder#0;class#SecOwnersAdapter#0" />
+            <element signature="method#onCheckedChanged#0;class#SecOwnersViewHolder#0;class#SecOwnersAdapter#0" />
+            <element signature="method#getItemCount#0;class#SecOwnersAdapter#0" />
+            <element signature="method#onCreateViewHolder#0;class#SecOwnersAdapter#0" />
+            <element signature="method#onBindViewHolder#0;class#SecOwnersAdapter#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/edit/EditBookActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="181" column="16" selection-start-line="181" selection-start-column="16" selection-end-line="184" selection-end-column="17" />
+          <folding>
+            <element signature="method#onCreate#0;class#EditBookActivity#0" />
+            <element signature="method#initViewModel#0;class#EditBookActivity#0" />
+            <element signature="method#initialiseUI#0;class#EditBookActivity#0" />
+            <element signature="method#addNewSecOwner#0;class#EditBookActivity#0" />
+            <element signature="method#createBook#0;class#EditBookActivity#0" />
+            <element signature="method#onOwnerRemoved#0;class#EditBookActivity#0" />
+            <element signature="method#onOptionsItemSelected#0;class#EditBookActivity#0" />
+            <element signature="method#onBookNameInvalid#0;class#EditBookActivity#0" />
+            <element signature="method#onThisSecOwnerValidated#0;class#EditBookActivity#0" />
+            <element signature="method#onAllSecOwnersValidated#0;class#EditBookActivity#0" />
+            <element signature="method#onDuplicatesExist#0;class#EditBookActivity#0" />
+            <element signature="method#onBookUpdated#0;class#EditBookActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="142" column="58" selection-start-line="142" selection-start-column="58" selection-end-line="142" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/add/AddCardService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="82" column="96" selection-start-line="82" selection-start-column="87" selection-end-line="82" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Card.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="424" column="73" selection-start-line="424" selection-start-column="73" selection-end-line="424" selection-end-column="73" />
+          <folding>
+            <element signature="method#AuthService#0;class#AuthService#0" />
+            <element signature="method#registerEmailUser#0;class#AuthService#0" />
+            <element signature="class#2726:2979" />
+            <element signature="method#onSuccess#0;class#2726:2979" />
+            <element signature="class#3038:3308" />
+            <element signature="method#onFailure#0;class#3038:3308" />
+            <element signature="method#loginUserWithEmail#0;class#AuthService#0" />
+            <element signature="class#3647:3891" />
+            <element signature="method#onSuccess#0;class#3647:3891" />
+            <element signature="class#3947:4194" />
+            <element signature="method#onFailure#0;class#3947:4194" />
+            <element signature="method#authorizePhoneCredentials#0;class#AuthService#0" />
+            <element signature="e#4566#4842#1" />
+            <element signature="class#4981:6158" />
+            <element signature="method#onVerificationCompleted#0;class#4981:6158" />
+            <element signature="method#onCodeAutoRetrievalTimeOut#0;class#4981:6158" />
+            <element signature="method#onCodeSent#0;class#4981:6158" />
+            <element signature="method#onVerificationFailed#0;class#4981:6158" />
+            <element signature="method#verifyCredential#0;class#AuthService#0" />
+            <element signature="class#6460:7018" />
+            <element signature="method#onComplete#0;class#6460:7018" />
+            <element signature="e#6650#6829#1" />
+            <element signature="e#6859#6978#1" />
+            <element signature="method#setupInitialData#0;class#AuthService#0" />
+            <element signature="e#7073#7143#0" />
+            <element signature="method#setupUserProfile#0;class#AuthService#0" />
+            <element signature="class#8041:9260" />
+            <element signature="method#onDataChange#0;class#8041:9260" />
+            <element signature="e#8336#8875#1" />
+            <element signature="e#8502#8605#1" />
+            <element signature="e#8674#8857#1" />
+            <element signature="e#8897#8992#1" />
+            <element signature="method#onCancelled#0;class#8041:9260" />
+            <element signature="class#9473:9892" />
+            <element signature="method#onComplete#0;class#9473:9892" />
+            <element signature="e#9628#9731#1" />
+            <element signature="e#9753#9868#1" />
+            <element signature="e#10044#10249#1" />
+            <element signature="e#10344#10584#1" />
+            <element signature="method#downloadUserProfilePicture#0;class#AuthService#0" />
+            <element signature="e#10815#11016#1" />
+            <element signature="e#10829#10867#0" />
+            <element signature="class#11193:11516" />
+            <element signature="method#onProgress#0;class#11193:11516" />
+            <element signature="class#11560:11903" />
+            <element signature="method#onSuccess#0;class#11560:11903" />
+            <element signature="class#11947:12196" />
+            <element signature="method#onFailure#0;class#11947:12196" />
+            <element signature="method#setupBooksOwnedByUser#0;class#AuthService#0" />
+            <element signature="class#12477:13105" />
+            <element signature="method#onDataChange#0;class#12477:13105" />
+            <element signature="e#12892#12973#1" />
+            <element signature="method#onCancelled#0;class#12477:13175" />
+            <element signature="method#setupBooksSharedWithUser#0;class#AuthService#0" />
+            <element signature="class#13454:14228" />
+            <element signature="method#onDataChange#0;class#13454:14228" />
+            <element signature="e#13885#14090#1" />
+            <element signature="e#13971#14072#1" />
+            <element signature="method#onCancelled#0;class#13454:14228" />
+            <element signature="method#updateUserProfile#0;class#AuthService#0" />
+            <element signature="class#14485:14686" />
+            <element signature="method#onSuccess#0;class#14485:14686" />
+            <element signature="class#14736:14961" />
+            <element signature="method#onFailure#0;class#14736:14961" />
+            <element signature="method#saveProfilePic#0;class#AuthService#0" />
+            <element signature="class#15453:15761" />
+            <element signature="method#onProgress#0;class#15453:15761" />
+            <element signature="class#15805:16126" />
+            <element signature="method#onSuccess#0;class#15805:16126" />
+            <element signature="class#16170:16418" />
+            <element signature="method#onFailure#0;class#16170:16418" />
+            <element signature="docComment;method#downloadBookWithId#0;class#AuthService#0" />
+            <element signature="method#downloadBookWithId#0;class#AuthService#0" />
+            <element signature="class#16854:17523" />
+            <element signature="method#onDataChange#0;class#16854:17523" />
+            <element signature="e#17051#17266#1" />
+            <element signature="method#onCancelled#0;class#16854:17523" />
+            <element signature="method#downloadCardsOfBook#0;class#AuthService#0" />
+            <element signature="class#17782:18056" />
+            <element signature="method#onDataChange#0;class#17782:18084" />
+            <element signature="e#18162#18224#1" />
+            <element signature="method#onCancelled#0;class#17782:18056" />
+            <element signature="e#18865#18908#1" />
+            <element signature="e#19196#19282#0" />
+            <element signature="e#19305#19373#0" />
+            <element signature="method#onCancelled#0;class#18629:19043" />
+            <element signature="class#19668:19903" />
+            <element signature="method#onSuccess#0;class#19668:19934" />
+            <element signature="method#setEmailSignupListener#0;class#AuthService#0" />
+            <element signature="method#setEmailLoginListener#0;class#AuthService#0" />
+            <element signature="method#setMobileAuthListener#0;class#AuthService#0" />
+            <element signature="method#setDataSyncListener#0;class#AuthService#0" />
+            <element signature="method#setProfileListener#0;class#AuthService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="688" column="31" selection-start-line="688" selection-start-column="31" selection-end-line="688" selection-end-column="31" />
+          <folding>
+            <element signature="docComment;class#DataRepository#0" />
+            <element signature="e#4837#5192#0" />
+            <element signature="e#5198#5296#0" />
+            <element signature="e#5198#6111#0" />
+            <element signature="e#5397#5619#1" />
+            <element signature="e#5722#6073#1" />
+            <element signature="e#6165#6166#0" expanded="true" />
+            <element signature="e#6204#6205#0" expanded="true" />
+            <element signature="e#6211#6365#0" />
+            <element signature="e#6459#6674#0" />
+            <element signature="e#6459#6982#0" />
+            <element signature="e#6801#6915#1" />
+            <element signature="e#6988#7102#0" />
+            <element signature="e#6988#7464#0" />
+            <element signature="e#7172#7268#0" />
+            <element signature="e#7321#7458#0" />
+            <element signature="e#7470#7814#0" />
+            <element signature="e#7550#7671#0" />
+            <element signature="e#7700#7808#0" />
+            <element signature="e#7820#8176#0" />
+            <element signature="e#7947#8052#0" />
+            <element signature="e#8105#8149#0" />
+            <element signature="e#8182#8659#0" />
+            <element signature="e#8371#8440#1" />
+            <element signature="e#8665#9110#0" />
+            <element signature="e#8719#8936#0" />
+            <element signature="e#8966#9010#0" />
+            <element signature="e#9042#9086#0" />
+            <element signature="e#9116#9558#0" />
+            <element signature="e#9169#9384#0" />
+            <element signature="e#9414#9458#0" />
+            <element signature="e#9490#9534#0" />
+            <element signature="e#9564#10062#0" />
+            <element signature="e#10068#10409#0" />
+            <element signature="e#10142#10256#0" />
+            <element signature="e#10285#10403#0" />
+            <element signature="e#10415#10762#0" />
+            <element signature="e#10494#10609#0" />
+            <element signature="e#10638#10756#0" />
+            <element signature="e#10768#11894#0" />
+            <element signature="e#10832#11747#0" />
+            <element signature="e#10863#11735#0" />
+            <element signature="e#11082#11335#1" />
+            <element signature="e#11776#11888#0" />
+            <element signature="e#11900#12269#0" />
+            <element signature="e#12094#12206#1" />
+            <element signature="e#12275#12544#0" />
+            <element signature="e#12373#12430#1" />
+            <element signature="e#12550#12837#0" />
+            <element signature="e#12655#12766#1" />
+            <element signature="e#12843#12929#0" />
+            <element signature="e#12935#13579#0" />
+            <element signature="e#12975#13416#0" />
+            <element signature="e#13019#13336#0" />
+            <element signature="e#13477#13573#0" />
+            <element signature="e#13585#14158#0" />
+            <element signature="e#14164#14430#0" />
+            <element signature="e#14231#14288#1" />
+            <element signature="e#14436#14657#0" />
+            <element signature="e#14663#14974#0" />
+            <element signature="e#14755#14812#1" />
+            <element signature="e#14980#15224#0" />
+            <element signature="e#15062#15119#1" />
+            <element signature="e#15230#15392#0" />
+            <element signature="e#15398#15814#0" />
+            <element signature="e#15585#15648#1" />
+            <element signature="e#15820#16226#0" />
+            <element signature="e#15892#16049#0" />
+            <element signature="e#16079#16123#0" />
+            <element signature="e#16155#16199#0" />
+            <element signature="e#16232#16587#0" />
+            <element signature="e#16298#16410#0" />
+            <element signature="e#16440#16484#0" />
+            <element signature="e#16516#16560#0" />
+            <element signature="e#16593#16940#0" />
+            <element signature="e#16658#16763#0" />
+            <element signature="e#16793#16837#0" />
+            <element signature="e#16869#16913#0" />
+            <element signature="e#16946#17311#0" />
+            <element signature="e#17022#17134#0" />
+            <element signature="e#17164#17208#0" />
+            <element signature="e#17240#17284#0" />
+            <element signature="e#17317#17885#0" />
+            <element signature="e#17419#17707#0" />
+            <element signature="e#17737#17781#0" />
+            <element signature="e#17813#17857#0" />
+            <element signature="e#17891#18300#0" />
+            <element signature="e#18306#18542#0" />
+            <element signature="e#18584#18703#0" />
+            <element signature="e#18709#18841#0" />
+            <element signature="e#18847#18976#0" />
+            <element signature="e#18982#19126#0" />
+            <element signature="e#19132#19271#0" />
+            <element signature="e#19277#19412#0" />
+            <element signature="e#19418#19537#0" />
+            <element signature="e#19543#19662#0" />
+            <element signature="e#19668#19802#0" />
+            <element signature="e#19808#19942#0" />
+            <element signature="e#19948#20082#0" />
+            <element signature="e#20088#20285#0" />
+            <element signature="e#20290#20448#0" />
+            <element signature="e#20453#20611#0" />
+            <element signature="e#20613#20628#0" />
+            <element signature="e#20776#20912#0" />
+            <element signature="e#20918#21571#0" />
+            <element signature="e#21410#21565#1" />
+            <element signature="e#21578#21850#0" />
+            <element signature="e#22022#22179#0" />
+            <element signature="e#22235#22372#0" />
+            <element signature="e#22378#22548#0" />
+            <element signature="e#22722#22864#0" />
+            <element signature="e#22920#23045#0" />
+            <element signature="e#23051#23205#0" />
+            <element signature="e#23717#24730#0" />
+            <element signature="e#24736#25118#0" />
+            <element signature="e#25124#25395#0" />
+            <element signature="e#25401#25728#0" />
+            <element signature="e#25498#25599#0" />
+            <element signature="e#25628#25722#0" />
+            <element signature="e#25734#26090#0" />
+            <element signature="e#25919#26084#1" />
+            <element signature="e#26542#27309#0" />
+            <element signature="e#26604#27154#0" />
+            <element signature="e#26861#27144#1" />
+            <element signature="e#27183#27227#0" />
+            <element signature="e#27259#27303#0" />
+            <element signature="e#27315#28185#0" />
+            <element signature="e#27377#28021#0" />
+            <element signature="e#27741#28011#1" />
+            <element signature="e#28059#28103#0" />
+            <element signature="e#28135#28179#0" />
+            <element signature="e#28191#28573#0" />
+            <element signature="e#28247#28417#0" />
+            <element signature="e#28447#28491#0" />
+            <element signature="e#28523#28567#0" />
+            <element signature="e#28579#29934#0" />
+            <element signature="e#28993#29928#1" />
+            <element signature="e#29293#29843#0" />
+            <element signature="e#29866#29918#0" />
+            <element signature="e#30279#30775#0" />
+            <element signature="e#30347#30605#0" />
+            <element signature="e#30378#30593#0" />
+            <element signature="e#30634#30719#0" />
+            <element signature="e#30930#32388#0" />
+            <element signature="e#31031#32382#0" />
+            <element signature="e#31411#31900#1" />
+            <element signature="e#31584#31886#1" />
+            <element signature="e#31918#32347#1" />
+            <element signature="e#32394#33246#0" />
+            <element signature="e#32489#32849#0" />
+            <element signature="e#32584#32764#0" />
+            <element signature="e#32634#32724#1" />
+            <element signature="e#32797#32839#0" />
+            <element signature="e#32859#33240#0" />
+            <element signature="e#33151#33230#1" />
           </folding>
         </state>
       </provider>

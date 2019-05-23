@@ -69,6 +69,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
 
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
+    private static File INTERNAL_STORAGE;
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseDatabase mFirebaseDB;
@@ -120,6 +121,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         if (DATA_REPOSITORY == null) {
             Log.i(TAG, "getInstance: Creating Instance...");
             DATA_REPOSITORY = new DataRepository(context, Executors.newSingleThreadExecutor());
+            INTERNAL_STORAGE = context.getFilesDir();
         }
         CURRENT_USER = FirebaseAuth.getInstance().getCurrentUser();
         if (CURRENT_USER != null) {
@@ -130,6 +132,10 @@ public class DataRepository implements AddBookListener, GetBookListener,
             else CURRENT_USER_MOBILE = CURRENT_USER.getPhoneNumber().substring(3);
         }
         return DATA_REPOSITORY;
+    }
+    
+    public static File getInternalStorageRef () {
+        return INTERNAL_STORAGE;
     }
 
     public SharedPreferences getUsernamesCache(){
@@ -680,7 +686,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     @Override
     public void onCardDownloadedFromFirebase(Card card, List<Uri> imageUris) {
         // Save images in the internal storage
-        saveImagesInInternalStorage(card.getImagePaths(), imageUris);
+        if (imageUris != null) saveImagesInInternalStorage(card.getImagePaths(), imageUris);
         // Save card into Card DB
         saveCardInLocalDB(card);
         // Save people into Friend DB

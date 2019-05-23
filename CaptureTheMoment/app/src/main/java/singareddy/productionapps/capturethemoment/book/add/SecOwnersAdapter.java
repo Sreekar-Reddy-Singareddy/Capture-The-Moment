@@ -49,7 +49,7 @@ public class SecOwnersAdapter extends RecyclerView.Adapter<SecOwnersAdapter.SecO
             if (v == removeOwner) {
                 SecondaryOwner removedOwner = data.remove(getAdapterPosition());
                 notifyDataSetChanged();
-                listener.onOwnerRemoved(removedOwner);
+                if (listener != null) listener.onOwnerRemoved(removedOwner);
             }
             else {
                 Log.i(TAG, "onClick: Adapter Position: "+getAdapterPosition());

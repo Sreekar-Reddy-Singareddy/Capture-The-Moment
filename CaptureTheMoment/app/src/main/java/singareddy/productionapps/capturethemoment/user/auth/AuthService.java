@@ -25,6 +25,8 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,6 +34,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import singareddy.productionapps.capturethemoment.DataSyncListener;
+import singareddy.productionapps.capturethemoment.models.Card;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.Book;
@@ -54,6 +57,7 @@ public class AuthService {
     private AuthListener.EmailSignup emailSignupListener;
     private DataSyncListener dataSyncListener;
     private ProfileListener profileListener;
+    private File internalStorage;
 
     public AuthService () {
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -166,6 +170,7 @@ public class AuthService {
         CURRENT_USER = mFirebaseAuth.getCurrentUser();
         CURRENT_USER_ID = CURRENT_USER.getUid();
         LOGIN_PROVIDER = CURRENT_USER.getProviders().get(0);
+        internalStorage = DataRepository.getInternalStorageRef();
         Log.i(TAG, "setupInitialData: PROVIDER: "+LOGIN_PROVIDER);
         // Download user profile, if available
         setupUserProfile();
@@ -272,14 +277,11 @@ public class AuthService {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // This will be a list of strings
                 List<String> ownedBookIds = (ArrayList<String>) dataSnapshot.getValue();
-                if (ownedBookIds == null || ownedBookIds.size() == 0) {
-                    // Do nothing
+                if (ownedBookIds == null || ownedBookIds.size() == 0) return;
+                for (String bookId : ownedBookIds) {
+                    downloadBookWithId(bookId, null);
                 }
-                else {
-                    for (String bookId : ownedBookIds) {
-                        downloadBookWithId(bookId, null);
-                    }
-                }
+
             }
 
             @Override
@@ -378,12 +380,87 @@ public class AuthService {
                         if (dataSnapshot.getValue() != null) {
                             Book fetchedBook = dataSnapshot.getValue(Book.class);
                             dataSyncListener.onBookDownloadedFromFirebase(fetchedBook, sharedBookAccess);
+                            downloadCardsOfBook(bookId);
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
                         Log.i(TAG, "onCancelled: "+databaseError.getMessage());
+                    }
+                });
+    }
+
+    private void downloadCardsOfBook (String bookId) {
+        DatabaseReference cardsNode = mFirebaseDB.getReference()
+                .child(ALL_BOOKS_NODE)
+                .child(bookId)
+                .child("cards");
+        cardsNode.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() == null) return;
+                List<String> cardIds = (ArrayList<String>) dataSnapshot.getValue();
+                for (String cardId: cardIds) {
+                    downloadCardWithId(cardId);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void downloadCardWithId (String cardId) {
+        DatabaseReference cardDBRef = mFirebaseDB.getReference()
+                .child(ALL_CARDS_NODE)
+                .child(cardId);
+
+        cardDBRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Card card = dataSnapshot.getValue(Card.class);
+                dataSyncListener.onCardDownloadedFromFirebase(card, null);
+                for (String path: card.getImagePaths()) {
+                    File image = new File(internalStorage, path);
+                    Log.i(TAG, "onDataChange: PATH: "+image.getPath());
+                    Log.i(TAG, "onDataChange: EXISTS: "+image.exists());
+                    try {
+                        downloadImageFromFirebaseToPath(path);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void downloadImageFromFirebaseToPath(String imagePath) throws IOException {
+        StorageReference cardStorageRef = mFirebaseST.getReference()
+                .child(imagePath);
+        Log.i(TAG, "downloadImageFromFirebaseToPath: "+cardStorageRef.getPath());
+
+        File imageFile;
+        String [] pathComps = imagePath.split("/");
+        imageFile = new File(internalStorage, pathComps[0]);
+        if (!imageFile.exists()) imageFile.mkdir();
+        imageFile = new File(imageFile, pathComps[1]);
+        if (!imageFile.exists()) imageFile.mkdir();
+        imageFile = new File(imageFile, pathComps[2]);
+        if (!imageFile.exists()) imageFile.createNewFile();
+
+        cardStorageRef.getFile(imageFile)
+                .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                        Log.i(TAG, "onSuccess: Image Downloaded");
                     }
                 });
     }
