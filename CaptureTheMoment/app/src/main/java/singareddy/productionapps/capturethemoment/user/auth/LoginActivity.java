@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //            authenticationViewModel.loginUserWithEmailCredentials(email, password);
         }
         else if (v == passwordHelp) {
-            // TODO: UI to send reset password link to email
+            authViewModel.sendPasswordResetEmail(email.getText().toString());
         }
     }
 
@@ -98,6 +98,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         Toast.makeText(this, "Login Failure", Toast.LENGTH_SHORT).show();
         resetAllViews();
+    }
+
+    @Override
+    public void onPasswordResetMailSent(String email) {
+        Toast.makeText(this, "Password reset mail sent to "+email, Toast.LENGTH_LONG).show();
     }
 
     public void resetAllViews () {

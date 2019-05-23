@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
 import java.io.File;
@@ -310,9 +311,42 @@ public class DataRepository implements AddBookListener, GetBookListener,
         mAuthService.authorizePhoneCredentials(mobile, otpCode);
     }
 
+    public void sendPasswordResetEmail(String email) {
+        if (mAuthService == null) mAuthService = new AuthService();
+        mAuthService.setEmailLoginListener(this);
+        mAuthService.sendPasswordResetEmail(email);
+    }
+
     public void eraseLocalData() {
         eraseUserProfile();
         eraseBooks();
+        eraseCards();
+        eraseCardImages();
+    }
+
+    private void eraseCardImages() {
+        File file = new File(mContext.getFilesDir(), CURRENT_USER_ID);
+        try {
+            FileUtils.deleteDirectory(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void eraseCards() {
+        try {
+            mExecutor.submit(() -> {
+                int a = mLocalDB.getCardDao().eraseAllCardData();
+                int b = mLocalDB.getCardDao().eraseAllFriendData();
+                int c = mLocalDB.getCardDao().eraseAllImagePathData();
+                Log.i(TAG, "eraseCards: Cards Erased: "+a);
+                Log.i(TAG, "eraseCards: Friends Erased: "+b);
+                Log.i(TAG, "eraseCards: Paths Erased: "+c);
+            });
+        }
+        catch (Exception e) {
+
+        }
     }
 
     private void eraseBooks() {
@@ -401,7 +435,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         return null;
     }
 
-    public String getOneImagePathForCard(String cardId) {
+    public LiveData<String> getOneImagePathForCard(String cardId) {
         try {
             return mExecutor.submit(()->mLocalDB.getCardDao().getOneImagePathForCard(cardId)).get();
         } catch (ExecutionException e) {
@@ -594,6 +628,11 @@ public class DataRepository implements AddBookListener, GetBookListener,
     @Override
     public void onEmailUserLoginFailure(String failureCode) {
         emailLoginListener.onEmailUserLoginFailure(failureCode);
+    }
+
+    @Override
+    public void onPasswordResetMailSent(String email) {
+        emailLoginListener.onPasswordResetMailSent(email);
     }
 
     // =================== Mobile Login Listener

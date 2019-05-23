@@ -6,6 +6,7 @@ public interface AuthListener {
         // Email Login
         public void onEmailUserLoginSuccess();
         public void onEmailUserLoginFailure(String failureCode);
+        public void onPasswordResetMailSent(String email);
     }
 
     public interface EmailSignup {

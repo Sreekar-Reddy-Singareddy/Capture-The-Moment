@@ -27,7 +27,7 @@ public interface CardDao {
     public LiveData<List<Card>> getAllCardsUnderBook(String bookId);
 
     @Query("SELECT imagePath FROM ImagePath WHERE cardId = :cardId LIMIT 1")
-    public String getOneImagePathForCard(String cardId);
+    public LiveData<String> getOneImagePathForCard(String cardId);
 
     @Query("SELECT * FROM Card WHERE cardId = :cardId")
     public LiveData<Card> getCardWithId(String cardId);
@@ -49,4 +49,13 @@ public interface CardDao {
 
     @Query("DELETE FROM Card WHERE bookId = :bookId")
     public int deleteAllCardsUnderBook (String bookId);
+
+    @Query("DELETE FROM CARD")
+    public int eraseAllCardData();
+
+    @Query("DELETE FROM Friend")
+    public int eraseAllFriendData();
+
+    @Query("DELETE FROM IMAGEPATH")
+    public int eraseAllImagePathData();
 }

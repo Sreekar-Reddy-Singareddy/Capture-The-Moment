@@ -148,6 +148,17 @@ public class AuthService {
         PhoneAuthProvider.getInstance().verifyPhoneNumber(mobile, 10, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD, callbacks);
     }
 
+    public void sendPasswordResetEmail(String email) {
+        mFirebaseAuth.sendPasswordResetEmail(email.toLowerCase().trim())
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.i(TAG, "onSuccess: Email sent to: "+email);
+                        emailLoginListener.onPasswordResetMailSent(email);
+                    }
+                });
+    }
+
     private void verifyCredential(PhoneAuthCredential credential) {
         mFirebaseAuth.signInWithCredential(credential)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

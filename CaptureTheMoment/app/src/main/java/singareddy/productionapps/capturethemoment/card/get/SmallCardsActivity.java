@@ -61,8 +61,13 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
                         allCardIds = new ArrayList<>();
                         for (Card card: smallCards) {
                             allCardIds.add(card.getCardId());
-                            String imagePath = getCardsViewModel.getOneImagePathForCard(card.getCardId());
-                            smallCardImagePaths.add(imagePath);
+                            getCardsViewModel.getOneImagePathForCard(card.getCardId()).observe(SmallCardsActivity.this,
+                                    new Observer<String>() {
+                                        @Override
+                                        public void onChanged(@Nullable String imagePath) {
+                                            smallCardImagePaths.add(imagePath);
+                                        }
+                                    });
                         }
                         adapter.setData(smallCardImagePaths);
                         adapter.notifyDataSetChanged();

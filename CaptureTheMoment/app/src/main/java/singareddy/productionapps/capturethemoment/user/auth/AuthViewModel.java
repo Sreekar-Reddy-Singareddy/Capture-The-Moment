@@ -74,6 +74,11 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
         mRepository.loginUserWithEmail(email, password);
     }
 
+    public void sendPasswordResetEmail(String email) {
+        mRepository.setEmailLoginListener(this);
+        mRepository.sendPasswordResetEmail(email);
+    }
+
     private boolean isPasswordValid(String password) {
         if (password == null || password.isEmpty()) return false;
         return true;
@@ -177,6 +182,11 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
     @Override
     public void onEmailUserRegisterFailure(String email, String failureCode) {
         emailSignupListener.onEmailUserRegisterFailure(email, failureCode);
+    }
+
+    @Override
+    public void onPasswordResetMailSent(String email) {
+        emailLoginListener.onPasswordResetMailSent(email);
     }
 
     @Override
