@@ -48,6 +48,7 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     }
 
     private void initialiseViewModel() {
+        long start = System.nanoTime();
         GetCardsModelFactory getCardsModelFactory = GetCardsModelFactory.createFactory(this);
         getCardsViewModel = ViewModelProviders.of(this, getCardsModelFactory).get(GetCardsViewModel.class);
         getCardsViewModel.getAllCardsFor(bookId).observe(this,
@@ -61,16 +62,13 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
                         allCardIds = new ArrayList<>();
                         for (Card card: smallCards) {
                             allCardIds.add(card.getCardId());
-                            getCardsViewModel.getOneImagePathForCard(card.getCardId()).observe(SmallCardsActivity.this,
-                                    new Observer<String>() {
-                                        @Override
-                                        public void onChanged(@Nullable String imagePath) {
-                                            smallCardImagePaths.add(imagePath);
-                                        }
-                                    });
+                            String imagePath = getCardsViewModel.getOneImagePathForCard(card.getCardId());
+                            smallCardImagePaths.add(imagePath);
                         }
                         adapter.setData(smallCardImagePaths);
                         adapter.notifyDataSetChanged();
+                        long end = System.nanoTime();
+                        Log.i(TAG, "onChanged: Small Cards Time: "+(end-start));
                     }
                 });
         ownerCanEdit = getCardsViewModel.getCurrentUserEditAccessForThisBook(bookId);

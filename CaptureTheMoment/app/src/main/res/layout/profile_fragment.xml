@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Shared Books"
+        android:text="@string/user_profile_shared_books_label"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/profile_tv_shared_books"
         app:layout_constraintStart_toEndOf="@+id/profile_tv_shared_books" />
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Owned Books"
+        android:text="@string/user_profile_owned_books_label"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/profile_tv_owned_books"
         app:layout_constraintStart_toEndOf="@+id/profile_tv_owned_books" />
@@ -82,7 +82,7 @@
         android:paddingLeft="16dp"
         android:paddingEnd="16dp"
         android:paddingRight="16dp"
-        android:text="edit profile"
+        android:text="@string/user_profile_edit_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_fragment_profile_pic" />

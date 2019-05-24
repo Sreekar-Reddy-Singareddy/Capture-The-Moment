@@ -28,7 +28,7 @@ public class GetCardsViewModel extends ViewModel {
         return dataRepo.getAllCardsFor(bookId);
     }
 
-    public LiveData<String> getOneImagePathForCard(String cardId) {
+    public String getOneImagePathForCard(String cardId) {
         return dataRepo.getOneImagePathForCard(cardId);
     }
 

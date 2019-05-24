@@ -38,12 +38,15 @@ public class GetBooksFragment extends Fragment implements GetBookListener {
         mFragmentView = inflater.inflate(R.layout.fragment_all_books, container, false);
         initialiseViewModel();
         initialiseUI();
+        long start = System.nanoTime();
         getBooksViewModel.getAllBooks().observe(this, new Observer<List<Book>>() {
             @Override
             public void onChanged(@Nullable List<Book> books) {
                 Log.i(TAG, "onChanged: Books obtained: "+books.size());
                 mAdapter.setBookData(books);
                 mAdapter.notifyDataSetChanged();
+                long end = System.nanoTime();
+                Log.i(TAG, "onChanged: Books Time: "+(end-start));
             }
         });
         return mFragmentView;

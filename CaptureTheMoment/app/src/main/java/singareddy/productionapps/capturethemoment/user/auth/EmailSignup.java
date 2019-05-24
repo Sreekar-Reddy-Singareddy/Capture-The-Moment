@@ -21,24 +21,25 @@ public class EmailSignup extends Fragment implements View.OnClickListener, AuthL
     private static String TAG = "EmailSignup";
 
     EditText email, password, confirmPassword;
+    View fragView;
     View signupButton;
     AuthViewModel authViewModel;
-
-    public EmailSignup() {
-
-    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.email_signup, container, false);
+        fragView = inflater.inflate(R.layout.email_signup, container, false);
+        initialiseUI();
         initialiseViewModel();
-        email = view.findViewById(R.id.email_signup_et_email);
-        password = view.findViewById(R.id.email_signup_et_password);
-        confirmPassword = view.findViewById(R.id.email_signup_et_conf_password);
-        signupButton = view.findViewById(R.id.email_signup_bt_continue);
+        return fragView;
+    }
+
+    private void initialiseUI() {
+        email = fragView.findViewById(R.id.email_signup_et_email);
+        password = fragView.findViewById(R.id.email_signup_et_password);
+        confirmPassword = fragView.findViewById(R.id.email_signup_et_conf_password);
+        signupButton = fragView.findViewById(R.id.email_signup_bt_continue);
         signupButton.setOnClickListener(this);
-        return view;
     }
 
     private void initialiseViewModel() {
@@ -54,7 +55,6 @@ public class EmailSignup extends Fragment implements View.OnClickListener, AuthL
             String email = this.email.getText().toString().toLowerCase();
             String password = this.password.getText().toString();
             String confPassword = this.confirmPassword.getText().toString();
-
             authViewModel.registerEmailUser (email, password, confPassword);
         }
     }
@@ -67,7 +67,6 @@ public class EmailSignup extends Fragment implements View.OnClickListener, AuthL
 
     @Override
     public void onEmailUserRegisterSuccess(String email) {
-        Log.i(TAG, "onEmailUserRegisterSuccess: *");
         Toast.makeText(getContext(), "Registered "+ email, Toast.LENGTH_SHORT).show();
         // On successful login, erase all the data.
         authViewModel.eraseLocalData();
@@ -81,7 +80,6 @@ public class EmailSignup extends Fragment implements View.OnClickListener, AuthL
 
     @Override
     public void onEmailUserRegisterFailure(String email, String failureCode) {
-        Log.i(TAG, "onEmailUserRegisterFailure: *");
         signupButton.setEnabled(true);
         switch (failureCode) {
             case AppUtilities.FailureCodes.EMPTY_EMAIL:

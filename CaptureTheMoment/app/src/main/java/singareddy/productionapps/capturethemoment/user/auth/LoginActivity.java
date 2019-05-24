@@ -2,11 +2,13 @@ package singareddy.productionapps.capturethemoment.user.auth;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -18,7 +20,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static String TAG = "LoginActivity";
 
     EditText email, password;
-    View signup, loginUsingMobile, login, passwordHelp;
+    View signup, loginUsingMobile, passwordHelp;
+    Button login;
+    ProgressBar loadingBar;
+    AlertDialog dialog;
 
     AuthViewModel authViewModel;
 
@@ -26,13 +31,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            Log.i(TAG, "onCreate: CURRENT USER");
             Intent homeIntent = new Intent(this, HomeActivity.class);
             startActivity(homeIntent);
             finish();
         }
-        setContentView(R.layout.activity_login);
         initialiseViewModel();
+        initialiseUI();
+    }
+
+    private void initialiseUI() {
+        setContentView(R.layout.activity_login);
         signup = findViewById(R.id.signup_ll_login);
         loginUsingMobile = findViewById(R.id.login_ll_mobile);
         login = findViewById(R.id.email_signup_bt_continue);
@@ -43,12 +51,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginUsingMobile.setOnClickListener(this);
         login.setOnClickListener(this);
         passwordHelp.setOnClickListener(this);
+        createAlertDialog();
     }
 
     private void initialiseViewModel() {
         AuthModelFactory factory = AuthModelFactory.createFactory(this);
         authViewModel = ViewModelProviders.of(this, factory).get(AuthViewModel.class);
         authViewModel.setEmailLoginListener(this);
+    }
+
+    private void createAlertDialog() {
+        dialog = new AlertDialog.Builder(this)
+                .setView(R.layout.dialog_loading)
+                .create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.setCanceledOnTouchOutside(false);
     }
 
     @Override
@@ -63,11 +80,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(mobileLoginIntent);
         }
         else if (v == login) {
-            login.setEnabled(false);
             String email = this.email.getText().toString().toLowerCase();
             String password = this.password.getText().toString();
             authViewModel.loginUserWithEmail(email, password);
-//            authenticationViewModel.loginUserWithEmailCredentials(email, password);
+            dialog.show();
         }
         else if (v == passwordHelp) {
             authViewModel.sendPasswordResetEmail(email.getText().toString());
@@ -76,21 +92,19 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onEmailUserLoginSuccess() {
-        Log.i(TAG, "onEmailUserLoginSuccess: *");
         Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
         // On successful login, erase all the data.
         authViewModel.eraseLocalData();
-        Log.i(TAG, "onEmailUserLoginSuccess: ALL DATA ERASED");
         Intent homeIntent = new Intent(this, HomeActivity.class);
         startActivity(homeIntent);
         // Once data is erased, download this user's data
         authViewModel.setupInitialData();
+        dialog.dismiss();
         finish();
     }
 
     @Override
     public void onEmailUserLoginFailure(String failureCode) {
-        Log.i(TAG, "onEmailUserLoginFailure: *");
         login.setEnabled(true);
         if (failureCode.equals("EMPTY_FIELDS")) {
             Toast.makeText(this, "Email and Password must be entered", Toast.LENGTH_SHORT).show();
@@ -108,5 +122,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void resetAllViews () {
         email.setText("");
         password.setText("");
+        dialog.dismiss();
     }
 }

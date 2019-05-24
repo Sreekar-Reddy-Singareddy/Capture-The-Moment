@@ -1,7 +1,9 @@
 package singareddy.productionapps.capturethemoment.user.auth;
 
+import android.app.AlertDialog;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -11,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import singareddy.productionapps.capturethemoment.HomeActivity;
@@ -19,28 +22,26 @@ import singareddy.productionapps.capturethemoment.R;
 public class MobileSignup extends Fragment implements AuthListener.Mobile, View.OnClickListener {
     private static String TAG = "MobileSignup";
 
+    View fragmentView;
     View loginButton;
     EditText mobileNumber, otpCode;
-
     private AuthViewModel authViewModel;
-
-    public MobileSignup() {
-
-    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.i(TAG, "onCreateView: *");
-        Log.i(TAG, "onCreateView: Activity: "+getActivity());
-        View view = inflater.inflate(R.layout.activity_mobile_login, container, false);
+        fragmentView = inflater.inflate(R.layout.activity_mobile_login, container, false);
+        initialiseUI();
         initialiseViewModel();
-        mobileNumber = view.findViewById(R.id.activity_mobile_login_mobile);
-        otpCode = view.findViewById(R.id.activity_mobile_login_otp);
+        return fragmentView;
+    }
+
+    private void initialiseUI() {
+        mobileNumber = fragmentView.findViewById(R.id.activity_mobile_login_mobile);
+        otpCode = fragmentView.findViewById(R.id.activity_mobile_login_otp);
         otpCode.setVisibility(View.GONE);
-        loginButton = view.findViewById(R.id.email_signup_bt_continue);
+        loginButton = fragmentView.findViewById(R.id.email_signup_bt_continue);
         loginButton.setOnClickListener(this);
-        return view;
     }
 
     private void initialiseViewModel() {
@@ -51,7 +52,6 @@ public class MobileSignup extends Fragment implements AuthListener.Mobile, View.
 
     @Override
     public void onClick(View v) {
-        Log.i(TAG, "onClick: *");
         if (v == loginButton) {
             loginButton.setEnabled(false);
             authViewModel.authorizePhoneCredentials(
@@ -62,7 +62,6 @@ public class MobileSignup extends Fragment implements AuthListener.Mobile, View.
 
     @Override
     public void onMobileAuthenticationSuccess() {
-        Log.i(TAG, "onMobileAuthenticationSuccess: *");
         Toast.makeText(getContext(), "Login Success", Toast.LENGTH_SHORT).show();
         // On successful login, erase all the data.
         authViewModel.eraseLocalData();
@@ -75,7 +74,6 @@ public class MobileSignup extends Fragment implements AuthListener.Mobile, View.
 
     @Override
     public void onMobileAuthenticationFailure(String failureCode) {
-        Log.i(TAG, "onMobileAuthenticationFailure: *");
         loginButton.setEnabled(true);
         if (failureCode.equals("EMPTY_FIELDS")) {
             Toast.makeText(getContext(), "Mobile number is invalid", Toast.LENGTH_SHORT).show();
@@ -87,7 +85,50 @@ public class MobileSignup extends Fragment implements AuthListener.Mobile, View.
 
     @Override
     public void onOtpSent() {
-        // TODO: Need to implement timer here
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_otp_timer, null, false);
+        TextView timerView = dialogView.findViewById(R.id.dialog_otp_timer_tv_time);
+        AlertDialog dialog = new AlertDialog.Builder(getContext())
+                .setView(dialogView)
+                .create();
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.show();
+        new AsyncTask<Void, Integer, Void>() {
+            Integer timer = 10;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                timerView.setText(timer.toString());
+            }
+
+            @Override
+            protected Void doInBackground(Void... voids) {
+                try {
+                    while (timer > 0) {
+                        Thread.sleep(1000);
+                        timer--;
+                        publishProgress(timer);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+
+            @Override
+            protected void onProgressUpdate(Integer... values) {
+                super.onProgressUpdate(values);
+                timerView.setText(values[0].toString());
+            }
+
+            @Override
+            protected void onPostExecute(Void aVoid) {
+                super.onPostExecute(aVoid);
+                Toast.makeText(getContext(), "Auto retrieval failed. Enter manual OTP", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+            }
+        }.execute();
     }
 
     @Override

@@ -145,7 +145,7 @@ public class AuthService {
                 Log.i(TAG, "onVerificationFailed: " + e.getLocalizedMessage());
             }
         };
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(mobile, 10, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD, callbacks);
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(mobile, 5, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD, callbacks);
     }
 
     public void sendPasswordResetEmail(String email) {

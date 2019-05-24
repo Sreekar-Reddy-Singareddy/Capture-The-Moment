@@ -6,45 +6,303 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="onSuccess: Email sent to:" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dabca18c-fae9-4e4c-9ee5-fdf01046dba7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../App Documentation.numbers" beforeDir="false" afterPath="$PROJECT_DIR$/../App Documentation.numbers" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Capture The Moment.pages" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/lifecycle/extensions/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/lifecycle/extensions/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/persistence/room/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/persistence/room/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/asynclayoutinflater/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/asynclayoutinflater/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/compat/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/compat/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/constraint/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/constraint/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coordinatorlayout/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coordinatorlayout/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreui/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreui/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreutils/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreutils/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/customview/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/customview/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/design/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/design/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/drawerlayout/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/drawerlayout/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/fragment/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/fragment/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/graphics/drawable/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/graphics/drawable/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/loader/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/loader/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/mediacompat/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/mediacompat/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/slidingpanelayout/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/slidingpanelayout/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/swiperefreshlayout/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/swiperefreshlayout/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/transition/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/transition/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v4/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v4/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/appcompat/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/appcompat/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/recyclerview/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/recyclerview/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/viewpager/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/viewpager/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/android/gms/base/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/android/gms/base/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/firebase/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/firebase/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/firebase/database/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/firebase/database/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/singareddy/productionapps/capturethemoment/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/singareddy/productionapps/capturethemoment/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/lifecycle/extensions/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/lifecycle/extensions/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/lifecycle/extensions/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/lifecycle/extensions/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/persistence/room/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/persistence/room/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/persistence/room/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/persistence/room/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/asynclayoutinflater/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/asynclayoutinflater/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/asynclayoutinflater/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/asynclayoutinflater/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/compat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/compat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/compat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/compat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/constraint/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/constraint/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coordinatorlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coordinatorlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coordinatorlayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coordinatorlayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreui/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreui/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreui/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreui/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreutils/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreutils/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreutils/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreutils/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/customview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/customview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/customview/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/customview/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/drawerlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/drawerlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/drawerlayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/drawerlayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/fragment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/fragment/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/fragment/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/fragment/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/graphics/drawable/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/graphics/drawable/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/graphics/drawable/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/graphics/drawable/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/loader/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/loader/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/loader/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/loader/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/mediacompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/mediacompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/mediacompat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/mediacompat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/slidingpanelayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/slidingpanelayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/slidingpanelayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/slidingpanelayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/swiperefreshlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/swiperefreshlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/swiperefreshlayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/swiperefreshlayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/transition/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/transition/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/transition/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/transition/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v4/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v4/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v4/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v4/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/viewpager/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/viewpager/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/viewpager/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/viewpager/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/android/gms/base/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/android/gms/base/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/database/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/database/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/database/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/database/R$layout.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/ExperimentActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/ExperimentActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$integer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$integer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$interpolator.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$interpolator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$mipmap.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$mipmap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$string.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$style.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$styleable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$styleable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_dep/debug/package_dependencies/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_dep/debug/package_dependencies/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_0/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_0/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_1/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_1/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_2/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_3/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_3/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_4/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_4/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_5/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_5/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_6/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_6/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_7/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_7/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_9/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_9/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/processInstantRunDebugResourcesApk/package_resources-debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/processInstantRunDebugResourcesApk/package_resources-debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-apk/debug/app-debug.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/lifecycle/extensions/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/lifecycle/extensions/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/lifecycle/extensions/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/lifecycle/extensions/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/persistence/room/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/persistence/room/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/persistence/room/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/persistence/room/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/asynclayoutinflater/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/asynclayoutinflater/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/asynclayoutinflater/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/asynclayoutinflater/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/constraint/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/constraint/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coordinatorlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coordinatorlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coordinatorlayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coordinatorlayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/customview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/customview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/customview/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/customview/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/drawerlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/drawerlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/drawerlayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/drawerlayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/loader/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/loader/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/loader/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/loader/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/slidingpanelayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/slidingpanelayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/slidingpanelayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/slidingpanelayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/swiperefreshlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/swiperefreshlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/swiperefreshlayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/swiperefreshlayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/viewpager/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/viewpager/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/viewpager/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/viewpager/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/android/gms/base/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/android/gms/base/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/database/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/database/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/database/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/database/R$layout.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/ExperimentActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/ExperimentActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$integer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$integer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$interpolator.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$interpolator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$mipmap.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$mipmap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$string.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$style.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$styleable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$styleable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_login.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_login.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_mobile_login.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_mobile_login.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_email_signup.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_email_signup.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_0.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_0.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_1.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_1.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_3.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_3.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_5.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_5.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_6.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_6.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_7.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_7.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_9.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_9.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexBuilder/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/1/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/1/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/2/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/2/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/4/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/4/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/5/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/5/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/6/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/6/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/7/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/7/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/8/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/9/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/9/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/__content__.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/lifecycle/extensions/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/lifecycle/extensions/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/lifecycle/extensions/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/lifecycle/extensions/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/persistence/room/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/persistence/room/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/persistence/room/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/persistence/room/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/asynclayoutinflater/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/asynclayoutinflater/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/asynclayoutinflater/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/asynclayoutinflater/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/compat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/compat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/compat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/compat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/constraint/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/constraint/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coordinatorlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coordinatorlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coordinatorlayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coordinatorlayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreui/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreui/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreui/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreui/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreutils/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreutils/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreutils/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreutils/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/customview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/customview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/customview/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/customview/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/design/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/design/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/design/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/design/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/drawerlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/drawerlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/drawerlayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/drawerlayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/fragment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/fragment/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/fragment/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/fragment/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/graphics/drawable/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/graphics/drawable/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/graphics/drawable/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/graphics/drawable/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/loader/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/loader/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/loader/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/loader/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/mediacompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/mediacompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/mediacompat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/mediacompat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/slidingpanelayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/slidingpanelayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/slidingpanelayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/slidingpanelayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/swiperefreshlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/swiperefreshlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/swiperefreshlayout/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/swiperefreshlayout/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/transition/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/transition/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/transition/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/transition/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v4/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v4/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v4/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v4/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/appcompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/appcompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/appcompat/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/appcompat/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/recyclerview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/recyclerview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/recyclerview/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/recyclerview/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/viewpager/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/viewpager/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/viewpager/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/viewpager/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/android/gms/base/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/android/gms/base/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/database/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/database/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/database/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/database/R$layout.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertBookTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository$InsertSharedInfosTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/ExperimentActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/ExperimentActivity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$integer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$integer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$interpolator.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$interpolator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$mipmap.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$mipmap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$string.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$style.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$styleable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$styleable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/__content__.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/GetCardsViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/GetCardsViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/EmailSignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/EmailSignup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/MobileLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/MobileLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/MobileSignup.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/MobileSignup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/SignupActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/SignupActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileUpdateActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileUpdateActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/utils/AppUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/utils/AppUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_crop_experiment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_dummy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_experiment.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_mobile_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_mobile_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_update.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_update.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialg_profile_pic.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialg_profile_pic.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/email_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/email_signup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,335 +329,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="104" column="84" selection-start-line="104" selection-start-column="84" selection-end-line="104" selection-end-column="84" />
-              <folding>
-                <element signature="method#onCreate#0;class#LoginActivity#0" />
-                <element signature="e#960#1152#1" />
-                <element signature="method#initialiseViewModel#0;class#LoginActivity#0" />
-                <element signature="method#onClick#0;class#LoginActivity#0" />
-                <element signature="e#2163#2311#1" />
-                <element signature="e#2352#2485#1" />
-                <element signature="e#2515#2852#1" />
-                <element signature="e#2889#2931#1" />
-                <element signature="method#onEmailUserLoginSuccess#0;class#LoginActivity#0" />
-                <element signature="method#onEmailUserLoginFailure#0;class#LoginActivity#0" />
-                <element signature="e#3739#3869#1" />
-                <element signature="method#resetAllViews#0;class#LoginActivity#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthViewModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="187" column="54" selection-start-line="187" selection-start-column="54" selection-end-line="187" selection-end-column="54" />
-              <folding>
-                <element signature="method#registerEmailUser#0;class#AuthViewModel#0" />
-                <element signature="e#1510#1621#1" />
-                <element signature="e#1697#1811#1" />
-                <element signature="e#1857#1974#1" />
-                <element signature="method#loginUserWithEmail#0;class#AuthViewModel#0" />
-                <element signature="e#2241#2341#1" />
-                <element signature="e#2383#2486#1" />
-                <element signature="method#sendPasswordResetEmail#0;class#AuthViewModel#0" />
-                <element signature="method#isPasswordValid#0;class#AuthViewModel#0" />
-                <element signature="method#isEmailValid#0;class#AuthViewModel#0" />
-                <element signature="method#authorizePhoneCredentials#0;class#AuthViewModel#0" />
-                <element signature="e#3140#3249#1" />
-                <element signature="e#3390#3493#1" />
-                <element signature="method#setProfilePic#0;class#AuthViewModel#0" />
-                <element signature="e#4347#4748#1" />
-                <element signature="e#4365#4634#0" />
-                <element signature="e#4657#4738#0" />
-                <element signature="method#updateUserProfile#0;class#AuthViewModel#0" />
-                <element signature="method#saveProfilePic#0;class#AuthViewModel#0" />
-                <element signature="method#setEmailSignupListener#0;class#AuthViewModel#0" />
-                <element signature="method#setEmailLoginListener#0;class#AuthViewModel#0" />
-                <element signature="method#setMobileAuthListener#0;class#AuthViewModel#0" />
-                <element signature="method#setProfileListener#0;class#AuthViewModel#0" />
-                <element signature="method#onEmailUserRegisterSuccess#0;class#AuthViewModel#0" />
-                <element signature="method#onEmailUserRegisterFailure#0;class#AuthViewModel#0" />
-                <element signature="method#onPasswordResetMailSent#0;class#AuthViewModel#0" />
-                <element signature="method#onEmailUserLoginFailure#0;class#AuthViewModel#0" />
-                <element signature="method#onMobileAuthenticationSuccess#0;class#AuthViewModel#0" />
-                <element signature="method#onMobileAuthenticationFailure#0;class#AuthViewModel#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="447">
-              <caret line="634" column="56" selection-start-line="634" selection-start-column="56" selection-end-line="634" selection-end-column="56" />
+              <caret line="84" column="54" selection-start-line="84" selection-start-column="54" selection-end-line="84" selection-end-column="54" />
               <folding>
-                <element signature="docComment;class#DataRepository#0" />
-                <element signature="e#4877#5232#0" />
-                <element signature="e#5238#5336#0" />
-                <element signature="e#5238#6151#0" />
-                <element signature="e#5437#5659#1" />
-                <element signature="e#5762#6113#1" />
-                <element signature="e#6251#6405#0" />
-                <element signature="e#6499#6714#0" />
-                <element signature="e#6499#7022#0" />
-                <element signature="e#6841#6955#1" />
-                <element signature="e#7028#7142#0" />
-                <element signature="e#7028#7504#0" />
-                <element signature="e#7212#7308#0" />
-                <element signature="e#7361#7498#0" />
-                <element signature="e#7510#7854#0" />
-                <element signature="e#7590#7711#0" />
-                <element signature="e#7740#7848#0" />
-                <element signature="e#7860#8216#0" />
-                <element signature="e#7987#8092#0" />
-                <element signature="e#8145#8189#0" />
-                <element signature="e#8222#8699#0" />
-                <element signature="e#8411#8480#1" />
-                <element signature="e#8705#9150#0" />
-                <element signature="e#8759#8976#0" />
-                <element signature="e#9006#9050#0" />
-                <element signature="e#9082#9126#0" />
-                <element signature="e#9156#9598#0" />
-                <element signature="e#9209#9424#0" />
-                <element signature="e#9454#9498#0" />
-                <element signature="e#9530#9574#0" />
-                <element signature="e#9604#10102#0" />
-                <element signature="e#10108#10449#0" />
-                <element signature="e#10182#10296#0" />
-                <element signature="e#10325#10443#0" />
-                <element signature="e#10455#10802#0" />
-                <element signature="e#10534#10649#0" />
-                <element signature="e#10678#10796#0" />
-                <element signature="e#10808#11934#0" />
-                <element signature="e#10872#11787#0" />
-                <element signature="e#10903#11775#0" />
-                <element signature="e#11122#11375#1" />
-                <element signature="e#11816#11928#0" />
-                <element signature="e#11940#12309#0" />
-                <element signature="e#12134#12246#1" />
-                <element signature="e#12315#12584#0" />
-                <element signature="e#12413#12470#1" />
-                <element signature="e#12590#12877#0" />
-                <element signature="e#12695#12806#1" />
-                <element signature="e#12883#12993#0" />
-                <element signature="e#12883#13018#0" />
-                <element signature="e#13024#13269#0" />
-                <element signature="e#13140#13196#0" />
-                <element signature="e#13219#13263#0" />
-                <element signature="e#13275#13813#0" />
-                <element signature="e#13315#13766#0" />
-                <element signature="e#13346#13754#0" />
-                <element signature="e#13819#14463#0" />
-                <element signature="e#13859#14300#0" />
-                <element signature="e#13903#14220#0" />
-                <element signature="e#14361#14457#0" />
-                <element signature="e#14469#15042#0" />
-                <element signature="e#15048#15314#0" />
-                <element signature="e#15115#15172#1" />
-                <element signature="e#15320#15541#0" />
-                <element signature="e#15547#15858#0" />
-                <element signature="e#15639#15696#1" />
-                <element signature="e#15864#16108#0" />
-                <element signature="e#15946#16003#1" />
-                <element signature="e#16114#16276#0" />
-                <element signature="e#16282#16698#0" />
-                <element signature="e#16469#16532#1" />
-                <element signature="e#16704#17110#0" />
-                <element signature="e#16776#16933#0" />
-                <element signature="e#16963#17007#0" />
-                <element signature="e#17039#17083#0" />
-                <element signature="e#17116#17481#0" />
-                <element signature="e#17192#17304#0" />
-                <element signature="e#17334#17378#0" />
-                <element signature="e#17410#17454#0" />
-                <element signature="e#17487#17834#0" />
-                <element signature="e#17552#17657#0" />
-                <element signature="e#17687#17731#0" />
-                <element signature="e#17763#17807#0" />
-                <element signature="e#17840#18205#0" />
-                <element signature="e#17916#18028#0" />
-                <element signature="e#18058#18102#0" />
-                <element signature="e#18134#18178#0" />
-                <element signature="e#18211#18779#0" />
-                <element signature="e#18313#18601#0" />
-                <element signature="e#18631#18675#0" />
-                <element signature="e#18707#18751#0" />
-                <element signature="e#18785#19194#0" />
-                <element signature="e#19200#19436#0" />
-                <element signature="e#19478#19597#0" />
-                <element signature="e#19603#19735#0" />
-                <element signature="e#19741#19870#0" />
-                <element signature="e#19876#20020#0" />
-                <element signature="e#20026#20165#0" />
-                <element signature="e#20171#20306#0" />
-                <element signature="e#20312#20431#0" />
-                <element signature="e#20437#20556#0" />
-                <element signature="e#20562#20696#0" />
-                <element signature="e#20702#20836#0" />
-                <element signature="e#20842#20976#0" />
-                <element signature="e#20982#21179#0" />
-                <element signature="e#21184#21342#0" />
-                <element signature="e#21347#21505#0" />
-                <element signature="e#21507#21522#0" />
-                <element signature="e#21670#21806#0" />
-                <element signature="e#21812#22465#0" />
-                <element signature="e#22304#22459#1" />
-                <element signature="e#22472#22744#0" />
-                <element signature="e#22939#23008#1" />
-                <element signature="e#22916#23073#0" />
-                <element signature="e#23129#23266#0" />
-                <element signature="e#23272#23442#0" />
-                <element signature="e#23647#23708#1" />
-                <element signature="e#23616#23758#0" />
-                <element signature="e#23814#23939#0" />
-                <element signature="e#23945#24099#0" />
-                <element signature="e#24241#24288#1" />
-                <element signature="e#24343#24401#1" />
-                <element signature="e#24497#24548#1" />
-                <element signature="e#24602#24656#1" />
-                <element signature="e#24611#25624#0" />
-                <element signature="e#25630#26012#0" />
-                <element signature="e#26018#26289#0" />
-                <element signature="e#26295#26622#0" />
-                <element signature="e#26392#26493#0" />
-                <element signature="e#26522#26616#0" />
-                <element signature="e#26628#26984#0" />
-                <element signature="e#26813#26978#1" />
-                <element signature="e#26990#27453#0" />
-                <element signature="e#27459#28226#0" />
-                <element signature="e#27521#28071#0" />
-                <element signature="e#27778#28061#1" />
-                <element signature="e#28100#28144#0" />
-                <element signature="e#28176#28220#0" />
-                <element signature="e#28232#29102#0" />
-                <element signature="e#28294#28938#0" />
-                <element signature="e#28658#28928#1" />
-                <element signature="e#28976#29020#0" />
-                <element signature="e#29052#29096#0" />
-                <element signature="e#29108#29490#0" />
-                <element signature="e#29164#29334#0" />
-                <element signature="e#29364#29408#0" />
-                <element signature="e#29440#29484#0" />
-                <element signature="e#29496#30851#0" />
-                <element signature="e#29910#30845#1" />
-                <element signature="e#30210#30760#0" />
-                <element signature="e#30783#30835#0" />
-                <element signature="e#31043#31091#1" />
-                <element signature="e#31188#31239#1" />
-                <element signature="e#31196#31692#0" />
-                <element signature="e#31264#31522#0" />
-                <element signature="e#31295#31510#0" />
-                <element signature="e#31551#31636#0" />
-                <element signature="e#31887#31938#1" />
-                <element signature="e#31909#33367#0" />
-                <element signature="e#32010#33361#0" />
-                <element signature="e#32390#32879#1" />
-                <element signature="e#32563#32865#1" />
-                <element signature="e#32897#33326#1" />
-                <element signature="e#33373#34225#0" />
-                <element signature="e#33468#33828#0" />
-                <element signature="e#33563#33743#0" />
-                <element signature="e#33613#33703#1" />
-                <element signature="e#33776#33818#0" />
-                <element signature="e#33838#34219#0" />
-                <element signature="e#34130#34209#1" />
+                <element signature="e#974#1015#0" expanded="true" />
+                <element signature="e#2354#2394#0" expanded="true" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="156" column="64" lean-forward="true" selection-start-line="156" selection-start-column="64" selection-end-line="156" selection-end-column="64" />
-              <folding>
-                <element signature="method#AuthService#0;class#AuthService#0" />
-                <element signature="method#registerEmailUser#0;class#AuthService#0" />
-                <element signature="method#loginUserWithEmail#0;class#AuthService#0" />
-                <element signature="method#authorizePhoneCredentials#0;class#AuthService#0" />
-                <element signature="e#4712#4988#1" />
-                <element signature="class#5127:6304" />
-                <element signature="method#onVerificationCompleted#0;class#5127:6304" />
-                <element signature="method#onCodeAutoRetrievalTimeOut#0;class#5127:6304" />
-                <element signature="method#onCodeSent#0;class#5127:6304" />
-                <element signature="method#onVerificationFailed#0;class#5127:6304" />
-                <element signature="method#verifyCredential#0;class#AuthService#0" />
-                <element signature="e#6796#6975#1" />
-                <element signature="e#7005#7124#1" />
-                <element signature="method#setupInitialData#0;class#AuthService#0" />
-                <element signature="e#7219#7289#0" />
-                <element signature="method#setupUserProfile#0;class#AuthService#0" />
-                <element signature="class#8253:9472" />
-                <element signature="method#onDataChange#0;class#8253:9472" />
-                <element signature="e#8548#9087#1" />
-                <element signature="e#8714#8817#1" />
-                <element signature="e#8886#9069#1" />
-                <element signature="e#9109#9204#1" />
-                <element signature="method#onCancelled#0;class#8253:9472" />
-                <element signature="e#9840#9943#1" />
-                <element signature="e#9965#10080#1" />
-                <element signature="e#10256#10461#1" />
-                <element signature="e#10556#10796#1" />
-                <element signature="method#downloadUserProfilePicture#0;class#AuthService#0" />
-                <element signature="e#11027#11228#1" />
-                <element signature="e#11041#11079#0" />
-                <element signature="method#setupBooksOwnedByUser#0;class#AuthService#0" />
-                <element signature="class#12689:13289" />
-                <element signature="method#onDataChange#0;class#12689:13289" />
-                <element signature="e#13077#13150#1" />
-                <element signature="method#onCancelled#0;class#12689:13289" />
-                <element signature="method#setupBooksSharedWithUser#0;class#AuthService#0" />
-                <element signature="class#13568:14342" />
-                <element signature="method#onDataChange#0;class#13568:14342" />
-                <element signature="e#13999#14204#1" />
-                <element signature="e#14085#14186#1" />
-                <element signature="method#onCancelled#0;class#13568:14342" />
-                <element signature="method#updateUserProfile#0;class#AuthService#0" />
-                <element signature="method#saveProfilePic#0;class#AuthService#0" />
-                <element signature="docComment;method#downloadBookWithId#0;class#AuthService#0" />
-                <element signature="method#downloadBookWithId#0;class#AuthService#0" />
-                <element signature="class#16968:17694" />
-                <element signature="method#onDataChange#0;class#16968:17694" />
-                <element signature="e#17165#17437#1" />
-                <element signature="method#onCancelled#0;class#16968:17694" />
-                <element signature="method#downloadCardsOfBook#0;class#AuthService#0" />
-                <element signature="class#17980:18495" />
-                <element signature="method#onDataChange#0;class#17980:18495" />
-                <element signature="e#18290#18357#1" />
-                <element signature="method#onCancelled#0;class#17980:18495" />
-                <element signature="method#downloadCardWithId#0;class#AuthService#0" />
-                <element signature="class#18749:19633" />
-                <element signature="method#onDataChange#0;class#18749:19633" />
-                <element signature="e#19063#19495#1" />
-                <element signature="e#19300#19386#0" />
-                <element signature="e#19409#19477#0" />
-                <element signature="method#onCancelled#0;class#18749:19633" />
-                <element signature="method#downloadImageFromFirebaseToPath#0;class#AuthService#0" />
-                <element signature="method#setEmailSignupListener#0;class#AuthService#0" />
-                <element signature="method#setEmailLoginListener#0;class#AuthService#0" />
-                <element signature="method#setMobileAuthListener#0;class#AuthService#0" />
-                <element signature="method#setDataSyncListener#0;class#AuthService#0" />
-                <element signature="method#setProfileListener#0;class#AuthService#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
-            </state>
-          </provider>
+          <provider editor-type-id="android-designer2" />
         </entry>
       </file>
     </leaf>
@@ -407,16 +357,15 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="layoutResourceFile" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>saveNewBookInFirebase</find>
       <find>AddBookListener</find>
       <find>Found in cache</find>
       <find>onChanged: OWNERS:</find>
@@ -443,9 +392,10 @@
       <find>CURRENT_USER_ID</find>
       <find>Book Mo</find>
       <find>imageUris</find>
-      <find>oncard</find>
       <find>clear</find>
       <find>authen</find>
+      <find>oncard</find>
+      <find>OTP_NEEDED</find>
     </findStrings>
     <replaceStrings>
       <replace>ShareInfo</replace>
@@ -464,26 +414,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/add/AddCardMoreDetailsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_big_card.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_big_card_front.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/image_pager_background.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/add/AddImageFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_close_whie_24dp.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_add_card_photos.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/ImagePageAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/menu/add_card_context_menu.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/add/AddCardActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/add/AddCardPhotosFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/getcards/BigCardFrontFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardPhotosFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardModelFactory.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/DataSyncListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardListener.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardMoreDetailsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardsModelFactory.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardListener.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardsViewModel.java" />
@@ -506,15 +436,35 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_all_books.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/SecOwnersAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/GetCardsViewModel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthListener.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/GetCardsViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/loading_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_otp_timer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/MobileLogin.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/SignupActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/MobileSignup.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/EmailSignup.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthViewModel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthModelFactory.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/utils/AppUtilities.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileUpdateActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_mobile_login.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_update.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialg_profile_pic.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/email_signup.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_loading.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml" />
       </list>
     </option>
   </component>
@@ -531,9 +481,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -557,20 +505,31 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="capturethemoment" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CaptureTheMoment" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="capturethemoment" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="CaptureTheMoment" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="CaptureTheMoment" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -582,7 +541,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.recentlyUsedThemes" value="Platform.MaterialComponents.Light&#10;Platform.MaterialComponents.Light.Dialog" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="device.picker.selection" value="Pixel_XL_API_28" />
+    <property name="device.picker.selection" value="S8EIOVTKPNYHP7KZ" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
@@ -722,9 +681,9 @@
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.1377899" weight="0.20529328" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.13642564" weight="0.20529328" />
       <window_info id="Resources Explorer" order="1" show_stripe_button="false" sideWeight="0.49931788" weight="0.3297568" />
-      <window_info id="Structure" order="2" sideWeight="0.8622101" side_tool="true" weight="0.20529328" />
+      <window_info id="Structure" order="2" sideWeight="0.8635743" side_tool="true" weight="0.20529328" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
@@ -739,10 +698,10 @@
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3287858" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5007153" side_tool="true" weight="0.3287858" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49928468" weight="0.5457026" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info anchor="bottom" id="Logcat" order="9" weight="0.46793997" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.84856755" />
+      <window_info anchor="bottom" id="Logcat" order="9" weight="0.55388814" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.3297568" />
-      <window_info anchor="right" id="Preview" order="1" weight="0.3297568" />
+      <window_info active="true" anchor="right" id="Preview" order="1" visible="true" weight="0.3297568" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3297568" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -750,9 +709,9 @@
       <window_info anchor="right" id="Device File Explorer" order="6" side_tool="true" weight="0.35479257" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.1377899" visible="true" weight="0.20529328" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.13642564" visible="true" weight="0.20529328" />
       <window_info id="Resources Explorer" order="1" show_stripe_button="false" sideWeight="0.49931788" weight="0.3297568" />
-      <window_info id="Structure" order="2" sideWeight="0.8622101" side_tool="true" weight="0.20529328" />
+      <window_info id="Structure" order="2" sideWeight="0.8635743" side_tool="true" weight="0.20529328" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
@@ -767,10 +726,10 @@
       <window_info anchor="bottom" id="Terminal" order="5" weight="0.3287858" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5007153" side_tool="true" weight="0.3287858" />
       <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49928468" weight="0.5457026" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" />
-      <window_info anchor="bottom" id="Logcat" order="9" weight="0.46793997" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.84856755" />
+      <window_info anchor="bottom" id="Logcat" order="9" weight="0.55388814" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.3297568" />
-      <window_info anchor="right" id="Preview" order="1" weight="0.3297568" />
+      <window_info active="true" anchor="right" id="Preview" order="1" visible="true" weight="0.3297568" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3297568" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -779,375 +738,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/BigCardFrontFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="42" column="92" selection-start-line="42" selection-start-column="92" selection-end-line="42" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/add/AddCardActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="66" column="21" lean-forward="true" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-          <folding>
-            <element signature="method#onCreate#0;class#AddCardActivity#0" />
-            <element signature="method#initialiseViewModel#0;class#AddCardActivity#0" />
-            <element signature="method#initialiseDummyData#0;class#AddCardActivity#0" />
-            <element signature="e#2035#2112#1" />
-            <element signature="method#detailsFrag#0;class#AddCardActivity#0" />
-            <element signature="method#saveCard#0;class#AddCardActivity#0" />
-            <element signature="method#onCardCreated#0;class#AddCardActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/ImagePageAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-          <folding>
-            <element signature="method#ImagePageAdapter#1;class#ImagePageAdapter#0" />
-            <element signature="e#1501#1664#1" />
-            <element signature="e#1678#1894#1" />
-            <element signature="method#getCount#0;class#ImagePageAdapter#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/add/AddCardPhotosFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="129" column="4" selection-start-line="129" selection-start-column="4" selection-end-line="208" selection-end-column="5" />
-          <folding>
-            <element signature="e#2196#2205#0" />
-            <element signature="method#onCreateView#0;class#AddCardPhotosFragment#0" />
-            <element signature="class#3155:3648" />
-            <element signature="method#onPageScrolled#0;class#3155:3648" />
-            <element signature="method#onPageSelected#0;class#3155:3648" />
-            <element signature="method#onPageScrollStateChanged#0;class#3155:3648" />
-            <element signature="class#4072:4295" />
-            <element signature="method#onClick#0;class#4072:4295" />
-            <element signature="class#4373:4523" />
-            <element signature="class#4572:4774" />
-            <element signature="method#onClick#0;class#4572:4774" />
-            <element signature="method#addPhotos#0;class#AddCardPhotosFragment#0" />
-            <element signature="class#5765:5993" />
-            <element signature="method#onClick#0;class#5765:5993" />
-            <element signature="class#6041:6271" />
-            <element signature="method#onClick#0;class#6041:6271" />
-            <element signature="method#photoFromGallery#0;class#AddCardPhotosFragment#0" />
-            <element signature="e#6445#6593#1" />
-            <element signature="method#photoFromCamera#0;class#AddCardPhotosFragment#0" />
-            <element signature="e#7178#7353#1" />
-            <element signature="method#cropImageAt#0;class#AddCardPhotosFragment#0" />
-            <element signature="method#onActivityResult#0;class#AddCardPhotosFragment#0" />
-            <element signature="e#8260#8344#1" />
-            <element signature="e#8423#8630#1" />
-            <element signature="e#8493#8620#1" />
-            <element signature="e#8734#8965#1" />
-            <element signature="method#updateImagePager#0;class#AddCardPhotosFragment#0" />
-            <element signature="method#setNextNavigation#0;class#AddCardPhotosFragment#0" />
-            <element signature="e#9406#9510#1" />
-            <element signature="e#9524#9634#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardModelFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#504#505#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/add/AddCardViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="53" column="65" selection-start-line="53" selection-start-column="65" selection-end-line="53" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardPhotosFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="64" column="131" selection-start-line="64" selection-start-column="131" selection-end-line="64" selection-end-column="131" />
-          <folding>
-            <element signature="e#739#748#0" />
-            <element signature="method#onCreateView#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="method#bindDataToUI#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="method#initialiseUI#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="class#2067:2411" />
-            <element signature="method#onPageScrolled#0;class#2067:2411" />
-            <element signature="method#onPageSelected#0;class#3882:4329" />
-            <element signature="method#onPageScrollStateChanged#0;class#2067:2411" />
-            <element signature="method#toggleButtonsVisibility#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="e#2757#2844#1" />
-            <element signature="e#2923#3075#1" />
-            <element signature="method#updateUIData#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="method#removeThisPhotoFromPager#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="method#addPhotos#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="class#4870:5098" />
-            <element signature="method#onClick#0;class#4870:5098" />
-            <element signature="class#5146:5376" />
-            <element signature="method#onClick#0;class#5146:5376" />
-            <element signature="method#photoFromGallery#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="e#5081#5229#1" />
-            <element signature="method#photoFromCamera#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="e#5814#5989#1" />
-            <element signature="method#cropImageAt#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="method#onActivityResult#0;class#UpdateCardPhotosFragment#0" />
-            <element signature="e#6896#6980#1" />
-            <element signature="e#7059#7266#1" />
-            <element signature="e#7129#7256#1" />
-            <element signature="e#7370#7601#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="109" column="32" selection-start-line="109" selection-start-column="32" selection-end-line="109" selection-end-column="32" />
-          <folding>
-            <element signature="method#onCreate#0;class#UpdateCardActivity#0" />
-            <element signature="method#initialiseUI#0;class#UpdateCardActivity#0" />
-            <element signature="method#initialiseViewModel#0;class#UpdateCardActivity#0" />
-            <element signature="class#1903:2221" />
-            <element signature="method#onChanged#0;class#1903:2221" />
-            <element signature="method#showPhotosFragment#0;class#UpdateCardActivity#0" />
-            <element signature="method#showMoreDetailsFragment#0;class#UpdateCardActivity#0" />
-            <element signature="method#saveUpdatedCard#0;class#UpdateCardActivity#0" />
-            <element signature="method#onOptionsItemSelected#0;class#UpdateCardActivity#0" />
-            <element signature="method#onCardUpdated#0;class#UpdateCardActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardMoreDetailsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="32" column="64" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="64" />
-          <folding>
-            <element signature="method#initialiseUI#0;class#UpdateCardMoreDetailsFragment#0" />
-            <element signature="method#saveUpdatedCard#0;class#UpdateCardMoreDetailsFragment#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-          <folding>
-            <element signature="method#generatePathsForRemovedImages#0;class#UpdateCardViewModel#0" />
-            <element signature="e#1352#1687#1" />
-            <element signature="e#1435#1677#1" />
-            <element signature="method#generatePathsForNewActiveImages#0;class#UpdateCardViewModel#0" />
-            <element signature="e#1076#1524#1" />
-            <element signature="e#2073#2315#1" />
-            <element signature="e#1482#1521#1" />
-            <element signature="method#getRandomImagePath#0;class#UpdateCardViewModel#0" />
-            <element signature="e#2965#2966#0" expanded="true" />
-            <element signature="e#3015#3016#0" expanded="true" />
-            <element signature="method#setUpdateCardListener#0;class#UpdateCardViewModel#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/edit/UpdateCardService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-          <folding>
-            <element signature="method#UpdateCardService#0;class#UpdateCardService#0" />
-            <element signature="method#saveTheChangesOfCard#0;class#UpdateCardService#0" />
-            <element signature="method#deleteTheOldImages#0;class#UpdateCardService#0" />
-            <element signature="e#1609#1635#1" />
-            <element signature="class#1732:1930" />
-            <element signature="method#onSuccess#0;class#1732:1969" />
-            <element signature="class#2017:2219" />
-            <element signature="method#onFailure#0;class#2017:2248" />
-            <element signature="method#uploadTheNewImages#0;class#UpdateCardService#0" />
-            <element signature="e#1527#1572#1" />
-            <element signature="class#1857:2060" />
-            <element signature="method#onSuccess#0;class#1857:2086" />
-            <element signature="class#2140:2302" />
-            <element signature="method#onFailure#0;class#2140:2342" />
-            <element signature="class#1659:1841" />
-            <element signature="method#onFailure#0;class#1722:1939" />
-            <element signature="method#setDataSyncListener#0;class#UpdateCardService#0" />
-            <element signature="method#setUpdateCardListener#0;class#UpdateCardService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardsModelFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="26" column="40" lean-forward="true" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/delete/DeleteCardsViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding>
-            <element signature="method#setDeleteCardListener#0;class#DeleteCardsViewModel#0" />
-            <element signature="e#794#795#0" expanded="true" />
-            <element signature="e#850#851#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/BigCardActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
-          <folding>
-            <element signature="docComment;field#cardToBeDisplayed#0;class#BigCardActivity#0" />
-            <element signature="method#onCreate#0;class#BigCardActivity#0" />
-            <element signature="method#initialiseViewModel#0;class#BigCardActivity#0" />
-            <element signature="method#initialiseUI#0;class#BigCardActivity#0" />
-            <element signature="class#3485:3650" />
-            <element signature="method#getCardWithId#0;class#BigCardActivity#0" />
-            <element signature="class#4115:4482" />
-            <element signature="method#onChanged#0;class#4115:4482" />
-            <element signature="method#getPathsForCard#0;class#BigCardActivity#0" />
-            <element signature="method#previousCard#0;class#BigCardActivity#0" />
-            <element signature="e#4937#5074#1" />
-            <element signature="method#nextCard#0;class#BigCardActivity#0" />
-            <element signature="e#5216#5353#1" />
-            <element signature="method#showFrontFrag#0;class#BigCardActivity#0" />
-            <element signature="method#showBackFrag#0;class#BigCardActivity#0" />
-            <element signature="method#deleteCard#0;class#BigCardActivity#0" />
-            <element signature="class#6165:6531" />
-            <element signature="method#onClick#0;class#6165:6531" />
-            <element signature="class#6582:6806" />
-            <element signature="method#editCard#0;class#BigCardActivity#0" />
-            <element signature="e#6854#6911#0" />
-            <element signature="method#bigCardClicked#0;class#BigCardActivity#0" />
-            <element signature="e#7323#7581#0" />
-            <element signature="method#onCreateOptionsMenu#0;class#BigCardActivity#0" />
-            <element signature="method#onOptionsItemSelected#0;class#BigCardActivity#0" />
-            <element signature="e#7904#7937#1" />
-            <element signature="method#onCardDeleted#0;class#BigCardActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/edit/OwnerRemoveClickListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/BookListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataSyncListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="18" column="79" selection-start-line="18" selection-start-column="79" selection-end-line="18" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/edit/UpdateBookListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/SecondaryOwner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/edit/UpdateBookService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="293" column="71" selection-start-line="293" selection-start-column="71" selection-end-line="293" selection-end-column="71" />
-          <folding>
-            <element signature="method#updateThisBook#0;class#UpdateBookService#0" />
-            <element signature="method#deleteSecOwnersInFirebase#0;class#UpdateBookService#0" />
-            <element signature="e#2373#2494#1" />
-            <element signature="class#2539:2845" />
-            <element signature="method#onDataChange#0;class#2539:2864" />
-            <element signature="e#2713#2768#1" />
-            <element signature="method#onCancelled#0;class#2539:2845" />
-            <element signature="docComment;method#deleteSharedBookFromThisUser#0;class#UpdateBookService#0" />
-            <element signature="method#deleteSharedBookFromThisUser#0;class#UpdateBookService#0" />
-            <element signature="class#3690:3919" />
-            <element signature="method#onSuccess#0;class#3690:3919" />
-            <element signature="class#3963:4213" />
-            <element signature="method#onFailure#0;class#3963:4213" />
-            <element signature="docComment;method#validateSecOwnersInFirebase#0;class#UpdateBookService#0" />
-            <element signature="method#validateSecOwnersInFirebase#0;class#UpdateBookService#0" />
-            <element signature="e#2240#2326#1" />
-            <element signature="e#2437#5145#1" />
-            <element signature="class#2816:5133" />
-            <element signature="method#onDataChange#0;class#2816:5133" />
-            <element signature="e#3097#3641#1" />
-            <element signature="e#3667#3786#1" />
-            <element signature="e#3874#3926#0" />
-            <element signature="e#4170#4309#1" />
-            <element signature="e#4458#4612#1" />
-            <element signature="method#onCancelled#0;class#2816:5133" />
-            <element signature="e#4841#4904#0" />
-            <element signature="docComment;method#validateBookNameInFirebase#0;class#UpdateBookService#0" />
-            <element signature="method#validateBookNameInFirebase#0;class#UpdateBookService#0" />
-            <element signature="class#5557:7359" />
-            <element signature="method#onDataChange#0;class#5557:7359" />
-            <element signature="e#5754#6059#1" />
-            <element signature="e#5784#5826#0" />
-            <element signature="e#6373#6839#1" />
-            <element signature="e#6641#6813#1" />
-            <element signature="method#onCancelled#0;class#5557:7359" />
-            <element signature="method#updateBookInFirebase#0;class#UpdateBookService#0" />
-            <element signature="class#8060:9270" />
-            <element signature="method#onSuccess#0;class#8060:9270" />
-            <element signature="class#8508:9107" />
-            <element signature="method#onDataChange#0;class#8508:9107" />
-            <element signature="method#onCancelled#0;class#8508:9107" />
-            <element signature="docComment;method#updateSharedBooksOfSecOwnersInFirebase#0;class#UpdateBookService#0" />
-            <element signature="method#updateSharedBooksOfSecOwnersInFirebase#0;class#UpdateBookService#0" />
-            <element signature="e#11902#12582#1" />
-            <element signature="class#12245:12570" />
-            <element signature="method#onSuccess#0;class#12245:12570" />
-            <element signature="method#setUpdateBookListener#0;class#UpdateBookService#0" />
-            <element signature="method#setDataSyncListener#0;class#UpdateBookService#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/edit/UpdateBookViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -1183,13 +773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1292,20 +875,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_card_back.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_all_books.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/SecOwnersAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1370,39 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-          <folding>
-            <element signature="method#onCreate#0;class#SmallCardsActivity#0" />
-            <element signature="method#initialiseViewModel#0;class#SmallCardsActivity#0" />
-            <element signature="class#2121:3013" />
-            <element signature="method#onChanged#0;class#2121:3013" />
-            <element signature="e#2595#2855#1" />
-            <element signature="class#2819:3098" />
-            <element signature="method#onChanged#0;class#2819:3138" />
-            <element signature="method#initialiseUI#0;class#SmallCardsActivity#0" />
-            <element signature="method#onCreateOptionsMenu#0;class#SmallCardsActivity#0" />
-            <element signature="e#4449#4517#1" />
-            <element signature="method#onOptionsItemSelected#0;class#SmallCardsActivity#0" />
-            <element signature="e#4705#4758#1" />
-            <element signature="e#4823#4947#1" />
-            <element signature="e#5080#5113#1" />
-            <element signature="method#navigateToEditBookActivity#0;class#SmallCardsActivity#0" />
-            <element signature="method#onSmallCardClicked#0;class#SmallCardsActivity#0" />
-            <element signature="method#onBookDeleted#0;class#SmallCardsActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
@@ -1412,108 +962,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/GetCardsViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        <state relative-caret-position="254">
+          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthListener.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/CardDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+        <state relative-caret-position="227">
+          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="156" column="64" lean-forward="true" selection-start-line="156" selection-start-column="64" selection-end-line="156" selection-end-column="64" />
+        <state relative-caret-position="56">
+          <caret line="70" column="77" selection-start-line="70" selection-start-column="77" selection-end-line="70" selection-end-column="77" />
           <folding>
-            <element signature="method#AuthService#0;class#AuthService#0" />
-            <element signature="method#registerEmailUser#0;class#AuthService#0" />
-            <element signature="method#loginUserWithEmail#0;class#AuthService#0" />
-            <element signature="method#authorizePhoneCredentials#0;class#AuthService#0" />
-            <element signature="e#4712#4988#1" />
-            <element signature="class#5127:6304" />
-            <element signature="method#onVerificationCompleted#0;class#5127:6304" />
-            <element signature="method#onCodeAutoRetrievalTimeOut#0;class#5127:6304" />
-            <element signature="method#onCodeSent#0;class#5127:6304" />
-            <element signature="method#onVerificationFailed#0;class#5127:6304" />
-            <element signature="method#verifyCredential#0;class#AuthService#0" />
-            <element signature="e#6796#6975#1" />
-            <element signature="e#7005#7124#1" />
-            <element signature="method#setupInitialData#0;class#AuthService#0" />
-            <element signature="e#7219#7289#0" />
-            <element signature="method#setupUserProfile#0;class#AuthService#0" />
-            <element signature="class#8253:9472" />
-            <element signature="method#onDataChange#0;class#8253:9472" />
-            <element signature="e#8548#9087#1" />
-            <element signature="e#8714#8817#1" />
-            <element signature="e#8886#9069#1" />
-            <element signature="e#9109#9204#1" />
-            <element signature="method#onCancelled#0;class#8253:9472" />
-            <element signature="e#9840#9943#1" />
-            <element signature="e#9965#10080#1" />
-            <element signature="e#10256#10461#1" />
-            <element signature="e#10556#10796#1" />
-            <element signature="method#downloadUserProfilePicture#0;class#AuthService#0" />
-            <element signature="e#11027#11228#1" />
-            <element signature="e#11041#11079#0" />
-            <element signature="method#setupBooksOwnedByUser#0;class#AuthService#0" />
-            <element signature="class#12689:13289" />
-            <element signature="method#onDataChange#0;class#12689:13289" />
-            <element signature="e#13077#13150#1" />
-            <element signature="method#onCancelled#0;class#12689:13289" />
-            <element signature="method#setupBooksSharedWithUser#0;class#AuthService#0" />
-            <element signature="class#13568:14342" />
-            <element signature="method#onDataChange#0;class#13568:14342" />
-            <element signature="e#13999#14204#1" />
-            <element signature="e#14085#14186#1" />
-            <element signature="method#onCancelled#0;class#13568:14342" />
-            <element signature="method#updateUserProfile#0;class#AuthService#0" />
-            <element signature="method#saveProfilePic#0;class#AuthService#0" />
-            <element signature="docComment;method#downloadBookWithId#0;class#AuthService#0" />
-            <element signature="method#downloadBookWithId#0;class#AuthService#0" />
-            <element signature="class#16968:17694" />
-            <element signature="method#onDataChange#0;class#16968:17694" />
-            <element signature="e#17165#17437#1" />
-            <element signature="method#onCancelled#0;class#16968:17694" />
-            <element signature="method#downloadCardsOfBook#0;class#AuthService#0" />
-            <element signature="class#17980:18495" />
-            <element signature="method#onDataChange#0;class#17980:18495" />
-            <element signature="e#18290#18357#1" />
-            <element signature="method#onCancelled#0;class#17980:18495" />
-            <element signature="method#downloadCardWithId#0;class#AuthService#0" />
-            <element signature="class#18749:19633" />
-            <element signature="method#onDataChange#0;class#18749:19633" />
-            <element signature="e#19063#19495#1" />
-            <element signature="e#19300#19386#0" />
-            <element signature="e#19409#19477#0" />
-            <element signature="method#onCancelled#0;class#18749:19633" />
-            <element signature="method#downloadImageFromFirebaseToPath#0;class#AuthService#0" />
-            <element signature="method#setEmailSignupListener#0;class#AuthService#0" />
-            <element signature="method#setEmailLoginListener#0;class#AuthService#0" />
-            <element signature="method#setMobileAuthListener#0;class#AuthService#0" />
-            <element signature="method#setDataSyncListener#0;class#AuthService#0" />
-            <element signature="method#setProfileListener#0;class#AuthService#0" />
+            <element signature="method#onCreate#0;class#SmallCardsActivity#0" />
+            <element signature="method#initialiseUI#0;class#SmallCardsActivity#0" />
+            <element signature="method#onCreateOptionsMenu#0;class#SmallCardsActivity#0" />
+            <element signature="e#4763#4831#1" />
+            <element signature="method#onOptionsItemSelected#0;class#SmallCardsActivity#0" />
+            <element signature="e#5019#5072#1" />
+            <element signature="e#5137#5261#1" />
+            <element signature="e#5394#5427#1" />
+            <element signature="method#navigateToEditBookActivity#0;class#SmallCardsActivity#0" />
+            <element signature="method#onSmallCardClicked#0;class#SmallCardsActivity#0" />
+            <element signature="method#onBookDeleted#0;class#SmallCardsActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="method#GetBooksFragment#0;class#GetBooksFragment#0" />
+            <element signature="e#1080#1089#0" />
+            <element signature="method#onBookRemoved#0;class#GetBooksFragment#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="634" column="56" selection-start-line="634" selection-start-column="56" selection-end-line="634" selection-end-column="56" />
+        <state relative-caret-position="265">
+          <caret line="310" column="37" selection-start-line="310" selection-start-column="37" selection-end-line="310" selection-end-column="37" />
           <folding>
             <element signature="docComment;class#DataRepository#0" />
             <element signature="e#4877#5232#0" />
             <element signature="e#5238#5336#0" />
-            <element signature="e#5238#6151#0" />
             <element signature="e#5437#5659#1" />
-            <element signature="e#5762#6113#1" />
             <element signature="e#6251#6405#0" />
             <element signature="e#6499#6714#0" />
             <element signature="e#6499#7022#0" />
@@ -1554,138 +1058,158 @@
             <element signature="e#12134#12246#1" />
             <element signature="e#12315#12584#0" />
             <element signature="e#12413#12470#1" />
-            <element signature="e#12590#12877#0" />
             <element signature="e#12695#12806#1" />
-            <element signature="e#12883#12993#0" />
-            <element signature="e#12883#13018#0" />
-            <element signature="e#13024#13269#0" />
-            <element signature="e#13140#13196#0" />
-            <element signature="e#13219#13263#0" />
-            <element signature="e#13275#13813#0" />
-            <element signature="e#13315#13766#0" />
-            <element signature="e#13346#13754#0" />
-            <element signature="e#13819#14463#0" />
-            <element signature="e#13859#14300#0" />
-            <element signature="e#13903#14220#0" />
-            <element signature="e#14361#14457#0" />
-            <element signature="e#14469#15042#0" />
-            <element signature="e#15048#15314#0" />
-            <element signature="e#15115#15172#1" />
-            <element signature="e#15320#15541#0" />
-            <element signature="e#15547#15858#0" />
-            <element signature="e#15639#15696#1" />
-            <element signature="e#15864#16108#0" />
-            <element signature="e#15946#16003#1" />
-            <element signature="e#16114#16276#0" />
-            <element signature="e#16282#16698#0" />
-            <element signature="e#16469#16532#1" />
-            <element signature="e#16704#17110#0" />
-            <element signature="e#16776#16933#0" />
-            <element signature="e#16963#17007#0" />
-            <element signature="e#17039#17083#0" />
-            <element signature="e#17116#17481#0" />
-            <element signature="e#17192#17304#0" />
-            <element signature="e#17334#17378#0" />
-            <element signature="e#17410#17454#0" />
-            <element signature="e#17487#17834#0" />
-            <element signature="e#17552#17657#0" />
-            <element signature="e#17687#17731#0" />
-            <element signature="e#17763#17807#0" />
-            <element signature="e#17840#18205#0" />
-            <element signature="e#17916#18028#0" />
-            <element signature="e#18058#18102#0" />
-            <element signature="e#18134#18178#0" />
-            <element signature="e#18211#18779#0" />
-            <element signature="e#18313#18601#0" />
-            <element signature="e#18631#18675#0" />
-            <element signature="e#18707#18751#0" />
-            <element signature="e#18785#19194#0" />
-            <element signature="e#19200#19436#0" />
-            <element signature="e#19478#19597#0" />
-            <element signature="e#19603#19735#0" />
-            <element signature="e#19741#19870#0" />
-            <element signature="e#19876#20020#0" />
-            <element signature="e#20026#20165#0" />
-            <element signature="e#20171#20306#0" />
-            <element signature="e#20312#20431#0" />
-            <element signature="e#20437#20556#0" />
-            <element signature="e#20562#20696#0" />
-            <element signature="e#20702#20836#0" />
-            <element signature="e#20842#20976#0" />
-            <element signature="e#20982#21179#0" />
-            <element signature="e#21184#21342#0" />
-            <element signature="e#21347#21505#0" />
-            <element signature="e#21507#21522#0" />
-            <element signature="e#21670#21806#0" />
-            <element signature="e#21812#22465#0" />
-            <element signature="e#22304#22459#1" />
-            <element signature="e#22472#22744#0" />
-            <element signature="e#22939#23008#1" />
-            <element signature="e#22916#23073#0" />
-            <element signature="e#23129#23266#0" />
-            <element signature="e#23272#23442#0" />
-            <element signature="e#23647#23708#1" />
-            <element signature="e#23616#23758#0" />
-            <element signature="e#23814#23939#0" />
-            <element signature="e#23945#24099#0" />
-            <element signature="e#24241#24288#1" />
-            <element signature="e#24343#24401#1" />
-            <element signature="e#24497#24548#1" />
-            <element signature="e#24602#24656#1" />
-            <element signature="e#24611#25624#0" />
-            <element signature="e#25630#26012#0" />
-            <element signature="e#26018#26289#0" />
-            <element signature="e#26295#26622#0" />
-            <element signature="e#26392#26493#0" />
-            <element signature="e#26522#26616#0" />
-            <element signature="e#26628#26984#0" />
-            <element signature="e#26813#26978#1" />
-            <element signature="e#26990#27453#0" />
-            <element signature="e#27459#28226#0" />
-            <element signature="e#27521#28071#0" />
-            <element signature="e#27778#28061#1" />
-            <element signature="e#28100#28144#0" />
-            <element signature="e#28176#28220#0" />
-            <element signature="e#28232#29102#0" />
-            <element signature="e#28294#28938#0" />
-            <element signature="e#28658#28928#1" />
-            <element signature="e#28976#29020#0" />
-            <element signature="e#29052#29096#0" />
-            <element signature="e#29108#29490#0" />
-            <element signature="e#29164#29334#0" />
-            <element signature="e#29364#29408#0" />
-            <element signature="e#29440#29484#0" />
-            <element signature="e#29496#30851#0" />
-            <element signature="e#29910#30845#1" />
-            <element signature="e#30210#30760#0" />
-            <element signature="e#30783#30835#0" />
-            <element signature="e#31043#31091#1" />
-            <element signature="e#31188#31239#1" />
-            <element signature="e#31196#31692#0" />
-            <element signature="e#31264#31522#0" />
-            <element signature="e#31295#31510#0" />
-            <element signature="e#31551#31636#0" />
-            <element signature="e#31887#31938#1" />
-            <element signature="e#31909#33367#0" />
-            <element signature="e#32010#33361#0" />
-            <element signature="e#32390#32879#1" />
-            <element signature="e#32563#32865#1" />
-            <element signature="e#32897#33326#1" />
-            <element signature="e#33373#34225#0" />
-            <element signature="e#33468#33828#0" />
-            <element signature="e#33563#33743#0" />
-            <element signature="e#33613#33703#1" />
-            <element signature="e#33776#33818#0" />
-            <element signature="e#33838#34219#0" />
-            <element signature="e#34130#34209#1" />
+            <element signature="e#12883#13109#0" />
+            <element signature="e#13115#13250#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="147" column="67" selection-start-line="147" selection-start-column="67" selection-end-line="147" selection-end-column="67" />
+          <folding>
+            <element signature="method#AuthService#0;class#AuthService#0" />
+            <element signature="method#registerEmailUser#0;class#AuthService#0" />
+            <element signature="e#4712#4988#1" />
+            <element signature="class#5127:6304" />
+            <element signature="method#onVerificationCompleted#0;class#5127:6304" />
+            <element signature="method#onCodeAutoRetrievalTimeOut#0;class#5127:6304" />
+            <element signature="method#onCodeSent#0;class#5127:6304" />
+            <element signature="method#onVerificationFailed#0;class#5127:6304" />
+            <element signature="method#verifyCredential#0;class#AuthService#0" />
+            <element signature="method#setupUserProfile#0;class#AuthService#0" />
+            <element signature="method#downloadUserProfilePicture#0;class#AuthService#0" />
+            <element signature="method#setupBooksOwnedByUser#0;class#AuthService#0" />
+            <element signature="method#setupBooksSharedWithUser#0;class#AuthService#0" />
+            <element signature="method#updateUserProfile#0;class#AuthService#0" />
+            <element signature="method#saveProfilePic#0;class#AuthService#0" />
+            <element signature="docComment;method#downloadBookWithId#0;class#AuthService#0" />
+            <element signature="method#downloadBookWithId#0;class#AuthService#0" />
+            <element signature="method#downloadCardsOfBook#0;class#AuthService#0" />
+            <element signature="method#downloadCardWithId#0;class#AuthService#0" />
+            <element signature="method#downloadImageFromFirebaseToPath#0;class#AuthService#0" />
+            <element signature="method#setEmailSignupListener#0;class#AuthService#0" />
+            <element signature="method#setEmailLoginListener#0;class#AuthService#0" />
+            <element signature="method#setMobileAuthListener#0;class#AuthService#0" />
+            <element signature="method#setDataSyncListener#0;class#AuthService#0" />
+            <element signature="method#setProfileListener#0;class#AuthService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/MobileLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="45" column="32" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+          <folding>
+            <element signature="method#onCreate#0;class#MobileLogin#0" />
+            <element signature="method#initialiseUI#0;class#MobileLogin#0" />
+            <element signature="method#initialiseViewModel#0;class#MobileLogin#0" />
+            <element signature="method#onClick#0;class#MobileLogin#0" />
+            <element signature="e#1630#1857#1" />
+            <element signature="method#onMobileAuthenticationSuccess#0;class#MobileLogin#0" />
+            <element signature="method#onMobileAuthenticationFailure#0;class#MobileLogin#0" />
+            <element signature="e#2601#2721#1" />
+            <element signature="method#onOtpSent#0;class#MobileLogin#0" />
+            <element signature="method#onOtpRetrievalFailed#0;class#MobileLogin#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/MobileSignup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="63" column="48" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
+          <folding>
+            <element signature="e#976#985#0" />
+            <element signature="method#onCreateView#0;class#MobileSignup#0" />
+            <element signature="method#initialiseUI#0;class#MobileSignup#0" />
+            <element signature="method#initialiseViewModel#0;class#MobileSignup#0" />
+            <element signature="method#onClick#0;class#MobileSignup#0" />
+            <element signature="e#2067#2294#1" />
+            <element signature="method#onMobileAuthenticationSuccess#0;class#MobileSignup#0" />
+            <element signature="method#onMobileAuthenticationFailure#0;class#MobileSignup#0" />
+            <element signature="e#3068#3196#1" />
+            <element signature="method#onOtpSent#0;class#MobileSignup#0" />
+            <element signature="class#3837:5089" />
+            <element signature="method#onPreExecute#0;class#3837:5089" />
+            <element signature="method#doInBackground#0;class#3837:5089" />
+            <element signature="e#4178#4384#0" />
+            <element signature="e#4218#4366#1" />
+            <element signature="e#4416#4476#0" />
+            <element signature="method#onProgressUpdate#0;class#3837:5089" />
+            <element signature="method#onPostExecute#0;class#3837:5089" />
+            <element signature="method#onOtpRetrievalFailed#0;class#MobileSignup#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/EmailSignup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="81" column="77" selection-start-line="81" selection-start-column="77" selection-end-line="81" selection-end-column="77" />
+          <folding>
+            <element signature="e#958#967#0" />
+            <element signature="method#onCreateView#0;class#EmailSignup#0" />
+            <element signature="method#initialiseUI#0;class#EmailSignup#0" />
+            <element signature="method#initialiseViewModel#0;class#EmailSignup#0" />
+            <element signature="method#onClick#0;class#EmailSignup#0" />
+            <element signature="e#1934#2284#1" />
+            <element signature="method#resetAllViews#0;class#EmailSignup#0" />
+            <element signature="method#onEmailUserRegisterSuccess#0;class#EmailSignup#0" />
+            <element signature="method#onEmailUserRegisterFailure#0;class#EmailSignup#0" />
+            <element signature="e#3220#4060#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/SignupActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="39" column="40" lean-forward="true" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+          <folding>
+            <element signature="method#onCreate#0;class#SignupActivity#0" />
+            <element signature="method#initialiseUI#0;class#SignupActivity#0" />
+            <element signature="method#onClick#0;class#SignupActivity#0" />
+            <element signature="e#1879#2024#1" />
+            <element signature="method#onTabSelected#0;class#SignupActivity#0" />
+            <element signature="e#1098#1189#1" />
+            <element signature="e#1231#1320#1" />
+            <element signature="method#onTabUnselected#0;class#SignupActivity#0" />
+            <element signature="method#onTabReselected#0;class#SignupActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="74" column="25" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+          <folding>
+            <element signature="method#onCreate#0;class#LoginActivity#0" />
+            <element signature="e#1166#1358#1" />
+            <element signature="method#initialiseUI#0;class#LoginActivity#0" />
+            <element signature="method#initialiseViewModel#0;class#LoginActivity#0" />
+            <element signature="method#createAlertDialog#0;class#LoginActivity#0" />
+            <element signature="e#2704#2852#1" />
+            <element signature="e#2893#3026#1" />
+            <element signature="e#3056#3383#1" />
+            <element signature="e#3420#3509#1" />
+            <element signature="method#onEmailUserLoginSuccess#0;class#LoginActivity#0" />
+            <element signature="method#onEmailUserLoginFailure#0;class#LoginActivity#0" />
+            <element signature="e#4313#4443#1" />
+            <element signature="method#onPasswordResetMailSent#0;class#LoginActivity#0" />
+            <element signature="method#resetAllViews#0;class#LoginActivity#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="187" column="54" selection-start-line="187" selection-start-column="54" selection-end-line="187" selection-end-column="54" />
+        <state relative-caret-position="779">
+          <caret line="132" column="49" selection-start-line="132" selection-start-column="49" selection-end-line="132" selection-end-column="49" />
           <folding>
             <element signature="method#registerEmailUser#0;class#AuthViewModel#0" />
             <element signature="e#1510#1621#1" />
@@ -1698,12 +1222,12 @@
             <element signature="method#isPasswordValid#0;class#AuthViewModel#0" />
             <element signature="method#isEmailValid#0;class#AuthViewModel#0" />
             <element signature="method#authorizePhoneCredentials#0;class#AuthViewModel#0" />
-            <element signature="e#3140#3249#1" />
-            <element signature="e#3390#3493#1" />
+            <element signature="e#3302#3411#1" />
+            <element signature="e#3552#3655#1" />
             <element signature="method#setProfilePic#0;class#AuthViewModel#0" />
-            <element signature="e#4347#4748#1" />
-            <element signature="e#4365#4634#0" />
-            <element signature="e#4657#4738#0" />
+            <element signature="e#4509#4910#1" />
+            <element signature="e#4527#4796#0" />
+            <element signature="e#4819#4900#0" />
             <element signature="method#updateUserProfile#0;class#AuthViewModel#0" />
             <element signature="method#saveProfilePic#0;class#AuthViewModel#0" />
             <element signature="method#setEmailSignupListener#0;class#AuthViewModel#0" />
@@ -1720,26 +1244,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthModelFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="104" column="84" selection-start-line="104" selection-start-column="84" selection-end-line="104" selection-end-column="84" />
+        <state relative-caret-position="76">
+          <caret line="9" column="69" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="64" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1856">
+          <caret line="103" column="5" lean-forward="true" selection-start-line="103" selection-start-column="5" selection-end-line="103" selection-end-column="5" />
           <folding>
-            <element signature="method#onCreate#0;class#LoginActivity#0" />
-            <element signature="e#960#1152#1" />
-            <element signature="method#initialiseViewModel#0;class#LoginActivity#0" />
-            <element signature="method#onClick#0;class#LoginActivity#0" />
-            <element signature="e#2163#2311#1" />
-            <element signature="e#2352#2485#1" />
-            <element signature="e#2515#2852#1" />
-            <element signature="e#2889#2931#1" />
-            <element signature="method#onEmailUserLoginSuccess#0;class#LoginActivity#0" />
-            <element signature="method#onEmailUserLoginFailure#0;class#LoginActivity#0" />
-            <element signature="e#3739#3869#1" />
-            <element signature="method#resetAllViews#0;class#LoginActivity#0" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileUpdateActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="267" column="42" lean-forward="true" selection-start-line="267" selection-start-column="42" selection-end-line="267" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/utils/AppUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="73" column="51" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_experiment.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_dummy.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1432">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#1744#1780#0" expanded="true" />
+            <element signature="e#2068#2103#0" expanded="true" />
+            <element signature="e#2788#2818#0" expanded="true" />
+            <element signature="e#3106#3136#0" expanded="true" />
+            <element signature="e#3549#3574#0" expanded="true" />
+            <element signature="e#4099#4127#0" expanded="true" />
+            <element signature="e#4684#4711#0" expanded="true" />
+            <element signature="e#6095#6128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_mobile_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
+          <folding>
+            <element signature="e#691#717#0" expanded="true" />
+            <element signature="e#1237#1263#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile_update.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="155" column="8" selection-start-line="155" selection-start-column="8" selection-end-line="155" selection-end-column="59" />
+          <folding>
+            <element signature="e#1283#1315#0" expanded="true" />
+            <element signature="e#1915#1946#0" expanded="true" />
+            <element signature="e#3196#3230#0" expanded="true" />
+            <element signature="e#4655#4688#0" expanded="true" />
+            <element signature="e#5342#5378#0" expanded="true" />
+            <element signature="e#7495#7521#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="91" column="53" selection-start-line="91" selection-start-column="53" selection-end-line="91" selection-end-column="53" />
+          <folding>
+            <element signature="e#1519#1550#0" expanded="true" />
+            <element signature="e#1770#1801#0" expanded="true" />
+            <element signature="e#3279#3308#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialg_profile_pic.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+          <folding>
+            <element signature="e#2249#2281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_otp_timer.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/email_signup.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding>
+            <element signature="e#641#666#0" expanded="true" />
+            <element signature="e#1181#1209#0" expanded="true" />
+            <element signature="e#1748#1784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_loading.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="29" column="55" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="57" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="84" column="54" selection-start-line="84" selection-start-column="54" selection-end-line="84" selection-end-column="54" />
+          <folding>
+            <element signature="e#974#1015#0" expanded="true" />
+            <element signature="e#2354#2394#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
     </entry>
   </component>
 </project>

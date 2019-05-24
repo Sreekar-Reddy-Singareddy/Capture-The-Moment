@@ -12,6 +12,8 @@ public class AppUtilities {
         public static final String EMPTY_EMAIL = "EMPTY_EMAIL";
         public static final String EMPTY_PASSWORD = "EMPTY_PASSWORD";
         public static final String PASSWORD_MISMATCH = "PASSWORD_MISMATCH";
+        public static final String EMPTY_MOBILE = "EMPTY_MOBILE";
+        public static final String NO_OTP = "NO_OTP";
         public static final String PROFILE_NAME_EMPTY = "PROFILE_NAME_EMPTY";
         public static final String PROFILE_AGE_INVALID = "PROFILE_AGE_INVALID";
         public static final String PROFILE_EMAIL_EMPTY = "PROFILE_EMAIL_EMPTY";
@@ -51,5 +53,29 @@ public class AppUtilities {
     public static class FileNames {
         public static final String UIDS_CACHE = "UIDS_CACHE";
         public static final String USER_PROFILE_CACHE = "USER_PROFILE_CACHE";
+        public static final String USER_PROFILE_PICTURE = "profile_pic.jpg";
+    }
+
+    public static class SharedPrefKeys {
+        public static final String PROFILE_PIC_AVAILABLE = "profilePicAvailable";
+    }
+
+    public static class FBUser {
+        public static final String NAME = "name";
+        public static final String AGE = "age";
+        public static final String GENDER = "gender";
+        public static final String EMAIL = "email";
+        public static final String MOBILE = "mobile";
+        public static final String LOCATION = "location";
+    }
+
+    public static class Defaults {
+        public static final String DEFAULT_STRING = "";
+        public static final Integer DEFAULT_INT = 0;
+        public static final Long DEFAULT_LONG = 0l;
+    }
+
+    public static class ScreenTitles {
+        public static final String EDIT_PROFILE_SCREEN = "Edit Profile";
     }
 }

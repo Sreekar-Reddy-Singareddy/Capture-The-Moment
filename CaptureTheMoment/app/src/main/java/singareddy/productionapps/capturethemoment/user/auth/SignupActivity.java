@@ -19,6 +19,10 @@ public class SignupActivity extends AppCompatActivity implements TabLayout.BaseO
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initialiseUI();
+    }
+
+    private void initialiseUI() {
         setContentView(R.layout.activity_signup);
         loginLink = findViewById(R.id.signup_ll_login);
         loginLink.setOnClickListener(this);
@@ -27,20 +31,7 @@ public class SignupActivity extends AppCompatActivity implements TabLayout.BaseO
         setMobileSignupView();
     }
 
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        if (tab.getPosition() == 0) {
-            // TODO: Logic for mobile signup
-            setMobileSignupView();
-        }
-        else if (tab.getPosition() == 1) {
-            // TODO: Logic for email signup
-            setEmailSignupView();
-        }
-    }
-
     public void setMobileSignupView () {
-        Log.i(TAG, "setMobileSignupView: Activity: "+this);
         MobileSignup fragment = new MobileSignup();
         getSupportFragmentManager().beginTransaction().replace(R.id.signup_fl_container, fragment).commit();
     }
@@ -56,6 +47,16 @@ public class SignupActivity extends AppCompatActivity implements TabLayout.BaseO
             Intent loginIntent = new Intent(this, LoginActivity.class);
             startActivity(loginIntent);
             finish();
+        }
+    }
+
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+        if (tab.getPosition() == 0) {
+            setMobileSignupView();
+        }
+        else if (tab.getPosition() == 1) {
+            setEmailSignupView();
         }
     }
 

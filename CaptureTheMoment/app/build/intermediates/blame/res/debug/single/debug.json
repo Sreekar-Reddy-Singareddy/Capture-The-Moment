@@ -292,12 +292,12 @@
         "source": "/Users/sreekar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3fc7896aece2962b2b2114a8ecc19c5b/res/drawable-mdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/anim_abc_tooltip_enter.xml.flat",
-        "source": "/Users/sreekar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3fc7896aece2962b2b2114a8ecc19c5b/res/anim/abc_tooltip_enter.xml"
-    },
-    {
         "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/menu_book_context_menu.xml.flat",
         "source": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/res/menu/book_context_menu.xml"
+    },
+    {
+        "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/anim_abc_tooltip_enter.xml.flat",
+        "source": "/Users/sreekar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3fc7896aece2962b2b2114a8ecc19c5b/res/anim/abc_tooltip_enter.xml"
     },
     {
         "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/drawable_sreekar.JPG.flat",
@@ -482,6 +482,10 @@
     {
         "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "/Users/sreekar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3fc7896aece2962b2b2114a8ecc19c5b/res/drawable-mdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/layout_loading_layout.xml.flat",
+        "source": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/res/layout/loading_layout.xml"
     },
     {
         "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/anim_abc_slide_in_bottom.xml.flat",
@@ -1670,6 +1674,10 @@
     {
         "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/layout_design_navigation_item.xml.flat",
         "source": "/Users/sreekar/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/a1162b2737c994822f53d68308b5fa9b/res/layout/design_navigation_item.xml"
+    },
+    {
+        "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/layout_dialog_otp_timer.xml.flat",
+        "source": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/res/layout/dialog_otp_timer.xml"
     },
     {
         "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",

@@ -1253,6 +1253,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id dialog_otp_timer_tv_time
 id dialog_profile_iv_camera
 id dialog_profile_iv_gallery
 id dimensions
@@ -1391,6 +1392,7 @@ id profile_update_iv_edit_dp
 id profile_update_iv_profilepic
 id profile_update_sn_country_code
 id profile_update_sn_gender
+id progressBar
 id progress_circular
 id progress_horizontal
 id quick_start_cropped_image
@@ -1463,6 +1465,8 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView2
+id textView3
+id textView4
 id textView6
 id text_input_password_toggle
 id textinput_counter
@@ -1568,6 +1572,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout dialg_profile_pic
+layout dialog_otp_timer
 layout email_signup
 layout fragment_add_card_more_details
 layout fragment_add_card_photos
@@ -1581,6 +1586,7 @@ layout list_item_card_front
 layout list_item_page_indicator
 layout list_item_sec_owner
 layout list_item_small_card
+layout loading_layout
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout navigation_header

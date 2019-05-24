@@ -26,36 +26,40 @@ import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
 import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
 
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.FileNames.USER_PROFILE_PICTURE;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.SharedPrefKeys.PROFILE_PIC_AVAILABLE;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.FBUser.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Defaults.*;
+
 public class ProfileFragment extends Fragment implements View.OnClickListener {
     static String TAG = "ProfileFragment";
 
     TextView name, ownedBooks, sharedBooks;
     ImageView profilePic;
-    ImageView editProfilePic;
     Button editProfile;
+    View fragView;
 
     // Viewmodel layer members
     AuthViewModel authViewModel;
     SharedPreferences userProfileCache;
     SharedPreferences.OnSharedPreferenceChangeListener userProfileCacheListener;
 
-    public ProfileFragment () {
-
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.i(TAG, "onCreateView: *");
+        fragView = inflater.inflate(R.layout.profile_fragment, container, false);
+        initialiseUI();
         initialiseViewModel();
-        View view = inflater.inflate(R.layout.profile_fragment, container, false);
-        name = view.findViewById(R.id.profile_fragment_name_data);
-        sharedBooks = view.findViewById(R.id.profile_tv_shared_books);
-        ownedBooks = view.findViewById(R.id.profile_tv_owned_books);
-        profilePic = view.findViewById(R.id.profile_fragment_profile_pic);
-        editProfile = view.findViewById(R.id.profile_bt_edit);
+        return fragView;
+    }
+
+    private void initialiseUI() {
+        name = fragView.findViewById(R.id.profile_fragment_name_data);
+        sharedBooks = fragView.findViewById(R.id.profile_tv_shared_books);
+        ownedBooks = fragView.findViewById(R.id.profile_tv_owned_books);
+        profilePic = fragView.findViewById(R.id.profile_fragment_profile_pic);
+        editProfile = fragView.findViewById(R.id.profile_bt_edit);
         editProfile.setOnClickListener(this);
-        return view;
     }
 
     private void initialiseViewModel() {
@@ -64,7 +68,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         userProfileCacheListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                if (key.equals("profilePicAvailable")) {
+                if (key.equals(PROFILE_PIC_AVAILABLE)) {
                     setProfilePic();
                 }
                 ProfileFragment.this.intialiseProfile();
@@ -75,14 +79,13 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 
     private void intialiseProfile() {
         setProfilePic();
-        name.setText(userProfileCache.getString("name", ""));
+        name.setText(userProfileCache.getString(NAME, DEFAULT_STRING));
         sharedBooks.setText(authViewModel.getNumberOfSharedBooks().toString());
         ownedBooks.setText(authViewModel.getNumberOfOwnedBooks().toString());
     }
 
     private void setProfilePic() {
-        Log.i(TAG, "setProfilePic: PROFILE PIC!!");
-        File profilePic = new File(getContext().getFilesDir(), "profile_pic.jpg");
+        File profilePic = new File(getContext().getFilesDir(), USER_PROFILE_PICTURE);
         if (profilePic.exists()) {
             try {
                 byte[] imageData = IOUtils.toByteArray(new FileInputStream(profilePic));

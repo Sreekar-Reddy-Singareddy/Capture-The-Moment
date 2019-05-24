@@ -21,8 +21,10 @@ import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileListener;
 
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.FailureCodes.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.FileNames.*;
 
-public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin, AuthListener.Mobile,
+public class AuthViewModel extends ViewModel implements
+        AuthListener.EmailLogin, AuthListener.Mobile,
         AuthListener.EmailSignup, ProfileListener {
     private static String TAG = "AuthViewModel";
 
@@ -93,13 +95,13 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
         mobile = PhoneNumberUtils.formatNumberToE164(mobile, "IN");
         // Check if the mobile number is valid and not empty
         if (mobile == null || mobile.equals("")) {
-            mobileAuthListener.onMobileAuthenticationFailure("EMPTY_FIELDS");
+            mobileAuthListener.onMobileAuthenticationFailure(EMPTY_MOBILE);
             return;
         }
 
         // If OTP is needed and it is null, then this is an invalid case
         if (OTP_NEEDED && (otpCode == null || otpCode.isEmpty())) {
-            mobileAuthListener.onMobileAuthenticationFailure("NO_OTP");
+            mobileAuthListener.onMobileAuthenticationFailure(NO_OTP);
             return;
         }
 
@@ -129,7 +131,7 @@ public class AuthViewModel extends ViewModel implements AuthListener.EmailLogin,
     }
 
     public Bitmap setProfilePic(Context context) {
-        File userProfilePictureFile = new File(context.getFilesDir(), "profile_pic.jpg");
+        File userProfilePictureFile = new File(context.getFilesDir(), USER_PROFILE_PICTURE);
         if (userProfilePictureFile.exists()) {
             try {
                 FileInputStream fileInputStream = new FileInputStream(userProfilePictureFile);

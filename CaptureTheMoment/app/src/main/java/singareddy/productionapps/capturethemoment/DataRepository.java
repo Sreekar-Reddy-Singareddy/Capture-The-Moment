@@ -325,12 +325,13 @@ public class DataRepository implements AddBookListener, GetBookListener,
     }
 
     private void eraseCardImages() {
-        File file = new File(mContext.getFilesDir(), CURRENT_USER_ID);
-        try {
-            FileUtils.deleteDirectory(file);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Log.i(TAG, "eraseCardImages: UID: "+CURRENT_USER_ID);
+        File file = mContext.getFilesDir();
+//        try {
+//            FileUtils.cleanDirectory(file);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void eraseCards() {
@@ -435,7 +436,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         return null;
     }
 
-    public LiveData<String> getOneImagePathForCard(String cardId) {
+    public String getOneImagePathForCard(String cardId) {
         try {
             return mExecutor.submit(()->mLocalDB.getCardDao().getOneImagePathForCard(cardId)).get();
         } catch (ExecutionException e) {
@@ -786,6 +787,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         File userDir = new File(mContext.getFilesDir(), "/" + CURRENT_USER_ID);
         if (!userDir.exists()) userDir.mkdir();
 
+        long start = System.nanoTime();
         for (int position=0; position<imagePaths.size(); position++) {
             String[] paths = imagePaths.get(position).split("/");
             Uri uri = imageUris.get(position);
@@ -804,6 +806,9 @@ public class DataRepository implements AddBookListener, GetBookListener,
                 e.printStackTrace();
             }
         }
+        long end = System.nanoTime();
+        Log.i(TAG, "Time Taken: "+(end-start));
+
     }
 
     // =================== Add Card Listener

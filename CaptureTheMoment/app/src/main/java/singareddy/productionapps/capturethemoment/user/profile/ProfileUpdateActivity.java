@@ -42,6 +42,11 @@ import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
 import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
 import singareddy.productionapps.capturethemoment.models.User;
 
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.ScreenTitles.EDIT_PROFILE_SCREEN;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.FBUser.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Defaults.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.FileNames.*;
+
 public class ProfileUpdateActivity extends AppCompatActivity implements View.OnClickListener, ProfileListener {
     private static String TAG = "ProfileUpdateActivity";
     static final int CAMERA_PERMISSION_REQUEST = 1;
@@ -56,7 +61,6 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
 
     // Viewmodel members
     AuthViewModel authViewModel;
-    User currentUser;
     SharedPreferences userProfileCache;
 
     // Photo URIs
@@ -65,8 +69,8 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialiseViewModel();
         initialiseUI();
+        initialiseViewModel();
         initialiseUserProfile();
     }
 
@@ -78,7 +82,8 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
     }
 
     private void initialiseUI() {
-        getSupportActionBar().setTitle("Edit Profile");
+        getSupportActionBar().setTitle(EDIT_PROFILE_SCREEN);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_profile_update);
         name = findViewById(R.id.profile_update_et_name);
         age = findViewById(R.id.profile_update_et_age);
@@ -91,25 +96,23 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
         editProfilePic = findViewById(R.id.profile_update_iv_edit_dp);
         save.setOnClickListener(this);
         editProfilePic.setOnClickListener(this);
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void initialiseUserProfile() {
-        String uname = userProfileCache.getString("name", "");
-        Integer uage = userProfileCache.getInt("age", 0);
-        String uemail = userProfileCache.getString("email", "");
-        Long umobile = userProfileCache.getLong("mobile", 0l);
-        String ulocation = userProfileCache.getString("location", "");
+        String uname = userProfileCache.getString(NAME, DEFAULT_STRING);
+        Integer uage = userProfileCache.getInt(AGE, DEFAULT_INT);
+        String uemail = userProfileCache.getString(EMAIL, DEFAULT_STRING);
+        Long umobile = userProfileCache.getLong(MOBILE, DEFAULT_LONG);
+        String ulocation = userProfileCache.getString(LOCATION, DEFAULT_STRING);
         Bitmap profilePic = authViewModel.setProfilePic(this);
         if (profilePic != null) {
             this.profilePic.setImageBitmap(profilePic);
         }
 
         name.setText(uname);
-        if (uage != null || uage != 0) age.setText(uage.toString());
+        if (uage != null && uage != DEFAULT_INT) age.setText(uage.toString());
         email.setText(uemail);
-        if (umobile != null || umobile != 0) mobile.setText(umobile.toString());
+        if (umobile != null && umobile != DEFAULT_LONG) mobile.setText(umobile.toString());
         location.setText(ulocation);
     }
 
@@ -145,7 +148,6 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
             cameraButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.i(TAG, "onClick: CAMERA");
                     dialog.dismiss();
                     openCameraForPicture();
                 }
@@ -153,7 +155,6 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
             galleryButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Log.i(TAG, "onClick: GALLERY");
                     dialog.dismiss();
                     openGalleryForPicture();
                 }
@@ -169,7 +170,6 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
         }
         // All permissions granted
         capturedUri = FileProvider.getUriForFile(this, BuildConfig.APPLICATION_ID+".provider",new File("storage/emulated/0/newPic.jpg"));
-        Log.i(TAG, "openCameraForPicture: URI: "+capturedUri);
         Intent cameraIntent = new Intent();
         cameraIntent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
         cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, capturedUri);
@@ -203,12 +203,10 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_INTENT_REQUEST && resultCode == RESULT_OK) {
-            Log.i(TAG, "onActivityResult: IMAGE CAPTURED");
             // Crop the image here
             cropImageAt(capturedUri);
         }
         else if (requestCode == GALLERY_INTENT_REQUEST && resultCode == RESULT_OK) {
-            Log.i(TAG, "onActivityResult: IMAGE PICKED");
             // Crop the image here
             cropImageAt(data.getData());
         }
@@ -216,7 +214,6 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
             // Either image is captured or picked,
             // once it is cropped the resulting URI comes here.
             // The URI is saved in cache.
-            Log.i(TAG, "onActivityResult: IMAGE CROPPED");
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             Uri croppedImageUri = result.getUri();
             // Use the result to set the image
@@ -258,9 +255,8 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
     }
 
     private void saveProfilePic (byte[] imageData) {
-        Log.i(TAG, "saveProfilePic: IMAGE SIZE: "+imageData.length+" bytes");
         try {
-            FileOutputStream outputStream = openFileOutput("profile_pic.jpg", Context.MODE_PRIVATE);
+            FileOutputStream outputStream = openFileOutput(USER_PROFILE_PICTURE, Context.MODE_PRIVATE);
             outputStream.write(imageData);
             outputStream.close();
         }
@@ -268,7 +264,7 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
             e.printStackTrace();
         }
         finally {
-            File profilePicFile = new File(getFilesDir(), "profile_pic.jpg");
+            File profilePicFile = new File(getFilesDir(), USER_PROFILE_PICTURE);
             if (profilePicFile.exists()) {
                 Uri profilePicUri = Uri.fromFile(profilePicFile);
                 authViewModel.saveProfilePic(profilePicUri);
@@ -278,7 +274,6 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onProfileUpdated() {
-        Log.i(TAG, "onProfileUpdated: *");
         Toast.makeText(this, "Profile updated successfully", Toast.LENGTH_SHORT).show();
         // Once the profile is updated, finish this activity
         finish();
@@ -286,7 +281,6 @@ public class ProfileUpdateActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onProfilePicUpdated() {
-        Log.i(TAG, "onProfilePicUpdated: Updated.");
         Toast.makeText(this, "Picture changed!", Toast.LENGTH_SHORT).show();
     }
 }

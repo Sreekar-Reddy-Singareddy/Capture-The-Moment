@@ -33,13 +33,13 @@
             android:id="@+id/signup_ti_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PHONE" />
+            android:text="@string/user_signup_phone_tab" />
 
         <android.support.design.widget.TabItem
             android:id="@+id/signup_ti_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="EMAIL" />
+            android:text="@string/user_signup_email_tab" />
     </android.support.design.widget.TabLayout>
 
     <FrameLayout
@@ -81,7 +81,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Already have an account?"
+            android:text="@string/user_login_question"
             tools:layout_editor_absoluteX="79dp"
             tools:layout_editor_absoluteY="611dp" />
 
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
-            android:text="Log In."
+            android:text="@string/user_login_solution"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="248dp"
             tools:layout_editor_absoluteY="669dp" />

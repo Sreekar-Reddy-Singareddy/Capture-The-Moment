@@ -22,9 +22,13 @@ public class MobileLogin extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        initialiseViewModel();
+        initialiseUI();
+    }
+
+    private void initialiseUI() {
         setContentView(R.layout.activity_mobile_login);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        initialiseViewModel();
         mobileNumber = findViewById(R.id.activity_mobile_login_mobile);
         otpCode = findViewById(R.id.activity_mobile_login_otp);
         otpCode.setVisibility(View.GONE);
@@ -40,7 +44,6 @@ public class MobileLogin extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        Log.i(TAG, "onClick: *");
         if (v == loginButton) {
             loginButton.setEnabled(false);
             authViewModel.authorizePhoneCredentials(
@@ -51,7 +54,6 @@ public class MobileLogin extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onMobileAuthenticationSuccess() {
-        Log.i(TAG, "onMobileAuthenticationSuccess: *");
         Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
         // On successful login, erase all the data.
         authViewModel.eraseLocalData();
@@ -64,7 +66,6 @@ public class MobileLogin extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onMobileAuthenticationFailure(String failureCode) {
-        Log.i(TAG, "onMobileAuthenticationFailure: *");
         loginButton.setEnabled(true);
         if (failureCode.equals("EMPTY_FIELDS")) {
             Toast.makeText(this, "Mobile number is invalid", Toast.LENGTH_SHORT).show();
