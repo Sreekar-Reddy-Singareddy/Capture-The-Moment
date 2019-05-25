@@ -31,16 +31,6 @@ public class UpdateBookViewModel extends ViewModel implements UpdateBookListener
         mRepository = repository;
     }
 
-    /**
-     * In order to update a book, I first need to get all the details
-     * of the book and display them in UI.
-     * 1. Get the selected book id from calling intent.
-     * 2. Use this bookId to get name and secOnwners of the book.
-     * 3. Store the old name and owners somewhere.
-     * 4. Get the new name and owners from UI.
-     * 5. Validate for same name, duplicate name, and owners.
-     * 6. If everything is perfect, update only the name and owners of the book.
-     */
     public Book getBookDetailsFor (String bookId) {
         if (bookId == null || mRepository == null) return null;
         // Get the book from repository
@@ -104,7 +94,6 @@ public class UpdateBookViewModel extends ViewModel implements UpdateBookListener
             int freq = Collections.frequency(secOwners, owner);
             if (freq > 1) {
                 duplicatesExist = true;
-                Log.i(TAG, "removeDuplicateUsernames: FREQUENCY: "+freq);
                 // Update objects in the main list
                 for (SecondaryOwner o: secOwners) {
                     if (o.equals(owner)) o.setValidated(2);
@@ -120,15 +109,12 @@ public class UpdateBookViewModel extends ViewModel implements UpdateBookListener
      */
     private String removeSelfUsername(List<SecondaryOwner> secOwners) {
         String ownerName = null;
-        Log.i(TAG, "removeSelfUsername: "+AppUtilities.User.LOGIN_PROVIDER);
         if (AppUtilities.User.LOGIN_PROVIDER.equals(AppUtilities.Firebase.EMAIL_PROVIDER)) {
             ownerName = CURRENT_USER_EMAIL;
         }
         else if (AppUtilities.User.LOGIN_PROVIDER.equals(AppUtilities.Firebase.PHONE_PROVIDER)) {
             ownerName = CURRENT_USER_MOBILE;
         }
-        Log.i(TAG, "removeSelfUsername: OWNER NAME: "+ownerName);
-        Log.i(TAG, "removeSelfUsername: SELF_SEC_OWNER: "+secOwners.contains(ownerName));
         SecondaryOwner owner = new SecondaryOwner();
         owner.setUsername(ownerName);
         if (secOwners.contains(owner)) return ownerName;
@@ -150,19 +136,16 @@ public class UpdateBookViewModel extends ViewModel implements UpdateBookListener
 
     @Override
     public void onBookNameInvalid(String code) {
-        Log.i(TAG, "onBookNameInvalid: *");
         updateBookListener.onBookNameInvalid(code);
     }
 
     @Override
     public void onAllSecOwnersValidated() {
-        Log.i(TAG, "onAllSecOwnersValidated: *");
         updateBookListener.onAllSecOwnersValidated();
     }
 
     @Override
     public void onThisSecOwnerValidated() {
-        Log.i(TAG, "onThisSecOwnerValidated: *");
         updateBookListener.onThisSecOwnerValidated();
     }
 

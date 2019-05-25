@@ -17,13 +17,16 @@ import java.util.List;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.models.Book;
 
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Firebase.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.User.*;
+
 public class GetBooksService {
     private static String TAG = "GetBooksService";
 
     private FirebaseDatabase mfirebaseDB;
 
     // Members used in book retrieval
-    private List<Book> mAllBooks;
     private GetBookListener mBookGetBookListenerListener;
 
     public GetBooksService(Context context) {
@@ -35,7 +38,6 @@ public class GetBooksService {
      * displays them in UI
      */
     public void getAllBooksFromFirebase() {
-        Log.i(TAG, "getAllBooksFromFirebase: *");
         getOwnedBooks();
         getSharedBooks();
     }
@@ -46,10 +48,10 @@ public class GetBooksService {
      */
     private void getOwnedBooks() {
         mfirebaseDB.getReference()
-                .child(AppUtilities.Firebase.ALL_USERS_NODE) // users
-                .child(FirebaseAuth.getInstance().getUid()) // owned UID
-                .child("profile") // profile
-                .child("ownedBooks") // ownedBooks
+                .child(ALL_USERS_NODE) // users
+                .child(CURRENT_USER_ID) // owned UID
+                .child(KEY_USER_PROFILE) // profile
+                .child(KEY_USER_OWNED_BOOKS) // ownedBooks
                 .addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -75,7 +77,7 @@ public class GetBooksService {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.i(TAG, "onCancelled: Owned book get error: "+databaseError.getMessage());
+
                     }
                 });
     }
@@ -86,9 +88,9 @@ public class GetBooksService {
      */
     private void getSharedBooks() {
         mfirebaseDB.getReference()
-                .child(AppUtilities.Firebase.ALL_USERS_NODE) // users
-                .child(FirebaseAuth.getInstance().getUid()) // owned UID
-                .child("sharedBooks") // sharedBooks
+                .child(ALL_USERS_NODE) // users
+                .child(CURRENT_USER_ID) // owned UID
+                .child(KEY_USER_SHARED_BOOKS) // sharedBooks
                 .addChildEventListener(new ChildEventListener() {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -114,7 +116,7 @@ public class GetBooksService {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.i(TAG, "onCancelled: Shared book get error: "+databaseError.getMessage());
+
                     }
                 });
     }
@@ -126,7 +128,7 @@ public class GetBooksService {
     private void downloadBookWithId(String bookId) {
         // Fetch the book and add it to shared books list
         mfirebaseDB.getReference()
-                .child(AppUtilities.Firebase.ALL_BOOKS_NODE) // books
+                .child(ALL_BOOKS_NODE) // books
                 .child(bookId) // bookId
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -139,7 +141,7 @@ public class GetBooksService {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Log.i(TAG, "onCancelled: "+databaseError.getMessage());
+
                     }
                 });
     }

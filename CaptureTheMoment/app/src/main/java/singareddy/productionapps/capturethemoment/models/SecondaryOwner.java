@@ -2,11 +2,13 @@ package singareddy.productionapps.capturethemoment.models;
 
 import android.util.Log;
 
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
+
 public class SecondaryOwner {
 
     private String username = "";
     private Boolean canEdit = false;
-    private Integer validated = 0;
+    private Integer validated = AppUtilities.Book.SEC_OWNER_NOT_VALIDATED;
 
     public SecondaryOwner() {
     }

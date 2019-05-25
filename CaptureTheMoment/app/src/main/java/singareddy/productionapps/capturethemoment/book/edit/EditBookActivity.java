@@ -31,6 +31,7 @@ import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.BOOK_EXISTS;
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.BOOK_NAME_EMPTY;
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.BOOK_NAME_INVALID;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.*;
 
 public class EditBookActivity extends AppCompatActivity
         implements AddBookListener, UpdateBookListener, OwnerRemoveClickListener {
@@ -59,6 +60,21 @@ public class EditBookActivity extends AppCompatActivity
         initViewModel();
     }
 
+    private void initialiseUI() {
+        setContentView(R.layout.activity_add_book);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        bookId = getIntent().getStringExtra(BOOKID);
+        bookName = findViewById(R.id.add_book_et_name);
+        secOwnersList = findViewById(R.id.add_book_rv_sec_owners);
+        addSecOwnerButton = findViewById(R.id.add_book_ib_add_sec_owner);
+        createBookButton = findViewById(R.id.add_book_bt_create);
+        activeOwners = new ArrayList<>();
+        adapter = new SecOwnersAdapter(this, activeOwners, this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        secOwnersList.setAdapter(adapter);
+        secOwnersList.setLayoutManager(layoutManager);
+    }
+
     public void initViewModel () {
         UpdateBookModelFactory factory = UpdateBookModelFactory.createFactory(this);
         updateBookViewModel = ViewModelProviders.of(this, factory).get(UpdateBookViewModel.class);
@@ -77,21 +93,6 @@ public class EditBookActivity extends AppCompatActivity
         bookName.setText(mBook.getName());
     }
 
-    private void initialiseUI() {
-        setContentView(R.layout.activity_add_book);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        bookId = getIntent().getStringExtra(BOOKID);
-        bookName = findViewById(R.id.add_book_et_name);
-        secOwnersList = findViewById(R.id.add_book_rv_sec_owners);
-        addSecOwnerButton = findViewById(R.id.add_book_ib_add_sec_owner);
-        createBookButton = findViewById(R.id.add_book_bt_create);
-        activeOwners = new ArrayList<>();
-        adapter = new SecOwnersAdapter(this, activeOwners, this);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        secOwnersList.setAdapter(adapter);
-        secOwnersList.setLayoutManager(layoutManager);
-    }
-
     public void addNewSecOwner(View view) {
         if (view == addSecOwnerButton) {
             SecondaryOwner secondaryOwnerObj = new SecondaryOwner();
@@ -102,14 +103,12 @@ public class EditBookActivity extends AppCompatActivity
 
     public void createBook (View view) {
         createBookButton.setEnabled(false);
-        Log.i(TAG, "createBook: Active : "+activeOwners.size());
-        Log.i(TAG, "createBook: Removed: "+removedOwners.size());
         updateBookViewModel.updateBook(bookId ,bookName.getText().toString(), mBook.getName(), activeOwners, removedOwners);
     }
 
     @Override
     public void onOwnerRemoved(SecondaryOwner removedOwner) {
-        if (removedOwner.getValidated() != 1) return;
+        if (removedOwner.getValidated() != SEC_OWNER_VALID) return;
         removedOwners.add(removedOwner);
     }
     // *************** Overriddent methods ***************
@@ -126,7 +125,6 @@ public class EditBookActivity extends AppCompatActivity
 
     @Override
     public void onBookNameInvalid(String code) {
-        Log.i(TAG, "onBookNameInvalid: Code: "+code);
         createBookButton.setEnabled(true);
         String toastMessage = "";
         switch (code) {
@@ -148,13 +146,11 @@ public class EditBookActivity extends AppCompatActivity
 
     @Override
     public void onThisSecOwnerValidated() {
-        Log.i(TAG, "onThisSecOwnerValidated: Some Owner is validated");
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void onAllSecOwnersValidated() {
-        Log.i(TAG, "onAllSecOwnersValidated: All owners are validated. Some might be invalid as well.");
         adapter.notifyDataSetChanged();
         createBookButton.setEnabled(true);
     }
@@ -169,14 +165,13 @@ public class EditBookActivity extends AppCompatActivity
     public void onSelfUsernameGiven(String selfUsername) {
         createBookButton.setEnabled(true);
         AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Own username")
-                .setMessage("You cannot give your own username as secondary owner since you are the primary owner. This will be removed.")
-                .setNeutralButton("Remove", null)
+                .setTitle(getResources().getString(R.string.book_self_username_dialog_title))
+                .setMessage(getResources().getString(R.string.book_self_username_dialog_message))
+                .setNeutralButton(getResources().getString(R.string.book_self_username_dialog_neutral_button), null)
                 .create();
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
-                Log.i(TAG, "onDismiss: SELF_OWNER: "+selfUsername);
                 // Remove this secondary owner
                 SecondaryOwner s = new SecondaryOwner(selfUsername);
                 List<SecondaryOwner> tempActiveOwners = new ArrayList<>();

@@ -22,12 +22,12 @@ import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.*;
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.ScreenTitles.*;
 
 public class AddBookActivity extends AppCompatActivity implements AddBookListener {
     private static String TAG = "AddBookActivity";
 
     AddBookViewModel addBookViewModel;
-    Integer mNewBookCreationFlag = 0;
 
     EditText bookName;
     Button createButton;
@@ -39,27 +39,19 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_book);
-
-        initialiseViewModel();
         activeSecOwners = new ArrayList<>();
         activeSecOwners.add(new SecondaryOwner("ushasree@gmail.com", false));
         activeSecOwners.add(new SecondaryOwner("gopi@gmail.com", true));
         activeSecOwners.add(new SecondaryOwner("sreekesh@gmail.com", false));
         initialiseUI();
-    }
-
-    private void initialiseViewModel() {
-        AddBookModelFactory factory = AddBookModelFactory.createFactory(this);
-        addBookViewModel = ViewModelProviders.of(this, factory).get(AddBookViewModel.class);
-        addBookViewModel.setBookListener(this);
-        Log.i(TAG, "initialiseViewModel: MODEL: "+addBookViewModel);
+        initialiseViewModel();
     }
 
     private void initialiseUI() {
+        setContentView(R.layout.activity_add_book);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("New Book");
-        bookName = findViewById(R.id.add_book_et_name); bookName.setText("Vellore");
+        getSupportActionBar().setTitle(ADD_BOOK_SCREEN);
+        bookName = findViewById(R.id.add_book_et_name);
         addNewSecOwner = findViewById(R.id.add_book_ib_add_sec_owner);
         secOwnersList = findViewById(R.id.add_book_rv_sec_owners);
         createButton = findViewById(R.id.add_book_bt_create);
@@ -67,6 +59,12 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         secOwnersList.setAdapter(adapter);
         secOwnersList.setLayoutManager(layoutManager);
+    }
+
+    private void initialiseViewModel() {
+        AddBookModelFactory factory = AddBookModelFactory.createFactory(this);
+        addBookViewModel = ViewModelProviders.of(this, factory).get(AddBookViewModel.class);
+        addBookViewModel.setBookListener(this);
     }
 
     public void addNewSecOwner (View view) {
@@ -79,11 +77,8 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
 
     public void createBook (View view) {
         if (view == createButton) {
-            Log.i(TAG, "createBook: Book name :"+bookName.getText());
-            Log.i(TAG, "createBook: Sec owners: "+ activeSecOwners.size());
             createButton.setEnabled(false);
             addBookViewModel.createThisBook(bookName.getText().toString(), activeSecOwners);
-            Log.i(TAG, "createBook: Enabled: "+createButton.isEnabled());
         }
     }
 
@@ -98,7 +93,6 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     // *************** Interface methods ***************
     @Override
     public void onBookNameInvalid(String code) {
-        Log.i(TAG, "onBookNameInvalid: Code: "+code);
         createButton.setEnabled(true);
         String toastMessage = "";
         switch (code) {
@@ -120,13 +114,11 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
 
     @Override
     public void onThisSecOwnerValidated() {
-        Log.i(TAG, "onThisSecOwnerValidated: Some Owner is validated");
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void onAllSecOwnersValidated() {
-        Log.i(TAG, "onAllSecOwnersValidated: All owners are validated. Some might be invalid as well.");
         adapter.notifyDataSetChanged();
         createButton.setEnabled(true);
     }
@@ -141,14 +133,13 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     @Override
     public void onSelfUsernameGiven(String selfUsername) {
         AlertDialog dialog = new AlertDialog.Builder(this)
-                .setTitle("Own username")
-                .setMessage("You cannot give your own username as secondary owner since you are the primary owner. This will be removed.")
-                .setNeutralButton("Remove", null)
+                .setTitle(getResources().getString(R.string.book_self_username_dialog_title))
+                .setMessage(getResources().getString(R.string.book_self_username_dialog_message))
+                .setNeutralButton(getResources().getString(R.string.book_self_username_dialog_neutral_button), null)
                 .create();
         dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialog) {
-                Log.i(TAG, "onDismiss: SELF_OWNER: "+selfUsername);
                 // Remove this secondary owner
                 SecondaryOwner s = new SecondaryOwner(selfUsername);
                 List<SecondaryOwner> tempActiveOwners = new ArrayList<>();
@@ -170,13 +161,5 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
         Toast.makeText(this, "Duplicate usernames detected", Toast.LENGTH_SHORT).show();
         adapter.notifyDataSetChanged();
         createButton.setEnabled(true);
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG, "onStop: Activity stopping...");
-        // When the activity is stopping, clean up all the variables everywhere
-//        addBookViewModel.cleanUpVariables();
     }
 }

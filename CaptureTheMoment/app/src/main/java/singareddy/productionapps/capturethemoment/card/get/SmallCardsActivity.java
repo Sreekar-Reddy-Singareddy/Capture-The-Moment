@@ -25,6 +25,9 @@ import singareddy.productionapps.capturethemoment.models.Card;
 
 public class SmallCardsActivity extends AppCompatActivity implements SmallCardClickListener, DeleteBookListener {
     private static String TAG = "SmallCardsActivity";
+    public static String IS_THIS_OWN_BOOK = "OwnBook";
+    public static String BOOK_ID = "BookId";
+    public static String BOOK_NAME = "BookName";
 
     // Utility members
     private String bookName;

@@ -26,15 +26,12 @@ public class DeleteBookService {
     private FirebaseStorage storage = FirebaseStorage.getInstance();
     private DeleteBookListener deleteBookListener;
 
-    public DeleteBookService () {
-
-    }
-
     private void deleteFromOwner(String bookId) {
         DatabaseReference ownerNode = database.getReference()
                 .child(ALL_USERS_NODE)
                 .child(CURRENT_USER_ID)
-                .child("profile/ownedBooks");
+                .child(KEY_USER_PROFILE)
+                .child(KEY_USER_OWNED_BOOKS);
         ownerNode.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -45,13 +42,7 @@ public class DeleteBookService {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Log.i(TAG, "onSuccess: Book Deleted from owner");
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.i(TAG, "onSuccess: Book NOT Deleted from owner: "+e.getLocalizedMessage());
+                                // TODO: ?
                             }
                         });
             }
@@ -68,19 +59,13 @@ public class DeleteBookService {
             DatabaseReference secOwnerNode = database.getReference()
                     .child(ALL_USERS_NODE)
                     .child(uid)
-                    .child("sharedBooks")
+                    .child(KEY_USER_SHARED_BOOKS)
                     .child(bookId);
             secOwnerNode.removeValue()
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Log.i(TAG, "onSuccess: Book deleted from sec owner");
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.i(TAG, "onFailure: Book NOT deleted from sec owner: "+e.getLocalizedMessage());
+                            // TODO: ?
                         }
                     });
         }
@@ -95,13 +80,7 @@ public class DeleteBookService {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Log.i(TAG, "onSuccess: Card deleted from firebase");
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.i(TAG, "onSuccess: Card NOT deleted from firebase: "+e.getLocalizedMessage());
+                            // TODO: ?
                         }
                     });
         }
@@ -136,14 +115,7 @@ public class DeleteBookService {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.i(TAG, "onSuccess: Book deleted from servers.");
                         deleteBookListener.onBookDeleted();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.i(TAG, "onFailure: Book NOT deleted from servers");     
                     }
                 });
     }

@@ -28,27 +28,12 @@ public class GetBooksFragment extends Fragment implements GetBookListener {
     private List<Book> allBooksData = new ArrayList<>();
     private View mFragmentView;
 
-    public GetBooksFragment() {
-
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mFragmentView = inflater.inflate(R.layout.fragment_all_books, container, false);
-        initialiseViewModel();
         initialiseUI();
-        long start = System.nanoTime();
-        getBooksViewModel.getAllBooks().observe(this, new Observer<List<Book>>() {
-            @Override
-            public void onChanged(@Nullable List<Book> books) {
-                Log.i(TAG, "onChanged: Books obtained: "+books.size());
-                mAdapter.setBookData(books);
-                mAdapter.notifyDataSetChanged();
-                long end = System.nanoTime();
-                Log.i(TAG, "onChanged: Books Time: "+(end-start));
-            }
-        });
+        initialiseViewModel();
         return mFragmentView;
     }
 
@@ -56,6 +41,13 @@ public class GetBooksFragment extends Fragment implements GetBookListener {
         GetBooksModelFactory factory = GetBooksModelFactory.createFactory(this.getActivity());
         getBooksViewModel = ViewModelProviders.of(this, factory).get(GetBooksViewModel.class);
         getBooksViewModel.setmBookGetBookListenerListener(this);
+        getBooksViewModel.getAllBooks().observe(this, new Observer<List<Book>>() {
+            @Override
+            public void onChanged(@Nullable List<Book> books) {
+                mAdapter.setBookData(books);
+                mAdapter.notifyDataSetChanged();
+            }
+        });
     }
 
     public void initialiseUI() {

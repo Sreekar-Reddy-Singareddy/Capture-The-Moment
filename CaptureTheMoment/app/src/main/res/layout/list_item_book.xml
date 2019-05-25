@@ -50,24 +50,15 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/book_item_tv_date_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Last updated:"
-                android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/book_item_iv_share"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
                 android:id="@+id/book_item_tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginStart="16dp"
                 android:text="TextView"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/book_item_tv_date_label"
-                app:layout_constraintStart_toEndOf="@+id/book_item_tv_date_label" />
+                app:layout_constraintBottom_toBottomOf="@+id/book_item_iv_share"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/book_item_iv_share" />
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>

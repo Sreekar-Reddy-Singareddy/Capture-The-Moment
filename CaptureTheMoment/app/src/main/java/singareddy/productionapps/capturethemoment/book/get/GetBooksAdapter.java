@@ -18,6 +18,9 @@ import java.util.List;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.card.get.SmallCardsActivity;
 import singareddy.productionapps.capturethemoment.models.Book;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
+
+import static singareddy.productionapps.capturethemoment.card.get.SmallCardsActivity.*;
 
 public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBooksViewHolder> {
     private static String TAG = "GetBooksAdapter";
@@ -37,13 +40,12 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
 
         @Override
         public void onClick(View v) {
-            Log.i(TAG, "onClick: Book Selected: "+getAdapterPosition());
             // When a book is selected, take the user to next activity
             // that shows more information about the book.
             Intent insideBookIntent = new Intent(context, SmallCardsActivity.class);
-            insideBookIntent.putExtra("OwnBook", bookData.get(getAdapterPosition()).doIOwnTheBook());
-            insideBookIntent.putExtra("bookId", bookData.get(getAdapterPosition()).getBookId());
-            insideBookIntent.putExtra("bookName", bookData.get(getAdapterPosition()).getName());
+            insideBookIntent.putExtra(IS_THIS_OWN_BOOK, bookData.get(getAdapterPosition()).doIOwnTheBook());
+            insideBookIntent.putExtra(BOOK_ID, bookData.get(getAdapterPosition()).getBookId());
+            insideBookIntent.putExtra(BOOK_NAME, bookData.get(getAdapterPosition()).getName());
             context.startActivity(insideBookIntent);
         }
     }
@@ -67,14 +69,12 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
         if (bookData == null) {
             return 0;
         }
-        Log.i(TAG, "getItemCount: Books: "+bookData.size());
         return bookData.size();
     }
 
     @NonNull
     @Override
     public AllBooksViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        Log.i(TAG, "onCreateViewHolder: Item: "+i);
         View view = inflater.inflate(R.layout.list_item_book, viewGroup, false);
         return new AllBooksViewHolder(view);
     }
@@ -88,14 +88,14 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
             format.applyPattern("dd MMM YYYY");
             long diff = new Date().getTime() - book.getLastUpdatedDate().longValue();
             if (diff < 60*1000) {
-                holder.lastOpened.setText("now");
+                holder.lastOpened.setText(context.getResources().getString(R.string.book_updated_now));
             }
             else {
-                holder.lastOpened.setText(String.valueOf(diff/(1000*60)) + " minutes ago");
+                holder.lastOpened.setText(String.valueOf(diff/(1000*60)) + context.getResources().getString(R.string.book_updated_minutes));
             }
         }
         else {
-            holder.lastOpened.setText("NA");
+            holder.lastOpened.setText(AppUtilities.Defaults.DEFAULT_STRING);
         }
         holder.bookName.setText(book.getName());
         if (book.doIOwnTheBook()) {

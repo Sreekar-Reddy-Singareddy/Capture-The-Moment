@@ -25,6 +25,14 @@ public class AppUtilities {
 
     public static class Firebase {
         public static final String ALL_USERS_NODE = "users";
+        public static final String KEY_USER_NAME = "name";
+        public static final String KEY_USER_OWNER = "owner";
+        public static final String KEY_USER_PROFILE = "profile";
+        public static final String KEY_USER_OWNED_BOOKS = "ownedBooks";
+        public static final String KEY_USER_SHARED_BOOKS = "sharedBooks";
+        public static final String KEY_BOOK_NAME = "name";
+        public static final String KEY_BOOK_LAST_UPDATED = "lastUpdatedDate";
+        public static final String KEY_BOOK_SEC_OWNERS = "secOwners";
         public static final String ALL_BOOKS_NODE = "books";
         public static final String ALL_CARDS_NODE = "cards";
         public static final String ALL_REGISTERED_USERS_NODE = "regUsers";
@@ -34,6 +42,10 @@ public class AppUtilities {
     }
 
     public static class Book {
+        public static final int SEC_OWNER_NOT_VALIDATED = 0;
+        public static final int SEC_OWNER_INVALID = -1;
+        public static final int SEC_OWNER_VALID = 1;
+        public static final int SEC_OWNER_DUPLICATE = 2;
         public static final String BOOK_NAME_EMPTY = "BOOK_NAME_EMPTY";
         public static final String BOOK_NAME_INVALID = "BOOK_NAME_INVALID";
         public static final String BOOK_NAME_VALID = "BOOK_NAME_VALID";
@@ -77,5 +89,6 @@ public class AppUtilities {
 
     public static class ScreenTitles {
         public static final String EDIT_PROFILE_SCREEN = "Edit Profile";
+        public static final String ADD_BOOK_SCREEN = "New Book";
     }
 }

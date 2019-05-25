@@ -21,6 +21,8 @@ import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.book.edit.OwnerRemoveClickListener;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 
+import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.*;
+
 public class SecOwnersAdapter extends RecyclerView.Adapter<SecOwnersAdapter.SecOwnersViewHolder> {
     private static String TAG = "SecOwnersAdapter";
 
@@ -50,9 +52,6 @@ public class SecOwnersAdapter extends RecyclerView.Adapter<SecOwnersAdapter.SecO
                 SecondaryOwner removedOwner = data.remove(getAdapterPosition());
                 notifyDataSetChanged();
                 if (listener != null) listener.onOwnerRemoved(removedOwner);
-            }
-            else {
-                Log.i(TAG, "onClick: Adapter Position: "+getAdapterPosition());
             }
         }
 
@@ -96,7 +95,6 @@ public class SecOwnersAdapter extends RecyclerView.Adapter<SecOwnersAdapter.SecO
 
     @Override
     public int getItemCount() {
-        Log.i(TAG, "getItemCount: "+data.size());
         return data.size();
     }
 
@@ -110,17 +108,17 @@ public class SecOwnersAdapter extends RecyclerView.Adapter<SecOwnersAdapter.SecO
     @Override
     public void onBindViewHolder(@NonNull SecOwnersViewHolder secOwnersViewHolder, int i) {
         SecondaryOwner secondaryOwnerObj = data.get(i);
-        if (secondaryOwnerObj.getValidated() == -1) {
+        if (secondaryOwnerObj.getValidated() == SEC_OWNER_INVALID) {
             secOwnersViewHolder.statusView.setImageResource(R.drawable.ic_close_red_24dp);
             secOwnersViewHolder.statusView.setVisibility(View.VISIBLE);
             secOwnersViewHolder.username.setEnabled(true);
         }
-        else if (secondaryOwnerObj.getValidated() == 1) {
+        else if (secondaryOwnerObj.getValidated() == SEC_OWNER_VALID) {
             secOwnersViewHolder.statusView.setImageResource(R.drawable.ic_done_green_24dp);
             secOwnersViewHolder.statusView.setVisibility(View.VISIBLE);
             secOwnersViewHolder.username.setEnabled(false);
         }
-        else if (secondaryOwnerObj.getValidated() == 2) {
+        else if (secondaryOwnerObj.getValidated() == SEC_OWNER_DUPLICATE) {
             secOwnersViewHolder.statusView.setImageResource(R.drawable.ic_warning_orange_24dp);
             secOwnersViewHolder.statusView.setVisibility(View.VISIBLE);
             secOwnersViewHolder.username.setEnabled(true);

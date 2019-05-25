@@ -79,11 +79,10 @@ public class AddBookViewModel extends ViewModel implements AddBookListener {
             int freq = Collections.frequency(secOwners, owner);
             if (freq > 1) {
                 duplicatesExist = true;
-                Log.i(TAG, "removeDuplicateUsernames: FREQUENCY: "+freq);
                 // Update objects in the main list
-                secOwners.forEach((o) -> {
-                    if (o.equals(owner)) o.setValidated(2);
-                });
+                for (SecondaryOwner o: secOwners) {
+                    if (o.equals(owner)) o.setValidated(AppUtilities.Book.SEC_OWNER_DUPLICATE);
+                }
             }
         }
         return duplicatesExist;
@@ -101,7 +100,6 @@ public class AddBookViewModel extends ViewModel implements AddBookListener {
         else if (AppUtilities.User.LOGIN_PROVIDER.equals(AppUtilities.Firebase.PHONE_PROVIDER)) {
             ownerName = CURRENT_USER_MOBILE;
         }
-        Log.i(TAG, "removeSelfUsername: SELF_SEC_OWNER: "+secOwners.contains(ownerName));
         SecondaryOwner owner = new SecondaryOwner();
         owner.setUsername(ownerName);
         if (secOwners.contains(owner)) return ownerName;
@@ -116,7 +114,7 @@ public class AddBookViewModel extends ViewModel implements AddBookListener {
      */
     private String isBookNameValid (String bookName) {
         bookName = bookName.trim();
-        if (bookName == null || bookName.equals("")) {
+        if (bookName == null || bookName.isEmpty()) {
             return BOOK_NAME_EMPTY;
         }
         else if (!bookName.matches("[a-zA-Z0-9_ ]+")) {
@@ -138,19 +136,16 @@ public class AddBookViewModel extends ViewModel implements AddBookListener {
 
     @Override
     public void onAllSecOwnersValidated() {
-        Log.i(TAG, "onAllSecOwnersValidated: *");
         mAddBookListener.onAllSecOwnersValidated();
     }
 
     @Override
     public void onThisSecOwnerValidated() {
-        Log.i(TAG, "onThisSecOwnerValidated: *");
         mAddBookListener.onThisSecOwnerValidated();
     }
 
     @Override
     public void onNewBookCreated() {
-        Log.i(TAG, "onNewBookCreated: *");
         mAddBookListener.onNewBookCreated();
     }
 }
