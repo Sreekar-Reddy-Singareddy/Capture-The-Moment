@@ -17,9 +17,13 @@ import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.models.Card;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class AddCardActivity extends AppCompatActivity implements AddCardListener{
     private static String TAG = "AddCardActivity";
+    public static final String BOOK_ID = "bookId";
+    protected static final String PHOTOS_FRAG_STATE = "Photos";
+    protected static final String DETAILS_FRAG_STATE = "Details";
 
     // Utitlity members
     private List<Uri> imageUris;
@@ -32,9 +36,6 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
     private AddCardPhotosFragment photosFragment;
     private AddCardMoreDetailsFragment detailsFragment;
 
-    // UI members
-    private MenuItem saveCardMenuItem;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,10 +44,15 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
         initialiseViewModel();
     }
 
-    private void initialiseViewModel() {
-        AddCardModelFactory factory = AddCardModelFactory.createFactory(this);
-        addCardViewModel = ViewModelProviders.of(this, factory).get(AddCardViewModel.class);
-        addCardViewModel.setAddCardListener(this);
+    private void initialiseUI() {
+        if (getIntent() != null && getIntent().getExtras() != null) {
+            bookId = getIntent().getExtras().getString(BOOK_ID);
+        }
+        setContentView(R.layout.activity_add_card);
+        getSupportActionBar().setTitle(AppUtilities.ScreenTitles.SCREEN_TITLE_ADD_CARD);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        imageUris = new ArrayList<>();
+        photosFrag();
     }
 
     private void initialiseDummyData() {
@@ -56,29 +62,25 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
         cardFriends.add("Divya");
     }
 
-    private void initialiseUI() {
-        if (getIntent() != null && getIntent().getExtras() != null) {
-            bookId = getIntent().getExtras().getString("bookId");
-        }
-        setContentView(R.layout.activity_add_card);
-        getSupportActionBar().setTitle("Add Memory");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        imageUris = new ArrayList<>();
-        photosFrag();
+    private void initialiseViewModel() {
+        AddCardModelFactory factory = AddCardModelFactory.createFactory(this);
+        addCardViewModel = ViewModelProviders.of(this, factory).get(AddCardViewModel.class);
+        addCardViewModel.setAddCardListener(this);
     }
 
     void photosFrag () {
         if (photosFragment == null) photosFragment = new AddCardPhotosFragment();
-        Log.i(TAG, "photosFrag: FRAG MANAGER: "+getSupportFragmentManager());
-        getSupportFragmentManager().beginTransaction().replace(R.id.add_card_cl_layout, photosFragment)
-                .addToBackStack("Photos")
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.add_card_cl_layout, photosFragment)
+                .addToBackStack(PHOTOS_FRAG_STATE)
                 .commit();
     }
 
     void detailsFrag () {
         if (detailsFragment == null) detailsFragment = new AddCardMoreDetailsFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.add_card_cl_layout, detailsFragment)
-                .addToBackStack("Details")
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.add_card_cl_layout, detailsFragment)
+                .addToBackStack(DETAILS_FRAG_STATE)
                 .commit();
     }
 

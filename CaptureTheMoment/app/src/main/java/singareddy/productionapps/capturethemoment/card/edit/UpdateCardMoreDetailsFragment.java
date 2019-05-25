@@ -30,7 +30,7 @@ public class UpdateCardMoreDetailsFragment extends Fragment {
         parent.cardUpdateSuccessFlag.observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(@Nullable Boolean aBoolean) {
-                Log.i(TAG, "onChanged: CARD UPDATE SUCCESSFUL = "+aBoolean);
+
             }
         });
         fragView = inflater.inflate(R.layout.fragment_add_card_more_details, container, false);
@@ -49,7 +49,7 @@ public class UpdateCardMoreDetailsFragment extends Fragment {
 
     private void saveUpdatedCard(View saveButton) {
         saveButton.setEnabled(false);
-        parent.cardToEdit.setDescription("This is the updated card description");
+        parent.cardToEdit.setDescription(cardDescView.getText().toString());
         parent.saveUpdatedCard();
     }
 

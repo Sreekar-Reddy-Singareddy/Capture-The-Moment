@@ -49,7 +49,6 @@
             </intent-filter>
         </activity>
         <activity android:name="singareddy.productionapps.capturethemoment.HomeActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.ExperimentActivity" />
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
 
         <provider

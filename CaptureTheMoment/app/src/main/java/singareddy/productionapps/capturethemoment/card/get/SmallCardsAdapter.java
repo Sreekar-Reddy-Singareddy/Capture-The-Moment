@@ -21,13 +21,18 @@ import singareddy.productionapps.capturethemoment.card.add.AddCardActivity;
 public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.SmallCardVH> {
     private static String TAG = "SmallCardsAdapter";
 
+    private static String PURPOSE_ADD_CARD = "add_card";
+    private static String PURPOSE_SHOW_CARD = "small_card";
+    private static final int ITEM_TYPE_ADD_CARD = 1;
+    private static final int ITEM_TYPE_SHOW_CARD = 0;
+
     public class SmallCardVH extends RecyclerView.ViewHolder {
         ImageView image;
 
         public SmallCardVH(View view) {
             super(view);
             String itemType = (String) view.getTag();
-            if (itemType.equals("add_card")) {
+            if (itemType.equals(PURPOSE_ADD_CARD)) {
                 image = null;
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -39,7 +44,7 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
                     }
                 });
             }
-            else if (itemType.equals("small_card")) {
+            else if (itemType.equals(PURPOSE_SHOW_CARD)) {
                 image = view.findViewById(R.id.list_item_small_card_iv_image);
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -91,31 +96,29 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
 
     @Override
     public int getItemViewType(int position) {
-        if (position == 0 && ownerCanEdit) return 1;
-        return super.getItemViewType(position);
+        if (position == 0 && ownerCanEdit) return ITEM_TYPE_ADD_CARD;
+        else return ITEM_TYPE_SHOW_CARD;
     }
 
     @NonNull
     @Override
-    public SmallCardVH onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public SmallCardVH onCreateViewHolder(@NonNull ViewGroup viewGroup, int itemType) {
         View itemView;
-        if (i == 1) {
+        if (itemType == ITEM_TYPE_ADD_CARD) {
             itemView = inflater.inflate(R.layout.list_item_add_card, viewGroup, false);
-            itemView.setTag("add_card");
+            itemView.setTag(PURPOSE_ADD_CARD);
             return new SmallCardVH(itemView);
         }
         itemView = inflater.inflate(R.layout.list_item_small_card, viewGroup, false);
-        itemView.setTag("small_card");
+        itemView.setTag(PURPOSE_SHOW_CARD);
         return new SmallCardVH(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SmallCardVH holder, int i) {
-        if (i == 0 && ownerCanEdit) return;
-        else i = ownerCanEdit ? i-1 : i;
-        Uri parsedUri = Uri.fromFile(new File(context.getFilesDir(), data.get(i)));
-        Log.i(TAG, "onBindViewHolder: Path: "+data.get(i));
-        Log.i(TAG, "onBindViewHolder: URI: "+parsedUri);
+    public void onBindViewHolder(@NonNull SmallCardVH holder, int position) {
+        if (position == 0 && ownerCanEdit) return;
+        else position = ownerCanEdit ? position-1 : position;
+        Uri parsedUri = Uri.fromFile(new File(context.getFilesDir(), data.get(position)));
         holder.image.setImageURI(parsedUri);
     }
 }

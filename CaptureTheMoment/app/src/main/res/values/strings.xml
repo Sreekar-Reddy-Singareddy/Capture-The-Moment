@@ -56,6 +56,11 @@
     <string name="card_add_back_button">Back</string>
     <string name="card_add_create_button">Save</string>
     <string name="card_add_next_button">Next</string>
+    <string name="card_delete_dialog_title">Do you want to delete the card?</string>
+    <string name="card_delete_dialog_message">Once deleted, the card will be removed permanently. You cannot undo the action.</string>
+    <string name="card_delete_dialog_pos_button">Cancel</string>
+    <string name="card_delete_dialog_neg_button">Delete</string>
+
 
     <!-- Misc -->
     <string name="choose_picture_gallery">Pick photo</string>

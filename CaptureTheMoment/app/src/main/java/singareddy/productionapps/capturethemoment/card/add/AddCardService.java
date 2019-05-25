@@ -50,14 +50,7 @@ public class AddCardService {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.i(TAG, "onSuccess: Card saved in Firebase DB");
                         addNewCardIdInBook(newCard, imageUris);
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.i(TAG, "onFailure: Card save failed. Error: "+e.getLocalizedMessage());
                     }
                 });
     }
@@ -66,7 +59,7 @@ public class AddCardService {
         DatabaseReference bookRef = database.getReference()
                 .child(AppUtilities.Firebase.ALL_BOOKS_NODE)
                 .child(newCard.getBookId())
-                .child("cards");
+                .child(AppUtilities.Firebase.KEY_BOOK_CARDS);
         bookRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -77,16 +70,9 @@ public class AddCardService {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Log.i(TAG, "onSuccess: Card added in its book");
                                 addCardListener.onCardCreated();
                                 // Add this book in the local storage
                                 dataSyncListener.onCardDownloadedFromFirebase(newCard, imageUris);
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.i(TAG, "onFailure: Card not added in its book. Error: "+e.getLocalizedMessage());
                             }
                         });
             }
@@ -101,21 +87,19 @@ public class AddCardService {
     private void uploadImages(List<String> imagePaths, List<Uri> imageUris) {
         // PATHS and URIs have 1-1 correspondence
         for (int position=0; position<imagePaths.size(); position++) {
-            Log.i(TAG, "uploadImages: URI : "+imageUris.get(position));
-            Log.i(TAG, "uploadImages: PATH: "+imagePaths.get(position));
             int finalPosition = position;
             storage.getReference().child(imagePaths.get(position))
                     .putFile(imageUris.get(position))
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                            Log.i(TAG, "onProgress: IMAGE "+ finalPosition + " Progress: "+ taskSnapshot.getBytesTransferred());
+                            // TODO: ?
                         }
                     })
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            Log.i(TAG, "onSuccess: IMAGE "+ finalPosition + " Uploaded!");
+                            // TODO: ?
                         }
                     });
         }

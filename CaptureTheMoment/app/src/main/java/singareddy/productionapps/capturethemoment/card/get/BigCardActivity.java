@@ -29,9 +29,10 @@ import singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity;
 import singareddy.productionapps.capturethemoment.models.Card;
 
 public class BigCardActivity extends AppCompatActivity implements BigCardClickListener, DeleteCardListener {
+    private static String TAG = "BigCardActivity";
+
     private static final String FRONT_FACE = "FRONT";
     private static final String BACK_FACE = "BACK";
-    private static String TAG = "BigCardActivity";
     public static final String ALL_CARD_IDS = "allCardIds";
     public static final String SELECTED_CARD_POSITION = "selectedCardPosition";
 
@@ -66,7 +67,6 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
 
     private void initialiseUI() {
         setContentView(R.layout.activity_big_card);
-        getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         int cardWidth = getWindowManager().getDefaultDisplay().getWidth();
         uiCard = findViewById(R.id.activity_big_card_cv_container);
@@ -76,25 +76,17 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
         params.endToEnd = R.id.activity_big_card_cl_layout;
         params.bottomToBottom = R.id.activity_big_card_cl_layout;
         uiCard.setLayoutParams(params);
-        uiCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.i(TAG, "onClick: Card Clicked");
-            }
-        });
         allCardIds = getIntent().getExtras().getCharSequenceArrayList(ALL_CARD_IDS);
         positionOfCardToBeDisplayed = getIntent().getExtras().getInt(SELECTED_CARD_POSITION);
         getCardWithId(allCardIds.get(positionOfCardToBeDisplayed).toString());
     }
 
     private void getCardWithId (String cardId) {
-        Log.i(TAG, "getCardWithId: Card ID to display: "+cardId);
         getCardsViewModel.getCardWithId(cardId).observe(this,
                 new Observer<Card>() {
                     @Override
                     public void onChanged(@Nullable Card card) {
                         if (card == null) return;
-                        Log.i(TAG, "onChanged: CardID: "+card.getCardId());
                         cardToBeDisplayed = card;
                         getPathsForCard(card);
                         showFrontFrag();
@@ -105,11 +97,9 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     private void getPathsForCard(Card card) {
         card.setImagePaths(getCardsViewModel.getImagePathsForCardWithId(card.getCardId()));
         imageUris = getCardsViewModel.getUrisForPaths(this, card.getImagePaths());
-        Log.i(TAG, "getPathsForCard: URIs for "+card.getCardId()+" are: "+imageUris.size());
     }
 
     public void previousCard (View v) {
-        Log.i(TAG, "previousCard: *");
         if (positionOfCardToBeDisplayed > 0) {
             positionOfCardToBeDisplayed--;
             getCardWithId(allCardIds.get(positionOfCardToBeDisplayed).toString());
@@ -117,7 +107,6 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     }
 
     public void nextCard (View v) {
-        Log.i(TAG, "nextCard: *");
         if (positionOfCardToBeDisplayed < allCardIds.size()-1) {
             positionOfCardToBeDisplayed++;
             getCardWithId(allCardIds.get(positionOfCardToBeDisplayed).toString());
@@ -126,27 +115,30 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
 
     private void showFrontFrag () {
         frontFragment = new BigCardFrontFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.activity_big_card_cv_container, frontFragment).commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.activity_big_card_cv_container, frontFragment)
+                .commit();
     }
 
     private void showBackFrag() {
         backFragment = new BigCardBackFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.activity_big_card_cv_container, backFragment).commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.activity_big_card_cv_container, backFragment)
+                .commit();
     }
 
     private void deleteCard() {
-        // TODO: Logic to delete the card
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this)
-                .setTitle("Do you want to delete the card?")
-                .setMessage("Once deleted, the card will be removed permanently. You cannot undo the action.")
-                .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                .setTitle(getResources().getString(R.string.card_delete_dialog_title))
+                .setMessage(getResources().getString(R.string.card_delete_dialog_message))
+                .setPositiveButton(getResources().getString(R.string.card_delete_dialog_pos_button), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         deleteCardsViewModel.setDeleteCardListener(BigCardActivity.this);
                         deleteCardsViewModel.deleteCardWithId(cardToBeDisplayed);
                     }
                 })
-                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                .setNegativeButton(getResources().getString(R.string.card_delete_dialog_neg_button), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -165,7 +157,6 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
 
     @Override
     public void bigCardClicked() {
-        Log.i(TAG, "bigCardClicked: *");
         switch (faceShown) {
             case FRONT_FACE:
                 showFrontFrag();

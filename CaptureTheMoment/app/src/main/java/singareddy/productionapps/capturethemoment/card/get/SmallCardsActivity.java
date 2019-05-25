@@ -23,8 +23,10 @@ import singareddy.productionapps.capturethemoment.book.delete.DeleteBookViewMode
 import singareddy.productionapps.capturethemoment.book.edit.EditBookActivity;
 import singareddy.productionapps.capturethemoment.models.Card;
 
-public class SmallCardsActivity extends AppCompatActivity implements SmallCardClickListener, DeleteBookListener {
+public class SmallCardsActivity extends AppCompatActivity implements SmallCardClickListener,
+        DeleteBookListener, SmallCardDownloadListener {
     private static String TAG = "SmallCardsActivity";
+
     public static String IS_THIS_OWN_BOOK = "OwnBook";
     public static String BOOK_ID = "BookId";
     public static String BOOK_NAME = "BookName";
@@ -50,41 +52,9 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
         initialiseViewModel();
     }
 
-    private void initialiseViewModel() {
-        long start = System.nanoTime();
-        GetCardsModelFactory getCardsModelFactory = GetCardsModelFactory.createFactory(this);
-        getCardsViewModel = ViewModelProviders.of(this, getCardsModelFactory).get(GetCardsViewModel.class);
-        getCardsViewModel.getAllCardsFor(bookId).observe(this,
-                new Observer<List<Card>>() {
-                    @Override
-                    public void onChanged(@Nullable List<Card> cards) {
-                        if (cards == null) return;
-                        Log.i(TAG, "onChanged: Cards fetched: "+cards.size());
-                        smallCards = cards;
-                        smallCardImagePaths = new ArrayList<>();
-                        allCardIds = new ArrayList<>();
-                        for (Card card: smallCards) {
-                            allCardIds.add(card.getCardId());
-                            String imagePath = getCardsViewModel.getOneImagePathForCard(card.getCardId());
-                            smallCardImagePaths.add(imagePath);
-                        }
-                        adapter.setData(smallCardImagePaths);
-                        adapter.notifyDataSetChanged();
-                        long end = System.nanoTime();
-                        Log.i(TAG, "onChanged: Small Cards Time: "+(end-start));
-                    }
-                });
-        ownerCanEdit = getCardsViewModel.getCurrentUserEditAccessForThisBook(bookId);
-        Log.i(TAG, "initialiseViewModel: MY BOOK? "+ownerCanEdit);
-        adapter.setOwnerCanEdit(ownerCanEdit);
-
-        DeleteBookModelFactory deleteBookModelFactory = DeleteBookModelFactory.createFactory(this);
-        deleteBookViewModel = ViewModelProviders.of(this, deleteBookModelFactory).get(DeleteBookViewModel.class);
-    }
-
     private void initialiseUI() {
-        bookName = getIntent().getExtras().getString("bookName");
-        bookId = getIntent().getExtras().getString("bookId");
+        bookName = getIntent().getExtras().getString(BOOK_NAME);
+        bookId = getIntent().getExtras().getString( BOOK_ID);
         adapter = new SmallCardsAdapter(this, smallCardImagePaths, bookId, this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -96,12 +66,40 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
         cardsList.setLayoutManager(manager);
     }
 
+    private void initialiseViewModel() {
+        GetCardsModelFactory getCardsModelFactory = GetCardsModelFactory.createFactory(this);
+        getCardsViewModel = ViewModelProviders.of(this, getCardsModelFactory).get(GetCardsViewModel.class);
+        getCardsViewModel.setSmallCardDownloadListener(this);
+        getCardsViewModel.getAllCardsFor(bookId).observe(this,
+                new Observer<List<Card>>() {
+                    @Override
+                    public void onChanged(@Nullable List<Card> cards) {
+                        if (cards == null) return;
+                        smallCards = cards;
+                        smallCardImagePaths = new ArrayList<>();
+                        allCardIds = new ArrayList<>();
+                        for (Card card: smallCards) {
+                            allCardIds.add(card.getCardId());
+                            String imagePath = getCardsViewModel.getOneImagePathForCard(card.getCardId());
+                            smallCardImagePaths.add(imagePath);
+                        }
+                        adapter.setData(smallCardImagePaths);
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+        ownerCanEdit = getCardsViewModel.getCurrentUserEditAccessForThisBook(bookId);
+        adapter.setOwnerCanEdit(ownerCanEdit);
+
+        DeleteBookModelFactory deleteBookModelFactory = DeleteBookModelFactory.createFactory(this);
+        deleteBookViewModel = ViewModelProviders.of(this, deleteBookModelFactory).get(DeleteBookViewModel.class);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.book_context_menu, menu);
         // If this book is not an owned book, then user cannot edit it
         boolean isOwnBook = getIntent().getExtras() != null ?
-                getIntent().getExtras().getBoolean("OwnBook") :
+                getIntent().getExtras().getBoolean(IS_THIS_OWN_BOOK) :
                 false;
         if (!isOwnBook) {
             menu.removeItem(R.id.book_menu_item_update);
@@ -129,7 +127,7 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
 
     public void navigateToEditBookActivity(){
         // Extract the selected bookId from the intent
-        String bookId = getIntent().getExtras().getString("bookId");
+        String bookId = getIntent().getExtras().getString(BOOK_ID);
         // Using this bookId, call update activity
         Intent editBookIntent = new Intent(this, EditBookActivity.class);
         editBookIntent.putExtra(EditBookActivity.BOOKID, bookId);
@@ -138,7 +136,6 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
 
     @Override
     public void onSmallCardClicked(Integer positionOfCardClicked) {
-        Log.i(TAG, "onSmallCardClicked: Position: "+positionOfCardClicked);
         Card selectedCard = smallCards.get(positionOfCardClicked);
         Intent bigCardIntent = new Intent(this, BigCardActivity.class);
         bigCardIntent.putExtra(BigCardActivity.SELECTED_CARD_POSITION, positionOfCardClicked);
@@ -150,5 +147,10 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     public void onBookDeleted() {
         Toast.makeText(this, "Book Deleted!", Toast.LENGTH_SHORT).show();
         finish();
+    }
+
+    @Override
+    public void onSmallCardDownloaded() {
+        adapter.notifyDataSetChanged();
     }
 }

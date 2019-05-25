@@ -32,6 +32,7 @@ import singareddy.productionapps.capturethemoment.BuildConfig;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.card.get.ImagePageAdapter;
 import singareddy.productionapps.capturethemoment.card.get.IndicatorAdapter;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -53,15 +54,18 @@ public class AddCardPhotosFragment extends Fragment {
 
     private ImagePageAdapter adapter;
     private IndicatorAdapter indicatorAdapter;
-    private int page = 1;
     private AddCardActivity parent;
     private Uri capturedUri;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.i(TAG, "onCreateView: **");
         fragView = inflater.inflate(R.layout.fragment_add_card_photos, container, false);
+        initialiseUI();
+        return fragView;
+    }
+
+    private void initialiseUI() {
         parent = (AddCardActivity) getActivity();
         int pagerWidth = parent.getWindowManager().getDefaultDisplay().getWidth();
         ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(pagerWidth,pagerWidth);
@@ -79,7 +83,6 @@ public class AddCardPhotosFragment extends Fragment {
 
             @Override
             public void onPageSelected(int i) {
-                Log.i(TAG, "onPageSelected: PAGE: "+i);
                 indicatorAdapter.setSelectedPage(i);
                 indicatorAdapter.notifyDataSetChanged();
             }
@@ -123,7 +126,6 @@ public class AddCardPhotosFragment extends Fragment {
         indicatorAdapter = new IndicatorAdapter(getContext());
         indicators.setAdapter(indicatorAdapter);
         updateImagePager();
-        return fragView;
     }
 
     private void addPhotos() {
@@ -137,7 +139,6 @@ public class AddCardPhotosFragment extends Fragment {
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick: CAMERA");
                 dialog.dismiss();
                 photoFromCamera();
             }
@@ -145,7 +146,6 @@ public class AddCardPhotosFragment extends Fragment {
         galleryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick: GALLERY");
                 dialog.dismiss();
                 photoFromGallery();
             }
@@ -181,7 +181,7 @@ public class AddCardPhotosFragment extends Fragment {
 
     private void cropImageAt(Uri capturedUri) {
         CropImage.activity(capturedUri)
-                .setAspectRatio(1,1)
+                .setAspectRatio(AppUtilities.IMAGE_CROP_RATIO_X,AppUtilities.IMAGE_CROP_RATIO_Y)
                 .setGuidelines(CropImageView.Guidelines.ON)
                 .start(getContext(), this);
     }

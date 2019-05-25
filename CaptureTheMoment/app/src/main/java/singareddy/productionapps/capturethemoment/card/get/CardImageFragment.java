@@ -21,14 +21,12 @@ public class CardImageFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        System.out.println("Card Frag cresting...r");
         fragView = inflater.inflate(R.layout.page_item_card_image, container, false);
         ImageView photo = fragView.findViewById(R.id.page_item_image_iv_image);
         photo.setImageURI(imageUri);
         photo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("Image clicked");
                 listener.bigCardClicked();
             }
         });

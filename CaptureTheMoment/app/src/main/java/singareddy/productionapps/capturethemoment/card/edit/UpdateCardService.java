@@ -43,13 +43,7 @@ public class UpdateCardService {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Log.i(TAG, "onSuccess: Image Deleted");
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.i(TAG, "onFailure: Image Not Deleted. "+e.getLocalizedMessage());
+                            // TODO: ?
                         }
                     });
         }
@@ -58,45 +52,32 @@ public class UpdateCardService {
     private void uploadTheNewImages(Card card, List<Uri> activePhotoUris) {
         for (int index=0; index<activePhotoUris.size(); index++) {
             Uri u = activePhotoUris.get(index);
-            Log.i(TAG, "uploadTheNewImages: PATH: "+card.getImagePaths().get(index));
-            Log.i(TAG, "uploadTheNewImages: URI : "+u);
             if (u.getPathSegments().contains(AppUtilities.User.CURRENT_USER_ID)) continue;
-            StorageReference cardNode = firebaseStorage.getReference().child(card.getImagePaths().get(index));
-            Log.i(TAG, "uploadTheNewImages: Firebase Path: "+cardNode.getPath());
+            StorageReference cardNode = firebaseStorage.getReference()
+                    .child(card.getImagePaths().get(index));
             cardNode.putFile(u)
             .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    Log.i(TAG, "onSuccess: Image Updated.");
-                }
-            })
-            .addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.i(TAG, "onFailure: Image Not Updated.");
+                    // TODO: ?
                 }
             });
         }
     }
 
     private void saveTheCard(Card cardToEdit, List<Uri> activePhotoUris, List<String> removedPhotoPaths) {
-        DatabaseReference cardNode = firebaseDB.getReference().child(AppUtilities.Firebase.ALL_CARDS_NODE).child(cardToEdit.getCardId());
+        DatabaseReference cardNode = firebaseDB.getReference()
+                .child(AppUtilities.Firebase.ALL_CARDS_NODE)
+                .child(cardToEdit.getCardId());
         cardNode.setValue(cardToEdit)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.i(TAG, "onSuccess: Card Updated");
                         uploadTheNewImages(cardToEdit, activePhotoUris);
                         deleteTheOldImages(cardToEdit, removedPhotoPaths);
                         dataSyncListener.onCardDownloadedFromFirebase(cardToEdit, activePhotoUris);
                         dataSyncListener.hasToCleanUpUnwantedCardData(cardToEdit, removedPhotoPaths);
                         updateCardListener.onCardUpdated();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Log.i(TAG, "onFailure: Card not updated");
                     }
                 });
     }

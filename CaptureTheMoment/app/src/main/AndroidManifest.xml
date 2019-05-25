@@ -35,7 +35,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" />
-        <activity android:name=".ExperimentActivity" />
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
 
         <provider

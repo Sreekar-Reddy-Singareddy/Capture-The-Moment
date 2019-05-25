@@ -41,13 +41,11 @@ public class BigCardFrontFragment extends Fragment implements BigCardClickListen
         imagesViewPager = fragmentView.findViewById(R.id.fragment_big_card_front_pv_images);
         imagesViewPager.setAdapter(imagesAdapter);
         imagesAdapter.notifyDataSetChanged();
-        Log.i(TAG, "onCreateView: ADAPTER: "+imagesAdapter);
         return fragmentView;
     }
 
     @Override
     public void bigCardClicked() {
-        Log.i(TAG, "bigCardClicked: *");
         BigCardActivity parent = (BigCardActivity) getActivity();
         parent.bigCardClicked();
     }

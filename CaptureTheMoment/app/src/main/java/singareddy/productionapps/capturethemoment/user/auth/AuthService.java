@@ -34,6 +34,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import singareddy.productionapps.capturethemoment.DataSyncListener;
+import singareddy.productionapps.capturethemoment.card.get.SmallCardDownloadListener;
 import singareddy.productionapps.capturethemoment.models.Card;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.DataRepository;
@@ -57,6 +58,7 @@ public class AuthService {
     private AuthListener.EmailSignup emailSignupListener;
     private DataSyncListener dataSyncListener;
     private ProfileListener profileListener;
+    private SmallCardDownloadListener smallCardDownloadListener;
     private File internalStorage;
 
     public AuthService () {
@@ -472,6 +474,7 @@ public class AuthService {
                     @Override
                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                         Log.i(TAG, "onSuccess: Image Downloaded");
+                        if (smallCardDownloadListener != null) smallCardDownloadListener.onSmallCardDownloaded();
                     }
                 });
     }
@@ -494,5 +497,9 @@ public class AuthService {
 
     public void setProfileListener(ProfileListener profileListener) {
         this.profileListener = profileListener;
+    }
+
+    public void setSmallCardDownloadListener(SmallCardDownloadListener smallCardDownloadListener) {
+        this.smallCardDownloadListener = smallCardDownloadListener;
     }
 }

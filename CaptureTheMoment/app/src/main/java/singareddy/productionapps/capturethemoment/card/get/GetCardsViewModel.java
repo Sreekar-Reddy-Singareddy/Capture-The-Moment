@@ -14,17 +14,18 @@ import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.models.Card;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
-public class GetCardsViewModel extends ViewModel {
+public class GetCardsViewModel extends ViewModel implements SmallCardDownloadListener {
     private static String TAG = "GetCardsViewModel";
 
     private DataRepository dataRepo;
+    private SmallCardDownloadListener smallCardDownloadListener;
 
     public GetCardsViewModel(DataRepository repository) {
         dataRepo = repository;
     }
 
     public LiveData<List<Card>> getAllCardsFor(String bookId) {
-        Log.i(TAG, "getAllCardsFor: Book ID: "+bookId);
+        dataRepo.setSmallCardDownloadListener(this);
         return dataRepo.getAllCardsFor(bookId);
     }
 
@@ -53,5 +54,14 @@ public class GetCardsViewModel extends ViewModel {
 
     public Boolean getCurrentUserEditAccessForThisBook(String bookId) {
         return dataRepo.getCurrentUserEditAccessForThisBook(bookId, AppUtilities.User.CURRENT_USER_ID);
+    }
+
+    public void setSmallCardDownloadListener(SmallCardDownloadListener smallCardDownloadListener) {
+        this.smallCardDownloadListener = smallCardDownloadListener;
+    }
+
+    @Override
+    public void onSmallCardDownloaded() {
+        smallCardDownloadListener.onSmallCardDownloaded();
     }
 }

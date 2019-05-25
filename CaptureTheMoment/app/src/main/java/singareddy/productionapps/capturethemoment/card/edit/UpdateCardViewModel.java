@@ -46,7 +46,6 @@ public class UpdateCardViewModel extends ViewModel implements UpdateCardListener
     private List<String> generatePathsForNewActiveImages(String cardId, List<Uri> activePhotoUris) {
         List<String> paths = new ArrayList<>();
         for (Uri u: activePhotoUris) {
-            Log.i(TAG, "URI: "+u.getPath());
             List<String> pathComponents = u.getPathSegments();
             if (pathComponents.contains(AppUtilities.User.CURRENT_USER_ID)) {
                 // UID exists in the path. So this is old image

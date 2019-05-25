@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.card.add.AddImageFragment;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class ImagePageAdapter extends FragmentStatePagerAdapter {
     private static String TAG = "ImagePageAdapter";
@@ -18,7 +19,7 @@ public class ImagePageAdapter extends FragmentStatePagerAdapter {
     private Context context;
     private List<Uri> imageUris;
     private FragmentManager fragmentManager;
-    private int framedImage = 0;
+    private int framedImage = AppUtilities.PHOTO_HAS_NO_FRAME;
 
     public ImagePageAdapter(Context context, FragmentManager fragmentManager, List<Uri> imageUris) {
         super(fragmentManager);
@@ -38,17 +39,15 @@ public class ImagePageAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        if (framedImage == 0) {
-            AddImageFragment fragment = new AddImageFragment();
-            fragment.setImageUri(imageUris.get(position));
-            return fragment;
-        }
-        else {
+        if (framedImage == AppUtilities.PHOTO_HAS_FRAME){
             CardImageFragment fragment = new CardImageFragment();
             fragment.setImageUri(imageUris.get(position));
             fragment.setListener(bigCardListener);
             return fragment;
         }
+        AddImageFragment fragment = new AddImageFragment();
+        fragment.setImageUri(imageUris.get(position));
+        return fragment;
     }
 
     @Override

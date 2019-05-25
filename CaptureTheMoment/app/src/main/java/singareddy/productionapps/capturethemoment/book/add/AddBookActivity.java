@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -50,7 +49,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     private void initialiseUI() {
         setContentView(R.layout.activity_add_book);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(ADD_BOOK_SCREEN);
+        getSupportActionBar().setTitle(SCREEN_TITLE_ADD_BOOK);
         bookName = findViewById(R.id.add_book_et_name);
         addNewSecOwner = findViewById(R.id.add_book_ib_add_sec_owner);
         secOwnersList = findViewById(R.id.add_book_rv_sec_owners);

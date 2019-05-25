@@ -31,6 +31,7 @@ import singareddy.productionapps.capturethemoment.card.delete.DeleteCardListener
 import singareddy.productionapps.capturethemoment.card.delete.DeleteCardService;
 import singareddy.productionapps.capturethemoment.card.edit.UpdateCardListener;
 import singareddy.productionapps.capturethemoment.card.edit.UpdateCardService;
+import singareddy.productionapps.capturethemoment.card.get.SmallCardDownloadListener;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.card.add.AddCardListener;
 import singareddy.productionapps.capturethemoment.card.add.AddCardService;
@@ -66,7 +67,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
         UpdateBookListener, AuthListener.EmailLogin,
         AuthListener.Mobile, AuthListener.EmailSignup,
         DataSyncListener, ProfileListener,
-        AddCardListener, UpdateCardListener, DeleteCardListener, DeleteBookListener {
+        AddCardListener, UpdateCardListener, DeleteCardListener, DeleteBookListener,
+        SmallCardDownloadListener {
 
     private static String TAG = "DataRepository";
     private static DataRepository DATA_REPOSITORY;
@@ -95,6 +97,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private UpdateCardListener updateCardListener;
     private DeleteCardListener deleteCardListener;
     private DeleteBookListener deleteBookListener;
+    private SmallCardDownloadListener smallCardDownloadListener;
 
     private LocalDB mLocalDB;
     private Context mContext;
@@ -427,6 +430,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
     public LiveData<List<Card>> getAllCardsFor(String bookId) {
         try {
             Log.i(TAG, "getAllCardsFor: *");
+            if (mAuthService == null) mAuthService = new AuthService();
+            mAuthService.setSmallCardDownloadListener(this);
             return mExecutor.submit(() -> mLocalDB.getCardDao().getAllCardsUnderBook(bookId)).get();
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -539,6 +544,10 @@ public class DataRepository implements AddBookListener, GetBookListener,
 
     public void setDeleteBookListener(DeleteBookListener deleteBookListener) {
         this.deleteBookListener = deleteBookListener;
+    }
+
+    public void setSmallCardDownloadListener(SmallCardDownloadListener smallCardDownloadListener) {
+        this.smallCardDownloadListener = smallCardDownloadListener;
     }
 
     // =================== Book Listeners
@@ -849,6 +858,12 @@ public class DataRepository implements AddBookListener, GetBookListener,
         deleteBookListener.onBookDeleted();
     }
 
+    // =================== Small Card Download Listener
+
+    @Override
+    public void onSmallCardDownloaded() {
+        smallCardDownloadListener.onSmallCardDownloaded();
+    }
 
     // MARK: Async Tasks
     public class InsertBookTask extends AsyncTask<Object, Void, Void> {

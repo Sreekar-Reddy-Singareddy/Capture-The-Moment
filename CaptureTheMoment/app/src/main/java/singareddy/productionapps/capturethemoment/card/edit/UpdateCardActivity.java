@@ -20,10 +20,13 @@ import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.card.get.GetCardsModelFactory;
 import singareddy.productionapps.capturethemoment.card.get.GetCardsViewModel;
 import singareddy.productionapps.capturethemoment.models.Card;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class UpdateCardActivity extends AppCompatActivity implements UpdateCardListener {
-    public static final String CARD_ID_TO_EDIT = "cardId";
     private static final String TAG = "UpdateCardActivity";
+    public static final String CARD_ID_TO_EDIT = "cardId";
+    public static final String PHOTOS_FRAG_STATE = "Photos";
+    public static final String DETAILS_FRAG_STATE = "MoreDetails";
 
     private GetCardsViewModel getCardsViewModel;
     private UpdateCardViewModel updateCardViewModel;
@@ -52,7 +55,7 @@ public class UpdateCardActivity extends AppCompatActivity implements UpdateCardL
     private void initialiseUI() {
         setContentView(R.layout.activity_add_card);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Edit Moment");
+        getSupportActionBar().setTitle(AppUtilities.ScreenTitles.SCREEN_TITLE_EDIT_CARD);
         cardIdToEdit = getIntent().getExtras().getString(CARD_ID_TO_EDIT);
     }
 
@@ -76,21 +79,21 @@ public class UpdateCardActivity extends AppCompatActivity implements UpdateCardL
 
     private void showPhotosFragment() {
         if (photosFragment == null) photosFragment = new UpdateCardPhotosFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.add_card_cl_layout, photosFragment).addToBackStack("Photos").commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.add_card_cl_layout, photosFragment)
+                .addToBackStack(PHOTOS_FRAG_STATE)
+                .commit();
     }
 
     protected void showMoreDetailsFragment() {
         if (moreDetailsFragment == null) moreDetailsFragment = new UpdateCardMoreDetailsFragment();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.add_card_cl_layout, moreDetailsFragment)
-                .addToBackStack("MoreDetails")
+                .addToBackStack(DETAILS_FRAG_STATE)
                 .commit();
     }
 
     public void saveUpdatedCard() {
-        for(Uri u: activePhotoUris) Log.i("UpdateCardPhotos", "ACTIVE URI : "+u);
-        for(Uri u: removedPhotoUris) Log.i("UpdateCardPhotos", "REMOVED URI: "+u);
-
         updateCardViewModel.setUpdateCardListener(this);
         updateCardViewModel.saveTheChangesOfCard (cardToEdit, activePhotoUris, removedPhotoUris);
     }

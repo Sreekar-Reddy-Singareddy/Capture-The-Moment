@@ -32,6 +32,7 @@ import singareddy.productionapps.capturethemoment.BuildConfig;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.card.get.ImagePageAdapter;
 import singareddy.productionapps.capturethemoment.card.get.IndicatorAdapter;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -65,26 +66,12 @@ public class UpdateCardPhotosFragment extends Fragment {
         parent = (UpdateCardActivity) getActivity();
         activePhotoUris = parent.activePhotoUris;
         removedPhotoUris = parent.removedPhotoUris;
-        for (Uri u: activePhotoUris) Log.i(TAG, "onCreateView: "+u);
 
         fragView = inflater.inflate(R.layout.fragment_add_card_photos, container, false);
 
         initialiseUI();
         bindDataToUI();
         return fragView;
-    }
-
-    private void bindDataToUI() {
-        photosPagerAdapter = new ImagePageAdapter(getContext(),getChildFragmentManager(), activePhotoUris);
-        pagerIndicatorAdapter = new IndicatorAdapter(getContext());
-        pagerIndicatorAdapter.setPages(activePhotoUris.size());
-        pagerIndicatorAdapter.setSelectedPage(0);
-
-        photosPagerView.setAdapter(photosPagerAdapter);
-        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
-        ((LinearLayoutManager) manager).setOrientation(LinearLayoutManager.HORIZONTAL);
-        pagerIndicatorView.setAdapter(pagerIndicatorAdapter);
-        pagerIndicatorView.setLayoutManager(manager);
     }
 
     private void initialiseUI() {
@@ -116,6 +103,19 @@ public class UpdateCardPhotosFragment extends Fragment {
         addPhotoButton.setOnClickListener(this::addPhotos);
 
         toggleButtonsVisibility();
+    }
+
+    private void bindDataToUI() {
+        photosPagerAdapter = new ImagePageAdapter(getContext(),getChildFragmentManager(), activePhotoUris);
+        pagerIndicatorAdapter = new IndicatorAdapter(getContext());
+        pagerIndicatorAdapter.setPages(activePhotoUris.size());
+        pagerIndicatorAdapter.setSelectedPage(0);
+
+        photosPagerView.setAdapter(photosPagerAdapter);
+        RecyclerView.LayoutManager manager = new LinearLayoutManager(getContext());
+        ((LinearLayoutManager) manager).setOrientation(LinearLayoutManager.HORIZONTAL);
+        pagerIndicatorView.setAdapter(pagerIndicatorAdapter);
+        pagerIndicatorView.setLayoutManager(manager);
     }
 
     private void toggleButtonsVisibility() {
@@ -161,7 +161,6 @@ public class UpdateCardPhotosFragment extends Fragment {
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick: CAMERA");
                 dialog.dismiss();
                 photoFromCamera();
             }
@@ -169,7 +168,6 @@ public class UpdateCardPhotosFragment extends Fragment {
         galleryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick: GALLERY");
                 dialog.dismiss();
                 photoFromGallery();
             }
@@ -205,7 +203,7 @@ public class UpdateCardPhotosFragment extends Fragment {
 
     private void cropImageAt(Uri capturedUri) {
         CropImage.activity(capturedUri)
-                .setAspectRatio(1,1)
+                .setAspectRatio(AppUtilities.IMAGE_CROP_RATIO_X,AppUtilities.IMAGE_CROP_RATIO_Y)
                 .setGuidelines(CropImageView.Guidelines.ON)
                 .start(getContext(), this);
     }

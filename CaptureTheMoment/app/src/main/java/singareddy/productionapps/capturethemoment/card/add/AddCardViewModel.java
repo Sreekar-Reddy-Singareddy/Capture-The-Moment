@@ -46,7 +46,7 @@ public class AddCardViewModel extends ViewModel implements AddCardListener{
                 .child("cards").push().getKey();
         newCard.setCardId(generatedCardId);
         String basePath = AppUtilities.User.CURRENT_USER_ID+"/"+generatedCardId;
-        Log.i(TAG, "generateImagePathsFor: BASE PATH: "+basePath);
+
         // Generate a random number
         Random randomGenerator = new Random();
         imageUris.forEach(uri -> {

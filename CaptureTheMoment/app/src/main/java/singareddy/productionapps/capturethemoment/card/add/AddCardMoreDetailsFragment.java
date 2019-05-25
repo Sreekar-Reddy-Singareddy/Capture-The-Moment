@@ -25,8 +25,13 @@ public class AddCardMoreDetailsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        parent = (AddCardActivity) getActivity();
         fragView = inflater.inflate(R.layout.fragment_add_card_more_details, container, false);
+        initialiseUI();
+        return fragView;
+    }
+
+    private void initialiseUI() {
+        parent = (AddCardActivity) getActivity();
         desc = fragView.findViewById(R.id.frag_add_card_details_et_desc);
         create = fragView.findViewById(R.id.frag_add_card_details_bt_create);
         back = fragView.findViewById(R.id.frag_add_card_details_bt_back);
@@ -41,11 +46,8 @@ public class AddCardMoreDetailsFragment extends Fragment {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i(TAG, "onClick: FRAG MANAGER: "+getFragmentManager().getFragments());
                 getFragmentManager().popBackStack();
-//                parent.photosFrag();
             }
         });
-        return fragView;
     }
 }
