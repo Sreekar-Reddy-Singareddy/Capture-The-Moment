@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".user.auth.LoginActivity">
+    tools:context=".user.auth.LoginActivity"
+    android:background="?attr/sceneBackgroundColor">
 
     <ImageView
         android:id="@+id/login_iv_logo"
@@ -21,7 +22,7 @@
         android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/white"
+        android:background="?attr/dividerColor"
         app:layout_constraintBottom_toTopOf="@id/signup_ll_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -40,6 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/email_signup_bt_continue">
 
         <TextView
+            style="@style/AppTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_forgot_password_label"
@@ -47,6 +49,7 @@
             tools:layout_editor_absoluteY="611dp" />
 
         <TextView
+            style="@style/AppTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
@@ -67,6 +70,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+            style="@style/AppTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_signup_question"
@@ -74,6 +78,7 @@
             tools:layout_editor_absoluteY="611dp" />
 
         <TextView
+            style="@style/AppTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
@@ -84,6 +89,7 @@
     </LinearLayout>
 
     <EditText
+        style="@style/AppEditText"
         android:id="@+id/login_et_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -98,6 +104,7 @@
         app:layout_constraintTop_toBottomOf="@+id/login_iv_logo" />
 
     <EditText
+        style="@style/AppEditText"
         android:id="@+id/login_et_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -112,13 +119,13 @@
         app:layout_constraintTop_toBottomOf="@+id/login_et_email" />
 
     <Button
+        style="@style/AppButton"
         android:id="@+id/email_signup_bt_continue"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="40dp"
-        android:background="@drawable/button_outline"
         android:text="@string/user_login_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,6 +156,7 @@
             tools:layout_editor_absoluteY="587dp" />
 
         <TextView
+            style="@style/AppTextView"
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

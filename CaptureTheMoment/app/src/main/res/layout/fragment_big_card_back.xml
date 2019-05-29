@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/colorPrimaryDark"
-    app:cardCornerRadius="30dp">
+    android:background="@android:color/white">
 
     <ImageView
         android:id="@+id/fragment_big_card_back_iv_date"
@@ -20,6 +19,7 @@
         app:srcCompat="@drawable/ic_date_range_yellow_24dp" />
 
     <TextView
+        style="@style/AppTextView"
         android:id="@+id/fragment_big_card_back_tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,12 +29,12 @@
         android:text="3rd May 2019"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#FF9800"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        style="@style/AppTextView"
         android:id="@+id/fragment_big_card_back_tv_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,7 +45,6 @@
         android:lineSpacingExtra="4sp"
         android:text="This is an event that occured on May 3rd of this year. This is the first event that has occured in a very long time now...! This is an event that occured on May 3rd of this year. This is the first event that has occured in a very long time now...!"
         android:textAlignment="center"
-        android:textColor="#FF9800"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/fragment_big_card_back_tv_location"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,6 +65,7 @@
         app:srcCompat="@drawable/ic_location_on_yellow_24dp" />
 
     <TextView
+        style="@style/AppTextView"
         android:id="@+id/fragment_big_card_back_tv_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,7 +75,6 @@
         android:text="Mysore, Karnataka"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#FF9800"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -7,18 +7,19 @@
     android:layout_height="match_parent">
 
     <android.support.v4.view.ViewPager
+        android:background="?attr/colorPrimary"
         android:id="@+id/frag_add_card_photos_pv_photos"
         android:layout_width="350dp"
         android:layout_height="350dp"
         android:layout_marginStart="0dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="0dp"
-        android:background="@drawable/image_pager_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.FloatingActionButton
+        style="@style/AppFAB"
         android:id="@+id/frag_add_card_photos_fb_add_photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +29,7 @@
         app:backgroundTint="#FCB91B"
         app:layout_constraintBottom_toBottomOf="@+id/frag_add_card_photos_pv_photos"
         app:layout_constraintEnd_toEndOf="@+id/frag_add_card_photos_pv_photos"
-        app:srcCompat="@drawable/ic_add_a_photo_white_24dp" />
+        app:srcCompat="@drawable/ic_add_a_photo_theme_24dp" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/frag_add_card_photos_rv_indicator"
@@ -43,6 +44,7 @@
         app:layout_constraintTop_toBottomOf="@+id/frag_add_card_photos_pv_photos" />
 
     <Button
+        style="@style/AppButton"
         android:id="@+id/frag_add_card_photos_bt_next"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
@@ -50,9 +52,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/button_outline"
         android:text="@string/card_add_next_button"
-        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -63,8 +63,8 @@
         android:layout_height="30dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@drawable/button_outline"
         android:padding="4dp"
+        android:background="?attr/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/frag_add_card_photos_pv_photos"
         app:layout_constraintTop_toTopOf="@+id/frag_add_card_photos_pv_photos"
         app:srcCompat="@drawable/ic_close_whie_24dp" />

@@ -12,8 +12,8 @@
         android:layout_height="match_parent"
         android:clickable="false"
         android:src="@drawable/ic_launcher_foreground"
-        app:dotsColor="@android:color/white"
-        app:borderColor="@android:color/white"
+        app:dotsColor="?attr/colorPrimaryDark"
+        app:borderColor="?attr/colorPrimaryDark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

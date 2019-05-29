@@ -3,9 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?attr/colorMainBackground">
 
     <TextView
+        style="@style/AppTextView"
         android:id="@+id/profile_tv_shared_books"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,6 +18,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_fragment_name_data" />
 
     <TextView
+        style="@style/AppTextView"
         android:id="@+id/profile_fragment_email_data2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,6 +29,7 @@
         app:layout_constraintStart_toEndOf="@+id/profile_tv_shared_books" />
 
     <TextView
+        style="@style/AppTextView"
         android:id="@+id/profile_fragment_name_data"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -39,6 +43,7 @@
         app:layout_constraintTop_toTopOf="@+id/profile_fragment_profile_pic" />
 
     <TextView
+        style="@style/AppTextView"
         android:id="@+id/profile_tv_owned_books"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,6 +54,7 @@
         app:layout_constraintTop_toBottomOf="@+id/profile_fragment_name_data" />
 
     <TextView
+        style="@style/AppTextView"
         android:id="@+id/profile_fragment_email_data"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -71,13 +77,13 @@
         app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
+        style="@style/AppButton"
         android:id="@+id/profile_bt_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
-        android:background="@android:color/holo_blue_light"
         android:paddingStart="16dp"
         android:paddingLeft="16dp"
         android:paddingEnd="16dp"
@@ -87,45 +93,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_fragment_profile_pic" />
 
-    <View
-        android:id="@+id/profile_div_top"
-        android:layout_width="match_parent"
-        android:layout_height="0.75dp"
-        android:layout_marginTop="24dp"
-        android:background="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_bt_edit">
-
-    </View>
-
-    <TextView
-        android:id="@+id/profile_tv_recent_activity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Recent Activity"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_div_top" />
-
-
-    <View
-        android:id="@+id/profile_div_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="0.75dp"
-        android:background="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@id/profile_tv_recent_activity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="0dp"
-        android:layout_marginEnd="0dp"
-        android:layout_marginTop="8dp">
-
-    </View>
 
 </android.support.constraint.ConstraintLayout>

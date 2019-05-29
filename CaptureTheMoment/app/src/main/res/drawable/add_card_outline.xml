@@ -5,7 +5,7 @@
         android:height="100dp"></size>
 
     <stroke
-        android:color="#FFFFFF"
+        android:color="?attr/drawableIconColor"
         android:width="2dp"
         android:dashWidth="6dp"
         android:dashGap="2dp"></stroke>

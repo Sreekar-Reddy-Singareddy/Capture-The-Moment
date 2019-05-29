@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/colorMainBackground"
     tools:context=".user.auth.SignupActivity">
 
     <ImageView
@@ -25,6 +26,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
+        app:tabTextColor="?attr/themeColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -61,7 +63,7 @@
         android:id="@+id/view3"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@android:color/white"
+        android:background="?attr/themeColor"
         app:layout_constraintBottom_toTopOf="@id/signup_ll_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -79,6 +81,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
+            style="@style/AppTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_login_question"
@@ -86,6 +89,7 @@
             tools:layout_editor_absoluteY="611dp" />
 
         <TextView
+            style="@style/AppTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"

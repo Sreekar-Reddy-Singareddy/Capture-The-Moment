@@ -4,4 +4,28 @@
         <attr name="borderColor" format="color"></attr>
         <attr name="dotsColor" format="color"></attr>
     </declare-styleable>
+
+    <!-- Color references -->
+    <attr name="colorRegularText" format="reference"></attr>
+    <attr name="colorMainBackground" format="reference"></attr>
+    <attr name="colorEditText" format="reference"></attr>
+    <attr name="colorLabel" format="reference"></attr>
+    <attr name="colorIcon" format="reference"></attr>
+    <attr name="themeColor" format="reference"></attr>
+
+    <attr name="textLabelColor" format="reference"></attr>
+    <attr name="textInputColor" format="reference"></attr>
+    <attr name="textInputHintColor" format="reference"></attr>
+    <attr name="textInputBackgroundTintColor" format="reference"></attr>
+    <attr name="checkBoxBackgroundTintColor" format="reference"></attr>
+    <attr name="buttonBackgroundColor" format="reference"></attr>
+    <attr name="buttonTextColor" format="reference"></attr>
+    <attr name="sceneBackgroundColor" format="reference"></attr>
+    <attr name="drawableIconColor" format="reference"></attr>
+    <attr name="dividerColor" format="reference"></attr>
+    <attr name="fabBackgroundColor" format="reference"></attr>
+    <attr name="fabIconColor" format="reference"></attr>
+    <attr name="spinnerBackgroundTintColor" format="reference"></attr>
+    <attr name="spinnerItemColor" format="reference"></attr>
+
 </resources>

@@ -8,4 +8,54 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme1" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/colorOrangeLight</item>
+        <item name="colorPrimaryDark">@color/colorOrangeDark</item>
+        <item name="colorAccent">@color/colorBrown</item>
+        <item name="colorRegularText">@color/colorBrown</item>
+        <item name="colorMainBackground">@color/colorOrangeLight</item>
+
+        <item name="themeColor">@color/colorBrown</item>
+
+        <item name="textLabelColor">?attr/themeColor</item>
+        <item name="textInputColor">?attr/themeColor</item>
+        <item name="textInputHintColor">@color/colorOrangeDarkVariant</item>
+        <item name="textInputBackgroundTintColor">?attr/themeColor</item>
+        <item name="checkBoxBackgroundTintColor">@color/colorBrown</item>
+        <item name="buttonBackgroundColor">@color/colorOrangeDark</item>
+        <item name="buttonTextColor">?attr/themeColor</item>
+        <item name="sceneBackgroundColor">@color/colorOrangeLight</item>
+        <item name="drawableIconColor">?attr/themeColor</item>
+        <item name="dividerColor">?attr/themeColor</item>
+        <item name="fabBackgroundColor">@color/colorBrown</item>
+        <item name="fabIconColor">@color/colorOrangeLight</item>
+        <item name="spinnerBackgroundTintColor">?attr/themeColor</item>
+        <item name="spinnerItemColor">?attr/themeColor</item>
+    </style>
+    
+    <style name="AppEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">?attr/textInputColor</item>
+        <item name="android:textColorHint">?attr/textInputHintColor</item>
+        <item name="android:backgroundTint">?attr/textInputBackgroundTintColor</item>
+    </style>
+
+    <style name="AppTextView">
+        <item name="android:textColor">?attr/textLabelColor</item>
+    </style>
+
+    <style name="AppButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">?attr/buttonBackgroundColor</item>
+        <item name="android:textColor">?attr/buttonTextColor</item>
+    </style>
+
+    <style name="AppFAB" parent="Widget.Design.FloatingActionButton">
+        <item name="android:backgroundTint">?attr/fabBackgroundColor</item>
+    </style>
+
+    <style name="AppSpinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:backgroundTint">?attr/spinnerBackgroundTintColor</item>
+        <item name="android:textColor">?attr/spinnerItemColor</item>
+        <item name="android:titleTextColor">?attr/spinnerItemColor</item>
+    </style>
+
 </resources>

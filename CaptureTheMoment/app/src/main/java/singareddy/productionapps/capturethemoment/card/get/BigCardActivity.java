@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.transition.TransitionManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -89,7 +90,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
                         if (card == null) return;
                         cardToBeDisplayed = card;
                         getPathsForCard(card);
-                        showFrontFrag();
+                        showFrontFrag(true);
                     }
                 });
     }
@@ -113,17 +114,23 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
         }
     }
 
-    private void showFrontFrag () {
+    private void showFrontFrag(boolean firstTime) {
+        getSupportFragmentManager().popBackStackImmediate();
         frontFragment = new BigCardFrontFragment();
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.activity_big_card_cv_container, frontFragment)
-                .commit();
+            .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+            .replace(R.id.activity_big_card_cv_container, frontFragment)
+            .addToBackStack("Front")
+            .commit();
     }
 
     private void showBackFrag() {
+        getSupportFragmentManager().popBackStackImmediate();
         backFragment = new BigCardBackFragment();
         getSupportFragmentManager().beginTransaction()
+                .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
                 .replace(R.id.activity_big_card_cv_container, backFragment)
+                .addToBackStack("Back")
                 .commit();
     }
 
@@ -159,7 +166,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     public void bigCardClicked() {
         switch (faceShown) {
             case FRONT_FACE:
-                showFrontFrag();
+                showFrontFrag(false);
                 faceShown = BACK_FACE;
                 break;
             case BACK_FACE:

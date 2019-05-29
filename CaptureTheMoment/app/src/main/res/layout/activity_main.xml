@@ -5,6 +5,7 @@
     android:id="@+id/activity_main_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/sceneBackgroundColor"
     tools:context=".HomeActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -41,13 +42,13 @@
         </FrameLayout>
 
         <android.support.design.widget.FloatingActionButton
+            style="@style/AppFAB"
             android:id="@+id/activity_main_add_book_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="24dp"
-            android:src="@drawable/ic_add_black_24dp"
-            app:backgroundTint="#2E7D32"
+            android:src="@drawable/ic_add_fab_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -58,7 +59,8 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="left"
-        android:background="@android:color/holo_orange_light"
+        android:background="?attr/colorMainBackground"
+        app:itemTextColor="?attr/colorRegularText"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/main_navigation_menu">

@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="?attr/sceneBackgroundColor">
 
     <EditText
         android:id="@+id/sec_owner_et_username"
@@ -16,6 +17,9 @@
         android:ems="10"
         android:focusable="true"
         android:hint="@string/book_add_sec_owner_hint"
+        android:textColor="?attr/textInputColor"
+        android:backgroundTint="?attr/textInputBackgroundTintColor"
+        android:textColorHint="?attr/textInputHintColor"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sec_owner_cb_edit"
@@ -28,6 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/book_add_can_edit_label"
+        android:textColor="?attr/textLabelColor"
+        android:buttonTint="?attr/checkBoxBackgroundTintColor"
         app:layout_constraintBottom_toBottomOf="@+id/sec_owner_et_username"
         app:layout_constraintTop_toTopOf="@+id/sec_owner_et_username"
         app:layout_constraintEnd_toStartOf="@id/sec_owner_iv_status"

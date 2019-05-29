@@ -6,6 +6,7 @@
     android:id="@+id/add_card_cl_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/sceneBackgroundColor"
     tools:context=".card.add.AddCardActivity">
 
 
