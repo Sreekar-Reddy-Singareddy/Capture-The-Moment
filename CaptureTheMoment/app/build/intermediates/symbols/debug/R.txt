@@ -1181,8 +1181,9 @@ int drawable photo3 0x7f0800b2
 int drawable photo4 0x7f0800b3
 int drawable photo5 0x7f0800b4
 int drawable sreekar 0x7f0800b5
-int drawable tooltip_frame_dark 0x7f0800b6
-int drawable tooltip_frame_light 0x7f0800b7
+int drawable tab_background 0x7f0800b6
+int drawable tooltip_frame_dark 0x7f0800b7
+int drawable tooltip_frame_light 0x7f0800b8
 int id ALT 0x7f090000
 int id CTRL 0x7f090001
 int id CropOverlayView 0x7f090002

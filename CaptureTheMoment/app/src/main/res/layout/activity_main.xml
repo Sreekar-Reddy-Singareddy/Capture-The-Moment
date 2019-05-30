@@ -12,13 +12,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <FrameLayout
+            android:id="@+id/activity_main_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/activity_main_tab_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </FrameLayout>
+
         <android.support.design.widget.TabLayout
             android:id="@+id/activity_main_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/tab_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:tabIconTint="?attr/themeColor">
 
             <android.support.design.widget.TabItem
                 android:id="@+id/activity_main_home_item"
@@ -38,17 +51,6 @@
                 android:layout_height="wrap_content"
                 android:icon="@drawable/ic_settings_24dp" />
         </android.support.design.widget.TabLayout>
-
-        <FrameLayout
-            android:id="@+id/activity_main_container"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/activity_main_tab_layout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </FrameLayout>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/activity_main_add_book_button"

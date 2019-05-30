@@ -5718,8 +5718,9 @@ public final class R {
     public static final int photo4=0x7f0800b3;
     public static final int photo5=0x7f0800b4;
     public static final int sreekar=0x7f0800b5;
-    public static final int tooltip_frame_dark=0x7f0800b6;
-    public static final int tooltip_frame_light=0x7f0800b7;
+    public static final int tab_background=0x7f0800b6;
+    public static final int tooltip_frame_dark=0x7f0800b7;
+    public static final int tooltip_frame_light=0x7f0800b8;
   }
   public static final class id {
     public static final int ALT=0x7f090000;

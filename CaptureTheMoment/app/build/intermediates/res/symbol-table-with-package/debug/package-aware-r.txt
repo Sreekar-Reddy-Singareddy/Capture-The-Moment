@@ -1182,6 +1182,7 @@ drawable photo3
 drawable photo4
 drawable photo5
 drawable sreekar
+drawable tab_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT

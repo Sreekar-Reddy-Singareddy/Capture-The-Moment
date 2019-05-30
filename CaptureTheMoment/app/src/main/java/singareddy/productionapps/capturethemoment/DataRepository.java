@@ -293,8 +293,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
     public void registerEmailUser(String email, String password) {
         if (mAuthService == null) {
             mAuthService = new AuthService();
-            mAuthService.setEmailSignupListener(this);
         }
+        mAuthService.setEmailSignupListener(this);
         mAuthService.registerEmailUser(email, password);
     }
 
