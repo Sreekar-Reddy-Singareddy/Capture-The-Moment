@@ -35,7 +35,6 @@
         <activity android:name="singareddy.productionapps.capturethemoment.book.edit.EditBookActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.card.get.SmallCardsActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.book.add.AddBookActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.user.auth.SignupActivity" />
         <activity
             android:name="singareddy.productionapps.capturethemoment.user.auth.MobileLogin"

@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -32,73 +33,35 @@ import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
 import singareddy.productionapps.capturethemoment.book.add.AddBookActivity;
 import singareddy.productionapps.capturethemoment.book.get.GetBooksFragment;
 import singareddy.productionapps.capturethemoment.user.auth.LoginActivity;
-import singareddy.productionapps.capturethemoment.user.profile.ProfileFragment;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileFragmentNew;
-import singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.User.*;
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Firebase.*;
 
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
+public class HomeActivity extends AppCompatActivity {
     private static String TAG = "HomeActivity";
 
-    NavigationView navigationView;
-    TextView userName;
-    ImageView profilePic;
-    DrawerLayout drawerLayout;
+    private final static int HOME_TAB = 0;
+    private final static int PROFILE_TAB = 1;
+    private final static int SETTINGS_TAB = 2;
+
     Toolbar toolbar;
     FloatingActionButton addBookFab;
+    TabLayout tabLayout;
 
     AuthViewModel authViewModel;
     SharedPreferences userProfileCache;
     SharedPreferences.OnSharedPreferenceChangeListener userProfileCacheListener;
+    private TabLayout.OnTabSelectedListener tabListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initialiseViewModel();
         initialiseUI();
-        initialiseUserProfile();
+        initialiseViewModel();
         initialiseStaticConstants();
-    }
-
-    private void initialiseViewModel() {
-        AuthModelFactory factory = AuthModelFactory.createFactory(this);
-        authViewModel = ViewModelProviders.of(this, factory).get(AuthViewModel.class);
-        userProfileCache = authViewModel.getUserProfileData();
-        userProfileCacheListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
-            @Override
-            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-                if (key.equals("name")) {
-                    String username = sharedPreferences.getString(key, "Welcome!");
-                    userName.setText(username);
-                    if (username.equals("Welcome!") || username.equals("")) {
-                        AlertDialog dialog = new AlertDialog.Builder(HomeActivity.this)
-                                .setIcon(R.drawable.ic_launcher_foreground)
-                                .setTitle("Update Profile")
-                                .setMessage("Hi there! Your profile has not yet been updated. Update it for better experience. Do you want to do it now?")
-                                .setPositiveButton("Let's do it", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        Intent profileUpdateIntent = new Intent(HomeActivity.this, ProfileUpdateActivity.class);
-                                        startActivity(profileUpdateIntent);
-                                    }
-                                })
-                                .setNegativeButton("Not now", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        // Simply close the dialog
-                                    }
-                                }).create();
-                        dialog.show();
-                    }
-                }
-                else if (key.equals("profilePicAvailable")) {
-                    setProfilePic();
-                }
-            }
-        };
     }
 
     private void initialiseUI() {
@@ -107,24 +70,73 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, getBooksFragment).commit();
         getSupportActionBar().setTitle("Books");
 
-        drawerLayout = findViewById(R.id.activity_main_drawer_layout);
-        navigationView = findViewById(R.id.acctivity_main_navigation_view);
-        View headerView = navigationView.getHeaderView(0);
-        userName = headerView.findViewById(R.id.nav_header_tv_name);
-        profilePic = headerView.findViewById(R.id.nav_header_iv_pic);
         addBookFab = findViewById(R.id.activity_main_add_book_button);
-        addBookFab.setOnClickListener(this);
+        tabLayout = findViewById(R.id.activity_main_tab_layout);
+        tabListener = new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int tabPosition = tab.getPosition();
+                switch (tabPosition) {
+                    case HOME_TAB:
+                        // Home item selected
+                        showHomeScreen();
+                        break;
+                    case PROFILE_TAB:
+                        // Profile item selected
+                        showProfileScreen();
+                        break;
+                    case SETTINGS_TAB:
+                        // TODO: Settings screen
+                        showSettingsScreen();
+                        break;
+                }
+            }
 
-        Log.i(TAG, "onCreate: Nav: "+navigationView);
-        userName.setText("Welcome!");
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_home_black_24dp);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        };
+        addBookFab.setOnClickListener(this::addBook);
     }
 
-    private void initialiseUserProfile() {
-        setProfilePic();
-        String username = userProfileCache.getString("name", "Welcome!");
-        userName.setText(username);
+    private void initialiseViewModel() {
+        AuthModelFactory factory = AuthModelFactory.createFactory(this);
+        authViewModel = ViewModelProviders.of(this, factory).get(AuthViewModel.class);
+        userProfileCache = authViewModel.getUserProfileData();
+
+        userProfileCacheListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                if (!key.equals(AppUtilities.FBUser.NAME)) return;
+                String username = userProfileCache.getString(AppUtilities.FBUser.NAME, AppUtilities.Defaults.DEFAULT_STRING);
+                if (username.equals(AppUtilities.Defaults.DEFAULT_STRING)) {
+                    AlertDialog dialog = new AlertDialog.Builder(HomeActivity.this)
+                            .setIcon(R.drawable.ic_launcher_foreground)
+                            .setTitle("Update Profile")
+                            .setMessage("Hi there! Your profile has not yet been updated. Update it for better experience. Do you want to do it now?")
+                            .setPositiveButton("Let's do it", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    showProfileScreen();
+                                    tabLayout.getTabAt(PROFILE_TAB).select();
+                                }
+                            })
+                            .setNegativeButton("Not now", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // Simply close the dialog
+                                }
+                            }).create();
+                    dialog.show();
+                }
+            }
+        };
     }
 
     private void initialiseStaticConstants() {
@@ -138,22 +150,33 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 CURRENT_USER.getPhoneNumber().substring(3) : null;
     }
 
-    private void setProfilePic() {
-        Log.i(TAG, "setProfilePic: PROFILE PIC!!");
-        File profilePic = new File(this.getFilesDir(), "profile_pic.jpg");
-        if (profilePic.exists()) {
-            try {
-                byte[] imageData = IOUtils.toByteArray(new FileInputStream(profilePic));
-                this.profilePic.setImageBitmap(BitmapFactory.decodeByteArray(imageData, 0, imageData.length));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+    private void showHomeScreen() {
+        Log.i(TAG, "showHomeScreen: HOME SCREEN");
+        getSupportActionBar().setTitle("Books");
+        addBookFab.show();
+        GetBooksFragment getBooksFragment = new GetBooksFragment();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.activity_main_container, getBooksFragment)
+                .commit();
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v == addBookFab) {
+    private void showProfileScreen() {
+        getSupportActionBar().setTitle("Profile");
+        addBookFab.hide();
+        ProfileFragmentNew profileFragment = new ProfileFragmentNew();
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.activity_main_container, profileFragment)
+                .addToBackStack("Profile")
+                .commit();
+    }
+
+    private void showSettingsScreen() {
+        authViewModel.logout();
+        finish();
+    }
+
+    public void addBook(View addBookFab) {
+        if (addBookFab == addBookFab) {
             // Navigate to the next activity - AddBookActivity
             Intent addBookIntent = new Intent(this, AddBookActivity.class);
             startActivity(addBookIntent);
@@ -161,52 +184,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() == android.R.id.home) {
-            // Open the navigation drawer
-            drawerLayout.openDrawer(Gravity.LEFT);
-            return true;
-        }
-        if (menuItem.getItemId() == R.id.main_nav_menu_home_item) {
-            getSupportActionBar().setTitle("Books");
-            addBookFab.show();
-            GetBooksFragment getBooksFragment = new GetBooksFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, getBooksFragment).commit();
-        }
-        else if (menuItem.getItemId() == R.id.main_nav_menu_profile_item) {
-            getSupportActionBar().setTitle("Profile");
-            addBookFab.hide();
-            ProfileFragmentNew profileFragment = new ProfileFragmentNew();
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.activity_main_container, profileFragment)
-                    .addToBackStack("Profile")
-                    .commit();
-        }
-        else if (menuItem.getItemId() == R.id.main_nav_menu_signout_item) {
-            authViewModel.logout();
-            Intent loginActivity = new Intent(this, LoginActivity.class);
-            startActivity(loginActivity);
-            finish();
-        }
-        drawerLayout.closeDrawer(Gravity.LEFT);
-        return true;
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
+        tabLayout.addOnTabSelectedListener(tabListener);
         userProfileCache.registerOnSharedPreferenceChangeListener(userProfileCacheListener);
-        initialiseUserProfile();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
+        tabLayout.removeOnTabSelectedListener(tabListener);
         userProfileCache.unregisterOnSharedPreferenceChangeListener(userProfileCacheListener);
-    }
-
-    @Override
-    public void onBackPressed() {
-
     }
 }

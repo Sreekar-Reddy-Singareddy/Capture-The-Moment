@@ -21,7 +21,6 @@
         <activity android:name=".book.edit.EditBookActivity" />
         <activity android:name=".card.get.SmallCardsActivity" />
         <activity android:name=".book.add.AddBookActivity" />
-        <activity android:name=".user.profile.ProfileUpdateActivity" />
         <activity android:name=".user.auth.SignupActivity" />
         <activity
             android:name=".user.auth.MobileLogin"

@@ -280,12 +280,12 @@
         "source": "/Users/sreekar/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3fc7896aece2962b2b2114a8ecc19c5b/res/drawable-mdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/animator_mtrl_fab_hide_motion_spec.xml.flat",
-        "source": "/Users/sreekar/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/a1162b2737c994822f53d68308b5fa9b/res/animator/mtrl_fab_hide_motion_spec.xml"
-    },
-    {
         "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/drawable_ic_photo_camera_white_24dp.xml.flat",
         "source": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/res/drawable/ic_photo_camera_white_24dp.xml"
+    },
+    {
+        "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/animator_mtrl_fab_hide_motion_spec.xml.flat",
+        "source": "/Users/sreekar/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/a1162b2737c994822f53d68308b5fa9b/res/animator/mtrl_fab_hide_motion_spec.xml"
     },
     {
         "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_design_ic_visibility.png.flat",
@@ -834,6 +834,10 @@
     {
         "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/drawable_mtrl_snackbar_background.xml.flat",
         "source": "/Users/sreekar/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/a1162b2737c994822f53d68308b5fa9b/res/drawable/mtrl_snackbar_background.xml"
+    },
+    {
+        "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/drawable_ic_settings_24dp.xml.flat",
+        "source": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/res/drawable/ic_settings_24dp.xml"
     },
     {
         "merged": "/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/res/merged/debug/color_mtrl_chip_text_color.xml.flat",

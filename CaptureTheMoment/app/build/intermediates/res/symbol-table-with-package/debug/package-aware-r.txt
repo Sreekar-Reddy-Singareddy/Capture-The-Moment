@@ -1157,6 +1157,7 @@ drawable ic_phone_24dp
 drawable ic_photo_camera_theme_24dp
 drawable ic_photo_camera_white_24dp
 drawable ic_save_white_24dp
+drawable ic_settings_24dp
 drawable ic_smartphone_black_24dp
 drawable ic_warning_orange_24dp
 drawable image_pager_background
@@ -1220,6 +1221,10 @@ id activity_chooser_view_content
 id activity_main_add_book_button
 id activity_main_container
 id activity_main_drawer_layout
+id activity_main_home_item
+id activity_main_profile_item
+id activity_main_settings_item
+id activity_main_tab_layout
 id activity_mobile_login_mobile
 id activity_mobile_login_otp
 id add
