@@ -83,6 +83,7 @@ public class AppUtilities {
     public static class FBUser {
         public static final String NAME = "name";
         public static final String AGE = "age";
+        public static final String ABOUT = "about";
         public static final String GENDER = "gender";
         public static final String EMAIL = "email";
         public static final String MOBILE = "mobile";

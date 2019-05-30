@@ -3,6 +3,8 @@ package singareddy.productionapps.capturethemoment.card.get;
 import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -118,7 +120,10 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
     public void onBindViewHolder(@NonNull SmallCardVH holder, int position) {
         if (position == 0 && ownerCanEdit) return;
         else position = ownerCanEdit ? position-1 : position;
-        Uri parsedUri = Uri.fromFile(new File(context.getFilesDir(), data.get(position)));
-        holder.image.setImageURI(parsedUri);
+//        Uri parsedUri = Uri.fromFile(new File(context.getFilesDir(), data.get(position)));
+        BitmapFactory.Options imageOptions = new BitmapFactory.Options();
+        imageOptions.inSampleSize = 2;
+        Bitmap image = BitmapFactory.decodeFile(context.getFilesDir()+"/"+data.get(position), imageOptions);
+        holder.image.setImageBitmap(image);
     }
 }

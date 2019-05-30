@@ -11,6 +11,7 @@
     <style name="AppTheme1" parent="Theme.AppCompat">
         <item name="colorPrimary">@color/colorOrangeLight</item>
         <item name="colorPrimaryDark">@color/colorOrangeDark</item>
+        <item name="colorPrimaryDarkVariant">@color/colorOrangeDarkVariant</item>
         <item name="colorAccent">@color/colorBrown</item>
         <item name="colorRegularText">@color/colorBrown</item>
         <item name="colorMainBackground">@color/colorOrangeLight</item>

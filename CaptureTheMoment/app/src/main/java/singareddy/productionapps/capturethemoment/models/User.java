@@ -5,6 +5,7 @@ import java.util.List;
 public class User {
     private String name = "";
     private Long mobile = 0l;
+    private String about = "";
     private Integer age = 0;
     private String gender = "";
     private String emailId = "";
@@ -116,5 +117,13 @@ public class User {
 
     public void setSharedBooks(List<ShareInfo> sharedBooks) {
         this.sharedBooks = sharedBooks;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
     }
 }

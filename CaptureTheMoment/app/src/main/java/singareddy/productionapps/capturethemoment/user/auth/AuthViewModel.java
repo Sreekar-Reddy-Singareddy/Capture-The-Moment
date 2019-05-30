@@ -160,6 +160,11 @@ public class AuthViewModel extends ViewModel implements
         FirebaseAuth.getInstance().signOut();
     }
 
+    public Long validateMobile(String mobile) {
+        Long convertedNumber = mobile.matches("[0-9]*") ? Long.parseLong(mobile) : null;
+        return convertedNumber;
+    }
+
     public void setEmailSignupListener(AuthListener.EmailSignup emailSignupListener) {
         this.emailSignupListener = emailSignupListener;
     }

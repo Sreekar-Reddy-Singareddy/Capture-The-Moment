@@ -33,6 +33,7 @@ import singareddy.productionapps.capturethemoment.book.add.AddBookActivity;
 import singareddy.productionapps.capturethemoment.book.get.GetBooksFragment;
 import singareddy.productionapps.capturethemoment.user.auth.LoginActivity;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileFragment;
+import singareddy.productionapps.capturethemoment.user.profile.ProfileFragmentNew;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileUpdateActivity;
 
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.User.*;
@@ -121,6 +122,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initialiseUserProfile() {
+        setProfilePic();
         String username = userProfileCache.getString("name", "Welcome!");
         userName.setText(username);
     }
@@ -174,8 +176,11 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         else if (menuItem.getItemId() == R.id.main_nav_menu_profile_item) {
             getSupportActionBar().setTitle("Profile");
             addBookFab.hide();
-            ProfileFragment profileFragment = new ProfileFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, profileFragment).commit();
+            ProfileFragmentNew profileFragment = new ProfileFragmentNew();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.activity_main_container, profileFragment)
+                    .addToBackStack("Profile")
+                    .commit();
         }
         else if (menuItem.getItemId() == R.id.main_nav_menu_signout_item) {
             authViewModel.logout();
@@ -191,12 +196,17 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         userProfileCache.registerOnSharedPreferenceChangeListener(userProfileCacheListener);
-        setProfilePic();
+        initialiseUserProfile();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         userProfileCache.unregisterOnSharedPreferenceChangeListener(userProfileCacheListener);
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

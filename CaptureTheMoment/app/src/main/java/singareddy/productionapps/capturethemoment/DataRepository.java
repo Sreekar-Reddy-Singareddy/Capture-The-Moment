@@ -688,6 +688,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         Log.i(TAG, "onUserProfileDownloaded: USER PROFILE: "+userProfileCache);
         SharedPreferences.Editor editor = userProfileCache.edit();
         editor.putString("name", currentUserProfile.getName());
+        editor.putString("about", currentUserProfile.getAbout());
         editor.putString("email",currentUserProfile.getEmailId());
         editor.putString("gender",currentUserProfile.getGender());
         editor.putString("location",currentUserProfile.getLocation());

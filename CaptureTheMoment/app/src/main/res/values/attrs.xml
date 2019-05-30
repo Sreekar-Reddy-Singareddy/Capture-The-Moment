@@ -8,6 +8,7 @@
     <!-- Color references -->
     <attr name="colorRegularText" format="reference"></attr>
     <attr name="colorMainBackground" format="reference"></attr>
+    <attr name="colorPrimaryDarkVariant" format="reference"></attr>
     <attr name="colorEditText" format="reference"></attr>
     <attr name="colorLabel" format="reference"></attr>
     <attr name="colorIcon" format="reference"></attr>

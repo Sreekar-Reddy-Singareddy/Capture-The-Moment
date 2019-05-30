@@ -18,8 +18,8 @@ public class FramedImageView extends android.support.v7.widget.AppCompatImageVie
     private TypedArray attrArray;
     private int DEF_BORDER_COLOR;
     private int DEF_DOTS_COLOR;
-    @StyleableRes private int borderColor = 0;
-    @StyleableRes private int dottedColor = 1;
+    @StyleableRes private int borderColor = R.styleable.FramedImageView_borderColor;
+    @StyleableRes private int dottedColor = R.styleable.FramedImageView_dotsColor;
 
     public FramedImageView(Context context) {
         super(context);
@@ -31,7 +31,7 @@ public class FramedImageView extends android.support.v7.widget.AppCompatImageVie
         Log.i(TAG, "CustomViewOne: **");
         DEF_BORDER_COLOR = getResources().getColor(R.color.colorPrimaryDark);
         DEF_DOTS_COLOR = getResources().getColor(android.R.color.white);
-        attrArray = getResources().obtainAttributes(attrs, new int[] {R.attr.borderColor, R.attr.dotsColor});
+        attrArray = con.obtainStyledAttributes(attrs, R.styleable.FramedImageView);
     }
 
     @Override
@@ -46,14 +46,14 @@ public class FramedImageView extends android.support.v7.widget.AppCompatImageVie
         Paint paint = new Paint();
 
         // Draw the border layer
-        paint.setColor(attrArray.getColor(borderColor, DEF_BORDER_COLOR));
+        paint.setColor(attrArray.getColor(R.styleable.FramedImageView_borderColor, DEF_BORDER_COLOR));
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(borderHeight);
         canvas.drawRect(0,0,width,height,paint);
         canvas.save();
 
         // Draw the inner border layer
-        paint.setColor(attrArray.getColor(dottedColor, DEF_DOTS_COLOR));
+        paint.setColor(attrArray.getColor(R.styleable.FramedImageView_dotsColor, DEF_DOTS_COLOR));
         paint.setStrokeWidth(borderHeight/6);
         canvas.drawRect(borderHeight/2+borderHeight/12, borderHeight/2+borderHeight/12, width-borderHeight/2-borderHeight/12, height-borderHeight/2-borderHeight/12, paint);
         canvas.save();
