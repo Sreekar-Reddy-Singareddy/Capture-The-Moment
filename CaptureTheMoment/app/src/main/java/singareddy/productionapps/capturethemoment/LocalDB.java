@@ -18,7 +18,7 @@ import singareddy.productionapps.capturethemoment.models.ImagePath;
 import singareddy.productionapps.capturethemoment.models.ShareInfo;
 
 @Database (entities = {Book.class, ShareInfo.class, Card.class, Friend.class, ImagePath.class},
-        exportSchema = false, version = 7)
+        exportSchema = false, version = 8)
 public abstract class LocalDB extends RoomDatabase {
     private static String TAG = "LocalDB";
 

@@ -35,16 +35,16 @@ public class LocalDB_Impl extends LocalDB {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(7) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(8) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `Book` (`bookId` TEXT NOT NULL, `name` TEXT, `owner` TEXT, `createdDate` INTEGER, `lastUpdatedDate` INTEGER, PRIMARY KEY(`bookId`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Book` (`bookId` TEXT NOT NULL, `name` TEXT, `owner` TEXT, `ownerName` TEXT, `createdDate` INTEGER, `lastUpdatedDate` INTEGER, PRIMARY KEY(`bookId`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `ShareInfo` (`bookId` TEXT NOT NULL, `uid` TEXT NOT NULL, `canEdit` INTEGER NOT NULL, PRIMARY KEY(`bookId`, `uid`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Card` (`cardId` TEXT NOT NULL, `bookId` TEXT, `description` TEXT, `location` TEXT, `createdTime` INTEGER, PRIMARY KEY(`cardId`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Friend` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cardId` TEXT, `name` TEXT)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `ImagePath` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `cardId` TEXT, `imagePath` TEXT)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"8629348dde26ac75eb8c0fdd4e1c2b93\")");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"27a7ff88827289f75e83aae16ea21d49\")");
       }
 
       @Override
@@ -78,10 +78,11 @@ public class LocalDB_Impl extends LocalDB {
 
       @Override
       protected void validateMigration(SupportSQLiteDatabase _db) {
-        final HashMap<String, TableInfo.Column> _columnsBook = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsBook = new HashMap<String, TableInfo.Column>(6);
         _columnsBook.put("bookId", new TableInfo.Column("bookId", "TEXT", true, 1));
         _columnsBook.put("name", new TableInfo.Column("name", "TEXT", false, 0));
         _columnsBook.put("owner", new TableInfo.Column("owner", "TEXT", false, 0));
+        _columnsBook.put("ownerName", new TableInfo.Column("ownerName", "TEXT", false, 0));
         _columnsBook.put("createdDate", new TableInfo.Column("createdDate", "INTEGER", false, 0));
         _columnsBook.put("lastUpdatedDate", new TableInfo.Column("lastUpdatedDate", "INTEGER", false, 0));
         final HashSet<TableInfo.ForeignKey> _foreignKeysBook = new HashSet<TableInfo.ForeignKey>(0);
@@ -148,7 +149,7 @@ public class LocalDB_Impl extends LocalDB {
                   + " Found:\n" + _existingImagePath);
         }
       }
-    }, "8629348dde26ac75eb8c0fdd4e1c2b93", "c600a0a1becdbd4cdd9a4ae68fae0dfc");
+    }, "27a7ff88827289f75e83aae16ea21d49", "37a66d66daa31e7b2dcd104156b3f7ae");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

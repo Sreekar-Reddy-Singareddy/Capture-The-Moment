@@ -28,12 +28,14 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
     public class AllBooksViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView lastOpened;
         private TextView bookName;
+        private TextView ownerName;
         private ImageView shareIcon;
 
         public AllBooksViewHolder (View view) {
             super(view);
             lastOpened = view.findViewById(R.id.book_item_tv_date);
             bookName = view.findViewById(R.id.book_item_tv_bookname);
+            ownerName = view.findViewById(R.id.book_item_tv_owner_name);
             shareIcon = view.findViewById(R.id.book_item_iv_share);
             view.setOnClickListener(this);
         }
@@ -101,10 +103,13 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
         if (book.doIOwnTheBook()) {
             // This is an owned book
             holder.shareIcon.setVisibility(View.INVISIBLE);
+            holder.ownerName.setVisibility(View.INVISIBLE);
         }
         else {
             // This is a shared book
             holder.shareIcon.setVisibility(View.VISIBLE);
+            holder.ownerName.setVisibility(View.VISIBLE);
+            holder.ownerName.setText(book.getOwnerName());
         }
     }
 

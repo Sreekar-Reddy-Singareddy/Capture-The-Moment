@@ -88,6 +88,7 @@ public class AppUtilities {
         public static final String EMAIL = "email";
         public static final String MOBILE = "mobile";
         public static final String LOCATION = "location";
+        public static final String PROFILE = "profile";
     }
 
     public static class Defaults {

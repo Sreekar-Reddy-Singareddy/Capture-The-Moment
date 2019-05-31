@@ -39,7 +39,7 @@ public class AddBookService {
     private AddBookListener mAddBookListener;
     private Boolean mIsBookNameValid = false;
     private Boolean mAreSecOwnersValid = false;
-    private String mNewBookName;
+    private String mBookName;
     private List<SecondaryOwner> mSecOwnersList;
     private MutableLiveData<Integer> ownerValidated;
     private Observer<Integer> ownersObserver;
@@ -56,7 +56,7 @@ public class AddBookService {
      */
     public void createThisBook(final String bookName, final List<SecondaryOwner> secOwners) {
         // Update the member variables to newly given name and owners
-        mNewBookName = bookName;
+        mBookName = bookName;
         mSecOwnersList = secOwners;
         mAreSecOwnersValid = false;
         mIsBookNameValid = false;
@@ -195,7 +195,7 @@ public class AddBookService {
                         for (Map.Entry<String, Object> entry : map.entrySet()) {
                             ObjectMapper mapper = new ObjectMapper();
                             Book b = mapper.convertValue(entry.getValue(), Book.class);
-                            if (b.getName().toLowerCase().trim().equals(mNewBookName.toLowerCase().trim())) {
+                            if (b.getName().toLowerCase().trim().equals(mBookName.toLowerCase().trim())) {
                                 mAddBookListener.onBookNameInvalid(AppUtilities.Book.BOOK_EXISTS);
                                 return;
                             }
@@ -219,6 +219,7 @@ public class AddBookService {
      * Save the data in Room DB.
      */
     private void saveNewBookInFirebase() {
+        Log.i(TAG, "saveNewBookInFirebase: Owner Name: "+ User.CURRENT_USER.getDisplayName());
         // This works only if both book name and sec owners are valid
         if (!mIsBookNameValid || !mAreSecOwnersValid) return;
         // Since we are done using observer, it has to be removed
@@ -227,8 +228,9 @@ public class AddBookService {
         String newBookId = generateRandomBookId();
         Book newBook = new Book();
         newBook.setBookId(newBookId);
-        newBook.setName(mNewBookName);
+        newBook.setName(mBookName);
         newBook.setOwner(AppUtilities.User.CURRENT_USER.getUid()); long timeNow = new Date().getTime();
+        newBook.setOwnerName(User.CURRENT_USER.getDisplayName());
         newBook.setCreatedDate(timeNow);
         newBook.setLastUpdatedDate(timeNow);
         newBook.setSecOwners(validSecOwnersMap);

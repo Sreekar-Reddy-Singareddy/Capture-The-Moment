@@ -18,6 +18,7 @@ public class Book {
     private String bookId = "";
     private String name = "";
     private String owner = "";
+    private String ownerName = "";
     private Long createdDate = new Date().getTime();
     private Long lastUpdatedDate = new Date().getTime();
 
@@ -95,6 +96,14 @@ public class Book {
 
     public void setBookId(@NonNull String bookId) {
         this.bookId = bookId;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
     @Override

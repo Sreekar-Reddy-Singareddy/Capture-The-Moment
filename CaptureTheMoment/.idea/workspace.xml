@@ -19,16 +19,66 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/lifecycle/extensions/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/lifecycle/extensions/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/persistence/room/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/arch/persistence/room/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/asynclayoutinflater/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/asynclayoutinflater/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/compat/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/compat/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/constraint/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/constraint/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coordinatorlayout/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coordinatorlayout/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreui/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreui/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreutils/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/coreutils/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/customview/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/customview/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/design/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/design/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/drawerlayout/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/drawerlayout/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/fragment/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/fragment/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/graphics/drawable/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/graphics/drawable/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/loader/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/loader/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/mediacompat/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/mediacompat/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/slidingpanelayout/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/slidingpanelayout/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/swiperefreshlayout/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/swiperefreshlayout/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/transition/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/transition/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v4/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v4/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/appcompat/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/appcompat/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/recyclerview/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/recyclerview/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/viewpager/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/android/support/v7/viewpager/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/android/gms/base/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/android/gms/base/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/firebase/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/firebase/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/firebase/database/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/com/google/firebase/database/R.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/singareddy/productionapps/capturethemoment/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/not_namespaced_r_class_sources/debug/processDebugResources/r/singareddy/productionapps/capturethemoment/R.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/singareddy/productionapps/capturethemoment/LocalDB_Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/singareddy/productionapps/capturethemoment/LocalDB_Impl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi-v2/debug.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/debug.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/build-info/debug/build-info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$drawable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/lifecycle/extensions/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/lifecycle/extensions/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/persistence/room/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/arch/persistence/room/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/asynclayoutinflater/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/asynclayoutinflater/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/compat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/compat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/constraint/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/constraint/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coordinatorlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coordinatorlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreui/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreui/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreutils/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/coreutils/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/customview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/customview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/design/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/drawerlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/drawerlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/fragment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/fragment/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/graphics/drawable/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/graphics/drawable/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/loader/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/loader/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/mediacompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/mediacompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/slidingpanelayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/slidingpanelayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/swiperefreshlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/swiperefreshlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/transition/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/transition/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v4/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v4/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/appcompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/recyclerview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/viewpager/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/android/support/v7/viewpager/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/android/gms/base/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/android/gms/base/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/database/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/com/google/firebase/database/R$id.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/LocalDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/LocalDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/LocalDB_Impl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/LocalDB_Impl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/LocalDB_Impl.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/LocalDB_Impl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$id.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$integer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$integer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$interpolator.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$interpolator.class" afterDir="false" />
@@ -38,6 +88,12 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$string.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$style.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$styleable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/R$styleable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/book/BookDao_Impl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/models/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental-verifier/debug/singareddy/productionapps/capturethemoment/models/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_dep/debug/package_dependencies/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_dep/debug/package_dependencies/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_0/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_0/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_1/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_1/dex-renamer-state.txt" afterDir="false" />
@@ -50,14 +106,38 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_8/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_9/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/ir_slices/debug/package_slice_9/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/processInstantRunDebugResourcesApk/package_resources-debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/processInstantRunDebugResourcesApk/package_resources-debug/dex-renamer-state.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/instant-run-apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/instant-run-apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$drawable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/lifecycle/extensions/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/lifecycle/extensions/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/persistence/room/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/arch/persistence/room/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/asynclayoutinflater/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/asynclayoutinflater/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/compat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/constraint/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/constraint/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coordinatorlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coordinatorlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreui/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/coreutils/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/customview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/customview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/design/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/drawerlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/drawerlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/fragment/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/graphics/drawable/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/loader/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/loader/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/mediacompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/slidingpanelayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/slidingpanelayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/swiperefreshlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/swiperefreshlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/transition/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v4/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/appcompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/recyclerview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/viewpager/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/android/support/v7/viewpager/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/android/gms/base/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/android/gms/base/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/database/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/google/firebase/database/R$id.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/LocalDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/LocalDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/LocalDB_Impl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/LocalDB_Impl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/LocalDB_Impl.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/LocalDB_Impl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$id.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$integer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$integer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$interpolator.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$interpolator.class" afterDir="false" />
@@ -67,11 +147,18 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$string.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$style.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$styleable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/R$styleable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookDao_Impl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookDao_Impl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookDao_Impl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookDao_Impl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookDao_Impl$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookDao_Impl$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookDao_Impl$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookDao_Impl$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookDao_Impl.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/book/BookDao_Impl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/models/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/singareddy/productionapps/capturethemoment/models/Book.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/processed_res/debug/processDebugResources/out/resources-debug.ap_" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_activity_main.xml.flat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_list_item_book.xml.flat" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout_list_item_book.xml.flat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/res/symbol-table-with-package/debug/package-aware-r.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_0.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_0.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_1.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_1.apk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_2.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_3.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_3.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_4.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_5.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_5.apk" afterDir="false" />
@@ -80,14 +167,45 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_8.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_9.apk" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/split-apk/debug/slices/slice_9.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/1/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/1/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/2/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/2/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/3/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/4/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/4/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/5/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/5/classes.dex" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/6/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/6/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/design/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/design/R$drawable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/appcompat/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/appcompat/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/7/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/7/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/8/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/8/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/9/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dexMerger/debug/9/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/lifecycle/extensions/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/lifecycle/extensions/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/persistence/room/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/arch/persistence/room/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/asynclayoutinflater/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/asynclayoutinflater/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/compat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/compat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/constraint/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/constraint/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coordinatorlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coordinatorlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreui/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreui/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreutils/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/coreutils/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/customview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/customview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/design/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/design/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/drawerlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/drawerlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/fragment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/fragment/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/graphics/drawable/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/graphics/drawable/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/loader/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/loader/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/mediacompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/mediacompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/slidingpanelayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/slidingpanelayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/swiperefreshlayout/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/swiperefreshlayout/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/transition/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/transition/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v4/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v4/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/appcompat/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/appcompat/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/recyclerview/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/recyclerview/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/viewpager/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/android/support/v7/viewpager/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/android/gms/base/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/android/gms/base/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/R$id.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/database/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/com/google/firebase/database/R$id.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/DataRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$drawable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$drawable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/LocalDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/LocalDB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/LocalDB_Impl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/LocalDB_Impl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/LocalDB_Impl.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/LocalDB_Impl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$id.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$id.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$integer.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$integer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$interpolator.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$interpolator.class" afterDir="false" />
@@ -97,10 +215,22 @@
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$string.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$string.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$style.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$style.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$styleable.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/R$styleable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookDao_Impl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookDao_Impl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookDao_Impl$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookDao_Impl$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookDao_Impl$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookDao_Impl$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookDao_Impl$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookDao_Impl$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookDao_Impl.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/book/BookDao_Impl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/models/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/0/singareddy/productionapps/capturethemoment/models/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/__content__.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/instantRun/debug/__content__.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/LocalDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/LocalDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/profile_fragment_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/profile_fragment_new.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/utils/AppUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/utils/AppUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,11 +258,46 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <provider selected="true" editor-type-id="android-designer2" />
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="79" column="38" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
+              <folding>
+                <element signature="method#onCreate#0;class#AddBookActivity#0" />
+                <element signature="method#initialiseUI#0;class#AddBookActivity#0" />
+                <element signature="method#initialiseViewModel#0;class#AddBookActivity#0" />
+                <element signature="method#addNewSecOwner#0;class#AddBookActivity#0" />
+                <element signature="e#2789#2968#1" />
+                <element signature="method#onOptionsItemSelected#0;class#AddBookActivity#0" />
+                <element signature="e#3330#3363#1" />
+                <element signature="method#onBookNameInvalid#0;class#AddBookActivity#0" />
+                <element signature="e#3636#4145#0" />
+                <element signature="method#onAllSecOwnersValidated#0;class#AddBookActivity#0" />
+                <element signature="method#onNewBookCreated#0;class#AddBookActivity#0" />
+                <element signature="method#onSelfUsernameGiven#0;class#AddBookActivity#0" />
+                <element signature="class#5183:5952" />
+                <element signature="method#onDismiss#0;class#5183:5952" />
+                <element signature="e#5554#5644#1" />
+                <element signature="method#onDuplicatesExist#0;class#AddBookActivity#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="111" column="56" selection-start-line="111" selection-start-column="56" selection-end-line="111" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookViewModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -140,8 +305,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="297" column="30" lean-forward="true" selection-start-line="297" selection-start-column="30" selection-end-line="297" selection-end-column="30" />
+            <state relative-caret-position="368">
+              <caret line="162" column="30" selection-start-line="162" selection-start-column="30" selection-end-line="162" selection-end-column="30" />
               <folding>
                 <element signature="docComment;class#DataRepository#0" />
                 <element signature="e#5063#5418#0" />
@@ -151,8 +316,7 @@
                 <element signature="e#5948#6299#1" />
                 <element signature="e#6437#6591#0" />
                 <element signature="e#6685#6900#0" />
-                <element signature="e#6685#7208#0" />
-                <element signature="e#7027#7141#1" />
+                <element signature="e#7027#7090#1" />
                 <element signature="e#7214#7328#0" />
                 <element signature="e#7214#7690#0" />
                 <element signature="e#7398#7494#0" />
@@ -185,274 +349,192 @@
                 <element signature="e#11089#11961#0" />
                 <element signature="e#11308#11561#1" />
                 <element signature="e#12002#12114#0" />
+                <element signature="e#12126#12491#0" />
                 <element signature="e#12320#12377#1" />
-                <element signature="e#12501#12770#0" />
-                <element signature="e#12599#12656#1" />
-                <element signature="e#12776#13063#0" />
-                <element signature="e#12881#12992#1" />
-                <element signature="e#13069#13295#0" />
-                <element signature="e#13301#13436#0" />
-                <element signature="e#13442#13731#0" />
-                <element signature="e#13581#13596#0" />
-                <element signature="e#13737#14275#0" />
-                <element signature="e#13777#14228#0" />
-                <element signature="e#13808#14216#0" />
-                <element signature="e#14281#14925#0" />
-                <element signature="e#14321#14762#0" />
-                <element signature="e#14365#14682#0" />
-                <element signature="e#14823#14919#0" />
-                <element signature="e#14931#15504#0" />
-                <element signature="e#15510#15776#0" />
-                <element signature="e#15577#15634#1" />
-                <element signature="e#15782#16003#0" />
-                <element signature="e#16009#16320#0" />
-                <element signature="e#16101#16158#1" />
-                <element signature="e#16326#16570#0" />
-                <element signature="e#16408#16465#1" />
-                <element signature="e#16576#16738#0" />
-                <element signature="e#16744#17160#0" />
-                <element signature="e#16931#16994#1" />
-                <element signature="e#17166#17705#0" />
-                <element signature="e#17238#17528#0" />
-                <element signature="e#17558#17602#0" />
-                <element signature="e#17634#17678#0" />
-                <element signature="e#17711#18066#0" />
-                <element signature="e#17777#17889#0" />
-                <element signature="e#17919#17963#0" />
-                <element signature="e#17995#18039#0" />
-                <element signature="e#18072#18419#0" />
-                <element signature="e#18137#18242#0" />
-                <element signature="e#18272#18316#0" />
-                <element signature="e#18348#18392#0" />
-                <element signature="e#18425#18790#0" />
-                <element signature="e#18501#18613#0" />
-                <element signature="e#18643#18687#0" />
-                <element signature="e#18719#18763#0" />
-                <element signature="e#18796#19364#0" />
-                <element signature="e#18898#19186#0" />
-                <element signature="e#19216#19260#0" />
-                <element signature="e#19292#19336#0" />
-                <element signature="e#19370#19779#0" />
-                <element signature="e#19785#20021#0" />
-                <element signature="e#20063#20182#0" />
-                <element signature="e#20188#20320#0" />
-                <element signature="e#20326#20455#0" />
-                <element signature="e#20461#20605#0" />
-                <element signature="e#20611#20750#0" />
-                <element signature="e#20756#20891#0" />
-                <element signature="e#20897#21016#0" />
-                <element signature="e#21022#21141#0" />
-                <element signature="e#21147#21281#0" />
-                <element signature="e#21287#21421#0" />
-                <element signature="e#21427#21561#0" />
-                <element signature="e#21567#21736#0" />
-                <element signature="e#21742#21939#0" />
-                <element signature="e#21944#22102#0" />
-                <element signature="e#22107#22265#0" />
-                <element signature="e#22267#22282#0" />
-                <element signature="e#22430#22566#0" />
-                <element signature="e#22572#23225#0" />
-                <element signature="e#23064#23219#1" />
-                <element signature="e#23232#23504#0" />
-                <element signature="e#23676#23833#0" />
-                <element signature="e#23889#24026#0" />
-                <element signature="e#24032#24202#0" />
-                <element signature="e#24376#24518#0" />
-                <element signature="e#24524#24654#0" />
-                <element signature="e#24710#24835#0" />
-                <element signature="e#24841#24995#0" />
-                <element signature="e#25507#26586#0" />
-                <element signature="e#26592#26974#0" />
-                <element signature="e#26980#27251#0" />
-                <element signature="e#27257#27584#0" />
-                <element signature="e#27354#27455#0" />
-                <element signature="e#27484#27578#0" />
-                <element signature="e#27590#27946#0" />
-                <element signature="e#27775#27940#1" />
-                <element signature="e#27952#28415#0" />
-                <element signature="e#28421#29188#0" />
-                <element signature="e#28483#29033#0" />
-                <element signature="e#28740#29023#1" />
-                <element signature="e#29062#29106#0" />
-                <element signature="e#29138#29182#0" />
-                <element signature="e#29194#30064#0" />
-                <element signature="e#29256#29900#0" />
-                <element signature="e#29620#29890#1" />
-                <element signature="e#29938#29982#0" />
-                <element signature="e#30014#30058#0" />
-                <element signature="e#30070#30452#0" />
-                <element signature="e#30126#30296#0" />
-                <element signature="e#30326#30370#0" />
-                <element signature="e#30402#30446#0" />
-                <element signature="e#30458#31940#0" />
-                <element signature="e#30912#31847#1" />
-                <element signature="e#31212#31762#0" />
-                <element signature="e#31785#31837#0" />
-                <element signature="e#32285#32781#0" />
-                <element signature="e#32353#32611#0" />
-                <element signature="e#32384#32599#0" />
-                <element signature="e#32640#32725#0" />
-                <element signature="e#33114#34572#0" />
-                <element signature="e#33215#34566#0" />
-                <element signature="e#33595#34084#1" />
-                <element signature="e#33768#34070#1" />
-                <element signature="e#34102#34531#1" />
-                <element signature="e#34578#35430#0" />
-                <element signature="e#34673#35033#0" />
-                <element signature="e#34768#34948#0" />
-                <element signature="e#34818#34908#1" />
-                <element signature="e#34981#35023#0" />
-                <element signature="e#35043#35424#0" />
-                <element signature="e#35335#35414#1" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthViewModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-              <folding>
-                <element signature="method#loginUserWithEmail#0;class#AuthViewModel#0" />
-                <element signature="e#2338#2438#1" />
-                <element signature="e#2480#2583#1" />
-                <element signature="method#sendPasswordResetEmail#0;class#AuthViewModel#0" />
-                <element signature="method#isPasswordValid#0;class#AuthViewModel#0" />
-                <element signature="method#isEmailValid#0;class#AuthViewModel#0" />
-                <element signature="method#authorizePhoneCredentials#0;class#AuthViewModel#0" />
-                <element signature="e#3399#3506#1" />
-                <element signature="e#3647#3748#1" />
-                <element signature="method#setProfilePic#0;class#AuthViewModel#0" />
-                <element signature="e#4605#5006#1" />
-                <element signature="e#4623#4892#0" />
-                <element signature="e#4915#4996#0" />
-                <element signature="method#saveProfilePic#0;class#AuthViewModel#0" />
-                <element signature="method#validateMobile#0;class#AuthViewModel#0" />
-                <element signature="method#setEmailSignupListener#0;class#AuthViewModel#0" />
-                <element signature="method#setEmailLoginListener#0;class#AuthViewModel#0" />
-                <element signature="method#setMobileAuthListener#0;class#AuthViewModel#0" />
-                <element signature="method#setProfileListener#0;class#AuthViewModel#0" />
-                <element signature="method#onEmailUserRegisterSuccess#0;class#AuthViewModel#0" />
-                <element signature="method#onEmailUserRegisterFailure#0;class#AuthViewModel#0" />
-                <element signature="method#onPasswordResetMailSent#0;class#AuthViewModel#0" />
-                <element signature="method#onEmailUserLoginFailure#0;class#AuthViewModel#0" />
-                <element signature="method#onMobileAuthenticationSuccess#0;class#AuthViewModel#0" />
-                <element signature="method#onMobileAuthenticationFailure#0;class#AuthViewModel#0" />
+                <element signature="e#12497#12766#0" />
+                <element signature="e#12595#12652#1" />
+                <element signature="e#12772#13059#0" />
+                <element signature="e#12877#12988#1" />
+                <element signature="e#13065#13291#0" />
+                <element signature="e#13297#13432#0" />
+                <element signature="e#13438#13727#0" />
+                <element signature="e#13577#13592#0" />
+                <element signature="e#13733#14271#0" />
+                <element signature="e#13773#14224#0" />
+                <element signature="e#13804#14212#0" />
+                <element signature="e#14277#14921#0" />
+                <element signature="e#14317#14758#0" />
+                <element signature="e#14361#14678#0" />
+                <element signature="e#14819#14915#0" />
+                <element signature="e#14927#15500#0" />
+                <element signature="e#15506#15772#0" />
+                <element signature="e#15573#15630#1" />
+                <element signature="e#15778#15999#0" />
+                <element signature="e#16005#16316#0" />
+                <element signature="e#16097#16154#1" />
+                <element signature="e#16322#16566#0" />
+                <element signature="e#16404#16461#1" />
+                <element signature="e#16572#16734#0" />
+                <element signature="e#16740#17156#0" />
+                <element signature="e#16927#16990#1" />
+                <element signature="e#17162#17701#0" />
+                <element signature="e#17234#17524#0" />
+                <element signature="e#17554#17598#0" />
+                <element signature="e#17630#17674#0" />
+                <element signature="e#17707#18062#0" />
+                <element signature="e#17773#17885#0" />
+                <element signature="e#17915#17959#0" />
+                <element signature="e#17991#18035#0" />
+                <element signature="e#18068#18415#0" />
+                <element signature="e#18133#18238#0" />
+                <element signature="e#18268#18312#0" />
+                <element signature="e#18344#18388#0" />
+                <element signature="e#18421#18786#0" />
+                <element signature="e#18497#18609#0" />
+                <element signature="e#18639#18683#0" />
+                <element signature="e#18715#18759#0" />
+                <element signature="e#18792#19360#0" />
+                <element signature="e#18894#19182#0" />
+                <element signature="e#19212#19256#0" />
+                <element signature="e#19288#19332#0" />
+                <element signature="e#19366#19775#0" />
+                <element signature="e#19781#20017#0" />
+                <element signature="e#20059#20178#0" />
+                <element signature="e#20184#20316#0" />
+                <element signature="e#20322#20451#0" />
+                <element signature="e#20457#20601#0" />
+                <element signature="e#20607#20746#0" />
+                <element signature="e#20752#20887#0" />
+                <element signature="e#20893#21012#0" />
+                <element signature="e#21018#21137#0" />
+                <element signature="e#21143#21277#0" />
+                <element signature="e#21283#21417#0" />
+                <element signature="e#21423#21557#0" />
+                <element signature="e#21563#21732#0" />
+                <element signature="e#21738#21935#0" />
+                <element signature="e#21940#22098#0" />
+                <element signature="e#22103#22261#0" />
+                <element signature="e#22263#22278#0" />
+                <element signature="e#22426#22562#0" />
+                <element signature="e#22568#23221#0" />
+                <element signature="e#23060#23215#1" />
+                <element signature="e#23228#23500#0" />
+                <element signature="e#23672#23829#0" />
+                <element signature="e#23885#24022#0" />
+                <element signature="e#24028#24198#0" />
+                <element signature="e#24372#24514#0" />
+                <element signature="e#24520#24650#0" />
+                <element signature="e#24706#24831#0" />
+                <element signature="e#24837#24991#0" />
+                <element signature="e#25503#26582#0" />
+                <element signature="e#26588#26970#0" />
+                <element signature="e#26976#27247#0" />
+                <element signature="e#27253#27580#0" />
+                <element signature="e#27350#27451#0" />
+                <element signature="e#27480#27574#0" />
+                <element signature="e#27586#27942#0" />
+                <element signature="e#27771#27936#1" />
+                <element signature="e#27948#28411#0" />
+                <element signature="e#28417#29184#0" />
+                <element signature="e#28479#29029#0" />
+                <element signature="e#28736#29019#1" />
+                <element signature="e#29058#29102#0" />
+                <element signature="e#29134#29178#0" />
+                <element signature="e#29190#30060#0" />
+                <element signature="e#29252#29896#0" />
+                <element signature="e#29616#29886#1" />
+                <element signature="e#29934#29978#0" />
+                <element signature="e#30010#30054#0" />
+                <element signature="e#30066#30448#0" />
+                <element signature="e#30122#30292#0" />
+                <element signature="e#30322#30366#0" />
+                <element signature="e#30398#30442#0" />
+                <element signature="e#30454#31936#0" />
+                <element signature="e#30908#31843#1" />
+                <element signature="e#31208#31758#0" />
+                <element signature="e#31781#31833#0" />
+                <element signature="e#32281#32777#0" />
+                <element signature="e#32349#32607#0" />
+                <element signature="e#32380#32595#0" />
+                <element signature="e#32636#32721#0" />
+                <element signature="e#33110#34568#0" />
+                <element signature="e#33211#34562#0" />
+                <element signature="e#33591#34080#1" />
+                <element signature="e#33764#34066#1" />
+                <element signature="e#34098#34527#1" />
+                <element signature="e#34574#35426#0" />
+                <element signature="e#34669#35029#0" />
+                <element signature="e#34764#34944#0" />
+                <element signature="e#34814#34904#1" />
+                <element signature="e#34977#35019#0" />
+                <element signature="e#35039#35420#0" />
+                <element signature="e#35331#35410#1" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+            <state relative-caret-position="151">
+              <caret line="232" column="65" selection-start-line="232" selection-start-column="65" selection-end-line="232" selection-end-column="65" />
               <folding>
-                <element signature="method#AuthService#0;class#AuthService#0" />
-                <element signature="method#loginUserWithEmail#0;class#AuthService#0" />
-                <element signature="class#3944:4188" />
-                <element signature="method#onSuccess#0;class#3944:4188" />
-                <element signature="class#4244:4491" />
-                <element signature="method#onFailure#0;class#4244:4491" />
-                <element signature="method#authorizePhoneCredentials#0;class#AuthService#0" />
-                <element signature="e#4863#5139#1" />
-                <element signature="class#5278:6455" />
-                <element signature="method#onVerificationCompleted#0;class#5278:6455" />
-                <element signature="method#onCodeAutoRetrievalTimeOut#0;class#5278:6455" />
-                <element signature="method#onCodeSent#0;class#5278:6455" />
-                <element signature="method#onVerificationFailed#0;class#5278:6455" />
-                <element signature="method#sendPasswordResetEmail#0;class#AuthService#0" />
-                <element signature="class#6760:7060" />
-                <element signature="method#onSuccess#0;class#6760:7060" />
-                <element signature="method#verifyCredential#0;class#AuthService#0" />
-                <element signature="class#7236:7794" />
-                <element signature="method#onComplete#0;class#7236:7794" />
-                <element signature="e#7426#7605#1" />
-                <element signature="e#7635#7754#1" />
-                <element signature="method#setupInitialData#0;class#AuthService#0" />
-                <element signature="e#7849#7919#0" />
-                <element signature="method#setupUserProfile#0;class#AuthService#0" />
-                <element signature="class#8883:10102" />
-                <element signature="method#onDataChange#0;class#8883:10102" />
-                <element signature="e#9178#9717#1" />
-                <element signature="e#9344#9447#1" />
-                <element signature="e#9516#9699#1" />
-                <element signature="e#9739#9834#1" />
-                <element signature="method#onCancelled#0;class#8883:10102" />
-                <element signature="class#10315:10734" />
-                <element signature="method#onComplete#0;class#10315:10734" />
-                <element signature="e#10470#10573#1" />
-                <element signature="e#10595#10710#1" />
-                <element signature="e#10886#11091#1" />
-                <element signature="e#11186#11426#1" />
-                <element signature="method#downloadUserProfilePicture#0;class#AuthService#0" />
-                <element signature="e#11657#11858#1" />
-                <element signature="e#11671#11709#0" />
-                <element signature="class#12035:12358" />
-                <element signature="method#onProgress#0;class#12035:12358" />
-                <element signature="class#12402:12745" />
-                <element signature="method#onSuccess#0;class#12402:12745" />
-                <element signature="class#12789:13038" />
-                <element signature="method#onFailure#0;class#12789:13038" />
-                <element signature="method#setupBooksOwnedByUser#0;class#AuthService#0" />
-                <element signature="class#13319:13919" />
-                <element signature="method#onDataChange#0;class#13319:13919" />
-                <element signature="e#13707#13780#1" />
-                <element signature="method#onCancelled#0;class#13319:13919" />
-                <element signature="method#setupBooksSharedWithUser#0;class#AuthService#0" />
-                <element signature="class#14198:14972" />
-                <element signature="method#onDataChange#0;class#14198:14972" />
-                <element signature="e#14629#14834#1" />
-                <element signature="e#14715#14816#1" />
-                <element signature="method#onCancelled#0;class#14198:14972" />
-                <element signature="method#updateUserProfile#0;class#AuthService#0" />
-                <element signature="class#15229:15430" />
-                <element signature="method#onSuccess#0;class#15229:15430" />
-                <element signature="class#15480:15705" />
-                <element signature="method#onFailure#0;class#15480:15705" />
-                <element signature="method#saveProfilePic#0;class#AuthService#0" />
-                <element signature="class#16197:16505" />
-                <element signature="method#onProgress#0;class#16197:16505" />
-                <element signature="class#16549:16870" />
-                <element signature="method#onSuccess#0;class#16549:16870" />
-                <element signature="class#16914:17162" />
-                <element signature="method#onFailure#0;class#16914:17162" />
-                <element signature="docComment;method#downloadBookWithId#0;class#AuthService#0" />
-                <element signature="method#downloadBookWithId#0;class#AuthService#0" />
-                <element signature="class#17598:18324" />
-                <element signature="method#onDataChange#0;class#17598:18324" />
-                <element signature="e#17795#18067#1" />
-                <element signature="method#onCancelled#0;class#17598:18324" />
-                <element signature="method#downloadCardsOfBook#0;class#AuthService#0" />
-                <element signature="class#18610:19125" />
-                <element signature="method#onDataChange#0;class#18610:19125" />
-                <element signature="e#18920#18987#1" />
-                <element signature="method#onCancelled#0;class#18610:19125" />
-                <element signature="e#19930#20016#0" />
-                <element signature="e#20039#20107#0" />
-                <element signature="method#onCancelled#0;class#19379:20263" />
-                <element signature="method#downloadImageFromFirebaseToPath#0;class#AuthService#0" />
-                <element signature="class#21044:21435" />
-                <element signature="method#onSuccess#0;class#21044:21435" />
-                <element signature="method#setEmailSignupListener#0;class#AuthService#0" />
-                <element signature="method#setEmailLoginListener#0;class#AuthService#0" />
-                <element signature="method#setMobileAuthListener#0;class#AuthService#0" />
-                <element signature="method#setDataSyncListener#0;class#AuthService#0" />
-                <element signature="method#setProfileListener#0;class#AuthService#0" />
-                <element signature="method#setSmallCardDownloadListener#0;class#AuthService#0" />
+                <element signature="docComment;method#createThisBook#0;class#AddBookService#0" />
+                <element signature="method#createThisBook#0;class#AddBookService#0" />
+                <element signature="class#2475:3302" />
+                <element signature="method#onChanged#0;class#2475:3302" />
+                <element signature="e#2598#2650#0" />
+                <element signature="e#2873#2998#1" />
+                <element signature="e#3139#3278#1" />
+                <element signature="docComment;method#validateSecOwnersInFirebase#0;class#AddBookService#0" />
+                <element signature="method#validateSecOwnersInFirebase#0;class#AddBookService#0" />
+                <element signature="e#4178#4265#1" />
+                <element signature="e#4376#6836#1" />
+                <element signature="e#4536#4825#1" />
+                <element signature="e#4839#4909#0" />
+                <element signature="class#5125:6824" />
+                <element signature="method#onDataChange#0;class#5125:6824" />
+                <element signature="e#5273#5322#0" />
+                <element signature="e#5572#6113#1" />
+                <element signature="e#6139#6291#1" />
+                <element signature="method#onCancelled#0;class#5125:6824" />
+                <element signature="e#6501#6564#0" />
+                <element signature="method#usernameExistsInCache#0;class#AddBookService#0" />
+                <element signature="e#7251#7366#1" />
+                <element signature="e#7303#7356#1" />
+                <element signature="docComment;method#validateBookNameInFirebase#0;class#AddBookService#0" />
+                <element signature="method#validateBookNameInFirebase#0;class#AddBookService#0" />
+                <element signature="class#7857:9482" />
+                <element signature="method#onDataChange#0;class#7857:9482" />
+                <element signature="e#8054#8360#1" />
+                <element signature="e#8084#8126#0" />
+                <element signature="e#8674#9138#1" />
+                <element signature="e#8942#9112#1" />
+                <element signature="method#onCancelled#0;class#7857:9482" />
+                <element signature="docComment;method#saveNewBookInFirebase#0;class#AddBookService#0" />
+                <element signature="class#10639:10945" />
+                <element signature="method#onComplete#0;class#10639:10945" />
+                <element signature="e#10818#10905#1" />
+                <element signature="docComment;method#updateOwnerInFirebase#0;class#AddBookService#0" />
+                <element signature="method#updateOwnerInFirebase#0;class#AddBookService#0" />
+                <element signature="class#11554:12599" />
+                <element signature="method#onDataChange#0;class#11554:12599" />
+                <element signature="e#11674#11704#0" />
+                <element signature="class#12149:12459" />
+                <element signature="method#onComplete#0;class#12149:12459" />
+                <element signature="e#12328#12419#1" />
+                <element signature="method#onCancelled#0;class#11554:12599" />
+                <element signature="docComment;method#updateSecOwnersInFirebase#0;class#AddBookService#0" />
+                <element signature="method#updateSecOwnersInFirebase#0;class#AddBookService#0" />
+                <element signature="e#13012#14024#1" />
+                <element signature="class#13423:14012" />
+                <element signature="method#onComplete#0;class#13423:14012" />
+                <element signature="e#13614#13964#1" />
+                <element signature="docComment;method#generateRandomBookId#0;class#AddBookService#0" />
+                <element signature="method#generateRandomBookId#0;class#AddBookService#0" />
+                <element signature="method#setBookListener#0;class#AddBookService#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/tab_background.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -521,11 +603,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile_update.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_signup.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_insert_photo_white_24dp.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/dialg_profile_pic.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_loading.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_otp_timer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/email_signup.xml" />
@@ -540,7 +617,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_add_circle_white_24dp.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_add_card.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_folder_shared_white_24dp.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/navigation_header.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/page_item_image.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml" />
@@ -561,17 +637,23 @@
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/card/get/SmallCardsAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthViewModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/User.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/utils/AppUtilities.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/dialog_edit_profile.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/profile/ProfileFragmentNew.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_home_black_24dp.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_settings_24dp.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/HomeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/profile_fragment_new.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/tab_background.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/LocalDB.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/utils/AppUtilities.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksAdapter.java" />
       </list>
     </option>
   </component>
@@ -611,15 +693,15 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="capturethemoment" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CaptureTheMoment" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="capturethemoment" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
+              <item name="book" type="462c0819:PsiDirectoryNode" />
+              <item name="get" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -639,7 +721,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.recentlyUsedThemes" value="Platform.MaterialComponents.Light.Dialog&#10;Platform.MaterialComponents.Light" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="device.picker.selection" value="S8EIOVTKPNYHP7KZ" />
+    <property name="device.picker.selection" value="Moto_M_API_28" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
@@ -777,6 +859,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="825" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.13642564" visible="true" weight="0.20529328" />
       <window_info id="Resources Explorer" order="1" show_stripe_button="false" sideWeight="0.49931788" weight="0.3297568" />
@@ -805,89 +888,8 @@
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="right" id="Device File Explorer" order="6" side_tool="true" weight="0.35479257" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.13642564" visible="true" weight="0.20529328" />
-      <window_info id="Resources Explorer" order="1" show_stripe_button="false" sideWeight="0.49931788" weight="0.3297568" />
-      <window_info id="Structure" order="2" sideWeight="0.8635743" side_tool="true" weight="0.20529328" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="Designer" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info id="Build Variants" order="7" side_tool="true" />
-      <window_info id="Captures" order="8" show_stripe_button="false" side_tool="true" weight="0.24964234" />
-      <window_info anchor="bottom" id="Run" order="0" weight="0.3287858" />
-      <window_info anchor="bottom" id="Debug" order="1" sideWeight="0.49928468" weight="0.40927693" />
-      <window_info anchor="bottom" id="Find" order="2" sideWeight="0.4985694" weight="0.3287858" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TODO" order="4" weight="0.3287858" />
-      <window_info anchor="bottom" id="Terminal" order="5" weight="0.3287858" />
-      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.50143063" side_tool="true" weight="0.3287858" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49928468" weight="0.5457026" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" weight="0.5579809" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="9" visible="true" weight="0.58526605" />
-      <window_info anchor="right" id="Assistant" order="0" weight="0.3297568" />
-      <window_info anchor="right" id="Preview" order="1" weight="0.40772533" />
-      <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="right" id="Gradle" order="3" weight="0.3297568" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-      <window_info anchor="right" id="Device File Explorer" order="6" side_tool="true" weight="0.35479257" />
-    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_big_card_back.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="70" column="44" lean-forward="true" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/email_signup.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/add_card_outline.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_add_circle_white_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="67" selection-start-column="67" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_add_card.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_folder_shared_white_24dp.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="67" selection-start-column="67" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml">
-      <provider editor-type-id="android-designer2" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="32" column="51" lean-forward="true" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_card_back.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
@@ -1103,13 +1105,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/utils/AppUtilities.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="85" column="49" selection-start-line="85" selection-start-column="49" selection-end-line="85" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/dialog_edit_profile.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
@@ -1233,13 +1228,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="48" column="80" selection-start-line="48" selection-start-column="80" selection-end-line="48" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/profile_fragment_new.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
@@ -1252,14 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1297,10 +1277,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_book.xml">
+      <provider editor-type-id="android-designer2" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="68" column="41" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/models/Book.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="100" column="32" selection-start-line="100" selection-start-column="32" selection-end-line="100" selection-end-column="32" />
+          <folding>
+            <element signature="method#Book#0;class#Book#0" />
+            <element signature="method#Book#1;class#Book#0" />
+            <element signature="method#Book#2;class#Book#0" />
+            <element signature="method#toString#0;class#Book#0" />
+            <element signature="method#doIOwnTheBook#0;class#Book#0" />
+            <element signature="method#equals#0;class#Book#0" />
+            <element signature="e#2749#3252#0" />
+            <element signature="e#3290#3372#0" />
+            <element signature="e#3389#3425#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/LocalDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/DataRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="297" column="30" lean-forward="true" selection-start-line="297" selection-start-column="30" selection-end-line="297" selection-end-column="30" />
+        <state relative-caret-position="368">
+          <caret line="162" column="30" selection-start-line="162" selection-start-column="30" selection-end-line="162" selection-end-column="30" />
           <folding>
             <element signature="docComment;class#DataRepository#0" />
             <element signature="e#5063#5418#0" />
@@ -1310,8 +1338,7 @@
             <element signature="e#5948#6299#1" />
             <element signature="e#6437#6591#0" />
             <element signature="e#6685#6900#0" />
-            <element signature="e#6685#7208#0" />
-            <element signature="e#7027#7141#1" />
+            <element signature="e#7027#7090#1" />
             <element signature="e#7214#7328#0" />
             <element signature="e#7214#7690#0" />
             <element signature="e#7398#7494#0" />
@@ -1344,135 +1371,148 @@
             <element signature="e#11089#11961#0" />
             <element signature="e#11308#11561#1" />
             <element signature="e#12002#12114#0" />
+            <element signature="e#12126#12491#0" />
             <element signature="e#12320#12377#1" />
-            <element signature="e#12501#12770#0" />
-            <element signature="e#12599#12656#1" />
-            <element signature="e#12776#13063#0" />
-            <element signature="e#12881#12992#1" />
-            <element signature="e#13069#13295#0" />
-            <element signature="e#13301#13436#0" />
-            <element signature="e#13442#13731#0" />
-            <element signature="e#13581#13596#0" />
-            <element signature="e#13737#14275#0" />
-            <element signature="e#13777#14228#0" />
-            <element signature="e#13808#14216#0" />
-            <element signature="e#14281#14925#0" />
-            <element signature="e#14321#14762#0" />
-            <element signature="e#14365#14682#0" />
-            <element signature="e#14823#14919#0" />
-            <element signature="e#14931#15504#0" />
-            <element signature="e#15510#15776#0" />
-            <element signature="e#15577#15634#1" />
-            <element signature="e#15782#16003#0" />
-            <element signature="e#16009#16320#0" />
-            <element signature="e#16101#16158#1" />
-            <element signature="e#16326#16570#0" />
-            <element signature="e#16408#16465#1" />
-            <element signature="e#16576#16738#0" />
-            <element signature="e#16744#17160#0" />
-            <element signature="e#16931#16994#1" />
-            <element signature="e#17166#17705#0" />
-            <element signature="e#17238#17528#0" />
-            <element signature="e#17558#17602#0" />
-            <element signature="e#17634#17678#0" />
-            <element signature="e#17711#18066#0" />
-            <element signature="e#17777#17889#0" />
-            <element signature="e#17919#17963#0" />
-            <element signature="e#17995#18039#0" />
-            <element signature="e#18072#18419#0" />
-            <element signature="e#18137#18242#0" />
-            <element signature="e#18272#18316#0" />
-            <element signature="e#18348#18392#0" />
-            <element signature="e#18425#18790#0" />
-            <element signature="e#18501#18613#0" />
-            <element signature="e#18643#18687#0" />
-            <element signature="e#18719#18763#0" />
-            <element signature="e#18796#19364#0" />
-            <element signature="e#18898#19186#0" />
-            <element signature="e#19216#19260#0" />
-            <element signature="e#19292#19336#0" />
-            <element signature="e#19370#19779#0" />
-            <element signature="e#19785#20021#0" />
-            <element signature="e#20063#20182#0" />
-            <element signature="e#20188#20320#0" />
-            <element signature="e#20326#20455#0" />
-            <element signature="e#20461#20605#0" />
-            <element signature="e#20611#20750#0" />
-            <element signature="e#20756#20891#0" />
-            <element signature="e#20897#21016#0" />
-            <element signature="e#21022#21141#0" />
-            <element signature="e#21147#21281#0" />
-            <element signature="e#21287#21421#0" />
-            <element signature="e#21427#21561#0" />
-            <element signature="e#21567#21736#0" />
-            <element signature="e#21742#21939#0" />
-            <element signature="e#21944#22102#0" />
-            <element signature="e#22107#22265#0" />
-            <element signature="e#22267#22282#0" />
-            <element signature="e#22430#22566#0" />
-            <element signature="e#22572#23225#0" />
-            <element signature="e#23064#23219#1" />
-            <element signature="e#23232#23504#0" />
-            <element signature="e#23676#23833#0" />
-            <element signature="e#23889#24026#0" />
-            <element signature="e#24032#24202#0" />
-            <element signature="e#24376#24518#0" />
-            <element signature="e#24524#24654#0" />
-            <element signature="e#24710#24835#0" />
-            <element signature="e#24841#24995#0" />
-            <element signature="e#25507#26586#0" />
-            <element signature="e#26592#26974#0" />
-            <element signature="e#26980#27251#0" />
-            <element signature="e#27257#27584#0" />
-            <element signature="e#27354#27455#0" />
-            <element signature="e#27484#27578#0" />
-            <element signature="e#27590#27946#0" />
-            <element signature="e#27775#27940#1" />
-            <element signature="e#27952#28415#0" />
-            <element signature="e#28421#29188#0" />
-            <element signature="e#28483#29033#0" />
-            <element signature="e#28740#29023#1" />
-            <element signature="e#29062#29106#0" />
-            <element signature="e#29138#29182#0" />
-            <element signature="e#29194#30064#0" />
-            <element signature="e#29256#29900#0" />
-            <element signature="e#29620#29890#1" />
-            <element signature="e#29938#29982#0" />
-            <element signature="e#30014#30058#0" />
-            <element signature="e#30070#30452#0" />
-            <element signature="e#30126#30296#0" />
-            <element signature="e#30326#30370#0" />
-            <element signature="e#30402#30446#0" />
-            <element signature="e#30458#31940#0" />
-            <element signature="e#30912#31847#1" />
-            <element signature="e#31212#31762#0" />
-            <element signature="e#31785#31837#0" />
-            <element signature="e#32285#32781#0" />
-            <element signature="e#32353#32611#0" />
-            <element signature="e#32384#32599#0" />
-            <element signature="e#32640#32725#0" />
-            <element signature="e#33114#34572#0" />
-            <element signature="e#33215#34566#0" />
-            <element signature="e#33595#34084#1" />
-            <element signature="e#33768#34070#1" />
-            <element signature="e#34102#34531#1" />
-            <element signature="e#34578#35430#0" />
-            <element signature="e#34673#35033#0" />
-            <element signature="e#34768#34948#0" />
-            <element signature="e#34818#34908#1" />
-            <element signature="e#34981#35023#0" />
-            <element signature="e#35043#35424#0" />
-            <element signature="e#35335#35414#1" />
+            <element signature="e#12497#12766#0" />
+            <element signature="e#12595#12652#1" />
+            <element signature="e#12772#13059#0" />
+            <element signature="e#12877#12988#1" />
+            <element signature="e#13065#13291#0" />
+            <element signature="e#13297#13432#0" />
+            <element signature="e#13438#13727#0" />
+            <element signature="e#13577#13592#0" />
+            <element signature="e#13733#14271#0" />
+            <element signature="e#13773#14224#0" />
+            <element signature="e#13804#14212#0" />
+            <element signature="e#14277#14921#0" />
+            <element signature="e#14317#14758#0" />
+            <element signature="e#14361#14678#0" />
+            <element signature="e#14819#14915#0" />
+            <element signature="e#14927#15500#0" />
+            <element signature="e#15506#15772#0" />
+            <element signature="e#15573#15630#1" />
+            <element signature="e#15778#15999#0" />
+            <element signature="e#16005#16316#0" />
+            <element signature="e#16097#16154#1" />
+            <element signature="e#16322#16566#0" />
+            <element signature="e#16404#16461#1" />
+            <element signature="e#16572#16734#0" />
+            <element signature="e#16740#17156#0" />
+            <element signature="e#16927#16990#1" />
+            <element signature="e#17162#17701#0" />
+            <element signature="e#17234#17524#0" />
+            <element signature="e#17554#17598#0" />
+            <element signature="e#17630#17674#0" />
+            <element signature="e#17707#18062#0" />
+            <element signature="e#17773#17885#0" />
+            <element signature="e#17915#17959#0" />
+            <element signature="e#17991#18035#0" />
+            <element signature="e#18068#18415#0" />
+            <element signature="e#18133#18238#0" />
+            <element signature="e#18268#18312#0" />
+            <element signature="e#18344#18388#0" />
+            <element signature="e#18421#18786#0" />
+            <element signature="e#18497#18609#0" />
+            <element signature="e#18639#18683#0" />
+            <element signature="e#18715#18759#0" />
+            <element signature="e#18792#19360#0" />
+            <element signature="e#18894#19182#0" />
+            <element signature="e#19212#19256#0" />
+            <element signature="e#19288#19332#0" />
+            <element signature="e#19366#19775#0" />
+            <element signature="e#19781#20017#0" />
+            <element signature="e#20059#20178#0" />
+            <element signature="e#20184#20316#0" />
+            <element signature="e#20322#20451#0" />
+            <element signature="e#20457#20601#0" />
+            <element signature="e#20607#20746#0" />
+            <element signature="e#20752#20887#0" />
+            <element signature="e#20893#21012#0" />
+            <element signature="e#21018#21137#0" />
+            <element signature="e#21143#21277#0" />
+            <element signature="e#21283#21417#0" />
+            <element signature="e#21423#21557#0" />
+            <element signature="e#21563#21732#0" />
+            <element signature="e#21738#21935#0" />
+            <element signature="e#21940#22098#0" />
+            <element signature="e#22103#22261#0" />
+            <element signature="e#22263#22278#0" />
+            <element signature="e#22426#22562#0" />
+            <element signature="e#22568#23221#0" />
+            <element signature="e#23060#23215#1" />
+            <element signature="e#23228#23500#0" />
+            <element signature="e#23672#23829#0" />
+            <element signature="e#23885#24022#0" />
+            <element signature="e#24028#24198#0" />
+            <element signature="e#24372#24514#0" />
+            <element signature="e#24520#24650#0" />
+            <element signature="e#24706#24831#0" />
+            <element signature="e#24837#24991#0" />
+            <element signature="e#25503#26582#0" />
+            <element signature="e#26588#26970#0" />
+            <element signature="e#26976#27247#0" />
+            <element signature="e#27253#27580#0" />
+            <element signature="e#27350#27451#0" />
+            <element signature="e#27480#27574#0" />
+            <element signature="e#27586#27942#0" />
+            <element signature="e#27771#27936#1" />
+            <element signature="e#27948#28411#0" />
+            <element signature="e#28417#29184#0" />
+            <element signature="e#28479#29029#0" />
+            <element signature="e#28736#29019#1" />
+            <element signature="e#29058#29102#0" />
+            <element signature="e#29134#29178#0" />
+            <element signature="e#29190#30060#0" />
+            <element signature="e#29252#29896#0" />
+            <element signature="e#29616#29886#1" />
+            <element signature="e#29934#29978#0" />
+            <element signature="e#30010#30054#0" />
+            <element signature="e#30066#30448#0" />
+            <element signature="e#30122#30292#0" />
+            <element signature="e#30322#30366#0" />
+            <element signature="e#30398#30442#0" />
+            <element signature="e#30454#31936#0" />
+            <element signature="e#30908#31843#1" />
+            <element signature="e#31208#31758#0" />
+            <element signature="e#31781#31833#0" />
+            <element signature="e#32281#32777#0" />
+            <element signature="e#32349#32607#0" />
+            <element signature="e#32380#32595#0" />
+            <element signature="e#32636#32721#0" />
+            <element signature="e#33110#34568#0" />
+            <element signature="e#33211#34562#0" />
+            <element signature="e#33591#34080#1" />
+            <element signature="e#33764#34066#1" />
+            <element signature="e#34098#34527#1" />
+            <element signature="e#34574#35426#0" />
+            <element signature="e#34669#35029#0" />
+            <element signature="e#34764#34944#0" />
+            <element signature="e#34814#34904#1" />
+            <element signature="e#34977#35019#0" />
+            <element signature="e#35039#35420#0" />
+            <element signature="e#35331#35410#1" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/utils/AppUtilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="90" column="53" selection-start-line="90" selection-start-column="53" selection-end-line="90" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/AuthService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="60" column="46" selection-start-line="60" selection-start-column="46" selection-end-line="60" selection-end-column="46" />
+        <state relative-caret-position="84">
+          <caret line="270" column="24" selection-start-line="270" selection-start-column="24" selection-end-line="270" selection-end-column="24" />
           <folding>
             <element signature="method#AuthService#0;class#AuthService#0" />
+            <element signature="method#registerEmailUser#0;class#AuthService#0" />
+            <element signature="class#3023:3276" />
+            <element signature="method#onSuccess#0;class#3023:3276" />
+            <element signature="class#3335:3605" />
+            <element signature="method#onFailure#0;class#3335:3605" />
             <element signature="method#loginUserWithEmail#0;class#AuthService#0" />
             <element signature="class#3944:4188" />
             <element signature="method#onSuccess#0;class#3944:4188" />
@@ -1509,6 +1549,14 @@
             <element signature="e#10595#10710#1" />
             <element signature="e#10886#11091#1" />
             <element signature="e#11186#11426#1" />
+            <element signature="method#updateUserProfileInFirebaseAuth#0;class#AuthService#0" />
+            <element signature="class#11926:12104" />
+            <element signature="method#onSuccess#0;class#11926:12148" />
+            <element signature="method#updateUserProfile#0;class#AuthService#0" />
+            <element signature="class#15280:15481" />
+            <element signature="method#onSuccess#0;class#15280:15481" />
+            <element signature="class#15531:15756" />
+            <element signature="method#onFailure#0;class#15531:15756" />
             <element signature="method#downloadUserProfilePicture#0;class#AuthService#0" />
             <element signature="e#11657#11858#1" />
             <element signature="e#11671#11709#0" />
@@ -1529,41 +1577,142 @@
             <element signature="e#14629#14834#1" />
             <element signature="e#14715#14816#1" />
             <element signature="method#onCancelled#0;class#14198:14972" />
-            <element signature="method#updateUserProfile#0;class#AuthService#0" />
-            <element signature="class#15229:15430" />
-            <element signature="method#onSuccess#0;class#15229:15430" />
-            <element signature="class#15480:15705" />
-            <element signature="method#onFailure#0;class#15480:15705" />
             <element signature="method#saveProfilePic#0;class#AuthService#0" />
-            <element signature="class#16197:16505" />
-            <element signature="method#onProgress#0;class#16197:16505" />
-            <element signature="class#16549:16870" />
-            <element signature="method#onSuccess#0;class#16549:16870" />
-            <element signature="class#16914:17162" />
-            <element signature="method#onFailure#0;class#16914:17162" />
+            <element signature="class#16248:16556" />
+            <element signature="method#onProgress#0;class#16248:16556" />
+            <element signature="class#16600:16921" />
+            <element signature="method#onSuccess#0;class#16600:16921" />
+            <element signature="class#16965:17213" />
+            <element signature="method#onFailure#0;class#16965:17213" />
             <element signature="docComment;method#downloadBookWithId#0;class#AuthService#0" />
             <element signature="method#downloadBookWithId#0;class#AuthService#0" />
-            <element signature="class#17598:18324" />
-            <element signature="method#onDataChange#0;class#17598:18324" />
-            <element signature="e#17795#18067#1" />
-            <element signature="method#onCancelled#0;class#17598:18324" />
+            <element signature="class#17649:18375" />
+            <element signature="method#onDataChange#0;class#17649:18375" />
+            <element signature="e#17846#18118#1" />
+            <element signature="method#onCancelled#0;class#17649:18375" />
             <element signature="method#downloadCardsOfBook#0;class#AuthService#0" />
-            <element signature="class#18610:19125" />
-            <element signature="method#onDataChange#0;class#18610:19125" />
-            <element signature="e#18920#18987#1" />
-            <element signature="method#onCancelled#0;class#18610:19125" />
-            <element signature="e#19930#20016#0" />
-            <element signature="e#20039#20107#0" />
-            <element signature="method#onCancelled#0;class#19379:20263" />
+            <element signature="class#18661:19176" />
+            <element signature="method#onDataChange#0;class#18661:19176" />
+            <element signature="e#18971#19038#1" />
+            <element signature="method#onCancelled#0;class#18661:19176" />
+            <element signature="method#downloadCardWithId#0;class#AuthService#0" />
+            <element signature="class#19430:20314" />
+            <element signature="method#onDataChange#0;class#19430:20314" />
+            <element signature="e#19744#20176#1" />
+            <element signature="e#19981#20067#0" />
+            <element signature="e#20090#20158#0" />
+            <element signature="method#onCancelled#0;class#19430:20314" />
             <element signature="method#downloadImageFromFirebaseToPath#0;class#AuthService#0" />
-            <element signature="class#21044:21435" />
-            <element signature="method#onSuccess#0;class#21044:21435" />
+            <element signature="class#21095:21486" />
+            <element signature="method#onSuccess#0;class#21095:21486" />
             <element signature="method#setEmailSignupListener#0;class#AuthService#0" />
             <element signature="method#setEmailLoginListener#0;class#AuthService#0" />
             <element signature="method#setMobileAuthListener#0;class#AuthService#0" />
             <element signature="method#setDataSyncListener#0;class#AuthService#0" />
             <element signature="method#setProfileListener#0;class#AuthService#0" />
             <element signature="method#setSmallCardDownloadListener#0;class#AuthService#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/user/auth/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="48" column="80" selection-start-line="48" selection-start-column="80" selection-end-line="48" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="79" column="38" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
+          <folding>
+            <element signature="method#onCreate#0;class#AddBookActivity#0" />
+            <element signature="method#initialiseUI#0;class#AddBookActivity#0" />
+            <element signature="method#initialiseViewModel#0;class#AddBookActivity#0" />
+            <element signature="method#addNewSecOwner#0;class#AddBookActivity#0" />
+            <element signature="e#2789#2968#1" />
+            <element signature="method#onOptionsItemSelected#0;class#AddBookActivity#0" />
+            <element signature="e#3330#3363#1" />
+            <element signature="method#onBookNameInvalid#0;class#AddBookActivity#0" />
+            <element signature="e#3636#4145#0" />
+            <element signature="method#onAllSecOwnersValidated#0;class#AddBookActivity#0" />
+            <element signature="method#onNewBookCreated#0;class#AddBookActivity#0" />
+            <element signature="method#onSelfUsernameGiven#0;class#AddBookActivity#0" />
+            <element signature="class#5183:5952" />
+            <element signature="method#onDismiss#0;class#5183:5952" />
+            <element signature="e#5554#5644#1" />
+            <element signature="method#onDuplicatesExist#0;class#AddBookActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/get/GetBooksAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="111" column="56" selection-start-line="111" selection-start-column="56" selection-end-line="111" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/singareddy/productionapps/capturethemoment/book/add/AddBookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="232" column="65" selection-start-line="232" selection-start-column="65" selection-end-line="232" selection-end-column="65" />
+          <folding>
+            <element signature="docComment;method#createThisBook#0;class#AddBookService#0" />
+            <element signature="method#createThisBook#0;class#AddBookService#0" />
+            <element signature="class#2475:3302" />
+            <element signature="method#onChanged#0;class#2475:3302" />
+            <element signature="e#2598#2650#0" />
+            <element signature="e#2873#2998#1" />
+            <element signature="e#3139#3278#1" />
+            <element signature="docComment;method#validateSecOwnersInFirebase#0;class#AddBookService#0" />
+            <element signature="method#validateSecOwnersInFirebase#0;class#AddBookService#0" />
+            <element signature="e#4178#4265#1" />
+            <element signature="e#4376#6836#1" />
+            <element signature="e#4536#4825#1" />
+            <element signature="e#4839#4909#0" />
+            <element signature="class#5125:6824" />
+            <element signature="method#onDataChange#0;class#5125:6824" />
+            <element signature="e#5273#5322#0" />
+            <element signature="e#5572#6113#1" />
+            <element signature="e#6139#6291#1" />
+            <element signature="method#onCancelled#0;class#5125:6824" />
+            <element signature="e#6501#6564#0" />
+            <element signature="method#usernameExistsInCache#0;class#AddBookService#0" />
+            <element signature="e#7251#7366#1" />
+            <element signature="e#7303#7356#1" />
+            <element signature="docComment;method#validateBookNameInFirebase#0;class#AddBookService#0" />
+            <element signature="method#validateBookNameInFirebase#0;class#AddBookService#0" />
+            <element signature="class#7857:9482" />
+            <element signature="method#onDataChange#0;class#7857:9482" />
+            <element signature="e#8054#8360#1" />
+            <element signature="e#8084#8126#0" />
+            <element signature="e#8674#9138#1" />
+            <element signature="e#8942#9112#1" />
+            <element signature="method#onCancelled#0;class#7857:9482" />
+            <element signature="docComment;method#saveNewBookInFirebase#0;class#AddBookService#0" />
+            <element signature="class#10639:10945" />
+            <element signature="method#onComplete#0;class#10639:10945" />
+            <element signature="e#10818#10905#1" />
+            <element signature="docComment;method#updateOwnerInFirebase#0;class#AddBookService#0" />
+            <element signature="method#updateOwnerInFirebase#0;class#AddBookService#0" />
+            <element signature="class#11554:12599" />
+            <element signature="method#onDataChange#0;class#11554:12599" />
+            <element signature="e#11674#11704#0" />
+            <element signature="class#12149:12459" />
+            <element signature="method#onComplete#0;class#12149:12459" />
+            <element signature="e#12328#12419#1" />
+            <element signature="method#onCancelled#0;class#11554:12599" />
+            <element signature="docComment;method#updateSecOwnersInFirebase#0;class#AddBookService#0" />
+            <element signature="method#updateSecOwnersInFirebase#0;class#AddBookService#0" />
+            <element signature="e#13012#14024#1" />
+            <element signature="class#13423:14012" />
+            <element signature="method#onComplete#0;class#13423:14012" />
+            <element signature="e#13614#13964#1" />
+            <element signature="docComment;method#generateRandomBookId#0;class#AddBookService#0" />
+            <element signature="method#generateRandomBookId#0;class#AddBookService#0" />
+            <element signature="method#setBookListener#0;class#AddBookService#0" />
           </folding>
         </state>
       </provider>

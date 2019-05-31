@@ -14,6 +14,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -197,7 +198,9 @@ public class AuthService {
 
     private void setupUserProfile() {
         DatabaseReference currentUserNode = mFirebaseDB.getReference()
-                .child(ALL_USERS_NODE).child(FirebaseAuth.getInstance().getUid()).child("profile");
+                .child(ALL_USERS_NODE)
+                .child(FirebaseAuth.getInstance().getUid())
+                .child(AppUtilities.FBUser.PROFILE);
         currentUserNode.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -216,6 +219,7 @@ public class AuthService {
                 }
                 else {
                     currentUserProfile = dataSnapshot.getValue(User.class);
+                    updateUserProfileInFirebaseAuth(currentUserProfile.getName());
                 }
                 // This user must be saved in cache
                 dataSyncListener.onUserProfileDownloaded(currentUserProfile);
@@ -248,6 +252,45 @@ public class AuthService {
             // Phone provider - Add phone for this UID
             registeredUsersNode.setValue(Long.parseLong(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(3))).addOnCompleteListener(completeListener1);
         }
+    }
+
+    private void updateUserProfileInFirebaseAuth(String userDisplayName) {
+        UserProfileChangeRequest profileChangeRequest =
+                new UserProfileChangeRequest.Builder()
+                .setDisplayName(userDisplayName)
+                .build();
+        mFirebaseAuth.getCurrentUser().updateProfile(profileChangeRequest)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.i(TAG, "onSuccess: Profile update success in firebase auth.");
+                    }
+                });
+    }
+
+    public void updateUserProfile(User user) {
+        DatabaseReference newUserNode = mFirebaseDB.getReference()
+                .child(ALL_USERS_NODE)
+                .child(FirebaseAuth.getInstance().getUid())
+                .child("profile");
+
+        OnSuccessListener successListener = new OnSuccessListener() {
+            @Override
+            public void onSuccess(Object o) {
+                setupUserProfile();
+                profileListener.onProfileUpdated();
+            }
+        };
+        OnFailureListener failureListener = new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.i(TAG, "onFailure: User could not be added in DB::: "+e.getLocalizedMessage());
+            }
+        };
+
+        newUserNode.setValue(user)
+                .addOnSuccessListener(successListener)
+                .addOnFailureListener(failureListener);
     }
 
     private void downloadUserProfilePicture() {
@@ -329,28 +372,6 @@ public class AuthService {
             }
         });
 
-    }
-
-    public void updateUserProfile(User user) {
-        DatabaseReference newUserNode = mFirebaseDB.getReference().child(ALL_USERS_NODE).child(FirebaseAuth.getInstance().getUid()).child("profile");
-
-        OnSuccessListener successListener = new OnSuccessListener() {
-            @Override
-            public void onSuccess(Object o) {
-                setupUserProfile();
-                profileListener.onProfileUpdated();
-            }
-        };
-        OnFailureListener failureListener = new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.i(TAG, "onFailure: User could not be added in DB::: "+e.getLocalizedMessage());
-            }
-        };
-
-        newUserNode.setValue(user)
-                .addOnSuccessListener(successListener)
-                .addOnFailureListener(failureListener);
     }
 
     public void saveProfilePic(Uri profilePicUri) {

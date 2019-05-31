@@ -45,8 +45,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginUsingMobile = findViewById(R.id.login_ll_mobile);
         login = findViewById(R.id.email_signup_bt_continue);
         passwordHelp = findViewById(R.id.login_ll_password_help);
-        email = findViewById(R.id.login_et_email); email.setText("dummy3@gmail.com");
-        password = findViewById(R.id.login_et_password); password.setText("Dummy@123");
+        email = findViewById(R.id.login_et_email); email.setText("vikas@gmail.com");
+        password = findViewById(R.id.login_et_password); password.setText("Vikas@123");
         signup.setOnClickListener(this);
         loginUsingMobile.setOnClickListener(this);
         login.setOnClickListener(this);

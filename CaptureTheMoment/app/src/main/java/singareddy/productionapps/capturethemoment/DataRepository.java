@@ -158,8 +158,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
     public void createThisBook (final String bookName, List<SecondaryOwner> secOwners) {
         if (mAddBookService == null) {
             mAddBookService = new AddBookService();
-            mAddBookService.setBookListener(this);
         }
+        mAddBookService.setBookListener(this);
         mAddBookService.createThisBook(bookName, secOwners);
     }
 
