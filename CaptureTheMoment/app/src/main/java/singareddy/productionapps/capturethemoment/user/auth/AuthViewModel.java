@@ -118,6 +118,10 @@ public class AuthViewModel extends ViewModel implements
         mRepository.setupInitialData();
     }
 
+    public void setupUserProfile() {
+        mRepository.setupUserProfile();
+    }
+
     public SharedPreferences getUserProfileData() {
         return mRepository.getUserProfileData();
     }

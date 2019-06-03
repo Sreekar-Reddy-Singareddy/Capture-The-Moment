@@ -403,6 +403,15 @@ public class DataRepository implements AddBookListener, GetBookListener,
         mAuthService.setupInitialData();
     }
 
+    public void setupUserProfile() {
+        if(mAuthService == null) {
+            mAuthService = new AuthService();
+        }
+        mAuthService.setDataSyncListener(this);
+        mAuthService.setProfileListener(this);
+        mAuthService.setupUserProfile();
+    }
+
     public SharedPreferences getUserProfileData() {
         SharedPreferences userProfileCache =
                 mContext.getSharedPreferences(USER_PROFILE_CACHE,  Context.MODE_PRIVATE);

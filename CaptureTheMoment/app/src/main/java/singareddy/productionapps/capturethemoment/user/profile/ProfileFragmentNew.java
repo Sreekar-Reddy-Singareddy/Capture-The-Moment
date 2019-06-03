@@ -146,6 +146,7 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
         AuthModelFactory factory = AuthModelFactory.createFactory(getActivity());
         authViewModel = ViewModelProviders.of(this, factory).get(AuthViewModel.class);
         authViewModel.setProfileListener(this);
+        authViewModel.setupUserProfile();
         userProfileCacheListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
             public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {

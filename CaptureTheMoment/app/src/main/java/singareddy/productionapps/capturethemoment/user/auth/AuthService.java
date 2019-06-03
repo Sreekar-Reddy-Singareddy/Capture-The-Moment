@@ -196,14 +196,16 @@ public class AuthService {
         setupBooksSharedWithUser();
     }
 
-    private void setupUserProfile() {
+    public void setupUserProfile() {
+        Log.i(TAG, "setupUserProfile: Setup user profile");
         DatabaseReference currentUserNode = mFirebaseDB.getReference()
                 .child(ALL_USERS_NODE)
                 .child(FirebaseAuth.getInstance().getUid())
                 .child(AppUtilities.FBUser.PROFILE);
-        currentUserNode.addListenerForSingleValueEvent(new ValueEventListener() {
+        currentUserNode.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Log.i(TAG, "onDataChange: Profile changed");
                 User currentUserProfile = null;
                 // If any profile data exists here, snapshot wont be null
                 if (dataSnapshot.getValue() == null) {
@@ -298,7 +300,9 @@ public class AuthService {
     }
 
     private void downloadUserProfilePicture() {
-        StorageReference profilePicRef = mFirebaseST.getReference().child(CURRENT_USER_ID).child("profile_pic.jpg");
+        StorageReference profilePicRef = mFirebaseST.getReference()
+                .child(CURRENT_USER_ID)
+                .child("profile_pic.jpg");
         if (!(profileListener instanceof DataRepository)) {
             // Data repository is not the listener
             // So simply return to the caller.
