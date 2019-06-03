@@ -2,6 +2,7 @@ package singareddy.productionapps.capturethemoment.user.auth;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 
 import singareddy.productionapps.capturethemoment.HomeActivity;
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class MobileLogin extends AppCompatActivity implements View.OnClickListener, AuthListener.Mobile {
     private static String TAG = "MobileLogin";
@@ -27,7 +29,10 @@ public class MobileLogin extends AppCompatActivity implements View.OnClickListen
     }
 
     private void initialiseUI() {
+        setTheme(AppUtilities.CURRENT_THEME);
         setContentView(R.layout.activity_mobile_login);
+        Drawable icon = getDrawable(R.drawable.back);
+        getSupportActionBar().setHomeAsUpIndicator(icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         mobileNumber = findViewById(R.id.activity_mobile_login_mobile);
         otpCode = findViewById(R.id.activity_mobile_login_otp);

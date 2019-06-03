@@ -1,6 +1,7 @@
 package singareddy.productionapps.capturethemoment.card.add;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,8 +49,11 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
         if (getIntent() != null && getIntent().getExtras() != null) {
             bookId = getIntent().getExtras().getString(BOOK_ID);
         }
+        setTheme(AppUtilities.CURRENT_THEME);
         setContentView(R.layout.activity_add_card);
         getSupportActionBar().setTitle(AppUtilities.ScreenTitles.SCREEN_TITLE_ADD_CARD);
+        Drawable icon = getDrawable(R.drawable.back);
+        getSupportActionBar().setHomeAsUpIndicator(icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageUris = new ArrayList<>();
         photosFrag();

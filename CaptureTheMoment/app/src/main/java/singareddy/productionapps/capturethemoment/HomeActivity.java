@@ -4,35 +4,25 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.BitmapFactory;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
-
-import org.apache.commons.io.IOUtils;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 
 import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
 import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
 import singareddy.productionapps.capturethemoment.book.add.AddBookActivity;
 import singareddy.productionapps.capturethemoment.book.get.GetBooksFragment;
-import singareddy.productionapps.capturethemoment.user.auth.LoginActivity;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileFragmentNew;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
@@ -45,11 +35,14 @@ public class HomeActivity extends AppCompatActivity {
     private final static int HOME_TAB = 0;
     private final static int PROFILE_TAB = 1;
     private final static int SETTINGS_TAB = 2;
+    public final static String LOGOUT_INTENT_KEY = "LogoutKey";
+    private static final int SETTINGS_SCREEN_REQUEST_CODE = 123;
+    public static final int THEME_CHANGE_RESULT_CODE = 345;
 
     Toolbar toolbar;
     FloatingActionButton addBookFab;
     TabLayout tabLayout;
-
+    int selectedTab;
     AuthViewModel authViewModel;
     SharedPreferences userProfileCache;
     SharedPreferences.OnSharedPreferenceChangeListener userProfileCacheListener;
@@ -58,13 +51,14 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         initialiseUI();
         initialiseViewModel();
         initialiseStaticConstants();
     }
 
     private void initialiseUI() {
+        setTheme(AppUtilities.CURRENT_THEME);
+        setContentView(R.layout.activity_main);
         // Initially, show all the books
         GetBooksFragment getBooksFragment = new GetBooksFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, getBooksFragment).commit();
@@ -75,8 +69,8 @@ public class HomeActivity extends AppCompatActivity {
         tabListener = new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                int tabPosition = tab.getPosition();
-                switch (tabPosition) {
+                selectedTab = tab.getPosition();
+                switch (selectedTab) {
                     case HOME_TAB:
                         // Home item selected
                         showHomeScreen();
@@ -130,7 +124,7 @@ public class HomeActivity extends AppCompatActivity {
                             .setNegativeButton("Not now", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    // Simply close the dialog
+                                    // Simply circular_close the dialog
                                 }
                             }).create();
                     dialog.show();
@@ -171,8 +165,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void showSettingsScreen() {
-        authViewModel.logout();
-        finish();
+        Intent settingsIntent = new Intent(this, SettingsActivity.class);
+        startActivityForResult(settingsIntent, SETTINGS_SCREEN_REQUEST_CODE);
     }
 
     public void addBook(View addBookFab) {
@@ -195,5 +189,21 @@ public class HomeActivity extends AppCompatActivity {
         super.onPause();
         tabLayout.removeOnTabSelectedListener(tabListener);
         userProfileCache.unregisterOnSharedPreferenceChangeListener(userProfileCacheListener);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.i(TAG, "onActivityResult: Request Code: "+requestCode+" Data: "+data);
+        if (requestCode == SETTINGS_SCREEN_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            boolean logoutFlag = data.getExtras().getBoolean(LOGOUT_INTENT_KEY);
+            if (logoutFlag) authViewModel.logout();
+            finish();
+        }
+        else if (requestCode == SETTINGS_SCREEN_REQUEST_CODE) {
+            if (resultCode == THEME_CHANGE_RESULT_CODE) recreate();
+            tabLayout.getTabAt(HOME_TAB).select();
+            showHomeScreen();
+        }
     }
 }

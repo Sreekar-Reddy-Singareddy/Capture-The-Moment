@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -109,17 +108,17 @@ public class SecOwnersAdapter extends RecyclerView.Adapter<SecOwnersAdapter.SecO
     public void onBindViewHolder(@NonNull SecOwnersViewHolder secOwnersViewHolder, int i) {
         SecondaryOwner secondaryOwnerObj = data.get(i);
         if (secondaryOwnerObj.getValidated() == SEC_OWNER_INVALID) {
-            secOwnersViewHolder.statusView.setImageResource(R.drawable.ic_close_red_24dp);
+            secOwnersViewHolder.statusView.setImageResource(R.drawable.close_red);
             secOwnersViewHolder.statusView.setVisibility(View.VISIBLE);
             secOwnersViewHolder.username.setEnabled(true);
         }
         else if (secondaryOwnerObj.getValidated() == SEC_OWNER_VALID) {
-            secOwnersViewHolder.statusView.setImageResource(R.drawable.ic_done_green_24dp);
+            secOwnersViewHolder.statusView.setImageResource(R.drawable.done);
             secOwnersViewHolder.statusView.setVisibility(View.VISIBLE);
             secOwnersViewHolder.username.setEnabled(false);
         }
         else if (secondaryOwnerObj.getValidated() == SEC_OWNER_DUPLICATE) {
-            secOwnersViewHolder.statusView.setImageResource(R.drawable.ic_warning_orange_24dp);
+            secOwnersViewHolder.statusView.setImageResource(R.drawable.warning);
             secOwnersViewHolder.statusView.setVisibility(View.VISIBLE);
             secOwnersViewHolder.username.setEnabled(true);
         }

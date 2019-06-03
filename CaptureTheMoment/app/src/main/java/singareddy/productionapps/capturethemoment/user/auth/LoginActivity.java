@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import singareddy.productionapps.capturethemoment.HomeActivity;
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, AuthListener.EmailLogin {
     private static String TAG = "LoginActivity";
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void initialiseUI() {
+        setTheme(AppUtilities.CURRENT_THEME);
         setContentView(R.layout.activity_login);
         signup = findViewById(R.id.signup_ll_login);
         loginUsingMobile = findViewById(R.id.login_ll_mobile);

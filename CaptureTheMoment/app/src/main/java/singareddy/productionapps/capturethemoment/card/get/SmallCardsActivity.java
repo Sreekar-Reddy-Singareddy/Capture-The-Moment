@@ -3,6 +3,7 @@ package singareddy.productionapps.capturethemoment.card.get;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,7 @@ import singareddy.productionapps.capturethemoment.book.delete.DeleteBookModelFac
 import singareddy.productionapps.capturethemoment.book.delete.DeleteBookViewModel;
 import singareddy.productionapps.capturethemoment.book.edit.EditBookActivity;
 import singareddy.productionapps.capturethemoment.models.Card;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class SmallCardsActivity extends AppCompatActivity implements SmallCardClickListener,
         DeleteBookListener, SmallCardDownloadListener {
@@ -57,6 +59,9 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
         bookId = getIntent().getExtras().getString( BOOK_ID);
         adapter = new SmallCardsAdapter(this, smallCardImagePaths, bookId, this);
 
+        setTheme(AppUtilities.CURRENT_THEME);
+        Drawable icon = getDrawable(R.drawable.back);
+        getSupportActionBar().setHomeAsUpIndicator(icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(bookName);
         setContentView(R.layout.activity_book_details);

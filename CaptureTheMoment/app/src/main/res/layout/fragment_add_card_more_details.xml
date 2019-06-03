@@ -31,7 +31,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frag_add_card_details_et_desc"
-        app:srcCompat="@drawable/ic_location_on_yellow_24dp" />
+        app:srcCompat="@drawable/location_pin" />
 
     <ImageView
         android:id="@+id/frag_add_card_details_iv_date"
@@ -41,7 +41,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frag_add_card_details_iv_location"
-        app:srcCompat="@drawable/ic_date_range_yellow_24dp" />
+        app:srcCompat="@drawable/calendar" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -54,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frag_add_card_details_iv_date"
-        app:srcCompat="@drawable/ic_date_range_yellow_24dp" />
+        app:srcCompat="@drawable/calendar" />
 
     <TextView
         style="@style/AppTextView"

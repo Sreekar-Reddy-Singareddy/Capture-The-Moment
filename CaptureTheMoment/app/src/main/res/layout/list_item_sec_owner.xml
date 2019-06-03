@@ -52,7 +52,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sec_owner_et_username"
-        app:srcCompat="@drawable/ic_cancel_white_24dp" />
+        app:srcCompat="@drawable/circular_close" />
 
     <ImageView
         android:id="@+id/sec_owner_iv_status"
@@ -63,6 +63,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/sec_owner_et_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sec_owner_et_username"
-        app:srcCompat="@drawable/ic_close_red_24dp" />
+        app:srcCompat="@drawable/close_red" />
 
 </android.support.constraint.ConstraintLayout>

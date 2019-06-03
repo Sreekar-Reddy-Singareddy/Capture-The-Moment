@@ -2,6 +2,7 @@ package singareddy.productionapps.capturethemoment.book.add;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.*;
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.ScreenTitles.*;
@@ -47,7 +49,10 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     }
 
     private void initialiseUI() {
+        setTheme(AppUtilities.CURRENT_THEME);
         setContentView(R.layout.activity_add_book);
+        Drawable icon = getDrawable(R.drawable.back);
+        getSupportActionBar().setHomeAsUpIndicator(icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(SCREEN_TITLE_ADD_BOOK);
         bookName = findViewById(R.id.add_book_et_name);

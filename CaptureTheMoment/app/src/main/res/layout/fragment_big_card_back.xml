@@ -16,7 +16,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/fragment_big_card_back_tv_date"
         app:layout_constraintEnd_toStartOf="@+id/fragment_big_card_back_tv_date"
         app:layout_constraintTop_toTopOf="@+id/fragment_big_card_back_tv_date"
-        app:srcCompat="@drawable/ic_date_range_yellow_24dp" />
+        app:srcCompat="@drawable/calendar" />
 
     <TextView
         style="@style/AppTextView"
@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toStartOf="@+id/fragment_big_card_back_tv_location"
         app:layout_constraintTop_toTopOf="@+id/fragment_big_card_back_tv_location"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_location_on_yellow_24dp" />
+        app:srcCompat="@drawable/location_pin" />
 
     <TextView
         style="@style/AppTextView"

@@ -2,6 +2,8 @@ package singareddy.productionapps.capturethemoment.utils;
 
 import com.google.firebase.auth.FirebaseUser;
 
+import singareddy.productionapps.capturethemoment.R;
+
 
 // HELLO
 public class AppUtilities {
@@ -11,6 +13,7 @@ public class AppUtilities {
     public static final int IMAGE_CROP_RATIO_Y = 1;
     public static final int PHOTO_HAS_FRAME = 1;
     public static final int PHOTO_HAS_NO_FRAME = 0;
+    public static int CURRENT_THEME = R.style.ThemeOrange;
 
     public static class FailureCodes {
         public static final String EMPTY_EMAIL = "EMPTY_EMAIL";
@@ -74,6 +77,7 @@ public class AppUtilities {
         public static final String UIDS_CACHE = "UIDS_CACHE";
         public static final String USER_PROFILE_CACHE = "USER_PROFILE_CACHE";
         public static final String USER_PROFILE_PICTURE = "profile_pic.jpg";
+        public static final String APP_SETTINGS = "SETTINGS";
     }
 
     public static class SharedPrefKeys {

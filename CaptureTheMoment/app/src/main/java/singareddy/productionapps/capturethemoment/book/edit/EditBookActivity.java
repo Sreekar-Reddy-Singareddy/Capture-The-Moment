@@ -3,6 +3,7 @@ package singareddy.productionapps.capturethemoment.book.edit;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,7 @@ import singareddy.productionapps.capturethemoment.book.add.SecOwnersAdapter;
 import singareddy.productionapps.capturethemoment.models.Book;
 import singareddy.productionapps.capturethemoment.models.SecondaryOwner;
 import singareddy.productionapps.capturethemoment.models.ShareInfo;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.BOOK_DB_ERROR;
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.BOOK_EXISTS;
@@ -61,7 +63,10 @@ public class EditBookActivity extends AppCompatActivity
     }
 
     private void initialiseUI() {
+        setTheme(AppUtilities.CURRENT_THEME);
         setContentView(R.layout.activity_add_book);
+        Drawable icon = getDrawable(R.drawable.back);
+        getSupportActionBar().setHomeAsUpIndicator(icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         bookId = getIntent().getStringExtra(BOOKID);
         bookName = findViewById(R.id.add_book_et_name);

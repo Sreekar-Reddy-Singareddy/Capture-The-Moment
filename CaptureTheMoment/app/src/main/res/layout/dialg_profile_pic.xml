@@ -29,8 +29,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/dialog_profile_iv_gallery"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_photo_camera_white_24dp"
-        tools:srcCompat="@drawable/ic_photo_camera_white_24dp" />
+        app:srcCompat="@drawable/camera"
+        tools:srcCompat="@drawable/camera" />
 
     <ImageView
         android:id="@+id/dialog_profile_iv_gallery"
@@ -42,8 +42,8 @@
         app:layout_constraintEnd_toStartOf="@+id/dialog_profile_iv_camera"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_insert_photo_white_24dp"
-        tools:srcCompat="@drawable/ic_insert_photo_white_24dp" />
+        app:srcCompat="@drawable/gallery"
+        tools:srcCompat="@drawable/gallery" />
 
     <TextView
         style="@style/AppTextView"

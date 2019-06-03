@@ -363,7 +363,7 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
     }
 
     /**
-     * Called both when image is captured from camera
+     * Called both when image is captured from camera_light
      * or picked from gallery. getContext() is called before
      * the image is set to the image view.
      * @param capturedUri

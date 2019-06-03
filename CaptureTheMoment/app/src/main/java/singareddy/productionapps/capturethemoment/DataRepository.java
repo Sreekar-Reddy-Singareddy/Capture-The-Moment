@@ -135,9 +135,23 @@ public class DataRepository implements AddBookListener, GetBookListener,
                 CURRENT_USER_EMAIL = CURRENT_USER.getEmail();
             else CURRENT_USER_MOBILE = CURRENT_USER.getPhoneNumber().substring(3);
         }
+        initialiseSettings(context);
         return DATA_REPOSITORY;
     }
-    
+
+    private static void initialiseSettings(Context context) {
+        SharedPreferences settings = context.getSharedPreferences(APP_SETTINGS, Context.MODE_PRIVATE);
+        String currentTheme = settings.getString(
+                context.getString(R.string.theme_change_key),
+                context.getString(R.string.theme_change_value_orange));
+        if (currentTheme.equals(context.getString(R.string.theme_change_value_orange))) {
+            AppUtilities.CURRENT_THEME = R.style.ThemeOrange;
+        }
+        else if (currentTheme.equals(context.getString(R.string.theme_change_value_blue))) {
+            AppUtilities.CURRENT_THEME = R.style.ThemeBlue;
+        }
+    }
+
     public static File getInternalStorageRef () {
         return INTERNAL_STORAGE;
     }

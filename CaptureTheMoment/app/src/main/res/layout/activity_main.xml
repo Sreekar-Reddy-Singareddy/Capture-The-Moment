@@ -27,7 +27,6 @@
             android:id="@+id/activity_main_tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/tab_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,19 +36,19 @@
                 android:id="@+id/activity_main_home_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/ic_home_black_24dp" />
+                android:icon="@drawable/home" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/activity_main_profile_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/ic_person_24dp" />
+                android:icon="@drawable/person" />
 
             <android.support.design.widget.TabItem
                 android:id="@+id/activity_main_settings_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:icon="@drawable/ic_settings_24dp" />
+                android:icon="@drawable/settings" />
         </android.support.design.widget.TabLayout>
 
         <android.support.design.widget.FloatingActionButton
@@ -59,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/ic_add_fab_24dp"
+            android:src="@drawable/floating_add"
             app:layout_constraintBottom_toTopOf="@+id/activity_main_tab_layout"
             app:layout_constraintEnd_toEndOf="parent" />
 

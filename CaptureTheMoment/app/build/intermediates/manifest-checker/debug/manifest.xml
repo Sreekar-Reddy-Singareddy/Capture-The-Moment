@@ -27,8 +27,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/AppTheme1"
+        android:theme="@style/ThemeOrange"
         android:windowSoftInputMode="adjustPan" >
+        <activity android:name="singareddy.productionapps.capturethemoment.SettingsActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.card.add.AddCardActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.card.get.BigCardActivity" />
@@ -47,7 +48,8 @@
             </intent-filter>
         </activity>
         <activity android:name="singareddy.productionapps.capturethemoment.HomeActivity" />
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" >
+        </activity>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

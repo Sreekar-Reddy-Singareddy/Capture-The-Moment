@@ -29,7 +29,7 @@
         app:backgroundTint="#FCB91B"
         app:layout_constraintBottom_toBottomOf="@+id/frag_add_card_photos_pv_photos"
         app:layout_constraintEnd_toEndOf="@+id/frag_add_card_photos_pv_photos"
-        app:srcCompat="@drawable/ic_add_a_photo_theme_24dp" />
+        app:srcCompat="@drawable/add_photo_light" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/frag_add_card_photos_rv_indicator"
@@ -67,6 +67,6 @@
         android:background="?attr/colorPrimary"
         app:layout_constraintEnd_toEndOf="@+id/frag_add_card_photos_pv_photos"
         app:layout_constraintTop_toTopOf="@+id/frag_add_card_photos_pv_photos"
-        app:srcCompat="@drawable/ic_close_whie_24dp" />
+        app:srcCompat="@drawable/close" />
 
 </android.support.constraint.ConstraintLayout>

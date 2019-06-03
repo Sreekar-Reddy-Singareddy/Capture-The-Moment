@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import singareddy.productionapps.capturethemoment.R;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class SignupActivity extends AppCompatActivity implements TabLayout.BaseOnTabSelectedListener, View.OnClickListener {
     private static String TAG = "SignupActivity";
@@ -23,6 +24,7 @@ public class SignupActivity extends AppCompatActivity implements TabLayout.BaseO
     }
 
     private void initialiseUI() {
+        setTheme(AppUtilities.CURRENT_THEME);
         setContentView(R.layout.activity_signup);
         loginLink = findViewById(R.id.signup_ll_login);
         loginLink.setOnClickListener(this);

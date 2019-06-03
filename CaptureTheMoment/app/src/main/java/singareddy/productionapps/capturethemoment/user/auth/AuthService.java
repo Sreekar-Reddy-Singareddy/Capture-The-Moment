@@ -231,7 +231,9 @@ public class AuthService {
             }
         });
 
-        DatabaseReference registeredUsersNode = mFirebaseDB.getReference().child(ALL_REGISTERED_USERS_NODE).child(FirebaseAuth.getInstance().getUid());
+        DatabaseReference registeredUsersNode = mFirebaseDB.getReference()
+                .child(ALL_REGISTERED_USERS_NODE)
+                .child(FirebaseAuth.getInstance().getUid());
         OnCompleteListener<Void> completeListener1 = new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -246,7 +248,9 @@ public class AuthService {
         // Check if the user is phone or email authenticated
         if (mFirebaseAuth.getCurrentUser().getProviders().get(0).equals(EMAIL_PROVIDER)) {
             // Email provider - Add email for this UID
-            registeredUsersNode.setValue(FirebaseAuth.getInstance().getCurrentUser().getEmail()).addOnCompleteListener(completeListener1);
+            registeredUsersNode.setValue(
+                    FirebaseAuth.getInstance().getCurrentUser().getEmail())
+                    .addOnCompleteListener(completeListener1);
         }
         else if (mFirebaseAuth.getCurrentUser().getProviders().get(0).equals(PHONE_PROVIDER)) {
             // Phone provider - Add phone for this UID

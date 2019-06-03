@@ -66,10 +66,21 @@
     <string name="card_delete_dialog_pos_button">Cancel</string>
     <string name="card_delete_dialog_neg_button">Delete</string>
 
+    <!-- Settings module -->
+    <string name="settings_notification_label">Notifications</string>
+    <string name="settings_theme_label">Theme</string>
+    <string name="settings_activity_label">Activity</string>
+    <string name="settings_aboutus_label">About us</string>
+    <string name="settings_signout_label">Signout</string>
+    <string name="theme_change_key">appTheme</string>
+    <string name="theme_change_value_orange">Theme Orange</string>
+    <string name="theme_change_value_blue">Theme Blue</string>
+
 
     <!-- Misc -->
     <string name="choose_picture_gallery">Pick photo</string>
     <string name="choose_picture_camera">Take photo</string>
     <string name="data_loading_from_network">Loading...</string>
+    <string name="theme_selection_sample_text_label">Sample Color</string>
 
 </resources>

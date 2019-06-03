@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
@@ -28,6 +29,7 @@ import singareddy.productionapps.capturethemoment.card.delete.DeleteCardsModelFa
 import singareddy.productionapps.capturethemoment.card.delete.DeleteCardsViewModel;
 import singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity;
 import singareddy.productionapps.capturethemoment.models.Card;
+import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class BigCardActivity extends AppCompatActivity implements BigCardClickListener, DeleteCardListener {
     private static String TAG = "BigCardActivity";
@@ -58,16 +60,11 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
         initialiseUI();
     }
 
-    private void initialiseViewModel() {
-        GetCardsModelFactory factory = GetCardsModelFactory.createFactory(this);
-        getCardsViewModel = ViewModelProviders.of(this, factory).get(GetCardsViewModel.class);
-
-        DeleteCardsModelFactory deleteFactory = DeleteCardsModelFactory.createFactory(BigCardActivity.this);
-        deleteCardsViewModel = ViewModelProviders.of(BigCardActivity.this, deleteFactory).get(DeleteCardsViewModel.class);
-    }
-
     private void initialiseUI() {
+        setTheme(AppUtilities.CURRENT_THEME);
         setContentView(R.layout.activity_big_card);
+        Drawable icon = getDrawable(R.drawable.back);
+        getSupportActionBar().setHomeAsUpIndicator(icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         int cardWidth = getWindowManager().getDefaultDisplay().getWidth();
         uiCard = findViewById(R.id.activity_big_card_cv_container);
@@ -80,6 +77,14 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
         allCardIds = getIntent().getExtras().getCharSequenceArrayList(ALL_CARD_IDS);
         positionOfCardToBeDisplayed = getIntent().getExtras().getInt(SELECTED_CARD_POSITION);
         getCardWithId(allCardIds.get(positionOfCardToBeDisplayed).toString());
+    }
+
+    private void initialiseViewModel() {
+        GetCardsModelFactory factory = GetCardsModelFactory.createFactory(this);
+        getCardsViewModel = ViewModelProviders.of(this, factory).get(GetCardsViewModel.class);
+
+        DeleteCardsModelFactory deleteFactory = DeleteCardsModelFactory.createFactory(BigCardActivity.this);
+        deleteCardsViewModel = ViewModelProviders.of(BigCardActivity.this, deleteFactory).get(DeleteCardsViewModel.class);
     }
 
     private void getCardWithId (String cardId) {

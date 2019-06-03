@@ -4,6 +4,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
@@ -53,7 +54,10 @@ public class UpdateCardActivity extends AppCompatActivity implements UpdateCardL
     }
 
     private void initialiseUI() {
+        setTheme(AppUtilities.CURRENT_THEME);
         setContentView(R.layout.activity_add_card);
+        Drawable icon = getDrawable(R.drawable.back);
+        getSupportActionBar().setHomeAsUpIndicator(icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(AppUtilities.ScreenTitles.SCREEN_TITLE_EDIT_CARD);
         cardIdToEdit = getIntent().getExtras().getString(CARD_ID_TO_EDIT);
