@@ -103,9 +103,8 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.book_context_menu, menu);
         // If this book is not an owned book, then user cannot edit it
-        boolean isOwnBook = getIntent().getExtras() != null ?
-                getIntent().getExtras().getBoolean(IS_THIS_OWN_BOOK) :
-                false;
+        boolean isOwnBook = getIntent().getExtras() != null &&
+                getIntent().getExtras().getBoolean(IS_THIS_OWN_BOOK);
         if (!isOwnBook) {
             menu.removeItem(R.id.book_menu_item_update);
         }

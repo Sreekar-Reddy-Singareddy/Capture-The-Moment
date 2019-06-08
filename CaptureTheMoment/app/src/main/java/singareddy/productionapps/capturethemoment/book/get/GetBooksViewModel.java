@@ -24,7 +24,11 @@ public class GetBooksViewModel extends ViewModel implements GetBookListener {
         return mDataRepo.getAllBooksOfThisUser();
     }
 
+    public void setupBooks() {
+        mDataRepo.setupBooks();
+    }
     // MARK: Setters and listener methods
+
     public void setmBookGetBookListenerListener(GetBookListener getBookListener) {
         this.mBookGetBookListenerListener = getBookListener;
     }

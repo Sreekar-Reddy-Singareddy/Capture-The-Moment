@@ -303,6 +303,15 @@ public class DataRepository implements AddBookListener, GetBookListener,
         }
     }
 
+    public void setupBooks() {
+        if (mAuthService == null) {
+            mAuthService = new AuthService();
+        }
+        mAuthService.setDataSyncListener(this);
+        mAuthService.setupBooksOwnedByUser();
+        mAuthService.setupBooksSharedWithUser();
+    }
+
     // =================================================================== Authentication Module
     public void registerEmailUser(String email, String password) {
         if (mAuthService == null) {

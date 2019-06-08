@@ -120,7 +120,6 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
     public void onBindViewHolder(@NonNull SmallCardVH holder, int position) {
         if (position == 0 && ownerCanEdit) return;
         else position = ownerCanEdit ? position-1 : position;
-//        Uri parsedUri = Uri.fromFile(new File(context.getFilesDir(), data.get(position)));
         BitmapFactory.Options imageOptions = new BitmapFactory.Options();
         imageOptions.inSampleSize = 2;
         Bitmap image = BitmapFactory.decodeFile(context.getFilesDir()+"/"+data.get(position), imageOptions);

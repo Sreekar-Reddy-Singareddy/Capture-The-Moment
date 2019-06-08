@@ -37,10 +37,19 @@ public class GetBooksFragment extends Fragment implements GetBookListener {
         return mFragmentView;
     }
 
+    public void initialiseUI() {
+        booksList = mFragmentView.findViewById(R.id.all_books_rv_books);
+        mAdapter = new GetBooksAdapter(getContext(), allBooksData, getBooksViewModel);
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
+        booksList.setAdapter(mAdapter);
+        booksList.setLayoutManager(manager);
+    }
+
     public void initialiseViewModel() {
         GetBooksModelFactory factory = GetBooksModelFactory.createFactory(this.getActivity());
         getBooksViewModel = ViewModelProviders.of(this, factory).get(GetBooksViewModel.class);
         getBooksViewModel.setmBookGetBookListenerListener(this);
+        getBooksViewModel.setupBooks();
         getBooksViewModel.getAllBooks().observe(this, new Observer<List<Book>>() {
             @Override
             public void onChanged(@Nullable List<Book> books) {
@@ -48,14 +57,6 @@ public class GetBooksFragment extends Fragment implements GetBookListener {
                 mAdapter.notifyDataSetChanged();
             }
         });
-    }
-
-    public void initialiseUI() {
-        booksList = mFragmentView.findViewById(R.id.all_books_rv_books);
-        mAdapter = new GetBooksAdapter(getContext(), allBooksData);
-        LinearLayoutManager manager = new LinearLayoutManager(getContext());
-        booksList.setAdapter(mAdapter);
-        booksList.setLayoutManager(manager);
     }
 
     @Override

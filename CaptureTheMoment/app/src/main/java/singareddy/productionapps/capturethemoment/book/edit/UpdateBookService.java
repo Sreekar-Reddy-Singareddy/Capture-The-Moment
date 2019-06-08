@@ -68,7 +68,8 @@ public class UpdateBookService {
             query.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if (dataSnapshot != null) {
+                    if (dataSnapshot.getValue() != null) {
+                        Log.i(TAG, "onDataChange: USERMAP: "+dataSnapshot.getValue());
                         HashMap<String, String> userMap = (HashMap<String, String>) dataSnapshot.getValue();
                         String uid = (String) userMap.keySet().toArray()[0];
                         deleteSharedBookFromThisUser(uid);

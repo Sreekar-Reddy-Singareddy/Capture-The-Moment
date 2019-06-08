@@ -51,8 +51,8 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void changeTheme(View view) {
+        themeSelectionDialogView = getLayoutInflater().inflate(R.layout.list_item_theme, null);
         orangeTheme = themeSelectionDialogView.findViewById(R.id.list_item_theme_orange);
-                themeSelectionDialogView = getLayoutInflater().inflate(R.layout.list_item_theme, null);
         orangeTheme.setOnClickListener(SettingsActivity.this::themeChangeButtonClicked);
         blueTheme = themeSelectionDialogView.findViewById(R.id.list_item_theme_blue);
         blueTheme.setOnClickListener(SettingsActivity.this::themeChangeButtonClicked);

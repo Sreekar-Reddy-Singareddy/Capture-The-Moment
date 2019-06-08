@@ -55,15 +55,17 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
     private Context context;
     private List<Book> bookData;
     private LayoutInflater inflater;
+    private GetBooksViewModel viewModel;
 
     public GetBooksAdapter(Context context) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
     }
 
-    public GetBooksAdapter(Context context, List<Book> books) {
+    public GetBooksAdapter(Context context, List<Book> books, GetBooksViewModel viewModel) {
         this(context);
         bookData = books;
+        this.viewModel = viewModel;
     }
 
     @Override
@@ -109,7 +111,7 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
             // This is a shared book
             holder.shareIcon.setVisibility(View.VISIBLE);
             holder.ownerName.setVisibility(View.VISIBLE);
-            holder.ownerName.setText(book.getOwnerName());
+//            viewModel.getOwnerNameForBook(book.getOwner());
         }
     }
 

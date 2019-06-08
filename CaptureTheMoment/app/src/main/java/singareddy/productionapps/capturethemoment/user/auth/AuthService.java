@@ -332,11 +332,11 @@ public class AuthService {
                 });
     }
 
-    private void setupBooksOwnedByUser() {
+    public void setupBooksOwnedByUser() {
         DatabaseReference ownedBooks = mFirebaseDB.getReference()
                 .child(ALL_USERS_NODE).child(CURRENT_USER_ID)
                 .child("profile/ownedBooks");
-        ownedBooks.addListenerForSingleValueEvent(new ValueEventListener() {
+        ownedBooks.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // This will be a list of strings
@@ -355,11 +355,11 @@ public class AuthService {
         });
     }
 
-    private void setupBooksSharedWithUser() {
+    public void setupBooksSharedWithUser() {
         DatabaseReference sharedBooks = mFirebaseDB.getReference()
                 .child(ALL_USERS_NODE).child(CURRENT_USER_ID)
                 .child("sharedBooks");
-        sharedBooks.addListenerForSingleValueEvent(new ValueEventListener() {
+        sharedBooks.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 // This will be a map of bookId:access pairs
