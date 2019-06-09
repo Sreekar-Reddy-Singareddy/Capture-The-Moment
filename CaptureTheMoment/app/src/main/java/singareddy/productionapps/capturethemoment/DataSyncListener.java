@@ -18,4 +18,6 @@ public interface DataSyncListener {
     default public void onBookDownloadedFromFirebase(Book downloaedBook, Boolean sharedBookAccess){}
     default public void hasToRemoveSecOwnerFromRoomDB(String bookId, String uid){}
 
+    default public void shouldStopUILoader(){}
+
 }

@@ -29,6 +29,7 @@ animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 array genders
 array mobile_country_codes
+array settings_datasync_intervals
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1177,6 +1178,7 @@ drawable person
 drawable phone
 drawable settings
 drawable smartphone
+drawable sync
 drawable theme_display_icon
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1239,6 +1241,7 @@ id adjust_width
 id alertTitle
 id all
 id all_books_rv_books
+id all_books_srl
 id always
 id async
 id auto
@@ -1246,6 +1249,7 @@ id barrier
 id beginning
 id blocking
 id book_details_rv_cards
+id book_details_srl
 id book_item_cv_container
 id book_item_iv_share
 id book_item_tv_bookname
@@ -1351,6 +1355,7 @@ id imageView10
 id imageView11
 id imageView12
 id imageView13
+id imageView14
 id imageView15
 id imageView16
 id imageView2
@@ -1487,7 +1492,9 @@ id selected
 id settings_iv_theme
 id settings_lv_activity
 id settings_lv_notifications
+id settings_lv_sync
 id settings_lv_theme
+id settings_sp_intervals
 id settings_sw_notifications
 id settings_tv_aboutus
 id settings_tv_signout
@@ -1528,11 +1535,13 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView10
 id textView11
 id textView12
 id textView13
 id textView14
 id textView15
+id textView16
 id textView2
 id textView3
 id textView4
@@ -1822,6 +1831,7 @@ string project_id
 string search_menu_title
 string settings_aboutus_label
 string settings_activity_label
+string settings_datasync_label
 string settings_notification_label
 string settings_signout_label
 string settings_theme_label

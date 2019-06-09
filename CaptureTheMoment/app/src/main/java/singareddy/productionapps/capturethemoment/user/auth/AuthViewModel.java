@@ -17,6 +17,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import singareddy.productionapps.capturethemoment.DataRepository;
+import singareddy.productionapps.capturethemoment.DataSyncListener;
 import singareddy.productionapps.capturethemoment.models.User;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileListener;
 
@@ -25,7 +26,8 @@ import static singareddy.productionapps.capturethemoment.utils.AppUtilities.File
 
 public class AuthViewModel extends ViewModel implements
         AuthListener.EmailLogin, AuthListener.Mobile,
-        AuthListener.EmailSignup, ProfileListener {
+        AuthListener.EmailSignup, ProfileListener,
+        DataSyncListener {
     private static String TAG = "AuthViewModel";
 
     private DataRepository mRepository;
@@ -33,6 +35,7 @@ public class AuthViewModel extends ViewModel implements
     private AuthListener.Mobile mobileAuthListener;
     private AuthListener.EmailSignup emailSignupListener;
     private ProfileListener profileListener;
+    private DataSyncListener dataSyncListener;
 
     private static Boolean OTP_NEEDED = false;
 
@@ -115,6 +118,7 @@ public class AuthViewModel extends ViewModel implements
     }
 
     public void setupInitialData() {
+        mRepository.setDataSyncListener(this);
         mRepository.setupInitialData();
     }
 
@@ -185,6 +189,10 @@ public class AuthViewModel extends ViewModel implements
         this.profileListener = profileListener;
     }
 
+    public void setDataSyncListener(DataSyncListener dataSyncListener) {
+        this.dataSyncListener = dataSyncListener;
+    }
+
     @Override
     public void onEmailUserRegisterSuccess(String email) {
         emailSignupListener.onEmailUserRegisterSuccess(email);
@@ -238,5 +246,11 @@ public class AuthViewModel extends ViewModel implements
     @Override
     public void onProfilePicUpdated() {
         profileListener.onProfilePicUpdated();
+    }
+
+    @Override
+    public void shouldStopUILoader() {
+        if (dataSyncListener == null) return;
+        dataSyncListener.shouldStopUILoader();
     }
 }

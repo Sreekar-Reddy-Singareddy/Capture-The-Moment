@@ -63,8 +63,8 @@
     <string name="card_add_next_button">Next</string>
     <string name="card_delete_dialog_title">Do you want to delete the card?</string>
     <string name="card_delete_dialog_message">Once deleted, the card will be removed permanently. You cannot undo the action.</string>
-    <string name="card_delete_dialog_pos_button">Cancel</string>
-    <string name="card_delete_dialog_neg_button">Delete</string>
+    <string name="card_delete_dialog_pos_button">Delete</string>
+    <string name="card_delete_dialog_neg_button">Cancel</string>
 
     <!-- Settings module -->
     <string name="settings_notification_label">Notifications</string>
@@ -72,9 +72,16 @@
     <string name="settings_activity_label">Activity</string>
     <string name="settings_aboutus_label">About us</string>
     <string name="settings_signout_label">Signout</string>
+    <string name="settings_datasync_label">Data Refresh</string>
     <string name="theme_change_key">appTheme</string>
     <string name="theme_change_value_orange">Theme Orange</string>
     <string name="theme_change_value_blue">Theme Blue</string>
+    <string-array name="settings_datasync_intervals">
+        <item>30 Minutes</item>
+        <item>1 Hour</item>
+        <item>12 Hours</item>
+        <item>24 Hours</item>
+    </string-array>
 
 
     <!-- Misc -->

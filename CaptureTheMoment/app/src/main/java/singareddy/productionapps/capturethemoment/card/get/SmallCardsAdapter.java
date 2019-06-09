@@ -98,6 +98,7 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
 
     @Override
     public int getItemViewType(int position) {
+        Log.i(TAG, "getItemViewType: OWNER CAN EDIT: "+ownerCanEdit);
         if (position == 0 && ownerCanEdit) return ITEM_TYPE_ADD_CARD;
         else return ITEM_TYPE_SHOW_CARD;
     }
@@ -123,6 +124,7 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
         BitmapFactory.Options imageOptions = new BitmapFactory.Options();
         imageOptions.inSampleSize = 2;
         Bitmap image = BitmapFactory.decodeFile(context.getFilesDir()+"/"+data.get(position), imageOptions);
+        Log.i(TAG, "onBindViewHolder: Bitmap Contents: "+image);
         holder.image.setImageBitmap(image);
     }
 }

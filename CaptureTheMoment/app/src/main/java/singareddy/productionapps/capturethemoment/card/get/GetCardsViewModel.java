@@ -11,14 +11,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.DataRepository;
+import singareddy.productionapps.capturethemoment.DataSyncListener;
 import singareddy.productionapps.capturethemoment.models.Card;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
-public class GetCardsViewModel extends ViewModel implements SmallCardDownloadListener {
+public class GetCardsViewModel extends ViewModel implements SmallCardDownloadListener, DataSyncListener {
     private static String TAG = "GetCardsViewModel";
 
     private DataRepository dataRepo;
     private SmallCardDownloadListener smallCardDownloadListener;
+    private DataSyncListener dataSyncListener;
 
     public GetCardsViewModel(DataRepository repository) {
         dataRepo = repository;
@@ -56,12 +58,27 @@ public class GetCardsViewModel extends ViewModel implements SmallCardDownloadLis
         return dataRepo.getCurrentUserEditAccessForThisBook(bookId, AppUtilities.User.CURRENT_USER_ID);
     }
 
+    public void reloadCardsOfBook(String bookId) {
+        dataRepo.setDataSyncListener(this);
+        dataRepo.reloadCardsOfBook(bookId);
+    }
+
     public void setSmallCardDownloadListener(SmallCardDownloadListener smallCardDownloadListener) {
         this.smallCardDownloadListener = smallCardDownloadListener;
+    }
+
+    public void setDataSyncListener(DataSyncListener dataSyncListener) {
+        this.dataSyncListener = dataSyncListener;
     }
 
     @Override
     public void onSmallCardDownloaded() {
         smallCardDownloadListener.onSmallCardDownloaded();
+    }
+
+    @Override
+    public void shouldStopUILoader() {
+        Log.i(TAG, "shouldStopUILoader: *");
+        dataSyncListener.shouldStopUILoader();
     }
 }

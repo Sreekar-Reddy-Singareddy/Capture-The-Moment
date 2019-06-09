@@ -5,6 +5,7 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -17,16 +18,19 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import singareddy.productionapps.capturethemoment.DataSyncListener;
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.book.delete.DeleteBookListener;
 import singareddy.productionapps.capturethemoment.book.delete.DeleteBookModelFactory;
 import singareddy.productionapps.capturethemoment.book.delete.DeleteBookViewModel;
 import singareddy.productionapps.capturethemoment.book.edit.EditBookActivity;
 import singareddy.productionapps.capturethemoment.models.Card;
+import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
+import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class SmallCardsActivity extends AppCompatActivity implements SmallCardClickListener,
-        DeleteBookListener, SmallCardDownloadListener {
+        DeleteBookListener, SmallCardDownloadListener, DataSyncListener {
     private static String TAG = "SmallCardsActivity";
 
     public static String IS_THIS_OWN_BOOK = "OwnBook";
@@ -36,16 +40,18 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     // Utility members
     private String bookName;
     private String bookId;
-    private GetCardsViewModel getCardsViewModel;
     private SmallCardsAdapter adapter;
     private ArrayList<CharSequence> allCardIds;
     private List<String> smallCardImagePaths;
     private List<Card> smallCards;
     private Boolean ownerCanEdit;
+    private AuthViewModel authViewModel;
+    private GetCardsViewModel getCardsViewModel;
     private DeleteBookViewModel deleteBookViewModel;
 
     // UI members
     private RecyclerView cardsList;
+    private SwipeRefreshLayout refreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +72,8 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
         getSupportActionBar().setTitle(bookName);
         setContentView(R.layout.activity_book_details);
         cardsList = findViewById(R.id.book_details_rv_cards);
+        refreshLayout = findViewById(R.id.book_details_srl);
+        refreshLayout.setOnRefreshListener(this::refreshCards);
         GridLayoutManager manager = new GridLayoutManager(this,3);
         cardsList.setAdapter(adapter);
         cardsList.setLayoutManager(manager);
@@ -79,6 +87,7 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
                 new Observer<List<Card>>() {
                     @Override
                     public void onChanged(@Nullable List<Card> cards) {
+                        Log.i(TAG, "onChanged: Cards: "+cards.size());
                         if (cards == null) return;
                         smallCards = cards;
                         smallCardImagePaths = new ArrayList<>();
@@ -93,10 +102,19 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
                     }
                 });
         ownerCanEdit = getCardsViewModel.getCurrentUserEditAccessForThisBook(bookId);
+        Log.i(TAG, "initialiseViewModel: CAN EDIT: "+ownerCanEdit);
         adapter.setOwnerCanEdit(ownerCanEdit);
 
         DeleteBookModelFactory deleteBookModelFactory = DeleteBookModelFactory.createFactory(this);
         deleteBookViewModel = ViewModelProviders.of(this, deleteBookModelFactory).get(DeleteBookViewModel.class);
+
+        AuthModelFactory authModelFactory = AuthModelFactory.createFactory(this);
+        authViewModel = ViewModelProviders.of(this, authModelFactory).get(AuthViewModel.class);
+    }
+
+    private void refreshCards() {
+        getCardsViewModel.setDataSyncListener(this);
+        getCardsViewModel.reloadCardsOfBook(bookId);
     }
 
     @Override
@@ -107,6 +125,7 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
                 getIntent().getExtras().getBoolean(IS_THIS_OWN_BOOK);
         if (!isOwnBook) {
             menu.removeItem(R.id.book_menu_item_update);
+            menu.removeItem(R.id.book_menu_item_trash);
         }
         return super.onCreateOptionsMenu(menu);
     }
@@ -156,5 +175,11 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     @Override
     public void onSmallCardDownloaded() {
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void shouldStopUILoader() {
+        Log.i(TAG, "shouldStopUILoader: *");
+        refreshLayout.setRefreshing(false);
     }
 }

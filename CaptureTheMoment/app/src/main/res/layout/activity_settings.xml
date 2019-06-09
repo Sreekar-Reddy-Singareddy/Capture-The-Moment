@@ -18,6 +18,7 @@
         android:paddingBottom="8dp"
         android:text="@string/settings_signout_label"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView13"
         app:layout_constraintTop_toBottomOf="@+id/settings_tv_aboutus" />
 
@@ -33,8 +34,9 @@
         android:paddingBottom="8dp"
         android:text="@string/settings_aboutus_label"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/settings_lv_activity" />
+        app:layout_constraintTop_toBottomOf="@+id/settings_lv_sync" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -133,6 +135,7 @@
             android:text="@string/settings_theme_label" />
 
         <TextView
+            style="@style/AppTextView"
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -194,4 +197,56 @@
         app:layout_constraintStart_toEndOf="@+id/settings_lv_theme"
         app:layout_constraintTop_toTopOf="@+id/settings_lv_theme"
         app:srcCompat="@drawable/theme_display_icon" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/settings_lv_sync"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/settings_lv_sync"
+        app:srcCompat="@drawable/sync" />
+
+    <LinearLayout
+        android:id="@+id/settings_lv_sync"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/settings_sp_intervals"
+        app:layout_constraintStart_toEndOf="@+id/imageView14"
+        app:layout_constraintTop_toBottomOf="@+id/settings_iv_theme">
+
+        <TextView
+            android:id="@+id/textView10"
+            style="@style/AppTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_datasync_label" />
+
+        <TextView
+            android:id="@+id/textView16"
+            style="@style/AppTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="?colorPrimaryDarkVariant"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/settings_sp_intervals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="?themeColor"
+        android:entries="@array/settings_datasync_intervals"
+        android:foregroundTint="?themeColor"
+        app:layout_constraintBottom_toBottomOf="@+id/settings_lv_sync"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/settings_lv_sync" />
+
 </android.support.constraint.ConstraintLayout>

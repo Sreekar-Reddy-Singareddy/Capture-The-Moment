@@ -61,6 +61,11 @@ public class AuthService {
     private ProfileListener profileListener;
     private SmallCardDownloadListener smallCardDownloadListener;
     private File internalStorage;
+    private int numberOfOwnedBooks;
+    private int numberOfBooksDownloaded;
+    private int numberOfSharedBooks;
+    private int numberOfCardsInThisBook;
+    private HashMap<String, Boolean> cardImagePairsMap;
 
     public AuthService () {
         mFirebaseAuth = FirebaseAuth.getInstance();
@@ -185,6 +190,9 @@ public class AuthService {
         CURRENT_USER_ID = CURRENT_USER.getUid();
         LOGIN_PROVIDER = CURRENT_USER.getProviders().get(0);
         internalStorage = DataRepository.getInternalStorageRef();
+        numberOfOwnedBooks = 0;
+        numberOfSharedBooks = 0;
+        numberOfBooksDownloaded = 0;
         Log.i(TAG, "setupInitialData: PROVIDER: "+LOGIN_PROVIDER);
         // Download user profile, if available
         setupUserProfile();
@@ -202,7 +210,7 @@ public class AuthService {
                 .child(ALL_USERS_NODE)
                 .child(FirebaseAuth.getInstance().getUid())
                 .child(AppUtilities.FBUser.PROFILE);
-        currentUserNode.addValueEventListener(new ValueEventListener() {
+        currentUserNode.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Log.i(TAG, "onDataChange: Profile changed");
@@ -332,56 +340,6 @@ public class AuthService {
                 });
     }
 
-    public void setupBooksOwnedByUser() {
-        DatabaseReference ownedBooks = mFirebaseDB.getReference()
-                .child(ALL_USERS_NODE).child(CURRENT_USER_ID)
-                .child("profile/ownedBooks");
-        ownedBooks.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // This will be a list of strings
-                List<String> ownedBookIds = (ArrayList<String>) dataSnapshot.getValue();
-                if (ownedBookIds == null || ownedBookIds.size() == 0) return;
-                for (String bookId : ownedBookIds) {
-                    downloadBookWithId(bookId, null);
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-    }
-
-    public void setupBooksSharedWithUser() {
-        DatabaseReference sharedBooks = mFirebaseDB.getReference()
-                .child(ALL_USERS_NODE).child(CURRENT_USER_ID)
-                .child("sharedBooks");
-        sharedBooks.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // This will be a map of bookId:access pairs
-                HashMap<String, Boolean> sharedBooks = (HashMap<String, Boolean>) dataSnapshot.getValue();
-                if (sharedBooks == null || sharedBooks.size() == 0) {
-                    // Do nothing
-                }
-                else {
-                    for (Map.Entry<String, Boolean> entry : sharedBooks.entrySet()) {
-                        downloadBookWithId(entry.getKey(), entry.getValue());
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-    }
-
     public void saveProfilePic(Uri profilePicUri) {
         // Use this Uri and upload the picture to firebase storage
         StorageReference profilePicReference = mFirebaseST.getReference().child(CURRENT_USER_ID).child("profile_pic.jpg");
@@ -407,6 +365,74 @@ public class AuthService {
                 });
     }
 
+    public void setupBooksOwnedByUser() {
+        DatabaseReference ownedBooks = mFirebaseDB.getReference()
+                .child(ALL_USERS_NODE).child(CURRENT_USER_ID)
+                .child("profile/ownedBooks");
+        ownedBooks.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // This will be a list of strings
+                List<String> ownedBookIds = (ArrayList<String>) dataSnapshot.getValue();
+                Log.i(TAG, "onDataChange: Owned books: "+ownedBookIds);
+                if (ownedBookIds == null || ownedBookIds.size() == 0) {
+                    Log.i(TAG, "onDataChange: No owned books");
+                    numberOfOwnedBooks = 0;
+                    shouldStopRefreshingUI();
+                    return;
+                }
+                // Store the number of books in an integer
+                numberOfOwnedBooks = ownedBookIds.size();
+                for (String bookId : ownedBookIds) {
+                    downloadBookWithId(bookId, null);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void setupBooksSharedWithUser() {
+        DatabaseReference sharedBooks = mFirebaseDB.getReference()
+                .child(ALL_USERS_NODE).child(CURRENT_USER_ID)
+                .child("sharedBooks");
+        sharedBooks.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                // This will be a map of bookId:access pairs
+                HashMap<String, Boolean> sharedBooks = (HashMap<String, Boolean>) dataSnapshot.getValue();
+                Log.i(TAG, "onDataChange: Shared books: "+sharedBooks);
+                if (sharedBooks == null || sharedBooks.size() == 0) {
+                    Log.i(TAG, "onDataChange: No shared books");
+                    numberOfSharedBooks = 0;
+                    shouldStopRefreshingUI();
+                    return;
+                }
+                // Store the number of shared books in an integer
+                numberOfSharedBooks = sharedBooks.size();
+                for (Map.Entry<String, Boolean> entry : sharedBooks.entrySet()) {
+                    downloadBookWithId(entry.getKey(), entry.getValue());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.i(TAG, "onCancelled: Error: "+databaseError.getMessage());
+            }
+        });
+
+    }
+
+    private void shouldStopRefreshingUI() {
+        if (numberOfSharedBooks == 0 && numberOfOwnedBooks == 0) {
+            dataSyncListener.shouldStopUILoader();
+        }
+    }
+
     /**
      * Fetches a book from firebase given its book id
      * @param bookId
@@ -421,6 +447,18 @@ public class AuthService {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.getValue() != null) {
                             Book fetchedBook = dataSnapshot.getValue(Book.class);
+                            // Once a book is downloaded, increase the count
+                            numberOfBooksDownloaded += 1;
+                            // Check if the number of books downloaded
+                            // matches owned books + shared books
+                            Log.i(TAG, "onDataChange: Owned books: "+numberOfOwnedBooks);
+                            Log.i(TAG, "onDataChange: Shared books: "+numberOfSharedBooks);
+                            Log.i(TAG, "onDataChange: Downloaded books: "+numberOfBooksDownloaded);
+                            if (numberOfBooksDownloaded == numberOfOwnedBooks+numberOfSharedBooks){
+                                // All books are downloaded.
+                                // This is the signal to stop the loader in UI
+                                dataSyncListener.shouldStopUILoader();
+                            }
                             dataSyncListener.onBookDownloadedFromFirebase(fetchedBook, sharedBookAccess);
                             downloadCardsOfBook(bookId);
                         }
@@ -433,7 +471,7 @@ public class AuthService {
                 });
     }
 
-    private void downloadCardsOfBook (String bookId) {
+    public void downloadCardsOfBook (String bookId) {
         DatabaseReference cardsNode = mFirebaseDB.getReference()
                 .child(ALL_BOOKS_NODE)
                 .child(bookId)
@@ -441,8 +479,15 @@ public class AuthService {
         cardsNode.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue() == null) return;
+                if (dataSnapshot.getValue() == null) {
+                    dataSyncListener.shouldStopUILoader();
+                    return;
+                }
                 List<String> cardIds = (ArrayList<String>) dataSnapshot.getValue();
+                // Store the number of cards in an integer
+                numberOfCardsInThisBook = cardIds.size();
+                if (numberOfCardsInThisBook == 0) dataSyncListener.shouldStopUILoader();
+                cardImagePairsMap = new HashMap<>();
                 for (String cardId: cardIds) {
                     downloadCardWithId(cardId);
                 }
@@ -465,6 +510,7 @@ public class AuthService {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Card card = dataSnapshot.getValue(Card.class);
                 dataSyncListener.onCardDownloadedFromFirebase(card, null);
+                if (internalStorage == null) internalStorage=DataRepository.getInternalStorageRef();
                 for (String path: card.getImagePaths()) {
                     File image = new File(internalStorage, path);
                     Log.i(TAG, "onDataChange: PATH: "+image.getPath());
@@ -496,7 +542,19 @@ public class AuthService {
         imageFile = new File(imageFile, pathComps[1]);
         if (!imageFile.exists()) imageFile.mkdir();
         imageFile = new File(imageFile, pathComps[2]);
-        if (!imageFile.exists()) imageFile.createNewFile();
+        if (imageFile.exists()) {
+            Log.i(TAG, "onSuccess: Cards in Book: "+numberOfCardsInThisBook);
+            Log.i(TAG, "onSuccess: Cards downloaded: "+cardImagePairsMap.size());
+            // If an image exists in the given path,
+            // add card-image pair into the map.
+            cardImagePairsMap.put(pathComps[1], true);
+            if (cardImagePairsMap.size() == numberOfCardsInThisBook) dataSyncListener.shouldStopUILoader();
+            return;
+        }
+
+        // Create and download the image only if it does not exist on the device
+        Log.i(TAG, "downloadImageFromFirebaseToPath: PATH: "+imageFile.getPath());
+        boolean newfileCreated = imageFile.createNewFile();
 
         cardStorageRef.getFile(imageFile)
                 .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
@@ -504,6 +562,12 @@ public class AuthService {
                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
                         Log.i(TAG, "onSuccess: Image Downloaded");
                         if (smallCardDownloadListener != null) smallCardDownloadListener.onSmallCardDownloaded();
+                        // If an image exists in the given path,
+                        // add card-image pair into the map.
+                        cardImagePairsMap.put(pathComps[1], true);
+                        if (cardImagePairsMap.size() == numberOfCardsInThisBook) dataSyncListener.shouldStopUILoader();
+                        Log.i(TAG, "onSuccess: Cards in Book: "+numberOfCardsInThisBook);
+                        Log.i(TAG, "onSuccess: Cards downloaded: "+cardImagePairsMap.size());
                     }
                 });
     }

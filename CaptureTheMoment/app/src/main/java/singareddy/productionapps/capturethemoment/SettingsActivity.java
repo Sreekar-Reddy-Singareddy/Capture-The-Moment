@@ -1,5 +1,6 @@
 package singareddy.productionapps.capturethemoment;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
@@ -10,9 +11,12 @@ import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
+import singareddy.productionapps.capturethemoment.user.auth.AuthViewModel;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
 public class SettingsActivity extends AppCompatActivity {

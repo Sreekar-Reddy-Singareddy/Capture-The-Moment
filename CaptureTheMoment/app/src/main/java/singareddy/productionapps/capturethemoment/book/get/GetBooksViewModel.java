@@ -7,13 +7,15 @@ import android.util.Log;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.DataRepository;
+import singareddy.productionapps.capturethemoment.DataSyncListener;
 import singareddy.productionapps.capturethemoment.models.Book;
 
-public class GetBooksViewModel extends ViewModel implements GetBookListener {
+public class GetBooksViewModel extends ViewModel implements GetBookListener, DataSyncListener {
     private static String TAG = "GetCardsViewModel";
 
     private GetBookListener mBookGetBookListenerListener;
     private DataRepository mDataRepo;
+    private DataSyncListener dataSyncListener;
 
     public GetBooksViewModel(DataRepository repository) {
         mDataRepo = repository;
@@ -27,10 +29,15 @@ public class GetBooksViewModel extends ViewModel implements GetBookListener {
     public void setupBooks() {
         mDataRepo.setupBooks();
     }
+
     // MARK: Setters and listener methods
 
     public void setmBookGetBookListenerListener(GetBookListener getBookListener) {
         this.mBookGetBookListenerListener = getBookListener;
+    }
+
+    public void setDataSyncListener(DataSyncListener dataSyncListener) {
+        this.dataSyncListener = dataSyncListener;
     }
 
     @Override
@@ -41,5 +48,10 @@ public class GetBooksViewModel extends ViewModel implements GetBookListener {
     @Override
     public void onBookRemoved(String removedBookId) {
         mBookGetBookListenerListener.onBookRemoved(removedBookId);
+    }
+
+    @Override
+    public void shouldStopUILoader() {
+
     }
 }

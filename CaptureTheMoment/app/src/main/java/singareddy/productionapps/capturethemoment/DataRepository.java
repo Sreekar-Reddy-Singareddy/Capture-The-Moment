@@ -98,6 +98,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     private DeleteCardListener deleteCardListener;
     private DeleteBookListener deleteBookListener;
     private SmallCardDownloadListener smallCardDownloadListener;
+    private DataSyncListener dataSyncListener;
 
     private LocalDB mLocalDB;
     private Context mContext;
@@ -347,7 +348,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         eraseUserProfile();
         eraseBooks();
         eraseCards();
-        eraseCardImages();
+//        eraseCardImages();
     }
 
     private void eraseCardImages() {
@@ -510,7 +511,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
         try {
             String owner = mExecutor.submit(() -> mLocalDB.getBookDao().getOwnerOf(bookId)).get();
             if (owner.equals(currentUserId)) return true;
-            mExecutor.submit(() -> mLocalDB.getSharedInfoDao().getShareInfoForBookWithId(bookId, currentUserId)).get();
+            return mExecutor.submit(() -> mLocalDB.getSharedInfoDao().getShareInfoForBookWithId(bookId, currentUserId)).get();
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -530,6 +531,25 @@ public class DataRepository implements AddBookListener, GetBookListener,
         if (deleteCardService == null) deleteCardService = new DeleteCardService();
         deleteCardService.setDeleteCardListener(this);
         deleteCardService.deleteCardWithId(card);
+    }
+
+    public void reloadCardsOfBook(String bookId) {
+        if (mAuthService == null) mAuthService = new AuthService();
+        try {
+            mExecutor.submit(()->{
+                List<String> cardIdsUnderThisBook = mLocalDB.getCardDao().getAllCardIdsUnderBook(bookId);
+                for (String cardId : cardIdsUnderThisBook) {
+                    mLocalDB.getCardDao().deleteAllPathsOfCard(cardId);
+                    mLocalDB.getCardDao().deleteAllFriendsOfCard(cardId);
+                }
+                mLocalDB.getCardDao().deleteAllCardsUnderBook(bookId);
+            });
+        }
+        catch (Exception e) {
+
+        }
+        mAuthService.setDataSyncListener(this);
+        mAuthService.downloadCardsOfBook(bookId);
     }
 
     // =================== Setters
@@ -580,6 +600,10 @@ public class DataRepository implements AddBookListener, GetBookListener,
 
     public void setSmallCardDownloadListener(SmallCardDownloadListener smallCardDownloadListener) {
         this.smallCardDownloadListener = smallCardDownloadListener;
+    }
+
+    public void setDataSyncListener(DataSyncListener dataSyncListener) {
+        this.dataSyncListener = dataSyncListener;
     }
 
     // =================== Book Listeners
@@ -851,6 +875,13 @@ public class DataRepository implements AddBookListener, GetBookListener,
         long end = System.nanoTime();
         Log.i(TAG, "Time Taken: "+(end-start));
 
+    }
+
+    @Override
+    public void shouldStopUILoader() {
+        if (dataSyncListener == null) return;
+        Log.i(TAG, "shouldStopUILoader: *");
+        dataSyncListener.shouldStopUILoader();
     }
 
     // =================== Add Card Listener
