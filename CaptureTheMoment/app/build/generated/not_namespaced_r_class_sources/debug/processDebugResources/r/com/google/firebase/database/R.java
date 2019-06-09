@@ -24,9 +24,9 @@ public final class R {
         public static final int fontProviderQuery = 0x7f04010d;
         public static final int fontStyle = 0x7f04010e;
         public static final int fontWeight = 0x7f040110;
-        public static final int imageAspectRatio = 0x7f04012b;
-        public static final int imageAspectRatioAdjust = 0x7f04012c;
-        public static final int scopeUris = 0x7f0401c5;
+        public static final int imageAspectRatio = 0x7f04012c;
+        public static final int imageAspectRatioAdjust = 0x7f04012d;
+        public static final int scopeUris = 0x7f0401c7;
     }
     public static final class bool {
         private bool() {}
@@ -234,7 +234,7 @@ public final class R {
         public static final int FontFamily_fontProviderFetchTimeout = 3;
         public static final int FontFamily_fontProviderPackage = 4;
         public static final int FontFamily_fontProviderQuery = 5;
-        public static final int[] FontFamilyFont = { 0x1010532, 0x1010533, 0x101053f, 0x101056f, 0x1010570, 0x7f040106, 0x7f04010e, 0x7f04010f, 0x7f040110, 0x7f04024e };
+        public static final int[] FontFamilyFont = { 0x1010532, 0x1010533, 0x101053f, 0x101056f, 0x1010570, 0x7f040106, 0x7f04010e, 0x7f04010f, 0x7f040110, 0x7f040250 };
         public static final int FontFamilyFont_android_font = 0;
         public static final int FontFamilyFont_android_fontWeight = 1;
         public static final int FontFamilyFont_android_fontStyle = 2;
@@ -245,11 +245,11 @@ public final class R {
         public static final int FontFamilyFont_fontVariationSettings = 7;
         public static final int FontFamilyFont_fontWeight = 8;
         public static final int FontFamilyFont_ttcIndex = 9;
-        public static final int[] LoadingImageView = { 0x7f04007f, 0x7f04012b, 0x7f04012c };
+        public static final int[] LoadingImageView = { 0x7f04007f, 0x7f04012c, 0x7f04012d };
         public static final int LoadingImageView_circleCrop = 0;
         public static final int LoadingImageView_imageAspectRatio = 1;
         public static final int LoadingImageView_imageAspectRatioAdjust = 2;
-        public static final int[] SignInButton = { 0x7f040058, 0x7f04009c, 0x7f0401c5 };
+        public static final int[] SignInButton = { 0x7f040058, 0x7f04009c, 0x7f0401c7 };
         public static final int SignInButton_buttonSize = 0;
         public static final int SignInButton_colorScheme = 1;
         public static final int SignInButton_scopeUris = 2;

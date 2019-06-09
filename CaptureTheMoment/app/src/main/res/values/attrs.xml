@@ -4,6 +4,11 @@
         <attr name="borderColor" format="color"></attr>
         <attr name="dotsColor" format="color"></attr>
     </declare-styleable>
+    <declare-styleable name="NewFramedImageView">
+        <attr name="frameColor" format="color"></attr>
+        <attr name="linesColor" format="color"></attr>
+    </declare-styleable>
+
 
     <!-- Color references -->
     <attr name="colorRegularText" format="reference"></attr>

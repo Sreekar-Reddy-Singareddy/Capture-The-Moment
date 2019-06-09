@@ -6,16 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <singareddy.productionapps.capturethemoment.custom_views.FramedImageView
+    <singareddy.productionapps.capturethemoment.custom_views.NewFramedImageView
         android:id="@+id/page_item_image_iv_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="false"
-        android:src="@drawable/ic_launcher_foreground"
-        app:dotsColor="?attr/colorPrimaryDark"
-        app:borderColor="?attr/colorPrimaryDark"
+        app:frameColor="?themeColor"
+        app:linesColor="?themeColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
