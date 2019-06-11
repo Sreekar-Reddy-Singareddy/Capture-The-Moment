@@ -137,7 +137,6 @@ public class AuthService {
             public void onCodeAutoRetrievalTimeOut(String verificationId) {
                 super.onCodeAutoRetrievalTimeOut(verificationId);
                 Log.i(TAG, "onCodeAutoRetrievalTimeOut: *");
-                AuthService.this.verificationId = verificationId;
                 mobileAuthListener.onOtpRetrievalFailed();
             }
 
@@ -145,6 +144,7 @@ public class AuthService {
             public void onCodeSent(String verificationId, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                 super.onCodeSent(verificationId, forceResendingToken);
                 Log.i(TAG, "onCodeSent: *");
+                AuthService.this.verificationId = verificationId;
                 mobileAuthListener.onOtpSent();
             }
 
@@ -153,7 +153,7 @@ public class AuthService {
                 Log.i(TAG, "onVerificationFailed: " + e.getLocalizedMessage());
             }
         };
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(mobile, 5, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD, callbacks);
+        PhoneAuthProvider.getInstance().verifyPhoneNumber(mobile, 1, TimeUnit.SECONDS, TaskExecutors.MAIN_THREAD, callbacks);
     }
 
     public void sendPasswordResetEmail(String email) {

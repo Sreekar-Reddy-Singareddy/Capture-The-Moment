@@ -74,13 +74,18 @@
     <string name="settings_signout_label">Signout</string>
     <string name="settings_datasync_label">Data Refresh</string>
     <string name="theme_change_key">appTheme</string>
-    <string name="theme_change_value_orange">Theme Orange</string>
-    <string name="theme_change_value_blue">Theme Blue</string>
+    <string name="datasync_interval_change_key">appInterval</string>
+    <string name="theme_change_value_orange">Nostalgic Orange</string>
+    <string name="theme_change_value_blue">Tranquil Blue</string>
+    <string name="datasync_interval_30min">30 Mniutes</string>
+    <string name="datasync_interval_1hr">1 Hour</string>
+    <string name="datasync_interval_12hrs">12 Hours</string>
+    <string name="datasync_interval_24hrs">24 Hours</string>
     <string-array name="settings_datasync_intervals">
-        <item>30 Minutes</item>
-        <item>1 Hour</item>
-        <item>12 Hours</item>
-        <item>24 Hours</item>
+        <item>@string/datasync_interval_30min</item>
+        <item>@string/datasync_interval_1hr</item>
+        <item>@string/datasync_interval_12hrs</item>
+        <item>@string/datasync_interval_24hrs</item>
     </string-array>
 
 

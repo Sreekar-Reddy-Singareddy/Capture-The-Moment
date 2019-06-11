@@ -333,8 +333,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
     public void authorizePhoneCredentials(String mobile, String otpCode) {
         if (mAuthService == null) {
             mAuthService = new AuthService();
-            mAuthService.setMobileAuthListener(this);
         }
+        mAuthService.setMobileAuthListener(this);
         mAuthService.authorizePhoneCredentials(mobile, otpCode);
     }
 

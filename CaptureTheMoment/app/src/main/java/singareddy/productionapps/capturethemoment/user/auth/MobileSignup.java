@@ -12,7 +12,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,9 +25,11 @@ public class MobileSignup extends Fragment implements AuthListener.Mobile, View.
     private static String TAG = "MobileSignup";
 
     View fragmentView;
-    View loginButton;
-    EditText mobileNumber, otpCode;
+    Button loginButton;
+    EditText mobileNumber, otpInput;
     private AuthViewModel authViewModel;
+    ProgressBar progressLoader;
+    TextView otpRetrievalLabel, otpTimer;
 
     @Nullable
     @Override
@@ -37,10 +41,13 @@ public class MobileSignup extends Fragment implements AuthListener.Mobile, View.
     }
 
     private void initialiseUI() {
+        progressLoader = fragmentView.findViewById(R.id.activity_mobile_login_pb_loading);
+        otpRetrievalLabel = fragmentView.findViewById(R.id.activity_mobile_login_tv_otp_label);
+        otpTimer = fragmentView.findViewById(R.id.activity_mobile_login_tv_time);
         mobileNumber = fragmentView.findViewById(R.id.activity_mobile_login_mobile);
-        otpCode = fragmentView.findViewById(R.id.activity_mobile_login_otp);
-        otpCode.setVisibility(View.GONE);
-        loginButton = fragmentView.findViewById(R.id.email_signup_bt_continue);
+        otpInput = fragmentView.findViewById(R.id.activity_mobile_login_otp);
+        otpInput.setVisibility(View.GONE);
+        loginButton = fragmentView.findViewById(R.id.login_bt_continue);
         loginButton.setOnClickListener(this);
     }
 
@@ -53,10 +60,37 @@ public class MobileSignup extends Fragment implements AuthListener.Mobile, View.
     @Override
     public void onClick(View v) {
         if (v == loginButton) {
-            loginButton.setEnabled(false);
+            toggleLoaderViews();
             authViewModel.authorizePhoneCredentials(
                     mobileNumber.getText().toString().trim(),
-                    otpCode.getText().toString().trim());
+                    otpInput.getText().toString().trim());
+        }
+    }
+
+    private void toggleLoaderViews() {
+        if (otpInput.getVisibility() == View.VISIBLE) {
+            if (loginButton.getVisibility() == View.VISIBLE) {
+                loginButton.setVisibility(View.INVISIBLE);
+                progressLoader.setVisibility(View.VISIBLE);
+            }
+            else {
+                loginButton.setVisibility(View.VISIBLE);
+                progressLoader.setVisibility(View.INVISIBLE);
+            }
+        }
+        else {
+            if (loginButton.getVisibility() == View.VISIBLE) {
+                loginButton.setVisibility(View.INVISIBLE);
+                progressLoader.setVisibility(View.VISIBLE);
+                otpRetrievalLabel.setVisibility(View.VISIBLE);
+                otpTimer.setVisibility(View.VISIBLE);
+            }
+            else {
+                loginButton.setVisibility(View.VISIBLE);
+                progressLoader.setVisibility(View.INVISIBLE);
+                otpRetrievalLabel.setVisibility(View.INVISIBLE);
+                otpTimer.setVisibility(View.INVISIBLE);
+            }
         }
     }
 
@@ -74,7 +108,7 @@ public class MobileSignup extends Fragment implements AuthListener.Mobile, View.
 
     @Override
     public void onMobileAuthenticationFailure(String failureCode) {
-        loginButton.setEnabled(true);
+        toggleLoaderViews();
         if (failureCode.equals("EMPTY_FIELDS")) {
             Toast.makeText(getContext(), "Mobile number is invalid", Toast.LENGTH_SHORT).show();
             return;
@@ -85,60 +119,20 @@ public class MobileSignup extends Fragment implements AuthListener.Mobile, View.
 
     @Override
     public void onOtpSent() {
-        View dialogView = getLayoutInflater().inflate(R.layout.dialog_otp_timer, null, false);
-        TextView timerView = dialogView.findViewById(R.id.dialog_otp_timer_tv_time);
-        AlertDialog dialog = new AlertDialog.Builder(getContext())
-                .setView(dialogView)
-                .create();
-        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        dialog.setCanceledOnTouchOutside(false);
-        dialog.show();
-        new AsyncTask<Void, Integer, Void>() {
-            Integer timer = 10;
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-                timerView.setText(timer.toString());
-            }
-
-            @Override
-            protected Void doInBackground(Void... voids) {
-                try {
-                    while (timer > 0) {
-                        Thread.sleep(1000);
-                        timer--;
-                        publishProgress(timer);
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                return null;
-            }
-
-            @Override
-            protected void onProgressUpdate(Integer... values) {
-                super.onProgressUpdate(values);
-                timerView.setText(values[0].toString());
-            }
-
-            @Override
-            protected void onPostExecute(Void aVoid) {
-                super.onPostExecute(aVoid);
-                Toast.makeText(getContext(), "Auto retrieval failed. Enter manual OTP", Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
-            }
-        }.execute();
+//        Log.i(TAG, "onOtpSent: Timer label: "+otpTimer);
+        OtpRetriveTask otpRetriveTask = new OtpRetriveTask(otpTimer, otpRetrievalLabel, loginButton, progressLoader, otpInput);
+        otpRetriveTask.execute();
     }
 
     @Override
     public void onOtpRetrievalFailed() {
         // Ask for manual OTP here
-        otpCode.setVisibility(View.VISIBLE);
-        loginButton.setEnabled(true);
+//        toggleLoaderViews();
+//        otpInput.setVisibility(View.VISIBLE);
     }
 
     private void resetAllViews () {
         mobileNumber.setText("");
+        otpInput.setVisibility(View.GONE);
     }
 }

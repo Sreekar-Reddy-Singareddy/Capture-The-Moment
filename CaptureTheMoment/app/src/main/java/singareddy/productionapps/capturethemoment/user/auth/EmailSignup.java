@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +37,7 @@ public class EmailSignup extends Fragment implements View.OnClickListener, AuthL
         email = fragView.findViewById(R.id.email_signup_et_email);
         password = fragView.findViewById(R.id.email_signup_et_password);
         confirmPassword = fragView.findViewById(R.id.email_signup_et_conf_password);
-        signupButton = fragView.findViewById(R.id.email_signup_bt_continue);
+        signupButton = fragView.findViewById(R.id.login_bt_continue);
         signupButton.setOnClickListener(this);
     }
 

@@ -53,7 +53,7 @@
 
     <Button
         style="@style/AppButton"
-        android:id="@+id/email_signup_bt_continue"
+        android:id="@+id/login_bt_continue"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"

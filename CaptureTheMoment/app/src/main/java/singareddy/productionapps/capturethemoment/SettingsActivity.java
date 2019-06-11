@@ -11,8 +11,10 @@ import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import singareddy.productionapps.capturethemoment.user.auth.AuthModelFactory;
@@ -24,7 +26,9 @@ public class SettingsActivity extends AppCompatActivity {
     private static final int ORANGE_THEME_CODE = 0;
     private static final int BLUE_THEME_CODE = 1;
 
+    private Spinner refreshSpinner;
     private TextView signout;
+    private TextView themeSummary;
     private ImageView themeDisplayImageView;
     private View themeSelectionDialogView;
     private CardView orangeTheme;
@@ -47,8 +51,13 @@ public class SettingsActivity extends AppCompatActivity {
         Drawable icon = getDrawable(R.drawable.back);
         getSupportActionBar().setHomeAsUpIndicator(icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // Initialise from shared preferences
+        String selectedTheme = settingsPreferences.getString(getString(R.string.theme_change_key),getString(R.string.theme_change_value_orange));
+
         signout = findViewById(R.id.settings_tv_signout);
         signout.setOnClickListener(this::signout);
+        themeSummary = findViewById(R.id.settings_tv_theme_summary);
+        themeSummary.setText(selectedTheme);
         themeDisplayImageView = findViewById(R.id.settings_iv_theme);
         themeDisplayImageView.setImageDrawable(getDrawable(R.drawable.theme_display_icon));
         themeDisplayImageView.setOnClickListener(this::changeTheme);

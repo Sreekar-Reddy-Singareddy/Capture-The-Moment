@@ -23,9 +23,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     EditText email, password;
     View signup, loginUsingMobile, passwordHelp;
     Button login;
-    ProgressBar loadingBar;
-    AlertDialog dialog;
-
+    ProgressBar loadingProgressBar;
     AuthViewModel authViewModel;
 
     @Override
@@ -43,9 +41,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void initialiseUI() {
         setTheme(AppUtilities.CURRENT_THEME);
         setContentView(R.layout.activity_login);
+        loadingProgressBar = findViewById(R.id.login_pb_loading);
         signup = findViewById(R.id.signup_ll_login);
         loginUsingMobile = findViewById(R.id.login_ll_mobile);
-        login = findViewById(R.id.email_signup_bt_continue);
+        login = findViewById(R.id.login_bt_continue);
         passwordHelp = findViewById(R.id.login_ll_password_help);
         email = findViewById(R.id.login_et_email);
         password = findViewById(R.id.login_et_password);
@@ -53,21 +52,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         loginUsingMobile.setOnClickListener(this);
         login.setOnClickListener(this);
         passwordHelp.setOnClickListener(this);
-        createAlertDialog();
     }
 
     private void initialiseViewModel() {
         AuthModelFactory factory = AuthModelFactory.createFactory(this);
         authViewModel = ViewModelProviders.of(this, factory).get(AuthViewModel.class);
         authViewModel.setEmailLoginListener(this);
-    }
-
-    private void createAlertDialog() {
-        dialog = new AlertDialog.Builder(this)
-                .setView(R.layout.dialog_loading)
-                .create();
-        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        dialog.setCanceledOnTouchOutside(false);
     }
 
     @Override
@@ -82,13 +72,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(mobileLoginIntent);
         }
         else if (v == login) {
+            toggleLoginLoader();
             String email = this.email.getText().toString().toLowerCase();
             String password = this.password.getText().toString();
             authViewModel.loginUserWithEmail(email, password);
-            dialog.show();
         }
         else if (v == passwordHelp) {
             authViewModel.sendPasswordResetEmail(email.getText().toString());
+        }
+    }
+
+    private void toggleLoginLoader() {
+        if (login.getVisibility() == View.VISIBLE) {
+            login.setVisibility(View.INVISIBLE);
+            loadingProgressBar.setVisibility(View.VISIBLE);
+        }
+        else {
+            login.setVisibility(View.VISIBLE);
+            loadingProgressBar.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -101,13 +102,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         startActivity(homeIntent);
         // Once data is erased, download this user's data
         authViewModel.setupInitialData();
-        dialog.dismiss();
         finish();
     }
 
     @Override
     public void onEmailUserLoginFailure(String failureCode) {
-        login.setEnabled(true);
+        toggleLoginLoader();
         if (failureCode.equals("EMPTY_FIELDS")) {
             Toast.makeText(this, "Email and Password must be entered", Toast.LENGTH_SHORT).show();
             return;
@@ -124,6 +124,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void resetAllViews () {
         email.setText("");
         password.setText("");
-        dialog.dismiss();
     }
 }
