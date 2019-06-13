@@ -18,6 +18,7 @@
     <attr name="colorLabel" format="reference"></attr>
     <attr name="colorIcon" format="reference"></attr>
     <attr name="themeColor" format="reference"></attr>
+    <attr name="colorPureWhite" format="reference"></attr>
 
     <attr name="textLabelColor" format="reference"></attr>
     <attr name="textInputColor" format="reference"></attr>

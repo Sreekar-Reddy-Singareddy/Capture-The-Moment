@@ -2,6 +2,9 @@ package singareddy.productionapps.capturethemoment.book.get;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -30,6 +34,7 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
         private TextView bookName;
         private TextView ownerName;
         private ImageView shareIcon;
+        private ImageView coverPhoto;
 
         public AllBooksViewHolder (View view) {
             super(view);
@@ -37,6 +42,7 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
             bookName = view.findViewById(R.id.book_item_tv_bookname);
             ownerName = view.findViewById(R.id.book_item_tv_owner_name);
             shareIcon = view.findViewById(R.id.book_item_iv_share);
+            coverPhoto = view.findViewById(R.id.book_item_iv_coverphoto);
             view.setOnClickListener(this);
         }
 
@@ -55,17 +61,17 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
     private Context context;
     private List<Book> bookData;
     private LayoutInflater inflater;
-    private GetBooksViewModel viewModel;
+    private GetBooksViewModel getBooksViewModel;
 
     public GetBooksAdapter(Context context) {
         this.inflater = LayoutInflater.from(context);
         this.context = context;
     }
 
-    public GetBooksAdapter(Context context, List<Book> books, GetBooksViewModel viewModel) {
+    public GetBooksAdapter(Context context, List<Book> books, GetBooksViewModel getBooksViewModel) {
         this(context);
         bookData = books;
-        this.viewModel = viewModel;
+        this.getBooksViewModel = getBooksViewModel;
     }
 
     @Override
@@ -111,7 +117,23 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
             // This is a shared book
             holder.shareIcon.setVisibility(View.VISIBLE);
             holder.ownerName.setVisibility(View.VISIBLE);
-//            viewModel.getOwnerNameForBook(book.getOwner());
+//            getBooksViewModel.getOwnerNameForBook(book.getOwner());
+        }
+
+        // If the view model is not null, then use
+        // it to get the cover photo
+        if (getBooksViewModel != null) {
+            String coverPhotoPath = getBooksViewModel.getCoverPhotoForTheBook(book.getBookId());
+            Log.i(TAG, "onBindViewHolder: Cover Photo Path: "+coverPhotoPath);
+            if (coverPhotoPath == null) {
+                holder.coverPhoto.setImageDrawable(context.getDrawable(R.drawable.gallery));
+                return;
+            }
+            File coverPhotoFile = new File(context.getFilesDir(), coverPhotoPath);
+            if (coverPhotoFile.exists()) {
+                Uri coverPhotoUri = Uri.fromFile(coverPhotoFile);
+                holder.coverPhoto.setImageURI(coverPhotoUri);
+            }
         }
     }
 

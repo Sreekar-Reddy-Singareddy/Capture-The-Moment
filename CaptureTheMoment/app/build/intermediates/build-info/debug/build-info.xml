@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="x86"
+    abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="28"
-    build-mode="HOT_WARM"
-    density="xxhdpi"
+    build-mode="COLD"
+    density="420dpi"
     format="10"
+    ir-eligibility="METHOD_ADDED"
     plugin-version="3.3.2"
-    timestamp="1560146251005"
+    timestamp="1560435715548"
     token="2244959088414002950"
-    verifier="COMPATIBLE" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2724" />
+        duration="1806" />
     <task
         name="instant-run-dex"
-        duration="87" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="43" />
+        duration="41" />
     <task
         name="verifier"
-        duration="14" />
+        duration="2" />
 
     <artifact
-        location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/reload-dex/debug/classes.dex"
-        type="RELOAD_DEX" />
+        location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1560141173173"
+        timestamp="1560433773578"
         verifier="FULL_BUILD_REQUESTED" >
+        <artifact
+            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
         <artifact
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
@@ -59,9 +63,6 @@
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
@@ -74,25 +75,28 @@
     <build
         build-mode="COLD"
         ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1560146198505"
+        timestamp="1560435096959"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
+            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
@@ -101,22 +105,17 @@
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
-            type="SPLIT" />
-        <artifact
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
     </build>
     <build
-        build-mode="HOT_WARM"
-        timestamp="1560146251005"
-        verifier="COMPATIBLE" >
+        build-mode="COLD"
+        ir-eligibility="METHOD_ADDED"
+        timestamp="1560435715548"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/reload-dex/debug/classes.dex"
-            type="RELOAD_DEX" />
+            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
     </build>
 
 </instant-run>

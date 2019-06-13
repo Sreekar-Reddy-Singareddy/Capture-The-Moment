@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorMainBackground"
+    android:background="?attr/sceneBackgroundColor"
     tools:context=".user.auth.SignupActivity">
 
     <ImageView
@@ -23,13 +23,13 @@
         android:id="@+id/signup_tl_tabs"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        app:tabTextColor="?attr/themeColor"
+        android:layout_marginEnd="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:tabTextColor="?attr/themeColor">
 
         <android.support.design.widget.TabItem
             android:id="@+id/signup_ti_phone"
@@ -48,9 +48,8 @@
         android:id="@+id/signup_fl_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"

@@ -2,6 +2,7 @@ package singareddy.productionapps.capturethemoment.book.get;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
+import android.net.Uri;
 import android.util.Log;
 
 import java.util.List;
@@ -24,6 +25,10 @@ public class GetBooksViewModel extends ViewModel implements GetBookListener, Dat
     public LiveData<List<Book>> getAllBooks() {
         Log.i(TAG, "getAllBooks: *");
         return mDataRepo.getAllBooksOfThisUser();
+    }
+
+    public String getCoverPhotoForTheBook(String bookId) {
+        return mDataRepo.getCoverPhotoForTheBook(bookId);
     }
 
     public void setupBooks() {

@@ -2,37 +2,37 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_mobile_login_parent_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/sceneBackgroundColor"
     tools:context=".user.auth.MobileLogin">
 
     <EditText
-        style="@style/AppEditText"
         android:id="@+id/activity_mobile_login_mobile"
+        style="@style/AppEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/user_mobile_hint"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/imageView22"
+        app:layout_constraintTop_toBottomOf="@+id/activity_mobile_login_iv_logo" />
 
     <Button
-        style="@style/AppButton"
         android:id="@+id/login_bt_continue"
+        style="@style/AppButton"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:text="@string/user_done_button"
 
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_mobile_login_otp">
@@ -40,23 +40,22 @@
     </Button>
 
     <EditText
-        style="@style/AppEditText"
         android:id="@+id/activity_mobile_login_otp"
+        style="@style/AppEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/user_otp_hint"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_mobile_login_otp_icon"
         app:layout_constraintTop_toBottomOf="@+id/activity_mobile_login_mobile" />
 
     <TextView
-        style="@style/AppTextView"
         android:id="@+id/activity_mobile_login_tv_otp_label"
+        style="@style/AppTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -65,22 +64,23 @@
         android:text="Auto retrieving OTP. Please wait..."
         android:textAlignment="center"
         android:textSize="12sp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_bt_continue" />
 
     <TextView
-        style="@style/AppTextView"
         android:id="@+id/activity_mobile_login_tv_time"
+        style="@style/AppTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
+        android:text="10s"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_mobile_login_tv_otp_label" />
@@ -93,9 +93,61 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="24dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_mobile_login_otp" />
+
+    <ImageView
+        android:id="@+id/activity_mobile_login_iv_logo"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/activity_mobile_login_tv_resend_label"
+        style="@style/AppTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Resend OTP"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/login_bt_continue"
+        app:layout_constraintEnd_toStartOf="@+id/login_bt_continue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/login_bt_continue" />
+
+    <ImageView
+        android:id="@+id/activity_mobile_login_otp_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/backrground_edittext_icons"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_mobile_login_otp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_mobile_login_otp"
+        app:srcCompat="@drawable/lock" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/backrground_edittext_icons"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_mobile_login_mobile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/activity_mobile_login_mobile"
+        app:srcCompat="@drawable/phone" />
 
 </android.support.constraint.ConstraintLayout>

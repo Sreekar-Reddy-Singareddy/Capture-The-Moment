@@ -38,8 +38,8 @@ public class GetBooksFragment extends Fragment implements GetBookListener, DataS
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mFragmentView = inflater.inflate(R.layout.fragment_all_books, container, false);
-        initialiseUI();
         initialiseViewModel();
+        initialiseUI();
         return mFragmentView;
     }
 

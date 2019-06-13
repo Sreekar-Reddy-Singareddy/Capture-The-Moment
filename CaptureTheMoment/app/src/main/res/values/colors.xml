@@ -5,12 +5,12 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorGreen">#008577</color>
 
-    <color name="colorOrangeLight">#ffffff</color>
+    <color name="colorOrangeLight">#f9d4ac</color>
     <color name="colorOrangeDark">#efa75b</color>
     <color name="colorBrown">#824301</color>
     <color name="colorOrangeDarkVariant">#AA824301</color>
 
-    <color name="colorBlueLight">#ffffff</color>
+    <color name="colorBlueLight">#acd8f9</color>
     <color name="colorBlueDark">#29B6F6</color>
     <color name="colorNavy">#01579B</color>
     <color name="colorBlueDarkVariant">#AA01579B</color>

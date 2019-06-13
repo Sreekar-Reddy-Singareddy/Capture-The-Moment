@@ -8,67 +8,50 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="ThemeOrange" parent="@style/Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/colorOrangeLight</item>
-        <item name="colorPrimaryDark">@color/colorOrangeDark</item>
-        <item name="colorPrimaryDarkVariant">@color/colorOrangeDarkVariant</item>
-        <item name="colorAccent">@color/colorBrown</item>
-        <item name="colorRegularText">@color/colorBrown</item>
-        <item name="colorMainBackground">@color/colorOrangeLight</item>
-
-        <item name="themeColor">@color/colorBrown</item>
-
-        <item name="textLabelColor">?attr/themeColor</item>
-        <item name="textInputColor">?attr/themeColor</item>
-        <item name="textInputHintColor">@color/colorOrangeDarkVariant</item>
-        <item name="textInputBackgroundTintColor">?attr/themeColor</item>
-        <item name="checkBoxBackgroundTintColor">@color/colorBrown</item>
-        <item name="buttonBackgroundColor">@color/colorOrangeDark</item>
-        <item name="buttonTextColor">?attr/themeColor</item>
-        <item name="sceneBackgroundColor">@color/colorOrangeLight</item>
-        <item name="drawableIconColor">?attr/themeColor</item>
-        <item name="dividerColor">?attr/themeColor</item>
-        <item name="fabBackgroundColor">@color/colorBrown</item>
-        <item name="fabIconColor">@color/colorOrangeLight</item>
-        <item name="spinnerBackgroundTintColor">?attr/themeColor</item>
-        <item name="spinnerItemColor">?attr/themeColor</item>
+    <style name="AppBasicTheme" parent="Theme.AppCompat.Light">
+        <item name="colorPureWhite">@android:color/white</item>
+        <item name="colorMainBackground">?sceneBackgroundColor</item>
+        <item name="textLabelColor">?themeColor</item>
+        <item name="textInputColor">?themeColor</item>
+        <item name="textInputHintColor">?colorPrimaryDarkVariant</item>
+        <item name="textInputBackgroundTintColor">?colorPrimary</item>
+        <item name="checkBoxBackgroundTintColor">?themeColor</item>
+        <item name="buttonBackgroundColor">?colorPrimaryDark</item>
+        <item name="buttonTextColor">?themeColor</item>
+        <item name="sceneBackgroundColor">?colorPureWhite</item>
+        <item name="drawableIconColor">?themeColor</item>
+        <item name="dividerColor">?themeColor</item>
+        <item name="fabBackgroundColor">?themeColor</item>
+        <item name="fabIconColor">?colorPrimary</item>
+        <item name="spinnerBackgroundTintColor">?themeColor</item>
+        <item name="spinnerItemColor">?themeColor</item>
 
         <item name="actionBarStyle">@style/AppActionBar</item>
         <item name="drawerArrowStyle">@style/AppDrawerArrowStyle</item>
     </style>
 
-    <style name="ThemeBlue" parent="Theme.AppCompat">
+    <style name="ThemeOrange" parent="AppBasicTheme">
+        <item name="colorPrimary">@color/colorOrangeLight</item>
+        <item name="colorPrimaryDark">@color/colorOrangeDark</item>
+        <item name="colorPrimaryDarkVariant">@color/colorOrangeDarkVariant</item>
+        <item name="colorAccent">@color/colorBrown</item>
+        <item name="colorRegularText">@color/colorBrown</item>
+        <item name="themeColor">@color/colorBrown</item>
+    </style>
+
+    <style name="ThemeBlue" parent="AppBasicTheme">
         <item name="colorPrimary">@color/colorBlueLight</item>
         <item name="colorPrimaryDark">@color/colorBlueDark</item>
         <item name="colorPrimaryDarkVariant">@color/colorBlueDarkVariant</item>
         <item name="colorAccent">@color/colorNavy</item>
         <item name="colorRegularText">@color/colorNavy</item>
-        <item name="colorMainBackground">@color/colorBlueLight</item>
-
         <item name="themeColor">@color/colorNavy</item>
-
-        <item name="textLabelColor">?attr/themeColor</item>
-        <item name="textInputColor">?attr/themeColor</item>
-        <item name="textInputHintColor">@color/colorBlueDarkVariant</item>
-        <item name="textInputBackgroundTintColor">?attr/themeColor</item>
-        <item name="checkBoxBackgroundTintColor">@color/colorNavy</item>
-        <item name="buttonBackgroundColor">@color/colorBlueDark</item>
-        <item name="buttonTextColor">?attr/themeColor</item>
-        <item name="sceneBackgroundColor">@color/colorBlueLight</item>
-        <item name="drawableIconColor">?attr/themeColor</item>
-        <item name="dividerColor">?attr/themeColor</item>
-        <item name="fabBackgroundColor">@color/colorNavy</item>
-        <item name="fabIconColor">@color/colorBlueLight</item>
-        <item name="spinnerBackgroundTintColor">?attr/themeColor</item>
-        <item name="spinnerItemColor">?attr/themeColor</item>
-
-        <item name="actionBarStyle">@style/AppActionBar</item>
     </style>
     
     <style name="AppEditText" parent="Widget.AppCompat.EditText">
         <item name="android:textColor">?attr/textInputColor</item>
         <item name="android:textColorHint">?attr/textInputHintColor</item>
-        <item name="android:backgroundTint">?attr/textInputBackgroundTintColor</item>
+        <item name="android:background">@drawable/background_edittext</item>
     </style>
 
     <style name="AppTextView">
@@ -76,7 +59,7 @@
     </style>
 
     <style name="AppButton" parent="Widget.AppCompat.Button">
-        <item name="android:background">?attr/buttonBackgroundColor</item>
+        <item name="android:background">@drawable/background_button</item>
         <item name="android:textColor">?attr/buttonTextColor</item>
     </style>
 
@@ -90,9 +73,13 @@
         <item name="android:titleTextColor">?attr/spinnerItemColor</item>
     </style>
 
+    <style name="AppEditTextImageView">
+        <item name="android:background">@drawable/backrground_edittext_icons</item>
+    </style>
+
     <style name="AppActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="titleTextStyle">@style/AppActionBarTitle</item>
-        <item name="background">?colorPrimary</item>
+        <item name="background">?colorMainBackground</item>
         <item name="android:windowElevation">5dp</item>
     </style>
 

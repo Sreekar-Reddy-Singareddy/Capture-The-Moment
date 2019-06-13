@@ -185,6 +185,7 @@ attr colorMainBackground
 attr colorPrimary
 attr colorPrimaryDark
 attr colorPrimaryDarkVariant
+attr colorPureWhite
 attr colorRegularText
 attr colorScheme
 attr colorSecondary
@@ -1101,6 +1102,9 @@ drawable add_photo_white
 drawable avd_hide_password
 drawable avd_show_password
 drawable back
+drawable background_button
+drawable background_edittext
+drawable backrground_edittext_icons
 drawable calendar
 drawable camera
 drawable camera_light
@@ -1226,10 +1230,14 @@ id activity_main_home_item
 id activity_main_profile_item
 id activity_main_settings_item
 id activity_main_tab_layout
+id activity_mobile_login_iv_logo
 id activity_mobile_login_mobile
 id activity_mobile_login_otp
+id activity_mobile_login_otp_icon
+id activity_mobile_login_parent_layout
 id activity_mobile_login_pb_loading
 id activity_mobile_login_tv_otp_label
+id activity_mobile_login_tv_resend_label
 id activity_mobile_login_tv_time
 id add
 id add_book_bt_create
@@ -1256,6 +1264,7 @@ id blocking
 id book_details_rv_cards
 id book_details_srl
 id book_item_cv_container
+id book_item_iv_coverphoto
 id book_item_iv_share
 id book_item_tv_bookname
 id book_item_tv_date
@@ -1307,6 +1316,7 @@ id edit_query
 id email_signup_et_conf_password
 id email_signup_et_email
 id email_signup_et_password
+id email_signup_pb_loader
 id end
 id end_padder
 id enterAlways
@@ -1359,9 +1369,15 @@ id imageView10
 id imageView11
 id imageView12
 id imageView13
+id imageView14
 id imageView15
 id imageView16
+id imageView17
+id imageView19
 id imageView2
+id imageView20
+id imageView21
+id imageView22
 id imageView3
 id imageView4
 id imageView5
@@ -1883,9 +1899,11 @@ style Animation_AppCompat_Tooltip
 style Animation_Design_BottomSheetDialog
 style AppActionBar
 style AppActionBarTitle
+style AppBasicTheme
 style AppButton
 style AppDrawerArrowStyle
 style AppEditText
+style AppEditTextImageView
 style AppFAB
 style AppSpinner
 style AppTextView

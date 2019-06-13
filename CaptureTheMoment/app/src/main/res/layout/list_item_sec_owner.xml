@@ -4,52 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/sceneBackgroundColor">
+    android:background="?attr/sceneBackgroundColor"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp">
 
     <EditText
+        style="@style/AppEditText"
         android:id="@+id/sec_owner_et_username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="2dp"
-        android:ems="10"
         android:focusable="true"
         android:hint="@string/book_add_sec_owner_hint"
-        android:textColor="?attr/textInputColor"
-        android:backgroundTint="?attr/textInputBackgroundTintColor"
-        android:textColorHint="?attr/textInputHintColor"
         android:inputType="textPersonName"
+        android:textColor="?attr/textInputColor"
+        android:textColorHint="?attr/textInputHintColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/sec_owner_cb_edit"
         app:layout_constraintStart_toEndOf="@+id/sec_owner_ib_cancel"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
         android:id="@+id/sec_owner_cb_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:buttonTint="?attr/checkBoxBackgroundTintColor"
+        android:orientation="vertical"
         android:text="@string/book_add_can_edit_label"
         android:textColor="?attr/textLabelColor"
-        android:buttonTint="?attr/checkBoxBackgroundTintColor"
         app:layout_constraintBottom_toBottomOf="@+id/sec_owner_et_username"
-        app:layout_constraintTop_toTopOf="@+id/sec_owner_et_username"
         app:layout_constraintEnd_toStartOf="@id/sec_owner_iv_status"
-        android:layout_marginEnd="8dp"
-        tools:layout_editor_absoluteX="323dp" />
+        app:layout_constraintTop_toTopOf="@+id/sec_owner_et_username" />
 
     <ImageButton
         android:id="@+id/sec_owner_ib_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:background="@android:color/transparent"
+        android:background="@drawable/backrground_edittext_icons"
         app:layout_constraintBottom_toBottomOf="@+id/sec_owner_et_username"
-        app:layout_constraintEnd_toStartOf="@+id/sec_owner_et_username"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sec_owner_et_username"
         app:srcCompat="@drawable/circular_close" />

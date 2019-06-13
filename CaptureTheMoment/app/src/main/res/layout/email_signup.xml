@@ -4,51 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/colorMainBackground">
+    android:background="?attr/sceneBackgroundColor">
 
     <EditText
-        style="@style/AppEditText"
         android:id="@+id/email_signup_et_email"
+        style="@style/AppEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/user_email_hint"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView21"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        style="@style/AppEditText"
         android:id="@+id/email_signup_et_password"
+        style="@style/AppEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/user_password_hint"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView19"
         app:layout_constraintTop_toBottomOf="@+id/email_signup_et_email" />
 
     <EditText
-        style="@style/AppEditText"
         android:id="@+id/email_signup_et_conf_password"
+        style="@style/AppEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/user_confirm_password_hint"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView20"
         app:layout_constraintTop_toBottomOf="@+id/email_signup_et_password" />
 
     <Button
@@ -65,4 +62,49 @@
         app:layout_constraintTop_toBottomOf="@+id/email_signup_et_conf_password">
 
     </Button>
+
+    <ProgressBar
+        android:id="@+id/email_signup_pb_loader"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_signup_et_conf_password" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/backrground_edittext_icons"
+        app:layout_constraintBottom_toBottomOf="@+id/email_signup_et_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/email_signup_et_password"
+        app:srcCompat="@drawable/lock" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/backrground_edittext_icons"
+        app:layout_constraintBottom_toBottomOf="@+id/email_signup_et_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/email_signup_et_email"
+        app:srcCompat="@drawable/mail" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/backrground_edittext_icons"
+        app:layout_constraintBottom_toBottomOf="@+id/email_signup_et_conf_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/email_signup_et_conf_password"
+        app:srcCompat="@drawable/lock" />
 </android.support.constraint.ConstraintLayout>

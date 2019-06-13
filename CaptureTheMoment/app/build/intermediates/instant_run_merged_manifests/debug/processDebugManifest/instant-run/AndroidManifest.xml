@@ -37,9 +37,7 @@
         <activity android:name="singareddy.productionapps.capturethemoment.card.get.SmallCardsActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.book.add.AddBookActivity" />
         <activity android:name="singareddy.productionapps.capturethemoment.user.auth.SignupActivity" />
-        <activity
-            android:name="singareddy.productionapps.capturethemoment.user.auth.MobileLogin"
-            android:parentActivityName="singareddy.productionapps.capturethemoment.user.auth.LoginActivity" />
+        <activity android:name="singareddy.productionapps.capturethemoment.user.auth.MobileLogin" />
         <activity android:name="singareddy.productionapps.capturethemoment.user.auth.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

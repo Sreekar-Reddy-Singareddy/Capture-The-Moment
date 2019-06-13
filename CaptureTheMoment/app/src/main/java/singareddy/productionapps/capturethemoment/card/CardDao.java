@@ -58,4 +58,8 @@ public interface CardDao {
 
     @Query("DELETE FROM IMAGEPATH")
     public int eraseAllImagePathData();
+
+    @Query("SELECT imagePath FROM ImagePath WHERE cardId = " +
+            "(SELECT cardId FROM Card WHERE bookId = :bookId ORDER BY RANDOM() LIMIT 1) ORDER BY RANDOM() LIMIT 1")
+    public String getImagePathForOneCardInTheBook(String bookId);
 }

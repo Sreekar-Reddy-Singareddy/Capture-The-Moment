@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
@@ -23,6 +24,7 @@ public class EmailSignup extends Fragment implements View.OnClickListener, AuthL
     View fragView;
     View signupButton;
     AuthViewModel authViewModel;
+    ProgressBar loader;
 
     @Nullable
     @Override
@@ -39,6 +41,7 @@ public class EmailSignup extends Fragment implements View.OnClickListener, AuthL
         confirmPassword = fragView.findViewById(R.id.email_signup_et_conf_password);
         signupButton = fragView.findViewById(R.id.login_bt_continue);
         signupButton.setOnClickListener(this);
+        loader = fragView.findViewById(R.id.email_signup_pb_loader);
     }
 
     private void initialiseViewModel() {
@@ -50,11 +53,23 @@ public class EmailSignup extends Fragment implements View.OnClickListener, AuthL
     @Override
     public void onClick(View v) {
         if (v == signupButton) {
+            toggleLoginLoader();
             signupButton.setEnabled(false);
             String email = this.email.getText().toString().toLowerCase();
             String password = this.password.getText().toString();
             String confPassword = this.confirmPassword.getText().toString();
             authViewModel.registerEmailUser (email, password, confPassword);
+        }
+    }
+
+    private void toggleLoginLoader() {
+        if (signupButton.getVisibility() == View.VISIBLE) {
+            signupButton.setVisibility(View.INVISIBLE);
+            loader.setVisibility(View.VISIBLE);
+        }
+        else {
+            signupButton.setVisibility(View.VISIBLE);
+            loader.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -73,12 +88,12 @@ public class EmailSignup extends Fragment implements View.OnClickListener, AuthL
         startActivity(mainIntent);
         // Once data is erased, download this user's data
         authViewModel.setupInitialData();
-        resetAllViews();
         getActivity().finish();
     }
 
     @Override
     public void onEmailUserRegisterFailure(String email, String failureCode) {
+        toggleLoginLoader();
         signupButton.setEnabled(true);
         switch (failureCode) {
             case AppUtilities.FailureCodes.EMPTY_EMAIL:

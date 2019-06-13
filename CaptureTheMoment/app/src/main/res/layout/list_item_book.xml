@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?attr/colorMainBackground">
+    android:background="?attr/sceneBackgroundColor">
 
     <android.support.v7.widget.CardView
         android:id="@+id/book_item_cv_container"
@@ -38,32 +38,45 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/folder" />
 
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/book_item_iv_coverphoto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitStart"
+                app:riv_corner_radius_top_left="15dp"
+                app:riv_corner_radius_bottom_left="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/gallery" />
+
             <TextView
-                style="@style/AppTextView"
                 android:id="@+id/book_item_tv_bookname"
+                style="@style/AppTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="TextView"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/book_item_iv_coverphoto"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                style="@style/AppTextView"
                 android:id="@+id/book_item_tv_date"
+                style="@style/AppTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:text="TextView"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="@+id/book_item_iv_share"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/book_item_iv_share" />
+                app:layout_constraintStart_toEndOf="@+id/book_item_iv_coverphoto"
+                app:layout_constraintTop_toTopOf="@+id/book_item_iv_share"
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 style="@style/AppTextView"

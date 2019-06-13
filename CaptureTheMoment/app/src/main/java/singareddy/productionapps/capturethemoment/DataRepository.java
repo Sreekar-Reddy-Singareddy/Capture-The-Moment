@@ -304,6 +304,16 @@ public class DataRepository implements AddBookListener, GetBookListener,
         }
     }
 
+    public String getCoverPhotoForTheBook(String bookId) {
+        try {
+            return mExecutor.submit(()-> mLocalDB.getCardDao().getImagePathForOneCardInTheBook(bookId)).get();
+        }
+        catch (Exception e) {
+
+        }
+        return null;
+    }
+
     public void setupBooks() {
         if (mAuthService == null) {
             mAuthService = new AuthService();

@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.telephony.PhoneNumberUtils;
+import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -95,6 +96,7 @@ public class AuthViewModel extends ViewModel implements
     }
 
     public void authorizePhoneCredentials(String mobile, String otpCode) {
+        Log.i(TAG, "authorizePhoneCredentials: Mobile: "+mobile+" OTP: "+otpCode+" OTP Needed: "+OTP_NEEDED);
         mobile = PhoneNumberUtils.formatNumberToE164(mobile, "IN");
         // Check if the mobile number is valid and not empty
         if (mobile == null || mobile.equals("")) {
@@ -111,6 +113,15 @@ public class AuthViewModel extends ViewModel implements
         // Since both mobile and otp are valid enough, continue
         mRepository.setMobileAuthListener(this);
         mRepository.authorizePhoneCredentials(mobile, otpCode);
+    }
+
+    public void resendOTP(String mobileNumber) {
+        OTP_NEEDED = false;
+        authorizePhoneCredentials(mobileNumber, null);
+    }
+
+    public void reset() {
+        OTP_NEEDED = false;
     }
 
     public void eraseLocalData() {
@@ -220,6 +231,7 @@ public class AuthViewModel extends ViewModel implements
 
     @Override
     public void onMobileAuthenticationSuccess() {
+        OTP_NEEDED = false;
         mobileAuthListener.onMobileAuthenticationSuccess();
     }
 
@@ -230,6 +242,7 @@ public class AuthViewModel extends ViewModel implements
 
     @Override
     public void onOtpSent() {
+        OTP_NEEDED = true;
         mobileAuthListener.onOtpSent();
     }
 

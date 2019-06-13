@@ -23,9 +23,7 @@
         <activity android:name=".card.get.SmallCardsActivity" />
         <activity android:name=".book.add.AddBookActivity" />
         <activity android:name=".user.auth.SignupActivity" />
-        <activity
-            android:name=".user.auth.MobileLogin"
-            android:parentActivityName=".user.auth.LoginActivity" />
+        <activity android:name=".user.auth.MobileLogin" />
         <activity android:name=".user.auth.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
