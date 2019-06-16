@@ -53,6 +53,10 @@ public class Card {
         this.createdTime = createdTime;
     }
 
+    public Card(String cardId) {
+        this.cardId = cardId;
+    }
+
     public List<String> getImagePaths() {
         return imagePaths;
     }

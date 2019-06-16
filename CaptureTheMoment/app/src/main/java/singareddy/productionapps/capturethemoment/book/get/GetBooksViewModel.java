@@ -27,7 +27,15 @@ public class GetBooksViewModel extends ViewModel implements GetBookListener, Dat
         return mDataRepo.getAllBooksOfThisUser();
     }
 
-    public String getCoverPhotoForTheBook(String bookId) {
+    public List<String> getCardsUnderTheBook(String bookId) {
+        return mDataRepo.getCardsUnderTheBook(bookId);
+    }
+
+    public String getOneImagePathForCard(String cardId) {
+        return mDataRepo.getOneImagePathForCard(cardId);
+    }
+
+    public LiveData<String> getCoverPhotoForTheBook(String bookId) {
         return mDataRepo.getCoverPhotoForTheBook(bookId);
     }
 

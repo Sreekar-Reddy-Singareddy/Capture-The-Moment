@@ -304,7 +304,18 @@ public class DataRepository implements AddBookListener, GetBookListener,
         }
     }
 
-    public String getCoverPhotoForTheBook(String bookId) {
+    public List<String> getCardsUnderTheBook(String bookId) {
+        try {
+            return mExecutor.submit(() -> mLocalDB.getCardDao().getAllCardIdsUnderBook(bookId)).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public LiveData<String> getCoverPhotoForTheBook(String bookId) {
         try {
             return mExecutor.submit(()-> mLocalDB.getCardDao().getImagePathForOneCardInTheBook(bookId)).get();
         }
@@ -946,6 +957,11 @@ public class DataRepository implements AddBookListener, GetBookListener,
             // Insert this book in Room DB
             Book book = (Book) objects[0];
             mLocalDB.getBookDao().insert(book);
+            for (String cardId : book.getCards()) {
+                long insertedId = mLocalDB.getCardDao().insertCard(new Card(cardId));
+                Log.i(TAG, "doInBackground: Card Inserted: "+insertedId);
+            }
+
             Log.i(TAG, "doInBackground: BOOK INSERTED: "+book.getName());
 
             // Decide if its OWNED or SHARED

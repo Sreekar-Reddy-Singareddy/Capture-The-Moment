@@ -97,11 +97,29 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
             SimpleDateFormat format = new SimpleDateFormat();
             format.applyPattern("dd MMM YYYY");
             long diff = new Date().getTime() - book.getLastUpdatedDate().longValue();
-            if (diff < 60*1000) {
-                holder.lastOpened.setText(context.getResources().getString(R.string.book_updated_now));
+            if (diff < 60000) {
+                holder.lastOpened.setText("Now");
             }
-            else {
-                holder.lastOpened.setText(String.valueOf(diff/(1000*60)) + context.getResources().getString(R.string.book_updated_minutes));
+            else if (diff >= 60000 && diff < 1.2e5) {
+                holder.lastOpened.setText("1 minute ago");
+            }
+            else if (diff >= 1.2e5 && diff < 3.6e6) {
+                Long minutes = diff/60000;
+                holder.lastOpened.setText(minutes.toString()+" minutes ago");
+            }
+            else if (diff >= 3.6e6 && diff < 7.2e6) {
+                holder.lastOpened.setText("1 hour ago");
+            }
+            else if (diff >= 7.2e6 && diff < 8.64e7) {
+                Long hours = diff/3600000;
+                holder.lastOpened.setText(hours.toString()+" hours ago");
+            }
+            else if (diff >= 8.64e7 && diff < 1.728e8) {
+                holder.lastOpened.setText("Yesterday");
+            }
+            else if (diff >= 1.728e8) {
+                String formattedDate = format.format(new Date(book.getLastUpdatedDate()));
+                holder.lastOpened.setText(formattedDate);
             }
         }
         else {
@@ -122,18 +140,10 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
 
         // If the view model is not null, then use
         // it to get the cover photo
-        if (getBooksViewModel != null) {
-            String coverPhotoPath = getBooksViewModel.getCoverPhotoForTheBook(book.getBookId());
-            Log.i(TAG, "onBindViewHolder: Cover Photo Path: "+coverPhotoPath);
-            if (coverPhotoPath == null) {
-                holder.coverPhoto.setImageDrawable(context.getDrawable(R.drawable.gallery));
-                return;
-            }
-            File coverPhotoFile = new File(context.getFilesDir(), coverPhotoPath);
-            if (coverPhotoFile.exists()) {
-                Uri coverPhotoUri = Uri.fromFile(coverPhotoFile);
-                holder.coverPhoto.setImageURI(coverPhotoUri);
-            }
+        if (book.getCards() != null && book.getCards().size() != 0) {
+            String cardId = book.getCards().get(0);
+            String coverPhotoPath = getBooksViewModel.getOneImagePathForCard(cardId);
+            Log.i(TAG, "onBindViewHolder: Cover Photo: "+coverPhotoPath);
         }
     }
 

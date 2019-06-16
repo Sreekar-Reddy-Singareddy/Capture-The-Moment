@@ -60,6 +60,6 @@ public interface CardDao {
     public int eraseAllImagePathData();
 
     @Query("SELECT imagePath FROM ImagePath WHERE cardId = " +
-            "(SELECT cardId FROM Card WHERE bookId = :bookId ORDER BY RANDOM() LIMIT 1) ORDER BY RANDOM() LIMIT 1")
-    public String getImagePathForOneCardInTheBook(String bookId);
+            "(SELECT cardId FROM Card WHERE bookId = :bookId LIMIT 1) LIMIT 1")
+    public LiveData<String> getImagePathForOneCardInTheBook(String bookId);
 }

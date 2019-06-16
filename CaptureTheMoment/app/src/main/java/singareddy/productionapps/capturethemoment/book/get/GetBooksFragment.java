@@ -62,6 +62,19 @@ public class GetBooksFragment extends Fragment implements GetBookListener, DataS
             public void onChanged(@Nullable List<Book> books) {
                 mAdapter.setBookData(books);
                 mAdapter.notifyDataSetChanged();
+                Log.i(TAG, "onChanged: Book ID *****");
+                for (Book book: books) {
+                    book.setCards(getBooksViewModel.getCardsUnderTheBook(book.getBookId()));
+                    Log.i(TAG, "onChanged: Cards: "+book.getCards());
+                    getBooksViewModel.getCoverPhotoForTheBook(book.getBookId()).observe(GetBooksFragment.this,
+                            new Observer<String>() {
+                                @Override
+                                public void onChanged(@Nullable String s) {
+                                    Log.i(TAG, "onChanged: Path Acquired: "+s);
+                                    mAdapter.notifyDataSetChanged();
+                                }
+                            });
+                }
             }
         });
         AuthModelFactory authModelFactory = AuthModelFactory.createFactory(getActivity());

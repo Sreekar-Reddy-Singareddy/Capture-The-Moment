@@ -5,11 +5,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import singareddy.productionapps.capturethemoment.R;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
+import singareddy.productionapps.capturethemoment.utils.SwipeComputer;
 
 public class SignupActivity extends AppCompatActivity implements TabLayout.BaseOnTabSelectedListener, View.OnClickListener {
     private static String TAG = "SignupActivity";
@@ -70,5 +72,26 @@ public class SignupActivity extends AppCompatActivity implements TabLayout.BaseO
     @Override
     public void onTabReselected(TabLayout.Tab tab) {
 
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        int swipeGesture = SwipeComputer.computeTouchEvent(event);
+        int selectedTab = tabLayout.getSelectedTabPosition();
+        switch (swipeGesture) {
+            case SwipeComputer.SWIPED_RIGHT:
+                if (selectedTab > 0) {
+                    selectedTab--;
+                    tabLayout.getTabAt(selectedTab).select();
+                }
+                break;
+            case SwipeComputer.SWIPED_LEFT:
+                if (selectedTab < tabLayout.getTabCount()-1) {
+                    selectedTab++;
+                    tabLayout.getTabAt(selectedTab).select();
+                }
+                break;
+        }
+        return super.onTouchEvent(event);
     }
 }

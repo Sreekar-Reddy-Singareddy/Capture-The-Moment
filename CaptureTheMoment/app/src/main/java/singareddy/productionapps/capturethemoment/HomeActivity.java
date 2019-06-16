@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +26,7 @@ import singareddy.productionapps.capturethemoment.book.add.AddBookActivity;
 import singareddy.productionapps.capturethemoment.book.get.GetBooksFragment;
 import singareddy.productionapps.capturethemoment.user.profile.ProfileFragmentNew;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
+import singareddy.productionapps.capturethemoment.utils.SwipeComputer;
 
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.User.*;
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Firebase.*;
@@ -39,6 +41,7 @@ public class HomeActivity extends AppCompatActivity {
     private static final int SETTINGS_SCREEN_REQUEST_CODE = 123;
     public static final int THEME_CHANGE_RESULT_CODE = 345;
 
+    View container;
     Toolbar toolbar;
     FloatingActionButton addBookFab;
     TabLayout tabLayout;
@@ -64,6 +67,7 @@ public class HomeActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, getBooksFragment).commit();
         getSupportActionBar().setTitle("Books");
 
+        container = findViewById(R.id.activity_main_container);
         addBookFab = findViewById(R.id.activity_main_add_book_button);
         tabLayout = findViewById(R.id.activity_main_tab_layout);
         tabListener = new TabLayout.OnTabSelectedListener() {

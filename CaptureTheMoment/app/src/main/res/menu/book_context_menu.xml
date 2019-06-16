@@ -16,5 +16,6 @@
         android:id="@+id/book_menu_item_info"
         android:icon="@drawable/info"
         android:title="Info"
+        android:visible="false"
         app:showAsAction="always" />
 </menu>
