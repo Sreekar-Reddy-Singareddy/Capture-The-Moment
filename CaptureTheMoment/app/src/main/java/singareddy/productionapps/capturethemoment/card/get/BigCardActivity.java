@@ -67,6 +67,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
         Drawable icon = getDrawable(R.drawable.back);
         getSupportActionBar().setHomeAsUpIndicator(icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(AppUtilities.Defaults.DEFAULT_STRING);
         int cardWidth = getWindowManager().getDefaultDisplay().getWidth();
         uiCard = findViewById(R.id.activity_big_card_cv_container);
         ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(cardWidth-100, cardWidth-100); // TODO: Change the hard coded values here
@@ -202,6 +203,11 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     public void onCardDeleted(String cardId) {
         Toast.makeText(this, "Card Deleted!", Toast.LENGTH_SHORT).show();
         allCardIds.remove(cardId);
+        finish();
+    }
+
+    @Override
+    public void onBackPressed() {
         finish();
     }
 }

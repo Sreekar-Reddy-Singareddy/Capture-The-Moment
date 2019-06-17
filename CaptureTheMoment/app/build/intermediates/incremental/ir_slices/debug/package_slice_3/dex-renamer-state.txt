@@ -1,4 +1,4 @@
-#Sun Jun 16 10:54:32 IST 2019
+#Sun Jun 16 14:33:58 IST 2019
 base.0=/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/transforms/dexMerger/debug/3
 renamed.0=classes.dex
 path.0=classes.dex

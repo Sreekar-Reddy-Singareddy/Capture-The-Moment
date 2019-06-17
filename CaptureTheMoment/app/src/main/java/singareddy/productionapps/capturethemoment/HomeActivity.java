@@ -65,7 +65,7 @@ public class HomeActivity extends AppCompatActivity {
         // Initially, show all the books
         GetBooksFragment getBooksFragment = new GetBooksFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.activity_main_container, getBooksFragment).commit();
-        getSupportActionBar().setTitle("Books");
+        getSupportActionBar().setTitle("Memory Books");
 
         container = findViewById(R.id.activity_main_container);
         addBookFab = findViewById(R.id.activity_main_add_book_button);
@@ -150,7 +150,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void showHomeScreen() {
         Log.i(TAG, "showHomeScreen: HOME SCREEN");
-        getSupportActionBar().setTitle("Books");
+        getSupportActionBar().setTitle("Memory Books");
         addBookFab.show();
         GetBooksFragment getBooksFragment = new GetBooksFragment();
         getSupportFragmentManager().beginTransaction()

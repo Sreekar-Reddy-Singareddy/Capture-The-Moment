@@ -5,9 +5,11 @@
     <item
         android:id="@+id/add_card_menu_item_edit"
         android:title="Edit"
-        app:showAsAction="never" />
+        android:icon="@drawable/edit_pencil"
+        app:showAsAction="always" />
     <item
         android:id="@+id/add_card_menu_item_delete"
         android:title="Delete"
-        app:showAsAction="never"/>
+        android:icon="@drawable/delete"
+        app:showAsAction="always"/>
 </menu>

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import singareddy.productionapps.capturethemoment.R;
@@ -42,7 +43,11 @@ public class BigCardBackFragment extends Fragment {
         date = fragmentView.findViewById(R.id.fragment_big_card_back_tv_date);
         location = fragmentView.findViewById(R.id.fragment_big_card_back_tv_location);
         description = fragmentView.findViewById(R.id.fragment_big_card_back_tv_desc);
-        date.setText(new Date(cardToBeDisplayed.getCreatedTime()).toString());
+
+        SimpleDateFormat format = new SimpleDateFormat();
+        format.applyPattern("dd MMM YYYY");
+        String formattedDate = format.format(new Date(cardToBeDisplayed.getCreatedTime()));
+        date.setText(formattedDate);
         location.setText(cardToBeDisplayed.getLocation());
         description.setText(cardToBeDisplayed.getDescription());
         return fragmentView;

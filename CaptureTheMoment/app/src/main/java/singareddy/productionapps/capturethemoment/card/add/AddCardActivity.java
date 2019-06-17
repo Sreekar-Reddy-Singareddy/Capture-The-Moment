@@ -31,11 +31,12 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
     private AddCardViewModel addCardViewModel;
     private String bookId;
     protected String cardDescription = "This is the card description. I am dummy... Wait for real one";
-    private long cardDate = new Date().getTime();
-    private String cardLocation = "Mysore, Karnataka";
+    protected long cardDate = new Date().getTime();
+    protected String cardLocation = "Mysore, Karnataka";
     private List<String> cardFriends = new ArrayList<>();
     private AddCardPhotosFragment photosFragment;
     private AddCardMoreDetailsFragment detailsFragment;
+    private Boolean detailsFragShown = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
     }
 
     void photosFrag () {
+        detailsFragShown = false;
         if (photosFragment == null) photosFragment = new AddCardPhotosFragment();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.add_card_cl_layout, photosFragment)
@@ -81,6 +83,7 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
     }
 
     void detailsFrag () {
+        detailsFragShown = true;
         if (detailsFragment == null) detailsFragment = new AddCardMoreDetailsFragment();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.add_card_cl_layout, detailsFragment)
@@ -109,12 +112,24 @@ public class AddCardActivity extends AppCompatActivity implements AddCardListene
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) finish();
+        if (item.getItemId() == android.R.id.home) {
+            if (detailsFragShown){
+                getSupportFragmentManager().popBackStackImmediate();
+                detailsFragShown = false;
+                return false;
+            }
+            finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onBackPressed() {
+        if (detailsFragShown) {
+            getSupportFragmentManager().popBackStackImmediate();
+            detailsFragShown = false;
+            return;
+        }
         finish();
     }
 

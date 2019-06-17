@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NewPhotoFrameView">
+        <attr name="frameColor" format="color"></attr>
+        <attr name="linesColor" format="color"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="CustomViewOne">
+        <attr name="borderColor" format="color"></attr>
+        <attr name="dotsColor" format="color"></attr>
+    </declare-styleable>
+</resources>

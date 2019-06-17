@@ -8,10 +8,11 @@
 
 
     <EditText
-        style="@style/AppEditText"
         android:id="@+id/frag_add_card_details_et_desc"
+        style="@style/AppEditText"
+        android:background="@drawable/background_multiline_edittext"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -24,6 +25,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        style="@style/AppEditTextImageView"
         android:id="@+id/frag_add_card_details_iv_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,6 +36,7 @@
         app:srcCompat="@drawable/location_pin" />
 
     <ImageView
+        style="@style/AppEditTextImageView"
         android:id="@+id/frag_add_card_details_iv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,26 +59,28 @@
         app:layout_constraintTop_toBottomOf="@+id/frag_add_card_details_iv_date"
         app:srcCompat="@drawable/calendar" />
 
-    <TextView
-        style="@style/AppTextView"
-        android:id="@+id/frag_add_card_details_tv_location"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/frag_add_card_details_et_location"
+        style="@style/AppEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Mysore, Karnataka"
+        android:layout_marginEnd="8dp"
+        android:hint="@string/user_profile_location_hint"
         app:layout_constraintBottom_toBottomOf="@+id/frag_add_card_details_iv_location"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/frag_add_card_details_iv_location"
         app:layout_constraintTop_toTopOf="@+id/frag_add_card_details_iv_location"
         app:layout_constraintVertical_bias="0.6" />
 
     <TextView
-        style="@style/AppTextView"
         android:id="@+id/frag_add_card_details_tv_date"
-        android:layout_width="wrap_content"
+        style="@style/AppEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="12th May 2019"
+        android:layout_marginEnd="8dp"
+        android:hint="Moment date"
         app:layout_constraintBottom_toBottomOf="@+id/frag_add_card_details_iv_date"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/frag_add_card_details_iv_date"
         app:layout_constraintTop_toTopOf="@+id/frag_add_card_details_iv_date" />
 

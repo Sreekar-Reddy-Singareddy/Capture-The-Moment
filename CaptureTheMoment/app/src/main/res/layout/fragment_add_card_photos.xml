@@ -26,7 +26,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
-        app:backgroundTint="#FCB91B"
         app:layout_constraintBottom_toBottomOf="@+id/frag_add_card_photos_pv_photos"
         app:layout_constraintEnd_toEndOf="@+id/frag_add_card_photos_pv_photos"
         app:srcCompat="@drawable/add_photo_light" />
@@ -68,5 +67,21 @@
         app:layout_constraintEnd_toEndOf="@+id/frag_add_card_photos_pv_photos"
         app:layout_constraintTop_toTopOf="@+id/frag_add_card_photos_pv_photos"
         app:srcCompat="@drawable/close" />
+
+    <TextView
+        android:id="@+id/frag_add_card_photos_tv_description"
+        style="@style/AppTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="Click the camera button to add photos to this memory card. Add all related photos in the card. You can desribe the card once you finish adding photos."
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/frag_add_card_photos_bt_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag_add_card_photos_rv_indicator" />
 
 </android.support.constraint.ConstraintLayout>

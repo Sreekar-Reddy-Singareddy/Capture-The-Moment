@@ -72,7 +72,7 @@ public class AddCardPhotosFragment extends Fragment {
         params.startToStart = R.id.frag_add_card_photos_cl_layout;
         params.topToTop = R.id.frag_add_card_photos_cl_layout;
         params.endToEnd = R.id.frag_add_card_photos_cl_layout;
-        params.bottomToBottom = R.id.frag_add_card_photos_cl_layout;
+//        params.bottomToBottom = R.id.frag_add_card_photos_cl_layout;
         photoPager = fragView.findViewById(R.id.frag_add_card_photos_pv_photos);
         photoPager.setLayoutParams(params);
         photoPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

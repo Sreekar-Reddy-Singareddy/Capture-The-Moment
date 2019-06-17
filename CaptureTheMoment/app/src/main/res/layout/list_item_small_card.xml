@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:background="?attr/colorMainBackground">
 
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/list_item_small_card_iv_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -14,6 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        app:riv_corner_radius="25dp"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintBottom_toBottomOf="parent"
