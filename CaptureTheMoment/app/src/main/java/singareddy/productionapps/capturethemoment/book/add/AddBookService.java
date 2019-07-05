@@ -126,12 +126,14 @@ public class AddBookService {
             query.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    Log.i(TAG, "onDataChange: SNAPSHOT: "+dataSnapshot.getValue());
                     // Exists or not, this user has been checked for.
                     // So increase the count.
                     mOwnersValidated++; ownerValidated.setValue(mOwnersValidated);
                     // Snapshot NOT NULL means username exists
                     if (dataSnapshot.getValue() != null) {
                         Map<String, String> userMap = (HashMap<String, String>) dataSnapshot.getValue();
+                        Log.i(TAG, "onDataChange: USERMAP: "+userMap);
                         secOwner.setValidated(AppUtilities.Book.SEC_OWNER_VALID);
                         // Add a key value pair (UID: Access) for this secondary user
                         validSecOwnersMap.put((String) userMap.keySet().toArray()[0], secOwner.getCanEdit());

@@ -264,7 +264,8 @@ public class AuthService {
         }
         else if (mFirebaseAuth.getCurrentUser().getProviders().get(0).equals(PHONE_PROVIDER)) {
             // Phone provider - Add phone for this UID
-            registeredUsersNode.setValue(Long.parseLong(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(3))).addOnCompleteListener(completeListener1);
+//            registeredUsersNode.setValue(Long.parseLong(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(3))).addOnCompleteListener(completeListener1);
+            registeredUsersNode.setValue(FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber().substring(3)).addOnCompleteListener(completeListener1);
         }
     }
 

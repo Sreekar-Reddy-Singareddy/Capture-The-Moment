@@ -2,6 +2,7 @@ package singareddy.productionapps.capturethemoment.user.auth;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -73,6 +74,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(mobileLoginIntent);
         }
         else if (v == login) {
+            if (!AppUtilities.isInternetAvailable(this)) {
+                Snackbar.make(findViewById(R.id.login_et_email), "Check your internet connection.", Snackbar.LENGTH_LONG).show();
+            }
             toggleLoginLoader();
             String email = this.email.getText().toString().toLowerCase();
             String password = this.password.getText().toString();
@@ -113,8 +117,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Toast.makeText(this, "Email and Password must be entered", Toast.LENGTH_SHORT).show();
             return;
         }
-        Toast.makeText(this, "Login Failure", Toast.LENGTH_SHORT).show();
-        resetAllViews();
     }
 
     @Override

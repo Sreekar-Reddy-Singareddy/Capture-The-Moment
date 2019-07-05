@@ -1376,6 +1376,7 @@ id imageView14
 id imageView15
 id imageView16
 id imageView17
+id imageView18
 id imageView19
 id imageView2
 id imageView20
@@ -1414,6 +1415,7 @@ id login_et_password
 id login_iv_logo
 id login_ll_mobile
 id login_ll_password_help
+id login_parent
 id login_pb_loading
 id main_nav_menu_home_item
 id main_nav_menu_profile_item

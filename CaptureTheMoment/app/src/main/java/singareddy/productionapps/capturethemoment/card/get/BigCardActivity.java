@@ -47,6 +47,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     private Fragment frontFragment, backFragment;
     private CardView uiCard;
     private String faceShown = BACK_FACE;
+    boolean canEditOrRemove;
 
     /**
      * The components of Card
@@ -96,6 +97,9 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
                     public void onChanged(@Nullable Card card) {
                         if (card == null) return;
                         cardToBeDisplayed = card;
+                        canEditOrRemove = getCardsViewModel.canEditOrRemoveCard(cardToBeDisplayed.getBookId());
+                        Log.i(TAG, "initialiseUI: CAN EDIT: "+canEditOrRemove);
+                        BigCardActivity.this.invalidateOptionsMenu();
                         getPathsForCard(card);
                         showFrontFrag(true);
                     }
@@ -186,6 +190,9 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.add_card_context_menu, menu);
+        if (!canEditOrRemove) {
+            menu.clear();
+        }
         return super.onCreateOptionsMenu(menu);
     }
 

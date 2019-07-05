@@ -55,12 +55,15 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i(TAG, "onCreate: ***");
         super.onCreate(savedInstanceState);
+        smallCardImagePaths = new ArrayList<>();
         initialiseUI();
         initialiseViewModel();
     }
 
     private void initialiseUI() {
+        Log.i(TAG, "initialiseUI: ***");
         bookName = getIntent().getExtras().getString(BOOK_NAME);
         bookId = getIntent().getExtras().getString( BOOK_ID);
         adapter = new SmallCardsAdapter(this, smallCardImagePaths, bookId, this);
@@ -80,27 +83,10 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     }
 
     private void initialiseViewModel() {
+        Log.i(TAG, "initialiseViewModel: ***");
         GetCardsModelFactory getCardsModelFactory = GetCardsModelFactory.createFactory(this);
         getCardsViewModel = ViewModelProviders.of(this, getCardsModelFactory).get(GetCardsViewModel.class);
         getCardsViewModel.setSmallCardDownloadListener(this);
-        getCardsViewModel.getAllCardsFor(bookId).observe(this,
-                new Observer<List<Card>>() {
-                    @Override
-                    public void onChanged(@Nullable List<Card> cards) {
-                        Log.i(TAG, "onChanged: Cards: "+cards.size());
-                        if (cards == null) return;
-                        smallCards = cards;
-                        smallCardImagePaths = new ArrayList<>();
-                        allCardIds = new ArrayList<>();
-                        for (Card card: smallCards) {
-                            allCardIds.add(card.getCardId());
-                            String imagePath = getCardsViewModel.getOneImagePathForCard(card.getCardId());
-                            smallCardImagePaths.add(imagePath);
-                        }
-                        adapter.setData(smallCardImagePaths);
-                        adapter.notifyDataSetChanged();
-                    }
-                });
         ownerCanEdit = getCardsViewModel.getCurrentUserEditAccessForThisBook(bookId);
         Log.i(TAG, "initialiseViewModel: CAN EDIT: "+ownerCanEdit);
         adapter.setOwnerCanEdit(ownerCanEdit);
@@ -113,6 +99,7 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     }
 
     private void refreshCards() {
+        Log.i(TAG, "refreshCards: ***");
         getCardsViewModel.setDataSyncListener(this);
         getCardsViewModel.reloadCardsOfBook(bookId);
     }
@@ -149,6 +136,7 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     }
 
     public void navigateToEditBookActivity(){
+        Log.i(TAG, "navigateToEditBookActivity: ***");
         // Extract the selected bookId from the intent
         String bookId = getIntent().getExtras().getString(BOOK_ID);
         // Using this bookId, call update activity
@@ -168,18 +156,47 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
 
     @Override
     public void onBookDeleted() {
+        Log.i(TAG, "onBookDeleted: ***");
         Toast.makeText(this, "Book Deleted!", Toast.LENGTH_SHORT).show();
         finish();
     }
 
     @Override
     public void onSmallCardDownloaded() {
+        Log.i(TAG, "onSmallCardDownloaded: ***");
         adapter.notifyDataSetChanged();
     }
 
     @Override
     public void shouldStopUILoader() {
-        Log.i(TAG, "shouldStopUILoader: *");
+        Log.i(TAG, "shouldStopUILoader: ***");
         refreshLayout.setRefreshing(false);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (smallCardImagePaths != null) 
+            Log.i(TAG, "onResume: *** Image paths: "+smallCardImagePaths.size());
+        else
+            Log.i(TAG, "onResume: ***");
+        getCardsViewModel.getAllCardsFor(bookId).observe(this,
+                new Observer<List<Card>>() {
+                    @Override
+                    public void onChanged(@Nullable List<Card> cards) {
+                        Log.i(TAG, "onChanged: Cards: "+cards.size());
+                        if (cards == null || cards.size() == 0) return;
+                        smallCards = cards;
+                        smallCardImagePaths.clear();
+                        allCardIds = new ArrayList<>();
+                        for (Card card: smallCards) {
+                            allCardIds.add(card.getCardId());
+                            String imagePath = getCardsViewModel.getOneImagePathForCard(card.getCardId());
+                            smallCardImagePaths.add(imagePath);
+                        }
+                        adapter.setData(smallCardImagePaths);
+                        adapter.notifyDataSetChanged();
+                    }
+                });
     }
 }

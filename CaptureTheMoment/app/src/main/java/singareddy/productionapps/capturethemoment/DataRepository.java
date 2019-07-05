@@ -573,6 +573,24 @@ public class DataRepository implements AddBookListener, GetBookListener,
         mAuthService.downloadCardsOfBook(bookId);
     }
 
+    public boolean canEditOrRemoveCard(String bookId) {
+        boolean canEditOrRemove;
+        try {
+            return mExecutor.submit(()->{
+                String ownerOfBook = mLocalDB.getBookDao().getOwnerOf(bookId);
+                Log.i(TAG, "canEditOrRemoveCard: ONWER OF BOOK: "+ownerOfBook);
+                Log.i(TAG, "canEditOrRemoveCard: CURRENT USER : "+CURRENT_USER_ID);
+                return ownerOfBook.equals(CURRENT_USER_ID) ||
+                        mLocalDB.getBookDao().canEditOrRemoveCard(bookId, CURRENT_USER_ID);
+            }).get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     // =================== Setters
 
     public void setAddBookListener(AddBookListener mAddBookListener) {

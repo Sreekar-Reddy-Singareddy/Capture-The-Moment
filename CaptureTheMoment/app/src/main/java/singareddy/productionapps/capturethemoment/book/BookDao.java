@@ -42,4 +42,8 @@ public interface BookDao {
 
     @Query("DELETE FROM Book WHERE bookId = :bookId")
     public int deleteBook (String bookId);
+
+    @Query("SELECT canEdit FROM SHAREINFO WHERE bookId = :bookId AND uid = :currentUid")
+    public boolean canEditOrRemoveCard(String bookId, String currentUid);
+
 }

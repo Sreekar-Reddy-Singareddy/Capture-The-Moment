@@ -6,11 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <singareddy.productionapps.capturethemoment.custom_views.NewFramedImageView
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/page_item_image_iv_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="false"
+        app:riv_corner_radius="10dp"
         app:frameColor="?themeColor"
         app:linesColor="?themeColor"
         app:layout_constraintEnd_toEndOf="parent"

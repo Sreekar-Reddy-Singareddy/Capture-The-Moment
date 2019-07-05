@@ -88,10 +88,12 @@ public class EditBookActivity extends AppCompatActivity
         updateBookViewModel.getSecondaryOwners(bookId).observe(this, new Observer<List<ShareInfo>>() {
             @Override
             public void onChanged(@Nullable List<ShareInfo> shareInfos) {
+                Log.i(TAG, "onChanged: shared infos...");
                 List<SecondaryOwner> currentSecOwners = updateBookViewModel.getUsernamesForUids(EditBookActivity.this, shareInfos);
                 activeOwners.clear();
                 activeOwners.addAll(currentSecOwners);
                 adapter.notifyDataSetChanged();
+                Log.i(TAG, "onChanged: OWNER: "+activeOwners.get(0).getUsername());
             }
         });
         getSupportActionBar().setTitle("Edit "+mBook.getName());

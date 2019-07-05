@@ -451,4 +451,37 @@ public class BookDao_Impl implements BookDao {
       _statement.release();
     }
   }
+
+  @Override
+  public boolean canEditOrRemoveCard(String bookId, String currentUid) {
+    final String _sql = "SELECT canEdit FROM SHAREINFO WHERE bookId = ? AND uid = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
+    int _argIndex = 1;
+    if (bookId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, bookId);
+    }
+    _argIndex = 2;
+    if (currentUid == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, currentUid);
+    }
+    final Cursor _cursor = __db.query(_statement);
+    try {
+      final boolean _result;
+      if(_cursor.moveToFirst()) {
+        final int _tmp;
+        _tmp = _cursor.getInt(0);
+        _result = _tmp != 0;
+      } else {
+        _result = false;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
 }

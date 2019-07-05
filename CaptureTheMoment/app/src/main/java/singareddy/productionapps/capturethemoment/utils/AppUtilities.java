@@ -1,5 +1,10 @@
 package singareddy.productionapps.capturethemoment.utils;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.util.Log;
+
 import com.google.firebase.auth.FirebaseUser;
 
 import singareddy.productionapps.capturethemoment.R;
@@ -106,5 +111,11 @@ public class AppUtilities {
         public static final String SCREEN_TITLE_ADD_BOOK = "New Book";
         public static final String SCREEN_TITLE_ADD_CARD = "Add Memory";
         public static final String SCREEN_TITLE_EDIT_CARD = "Edit Memory";
+    }
+
+    public static boolean isInternetAvailable (Context context) {
+        ConnectivityManager connectivityManager = context.getSystemService(ConnectivityManager.class);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        return networkInfo != null && networkInfo.isConnected();
     }
 }

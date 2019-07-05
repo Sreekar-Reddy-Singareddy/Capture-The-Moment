@@ -54,6 +54,10 @@ public class GetCardsViewModel extends ViewModel implements SmallCardDownloadLis
         return imageUris;
     }
 
+    public boolean canEditOrRemoveCard(String bookId) {
+        return dataRepo.canEditOrRemoveCard(bookId);
+    }
+
     public Boolean getCurrentUserEditAccessForThisBook(String bookId) {
         return dataRepo.getCurrentUserEditAccessForThisBook(bookId, AppUtilities.User.CURRENT_USER_ID);
     }
