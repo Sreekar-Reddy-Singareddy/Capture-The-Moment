@@ -1103,6 +1103,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable back
 drawable background_bigcard_back
+drawable background_book
 drawable background_button
 drawable background_edittext
 drawable background_multiline_edittext

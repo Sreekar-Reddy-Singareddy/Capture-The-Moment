@@ -5,6 +5,8 @@ import android.arch.lifecycle.ViewModel;
 import android.net.Uri;
 import android.util.Log;
 
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.DataRepository;
@@ -37,6 +39,10 @@ public class GetBooksViewModel extends ViewModel implements GetBookListener, Dat
 
     public LiveData<String> getCoverPhotoForTheBook(String bookId) {
         return mDataRepo.getCoverPhotoForTheBook(bookId);
+    }
+
+    public void getOwnerNameForBook(String owner) {
+
     }
 
     public void setupBooks() {

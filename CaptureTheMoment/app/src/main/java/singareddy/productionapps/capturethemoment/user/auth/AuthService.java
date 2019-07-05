@@ -287,7 +287,7 @@ public class AuthService {
         DatabaseReference newUserNode = mFirebaseDB.getReference()
                 .child(ALL_USERS_NODE)
                 .child(FirebaseAuth.getInstance().getUid())
-                .child("profile");
+                .child(AppUtilities.FBUser.PROFILE);
 
         OnSuccessListener successListener = new OnSuccessListener() {
             @Override
@@ -306,6 +306,24 @@ public class AuthService {
         newUserNode.setValue(user)
                 .addOnSuccessListener(successListener)
                 .addOnFailureListener(failureListener);
+
+        DatabaseReference userNameNode = mFirebaseDB.getReference()
+                .child(ALL_USERNAMES_NODE)
+                .child(CURRENT_USER_ID);
+
+        userNameNode.setValue(user.getName())
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.i(TAG, "onSuccess: Username Node success");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.i(TAG, "onFailure: Username node failed: "+e.getLocalizedMessage());
+                    }
+                });
     }
 
     private void downloadUserProfilePicture() {

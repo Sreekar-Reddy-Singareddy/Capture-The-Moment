@@ -20,4 +20,6 @@ public interface DataSyncListener {
 
     default public void shouldStopUILoader(){}
 
+    default public void onUsernameFetched() {}
+
 }

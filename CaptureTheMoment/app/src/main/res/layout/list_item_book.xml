@@ -10,7 +10,6 @@
         android:id="@+id/book_item_cv_container"
         android:layout_width="0dp"
         android:layout_height="75dp"
-        app:cardBackgroundColor="?attr/colorPrimaryDark"
         app:cardCornerRadius="15dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +19,8 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/background_book">
 
             <ImageView
                 android:id="@+id/book_item_iv_share"

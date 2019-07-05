@@ -14,6 +14,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -135,7 +140,24 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
             // This is a shared book
             holder.shareIcon.setVisibility(View.VISIBLE);
             holder.ownerName.setVisibility(View.VISIBLE);
-//            getBooksViewModel.getOwnerNameForBook(book.getOwner());
+            getBooksViewModel.getOwnerNameForBook(book.getOwner());
+            FirebaseDatabase.getInstance().getReference()
+                    .child("usernames")
+                    .child(book.getOwner())
+                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if (dataSnapshot != null) {
+                                String ownerName = dataSnapshot.getValue(String.class);
+                                holder.ownerName.setText(ownerName);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+                    });
         }
 
         // If the view model is not null, then use

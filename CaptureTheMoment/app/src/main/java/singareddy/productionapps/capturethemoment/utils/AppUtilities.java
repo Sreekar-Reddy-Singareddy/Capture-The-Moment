@@ -51,6 +51,8 @@ public class AppUtilities {
         public static final String ALL_CARDS_NODE = "cards";
         public static final String ALL_REGISTERED_USERS_NODE = "regUsers";
         public static final String ALL_SHARE_REQUESTS_NODE = "";
+        public static final String ALL_USERNAMES_NODE = "usernames";
+
 
         public static final String EMAIL_PROVIDER = "password";
         public static final String PHONE_PROVIDER = "phone";
