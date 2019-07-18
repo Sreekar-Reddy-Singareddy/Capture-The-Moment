@@ -334,6 +334,11 @@ public class DataRepository implements AddBookListener, GetBookListener,
         mAuthService.setupBooksSharedWithUser();
     }
 
+    public String getOwnerNameForBook(String bookId) {
+        SharedPreferences sharedBookOwnerCache = mContext.getSharedPreferences(SHARED_BOOK_OWNERS_CACHE, Context.MODE_PRIVATE);
+        return sharedBookOwnerCache.getString(bookId, "");
+    }
+
     // =================================================================== Authentication Module
     public void registerEmailUser(String email, String password) {
         if (mAuthService == null) {
@@ -366,6 +371,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
     }
 
     public void eraseLocalData() {
+        eraseSharedBookOwners();
         eraseUserProfile();
         eraseBooks();
         eraseCards();
@@ -380,6 +386,14 @@ public class DataRepository implements AddBookListener, GetBookListener,
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
+    }
+
+    private boolean eraseSharedBookOwners() {
+        SharedPreferences userProfileCache =
+                mContext.getSharedPreferences(SHARED_BOOK_OWNERS_CACHE, Context.MODE_PRIVATE);
+        boolean committed = userProfileCache.edit().clear().commit();
+        Log.i(TAG, "eraseSharedBookOwners: Owners Data Erased: "+committed);
+        return committed;
     }
 
     private void eraseCards() {
@@ -810,6 +824,12 @@ public class DataRepository implements AddBookListener, GetBookListener,
     }
 
     @Override
+    public void hasToSaveSharedBookOwnerNameInCache(String bookId, String ownerName) {
+        SharedPreferences sharedBookOwnersFile = mContext.getSharedPreferences(SHARED_BOOK_OWNERS_CACHE, Context.MODE_PRIVATE);
+        sharedBookOwnersFile.edit().putString(bookId, ownerName).apply();
+    }
+
+    @Override
     public void hasToRemoveSecOwnerFromRoomDB(String bookId, String uid) {
         try {
             mExecutor.submit(()->mLocalDB.getSharedInfoDao().deleteInfoFor(bookId, uid));
@@ -1003,6 +1023,9 @@ public class DataRepository implements AddBookListener, GetBookListener,
                 info.setUid(CURRENT_USER_ID);
                 info.setCanEdit(sharedBookAccess);
                 mLocalDB.getSharedInfoDao().insertShareInfo(info);
+
+                // If a book is a shared book, it must have some owner name
+                // Get that owner name and insert into local cache
             }
             return null;
         }

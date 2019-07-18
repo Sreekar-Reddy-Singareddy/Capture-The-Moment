@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity {
 
     View container;
     Toolbar toolbar;
-    FloatingActionButton addBookFab;
+    public FloatingActionButton addBookFab;
     TabLayout tabLayout;
     int selectedTab;
     AuthViewModel authViewModel;

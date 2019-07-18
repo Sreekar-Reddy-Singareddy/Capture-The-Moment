@@ -1,5 +1,6 @@
 package singareddy.productionapps.capturethemoment.user.auth;
 
+import android.graphics.Paint;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -478,14 +479,42 @@ public class AuthService {
                                 // This is the signal to stop the loader in UI
                                 dataSyncListener.shouldStopUILoader();
                             }
+                            if (sharedBookAccess != null) {
+                                // If the sharedBookAccess is not null, it is a secondary book
+                                getPrimaryOwnerName(fetchedBook);
+                            }
+
                             dataSyncListener.onBookDownloadedFromFirebase(fetchedBook, sharedBookAccess);
-                            downloadCardsOfBook(bookId);
+                            downloadCardsOfBook(fetchedBook.getOwner());
                         }
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
                         Log.i(TAG, "onCancelled: "+databaseError.getMessage());
+                    }
+                });
+    }
+
+    private void getPrimaryOwnerName(Book book) {
+        FirebaseDatabase.getInstance().getReference()
+                .child(ALL_USERNAMES_NODE)
+                .child(book.getOwner())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot != null) {
+                            String ownerName = dataSnapshot.getValue(String.class);
+                            // Write this owner name into local files
+                            Log.i(TAG, "onDataChange: 234 Book ID: "+book.getBookId());
+                            Log.i(TAG, "onDataChange: 234 Owner name: "+ownerName);
+                            dataSyncListener.hasToSaveSharedBookOwnerNameInCache(book.getBookId(), ownerName);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
                     }
                 });
     }

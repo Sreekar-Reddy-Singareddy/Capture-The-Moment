@@ -41,8 +41,8 @@ public class GetBooksViewModel extends ViewModel implements GetBookListener, Dat
         return mDataRepo.getCoverPhotoForTheBook(bookId);
     }
 
-    public void getOwnerNameForBook(String owner) {
-
+    public String getOwnerNameForBook(String bookId) {
+        return mDataRepo.getOwnerNameForBook(bookId);
     }
 
     public void setupBooks() {

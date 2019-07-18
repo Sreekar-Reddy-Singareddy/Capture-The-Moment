@@ -139,25 +139,10 @@ public class GetBooksAdapter extends RecyclerView.Adapter<GetBooksAdapter.AllBoo
         else {
             // This is a shared book
             holder.shareIcon.setVisibility(View.VISIBLE);
-            holder.ownerName.setVisibility(View.VISIBLE);
-            getBooksViewModel.getOwnerNameForBook(book.getOwner());
-            FirebaseDatabase.getInstance().getReference()
-                    .child("usernames")
-                    .child(book.getOwner())
-                    .addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if (dataSnapshot != null) {
-                                String ownerName = dataSnapshot.getValue(String.class);
-                                holder.ownerName.setText(ownerName);
-                            }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
+            String ownerName = getBooksViewModel.getOwnerNameForBook(book.getBookId());
+            if (ownerName.isEmpty()) holder.ownerName.setVisibility(View.INVISIBLE);
+            else holder.ownerName.setVisibility(View.VISIBLE);
+            holder.ownerName.setText(ownerName);
         }
 
         // If the view model is not null, then use

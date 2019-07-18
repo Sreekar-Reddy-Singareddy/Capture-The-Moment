@@ -16,6 +16,7 @@ public interface DataSyncListener {
     default public void hasToCleanUpUnwantedCardData(Card card, List<String> removedImagePaths) {}
 
     default public void onBookDownloadedFromFirebase(Book downloaedBook, Boolean sharedBookAccess){}
+    default public void hasToSaveSharedBookOwnerNameInCache(String bookId, String ownerName){}
     default public void hasToRemoveSecOwnerFromRoomDB(String bookId, String uid){}
 
     default public void shouldStopUILoader(){}
