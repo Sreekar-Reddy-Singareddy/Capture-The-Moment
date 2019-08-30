@@ -30,7 +30,6 @@ public class DeleteBookService {
         DatabaseReference ownerNode = database.getReference()
                 .child(ALL_USERS_NODE)
                 .child(CURRENT_USER_ID)
-                .child(KEY_USER_PROFILE)
                 .child(KEY_USER_OWNED_BOOKS);
         ownerNode.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

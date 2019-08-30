@@ -388,7 +388,7 @@ public class AuthService {
     public void setupBooksOwnedByUser() {
         DatabaseReference ownedBooks = mFirebaseDB.getReference()
                 .child(ALL_USERS_NODE).child(CURRENT_USER_ID)
-                .child("profile/ownedBooks");
+                .child(KEY_USER_OWNED_BOOKS);
         ownedBooks.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -483,7 +483,6 @@ public class AuthService {
                                 // If the sharedBookAccess is not null, it is a secondary book
                                 getPrimaryOwnerName(fetchedBook);
                             }
-
                             dataSyncListener.onBookDownloadedFromFirebase(fetchedBook, sharedBookAccess);
                             downloadCardsOfBook(fetchedBook.getOwner());
                         }

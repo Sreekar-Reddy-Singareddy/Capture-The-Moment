@@ -49,6 +49,9 @@ public class UpdateBookViewModel extends ViewModel implements UpdateBookListener
             SecondaryOwner owner = new SecondaryOwner();
             owner.setValidated(1);
             owner.setCanEdit(info.getCanEdit());
+            if (!uidsCache.contains(info.getUid())) {
+                mRepository.getUsernameOfUid(info.getUid());
+            }
             owner.setUsername(uidsCache.getString(info.getUid(), "Who??"));
             secondaryOwners.add(owner);
         }

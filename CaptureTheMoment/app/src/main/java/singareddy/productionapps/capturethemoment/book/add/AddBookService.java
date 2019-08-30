@@ -127,9 +127,6 @@ public class AddBookService {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     Log.i(TAG, "onDataChange: SNAPSHOT: "+dataSnapshot.getValue());
-                    // Exists or not, this user has been checked for.
-                    // So increase the count.
-                    mOwnersValidated++; ownerValidated.setValue(mOwnersValidated);
                     // Snapshot NOT NULL means username exists
                     if (dataSnapshot.getValue() != null) {
                         Map<String, String> userMap = (HashMap<String, String>) dataSnapshot.getValue();
@@ -144,6 +141,9 @@ public class AddBookService {
                         // User is not valid
                         secOwner.setValidated(AppUtilities.Book.SEC_OWNER_INVALID);
                     }
+                    // Exists or not, this user has been checked for.
+                    // So increase the count.
+                    mOwnersValidated++; ownerValidated.setValue(mOwnersValidated);
                     mAddBookListener.onThisSecOwnerValidated();
                 }
 
@@ -223,6 +223,8 @@ public class AddBookService {
      */
     private void saveNewBookInFirebase() {
         Log.i(TAG, "saveNewBookInFirebase: Owner Name: "+ User.CURRENT_USER.getDisplayName());
+        Log.i(TAG, "saveNewBookInFirebase: BOOKS: "+mIsBookNameValid+" OWNERS: "+mAreSecOwnersValid);
+
         // This works only if both book name and sec owners are valid
         if (!mIsBookNameValid || !mAreSecOwnersValid) return;
         // Since we are done using observer, it has to be removed
@@ -262,7 +264,6 @@ public class AddBookService {
         DatabaseReference ownerOwnedBooksRef = mfirebaseDB.getReference()
                 .child(AppUtilities.Firebase.ALL_USERS_NODE) // users
                 .child(AppUtilities.User.CURRENT_USER.getUid()) // owner UID
-                .child(Firebase.KEY_USER_PROFILE) // profile
                 .child(Firebase.KEY_USER_OWNED_BOOKS); // ownedBooks
         ownerOwnedBooksRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -300,6 +301,12 @@ public class AddBookService {
      */
     private void updateSecOwnersInFirebase(Book newBook) {
         HashMap<String, Boolean> secOwnersMap = newBook.getSecOwners();
+        if (secOwnersMap.size() == 0) {
+            // Now, the book has been totally saved in Firebase
+            mAddBookListener.onNewBookCreated();
+            // Save this same book in the cache (Room DB) as well
+            mAddBookListener.hasToSaveBookInCache(newBook);
+        }
         for (Map.Entry<String, Boolean> entry : secOwnersMap.entrySet()) {
             mfirebaseDB.getReference()
                     .child(AppUtilities.Firebase.ALL_USERS_NODE) // users

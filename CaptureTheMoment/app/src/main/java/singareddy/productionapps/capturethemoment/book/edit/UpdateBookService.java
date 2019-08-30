@@ -18,7 +18,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import singareddy.productionapps.capturethemoment.DataRepository;
 import singareddy.productionapps.capturethemoment.DataSyncListener;
+import singareddy.productionapps.capturethemoment.book.BookListener;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Firebase.*;
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.Book.*;
@@ -42,6 +44,7 @@ public class UpdateBookService {
     private Boolean sameBookName;
     private UpdateBookListener updateBookListener;
     private DataSyncListener dataSyncListener;
+    private BookListener bookListener;
 
     public UpdateBookService () {
         mfirebaseDB = FirebaseDatabase.getInstance();
@@ -276,11 +279,46 @@ public class UpdateBookService {
         }
     }
 
+    /**
+     * This method takes UID of a user and
+     * gets the corresponding username to store in the
+     * device cache.
+     * @param uid
+     */
+    public void getUsernameOfUid(String uid) {
+        mfirebaseDB.getReference()
+                .child(ALL_REGISTERED_USERS_NODE)
+                .child(uid)
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if (dataSnapshot != null) {
+                            // This is the corresponding username of the given UID
+                            String usernameOfUid = dataSnapshot.getValue(String.class);
+                            // Once recieved, tell the data sync listener to store
+                            // it in the device cache
+                            HashMap<String, String> userMap = new HashMap<>();
+                            userMap.put(uid, usernameOfUid);
+                            bookListener.hasToSaveUidInCache(userMap);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+    }
+
     public void setUpdateBookListener(UpdateBookListener updateBookListener) {
         this.updateBookListener = updateBookListener;
     }
 
     public void setDataSyncListener(DataSyncListener dataSyncListener) {
         this.dataSyncListener = dataSyncListener;
+    }
+
+    public void setBookListener(BookListener bookListener) {
+        this.bookListener = bookListener;
     }
 }

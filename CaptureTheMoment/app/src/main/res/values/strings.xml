@@ -95,4 +95,6 @@
     <string name="data_loading_from_network">Loading...</string>
     <string name="theme_selection_sample_text_label">Sample Color</string>
 
+    <string name="google_places_api_key">AIzaSyDuFengFnx9qwNfb8uas01UUQFtwuFb_zw</string>
+
 </resources>

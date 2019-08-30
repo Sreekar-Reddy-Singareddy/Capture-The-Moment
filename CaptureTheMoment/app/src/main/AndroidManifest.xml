@@ -27,7 +27,7 @@
         <activity android:name=".user.auth.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -35,6 +35,11 @@
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity">
         </activity>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_places_api_key">
+
+        </meta-data>
 
         <provider
             android:name="android.support.v4.content.FileProvider"

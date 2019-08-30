@@ -3,6 +3,7 @@ package singareddy.productionapps.capturethemoment.book.edit;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -49,17 +50,42 @@ public class EditBookActivity extends AppCompatActivity
     Button createBookButton;
     List<SecondaryOwner> activeOwners;
     List<SecondaryOwner> removedOwners;
+    List<ShareInfo> mostRecentlyUpdatedListOfSharedUsers;
     SecOwnersAdapter adapter;
     Book mBook;
+    SharedPreferences uidsCache;
+    SharedPreferences.OnSharedPreferenceChangeListener uidsCacheListener;
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        uidsCache.registerOnSharedPreferenceChangeListener(uidsCacheListener);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        uidsCache.unregisterOnSharedPreferenceChangeListener(uidsCacheListener);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         removedOwners = new ArrayList<>();
 
+        initialiseCache();
         initialiseUI();
         initViewModel();
+    }
+
+    private void initialiseCache() {
+        uidsCache = getSharedPreferences(AppUtilities.FileNames.UIDS_CACHE, MODE_PRIVATE);
+        uidsCacheListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+            @Override
+            public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+                updateUIWithRecentData();
+            }
+        };
     }
 
     private void initialiseUI() {
@@ -88,16 +114,20 @@ public class EditBookActivity extends AppCompatActivity
         updateBookViewModel.getSecondaryOwners(bookId).observe(this, new Observer<List<ShareInfo>>() {
             @Override
             public void onChanged(@Nullable List<ShareInfo> shareInfos) {
-                Log.i(TAG, "onChanged: shared infos...");
-                List<SecondaryOwner> currentSecOwners = updateBookViewModel.getUsernamesForUids(EditBookActivity.this, shareInfos);
-                activeOwners.clear();
-                activeOwners.addAll(currentSecOwners);
-                adapter.notifyDataSetChanged();
-                Log.i(TAG, "onChanged: OWNER: "+activeOwners.get(0).getUsername());
+                mostRecentlyUpdatedListOfSharedUsers = shareInfos;
+                if (mostRecentlyUpdatedListOfSharedUsers.size() == 0) return;
+                updateUIWithRecentData();
             }
         });
         getSupportActionBar().setTitle("Edit "+mBook.getName());
         bookName.setText(mBook.getName());
+    }
+
+    private void updateUIWithRecentData() {
+        List<SecondaryOwner> currentSecOwners = updateBookViewModel.getUsernamesForUids(EditBookActivity.this, mostRecentlyUpdatedListOfSharedUsers);
+        activeOwners.clear();
+        activeOwners.addAll(currentSecOwners);
+        adapter.notifyDataSetChanged();
     }
 
     public void addNewSecOwner(View view) {
@@ -118,7 +148,6 @@ public class EditBookActivity extends AppCompatActivity
         if (removedOwner.getValidated() != SEC_OWNER_VALID) return;
         removedOwners.add(removedOwner);
     }
-    // *************** Overriddent methods ***************
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -127,8 +156,6 @@ public class EditBookActivity extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
-
-    // *************** Interface methods ***************
 
     @Override
     public void onBookNameInvalid(String code) {

@@ -27,6 +27,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
@@ -37,6 +41,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 
 import singareddy.productionapps.capturethemoment.BuildConfig;
 import singareddy.productionapps.capturethemoment.HomeActivity;
@@ -58,6 +63,7 @@ import static singareddy.productionapps.capturethemoment.utils.AppUtilities.File
 import static singareddy.productionapps.capturethemoment.utils.AppUtilities.SharedPrefKeys.PROFILE_PIC_AVAILABLE;
 
 public class ProfileFragmentNew extends Fragment implements View.OnClickListener, ProfileListener {
+    private static final int PICK_PLACE_REQUEST = 3456;
     private static String TAG = "ProfileFragmentNew";
 
     static final int CAMERA_PERMISSION_REQUEST = 1;
@@ -93,10 +99,13 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        Log.i(TAG, "onCreateView: *** 1234");
         parent = (HomeActivity) getActivity(); 
         fragView = inflater.inflate(R.layout.profile_fragment_new, container, false);
+        Places.initialize(getContext(), getString(R.string.google_places_api_key));
         initialiseUI();
         initialiseViewModel();
+        intialiseProfile();
         return fragView;
     }
 
@@ -159,6 +168,7 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
     }
 
     private void intialiseProfile() {
+        Log.i(TAG, "intialiseProfile: ***");
         currentUser = new User();
         setProfilePic();
         String name = userProfileCache.getString(NAME, DEFAULT_STRING);
@@ -230,13 +240,13 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
                 currentUser.setEmailId(email);
                 authViewModel.updateUserProfile(currentUser);
                 break;
-            case LOCATION_INPUT:
-                String location = textInput.getText().toString().trim();
-                if (location.equals(currentUser.getLocation())) return;
-                this.location.setText(location);
-                currentUser.setLocation(location);
-                authViewModel.updateUserProfile(currentUser);
-                break;
+//            case LOCATION_INPUT:
+//                String location = textInput.getText().toString().trim();
+//                if (location.equals(currentUser.getLocation())) return;
+//                this.location.setText(location);
+//                currentUser.setLocation(location);
+//                authViewModel.updateUserProfile(currentUser);
+//                break;
         }
     }
 
@@ -283,7 +293,11 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
         }
         else if (v == editLocation) {
             fieldBeingEdited = LOCATION_INPUT;
-            askForTextInput(location.getText().toString());
+//            askForTextInput(location.getText().toString());
+            // UI to get the location from location picker
+            Intent pickPlaceIntent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.FULLSCREEN
+            , Arrays.asList(Place.Field.NAME)).build(getContext());
+            startActivityForResult(pickPlaceIntent, PICK_PLACE_REQUEST);
         }
     }
 
@@ -291,7 +305,6 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
     public void onResume() {
         super.onResume();
         userProfileCache.registerOnSharedPreferenceChangeListener(userProfileCacheListener);
-        intialiseProfile();
     }
 
     @Override
@@ -359,6 +372,12 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
             // Once image is set, save it in Firebase
             byte[] imageData = convertUriToBytes(croppedImageUri);
             saveProfilePic(imageData);
+        }
+        else if (requestCode == PICK_PLACE_REQUEST && resultCode == RESULT_OK) {
+            Place pickedPlace = Autocomplete.getPlaceFromIntent(data);
+            String name = pickedPlace.getName();
+            Log.i(TAG, "onActivityResult: Place: "+name);
+            this.location.setText(name);
         }
     }
 

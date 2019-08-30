@@ -339,6 +339,14 @@ public class DataRepository implements AddBookListener, GetBookListener,
         return sharedBookOwnerCache.getString(bookId, "");
     }
 
+    public void getUsernameOfUid(String uid) {
+        if (mUpdateBookService == null) {
+            mUpdateBookService = new UpdateBookService();
+        }
+        mUpdateBookService.setBookListener(this);
+        mUpdateBookService.getUsernameOfUid(uid);
+    }
+
     // =================================================================== Authentication Module
     public void registerEmailUser(String email, String password) {
         if (mAuthService == null) {
@@ -1028,6 +1036,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
                 // Get that owner name and insert into local cache
             }
             return null;
+
         }
     }
 

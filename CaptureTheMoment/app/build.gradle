@@ -37,6 +37,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.2.0'
     implementation 'com.google.firebase:firebase-storage:16.1.0'
 
+    // Google APIs
+    implementation 'com.google.android.libraries.places:places:1.+'
+
     // Android lifecycle
     implementation 'android.arch.lifecycle:extensions:1.1.1'
 

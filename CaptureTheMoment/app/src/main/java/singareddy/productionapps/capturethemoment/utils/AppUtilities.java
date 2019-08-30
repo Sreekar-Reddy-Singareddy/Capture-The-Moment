@@ -82,7 +82,7 @@ public class AppUtilities {
 
     public static class FileNames {
         public static final String UIDS_CACHE = "UIDS_CACHE";
-        public static final String SHARED_BOOK_OWNERS_CACHE = "UIDS_CACHE";
+        public static final String SHARED_BOOK_OWNERS_CACHE = "SHARED_BOOK_OWNERS_CACHE";
         public static final String USER_PROFILE_CACHE = "USER_PROFILE_CACHE";
         public static final String USER_PROFILE_PICTURE = "profile_pic.jpg";
         public static final String APP_SETTINGS = "SETTINGS";
