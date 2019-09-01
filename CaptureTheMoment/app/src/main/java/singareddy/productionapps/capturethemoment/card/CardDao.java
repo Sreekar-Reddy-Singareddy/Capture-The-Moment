@@ -26,6 +26,9 @@ public interface CardDao {
     @Query("SELECT * FROM Card WHERE bookId = :bookId")
     public LiveData<List<Card>> getAllCardsUnderBook(String bookId);
 
+    @Query("SELECT * FROM Card WHERE bookId = :bookId")
+    public List<Card> getAllCardsUnderBook1(String bookId);
+
     @Query("SELECT imagePath FROM ImagePath WHERE cardId = :cardId LIMIT 1")
     public String getOneImagePathForCard(String cardId);
 

@@ -31,6 +31,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -484,7 +485,7 @@ public class AuthService {
                                 getPrimaryOwnerName(fetchedBook);
                             }
                             dataSyncListener.onBookDownloadedFromFirebase(fetchedBook, sharedBookAccess);
-                            downloadCardsOfBook(fetchedBook.getOwner());
+                            downloadCardsOfBook(fetchedBook.getBookId());
                         }
                     }
 
@@ -519,10 +520,11 @@ public class AuthService {
     }
 
     public void downloadCardsOfBook (String bookId) {
+        Log.i(TAG, "downloadCardsOfBook: 141213: "+bookId);
         DatabaseReference cardsNode = mFirebaseDB.getReference()
                 .child(ALL_BOOKS_NODE)
                 .child(bookId)
-                .child("cards");
+                .child(ALL_CARDS_NODE);
         cardsNode.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -556,14 +558,14 @@ public class AuthService {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 Card card = dataSnapshot.getValue(Card.class);
-                dataSyncListener.onCardDownloadedFromFirebase(card, null);
+//                dataSyncListener.onCardDownloadedFromFirebase(card, null);
                 if (internalStorage == null) internalStorage=DataRepository.getInternalStorageRef();
                 for (String path: card.getImagePaths()) {
                     File image = new File(internalStorage, path);
                     Log.i(TAG, "onDataChange: PATH: "+image.getPath());
                     Log.i(TAG, "onDataChange: EXISTS: "+image.exists());
                     try {
-                        downloadImageFromFirebaseToPath(path);
+                        downloadImageFromFirebaseToPath(card, path);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -577,7 +579,7 @@ public class AuthService {
         });
     }
 
-    private void downloadImageFromFirebaseToPath(String imagePath) throws IOException {
+    private void downloadImageFromFirebaseToPath(Card card, String imagePath) throws IOException {
         StorageReference cardStorageRef = mFirebaseST.getReference()
                 .child(imagePath);
         Log.i(TAG, "downloadImageFromFirebaseToPath: "+cardStorageRef.getPath());
@@ -596,6 +598,7 @@ public class AuthService {
             // add card-image pair into the map.
             cardImagePairsMap.put(pathComps[1], true);
             if (cardImagePairsMap.size() == numberOfCardsInThisBook) dataSyncListener.shouldStopUILoader();
+            dataSyncListener.onCardDownloadedFromFirebase(card, null);
             return;
         }
 
@@ -607,6 +610,7 @@ public class AuthService {
                 .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                        dataSyncListener.onCardDownloadedFromFirebase(card, null);
                         Log.i(TAG, "onSuccess: Image Downloaded");
                         if (smallCardDownloadListener != null) smallCardDownloadListener.onSmallCardDownloaded();
                         // If an image exists in the given path,
@@ -615,6 +619,12 @@ public class AuthService {
                         if (cardImagePairsMap.size() == numberOfCardsInThisBook) dataSyncListener.shouldStopUILoader();
                         Log.i(TAG, "onSuccess: Cards in Book: "+numberOfCardsInThisBook);
                         Log.i(TAG, "onSuccess: Cards downloaded: "+cardImagePairsMap.size());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.i(TAG, "onFailure: **** 1234: "+e.getMessage());
                     }
                 });
     }

@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -36,14 +37,16 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     RecyclerView secOwnersList;
     List<SecondaryOwner> activeSecOwners;
     SecOwnersAdapter adapter;
+    ProgressBar loader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activeSecOwners = new ArrayList<>();
-        activeSecOwners.add(new SecondaryOwner("ushasree@gmail.com", false));
-        activeSecOwners.add(new SecondaryOwner("gopi@gmail.com", true));
-        activeSecOwners.add(new SecondaryOwner("sreekesh@gmail.com", false));
+        activeSecOwners.add(new SecondaryOwner("subbu@gmail.com", false));
+        activeSecOwners.add(new SecondaryOwner("9629781945", true));
+//        activeSecOwners.add(new SecondaryOwner("sreekesh@gmail.com", false));
+//        activeSecOwners.add(new SecondaryOwner("gopi@gmail.com", true));
         initialiseUI();
         initialiseViewModel();
     }
@@ -59,6 +62,8 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
         addNewSecOwner = findViewById(R.id.add_book_ib_add_sec_owner);
         secOwnersList = findViewById(R.id.add_book_rv_sec_owners);
         createButton = findViewById(R.id.add_book_bt_create);
+        loader = findViewById(R.id.add_book_pb_loader);
+        loader.setVisibility(View.INVISIBLE);
         adapter = new SecOwnersAdapter(this, activeSecOwners);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         secOwnersList.setAdapter(adapter);
@@ -82,6 +87,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     public void createBook (View view) {
         if (view == createButton) {
             createButton.setEnabled(false);
+            loader.setVisibility(View.VISIBLE); loader.setIndeterminate(true);
             addBookViewModel.createThisBook(bookName.getText().toString(), activeSecOwners);
         }
     }
@@ -98,6 +104,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     @Override
     public void onBookNameInvalid(String code) {
         createButton.setEnabled(true);
+        loader.setVisibility(View.INVISIBLE); loader.setIndeterminate(false);
         String toastMessage = "";
         switch (code) {
             case BOOK_NAME_EMPTY:
@@ -130,6 +137,7 @@ public class AddBookActivity extends AppCompatActivity implements AddBookListene
     @Override
     public void onNewBookCreated() {
         createButton.setEnabled(true);
+        loader.setVisibility(View.INVISIBLE); loader.setIndeterminate(false);
         Toast.makeText(this, "Book created successfully!", Toast.LENGTH_SHORT).show();
         finish();
     }

@@ -83,26 +83,26 @@ public final class R {
         public static final int action_image = 0x7f090015;
         public static final int action_text = 0x7f09001b;
         public static final int actions = 0x7f09001c;
-        public static final int async = 0x7f090043;
-        public static final int blocking = 0x7f090047;
-        public static final int chronometer = 0x7f09005d;
-        public static final int forever = 0x7f09008d;
-        public static final int icon = 0x7f0900ac;
-        public static final int icon_group = 0x7f0900ad;
-        public static final int info = 0x7f0900c8;
-        public static final int italic = 0x7f0900ca;
-        public static final int line1 = 0x7f0900d3;
-        public static final int line3 = 0x7f0900d4;
-        public static final int normal = 0x7f0900f4;
-        public static final int notification_background = 0x7f0900f5;
-        public static final int notification_main_column = 0x7f0900f6;
-        public static final int notification_main_column_container = 0x7f0900f7;
-        public static final int right_icon = 0x7f09013c;
-        public static final int right_side = 0x7f09013d;
-        public static final int text = 0x7f090180;
-        public static final int text2 = 0x7f090181;
-        public static final int time = 0x7f090196;
-        public static final int title = 0x7f090197;
+        public static final int async = 0x7f090044;
+        public static final int blocking = 0x7f090048;
+        public static final int chronometer = 0x7f09005e;
+        public static final int forever = 0x7f09008e;
+        public static final int icon = 0x7f0900ad;
+        public static final int icon_group = 0x7f0900ae;
+        public static final int info = 0x7f0900c9;
+        public static final int italic = 0x7f0900cb;
+        public static final int line1 = 0x7f0900d4;
+        public static final int line3 = 0x7f0900d5;
+        public static final int normal = 0x7f0900f5;
+        public static final int notification_background = 0x7f0900f6;
+        public static final int notification_main_column = 0x7f0900f7;
+        public static final int notification_main_column_container = 0x7f0900f8;
+        public static final int right_icon = 0x7f09013d;
+        public static final int right_side = 0x7f09013e;
+        public static final int text = 0x7f090181;
+        public static final int text2 = 0x7f090182;
+        public static final int time = 0x7f090197;
+        public static final int title = 0x7f090198;
     }
     public static final class integer {
         private integer() {}

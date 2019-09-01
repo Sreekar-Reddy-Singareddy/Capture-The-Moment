@@ -508,6 +508,7 @@ public class DataRepository implements AddBookListener, GetBookListener,
             Log.i(TAG, "getAllCardsFor: *");
             if (mAuthService == null) mAuthService = new AuthService();
             mAuthService.setSmallCardDownloadListener(this);
+            List<Card> cardsAll = mExecutor.submit(()->mLocalDB.getCardDao().getAllCardsUnderBook1(bookId)).get();
             return mExecutor.submit(() -> mLocalDB.getCardDao().getAllCardsUnderBook(bookId)).get();
         } catch (ExecutionException e) {
             e.printStackTrace();
@@ -1003,10 +1004,10 @@ public class DataRepository implements AddBookListener, GetBookListener,
             // Insert this book in Room DB
             Book book = (Book) objects[0];
             mLocalDB.getBookDao().insert(book);
-            for (String cardId : book.getCards()) {
-                long insertedId = mLocalDB.getCardDao().insertCard(new Card(cardId));
-                Log.i(TAG, "doInBackground: Card Inserted: "+insertedId);
-            }
+//            for (String cardId : book.getCards()) {
+//                long insertedId = mLocalDB.getCardDao().insertCard(new Card(cardId));
+//                Log.i(TAG, "doInBackground: Card Inserted: "+insertedId);
+//            }
 
             Log.i(TAG, "doInBackground: BOOK INSERTED: "+book.getName());
 

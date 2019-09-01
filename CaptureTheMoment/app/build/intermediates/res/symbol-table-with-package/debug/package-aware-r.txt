@@ -1653,6 +1653,7 @@ id add
 id add_book_bt_create
 id add_book_et_name
 id add_book_ib_add_sec_owner
+id add_book_pb_loader
 id add_book_rv_sec_owners
 id add_book_tv_owner_label
 id add_book_tv_sec_owner_label
