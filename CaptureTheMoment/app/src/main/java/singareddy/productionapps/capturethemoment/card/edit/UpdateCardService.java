@@ -1,10 +1,7 @@
 package singareddy.productionapps.capturethemoment.card.edit;
 
 import android.net.Uri;
-import android.support.annotation.NonNull;
-import android.util.Log;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -12,6 +9,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.util.Date;
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.models.Card;
@@ -73,11 +71,12 @@ public class UpdateCardService {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
+                        updateBooksModifiedTimeInFirebase(cardToEdit.getBookId());
                         uploadTheNewImages(cardToEdit, activePhotoUris);
                         deleteTheOldImages(cardToEdit, removedPhotoPaths);
                         dataSyncListener.onCardDownloadedFromFirebase(cardToEdit, activePhotoUris);
                         dataSyncListener.hasToCleanUpUnwantedCardData(cardToEdit, removedPhotoPaths);
-                        updateCardListener.onCardUpdated();
+                        updateCardListener.onCardUpdated(cardToEdit.getBookId());
                     }
                 });
     }
@@ -88,5 +87,13 @@ public class UpdateCardService {
 
     public void setUpdateCardListener(UpdateCardListener updateCardListener) {
         this.updateCardListener = updateCardListener;
+    }
+
+    public void updateBooksModifiedTimeInFirebase(String bookId) {
+        DatabaseReference cardNodeInBook = firebaseDB.getReference()
+                .child(AppUtilities.Firebase.ALL_BOOKS_NODE)
+                .child(bookId)
+                .child(AppUtilities.Firebase.KEY_BOOK_LAST_UPDATED);
+        cardNodeInBook.setValue(new Date().getTime());
     }
 }

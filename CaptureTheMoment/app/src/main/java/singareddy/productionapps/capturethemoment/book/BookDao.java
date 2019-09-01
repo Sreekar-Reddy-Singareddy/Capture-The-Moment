@@ -46,4 +46,6 @@ public interface BookDao {
     @Query("SELECT canEdit FROM SHAREINFO WHERE bookId = :bookId AND uid = :currentUid")
     public boolean canEditOrRemoveCard(String bookId, String currentUid);
 
+    @Query("UPDATE Book SET lastUpdatedDate = :time WHERE bookId = :bookId")
+    public void updateTimeInBook(String bookId, long time);
 }

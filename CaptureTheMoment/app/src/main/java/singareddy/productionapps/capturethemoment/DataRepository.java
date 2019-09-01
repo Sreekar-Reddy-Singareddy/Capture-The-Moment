@@ -12,13 +12,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -954,22 +953,28 @@ public class DataRepository implements AddBookListener, GetBookListener,
 
     // =================== Add Card Listener
 
+    private void updateBookModifiedTime(String bookId) {
+        mExecutor.submit(()->mLocalDB.getBookDao().updateTimeInBook(bookId, new Date().getTime()));
+    }
+
     @Override
-    public void onCardCreated() {
-        addCardListener.onCardCreated();
+    public void onCardCreated(String bookId) {
+        updateBookModifiedTime(bookId);
+        addCardListener.onCardCreated(null);
     }
 
     // =================== Update Card Listener
 
     @Override
-    public void onCardUpdated() {
-        updateCardListener.onCardUpdated();
+    public void onCardUpdated(String bookId) {
+        updateBookModifiedTime(bookId);
+        updateCardListener.onCardUpdated(null);
     }
 
     // =================== Delete Card Listener
 
     @Override
-    public void onCardDeleted(String cardId) {
+    public void onCardDeleted(String cardId, String bookId) {
         try{
             mExecutor.submit(()->{
                 mLocalDB.getCardDao().deleteAllFriendsOfCard(cardId);
@@ -980,7 +985,8 @@ public class DataRepository implements AddBookListener, GetBookListener,
         catch (Exception e) {
             Log.i(TAG, "onCardDeleted: Error: "+e.getLocalizedMessage());
         }
-        deleteCardListener.onCardDeleted(cardId);
+        updateBookModifiedTime(bookId);
+        deleteCardListener.onCardDeleted(cardId, null);
     }
 
     // =================== Delete Book Listener

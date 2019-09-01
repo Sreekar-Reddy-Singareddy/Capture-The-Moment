@@ -2,7 +2,6 @@ package singareddy.productionapps.capturethemoment.card.add;
 
 import android.arch.lifecycle.ViewModel;
 import android.net.Uri;
-import android.util.Log;
 
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -63,7 +62,7 @@ public class AddCardViewModel extends ViewModel implements AddCardListener{
     }
 
     @Override
-    public void onCardCreated() {
-        addCardListener.onCardCreated();
+    public void onCardCreated(String bookId) {
+        addCardListener.onCardCreated(null);
     }
 }

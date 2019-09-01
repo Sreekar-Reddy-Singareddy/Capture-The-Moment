@@ -88,14 +88,6 @@ public class GetBooksFragment extends Fragment implements GetBookListener, DataS
                 for (Book book: books) {
                     book.setCards(getBooksViewModel.getCardsUnderTheBook(book.getBookId()));
                     Log.i(TAG, "onChanged: Cards: "+book.getCards());
-                    getBooksViewModel.getCoverPhotoForTheBook(book.getBookId()).observe(GetBooksFragment.this,
-                            new Observer<String>() {
-                                @Override
-                                public void onChanged(@Nullable String s) {
-                                    Log.i(TAG, "onChanged: Path Acquired: "+s);
-                                    mAdapter.notifyDataSetChanged();
-                                }
-                            });
                 }
             }
         });
@@ -121,6 +113,7 @@ public class GetBooksFragment extends Fragment implements GetBookListener, DataS
     @Override
     public void onResume() {
         super.onResume();
+        initialiseViewModel();
         booksList.addOnScrollListener(bookScrollListener);
         sharedBookOwnersCache.registerOnSharedPreferenceChangeListener(sharedBookOwnersChangeListener);
     }

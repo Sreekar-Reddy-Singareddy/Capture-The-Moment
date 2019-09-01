@@ -10,7 +10,6 @@ import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -114,7 +113,7 @@ public class UpdateCardActivity extends AppCompatActivity implements UpdateCardL
     }
 
     @Override
-    public void onCardUpdated() {
+    public void onCardUpdated(String bookId) {
         Toast.makeText(this, "Card Updated!", Toast.LENGTH_SHORT).show();
         cardUpdateSuccessFlag.postValue(true);
         finish();

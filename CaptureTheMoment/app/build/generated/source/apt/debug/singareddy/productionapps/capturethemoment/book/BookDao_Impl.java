@@ -32,6 +32,8 @@ public class BookDao_Impl implements BookDao {
 
   private final SharedSQLiteStatement __preparedStmtOfDeleteBook;
 
+  private final SharedSQLiteStatement __preparedStmtOfUpdateTimeInBook;
+
   public BookDao_Impl(RoomDatabase __db) {
     this.__db = __db;
     this.__insertionAdapterOfBook = new EntityInsertionAdapter<Book>(__db) {
@@ -133,6 +135,13 @@ public class BookDao_Impl implements BookDao {
         return _query;
       }
     };
+    this.__preparedStmtOfUpdateTimeInBook = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "UPDATE Book SET lastUpdatedDate = ? WHERE bookId = ?";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -189,6 +198,27 @@ public class BookDao_Impl implements BookDao {
     } finally {
       __db.endTransaction();
       __preparedStmtOfDeleteBook.release(_stmt);
+    }
+  }
+
+  @Override
+  public void updateTimeInBook(String bookId, long time) {
+    final SupportSQLiteStatement _stmt = __preparedStmtOfUpdateTimeInBook.acquire();
+    __db.beginTransaction();
+    try {
+      int _argIndex = 1;
+      _stmt.bindLong(_argIndex, time);
+      _argIndex = 2;
+      if (bookId == null) {
+        _stmt.bindNull(_argIndex);
+      } else {
+        _stmt.bindString(_argIndex, bookId);
+      }
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfUpdateTimeInBook.release(_stmt);
     }
   }
 

@@ -1,10 +1,7 @@
 package singareddy.productionapps.capturethemoment.card.delete;
 
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -16,6 +13,7 @@ import com.google.firebase.storage.StorageReference;
 import java.util.ArrayList;
 import java.util.List;
 
+import singareddy.productionapps.capturethemoment.card.edit.UpdateCardService;
 import singareddy.productionapps.capturethemoment.models.Card;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 
@@ -68,7 +66,7 @@ public class DeleteCardService {
     }
 
     private void cardImagesDeleteSuccess(Void aVoid) {
-        deleteCardListener.onCardDeleted(card.getCardId());
+        deleteCardListener.onCardDeleted(card.getCardId(), card.getBookId());
     }
 
     private void cardDeleteSuccess(Void aVoid) {
@@ -76,6 +74,8 @@ public class DeleteCardService {
     }
 
     private void cardIdDeleteSuccess(Void aVoid) {
+        UpdateCardService updateCardService = new UpdateCardService();
+        updateCardService.updateBooksModifiedTimeInFirebase(card.getBookId());
         deleteCardImagesFromFirebaseStorage(card);
     }
 

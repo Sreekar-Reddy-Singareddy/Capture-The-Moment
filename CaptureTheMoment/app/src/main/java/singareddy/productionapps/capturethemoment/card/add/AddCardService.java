@@ -2,9 +2,7 @@ package singareddy.productionapps.capturethemoment.card.add;
 
 import android.net.Uri;
 import android.support.annotation.NonNull;
-import android.util.Log;
 
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -18,6 +16,8 @@ import com.google.firebase.storage.UploadTask;
 import java.util.ArrayList;
 import java.util.List;
 
+import singareddy.productionapps.capturethemoment.card.edit.UpdateCardListener;
+import singareddy.productionapps.capturethemoment.card.edit.UpdateCardService;
 import singareddy.productionapps.capturethemoment.utils.AppUtilities;
 import singareddy.productionapps.capturethemoment.models.Card;
 import singareddy.productionapps.capturethemoment.DataSyncListener;
@@ -70,7 +70,9 @@ public class AddCardService {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                addCardListener.onCardCreated();
+                                UpdateCardService updateCardService = new UpdateCardService();
+                                updateCardService.updateBooksModifiedTimeInFirebase(newCard.getBookId());
+                                addCardListener.onCardCreated(newCard.getBookId());
                                 // Add this book in the local storage
                                 dataSyncListener.onCardDownloadedFromFirebase(newCard, imageUris);
                             }

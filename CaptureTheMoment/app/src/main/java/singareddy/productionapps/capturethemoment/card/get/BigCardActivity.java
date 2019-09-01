@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
-import android.support.transition.TransitionManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +17,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -207,7 +205,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     }
 
     @Override
-    public void onCardDeleted(String cardId) {
+    public void onCardDeleted(String cardId, String bookId) {
         Toast.makeText(this, "Card Deleted!", Toast.LENGTH_SHORT).show();
         allCardIds.remove(cardId);
         finish();

@@ -1,5 +1,5 @@
 package singareddy.productionapps.capturethemoment.card.edit;
 
 public interface UpdateCardListener {
-    default public void onCardUpdated(){}
+    default public void onCardUpdated(String bookId){}
 }

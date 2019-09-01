@@ -25,7 +25,7 @@ public class DeleteCardsViewModel extends ViewModel implements DeleteCardListene
     }
 
     @Override
-    public void onCardDeleted(String cardId) {
-        deleteCardListener.onCardDeleted(cardId);
+    public void onCardDeleted(String cardId, String bookId) {
+        deleteCardListener.onCardDeleted(cardId, null);
     }
 }

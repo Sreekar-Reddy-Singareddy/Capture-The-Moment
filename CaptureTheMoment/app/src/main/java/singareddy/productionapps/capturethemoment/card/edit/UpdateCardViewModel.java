@@ -2,7 +2,6 @@ package singareddy.productionapps.capturethemoment.card.edit;
 
 import android.arch.lifecycle.ViewModel;
 import android.net.Uri;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,8 +66,8 @@ public class UpdateCardViewModel extends ViewModel implements UpdateCardListener
     }
 
     @Override
-    public void onCardUpdated() {
-        updateCardListener.onCardUpdated();
+    public void onCardUpdated(String bookId) {
+        updateCardListener.onCardUpdated(null);
     }
 
     public void setUpdateCardListener(UpdateCardListener updateCardListener) {
