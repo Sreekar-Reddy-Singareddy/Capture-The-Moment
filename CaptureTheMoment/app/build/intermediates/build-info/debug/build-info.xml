@@ -5,27 +5,27 @@
     build-mode="COLD"
     density="560dpi"
     format="10"
-    ir-eligibility="COMPATIBLE"
+    ir-eligibility="METHOD_DELETED"
     plugin-version="3.3.2"
-    timestamp="1567375939130"
+    timestamp="1567377100508"
     token="2244959088414002950"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="2183" />
+        duration="2001" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="13" />
+        duration="31" />
     <task
         name="verifier"
-        duration="1" />
+        duration="4" />
 
     <artifact
-        location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
         type="SPLIT" />
 
     <build
@@ -75,19 +75,19 @@
     <build
         build-mode="COLD"
         ir-eligibility="COMPATIBLE"
-        timestamp="1567375058481"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
         timestamp="1567375939130"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="METHOD_DELETED"
+        timestamp="1567377100508"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
     </build>
 

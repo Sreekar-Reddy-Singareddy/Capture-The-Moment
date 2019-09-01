@@ -185,9 +185,13 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
                     @Override
                     public void onChanged(@Nullable List<Card> cards) {
                         Log.i(TAG, "onChanged: Cards: "+cards.size());
-                        if (cards == null || cards.size() == 0) return;
-                        smallCards = cards;
                         smallCardImagePaths.clear();
+                        if (cards == null || cards.size() == 0) {
+                            adapter.setData(smallCardImagePaths);
+                            adapter.notifyDataSetChanged();
+                            return;
+                        }
+                        smallCards = cards;
                         allCardIds = new ArrayList<>();
                         for (Card card: smallCards) {
                             allCardIds.add(card.getCardId());
