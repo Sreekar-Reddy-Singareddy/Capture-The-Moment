@@ -216,6 +216,11 @@ public class UpdateCardPhotosFragment extends Fragment {
             cropImageAt(capturedUri);
         }
         if (requestCode == GALLERY_INTENT_REQUEST && resultCode == RESULT_OK) {
+            if (data.getClipData() == null) {
+                // Only one image is selected
+                cropImageAt(data.getData());
+                return;
+            }
             for (int i=0; i<data.getClipData().getItemCount(); i++) {
                 Uri imageUri = data.getClipData().getItemAt(i).getUri();
                 cropImageAt(imageUri);
@@ -226,6 +231,17 @@ public class UpdateCardPhotosFragment extends Fragment {
             Uri croppedImageUri = result.getUri();
             activePhotoUris.add(croppedImageUri);
             updateUIData();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == STORAGE_PERMISSION_REQUEST && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            photoFromGallery();
+        }
+        else if (requestCode == CAMERA_PERMISSION_REQUEST && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            photoFromCamera();
         }
     }
 }

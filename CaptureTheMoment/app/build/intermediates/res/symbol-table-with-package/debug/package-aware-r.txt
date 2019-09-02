@@ -15,8 +15,10 @@ anim design_bottom_sheet_slide_in
 anim design_bottom_sheet_slide_out
 anim design_snackbar_in
 anim design_snackbar_out
-animator card_flip_enter
-animator card_flip_exit
+animator card_flip_left_in
+animator card_flip_left_out
+animator card_flip_right_in
+animator card_flip_right_out
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1496,6 +1498,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable add
+drawable add_card
 drawable add_card_outline
 drawable add_photo_light
 drawable add_photo_white
@@ -1608,7 +1611,6 @@ id ImageView_image
 id META
 id SHIFT
 id SYM
-id acctivity_main_navigation_view
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1680,6 +1682,10 @@ id book_item_iv_share
 id book_item_tv_bookname
 id book_item_tv_date
 id book_item_tv_owner_name
+id book_menu_item_2_col
+id book_menu_item_3_col
+id book_menu_item_4_col
+id book_menu_item_5_col
 id book_menu_item_info
 id book_menu_item_trash
 id book_menu_item_update
@@ -1816,6 +1822,7 @@ id line3
 id listMode
 id list_item
 id list_item_add_card_iv_icon
+id list_item_small_card_cl_container
 id list_item_small_card_iv_image
 id list_item_theme_blue
 id list_item_theme_orange

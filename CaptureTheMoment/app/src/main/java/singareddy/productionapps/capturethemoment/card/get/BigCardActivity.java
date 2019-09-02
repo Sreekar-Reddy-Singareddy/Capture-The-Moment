@@ -44,7 +44,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     private ArrayList<CharSequence> allCardIds;
     private Fragment frontFragment, backFragment;
     private CardView uiCard;
-    private String faceShown = BACK_FACE;
+    private String faceShown = FRONT_FACE;
     boolean canEditOrRemove;
 
     /**
@@ -100,6 +100,7 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
                         BigCardActivity.this.invalidateOptionsMenu();
                         getPathsForCard(card);
                         showFrontFrag(true);
+                        faceShown = FRONT_FACE;
                     }
                 });
     }
@@ -124,22 +125,26 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     }
 
     private void showFrontFrag(boolean firstTime) {
-        getSupportFragmentManager().popBackStackImmediate();
         frontFragment = new BigCardFrontFragment();
         getSupportFragmentManager().beginTransaction()
-            .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+            .setCustomAnimations(
+                    R.animator.card_flip_right_in,
+                    R.animator.card_flip_right_out,
+                    R.animator.card_flip_left_in,
+                    R.animator.card_flip_left_out)
             .replace(R.id.activity_big_card_cv_container, frontFragment)
-            .addToBackStack("Front")
             .commit();
     }
 
     private void showBackFrag() {
-        getSupportFragmentManager().popBackStackImmediate();
         backFragment = new BigCardBackFragment();
         getSupportFragmentManager().beginTransaction()
-                .setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out)
+                .setCustomAnimations(
+                        R.animator.card_flip_right_in,
+                        R.animator.card_flip_right_out,
+                        R.animator.card_flip_left_in,
+                        R.animator.card_flip_left_out)
                 .replace(R.id.activity_big_card_cv_container, backFragment)
-                .addToBackStack("Back")
                 .commit();
     }
 
@@ -175,11 +180,11 @@ public class BigCardActivity extends AppCompatActivity implements BigCardClickLi
     public void bigCardClicked() {
         switch (faceShown) {
             case FRONT_FACE:
-                showFrontFrag(false);
+                showBackFrag();
                 faceShown = BACK_FACE;
                 break;
             case BACK_FACE:
-                showBackFrag();
+                showFrontFrag(false);
                 faceShown = FRONT_FACE;
                 break;
         }

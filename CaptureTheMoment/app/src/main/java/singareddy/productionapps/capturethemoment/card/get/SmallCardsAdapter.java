@@ -1,12 +1,11 @@
 package singareddy.productionapps.capturethemoment.card.get;
 
-import android.arch.lifecycle.MutableLiveData;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,7 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import java.io.File;
+import com.makeramen.roundedimageview.RoundedImageView;
+
 import java.util.List;
 
 import singareddy.productionapps.capturethemoment.R;
@@ -33,9 +33,9 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
 
         public SmallCardVH(View view) {
             super(view);
+            image = view.findViewById(R.id.list_item_small_card_iv_image);
             String itemType = (String) view.getTag();
             if (itemType.equals(PURPOSE_ADD_CARD)) {
-                image = null;
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -47,7 +47,6 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
                 });
             }
             else if (itemType.equals(PURPOSE_SHOW_CARD)) {
-                image = view.findViewById(R.id.list_item_small_card_iv_image);
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -67,8 +66,12 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
     private String bookId;
     private SmallCardClickListener cardClickListener;
     private Boolean ownerCanEdit  = true;
+    private int layoutMargin = 8;
+    private float imageRadius = 25;
+    private int cardSize;
 
-    public SmallCardsAdapter(Context context, List<String> data, String bookId, SmallCardClickListener listener) {
+    public SmallCardsAdapter(Context context, List<String> data, String bookId,
+                             SmallCardClickListener listener) {
         this.context = context;
         this.bookId = bookId;
         this.inflater = LayoutInflater.from(context);
@@ -108,23 +111,52 @@ public class SmallCardsAdapter extends RecyclerView.Adapter<SmallCardsAdapter.Sm
     public SmallCardVH onCreateViewHolder(@NonNull ViewGroup viewGroup, int itemType) {
         View itemView;
         if (itemType == ITEM_TYPE_ADD_CARD) {
-            itemView = inflater.inflate(R.layout.list_item_add_card, viewGroup, false);
+            itemView = createTailoredView(viewGroup);
             itemView.setTag(PURPOSE_ADD_CARD);
             return new SmallCardVH(itemView);
         }
-        itemView = inflater.inflate(R.layout.list_item_small_card, viewGroup, false);
+        itemView = createTailoredView(viewGroup);
         itemView.setTag(PURPOSE_SHOW_CARD);
         return new SmallCardVH(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SmallCardVH holder, int position) {
-        if (position == 0 && ownerCanEdit) return;
+        if (position == 0 && ownerCanEdit) {
+            holder.image.setImageDrawable(context.getDrawable(R.drawable.add_card));
+//            holder.image.setBackground(context.getDrawable(R.drawable.add_card_outline).);
+            return;
+        }
         else position = ownerCanEdit ? position-1 : position;
         BitmapFactory.Options imageOptions = new BitmapFactory.Options();
         imageOptions.inSampleSize = 2;
         Bitmap image = BitmapFactory.decodeFile(context.getFilesDir()+"/"+data.get(position), imageOptions);
         Log.i(TAG, "onBindViewHolder: Bitmap Contents: "+image);
         holder.image.setImageBitmap(image);
+    }
+
+    private View createTailoredView (ViewGroup parent) {
+        View itemView = inflater.inflate(R.layout.list_item_small_card,parent, false);
+        ConstraintLayout constraintLayout = itemView.findViewById(R.id.list_item_small_card_cl_container);
+        ViewGroup.LayoutParams params = new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
+        constraintLayout.setLayoutParams(params);
+        // Create an image view now
+        RoundedImageView rImageView = itemView.findViewById(R.id.list_item_small_card_iv_image);
+        rImageView.setCornerRadius(cardSize/4);
+        ConstraintLayout.LayoutParams imageParams = new ConstraintLayout.LayoutParams(cardSize, cardSize);
+        imageParams.topToTop = R.id.list_item_small_card_cl_container;
+        imageParams.startToStart = R.id.list_item_small_card_cl_container;
+        imageParams.endToEnd = R.id.list_item_small_card_cl_container;
+        imageParams.bottomToBottom = R.id.list_item_small_card_cl_container;
+        imageParams.topMargin = layoutMargin;
+        imageParams.bottomMargin = layoutMargin;
+        imageParams.leftMargin = layoutMargin;
+        imageParams.rightMargin = layoutMargin;
+        rImageView.setLayoutParams(imageParams);
+        return itemView;
+    }
+
+    public void setCardSize(int cardSize) {
+        this.cardSize = cardSize;
     }
 }

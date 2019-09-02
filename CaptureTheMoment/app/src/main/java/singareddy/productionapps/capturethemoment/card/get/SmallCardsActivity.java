@@ -3,6 +3,7 @@ package singareddy.productionapps.capturethemoment.card.get;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -36,6 +37,7 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     public static String IS_THIS_OWN_BOOK = "OwnBook";
     public static String BOOK_ID = "BookId";
     public static String BOOK_NAME = "BookName";
+    private static String SMALL_CARDS_COLUMNS = "smallCardsColumns";
 
     // Utility members
     private String bookName;
@@ -48,6 +50,8 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
     private AuthViewModel authViewModel;
     private GetCardsViewModel getCardsViewModel;
     private DeleteBookViewModel deleteBookViewModel;
+    private int columnsInRow=3;
+    private SharedPreferences settings;
 
     // UI members
     private RecyclerView cardsList;
@@ -58,6 +62,8 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
         Log.i(TAG, "onCreate: ***");
         super.onCreate(savedInstanceState);
         smallCardImagePaths = new ArrayList<>();
+        settings = getSharedPreferences(AppUtilities.FileNames.APP_SETTINGS, MODE_PRIVATE);
+        columnsInRow = settings.getInt(SMALL_CARDS_COLUMNS, 3);
         initialiseUI();
         initialiseViewModel();
     }
@@ -66,18 +72,19 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
         Log.i(TAG, "initialiseUI: ***");
         bookName = getIntent().getExtras().getString(BOOK_NAME);
         bookId = getIntent().getExtras().getString( BOOK_ID);
-        adapter = new SmallCardsAdapter(this, smallCardImagePaths, bookId, this);
-
         setTheme(AppUtilities.CURRENT_THEME);
         Drawable icon = getDrawable(R.drawable.back);
         getSupportActionBar().setHomeAsUpIndicator(icon);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(bookName);
         setContentView(R.layout.activity_book_details);
+        int cardSize = computeParamsForSmallCard();
+        adapter = new SmallCardsAdapter(this, smallCardImagePaths, bookId, this);
+        adapter.setCardSize(cardSize);
         cardsList = findViewById(R.id.book_details_rv_cards);
         refreshLayout = findViewById(R.id.book_details_srl);
         refreshLayout.setOnRefreshListener(this::refreshCards);
-        GridLayoutManager manager = new GridLayoutManager(this,3);
+        GridLayoutManager manager = new GridLayoutManager(this,columnsInRow);
         cardsList.setAdapter(adapter);
         cardsList.setLayoutManager(manager);
     }
@@ -104,6 +111,23 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
         getCardsViewModel.reloadCardsOfBook(bookId);
     }
 
+    private int computeParamsForSmallCard() {
+        int screenWidth = getWindowManager().getDefaultDisplay().getWidth();
+        int cardWidth = ((screenWidth-32)/columnsInRow)-32;
+        return cardWidth;
+    }
+
+    private void updateColumns(int i) {
+        columnsInRow=i;
+        cardsList.setAdapter(null);
+        adapter.setCardSize(computeParamsForSmallCard());
+        cardsList.setAdapter(adapter);
+        cardsList.setLayoutManager(new GridLayoutManager(this, columnsInRow));
+        adapter.notifyDataSetChanged();
+        // Save this setting in user preferences file
+        settings.edit().putInt(SMALL_CARDS_COLUMNS,i).apply();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.book_context_menu, menu);
@@ -119,19 +143,17 @@ public class SmallCardsActivity extends AppCompatActivity implements SmallCardCl
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.book_menu_item_update) {
-            navigateToEditBookActivity();
-        }
+        if (item.getItemId() == R.id.book_menu_item_update) navigateToEditBookActivity();
         else if (item.getItemId() == R.id.book_menu_item_trash) {
             deleteBookViewModel.setDeleteBookListener(this);
             deleteBookViewModel.deleteBook(bookId);
         }
-        else if (item.getItemId() == R.id.book_menu_item_info) {
-
-        }
-        else if (item.getItemId() == android.R.id.home) {
-            finish();
-        }
+        else if (item.getItemId() == R.id.book_menu_item_info) { }
+        else if (item.getItemId() == android.R.id.home) finish();
+        else if (item.getItemId() == R.id.book_menu_item_2_col) updateColumns(2);
+        else if (item.getItemId() == R.id.book_menu_item_3_col) updateColumns(3);
+        else if (item.getItemId() == R.id.book_menu_item_4_col) updateColumns(4);
+        else if (item.getItemId() == R.id.book_menu_item_5_col) updateColumns(5);
         return super.onOptionsItemSelected(item);
     }
 

@@ -33,16 +33,36 @@
         android:testOnly="true"
         android:theme="@style/ThemeOrange"
         android:windowSoftInputMode="adjustPan" >
-        <activity android:name="singareddy.productionapps.capturethemoment.SettingsActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.card.add.AddCardActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.card.get.BigCardActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.book.edit.EditBookActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.card.get.SmallCardsActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.book.add.AddBookActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.user.auth.SignupActivity" />
-        <activity android:name="singareddy.productionapps.capturethemoment.user.auth.MobileLogin" />
-        <activity android:name="singareddy.productionapps.capturethemoment.user.auth.LoginActivity" >
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.card.add.AddCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.card.get.BigCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.book.edit.EditBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.card.get.SmallCardsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.book.add.AddBookActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.user.auth.SignupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.user.auth.MobileLogin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.user.auth.LoginActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -50,8 +70,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="singareddy.productionapps.capturethemoment.HomeActivity" />
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" >
+        <activity
+            android:name="singareddy.productionapps.capturethemoment.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:screenOrientation="portrait" >
         </activity>
 
         <meta-data

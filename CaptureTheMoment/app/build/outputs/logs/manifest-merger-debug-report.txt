@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#android.support.v4.content.FileProvider
-INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:44:9-52:20
+INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:45:9-53:20
 	android:grantUriPermissions
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:48:13-47
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:49:13-47
 	android:authorities
 		INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:46:13-60
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:47:13-60
 	android:exported
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:47:13-37
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:48:13-37
 	android:name
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:45:13-67
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:46:13-67
 manifest
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-55:12
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-56:12
 MERGED from [com.android.support:design:28.0.0] /Users/sreekar/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/a1162b2737c994822f53d68308b5fa9b/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.libraries.places:places:1.1.0] /Users/sreekar/.gradle/caches/transforms-1/files-1.1/places-1.1.0.aar/f381724bd65104b7d6f32960d1e6cb13/AndroidManifest.xml:2:1-26:12
 MERGED from [com.theartofdev.edmodo:android-image-cropper:2.3.1] /Users/sreekar/.gradle/caches/transforms-1/files-1.1/android-image-cropper-2.3.1.aar/3cc6795780ad9a0fe5e5d15004271e46/AndroidManifest.xml:2:1-12:12
@@ -72,20 +72,20 @@ MERGED from [com.android.support:interpolator:28.0.0] /Users/sreekar/.gradle/cac
 MERGED from [com.github.bumptech.glide:glide:4.3.1] /Users/sreekar/.gradle/caches/transforms-1/files-1.1/glide-4.3.1.aar/03b97d489664308d05635c5e1902417a/AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.firebase:firebase-database-collection:16.0.1] /Users/sreekar/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-16.0.1.aar/14ce80e4eb2a7f76a5a063c42d7b9266/AndroidManifest.xml:2:1-7:12
 MERGED from [com.android.volley:volley:1.1.1] /Users/sreekar/.gradle/caches/transforms-1/files-1.1/volley-1.1.1.aar/a19fc2ab98d93a8b25d21b2f63aab99c/AndroidManifest.xml:2:1-11:12
-INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-56:12
 	package
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:3:5-57
 		INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-55:12
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-56:12
 		INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-55:12
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:1-56:12
 		INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:2:11-69
@@ -102,7 +102,7 @@ ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/ma
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:7:22-77
 application
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:9:5-53:19
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:9:5-54:19
 MERGED from [com.android.support:design:28.0.0] /Users/sreekar/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/a1162b2737c994822f53d68308b5fa9b/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] /Users/sreekar/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/a1162b2737c994822f53d68308b5fa9b/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.libraries.places:places:1.1.0] /Users/sreekar/.gradle/caches/transforms-1/files-1.1/places-1.1.0.aar/f381724bd65104b7d6f32960d1e6cb13/AndroidManifest.xml:13:5-24:19
@@ -164,43 +164,63 @@ MERGED from [com.android.volley:volley:1.1.1] /Users/sreekar/.gradle/caches/tran
 	android:theme
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:16:9-43
 activity#singareddy.productionapps.capturethemoment.SettingsActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:18:9-63
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:18:9-100
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:18:52-88
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:18:19-51
 activity#singareddy.productionapps.capturethemoment.card.edit.UpdateCardActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:19:9-66
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:19:9-102
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:19:64-100
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:19:19-63
 activity#singareddy.productionapps.capturethemoment.card.add.AddCardActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:20:9-62
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:20:9-98
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:20:60-96
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:20:19-59
 activity#singareddy.productionapps.capturethemoment.card.get.BigCardActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:9-62
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:9-98
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:60-96
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:21:19-59
 activity#singareddy.productionapps.capturethemoment.book.edit.EditBookActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:22:9-64
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:22:9-100
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:22:62-98
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:22:19-61
 activity#singareddy.productionapps.capturethemoment.card.get.SmallCardsActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:23:9-65
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:23:9-101
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:23:63-99
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:23:19-62
 activity#singareddy.productionapps.capturethemoment.book.add.AddBookActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:24:9-62
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:24:9-98
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:24:60-96
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:24:19-59
 activity#singareddy.productionapps.capturethemoment.user.auth.SignupActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:25:9-62
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:25:9-98
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:25:60-96
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:25:19-59
 activity#singareddy.productionapps.capturethemoment.user.auth.MobileLogin
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:26:9-59
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:26:9-95
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:26:57-93
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:26:19-56
 activity#singareddy.productionapps.capturethemoment.user.auth.LoginActivity
 ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:27:9-33:20
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:27:59-95
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:27:19-58
 intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.VIEW+category:name:android.intent.category.LAUNCHER
@@ -218,19 +238,23 @@ ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/ma
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:31:27-74
 activity#singareddy.productionapps.capturethemoment.HomeActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:34:9-50
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:34:9-86
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:34:48-84
 	android:name
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:34:19-47
 activity#com.theartofdev.edmodo.cropper.CropImageActivity
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:35:9-37:20
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:35:9-38:20
+	android:screenOrientation
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:36:13-49
 	android:name
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:36:13-76
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:37:13-76
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:38:9-42:21
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:39:9-43:21
 	android:value
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:40:13-58
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:41:13-58
 	android:name
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:39:13-58
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:40:13-58
 uses-sdk
 INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml
@@ -360,11 +384,11 @@ INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src
 		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:49:13-51:58
+ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:50:13-52:58
 	android:resource
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:51:17-55
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:52:17-55
 	android:name
-		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:50:17-67
+		ADDED from /Users/sreekar/Desktop/Capture The Moment/CaptureTheMoment/app/src/main/AndroidManifest.xml:51:17-67
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from [com.google.android.libraries.places:places:1.1.0] /Users/sreekar/.gradle/caches/transforms-1/files-1.1/places-1.1.0.aar/f381724bd65104b7d6f32960d1e6cb13/AndroidManifest.xml:9:5-79
 	android:name

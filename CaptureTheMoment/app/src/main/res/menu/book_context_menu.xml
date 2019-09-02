@@ -18,4 +18,22 @@
         android:title="Info"
         android:visible="false"
         app:showAsAction="always" />
+
+    <item
+        android:title="2 Column"
+        android:id="@+id/book_menu_item_2_col"/>
+
+    <item
+        android:title="3 Column"
+        android:id="@+id/book_menu_item_3_col"/>
+
+    <item
+        android:title="4 Column"
+        android:id="@+id/book_menu_item_4_col"/>
+
+    <item
+        android:title="5 Column"
+        android:id="@+id/book_menu_item_5_col"/>
+
+
 </menu>

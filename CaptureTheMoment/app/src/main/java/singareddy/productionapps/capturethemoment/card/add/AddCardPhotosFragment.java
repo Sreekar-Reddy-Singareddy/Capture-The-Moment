@@ -2,6 +2,7 @@ package singareddy.productionapps.capturethemoment.card.add;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -187,6 +188,17 @@ public class AddCardPhotosFragment extends Fragment {
     }
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == STORAGE_PERMISSION_REQUEST && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            photoFromGallery();
+        }
+        else if (requestCode == CAMERA_PERMISSION_REQUEST && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            photoFromCamera();
+        }
+    }
+
+    @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == CAMERA_INTENT_REQUEST && resultCode == RESULT_OK) {
@@ -194,6 +206,13 @@ public class AddCardPhotosFragment extends Fragment {
             cropImageAt(capturedUri);
         }
         if (requestCode == GALLERY_INTENT_REQUEST && resultCode == RESULT_OK) {
+            ClipData imagesData = data.getClipData();
+            if (imagesData == null) {
+                // Only one image is selected
+                Uri imageUri = data.getData();
+                cropImageAt(imageUri);
+                return;
+            }
             for (int i=0; i<data.getClipData().getItemCount(); i++) {
                 Uri imageUri = data.getClipData().getItemAt(i).getUri();
                 cropImageAt(imageUri);

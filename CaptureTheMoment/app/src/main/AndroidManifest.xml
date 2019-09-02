@@ -15,24 +15,25 @@
         android:supportsRtl="true"
         android:theme="@style/ThemeOrange"
         android:windowSoftInputMode="adjustPan">
-        <activity android:name=".SettingsActivity"></activity>
-        <activity android:name=".card.edit.UpdateCardActivity" />
-        <activity android:name=".card.add.AddCardActivity" />
-        <activity android:name=".card.get.BigCardActivity" />
-        <activity android:name=".book.edit.EditBookActivity" />
-        <activity android:name=".card.get.SmallCardsActivity" />
-        <activity android:name=".book.add.AddBookActivity" />
-        <activity android:name=".user.auth.SignupActivity" />
-        <activity android:name=".user.auth.MobileLogin" />
-        <activity android:name=".user.auth.LoginActivity">
+        <activity android:name=".SettingsActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".card.edit.UpdateCardActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".card.add.AddCardActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".card.get.BigCardActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".book.edit.EditBookActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".card.get.SmallCardsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".book.add.AddBookActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".user.auth.SignupActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".user.auth.MobileLogin" android:screenOrientation="portrait"/>
+        <activity android:name=".user.auth.LoginActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity" android:screenOrientation="portrait"/>
         <activity
+            android:screenOrientation="portrait"
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity">
         </activity>
         <meta-data

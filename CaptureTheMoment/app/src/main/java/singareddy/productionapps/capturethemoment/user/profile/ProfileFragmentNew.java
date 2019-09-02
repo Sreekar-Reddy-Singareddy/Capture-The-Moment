@@ -16,6 +16,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.FileProvider;
 import android.util.Log;
@@ -316,7 +317,7 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
     private void openCameraForPicture() {
         if (getContext().checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED ||
                 getContext().checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-            requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},CAMERA_PERMISSION_REQUEST);
+            requestPermissions(new String[]{Manifest.permission.CAMERA},CAMERA_PERMISSION_REQUEST);
             return;
         }
         // All permissions granted
@@ -378,6 +379,9 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
             String name = pickedPlace.getName();
             Log.i(TAG, "onActivityResult: Place: "+name);
             this.location.setText(name);
+            currentUser.setLocation(name);
+            authViewModel.updateUserProfile(currentUser);
+
         }
     }
 
@@ -431,12 +435,12 @@ public class ProfileFragmentNew extends Fragment implements View.OnClickListener
 
     @Override
     public void onProfileUpdated() {
-        Toast.makeText(getContext(), "Profile updated successfully", Toast.LENGTH_SHORT).show();
+        Snackbar.make(fragView, "Changes Saved", Snackbar.LENGTH_SHORT).show();
     }
 
     @Override
     public void onProfilePicUpdated() {
-        Toast.makeText(getContext(), "Picture changed!", Toast.LENGTH_SHORT).show();
+        Snackbar.make(fragView, "Changes Saved", Snackbar.LENGTH_SHORT).show();
     }
 
 }
